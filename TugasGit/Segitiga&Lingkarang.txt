@@ -1,4 +1,4 @@
-//Keliling dan Luas Trapesium
+//Keliling dan Luas Segitiga
 
 
 
