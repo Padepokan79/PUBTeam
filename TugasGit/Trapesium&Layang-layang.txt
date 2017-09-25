@@ -18,7 +18,8 @@
 
 
 
-//Keliling Layang-layang
+//Keliling Layang-layang by DyahNuraeni
+
 
 
 public class LayangLayang{
