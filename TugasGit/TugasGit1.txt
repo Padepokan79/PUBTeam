@@ -1,0 +1,14 @@
+Buatlah Source code text, untuk menghitung luas dan keliling bangun datar, serta volume bangun ruang.
+
+1. Persegi Panjang
+2. Persegi
+3. Jajar Genjang
+4. Belah Ketupat
+5. Trapesium
+6. Layang-layang
+7. Segitiga
+8. Lingkaran
+9. Kubus
+10. Balok
+
+Simpanlah source kode yang kalian buat di file yang disediakan sesuai Tugas yang didapat.
