@@ -5,4 +5,4 @@
 
 
 
-//Keliling dan Luas Jajar Genjang
+//Keliling dan Luas Persegi
