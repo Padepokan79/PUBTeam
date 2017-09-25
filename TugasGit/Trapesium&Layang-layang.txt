@@ -5,4 +5,21 @@
 
 
 
-//Keliling dan Luas Layang-layang
+//Keliling dan Luas Layang-layang created by Dyah Team 2 PUB
+
+public class LayangLayang{
+
+	private Double x;
+	private Double y;
+
+	public LayangLayang(Double x,Double y){
+		this.x=x;
+		this.y=y;
+	}
+
+	public Double kelilingLayang(){
+		return ((2*x) +(2*y));
+	}
+
+}
+	
