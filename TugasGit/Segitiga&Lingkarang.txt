@@ -1,6 +1,17 @@
-//Keliling dan Luas Segitiga
+//Keliling Segitiga
+//add by Yunita Team2PUB G5
 
 
+public class Segitiga{
+private Double tinggi=3.4;
+Private Double alas=1.5;
+
+public Double AreaTriangle(double a, double t)
+{
+	return (a*t)/2;
+}
+
+}
 
 
 
