@@ -1,11 +1,25 @@
-//Keliling dan Luas Trapesiium
+//Keliling Trapesiium
 
 
 
 
 
 
-//Keliling dan Luas Layang-layang created by Dyah Team 2 PUB
+
+
+	
+
+
+//Luas Trapesiium
+
+
+
+
+
+
+
+//Keliling Layang-layang
+
 
 public class LayangLayang{
 
@@ -22,4 +36,11 @@ public class LayangLayang{
 	}
 
 }
-	
+
+
+
+
+
+
+//Luas Layang-layang
+>>>>>>> origin/master
