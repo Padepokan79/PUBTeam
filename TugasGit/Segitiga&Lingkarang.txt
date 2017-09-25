@@ -31,8 +31,23 @@ public Double AreaTriangle(double a, double t)
 
 
 Luas  Lingkaran by TreLing Cici
+public class Luaslingkaran {
+    public static void main(String[] args) {
+    Scanner input =new Scanner(System.in);
+    double phi=3.14;
+    double jari,luas;
+    System.out.print("Berapa Jari-jari lingkaran:");
+    jari=input.nextDouble();
+   
+    luas = phi*jari*jari;
+   
+    System.out.println("Luas Lingkaran = " + (double)luas);
+   
+    }
+}
 
-//Luas Segitiga
+
+
 
 
 
