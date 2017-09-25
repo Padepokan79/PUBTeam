@@ -43,4 +43,4 @@ public class LayangLayang{
 
 
 //Luas Layang-layang
->>>>>>> origin/master
+
