@@ -48,7 +48,26 @@ public class Luaslingkaran {
 
 
 
-//Keliling Lingkaran
+
+
+
+
+
+
+//Keliling Lingkaran by TraLing Nurjanah
+public class KelilingLingkaran{
+	public staticvoid main(String[]args){
+	Scanner input = new Scanner (System.in);
+	double = 3.14;
+	double k, j;
+	k = input.nextDouble();
+	System.Out.print("Keliling Lingkaran = " "+ (double)luas);
+	}
+}
+
+}
+
+
 
 
 
