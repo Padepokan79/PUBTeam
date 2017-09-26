@@ -1,8 +1,18 @@
-//Keliling dan Luas Segitiga
+//Keliling Segitiga
+
+
+
+
+//Luas Segitiga
 
 
 
 
 
+//Keliling Lingkaran
 
-//Keliling dan Luas Lingkaran
+
+ 
+
+
+//Luas Lingkaran
