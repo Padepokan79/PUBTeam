@@ -1,13 +1,27 @@
 //Keliling Jajar Genjang
+public class Jajar_Genjang{
+float keliling,luas;
+
+	public void KelilingJG(int a, int sm){
+		keliling=2*(a+sm);
+		System.out.println("Keliling jajar genjang : "+keliling);
+	}
 
 
-
-
+}
 
 
 //Luas Jajar Genjang
 
+public class Jajar_Genjang{
+float keliling,luas;
 
+	public void LuasJG(int a, int t){
+		luas=a*t;
+		System.out.println("Luas jajar genjang : "+luas);
+	}
+
+}
 
 
 
