@@ -60,3 +60,16 @@ public Static void main(String args[]){
 }
 
 }
+
+//Keliling Persegi Panjang By Riyan Turmudi
+public class PersegiPanjang{
+	float panjang;
+	float lebar;
+
+	float kelilingPersegiPanjang(float p,float l){
+		this.panjang=p;
+		this.lebar=l;
+
+		return 2*(this.panjang+this.lebar);
+	}
+}
