@@ -1,11 +1,13 @@
-//Keliling dan Luas Segitiga
+//Keliling Segitiga
 
 
 
 
+//Luas Segitiga
 
 
-//Keliling dan Luas Lingkaran by TreLing Cici
+
+Luas Lingkaran by TreLing Cici
 
 Luas Lingkaran
 public class Lingkaran{
@@ -21,3 +23,11 @@ public class Lingkaran{
 
 }
 }
+
+
+
+ 
+
+
+//Luas Lingkaran
+

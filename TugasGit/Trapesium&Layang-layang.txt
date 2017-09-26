@@ -1,8 +1,25 @@
-//Keliling dan Luas Trapesiium
+//Keliling Trapesiium
 
 
 
 
 
 
-//Keliling dan Luas Layang-layang
+
+//Luas Trapesiium
+
+
+
+
+
+
+
+//Keliling Layang-layang
+
+
+
+
+
+
+
+//Luas Layang-layang
