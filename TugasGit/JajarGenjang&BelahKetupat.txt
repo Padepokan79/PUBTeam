@@ -12,7 +12,7 @@
 
 
 
-//Keliling Belah Ketupat
+//Keliling Belah Ketupat 	By : Cucu Yuni Yulainti
 
 Luas = 1/2 x d1 x d2
 Keliling = 4 x sisi
@@ -61,5 +61,7 @@ public int hitungLuas(){
 public Static void main(String args[]){
 	LuasBelahKetupat l = new KelilingBelahKetupat(6,5);
 	System.out.println("Luas Belah Ketupat : " + l.hitungLuas);
+
+
 
 }
