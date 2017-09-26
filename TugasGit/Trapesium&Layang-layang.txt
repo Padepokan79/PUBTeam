@@ -61,7 +61,21 @@ public class Trapesium {
 }
 
 //Keliling Layang-layang
+public class LayangLayang{
 
+	private Double x;
+	private Double y;
+
+	public LayangLayang(Double x,Double y){
+		this.x=x;
+		this.y=y;
+	}
+
+	public Double kelilingLayang(){
+		return ((2*x) +(2*y));
+	}
+
+}
 
 
 
