@@ -9,8 +9,25 @@
 
 
 
-//Keliling Persegi
+//Keliling Persegi add by Resti Siska Devi
 
+public class Persegi{
+	private double s;
+
+	public Persegi(double s){
+		s=this.s;
+	}
+
+	public double keliling(){
+		return 4*s;
+	}
+
+
+public Static void main(String args[]){
+	Persegi p=new Persegi(5.5);
+	System.out.println("Keliling Persegi : "+p.keliling());
+}
+}
 
 
 
