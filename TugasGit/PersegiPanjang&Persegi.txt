@@ -17,7 +17,7 @@ public class PersegiPanjang{
 	}
 
 
-}
+
 
 
 //Keliling Persegi add by Resti Siska Devi
