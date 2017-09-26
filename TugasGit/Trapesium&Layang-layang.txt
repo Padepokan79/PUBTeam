@@ -1,4 +1,5 @@
-//Keliling dan Luas Trapesiium (Add Luas By TraLing Frida)
+
+//Keliling Trapesiium
 
 public class Trapesium {
 	public static void main(String args[]){
@@ -14,4 +15,21 @@ public class Trapesium {
 }
 
 
-//Keliling dan Luas Layang-layang
+
+//Luas Trapesiium
+
+
+
+
+
+
+
+//Keliling Layang-layang
+
+
+
+
+
+
+
+//Luas Layang-layang
