@@ -1,10 +1,12 @@
-//Keliling dan Luas Persegi Panjang
+//Keliling Persegi Panjang
 
 
 
 
+//Luas Persegi Panjang
 
 
+<<<<<<< HEAD
 //Keliling dan Luas Persegi
 public class Persegi{
 private Integer s,k,l;
@@ -26,3 +28,16 @@ public Static void main(String args[]){
 	
 }
 }
+=======
+
+
+
+//Keliling Persegi
+
+
+
+
+
+//Luas Persegi
+
+>>>>>>> origin/master

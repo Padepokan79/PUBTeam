@@ -1,8 +1,22 @@
-//Keliling dan Luas Jajar Genjang
+//Keliling Jajar Genjang
 
 
 
 
 
 
-//Keliling dan Luas Belah Ketupat
+//Luas Jajar Genjang
+
+
+
+
+
+
+//Keliling Belah Ketupat
+
+
+
+
+
+
+//Luas Belah Ketupat
