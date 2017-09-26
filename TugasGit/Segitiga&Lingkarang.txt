@@ -1,4 +1,5 @@
 //Keliling Segitiga
+
 //Add By Teguh Prabowo Leksono
 
 public class Segitiga{
@@ -13,6 +14,9 @@ public Double Keliling(double a, double b,double c)
 //Luas Segitiga
 //add by Yunita Team2PUB
 
+//add by Yunita Team2PUB G5
+
+
 public class Segitiga{
 private Double tinggi=3.4;
 Private Double alas=1.5;
@@ -25,27 +29,20 @@ public Double AreaTriangle(double a, double t)
 }
 
 
+
 Luas  Lingkaran by TreLing Cici
 
-
-public class Lingkaran{
-	public static void main(String[] args){
-	Scanner input=new Scanner(System.in);
-	double phi=3.14;
-	double juri,luas,keliling;
-
-	System.out.print("Berapa jari-jari Lingkaran:");
-	jari=input.nexDouble();
-	luas=phi*jari*jari;
-	
-	System.out.print("Luas Lingkaran = "+(double)luas;
-
-}
-}
+//Luas Segitiga
 
 
-Keliling Lingkaran
+
+
+
+
+//Keliling Lingkaran
+
+
  
 
 
-
+//Luas Lingkaran
