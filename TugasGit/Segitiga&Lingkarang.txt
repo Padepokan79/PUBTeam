@@ -7,19 +7,21 @@
 
 
 
-Luas Lingkaran by TreLing Cici
+Luas dan Keliling Lingkaran by TreLing Cici
 
-Luas Lingkaran
+
 public class Lingkaran{
 	public static void main(String[] args){
 	Scanner input=new Scanner(System.in);
 	double phi=3.14;
-	double juri,luas;
+	double juri,luas,keliling;
 
 	System.out.print("Berapa jari-jari Lingkaran:");
 	jari=input.nexDouble();
 	luas=phi*jari*jari;
-	System.out.print("Luas Lingkaran = "+(double)luas);
+	keliling=2*phi*r;
+	System.out.print("Luas Lingkaran = "+(double)luas+"Keliling Lingkaran :"+
+	(double)keliling);
 
 }
 }
@@ -29,5 +31,4 @@ public class Lingkaran{
  
 
 
-//Luas Lingkaran
 
