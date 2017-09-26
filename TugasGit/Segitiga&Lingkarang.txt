@@ -17,12 +17,28 @@ public Double AreaTriangle(double a, double t)
 
 
 
+Luas dan Keliling Lingkaran by TreLing Cici
 
 
-//Keliling Lingkaran
+public class Lingkaran{
+	public static void main(String[] args){
+	Scanner input=new Scanner(System.in);
+	double phi=3.14;
+	double juri,luas,keliling;
+
+	System.out.print("Berapa jari-jari Lingkaran:");
+	jari=input.nexDouble();
+	luas=phi*jari*jari;
+	keliling=2*phi*r;
+	System.out.print("Luas Lingkaran = "+(double)luas+"Keliling Lingkaran :"+
+	(double)keliling);
+
+}
+}
+
 
 
  
 
 
-//Luas Lingkaran
+
