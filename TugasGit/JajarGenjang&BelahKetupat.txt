@@ -33,6 +33,7 @@ float keliling,luas;
 
 
 
+
 //Keliling Belah Ketupat 	By : Cucu Yuni Yulianti
 
 
@@ -53,15 +54,20 @@ public Static void main(String args[]){
 	public KelilingBelahKetupat(int sisi){
 		sisi = this.sisi;
 
+
+
+
 	
 	}
 }
+
 
 
 //Luas Belah Ketupat By Natia Ayu Utari
 
 
  
+
 public class LuasBelahKetupat {
 	public static void main (String args[]){
 	
