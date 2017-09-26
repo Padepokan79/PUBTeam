@@ -13,14 +13,14 @@ public class JajarGenjang { by Tegar Budi Septian
 
 //Luas Jajar Genjang
 
-public class Jajar_Genjang{
+public class Jajar_Genjang{ by : ulil
 float keliling,luas;
 
 	public void LuasJG(int a, int t){
 		luas=a*t;
-		System.out.println("Luas jajar genjang : "+luas());
+		System.out.println("Luas jajar genjang : "+luas);
 
-	//Luas Jajar Genjang
+	}
 	public float Luas(){		
 		return sisiA*t;
 
