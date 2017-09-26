@@ -1,5 +1,4 @@
-
-//Keliling Trapesiium (Add TraLing Ilfa)
+//Keliling Trapesiium Ilfa
 
 class Trapesium{
 	private float alas;
@@ -46,8 +45,6 @@ class Trapesium{
 
 }
 
-
-
 //Luas Trapesiium
 
 public class Trapesium {
@@ -63,12 +60,6 @@ public class Trapesium {
 	}
 }
 
-
-
-
-
-
-
 //Keliling Layang-layang
 
 
@@ -77,7 +68,21 @@ public class Trapesium {
 
 
 
-
-
 //Luas Layang-layang
+//by Nurikhsan
 
+public class LayangLayang{
+
+	private Double d1,d2;
+	
+	public LayangLayang(Double d1,Double d2){
+		this.d1=d1;
+		this.d2=d2;
+	}
+
+	public Double kelilingLayangLayang(){
+		return 0.5 x d1 x d2;
+
+	}
+
+}
