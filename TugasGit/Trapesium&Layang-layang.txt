@@ -37,7 +37,12 @@ class Trapesium{
 	float getKiri(){
 		return kiri;
 	}
-	void setKeliling(float alas, float kanan, float kiri, float )
+	void getKeliling(){
+		float hasil=getAlas() + getKanan() + getKiri() + getAtas();
+		return hasil;
+	}
+
+
 }
 
 
