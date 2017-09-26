@@ -1,22 +1,61 @@
 //Keliling Jajar Genjang
+public class Jajar_Genjang{
+float keliling,luas;
+
+	public void KelilingJG(int a, int sm){
+		keliling=2*(a+sm);
+		System.out.println("Keliling jajar genjang : "+keliling);
+	}
 
 
-
-
+}
 
 
 //Luas Jajar Genjang
 
+public class Jajar_Genjang{
+float keliling,luas;
+
+	public void LuasJG(int a, int t){
+		luas=a*t;
+		System.out.println("Luas jajar genjang : "+luas);
+	}
+
+}
 
 
 
 
+//Keliling Belah Ketupat By Natia Ayu Utari
 
-//Keliling Belah Ketupat
+public class KelilingBelahKetupat {
+	public static void main (String args[]){
+	
+		int s=8;
+		int k;
+	
+		k=4*s;
 
+		System.Out.println ("Kelilingnya adalah : "+k);
 
-
-
+	}
+}
 
 
 //Luas Belah Ketupat
+
+
+ 
+public class LuasBelahKetupat {
+	public static void main (String args[]){
+	
+		int d1 = 8;
+		int d2 = 6;
+		int l;
+	
+		l=0.5*(d1*d2);
+
+		System.Out.println ("Luas adalah : "+l);
+
+	}
+}
