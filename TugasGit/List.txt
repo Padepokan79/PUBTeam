@@ -12,3 +12,7 @@ saya nurikhsan mengerjakan luas layang - layang
 4. Teguh Prabowo
 5. Cucu Yuni, mengerjakan Keliling belah Ketupat di Kelompok PersegiBelahKetupat
 
+<<<<<<< HEAD
+=======
+1.Dyah,mengerjakan logaritma keliling layanglayang
+>>>>>>> origin/dyah
