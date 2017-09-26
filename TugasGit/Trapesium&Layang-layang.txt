@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 //Keliling Trapesiium
 
@@ -27,9 +28,61 @@ public class Trapesium {
 //Keliling Layang-layang
 
 
+=======
+//Keliling dan Luas Trapesiium (Add Keliling By TraLing Ilfa)
+
+class Trapesium{
+	private float alas;
+	private float tinggi;
+	private float kanan;
+	private float kiri;
+	private float atas;
+	
+	void setAlas(float alas){
+		this.alas=alas;
+	}
+	float getAlas(){
+		return alas;
+	}
+	void setTinggi(float tinggi){
+		this.tinggi=tinggi;
+	}
+	float getTinggi(){
+		return tinggi;
+	}
+	void setAtas(float atas){
+		this.atas=atas;
+	}
+	float getAtas(){
+		return atas;
+	}
+	void setKanan(float kanan){
+		this.kanan=kanan;
+	}
+	float getKanan(){
+		return kanan;
+	}
+	void setKiri(float kiri){
+		this.kiri=kiri;
+	}
+	float getKiri(){
+		return kiri;
+	}
+	float getKeliling(){
+		float hasil=getAlas() + getKanan() + getKiri() + getAtas();
+		return hasil;
+	}
+
+
+}
+>>>>>>> origin/Traling
 
 
 
 
 
+<<<<<<< HEAD
 //Luas Layang-layang
+=======
+//Keliling dan Luas Layang-layang
+>>>>>>> origin/Traling
