@@ -82,3 +82,16 @@ public class LuasBelahKetupat {
 
 	}
 }
+
+public class JajarGenjang{ created by : Dasiah
+float keliling=0, luas=0;
+public void luasJajarGenjang(int a, int t){
+	luas=a*t;
+	system.out.println("Luas JajarGenjang : "+luas);
+}
+public void kelilingJajarGenjang(int a, int sisiM){
+	keliling=2*(a+sisiM);
+	system.out.println("Keliling JajarGenjang : "+keliling);
+}
+
+}
