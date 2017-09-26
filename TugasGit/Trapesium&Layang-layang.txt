@@ -1,35 +1,5 @@
-<<<<<<< HEAD
 
-//Keliling Trapesiium
-
-public class Trapesium {
-	public static void main(String args[]){
-		Scanner input= new Scanner(System.in;
-		double a, c,t,hasil;
-		a=input.nextDouble;
-		c=input.nextDouble;
-		t=input.nextDouble;
-		hasil=0.5*(a+c)*t;
-		System.Out.print("Luas Trapesium ="+(double)hasil);
-		
-	}
-}
-
-
-
-//Luas Trapesiium
-
-
-
-
-
-
-
-//Keliling Layang-layang
-
-
-=======
-//Keliling dan Luas Trapesiium (Add Keliling By TraLing Ilfa)
+//Keliling Trapesiium (Add TraLing Ilfa)
 
 class Trapesium{
 	private float alas;
@@ -75,14 +45,39 @@ class Trapesium{
 
 
 }
->>>>>>> origin/Traling
+
+
+
+//Luas Trapesiium
+
+public class Trapesium {
+	public static void main(String args[]){
+		Scanner input= new Scanner(System.in;
+		double a, c,t,hasil;
+		a=input.nextDouble;
+		c=input.nextDouble;
+		t=input.nextDouble;
+		hasil=0.5*(a+c)*t;
+		System.Out.print("Luas Trapesium ="+(double)hasil);
+		
+	}
+}
 
 
 
 
 
-<<<<<<< HEAD
+
+
+//Keliling Layang-layang
+
+
+
+
+
+
+
+
+
 //Luas Layang-layang
-=======
-//Keliling dan Luas Layang-layang
->>>>>>> origin/Traling
+
