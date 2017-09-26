@@ -18,7 +18,7 @@ float keliling,luas;
 
 	public void LuasJG(int a, int t){
 		luas=a*t;
-		System.out.println("Luas jajar genjang : "+luas);
+		System.out.println("Luas jajar genjang : "+luas());
 	}
 
 }
@@ -26,7 +26,7 @@ float keliling,luas;
 
 
 
-//Keliling Belah Ketupat 	By : Cucu Yuni Yulainti
+//Keliling Belah Ketupat 	By : Cucu Yuni Yulianti
 
 Luas = 1/2 x d1 x d2
 Keliling = 4 x sisi
@@ -49,7 +49,7 @@ public class KelilingBelahKetupat{
 
 public Static void main(String args[]){
 	KelilingBelahKetupat kel = new KelilingBelahKetupat(6);
-	System.out.println("Keliling Belah Ketupat : " + kel.hitung);
+	System.out.println("Keliling Belah Ketupat : " + kel.hitung());
 
 }
 
@@ -74,7 +74,7 @@ public int hitungLuas(){
 
 public Static void main(String args[]){
 	LuasBelahKetupat l = new KelilingBelahKetupat(6,5);
-	System.out.println("Luas Belah Ketupat : " + l.hitungLuas);
+	System.out.println("Luas Belah Ketupat : " + l.hitungLuas());
 
 
 
