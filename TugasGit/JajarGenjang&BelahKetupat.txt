@@ -1,14 +1,17 @@
-//Keliling Jajar Genjang
+public class JajarGenjang {
+	float sisiA, sisiB, tinggi, luas = 0, keliling = 0;
+	
+	//Keliling Jajar Genjang
+	public float Keliling(){		
+		return 2*(sisiA+sisiB);
+	}
 
+	//Luas Jajar Genjang
+	public float Luas(){		
+		return sisiA*t;
+	}
 
-
-
-
-
-//Luas Jajar Genjang
-
-
-
+}
 
 
 
