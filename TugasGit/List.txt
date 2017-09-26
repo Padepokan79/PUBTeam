@@ -15,4 +15,8 @@ Tuliskan Hasil Kalian di Bawah ini.
 7. Cucu Yuni , mengerjakan keliling Belah ketupat 
 
 6. Jejen Zenal Mutaqin menambahkan Luas persegipanjang
+<<<<<<< HEAD
 1.Dyah,mengerjakan logaritma keliling layanglayang
+=======
+7. Riyan Turmudi, Mengerjakan Keliling Persegi Panjang
+>>>>>>> origin/pj
