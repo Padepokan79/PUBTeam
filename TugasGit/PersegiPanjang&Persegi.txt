@@ -3,14 +3,42 @@
 
 
 
-//Luas Persegi Panjang
+//Luas Persegi Panjang Add By Jejen
+
+public class PersegiPanjang{
+	float panjang;
+	float lebar;
+
+	float getLuas(float p,float l){
+		this.panjang=p;
+		this.lebar=l;
+
+		return p*l;
+	}
 
 
 
 
 
-//Keliling Persegi
+//Keliling Persegi add by Resti Siska Devi
 
+public class Persegi{
+	private double s;
+
+	public Persegi(double s){
+		s=this.s;
+	}
+
+	public double keliling(){
+		return 4*s;
+	}
+
+
+public Static void main(String args[]){
+	Persegi p=new Persegi(5.5);
+	System.out.println("Keliling Persegi : "+p.keliling());
+}
+}
 
 
 
