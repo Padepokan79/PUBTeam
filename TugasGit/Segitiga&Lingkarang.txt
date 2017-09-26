@@ -1,4 +1,16 @@
 //Keliling Segitiga
+//Add By Teguh Prabowo Leksono
+
+public class Segitiga{
+	
+public Double Keliling(double a, double b,double c)
+	{
+		return a+b+c;
+	}
+
+}
+
+//Luas Segitiga
 //add by Yunita Team2PUB
 
 public class Segitiga{
@@ -11,10 +23,6 @@ public Double AreaTriangle(double a, double t)
 }
 
 }
-
-
-//Luas Segitiga
-
 
 
 Luas  Lingkaran by TreLing Cici
