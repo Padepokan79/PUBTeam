@@ -1,8 +1,19 @@
-//Keliling dan Luas Persegi Panjang
+//Keliling Persegi Panjang
+
+
+
+
+//Luas Persegi Panjang
 
 
 
 
 
+//Keliling Persegi
 
-//Keliling dan Luas Persegi
+
+
+
+
+//Luas Persegi
+

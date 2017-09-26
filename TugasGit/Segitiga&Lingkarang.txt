@@ -1,4 +1,5 @@
-//Keliling dan Luas Segitiga add by Yunita Team2PUB
+//Keliling Segitiga
+//add by Yunita Team2PUB
 
 public class Segitiga{
 private Double tinggi=3.4;
@@ -12,6 +13,16 @@ public Double AreaTriangle(double a, double t)
 }
 
 
+//Luas Segitiga
 
 
-//Keliling dan Luas Lingkaran
+
+
+
+//Keliling Lingkaran
+
+
+ 
+
+
+//Luas Lingkaran
