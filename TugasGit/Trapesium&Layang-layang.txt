@@ -37,7 +37,7 @@ class Trapesium{
 	float getKiri(){
 		return kiri;
 	}
-	void getKeliling(){
+	float getKeliling(){
 		float hasil=getAlas() + getKanan() + getKiri() + getAtas();
 		return hasil;
 	}
