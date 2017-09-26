@@ -6,25 +6,67 @@ public class JajarGenjang { by Tegar Budi Septian
 		return 2*(sisiA+sisiB);
 	}
 
+
+
+}
+
+
+//Luas Jajar Genjang
+
+public class Jajar_Genjang{
+float keliling,luas;
+
+	public void LuasJG(int a, int t){
+		luas=a*t;
+		System.out.println("Luas jajar genjang : "+luas());
+
 	//Luas Jajar Genjang
 	public float Luas(){		
 		return sisiA*t;
+
 	}
 
 }
 
-//Keliling Belah Ketupat By Natia Ayu Utari
+
+
+
+
+
+
+//Keliling Belah Ketupat 	By : Cucu Yuni Yulianti
+
+
+
 
 public class KelilingBelahKetupat {
-	public static void main (String args[]){
-		int s=8;
-		int k;
-		k=4*s;
-		System.Out.println ("Kelilingnya adalah : "+k);
+	private int sisi;
+	public KelilingBelahKetupat (int sisi){
+		sisi = this.sisi;
+	}
+	
 
+public Static void main(String args[]){
+	KelilingBelahKetupat kel = new KelilingBelahKetupat(6);
+	System.out.println("Keliling Belah Ketupat : " + kel.hitung());
+}
+
+	public KelilingBelahKetupat(int sisi){
+		sisi = this.sisi;
+
+
+
+
+	
 	}
 }
 
+
+
+//Luas Belah Ketupat By Natia Ayu Utari
+
+
+ 
 
 public class LuasBelahKetupat {
 	public static void main (String args[]){
@@ -35,7 +77,12 @@ public class LuasBelahKetupat {
 	
 		l=0.5*(d1*d2);
 
+
+public Static void main(String args[]){
+	LuasBelahKetupat l = new KelilingBelahKetupat(6,5);
+
 		System.Out.println ("Luas adalah : "+l);
+
 
 	}
 }
