@@ -42,7 +42,4 @@ Luas  Lingkaran by TreLing Cici
 //Keliling Lingkaran
 
 
- 
 
-
-//Luas Lingkaran
