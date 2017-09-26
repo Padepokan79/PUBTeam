@@ -1,6 +1,7 @@
 Tuliskan Hasil Kalian di Bawah ini.
 
 
+<<<<<<< HEAD
 
 
 
@@ -8,6 +9,8 @@ Tuliskan Hasil Kalian di Bawah ini.
 
 1. Ilfa Sri Desy add Keliling Trapesium dari Krlompok TraLing
 
+=======
+>>>>>>> origin/pj
 1.Ilfa Sri Desy add Keliling Trapesium dari Krlompok TraLing
 <<<<<<< HEAD
 
@@ -19,10 +22,8 @@ Tuliskan Hasil Kalian di Bawah ini.
 3. Nurikhsan saya nurikhsan mengerjakan luas layang - layang
 4. Yunita Niken
 5. Teguh Prabowo
-
-7. Cucu Yuni , mengerjakan keliling Belah ketupat 
-
 6. Jejen Zenal Mutaqin menambahkan Luas persegipanjang
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 1. Dyah,mengerjakan logaritma keliling layanglayang
@@ -40,3 +41,11 @@ Tuliskan Hasil Kalian di Bawah ini.
 
 16. Frida Nurhidayati
 >>>>>>> origin/SegitigaDanLayanglayang
+=======
+7. Dasiah mengerjakan algoritma luas dan keliling jajar genjang
+8. Cucu Yuni , mengerjakan keliling Belah ketupat 
+6. Jejen Zenal Mutaqin menambahkan Luas persegipanjang
+16. Frida Nurhidayati
+7. Riyan Turmudi, Mengerjakan Keliling Persegi Panjang
+8. Cucu Yuni , mengerjakan keliling Belah ketupat 
+>>>>>>> origin/pj
