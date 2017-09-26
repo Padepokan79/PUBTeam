@@ -55,7 +55,7 @@ private Double s,k,l;
 
 public Static void main(String args[]){
 	Persegi p= new Persegi;
-	p.s=4.5;
+	p.s=4;
 	
 }
 
