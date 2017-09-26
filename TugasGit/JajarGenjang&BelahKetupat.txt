@@ -12,7 +12,7 @@
 
 
 
-//Keliling Belah Ketupat
+//Keliling Belah Ketupat By Natia Ayu Utari
 
 public class KelilingBelahKetupat {
 	public static void main (String args[]){
