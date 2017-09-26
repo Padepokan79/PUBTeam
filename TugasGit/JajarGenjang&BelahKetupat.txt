@@ -77,10 +77,6 @@ public class LuasBelahKetupat {
 	
 		l=0.5*(d1*d2);
 
-
-public Static void main(String args[]){
-	LuasBelahKetupat l = new KelilingBelahKetupat(6,5);
-
 		System.Out.println ("Luas adalah : "+l);
 
 
