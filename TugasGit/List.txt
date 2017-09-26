@@ -20,6 +20,7 @@ Tuliskan Hasil Kalian di Bawah ini.
 6. Jejen Zenal Mutaqin menambahkan Luas persegipanjang
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 1.Dyah,mengerjakan logaritma keliling layanglayang
 =======
 7. Riyan Turmudi, Mengerjakan Keliling Persegi Panjang
@@ -27,3 +28,15 @@ Tuliskan Hasil Kalian di Bawah ini.
 =======
 
 >>>>>>> origin/SegitigaDanLayangLayang
+=======
+1.Dyah,mengerjakan logaritma keliling layanglayang
+<<<<<<< HEAD
+
+
+
+
+
+16. Frida Nurhidayati
+=======
+>>>>>>> origin/PK
+>>>>>>> origin/Traling
