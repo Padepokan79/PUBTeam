@@ -3,7 +3,18 @@
 
 
 
-//Luas Persegi Panjang
+//Luas Persegi Panjang Add By Jejen
+
+public class PersegiPanjang{
+	float panjang;
+	float lebar;
+
+	float getLuas(float p,float l){
+		this.panjang=p;
+		this.lebar=l;
+
+		return p*l;
+	}
 
 
 
