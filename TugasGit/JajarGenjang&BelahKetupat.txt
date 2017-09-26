@@ -14,9 +14,34 @@
 
 //Keliling Belah Ketupat
 
+public class KelilingBelahKetupat {
+	public static void main (String args[]){
+	
+		int s=8;
+		int k;
+	
+		k=4*s;
 
+		System.Out.println ("Kelilingnya adalah : "+k);
 
-
+	}
+}
 
 
 //Luas Belah Ketupat
+
+
+ 
+public class LuasBelahKetupat {
+	public static void main (String args[]){
+	
+		int d1 = 8;
+		int d2 = 6;
+		int l;
+	
+		l=0.5*(d1*d2);
+
+		System.Out.println ("Luas adalah : "+l);
+
+	}
+}
