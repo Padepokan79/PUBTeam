@@ -6,3 +6,23 @@
 
 
 //Keliling dan Luas Persegi
+public class Persegi{
+private Integer s,k,l;
+	Integer kelilingPersegi(){
+		k=4*s;
+		return k;	
+	}
+
+	Integer luasPersegi(){
+		l=s*s;
+		return l;
+	}
+
+public Static void main(String args[]){
+	Persegi p= new Persegi;
+	p.s=5;
+	p.kelilingPersegi();
+	p.luasPersegi();
+	
+}
+}
