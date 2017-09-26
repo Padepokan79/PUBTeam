@@ -4,6 +4,7 @@ Tuliskan Hasil Kalian di Bawah ini.
 
 
 
+
 1.	Ilfa Sri Desy add Keliling Trapesium dari Krlompok TraLing
 
 1.Nuraeni Dyah
@@ -13,9 +14,12 @@ Tuliskan Hasil Kalian di Bawah ini.
 5. Cucu Yuni, mengerjakan Keliling belah Ketupat di Kelompok PersegiBelahKetupat
 6. Tegar Budi Septian, mengerjakan algoritma keliling Jajar Genjang.
 
+
+1.Ilfa Sri Desy add Keliling Trapesium dari Krlompok TraLing
+
 2.Nuraeni Dyah
 3. Nurikhsan saya nurikhsan mengerjakan luas layang - layang
-4. Yunita Niken
+4. Yunita Niken,make a function areatriangle
 5. Teguh Prabowo
 
 7. Cucu Yuni , mengerjakan keliling Belah ketupat 
@@ -28,4 +32,3 @@ Tuliskan Hasil Kalian di Bawah ini.
 
 
 16. Frida Nurhidayati
-
