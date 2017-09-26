@@ -43,5 +43,20 @@ public Static void main(String args[]){
 
 
 
-//Luas Persegi
 
+//Luas Persegi
+//add by halahhelmia
+Public class Persegi{
+private Double s,k,l;
+	Double luasPersegi(){
+		l=s*s;
+		return l;
+	}
+
+public Static void main(String args[]){
+	Persegi p= new Persegi;
+	p.s=4;
+	
+}
+
+}
