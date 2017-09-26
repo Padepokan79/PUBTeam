@@ -1,9 +1,54 @@
 //Keliling Segitiga
 
+//Add By Teguh Prabowo Leksono
 
+public class Segitiga{
+	
+public Double Keliling(double a, double b,double c)
+	{
+		return a+b+c;
+	}
 
+}
 
 //Luas Segitiga
+//add by Yunita Team2PUB
+
+//add by Yunita Team2PUB G5
+
+
+public class Segitiga{
+private Double tinggi=3.4;
+Private Double alas=1.5;
+
+public Double AreaTriangle(double a, double t)
+{
+	return (a*t)/2;
+}
+
+}
+
+
+
+Luas  Lingkaran by TreLing Cici
+public class Luaslingkaran {
+    public static void main(String[] args) {
+    Scanner input =new Scanner(System.in);
+    double phi=3.14;
+    double jari,luas;
+    System.out.print("Berapa Jari-jari lingkaran:");
+    jari=input.nextDouble();
+   
+    luas = phi*jari*jari;
+   
+    System.out.println("Luas Lingkaran = " + (double)luas);
+   
+    }
+}
+
+
+
+
 
 
 
@@ -12,7 +57,4 @@
 //Keliling Lingkaran
 
 
- 
 
-
-//Luas Lingkaran
