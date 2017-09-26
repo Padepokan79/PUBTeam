@@ -1,8 +1,8 @@
-//Keliling Trapesiium
+//Luas Trapesiium Frida
 
 public class Trapesium {
 	public static void main(String args[]){
-		Scanner input= new Scanner(System.in;
+		Scanner input= new Scanner(System.in);
 		double a, c,t,hasil;
 		a=input.nextDouble;
 		c=input.nextDouble;
