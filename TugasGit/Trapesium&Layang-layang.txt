@@ -23,3 +23,19 @@
 
 
 //Luas Layang-layang
+
+public class LayangLayang{
+
+	private Double d1,d2;
+	
+	public LayangLayang(Double d1,Double d2){
+		this.d1=d1;
+		this.d2=d2;
+	}
+
+	public Double kelilingLayangLayang(){
+		return 0.5 x d1 x d2;
+
+	}
+
+}
