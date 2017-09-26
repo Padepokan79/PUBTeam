@@ -1,81 +1,61 @@
-//Keliling Jajar Genjang
-public class Jajar_Genjang{
-float keliling,luas;
-
-	public void KelilingJG(int a, int sm){
-		keliling=2*(a+sm);
-		System.out.println("Keliling jajar genjang : "+keliling);
+public class JajarGenjang { by Tegar Budi Septian
+	float sisiA, sisiB, tinggi, luas = 0, keliling = 0;
+	
+	//Keliling Jajar Genjang
+	public float Keliling(){		
+		return 2*(sisiA+sisiB);
 	}
 
-
-}
-
-
-//Luas Jajar Genjang
-
-public class Jajar_Genjang{
-float keliling,luas;
-
-	public void LuasJG(int a, int t){
-		luas=a*t;
-		System.out.println("Luas jajar genjang : "+luas);
+	//Luas Jajar Genjang
+	public float Luas(){		
+		return sisiA*t;
 	}
 
 }
 
-
-
-
+<<<<<<< HEAD
 //Keliling Belah Ketupat 	By : Cucu Yuni Yulainti
+=======
 
-Luas = 1/2 x d1 x d2
-Keliling = 4 x sisi
-public class KelilingBelahKetupat{
+
+
+//Keliling Belah Ketupat By Natia Ayu Utari
+>>>>>>> origin/master
+
+public class KelilingBelahKetupat {
+	public static void main (String args[]){
 	
-	private int sisi;
+		int s=8;
+		int k;
 	
+<<<<<<< HEAD
 	public KelilingBelahKetupat(int sisi){
 		sisi = this.sisi;
+>>>>>>> origin/pj
+=======
+		k=4*s;
+>>>>>>> origin/master
+
+		System.Out.println ("Kelilingnya adalah : "+k);
 
 	}
-	
-	public int hitung(){
-		return 4*sisi;
-	}
-
-	
 }
-
-
-public Static void main(String args[]){
-	KelilingBelahKetupat kel = new KelilingBelahKetupat(6);
-	System.out.println("Keliling Belah Ketupat : " + kel.hitung);
-
-}
-
-
 
 
 //Luas Belah Ketupat
-public class LuasBelahKetupat{
+
+
+ 
+public class LuasBelahKetupat {
+	public static void main (String args[]){
 	
-	private int diagonal1;
-	private int diagonal2;
+		int d1 = 8;
+		int d2 = 6;
+		int l;
 	
-	public LuasBelahKetupat(int diagonal1, int diagonal2){
-		diagonal1=this.diagonal1;
-		diagonal2=this.diagonal2;
+		l=0.5*(d1*d2);
+
+		System.Out.println ("Luas adalah : "+l);
 
 	}
-public int hitungLuas(){
-	return diagonal1*diagonal2*0,5;
-}
-
-
-public Static void main(String args[]){
-	LuasBelahKetupat l = new KelilingBelahKetupat(6,5);
-	System.out.println("Luas Belah Ketupat : " + l.hitungLuas);
-
-
-
 }
