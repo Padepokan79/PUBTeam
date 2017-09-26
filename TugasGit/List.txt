@@ -9,5 +9,9 @@ Tuliskan Hasil Kalian di Bawah ini.
 4. Yunita Niken
 5. Teguh Prabowo
 6. Jejen Zenal Mutaqin menambahkan Luas persegipanjang
+<<<<<<< HEAD
 7.Dyah,mengerjakan logaritma keliling layanglayang
 8. Halah Helmia Wahdah algoritma luas persegi team PK
+=======
+7. Riyan Turmudi, Mengerjakan Keliling Persegi Panjang
+>>>>>>> origin/pj
