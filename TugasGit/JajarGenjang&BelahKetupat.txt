@@ -13,39 +13,19 @@ public class JajarGenjang { by Tegar Budi Septian
 
 }
 
-<<<<<<< HEAD
-//Keliling Belah Ketupat 	By : Cucu Yuni Yulainti
-=======
-
-
-
 //Keliling Belah Ketupat By Natia Ayu Utari
->>>>>>> origin/master
 
 public class KelilingBelahKetupat {
 	public static void main (String args[]){
-	
 		int s=8;
 		int k;
-	
-<<<<<<< HEAD
-	public KelilingBelahKetupat(int sisi){
-		sisi = this.sisi;
->>>>>>> origin/pj
-=======
 		k=4*s;
->>>>>>> origin/master
-
 		System.Out.println ("Kelilingnya adalah : "+k);
 
 	}
 }
 
 
-//Luas Belah Ketupat
-
-
- 
 public class LuasBelahKetupat {
 	public static void main (String args[]){
 	
