@@ -1,0 +1,99 @@
+// Untuk No 1
+int sum=0;
+        float avg=1;
+	int[] arr1={25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+    	for(int a=0;a<10;a++){
+            sum=sum+arr1[a];
+            avg=sum/10;
+        }
+        System.out.println("Jumlahnya : "+sum);
+        System.out.println("Jumlahnya : "+avg);
+
+//untuk No 2
+int[] arr1={25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+      	for(int a=0;a<10;a++){
+           if(arr1[a] == 56){
+               System.out.println("Ada");
+              break;
+           }else{
+               System.out.println("Ga ada");
+           }
+         }
+
+//Untuk No 3
+int[] arr1={25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+         	for(int a=0;a<10;a++){
+               if(arr1[a] == 56){
+                   System.out.println(arr1[a]+" Ada Di index ke -: "+a);
+               }
+            }
+
+//untuk No 14
+public static void main(String[] args) {
+        // TODO code application logic here
+        int[] arr1={25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+         System.out.println("Sebelum Di urutkan");
+         for(int a=0;a<arr1.length;a++){
+             System.out.print(arr1[a]+" ");
+         }
+         System.out.println(" ");
+         bubbleSort(arr1);
+         System.out.println("Setelah Di urutkan");
+          for(int a=0; a < arr1.length; a++){  
+                        System.out.print(arr1[a] + " ");  
+                }  
+         
+    }
+    static void bubbleSort(int[] arr) {  
+        int n = arr.length;  
+        int temp = 0;  
+         for(int i=0; i < n; i++){  
+                 for(int j=1; j < (n-i); j++){  
+                          if(arr[j-1] > arr[j]){  
+                                 //swap elements  
+                                 temp = arr[j-1];  
+                                 arr[j-1] = arr[j];  
+                                 arr[j] = temp;  
+                         }  
+                          
+                 }  
+         }  
+  
+    }  
+
+
+//Untuk No 7
+int[] arr1={25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+            int[] arr2=new int[10];
+            	for(int a=0;a<10;a++){
+                  arr2[a]=arr1[a];
+                    System.out.print(arr2[a]+" ");
+               }  
+         
+       
+//Untuk No 8 & 9
+int[] arr1={25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+        int max = 0;
+        int min = 1000;
+    for (int a = 0; a < 10; a++) {
+      if (arr1[a] > max) {
+          max = arr1[a];
+      } else if (arr1[a] < min) {
+          min = arr1[a];
+      }
+    }
+        System.out.println("Nilai Maksimum : " + max);
+        System.out.println("Nilai Minimun  : " + min);
+
+
+//Untuk no 11
+int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+        int[] arr3 = {2, 39, 47, 14, 36, 56, 57, 49, 43, 79};
+            for(int a=0;a<10;a++){
+                for(int b=0;b<10;b++){
+                    if(arr3[b] == arr1[a]){
+                        System.out.println("Ada yang sama "+arr3[b]);
+                    }
+                }
+                
+            }
