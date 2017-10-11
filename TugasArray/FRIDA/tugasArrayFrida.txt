@@ -1,0 +1,91 @@
+// no 1
+     int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+     float rata;
+     int jum=0;
+     for(int i=0;i<10;i++){
+         jum=jum+arr1[i];
+         
+     }
+        rata=jum/10;
+        System.out.println("Jumlah:"+jum);
+        System.out.println("Rata-rata:"+rata);
+
+//no 2
+      int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+      for(int i=0;i<10;i++){
+         if(arr1[i]==14){
+             System.out.println("Ada");
+         }else{
+             System.out.println("Tidak ada");
+         }
+          
+      }
+//no 3
+      int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+      int index=0;
+      for(int i=0;i<10;i++){
+         if(arr1[i]==14){
+             index++;
+         }
+          
+      }
+      System.out.println("Ada di index ke "+index);
+//no 4
+public static void main(String[] args) {
+      ubahNilai(20,1);
+    
+     
+     
+  }
+public static int ubahNilai(int nilai,int index){
+        int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+        int tamp1=0;
+        int tamp2=0;
+        for(int i=0;i<10;i++){
+            if(arr1[i]==index){
+                tamp1=arr1[i];
+                arr1[i]=nilai;
+                tamp2=arr1[i];
+     		}
+        }
+        return tamp2;
+        
+    }
+      
+
+//no 5
+public static void main(String[] args) {
+      hapusPosisi(2);
+    }
+    
+  
+    public static void hapusPosisi(int index){
+        int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+        int[] tamp= new int[10];
+        for(int i=0;i<arr1.length;i++){
+            if(i==index){
+               tamp[i]=arr1[i+1];
+            }
+            tamp[i]=arr1[i];
+        }
+        for(int x=0;x<arr1.length;x++){
+        System.out.println(tamp[x]);
+        }
+    }
+
+//n0 6
+
+//no 7
+public static void main(String[] args) {
+      int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+      int[] arr2 = new int[10];
+      int[] tamp = new int[10];
+      for(int i=0;i<arr1.length;i++){
+          arr2[i]=arr1[i];
+          arr1[i]=tamp[i];
+      }
+      for(int i=0;i<arr1.length;i++){
+          System.out.println(arr2[i]);
+      }
+    }                
+       
