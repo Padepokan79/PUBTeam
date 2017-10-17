@@ -10,3 +10,21 @@ update fgaji_baru set gapok=3000000 where nama="SURYATATI,S.SOS"; // merubah isi
 insert into fgaji_baru values ("2017-10-17",4,"197606111997032007", "DASIAH",NULL,NULL, 2,"1997-08-07", 1, 0, 0, 4,NULL, "3A", 8, 100,"2017-01-01",00,08405,NULL, 0, 2, 0, 0, 0, 00000, 0, 0, 0, 1921000, 0, 0, 0, 0, 265000, 0, 0, 0, 0, 0, 0,49500,35620,0,0,0,0,0,2271120,192100,NULL,NULL,0,35620,0,7000,0,0,0,0,0,0,0,234720,2036400,300114,001,019,"D10200101900001","00.000.00.0-000.000",140331208,1,NULL,NULL,NULL,"2017-09-20",0,1,0);
 insert into fgaji_baru values ("2017-11-17",4,"197606111997032010", "CECE LOVECO",NULL,NULL, 2,"1997-08-07", 1, 0, 0, 4,NULL, "3A", 8, 100,"2017-01-01",00,08405,NULL, 0, 2, 0, 0, 0, 00000, 0, 0, 0, 1921000, 0, 0, 0, 0, 265000, 0, 0, 0, 0, 0, 0,49500,35620,0,0,0,0,0,2271120,192100,NULL,NULL,0,35620,0,7000,0,0,0,0,0,0,0,234720,2036400,300114,001,019,"D10200101900001","00.000.00.0-000.000",140331208,1,NULL,NULL,NULL,"2017-09-21",0,1,0);
 delete from fgaji_baru where nama="CECE LOVECO"; // menghapus data pada tabel fgaji_baru yang bernama Cece loveco
+
+
+// ---> Dasiah <---
+
+// menghitung jumlah baris dalam tabel fgaji_baru yang gapoknya >= 3000000
+select count(*) from fgaji_baru where gapok>=3000000;
+
+// menghitung jumlah baris dalam tabel fgaji_baru yang bersihnya >= 4000000
+select count(*) from fgaji_baru where bersih>=4000000;
+
+// menampilkan tglgaji sebagai tanggalGaji, NIP dan nama dari tabel fgaji_baru
+select tglgaji as tanggalGaji, NIP, nama from fgaji_baru;
+
+// menampilkan gapok sebagai gajiPokok, nama sebagai namaPegawai, nip sebagai NomorIndukPegawai dari tabel fgaji_baru yang bernama HENDARINI, S.SOS
+select gapok as gajiPokok, nama as namaPegawai, nip as NomorIndukPegawai from fgaji_baru where nama="HENDARINI, S.SOS";
+
+// menampilkan gapok sebagai gajiPokok, nama sebagai namaPegawai, nip sebagai NomorIndukPegawai dari tabel fgaji_baru yang nama awalnya DA dan 2 huruf terakhirnya AH dan diantara DA dan AH ada 2 huruf
+select gapok as gajiPokok, nama as namaPegawai, nip as NomorIndukPegawai from fgaji_baru where nama LIKE "DA__AH";
