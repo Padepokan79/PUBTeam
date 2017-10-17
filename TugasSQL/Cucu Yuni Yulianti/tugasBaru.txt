@@ -1,0 +1,21 @@
+Tugas Query 
+Cucu Yuni Yulianti
+
+1. select mstpegawai.NAMA from mstpegawai where PENDIDIKAN = 'SLTA'
+UNION
+Select fgaji.NAMA from fgaji;
+
+2. select NAMA, KDPANGKAT from mstpegawai 
+UNION
+select  NAMA, KDPANGKAT from fgaji;
+
+3. select KDHUTANG ,JMLCICILAN from hutang
+UNION
+select KDHUTANG, JMLCICILAN from jadwal;
+
+4. select NAMA, KDJENKEL from data_rapel where KDPANGKAT = "3B"
+UNION
+select NAMA, KDJENKEL from mstpegawai ORDER BY NAMA;
+5. select NAMA, KDPANGKAT, GAPOK FROM data_rapel WHERE GAPOK > 1000000 
+UNION
+select NAMA, KDPANGKAT, GAPOK from fgaji ORDER BY KDPANGKAT;
