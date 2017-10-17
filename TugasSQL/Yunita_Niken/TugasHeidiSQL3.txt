@@ -1,0 +1,7 @@
+//INNER JOIN, LEFT JOIN, RIGHT JOIN
+1. SELECT pangkat_tbl.KDPANGKAT, pangkat_tbl.GOL,pangkat_tbl.NMGOL, fgaji.NIP,fgaji.GLRDEPAN as 'Gelar Depan', fgaji.NAMA, fgaji.GLRBELAKANG as 'Gelar Belakang' from pangkat_tbl,fgaji limit 20;
+2. select * from pangkat_tbl join fgaji on pangkat_tbl.KDPANGKAT=fgaji.KDPANGKAT limit 5;
+3. select * from pangkat_tbl LEFT JOIN  fgaji on pangkat_tbl.KDPANGKAT=fgaji.KDPANGKAT limit 8;
+4. select fgaji.NIP,fgaji.NAMA, pangkat_tbl.GOL from fgaji right join pangkat_tbl on pangkat_tbl.KDPANGKAT=fgaji.KDPANGKAT limit 5;
+5. select fgaji.NIP,fgaji.NAMA, pangkat_tbl.GOL as 'Golongan', pangkat_tbl.NMGOL as 'Nama Golongan', fgaji.GAPOK as 'Gaji Pokok' from fgaji right join pangkat_tbl on pangkat_tbl.KDPANGKAT=fgaji.KDPANGKAT limit 28;
+
