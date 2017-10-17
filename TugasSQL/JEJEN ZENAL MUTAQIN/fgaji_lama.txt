@@ -51,4 +51,4 @@ WILDCARD
 1. select * from fgaji_lama where TGLBAYAR like '2012-10-__'
 
 ///Menampilkan data fgaji_lama yang nama  nya mengandung "IJ"
-1. select * from fgaji_lama where NAMA like '%IJ%'
+2. select * from fgaji_lama where NAMA like '%IJ%'

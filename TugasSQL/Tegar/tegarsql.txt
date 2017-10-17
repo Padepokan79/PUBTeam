@@ -1,0 +1,77 @@
+/*
+Author 		: Tegar Budi Septian
+File Name 	: select-tegar.sql
+Capability	: Displaying some columns, they are tglgaji, kdjnstrans, nip, nama, tgllhr
+*/
+SELECT tglgaji, kdjnstrans, nip, nama, tgllhr
+FROM fgaji
+LIMIT 10
+
+/*
+Author 		: 	Tegar Budi Septian
+File Name 	: 	select-tegar-2.sql
+Capability	: 	Displaying some columns of fgaji and pangkat_tbl, because they have relation in field kdpangkat.
+			In fgaji, kdpangkat field is as Foreign Key. Otherwise, in pangkat_tbl table, kdpangkat as primary key.
+*/
+SELECT fg.tglgaji, fg.nip, fg.nama, p.kdpangkat, p.nmpangkat, fg.gapok
+FROM fgaji fg INNER JOIN pangkat_tbl p
+ON fg.kdpangkat = p.kdpangkat
+WHERE p.nmpangkat = "Pembina Utama Madya"
+
+/*
+Author 		: Tegar Budi Septian
+File Name 	: select-tegar-3.sql
+Capability	: Displaying some information of Tegar Budi Septian. The select statement has table relation.
+*/
+SELECT fg.nip, fg.nama, p.nmpangkat, fg.gapok
+FROM fgaji fg INNER JOIN pangkat_tbl p
+ON fg.kdpangkat = p.kdpangkat
+WHERE fg.nama = "TEGAR BUDI SEPTIAN"
+
+/*
+Author 		: Tegar Budi Septian
+File Name 	: select-tegar-4.sql
+Capability	: Displaying nama and gapok fields in fgaji table where having S.Kom title.
+*/
+SELECT nama, gapok
+FROM fgaji
+WHERE nama
+LIKE "%S.Kom%";
+
+/*
+Author 		: Tegar Budi Septian
+File Name 	: select-tegar-5.sql
+Capability	: Displaying name and main salary of people who has title S.Kom and the salary is more than 2000000.
+*/
+SELECT nama, gapok
+FROM (SELECT nama, gapok
+FROM fgaji
+WHERE nama
+LIKE "%S.Kom%") as gapokskom
+WHERE gapok > 2000000;
+
+/*
+Author 		: Tegar Budi Septian
+File Name 	: insert-tegar.sql
+Capability	: Inserting 2 datas in fgaji table. Tegar Budi Septian and Adam Husein.
+*/
+INSERT INTO fgaji
+VALUES ("2017-10-17", 1, "0204151036", "TEGAR BUDI SEPTIAN", "", "", 1, "1996-09-09", 1, 0, 0, 4, null, "4D", 30, 100.00, "2011-01-01", "00", "09223", "000", 0, 2, 0, "000", 0, "00000", 0, 0, 0, 5000000, 0, 0, 0, 0, 1600000, 0, 0, 0, 0, 0, 0, 270000, 92000, 0, 0, 0, 0, 60, 3000000, 400000, null, null, 0, 87000, 0, 7000, 0, 0, 0, 0, 0, 0, 0, 500000, 4103000, "400004", "001", "019", "D10200101900002", "00.000.00.0-000.000", "140028390", 1, "000", "", "PINDAHAN", 1, 1, null, null, null, null, null, null, 1),
+("2011-08-01", 1, "0204151001", "ADAM HUSEIN", "1", "2", 1, "1980-01-01", 1, 0, 0, 4, null, "4D", 30, 100.00, "2011-01-01", "00", "09223", "000", 0, 2, 0, "000", 0, "00000", 0, 0, 0, 5000000, 370000, 150000, 0, 0, 1600000, 0, 0, 0, 0, 0, 0, 270000, 92000, 0, 0, 0, 0, 60, 3000000, 400000, null, null, 0, 87000, 0, 7000, 0, 0, 0, 0, 0, 0, 0, 500000, 3000000, "40004", "001", "019", "D10200112700002", "00.000.00.0-000.00", "130081220", 1, "000", "", "", 1, 1, null, null, null, null, null, null, 1);
+
+/*
+Author 		: Tegar Budi Septian
+File Name 	: delet-tegar.sql
+Capability	: Deleting a data where name is Adam Husein in fgaji table from my insertion before.
+*/
+DELETE FROM fgaji
+WHERE nama = "ADAM HUSEIN"
+
+/*
+Author 		: Tegar Budi Septian
+File Name 	: update-tegar.sql
+Capability	: Updating the name of SARMAWATI to SARMAWATI, S.Kom
+*/
+UPDATE fgaji
+SET nama = "SARMAWATI, S.Kom"
+WHERE nama = "SARMAWATI"
