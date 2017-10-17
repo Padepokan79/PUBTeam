@@ -1,0 +1,17 @@
+Nama 	: Riyan Turmudi
+table 	: akunsp2d
+
+
+
+1. SELECT * FROM akunsp2d
+   LIMIT 1,5;
+
+2. INSERT INTO akunsp2d VALUES 
+	('002','002',110,'120.18.00.00.5.1.1.01.04','Tunjangan Hari Raya'),
+	('003','003',111,'120.18.00.00.5.1.1.01.04','Tunjangan Kematian');
+
+3. UPDATE akunsp2d SET KDTRANS='300' 
+   WHERE NMAKUN='Tunjangan kematian';
+
+4. DELETE FROM akunsp2d
+   WHERE NMAKUN='Tunjangan Hari Raya';
