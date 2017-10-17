@@ -1,0 +1,18 @@
+Tugas Query 
+Cucu Yuni Yulianti
+Tabel form_1721_a2
+
+Select ==>
+1. select Nama_peg from form_1721_a2 where Jabatan_Gol = "Penata Muda" limit 10;
+2. select Nama_peg, Nip, Jabatan_Gol from form_1721_a2 where akhir_pajak = '2015-12-01' limit 20;
+3. select Nama_peg, Nip, Jabatan_Gol from form_1721_a2 where Status = 1 and Jml_Kel >3 limit 10;
+4. select count(Tahun_Pajak) as Jumlah_Tahun_Pajak_2014 from form_1721_a2 where Tahun_Pajak = 2014; 
+5. select NoUrt, Nama_peg, Nip, Jabatan_Gol from form_1721_a2 where kdSatker = 'D10200100800001' limit 10;
+
+Insert ==> insert into form_1721_a2 (Tahun_Pajak, NoUrt, Npwp_Bend, Nama_peg, Nip, Npwp_Peg, Jabatan_Gol, Status, Sex, Jml_Kel, awal_pajak, akhir_pajak, kdSatker, kdskpd, a01, a02, a03, a04, a05, a06, a07, a08, a09, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20) values (2017, 8900, "001", "Cucu Yuni Yulianti", "2017061720171017","22.333.444.1-234.56", "Penata", "1", "2", "2","2017-01-01","2018-12-01","D10200100800001", "008", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),  (2017, 8901, "002", "Britney Spears", "2017061620171017","22.345.444.1-234.56", "Pembina Tk. 1", "0", "2", "2","2017-01-01","2018-12-01","D10200100800001", "008", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+
+Update ==> update form_1721_a2 set Jml_Kel = 4 where Nama_peg = "Britney Spears";
+
+Delete ==> delete from form_1721_a2 where Nama_peg = "Britney Spears";
+
+

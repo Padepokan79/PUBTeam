@@ -1,12 +1,27 @@
+//menampilkan nama dan nourt yang memiliki nourt dari 8 sampai 30
 1. SELECT nama, nourt FROM f_spt WHERE nourt BETWEEN 8 AND 30;
+
+//menampilkan jumlah baris dari table f_spt yang memiliki kdskpd=001
 2. SELECT COUNT(*) FROM f_spt  WHERE kdskpd=001;
+
+//menampilkan semua field yang memiliki nama berawalan n
 3. SELECT * FROM f_spt WHERE nama LIKE 'n%';
+
+//menampilkan nip paling besar dari tabel f_spt yang memiliki kdskpd=001
 4. SELECT MAX(nip) FROM f_spt  WHERE kdskpd=001;
+
+//menampilkan nama dari table f_spt yang diurutkan berdasarkan nama Ascending(berurutan dari A-Z)
 5. SELECT nama FROM f_spt ORDER BY nama ASC;
+
+//menambahkan data ke dalam field yang ada di tabel f_spt
 6. INSERT INTO f_spt values 
 	(197301052009091997, 'NATIA AYU UTARI', '002', 'D10200100100006', 1001, 2016), 
 	(197301052030102005, 'JAUZA SHOFA TRIANA', '003', 'D10200100100006', 1002, 2016);
+
+//menghapus data dari tabel f_spt yang memiliki nama NATIA AYU UTARi
 7. DELETE FROM f_spt WHERE nama='NATIA AYU UTARI';
+
+//mengubah tahun pajak dari 2.016 menjadi 2.017 di dalam tabel f_spt yang bernama 'JAUZA SHOFA TRIANA'
 8. UPDATE f_spt SET th_pajak='2.017' WHERE nama='JAUZA SHOFA TRIANA';
 
 				
