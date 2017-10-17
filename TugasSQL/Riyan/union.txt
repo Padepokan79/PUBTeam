@@ -1,0 +1,55 @@
+Nama 	: Riyan
+Materi 	: Union
+
+1.//----- Menggabungkan dan menampilkan KDTRANS dari table akun_konv dan akun_tbl
+
+SELECT KDTRANS FROM akun_konv
+UNION
+SELECT KDTRANS FROM akun_tbl
+
+2.//----- Menggabungkan dan Menampilkan nama dari table mstpegawai_01 dan mstpegawai_02 kemudian di urutkan secara ascending(a-z)
+SELECT nama FROM mstpegawai_01
+WHERE pendidikan='SLTA'
+UNION
+SELECT nama FROM mstpegawai_02
+WHERE pendidikan='SLTA'
+order by nama asc;
+
+3.//----- Menggabungkan dan menampilkan nama dari table mstpegawai_01 dan mstpegawai_02.
+Dimana dari tabel mstpegawai_01 diambil hanya nama yang berawalan A
+sedangkan dari table mstpegawai_02 diambil hanya nama yang berawalan dari Z
+kemudian di urutkan secara descending (Z-A)
+
+SELECT nama FROM mstpegawai_01
+WHERE nama LIKE 'A%'
+UNION
+SELECT nama FROM mstpegawai_02
+WHERE nama LIKE 'Z%'
+order by nama desc;
+
+4.//----- Menampilkan nama dan gapok dari 4 table (mstpegawai_01, mstpegawai_02, mstpegawai_03, mstpegawai_04).
+kemudian di urutkan dari gapok yang terbesar dan diambil 5 data gapok yang paling besar.
+
+SELECT nama , gapok FROM mstpegawai_01
+UNION
+SELECT nama , gapok FROM mstpegawai_02
+UNION
+SELECT nama , gapok FROM mstpegawai_03
+UNION
+SELECT nama , gapok FROM mstpegawai_04
+ORDER BY gapok DESC
+LIMIT 0,5;
+
+5.//----- Menampilkan nama dan gapok dari 4 table (mstpegawai_01, mstpegawai_02, mstpegawai_03, mstpegawai_04) yang gapoknya kurang dari 2500000
+SELECT nama , gapok FROM mstpegawai_01
+WHERE gapok < 2500000
+UNION
+SELECT nama , gapok FROM mstpegawai_02 
+WHERE gapok < 2500000
+UNION
+SELECT nama , gapok FROM mstpegawai_03
+WHERE gapok < 2500000
+UNION
+SELECT nama , gapok FROM mstpegawai_04
+WHERE gapok < 2500000
+ORDER BY nama asc;
