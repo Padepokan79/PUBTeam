@@ -1,0 +1,10 @@
+//menghitung gapokbaru yg jistribaru=1
+select count(gapokbaru) from fgaji_kekurangan where jistribaru=1 limit 5;
+//menghitung gapokbaru yg jistribaru=0
+select count(gapoklama) from fgaji_kekurangan where jistribaru=0 limit 5;
+//mengaliaskan nama gapokbaru menjadi GajiPokokBaru
+select gapokbaru as GajiPokokBaru from fgaji_kekurangan limit 10;
+//mengaliaskan nama gapoklama menjadi GajiPokokLama
+select gapoklama as GajiPokokLama from fgaji_kekurangan limit 10;
+//menampilkan kdpangkatbaru yg huruf akhir nya A
+select kdpangkatbaru from fgaji_kekurangan where kdpangkatbaru like '%A' limit 5;
