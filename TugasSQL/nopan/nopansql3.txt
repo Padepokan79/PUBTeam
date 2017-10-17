@@ -1,0 +1,18 @@
+select sp.nama,stp.kdstapeg from skpp_pegawai sp 
+inner join stapeg_tbl stp on sp.KDSTAPEG=stp.KDSTAPEG 
+where sp.KDSTAPEG between 23 and 28 
+order by sp.KDSTAPEG asc limit 20;
+
+select sp.nama,stk.kdstawin from skpp_pegawai sp 
+LEFT JOIN stawin_tbl stk ON sp.KDSTAWIN=stk.KDSTAWIN 
+where stk.KDSTAWIN =2 limit 50;
+
+select tw.nip,sp.nama,tw.tglwafat from skpp_pegawai sp
+RIGHT JOIN twafat tw ON tw.NIP=sp.NIP limit 10; 
+
+select mp.nip,pt.kdpangkat,mp.nama,pt.nmpangkat from mstpegawai mp
+INNER JOIN pangkat_tbl pt ON mp.KDPANGKAT=pt.KDPANGKAT
+where mp.KDPANGKAT like '%A' limit 10;
+
+select mp.nip,mp.nama,zt.mulai from mstpegawai mp
+LEFT JOIN zakat_tdk zt ON mp.nip=zt.nip limit 10;

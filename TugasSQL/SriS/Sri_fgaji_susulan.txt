@@ -1,7 +1,7 @@
 tgl 17/10/2017
 SRI SUGIARTINI
 tabel fgaji_susulan
-=============================================================
+============================TUGAS 1=================================
 1 ) select nama,janak from fgaji_susulan where janak <= 2
 2) select nama,gapok,tjistri,tjanak from fgaji_susulan where kdpangkat = '3a'
 3) select nama,gapok from fgaji_susulan where gapok < 3000000 and kdpangkat ='3a'
@@ -11,7 +11,7 @@ tabel fgaji_susulan
 6)update fgaji_susulan set nama='SRI SUGIARTINI' where nip=198409292008032001
 //insertnya belum fildnya terlalu banyak
 
-============================================================
+=============================TUGAS 2===============================
 1) select nama from fgaji_susulan where nama like "ir.%"
 //mencari nama yg bergelar Ir.
 2)select nama,tgllhr as tanggal_lahir from fgaji_susulan where tgllhr like "1980%"
@@ -23,3 +23,87 @@ tabel fgaji_susulan
 5)select nama,kdpangkat from fgaji_susulan where kdpangkat like '2_'
 menampilkan nama dan pangkat golongan 2
 
+===============================TUGAS 3=============================
+1) SELECT
+  fgaji_susulan.nama AS 'nama_pegawai',
+  pangkat_tbl.nmpangkat AS 'nama_pangkat'
+FROM
+  fgaji_susulan
+JOIN pangkat_tbl ON
+  fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+//menampilkan nama dan nama pangkat
+
+2)SELECT nama
+FROM fgaji_susulan
+LEFT JOIN pangkat_tbl ON fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+where fgaji_susulan.kdpangkat='3d';
+//menampilkan nama yg kdpangkatnya 3d
+
+3)SELECT nama,pangkat_tbl.nmpangkat as nama_pangkat
+FROM fgaji_susulan
+RIGHT JOIN pangkat_tbl ON fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+//menampilkan nama dan nama pangkat
+
+4)SELECT pangkat_tbl.nmpangkat as nama_pangkat,nama
+FROM fgaji_susulan
+right JOIN pangkat_tbl ON fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+where nama ='sri sugiartini'
+//menampilkan nama pangkat (dari pangkat_tbl) yang nama nya sri sugiartini
+
+5) SELECT
+  fgaji_susulan.nama AS 'nama_pegawai',pangkat_tbl.nmpangkat as 'nama_pangkat',fgaji_susulan.jistri AS 'jumlah_istri'
+  
+FROM
+  fgaji_susulan
+JOIN pangkat_tbl ON
+  fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+where fgaji_susulan.kdpangkat='3a'
+
+
+//menampilkan nama,nama pangkat dan jumlah istri ynag kode pangkatnya 3a
+
+===================TUGAS 4===========================
+1) SELECT nip, nama FROM data_rapel
+WHERE kdpangkat='4a'
+UNION
+SELECT nip, nama FROM fgaji_susulan
+WHERE kdpangkat='4a'
+ORDER BY nip desc;
+//menampilkan nip dan nama yang kdpangkatnya 4a drai data_rapel dan fgaji_susulan
+
+2) SELECT nama,jistri FROM data_rapel
+WHERE jistri=1 and janak=1
+UNION
+SELECT nama,jistri FROM fgaji_susulan
+WHERE jistri=1 and janak=2
+ORDER BY jistri;
+//menampilkan nama dan jistri dari data_rapel dan fgaji_susulan
+
+3) SELECT nama,gapok FROM fgaji_baru
+WHERE gapok > 2000000 and gapok <3000000
+UNION
+SELECT nama,gapok FROM fgaji_susulan
+WHERE gapok < 3000000 and gapok <> 0
+//menampilkan nama dan gapok dari fgaji_baru dan fgaji_susulan
+
+4)SELECT nip,nama,gapok,pangkat_tbl.NMPANGKAT as nama_pangkat 
+FROM fgaji_baru
+inner join pangkat_tbl on pangkat_tbl.KDPANGKAT = fgaji_baru.kdpangkat
+WHERE gapok < 3000000 and gapok <> 0
+
+UNION
+
+SELECT nip,nama,gapok,pangkat_tbl.NMPANGKAT 
+FROM fgaji_susulan
+inner join pangkat_tbl on pangkat_tbl.KDPANGKAT = fgaji_susulan.kdpangkat
+WHERE gapok < 3000000 and gapok <> 0 
+
+//menampilkan nip,nama,gapok dan nmpangkat yang mana gapok < 3000000 and gapok <> 0
+
+5)SELECT '4a' As GOLONGAN, nama
+FROM fgaji_lama where kdpangkat='4a'
+UNION
+SELECT '3d', nama
+FROM fgaji_susulan
+where kdpangkat='3d';
+//menampilkan golongan dan nama dari fgaji_lama dan fgaji_susulan
