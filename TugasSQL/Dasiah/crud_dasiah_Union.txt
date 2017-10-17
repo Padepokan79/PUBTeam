@@ -1,0 +1,27 @@
+// --> Tugas CRUD ke-4 Dasiah <--
+
+// menampilkan kdakun pada tabel akun_tbl yang disatukan dengan kdakun pada tabel akunsp2d (kdakun yang sama dianggap 1)
+select kdakun from akun_tbl union select kdakun from akunsp2d;
+
+// menampilkan seluruh nmakun pada tabel akun_tbl yang disatukan dengan nmakun pada tabel akunsp2d
+select nmakun from akun_tbl union all select nmakun from akunsp2d;
+
+// menampilkan nmakun pada tabel akun_tbl yang disatukan dengan nmakun pada tabel akunsp2d yang dikelompokkan berdasarkan nmakun
+select nmakun from akun_tbl union select nmakun from akunsp2d order by nmakun;
+
+// menampilkan seluruh nmakun pada tabel akun_tbl yang disatukan dengan nmakun pada tabel akunsp2d yang dikelompokkan berdasarkan nmakun
+select nmakun from akun_tbl union all select nmakun from akunsp2d order by nmakun;
+
+// menampilkan nmakun dan kdakun pada tabel akun_tbl yang disatukan dengan nmakun dan kdakun pada tabel akunsp2d namun yang ditampilkan hanya nmakun dan kdakun pada akun_tbl
+select nmakun,kdakun from akun_tbl union select nmakun,kdakun from akunsp2d where nmakun="gaji pokok";
+
+// menampilkan seluruh nmakun dan kdakun pada tabel akun_tbl yang disatukan dengan nmakun dan kdakun pada tabel akunsp2d namun yang ditampilkan hanya nmakun dan kdakun pada akun_tbl selebihnya yang kdakunnya "120.18.00.00.5.1.1.01.XX" juga akan ditampilkan
+select nmakun,kdakun from akun_tbl union all select nmakun,kdakun from akunsp2d where kdakun="120.18.00.00.5.1.1.01.XX";
+ 
+// Note : perbedaan yang menggunakan where yang ditampilkan hanya tabel yang sebelah kiri
+
+// menampilkan kdtrans pada tabel akun_tbl sebagai KodeTransT, nmakun dan kdakun pada tabel akun_tbl yang disatukan dengan nmakun dan kdakun pada tabel akunsp2d 
+select kdtrans as KodeTransT, nmakun,kdakun from akun_tbl union select kdssbp as KDSSBP_s, nmakun,kdakun from akunsp2d;
+
+// menampilkan nmakun dan kdakun pada tabel akun_tbl yang di satukan dengan nmakun dan kdakun pada tabel akunsp2d yang hanya nmakunnya 'gaji pokok'
+select nmakun,kdakun from akun_tbl where nmakun='gaji pokok' union select nmakun,kdakun from akunsp2d where nmakun='gajipokok'
