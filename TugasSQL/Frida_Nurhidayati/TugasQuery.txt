@@ -16,13 +16,21 @@ Delete from iuran_jkkjkm where tglgaji='2017-11-10';
 
 Tugas 2
 
-menampilkan ada berapa row nip tsb
+-menampilkan ada berapa row nip tsb
 select count(*) from iuran_jkkjkm where nip='195105061979031003' ;
-menampilkan nip nama ttl 
+-menampilkan nip nama ttl 
 select distinct m.nip,m.nama,concat(m.tempatlhr,m.tgllhr) as TempatTglLahir from iuran_jkkjkm i,mstpegawai m where i.nip=m.nip and m.nip='195105061979031003';
-menampilkan kode satker dan nama satker
+-menampilkan kode satker dan nama satker
 select s.kdsatker,s.nmsatker from iuran_jkkjkm i ,satker_tbl s where i.kdsatker=s.KDSATKER and s.nmsatker like '%Biro%';
-menampilkan jumlah gapok yg lebih dari 5 jt
-select count(gapok) from iuran_jkkjkm where gapok<'5000000';
-menampilkan total gapok yg ada di tahun 2015
+-menampilkan nip,gapok,nama yg kpksd nya _07
+select i.nip,i.gapok,m.nama from iuran_jkkjkm i, mstpegawai m where i.nip=m.NIP and i.kdskpd like '_07';
+-menampilkan total gapok yg ada di tahun 2015
 select count(gapok) as total_gaji_ditahun_2015 from iuran_jkkjkm where tglgaji like '%2015%';
+
+Tugas 3
+
+select distinct i.kdskpd,s.nmskpd,s.nmkepala from iuran_jkkjkm i inner join skpd_tbl s on i.kdskpd=s.KDSKPD where s.NMSKPD like 'Dinas%';
+select  jt.kdjabatan,jt.nmjabatan,jk.kdjabatan,jk.nmjabatan from jabatan_tbl jt right join jabatankhusus_tbl jk on jt.KDJABATAN=jk.KDJABATAN 
+select  jt.kdjabatan,jt.nmjabatan,jk.kdjabatan,jk.nmjabatan from jabatan_tbl jt left join jabatankhusus_tbl jk on jt.KDJABATAN=jk.KDJABATAN 
+select jt.KDJABATAN as kode_jabatan,jt.nmjabatan as nama_jabatan,jf.nmfungsi as nama_jabatan_fungsi from jabatan_tbl jt inner join jabatan_fungsi jf on jt.kdfungsi=jf.kdfungsi;
+select distinct i.kdskpd,s.nmskpd from iuran_jkkjkm i inner join skpd_tbl s on i.kdskpd=s.KDSKPD where nmskpd like 'sekretariat%' 
