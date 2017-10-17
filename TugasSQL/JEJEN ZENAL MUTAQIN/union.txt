@@ -1,0 +1,29 @@
+//Menampilkan Nama hasil union dri fgaji_lama
+1. SELECT nama FROM fgaji_lama
+UNION ALL
+SELECT nama FROM mstpegawai
+ORDER BY nama;
+
+//Menampilkan nama,nip,dan gaji pokok dari fgaji_lama union fgaji_baru
+2.SELECT nama, nip,gapok FROM fgaji_lama
+WHERE gapok>='3000000'
+UNION
+SELECT nama, nip,gapok FROM fgaji_baru
+WHERE gapok>='3000000'
+
+//Menampilkan hasil gabungan dri fgaji_lama dengan pangkat_tbl
+3.SELECT a.KDPANGKAT , b.NMPANGKAT from fgaji_lama a INNER JOIN pangkat_tbl b ON a.kdpangkat = b.kdpangkat where a.GAPOK < 5000000
+UNION
+SELECT KDPANGKAT, NMPANGKAT FROM pangkat_tbl; 
+
+//Menampilkan hasil gabungan dri gajilama dan gaji baru
+4. SELECT a.KDFUNGSI , a.NAMA , a.GAPOK FROM fgaji_lama a where GAPOK >= 5000000
+UNION
+SELECT KDFUNGSI, NAMA , GAPOK FROM fgaji_baru where GAPOK >= 5000000; 
+
+//Menapilkan gabugan dri fgaji dan fgaji_baru yang tida memiliki istri
+5.SELECT nip, nama, gapok
+FROM fgaji where jistri  = 0
+UNION
+SELECT  nip, nama, gapok
+FROM fgaji_baru where jistri  = 0
