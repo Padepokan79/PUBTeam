@@ -1,0 +1,15 @@
+//UNION
+1.select dengan pendidikan sarjana di batas 10
+select NAMA from mstpegawai_02 where PENDIDIKAN='sarjana' UNION select PENDIDIKAN from mstpegawai_03 where PENDIDIKAN='sarjana' order by NAMA limit 10;
+
+2.select dengan KDPANGKAT 3A di batas 10
+select NAMA from mstpegawai_02 where KDPANGKAT='3A' UNION select KDPANGKAT from mstpegawai_03 where KDPANGKAT='3A' order by NAMA limit 10;
+
+3.select dengan JANAK 2 dibatas 10
+select NAMA from mstpegawai_02 where JANAK= 2 UNION select JANAK from mstpegawai_03 where JANAK= 2 order by NAMA limit 10;
+
+4.select dengan KDPANGKAT 4A di batas 10
+select NAMA from mstpegawai_02 where KDPANGKAT='4A' UNION select KDPANGKAT from mstpegawai_03 where KDPANGKAT='4A' order by NAMA limit 10;
+
+5. select dengan KDPANGKAT 2A di batas 10
+select NAMA from mstpegawai_02 where KDPANGKAT='2A' UNION select KDPANGKAT from mstpegawai_03 where KDPANGKAT='2A' order by NAMA limit 10;
