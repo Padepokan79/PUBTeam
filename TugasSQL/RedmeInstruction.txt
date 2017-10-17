@@ -1,0 +1,3 @@
+-Buat Folder dengan nama masing masing
+-Masukan File txt didalam folder tersebut
+-Jika Sudah PUSH, harap konfirmasi dan Jangan Lupa untuk Pull Request di WEBnya.
