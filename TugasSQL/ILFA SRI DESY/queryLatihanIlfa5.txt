@@ -32,3 +32,11 @@ where h.KDPANGKAT like '3%' and h.GAPOK > 2000000 and hf.KDFUNGSI =(
 )
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[3] DESKRIPSI QUERY
+menampilkan nim dan nama pegawai yang jomblo, pendidikan sarjana, dan KDPANGKATNYA golongan 2 sekian
+
+select hs.NIP, p.NAMA from mstpegawai p inner join historis_satker hs
+inner join historis_gapok hg inner join pangkat_tbl pn
+on hs.NIP=p.NIP and hg.NIP=p.NIP and pn.KDPANGKAT=p.KDPANGKAT and hg.KDPANGKAT=p.KDPANGKAT
+where p.JISTRI = 0 and p.PENDIDIKAN='SARJANA' or p.PENDIDIKAN='SARJANA (S1)' or p.PENDIDIKAN='SARJANA (S2)' and hg.KDPANGKAT like '2%';
