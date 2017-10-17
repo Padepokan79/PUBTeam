@@ -22,5 +22,25 @@ Tabel gajib
 1. Hapus duda lapuk dengan gaji pokok terkecil
 -> delete from gajib where tglahir < '1940-1-1' and kdjenkel = 1 and kdstawin = 3 order by gapok limit 1;
 
-2. Ubah nama bujangan gaji pokok terbesar jadi sumanto 
--> update gajib set NAMA = 'Sumanto' WHERE tglahir > '1990-1-1' and kdjenkel = 1 and kdstawin = 0 order by gapok desc limit 1;  
+// Update
+
+1. Ubah nama bujangan gaji pokok terbesar jadi sumanto 
+-> update gajib set NAMA = 'Sumanto' WHERE tglahir > '1990-1-1' and kdjenkel = 1 and kdstawin = 0 order by gapok desc limit 1;
+
+// Like
+1. Perawan tua yang nama depannya "s"
+-> select nama, gapok from gajib where nama like 's%' and tglahir < '1960-1-1' and kdjenkel = 2 and kdstawin = 0 limit 10;
+
+// Count
+1. Menghitung jumlah wanita muda jomblo
+-> select count(nama) from gajib where tglahir > '1990-1-1' and kdjenkel = 2; 
+2. Menghitung jumlah pria muda jomblo
+-> select count(nama) from gajib where tglahir > '1990-1-1' and kdjenkel = 1;
+
+// Wildcard
+1. Pria muda yang namanya mirip "_umant_"
+-> select * from gajib where nama like '_umant_'; 
+
+// Alias 
+1. Daftar gaji wanita muda yang jomblo
+-> select nama as Nama, gapok as Gaji_Pokok, kdstawin as Status, tglahir as TTL from gajib where TTL > '1990-1-1' and kdjenkel = 2 and kdstawin = 0 order by gapok desc; 

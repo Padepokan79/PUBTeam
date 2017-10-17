@@ -16,3 +16,12 @@ Update ==> update form_1721_a2 set Jml_Kel = 4 where Nama_peg = "Britney Spears"
 Delete ==> delete from form_1721_a2 where Nama_peg = "Britney Spears";
 
 
+
+Tugas 2 :
+1. select Nama_peg, Nip, Jabatan_Gol from form_1721_a2 where Nama_peg like "%MM";
+2. select Nama_peg, Jabatan_Gol from form_1721_a2 where Jabatan_Gol like "%Pengatur%";s
+3. select count(*) as Pegawai_dgn_StatusMenikah from form_1721_a2 where Tahun_Pajak = 2015 and Status = "1";
+4. select count(Nama_peg) as Pegawai_dgn_gelar_Ir from form_1721_a2 where Nama_peg like "Ir%";
+5. select count(Jabatan_Gol) as jumlah_pengatur from form_1721_a2 where kdSatker like "%_1";
+
+
