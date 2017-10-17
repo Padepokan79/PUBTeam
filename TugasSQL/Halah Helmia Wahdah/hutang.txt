@@ -1,0 +1,72 @@
+Halah Helmia Wahdah
+table hutang
+
+@1st Task
+////////////SELECT 
+
+//Menampilkan nama, jml hutang, jml cicilan, cicilan akhir, keterangan sebanyak 10 data
+SELECT p.NAMA, h.JMLHUTANG, h.JMLCICILAN, h. CICILANAKHIR, h. KETERANGAN
+FROM mstpegawai p, hutang h
+WHERE p.NIP=h.NIP 
+LIMIT 0,10;
+
+//Menampilkan nama, jml hutang, jml cicilan, cicilan akhir, keterangan sebanyak 10 data dengan sorting jml hutang terbesar
+SELECT p.NAMA, h.JMLHUTANG, h.JMLCICILAN, h. CICILANAKHIR, h. KETERANGAN
+FROM mstpegawai p, hutang h
+WHERE p.NIP=h.NIP ORDER BY h.JMLHUTANG DESC
+LIMIT 0,10;
+
+//Menampilkan nama, jml hutang, jml cicilan, cicilan akhir, keterangan sebanyak 10 data yang cicilan akhirnya tidak 0
+SELECT p.NAMA, h.JMLHUTANG, h.JMLCICILAN, h. CICILANAKHIR, h. KETERANGAN
+FROM mstpegawai p, hutang h
+WHERE p.NIP=h.NIP && h.CICILANAKHIR !=0
+LIMIT 0,10;
+
+//Menampilkan nama, jml hutang, jml cicilan, cicilan akhir, keterangan sebanyak 10 data yang cicilan akhirnya tidak 0 dan yang namanya berawalan A
+SELECT p.NAMA, h.JMLHUTANG, h.JMLCICILAN, h. CICILANAKHIR, h. KETERANGAN
+FROM mstpegawai p, hutang h
+WHERE p.NIP=h.NIP && h.CICILANAKHIR !=0 && p.NAMA LIKE 'A%'
+LIMIT 0,10;
+
+//Menampilkan nama, jml hutang, jml cicilan, cicilan akhir sebanyak 10 data yang tanpa keterangan
+SELECT p.NAMA, h.JMLHUTANG, h.JMLCICILAN, h. CICILANAKHIR
+FROM mstpegawai p, hutang h
+WHERE p.NIP=h.NIP && h.KETERANGAN = ' '
+LIMIT 0,10;
+
+
+//////////INSERT
+INSERT INTO hutang VALUES
+(17, 0, 1, 50000, 50000, 0, 1, '2017-10-17', '2017-11-17', '', '2017-10-17',0, '2017-10-17'),
+(03, 0, 1, 100000, 100000, 1, 2, '2017-10-17', '2017-11-17', '', '2017-10-17',0, '2017-10-17');
+
+//////////////////UPDATE
+UPDATE hutang 
+SET CICILANAKHIR=65000
+WHERE KDHUTANG=2;
+
+//////////////////DELETE
+DELETE FROM hutang
+WHERE NIP=03;
+
+
+@2nd Task
+
+//COUNT, AS
+SELECT COUNT(*) AS List_JumlahHutang FROM hutang
+WHERE CICILANAKHIR>0;
+
+//LIKE
+SELECT KETERANGAN FROM hutang
+WHERE KETERANGAN LIKE 'Terlanjur%';
+
+//WILDCARD
+SELECT JMLBULAN FROM hutang
+WHERE JMLBULAN LIKE '1_';
+
+//WILDCARD
+SELECT * FROM hutang
+WHERE NIP LIKE '12___' OR CICILANAKHIR=0;
+
+//AS
+SELECT KETERANGAN AS Keterangan FROM hutang;

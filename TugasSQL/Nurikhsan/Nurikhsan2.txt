@@ -1,0 +1,106 @@
+Union
+
+1. SELECT nama FROM mstpegawai
+UNION
+SELECT nm_jns FROM jenis_peg;
+
+
+2. Menampilkan nip , tanggal bayar, tanggal mulai, tanggal selesai, gaji pokok , nama kekurangan, jumlah istri , 
+	jumlah anak, jumlah bulan, RP Eselon , Nama Fungsi, Nama Hitung yang gajinya kurang dari 3000000 , 
+tanggal bayar 2014-09-22 , jumlah istri lebih dari 0 ,jumlah anak lebih dari 1 dan di sorting berdasarkan NIP  Sepuluh teratas
+dan di gabung dengan gapok yang kurang dari 4000000 dan tanggal 2014-10-22
+
+
+SELECT dk.NIP,p.nama,dk.TGLBAYAR,dk.DARI,
+dk.SAMPAI,dk.GAPOK,jkg.NMKEKURANGAN,
+dk.JISTRI,dk.JANAK,dk.JMLBULAN,
+et.RP_ESELON, jf.NMFUNGSI,ht.NMHITUNG
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG
+WHERE dk.TGLBAYAR = '2014-09-22'
+AND dk.GAPOK < 3000000
+AND dk.JISTRI > 0
+AND dk.JANAK > 1
+UNION
+SELECT dk.NIP,p.nama,dk.TGLBAYAR,dk.DARI,
+dk.SAMPAI,dk.GAPOK,jkg.NMKEKURANGAN,
+dk.JISTRI,dk.JANAK,dk.JMLBULAN,
+et.RP_ESELON, jf.NMFUNGSI,ht.NMHITUNG
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG
+WHERE dk.TGLBAYAR = '2014-10-22'
+AND dk.GAPOK < 4000000
+AND dk.JISTRI > 0
+AND dk.JANAK > 1
+LIMIT 0,10;
+
+
+3. Menentukan total gaji pokok dan banyaknya record
+
+SELECT SUM(dk.GAPOK) AS Total_Gaji_Pokok
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG
+UNION
+SELECT COUNT(*) AS Jumlah_record_detil_kekurangan
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG
+
+
+4. Menamilkan nama2 pegawai dari 4 tabel mst pegawai
+
+select nama from mstpegawai
+UNION
+select nama from mstpegawai_01
+UNION
+select nama from mstpegawai_02
+UNION
+select nama from mstpegawai_04
+UNION
+select nama from mstpegawai_04a
+
+
+5. Tampil nama agama dan nama akun
+
+select nmagama from agama_tbl
+UNION
+select nmakun from akun_tbl
