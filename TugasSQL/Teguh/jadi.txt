@@ -1,0 +1,30 @@
+//Select
+
+1.Select data gapok
+select TGLGAJI,KDJNSTRANS,NIP,TGLWAFAT,TGLBAYAR,GAPOK from fgaji_uangduka limit 10;
+
+2. select TJBERAS dengan NIP 
+select TJBERAS from fgaji_uangduka where NIP = 195610041979121001;
+
+3.seelct GAPOK dengan NIP yang di inginkan
+select GAPOK from fgaji_uangduka where NIP = 195610041979121001;
+
+4.select TGLWAFAT dengan NIP yang di inginkan
+select TGLWAFAT from fgaji_uangduka where NIP = 195610041979121001;
+
+5.select TGLWAFAT,TGLBAYAR,GAPOK,TJISTRI,TJANAK dengan NIP yang dinginnkan
+select TGLWAFAT,TGLBAYAR,GAPOK,TJISTRI,TJANAK from fgaji_uangduka where NIP = 195610041979121001;
+
+//insert
+
+1.insert di semua field
+insert into fgaji_uangduka values('2016-09-08','7','195610041979126009','2017-10-11','2018-09-15',50695000,7069500,527800,0,2620000,0,0,0,0,0,0,0,969040,0,0,250000,70,24681400,34681400,4);
+
+//Update
+1.Ngupdate GAPOK dengan NIP yang di inginkan
+update fgaji_uangduka set GAPOK = 90695000 where NIP = 197411281994021002;
+
+//Delete 
+1.Delete semua field dengan NIP yang diinginkan
+delete from fgaji_uangduka where NIP = 198010152006042010;
+
