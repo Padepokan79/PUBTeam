@@ -1,0 +1,27 @@
+TUGAS 4 Union
+
+select nip, nama, gapok from mstpegawai
+union
+select nip, nama, gapok from fgaji order by nip;
+
+select nip, nama, gapok, kdpangkat from fgaji
+union
+select nip, nama, gapok, kdpangkat from fgaji_01
+union
+select nip, nama, gapok, kdpangkat from fgaji_02
+union
+select nip, nama, gapok, kdpangkat from fgaji_03
+union
+select nip, nama, gapok, kdpangkat from fgaji_04 order by gapok;
+
+select nip, jnsdidik, noijazah from historis_pendidikan
+union
+select nip, jnsdidik, noijazah from hist_pendidikan;
+
+select nama, jistri from skpp_pegawai
+union 
+select nama, jistri from mstpegawai order by nama;
+
+select kdpangkat, AVG(masker)from historis_gapok
+union 
+select kdpangkat, AVG(masker) from gapok_tbl group by kdpangkat;
