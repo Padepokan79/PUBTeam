@@ -7,8 +7,8 @@ SELECT * FROM f_spt WHERE nama LIKE '%e%' ORDER BY nip ASC;
 //menampilkan rata-rata dari tabel f_spt yang memiliki kdskpd 008
 SELECT AVG(nourt) as Rata_Rata FROM f_spt WHERE kdskpd='008';
 
-//menampilkan nip dan nama dari tabel f_spt yang memiliki nip angka 9 diakhir
-SELECT nip, nama FROM f_spt WHERE nip LIKE '%9' ORDER BY nip ASC;
+//menampilkan nip dan nama dari tabel f_spt yang memiliki nip angka ke 4 adalah angka 9 diurutkan berdasarkan nip asc
+SELECT nip, nama FROM f_spt WHERE nip LIKE '___9______________' ORDER BY nip ASC;
 
 //menampilkan nip, name sabagai nama, tahun_pajak sebagai th_pajak dari tabel f_spt yang diurutkan sesuai nip asc dimulai dari index ke 8 sebanyak 30 baris
 SELECT nip, nama as name, th_pajak as tahun_pajak FROM f_spt order by nip ASC LIMIT 8,30;
