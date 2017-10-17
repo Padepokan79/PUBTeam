@@ -23,3 +23,41 @@ tabel fgaji_susulan
 5)select nama,kdpangkat from fgaji_susulan where kdpangkat like '2_'
 menampilkan nama dan pangkat golongan 2
 
+============================================================
+1) SELECT
+  fgaji_susulan.nama AS 'nama_pegawai',
+  pangkat_tbl.nmpangkat AS 'nama_pangkat'
+FROM
+  fgaji_susulan
+JOIN pangkat_tbl ON
+  fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+//menampilkan nama dan nama pangkat
+
+2)SELECT nama
+FROM fgaji_susulan
+LEFT JOIN pangkat_tbl ON fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+where fgaji_susulan.kdpangkat='3d';
+//menampilkan nama yg kdpangkatnya 3d
+
+3)SELECT nama,pangkat_tbl.nmpangkat as nama_pangkat
+FROM fgaji_susulan
+RIGHT JOIN pangkat_tbl ON fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+//menampilkan nama dan nama pangkat
+
+4)SELECT pangkat_tbl.nmpangkat as nama_pangkat,nama
+FROM fgaji_susulan
+right JOIN pangkat_tbl ON fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+where nama ='sri sugiartini'
+//menampilkan nama pangkat (dari pangkat_tbl) yang nama nya sri sugiartini
+
+5) SELECT
+  fgaji_susulan.nama AS 'nama_pegawai',pangkat_tbl.nmpangkat as 'nama_pangkat',fgaji_susulan.jistri AS 'jumlah_istri'
+  
+FROM
+  fgaji_susulan
+JOIN pangkat_tbl ON
+  fgaji_susulan.kdpangkat = pangkat_tbl.kdpangkat
+where fgaji_susulan.kdpangkat='3a'
+
+
+//menampilkan nama,nama pangkat dan jumlah istri ynag kode pangkatnya 3a
