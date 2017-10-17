@@ -1,0 +1,24 @@
+1. menampilkan nip, nama, tanggal gaji,status kawin, jumlah istri, jumlah anak, golongan , nama pangkat 
+tgl gaji di tabel fgaji_baru dan fgaji_lama sama, nip di tabel fgaji_lama dan tabel fgaji_baru sama,dan kode pangkat di tabel pangkat_tbl dan
+fgaji_lama sama diurutkan berdasarkan Nip yang ada di  tabel fgaji_lama ascending
+
+select Gabar.NIp,Gabar.NAMA,Gabar.TGLGAJI as 'Tanggal Gaji',
+Galam.KDSTAWIN as 'status kawin', Galam.JISTRI as 
+'Jumlah istri', Galam.JANAK as 'Jumlah Anak ',
+pkt.GOL as 'Golongan',pkt.NMPANGKAT as 'Nama Pangkat'
+from fgaji_baru Gabar inner join fgaji_lama Galam on Gabar.TGLGAJI
+= Galam.NIP inner join pangkat_tbl pkt on Galam.KDPANGKAT=pkt.KDPANGKAT order by Galam.NIP ASC 
+
+
+2.melihat NIP, NAMA, Tanggal Lahir, Jumlah Istri, Jumlah anak  dan tanggal gaji dari tabel fgaji_susulan yang 
+berhubungan dengan fgaji dengan kata kunci Tanggal gaji di tabel fgaji_susulan dan fgaji sama dan 
+NIP yang ada di tabel detil_kekurangan dan fgaji sama juga Tanggal gaji dan Tanggal Bayar yang ada di tabel fgaji dan 
+detil_kurang sama .  record 3 baris saja
+
+select gasul.NIP, gasul.NAMA,gasul.tgllhr as 'Tanggal Lahir',
+krg.JISTRI as 'Jumlah Istri', krg.JANAK as 'Jumlah Anak',gj.tglgaji
+from fgaji_susulan as gasul inner join fgaji as gj on gasul.TGLGAJI=gj.TGLGAJI 
+inner join detil_kekurangan as krg on krg.NIP=gj.NIP and gj.TGLGAJI=krg.TGLBAYAR
+limit 3
+
+3.
