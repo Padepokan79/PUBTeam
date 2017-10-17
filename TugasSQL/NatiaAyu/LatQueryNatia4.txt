@@ -1,0 +1,26 @@
+//menampilkan KDCABANG dan NMCABANG dari cabang_tbl dan menampilkan NIP dan NAMA dari mstpegawai
+SELECT KDCABANG, NMCABANG FROM cabang_tbl
+UNION
+SELECT NIP, NAMA FROM mstpegawai;
+
+//menampilkan KDAGAMA, NMAGAMA dari agama_tbl dan menampilkan KD_STATUS, NM_STATUS dari tb_status yang nm_status MENINGGAL
+SELECT KDAGAMA, NMAGAMA FROM agama_tbl
+UNION
+SELECT KD_STATUS, NM_STATUS FROM tb_status where nm_status="MENINGGAL";
+
+//menampilkan V_NAMA, V_TMP_LAHIR dari urtnip yang memiliki C_JNS_KELAMIN P dan menampilkan STAPEG dan STAPEG1 dari t_tab2
+SELECT V_NAMA, V_TMP_LAHIR FROM urtnip WHERE C_JNS_KELAMIN='P'
+UNION
+SELECT STAPEG, STAPEG1 FROM t_tab2;
+
+//menampilkan NAMA dan TGLLHR dari mstpegawai dan KDPANGKAT dari histori_gapok yang di INNER JOIN yang memiliki JANAK > 2
+dan menampilkan NMKEL, TGLLHR dan INPUTER dari keluarga
+SELECT m.NAMA, m.TGLLHR, h.KDPANGKAT FROM mstpegawai m INNER JOIN historis_gapok h ON m.NIP=h.NIP WHERE m.JANAK>2
+UNION
+SELECT NMKEL, TGLNIKAH, INPUTER FROM keluarga;
+
+//menampilkan NAMA dari mstpegawai dan NAMAKTR dari sptpphps21 yang di INNER JOIN
+dan menampilkan NMSKPD dan INPUTER dari skpd_kota yang memiliki KDSKPD dari 049 dampai 058
+SELECT m.NAMA, s.NAMAKTR FROM mstpegawai m INNER JOIN sptpphps21 s ON m.NIP=s.NIP
+UNION
+SELECT NMSKPD, INPUTER FROM skpd_kota WHERE KDSKPD BETWEEN 049 AND 058;
