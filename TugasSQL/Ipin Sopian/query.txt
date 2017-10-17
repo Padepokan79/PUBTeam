@@ -1,3 +1,4 @@
+///tabel fgaji_detil_ukp
 +select
 
 1. select * from fgaji_detil_ukp where maskerb> 5 limit 10;
