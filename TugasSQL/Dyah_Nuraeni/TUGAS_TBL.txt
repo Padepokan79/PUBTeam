@@ -1,0 +1,22 @@
+
+
+
+select prov,nm_pemda from djpk_tbl;
+
+select DISTINCT(prov),COUNT(PROV) as jumlah_provinsi from djpk_tbl group by prov;
+
+select kab, nm_pemda, kd_satker from djpk_tbl ORDER BY kab ASC;
+
+select * from djpk_tbl where nm_pemda like '%jawa%';
+
+select * from djpk_tbl where prov = 01;
+
+INSERT INTO djpk_tbl VALUES (14,00,"Profinsi Kalimantan Utara",992098); 
+
+INSERT INTO djpk_tbl VALUES (12,00,"Kota Cirebon",910238); 
+
+DELETE FROM djpk_tbl where kd_staker = 910238;
+
+UPDATE djpk_tbl SET nm_pemda ="Provinsi Kalimantan Utara" where prov = 14 and kab = 0;
+
+INSERT INTO djpk_tbl VALUES (12,00,"Kota Cirebon",910238); 
