@@ -1,5 +1,6 @@
 //Tugas2
-COUNT  & AS
+//by Yunita Niken
+COUNT  &  AS
 
 1. select count(*) as'Lahir Tahun 1964'  from data_rapel where TGLLHR LIKE '1964%';
 2. select count(*) as'Istri Lebih dari 1'  from data_rapel where JISTRI >1;
