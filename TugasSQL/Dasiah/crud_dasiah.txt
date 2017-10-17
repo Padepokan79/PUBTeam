@@ -28,3 +28,24 @@ select gapok as gajiPokok, nama as namaPegawai, nip as NomorIndukPegawai from fg
 
 // menampilkan gapok sebagai gajiPokok, nama sebagai namaPegawai, nip sebagai NomorIndukPegawai dari tabel fgaji_baru yang nama awalnya DA dan 2 huruf terakhirnya AH dan diantara DA dan AH ada 2 huruf
 select gapok as gajiPokok, nama as namaPegawai, nip as NomorIndukPegawai from fgaji_baru where nama LIKE "DA__AH";
+
+
+// ---> Tugas Ke-3 <---
+
+//menampilkan seluruh data pada tabel akun_tbl dan akunsp2d ketika kdakun pada tabel akun_tbl sama dengan kdakun pada tabel akunsp2d
+select * from akun_tbl t inner join akunsp2d s on t.kdakun=s.kdakun;
+
+//menampilkan nmakun pada tabel akun_tbl sebagai NamaAkun, kdakun pada tabel akun_tbl sebagai KodeAkun, nmakun pada tabel akunsp2d sebagai NamaAkun_akunsp2d 
+//dari tabel akun_tbl menggunakan left outer join ke tabel akunsp2d dimana jika tidak ada data pada tabel akunsp2d maka akan tetap ditampilkan dengan NULL ketika kdakun pada tabel akun_tbl sama dengan kdakun pada tabel akunsp2d
+select t.NMAKUN as NamaAkun, t.KDAKUN as KodeAkun, s.NMAKUN as NamaAkun_akunsp2d from akun_tbl t left outer join akunsp2d s on t.kdakun=s.kdakun;
+
+//menampilkan nmakun pada tabel akun_tbl sebagai NamaAkun, kdakun pada tabel akun_tbl sebagai KodeAkun, nmakun pada tabel akunsp2d sebagai NamaAkun_akunsp2d 
+//dari tabel akun_tbl menggunakan right outer join ke tabel akunsp2d dimana jika tidak ada data pada tabel akun_tbl maka akan tetap ditampilkan dengan NULL ketika kdakun pada tabel akun_tbl sama dengan kdakun pada tabel akunsp2d
+select t.NMAKUN as NamaAkun, t.KDAKUN as KodeAkun, s.NMAKUN as NamaAkun_akunsp2d from akun_tbl t right outer join akunsp2d s on t.kdakun=s.kdakun;
+
+
+//menampilkan nmakun pada tabel akunsp2d sebagai NamaAkunS, kdakun pada tabel akun_tbl sebagai KodeAkunT dari tabel akun_tbl menggunakan left outer join ke tabel akunsp2d dimana jika tidak ada data pada tabel akunsp2d maka akan tetap ditampilkan dengan nULL ketika kdakun pada tabel akun_tbl sama dengan kdakun pada tabel akunsp2d
+select s.NMAKUN as NamaAkunS, t.KDAKUN as KodeAkunT from akun_tbl t left outer join akunsp2d s on t.kdakun=s.kdakun;
+
+//menampilkan nmakun pada tabel akunsp2d sebagai NamaAkunS, kdakun pada tabel akun_tbl sebagai KodeAkunT yang terhubung dengan tabel akunsp2d ketika kdakun pada tabel akun_tbl sama dengan kdakun pada tabel akunsp2d yang dikelompokkan berdasarkan nmakun pada tabel akunsp2d
+select s.NMAKUN as NamaAkunS, t.KDAKUN as KodeAkunT from akun_tbl t inner join akunsp2d s on t.kdakun=s.kdakun group by s.NMAKUN;
