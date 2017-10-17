@@ -47,3 +47,22 @@ select AVG(MASKER) as JUMLAH_MASA_KERJA, KDPANGKAT from gapok_tbl group by KDPAN
 select COUNT(TMT_GAPOK) as JUMLAH_TANGGAL_YANG_SAMA, TMT_GAPOK, KDPANGKAT, KDKELOMPOK
 from gapok_tbl
 where KDPANGKAT like "1_" and KDPANGKAT like "_A"; // menampilkan jumlah tiap tanggalnya, pangkat, kelompok yang memiliki huruf awal 1 dan huruf akhir A
+
+TUGAS 3
+
+select g.KDPANGKAT, p.NMPANGKAT, g.KDKELOMPOK
+from gapok_tbl g inner join pangkat_tbl p on g.KDPANGKAT = p.KDPANGKAT
+order by g.KDPANGKAT;
+
+select *
+from gapok_tbl g right join pangkat_tbl p on g.KDPANGKAT = p.KDPANGKAT
+group by p.KDPANGKAT;
+
+select g.masker, p.kdpangkat, g.tmt_gapok
+from gapok_tbl g left join pangkat_tbl p on g.KDPANGKAT = p.KDPANGKAT order by  g.MASKER desc;
+
+select g.masker, p.nmpangkat, g.tmt_gapok, AVG(g.nilai_atas) as rata_rata_nilai_atas
+from gapok_tbl g inner join pangkat_tbl p on g.KDPANGKAT = p.KDPANGKAT group by  g.MASKER desc;
+
+select g.masker, p.nmpangkat, p.GOL, g.tmt_gapok, AVG(g.nilai_bawah) as rata_rata_nilai_bawah, AVG(g.nilai_atas) as rata_rata_nilai_atas
+from gapok_tbl g inner join pangkat_tbl p on g.KDPANGKAT = p.KDPANGKAT group by  g.masker asc;
