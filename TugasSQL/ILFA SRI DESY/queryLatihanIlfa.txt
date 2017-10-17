@@ -1,0 +1,25 @@
+// menampilkan semua data historis_gapok dari baris index 0 sebanyak 3 baris
+select * from historis_gapok limit 0,3
+
+//menampilkan NIP, TMTGAJI dan GAPOK yang GAPOK nya kurang dari 1500000 dan lebih dari 0
+select NIP, TMTGAJI, GAPOK from historis_gapok where GAPOK < 1500000 AND GAPOK >0;
+
+//menampilkan NIP, NAMA dan GAPOK hasil relasi tabel mstpegawai dan historis_gapok yang GAPOK nya sebesar 2400000
+select p.NIP, p.NAMA, h.GAPOK from mstpegawai p inner join historis_gapok h on p.NIP=h.NIP where h.GAPOK=2400000
+
+//menampilkan NIP, NAMA dan GAPOK yang memiliki GAPOK terbesar
+select p.NIP, p.NAMA, MAX(h.GAPOK) from mstpegawai p inner join historis_gapok h on p.NIP=h.NIP
+
+//menampilkan semua data pada tabel pangkat, NAMA dan GAPOK hasil relasi tabel historis_gapok, pangkat_tbl dan mst pegawai yang NMPANGKAT nya 'Juru Muda'
+select pn.*, p.NAMA, h.GAPOK from mstpegawai p inner join historis_gapok h inner join pangkat_tbl pn on p.NIP=h.NIP where pn.NMPANGKAT ='Juru Muda'
+
+// update field KETERANGAN pada historis_gapok yang memiliki NIP 140094114
+update historis_gapok set KETERANGAN="DATA AWAL" where NIP='140094114';
+
+
+// insert data di historis_gapok
+insert into historis_gapok (TMTGAJI, NIP, kdstapeg, KDPANGKAT, GAPOK) values ('1999-01-01', '123456789', 4, '4C',10000500)
+insert into historis_gapok (TMTGAJI, NIP, kdstapeg, KDPANGKAT, GAPOK) values ('1999-02-01', '987654321', 2, '3C',5000100)
+
+//menghapus data di historis gapok yang memiliki NIP='123456789' atau GAPOK=5000100
+delete from historis_gapok where NIP='123456789' OR GAPOK=5000100
