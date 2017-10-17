@@ -3,27 +3,27 @@ table 	: akunsp2d
 
 
 //////////////////////////////// SELECT
-1. 
-   //----- Menampilkan 5 data yang ada di table akunsp2d dari index 1
+ 
+1.   //----- Menampilkan 5 data yang ada di table akunsp2d dari index 1
    SELECT * FROM akunsp2d
    LIMIT 1,5;
 
-   //----- Menampilkan semua yang ada di table akunsp2d dengan NMAKUN yang ada kata Tunjangan
+2.   //----- Menampilkan semua yang ada di table akunsp2d dengan NMAKUN yang ada kata Tunjangan
    SELECT * FROM akunsp2d 
    WHERE NMAKUN LIKE '%Tunjangan%'
 
 
-   //----- Menampilkan semua NMAKUN yang ada di akunsp2d secara berurutan (Ascending / a-z) (yang NMAKUN nya sama akan di tampilkan satu kali) 
+3.   //----- Menampilkan semua NMAKUN yang ada di akunsp2d secara berurutan (Ascending / a-z) (yang NMAKUN nya sama akan di tampilkan satu kali) 
    SELECT DISTINCT(NMAKUN) FROM akunsp2d
    ORDER BY NMAKUN ASC
 
 
-   //----- Menampilkan semua data yang ada di table akunsp2d yang KDSSBP='001' dan  KDSKPD='001'
+4.   //----- Menampilkan semua data yang ada di table akunsp2d yang KDSSBP='001' dan  KDSKPD='001'
    SELECT * FROM akunsp2d
    WHERE KDSSBP='001' AND KDSKPD='001';  
 
 
-   //----- Menampilkan 5 data yang ada di table akunsp2d diantara KDAKUN '120.18.00.00.5.1.1.01.01' sampai '120.18.00.00.5.1.1.01.05'
+5.   //----- Menampilkan 5 data yang ada di table akunsp2d diantara KDAKUN '120.18.00.00.5.1.1.01.01' sampai '120.18.00.00.5.1.1.01.05'
    SELECT * FROM akunsp2d
    WHERE KDAKUN BETWEEN '120.18.00.00.5.1.1.01.01' AND '120.18.00.00.5.1.1.01.05'
    LIMIT 0,5
@@ -31,49 +31,81 @@ table 	: akunsp2d
 
 //////////////////////////////// INSERT
 
-   //----- Menambah 2 data ke table akunsp2d. Detail data tertera di query.
-2. INSERT INTO akunsp2d VALUES 
-	('002','002',110,'120.18.00.00.5.1.1.01.04','Tunjangan Hari Raya'),
-	('003','003',111,'120.18.00.00.5.1.1.01.04','Tunjangan Kematian');
+6.   //----- Menambah 2 data ke table akunsp2d. Detail data tertera di query.
+   INSERT INTO akunsp2d VALUES 
+   ('002','002',110,'120.18.00.00.5.1.1.01.04','Tunjangan Hari Raya'),
+   ('003','003',111,'120.18.00.00.5.1.1.01.04','Tunjangan Kematian');
 
 
 //////////////////////////////// UPDATE
 
-   //----- Mengubah KDTRANS menjadi 300 dengan NMAKUN='Tunjangan kematian' pada table akunsp2d
-3. UPDATE akunsp2d SET KDTRANS='300' 
+7.   //----- Mengubah KDTRANS menjadi 300 dengan NMAKUN='Tunjangan kematian' pada table akunsp2d
+   UPDATE akunsp2d SET KDTRANS='300' 
    WHERE NMAKUN='Tunjangan kematian';
 
 
 //////////////////////////////// DELETE
 
-   //----- Menghapus NMAKUN='Tunjangan Hari Raya' dari table akunsp2d
-4. DELETE FROM akunsp2d
+8.   //----- Menghapus NMAKUN='Tunjangan Hari Raya' dari table akunsp2d
+   DELETE FROM akunsp2d
    WHERE NMAKUN='Tunjangan Hari Raya';
 
 
 
 //////////////////////////////// COUNT
 
-   //----- Menampilkan NMAKUN dan menghitung jumlah baris dan mengelompokkannya sesuai NMAKUN di table akunsp2d
-5. SELECT DISTINCT(NMAKUN),COUNT(NMAKUN) FROM akunsp2d
+9.   //----- Menampilkan NMAKUN dan menghitung jumlah baris dan mengelompokkannya sesuai NMAKUN di table akunsp2d
+   SELECT DISTINCT(NMAKUN),COUNT(NMAKUN) FROM akunsp2d
    GROUP BY NMAKUN;
 
-6. //----- Menampilkan jumlah data yang ada di table akunsp2d
+10. //----- Menampilkan jumlah data yang ada di table akunsp2d
    SELECT COUNT(*) FROM akunsp2d
 
 
 //////////////////////////////// ALIAS
 
-7. //----- Menampilkan NMAKUN yang KDSSBP='001' dan KDSKPD='001' pada table akunsp2d dengan alias a
+11. //----- Menampilkan NMAKUN yang KDSSBP='001' dan KDSKPD='001' pada table akunsp2d dengan alias a
    SELECT DISTINCT(a.NMAKUN) FROM akunsp2d AS a
    WHERE KDSSBP='001' AND KDSKPD='001';
    
-   //----- Menampilkan KDTRANS dengan NMAKUN="Gaji Pokok" pada table akunsp2d dengan alias a
+12.   //----- Menampilkan KDTRANS dengan NMAKUN="Gaji Pokok" pada table akunsp2d dengan alias a
    SELECT DISTINCT(a.KDTRANS) FROM akunsp2d AS a
    WHERE a.NMAKUN="Gaji Pokok";
 
 //////////////////////////////// WILDCARD
 
-8. //----- Menampilkan KDAKUN dan NMAKUN di table akunsp2d dengan NMAKUN yang berawalan huruf T
-SELECT DISTINCT(KDAKUN), NMAKUN FROM akunsp2d
-WHERE NMAKUN LIKE 'T%'
+13. //----- Menampilkan KDAKUN dan NMAKUN di table akunsp2d dengan NMAKUN yang berawalan huruf T
+   SELECT DISTINCT(KDAKUN), NMAKUN FROM akunsp2d
+   WHERE NMAKUN LIKE 'T%'
+
+//////////////////////////////// INNER JOIN
+
+14. //----- Menampilkan Nama dengan NIP='197606111997032002' yang berelasi 3 table(fgaji_detil_ukp, fgaji_baru, fgaji_lama).
+   SELECT DISTINCT(flama.NAMA)
+   FROM fgaji_detil_ukp fdetil INNER JOIN fgaji_baru fbaru INNER JOIN fgaji_lama flama   
+   ON fdetil.NIP=fbaru.NIP AND fbaru.NIP=flama.NIP
+   WHERE fdetil.NIP='197606111997032002';
+
+15.   //----- Menampilkan Nama, NIP, GAPOKB yang berelasi 3 tabel kemudian di kelompokkan berdasarkan nama yanag ada di tabel fgaji_lama flama.
+   SELECT DISTINCT(flama.NAMA), fbaru.NIP, fdetil.GAPOKB
+   FROM fgaji_detil_ukp fdetil INNER JOIN fgaji_baru fbaru INNER JOIN fgaji_lama flama   
+   ON fdetil.NIP=fbaru.NIP AND fbaru.NIP=flama.NIP and flama.NIP=fdetil.NIP
+   GROUP BY flama.NAMA;
+
+//////////////////////////////// LEFT JOIN
+16. //----- Menampilkan NIP dan Gapok dari 2 tabel yang mengacu ke tabel fgaji_detil_ukp dengan alias fdetail
+   SELECT DISTINCT(fdetail.NIP), flama.GAPOK
+   FROM fgaji_detil_ukp fdetail LEFT JOIN fgaji_lama flama
+   ON fdetail.NIP=flama.NIP
+
+17. //----- Menampilkan NMAKUN dan semua data yang ada di table akun_tbl dengan mengacu kepada tabel  akun_tbl dengan alias aktbl
+   SELECT DISTINCT(aksp2d.NMAKUN), aktbl.*  
+   FROM akun_tbl aktbl LEFT JOIN akunsp2d aksp2d
+   ON aktbl.KDTRANS=aksp2d.KDTRANS
+
+
+//////////////////////////////// RIGHT JOIN
+18. //----- Menampilkan Nama, tglrencana, tglgaji yang berelasi 2 tabel dengan mengacu kepada tabel  fgaji_detil_ukp dengan alias fdetail
+   SELECT DISTINCT(flama.NAMA), fdetail.TGLRENCANA, fdetail.TGLGAJI 
+   FROM fgaji_lama flama RIGHT JOIN fgaji_detil_ukp fdetail
+   ON fdetail.NIP=flama.NIP
