@@ -52,3 +52,26 @@ WILDCARD
 
 ///Menampilkan data fgaji_lama yang nama  nya mengandung "IJ"
 2. select * from fgaji_lama where NAMA like '%IJ%'
+
+
+
+////Menampilkan nama dan nama pangkat melalui tabel fgaji_lama dan pangkat_tbl
+
+1. SELECT fgj.nama,fgj.kdpangkat, pangkat.nmpangkat
+FROM fgaji_lama as fgj
+INNER JOIN pangkat_tbl as pangkat ON fgj.kdpangkat = pangkat.kdpangkat;
+
+2. SELECT  fgj.nama, pangkat.nmpangkat
+FROM fgaji_lama as fgj
+LEFT JOIN pangkat_tbl as pangkat ON fgj.KDPANGKAT = pangkat.KDPANGKAT;
+
+3. SELECT  fgj.nama, pangkat.nmpangkat
+FROM fgaji_lama as fgj
+RIGHT JOIN pangkat_tbl as pangkat ON fgj.KDPANGKAT = pangkat.KDPANGKAT;
+
+4.SELECT fgaji_lama.NIP,fgaji_lama.TGLGAJI,fgaji_lama.TGLBAYAR , fgaji_lama.GAPOK,mstpegawai.ALAMAT
+FROM fgaji_lama
+INNER JOIN mstpegawai ON fgaji_lama.NIP = mstpegawai.NIP WHERE fgaji_lama.GAPOK >= '3000000'; 
+
+5.SELECT fgaji_lama.NIP,fgaji_lama.TGLGAJI,fgaji_lama.TGLBAYAR , fgaji_lama.GAPOK,mstpegawai.ALAMAT,agama_tbl.NMAGAMA
+FROM fgaji_lama INNER JOIN mstpegawai INNER JOIN agama_tbl ON fgaji_lama.NIP = mstpegawai.NIP AND mstpegawai.AGAMA = agama_tbl.KDAGAMA;
