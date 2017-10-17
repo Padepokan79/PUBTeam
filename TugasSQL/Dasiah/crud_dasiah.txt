@@ -1,0 +1,12 @@
+select * from fgaji_baru; // untuk menampilkan seluruh data pada tabel fgaji_baru
+select tglgaji, NIP, nama from fgaji_baru; // menampilkan tglgaji, nip dan nama dari tabel fgaji_baru
+select * from fgaji_baru where nama like "A%"; // menampilkan semua data pada tabel fgaji_baru yang namanya berawalan A
+select * from fgaji_baru where nip=196212301992032002; // menampilkan seluruh data pada tabel fgaji_baru yang nipnya 196212301992032002
+select tglgaji, NIP, nama, gapok from fgaji_baru where gapok > 2900000;// menampilkan tglgaki, nip, nama dan gapok yang memiliki gapok lebih dari 2900000
+
+update fgaji_baru set gapok=3000000 where nama="SURYATATI,S.SOS"; // merubah isi gapok menjadi 3000000 pada tabel fgaji_baru yang bernama SURYATATI,S.SOS
+
+// menambahkan data ke tabel fgaji_baru yang bernama Dasiah dan Cece Loveco
+insert into fgaji_baru values ("2017-10-17",4,"197606111997032007", "DASIAH",NULL,NULL, 2,"1997-08-07", 1, 0, 0, 4,NULL, "3A", 8, 100,"2017-01-01",00,08405,NULL, 0, 2, 0, 0, 0, 00000, 0, 0, 0, 1921000, 0, 0, 0, 0, 265000, 0, 0, 0, 0, 0, 0,49500,35620,0,0,0,0,0,2271120,192100,NULL,NULL,0,35620,0,7000,0,0,0,0,0,0,0,234720,2036400,300114,001,019,"D10200101900001","00.000.00.0-000.000",140331208,1,NULL,NULL,NULL,"2017-09-20",0,1,0);
+insert into fgaji_baru values ("2017-11-17",4,"197606111997032010", "CECE LOVECO",NULL,NULL, 2,"1997-08-07", 1, 0, 0, 4,NULL, "3A", 8, 100,"2017-01-01",00,08405,NULL, 0, 2, 0, 0, 0, 00000, 0, 0, 0, 1921000, 0, 0, 0, 0, 265000, 0, 0, 0, 0, 0, 0,49500,35620,0,0,0,0,0,2271120,192100,NULL,NULL,0,35620,0,7000,0,0,0,0,0,0,0,234720,2036400,300114,001,019,"D10200101900001","00.000.00.0-000.000",140331208,1,NULL,NULL,NULL,"2017-09-21",0,1,0);
+delete from fgaji_baru where nama="CECE LOVECO"; // menghapus data pada tabel fgaji_baru yang bernama Cece loveco
