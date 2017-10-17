@@ -2,30 +2,78 @@ Nama 	: Riyan Turmudi
 table 	: akunsp2d
 
 
-
-1. SELECT * FROM akunsp2d
+//////////////////////////////// SELECT
+1. 
+   //----- Menampilkan 5 data yang ada di table akunsp2d dari index 1
+   SELECT * FROM akunsp2d
    LIMIT 1,5;
 
+   //----- Menampilkan semua yang ada di table akunsp2d dengan NMAKUN yang ada kata Tunjangan
    SELECT * FROM akunsp2d 
    WHERE NMAKUN LIKE '%Tunjangan%'
 
+
+   //----- Menampilkan semua NMAKUN yang ada di akunsp2d secara berurutan (Ascending / a-z) (yang NMAKUN nya sama akan di tampilkan satu kali) 
    SELECT DISTINCT(NMAKUN) FROM akunsp2d
    ORDER BY NMAKUN ASC
 
+
+   //----- Menampilkan semua data yang ada di table akunsp2d yang KDSSBP='001' dan  KDSKPD='001'
    SELECT * FROM akunsp2d
    WHERE KDSSBP='001' AND KDSKPD='001';  
 
-   SELECT * FROM AKUNSP2D
+
+   //----- Menampilkan 5 data yang ada di table akunsp2d diantara KDAKUN '120.18.00.00.5.1.1.01.01' sampai '120.18.00.00.5.1.1.01.05'
+   SELECT * FROM akunsp2d
    WHERE KDAKUN BETWEEN '120.18.00.00.5.1.1.01.01' AND '120.18.00.00.5.1.1.01.05'
    LIMIT 0,5
 
 
+//////////////////////////////// INSERT
+
+   //----- Menambah 2 data ke table akunsp2d. Detail data tertera di query.
 2. INSERT INTO akunsp2d VALUES 
 	('002','002',110,'120.18.00.00.5.1.1.01.04','Tunjangan Hari Raya'),
 	('003','003',111,'120.18.00.00.5.1.1.01.04','Tunjangan Kematian');
 
+
+//////////////////////////////// UPDATE
+
+   //----- Mengubah KDTRANS menjadi 300 dengan NMAKUN='Tunjangan kematian' pada table akunsp2d
 3. UPDATE akunsp2d SET KDTRANS='300' 
    WHERE NMAKUN='Tunjangan kematian';
 
+
+//////////////////////////////// DELETE
+
+   //----- Menghapus NMAKUN='Tunjangan Hari Raya' dari table akunsp2d
 4. DELETE FROM akunsp2d
    WHERE NMAKUN='Tunjangan Hari Raya';
+
+
+
+//////////////////////////////// COUNT
+
+   //----- Menampilkan NMAKUN dan menghitung jumlah baris dan mengelompokkannya sesuai NMAKUN di table akunsp2d
+5. SELECT DISTINCT(NMAKUN),COUNT(NMAKUN) FROM akunsp2d
+   GROUP BY NMAKUN;
+
+6. //----- Menampilkan jumlah data yang ada di table akunsp2d
+   SELECT COUNT(*) FROM akunsp2d
+
+
+//////////////////////////////// ALIAS
+
+7. //----- Menampilkan NMAKUN yang KDSSBP='001' dan KDSKPD='001' pada table akunsp2d dengan alias a
+   SELECT DISTINCT(a.NMAKUN) FROM akunsp2d AS a
+   WHERE KDSSBP='001' AND KDSKPD='001';
+   
+   //----- Menampilkan KDTRANS dengan NMAKUN="Gaji Pokok" pada table akunsp2d dengan alias a
+   SELECT DISTINCT(a.KDTRANS) FROM akunsp2d AS a
+   WHERE a.NMAKUN="Gaji Pokok";
+
+//////////////////////////////// WILDCARD
+
+8. //----- Menampilkan KDAKUN dan NMAKUN di table akunsp2d dengan NMAKUN yang berawalan huruf T
+SELECT DISTINCT(KDAKUN), NMAKUN FROM akunsp2d
+WHERE NMAKUN LIKE 'T%'
