@@ -1,4 +1,5 @@
 Tugas 1
+
 //Select
 Select * from iuran_jkkjkm where tglgaji like'%2017%';
 Select i.kdsatker,s.nmsatker from satker_tbl s,iuran_jkkjkm i where s.KDSATKER=i.kdsatker;
@@ -14,6 +15,7 @@ Update iuran_jkkjkm set iuran_jkk='10000' where tglgaji='2017-11-10';
 Delete from iuran_jkkjkm where tglgaji='2017-11-10';
 
 Tugas 2
+
 menampilkan ada berapa row nip tsb
 select count(*) from iuran_jkkjkm where nip='195105061979031003' ;
 menampilkan nip nama ttl 
