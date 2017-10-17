@@ -1,0 +1,29 @@
+//Menampilkan tabel
+select * from gapok_tbl; // menampilkan seluruh isi table
+select * from gapok_tbl 
+where MASKER > 0 and KDPANGKAT = "1A" order by TMT_GAPOK; // menampilkan seluruh field yang masker > 0 dan KDPANGKAT = 1A  di urutkan berdasarkan TMT_GAPOK
+
+select COUNT(KDKELOMPOK) as KELOMPOK, KDPANGKAT as PANGKAT
+from gapok_tbl
+group by KDPANGKAT;// menampilakan jumlah (field) KDKELOMPOK, KDPANGKAT digoupkan berdasarkan KDPANGKAT
+
+select AVG(NILAI_BAWAH) as RATA_RATA_NILAI_BAWAH,
+SUM(NILAI_BAWAH) as JUMLAH_NILAI_BAWAH
+from gapok_tbl
+where MASKER >= 10;// menampilkan rata-rata NILAI_BAWAH, jumlah NILAI_BAWAH yang masa kerjanya >= 10
+
+select MIN(MASKER) as MASA_KERJA_MINIMAL,
+MAX(MASKER) as MASA_KERJA_MAKSIMAL, KDPANGKAT
+from gapok_tbl group by KDPANGKAT;// menampilan masa kerja yang minimal dan maksimal di goupkan berdasarkan KDPANGKAT
+
+update gapok_tbl set NILAI_BAWAH = 500, NILAI_ATAS = 500 // mengubah nilai bawah, dan nilai atas menjadi 500 yang nilai bawahnya = 400
+where NILAI_BAWAH = 400;
+
+insert into gapok_tbl
+values (39,"2017-02-04","4E", 1, 900, 700); // mengisi field gapok_tbl dengan 39,"2017-02-04","4E", 1, 900, 700
+
+insert into gapok_tbl
+values (40,"2017-02-04","4E", 1, 900, 700); // mengisi field gapok_tbl dengan 39,"2017-02-04","4E", 1, 900, 700
+
+delete from gapok_tbl
+where MASKER = 40; // menghapus yang masa kerjanya = 40
