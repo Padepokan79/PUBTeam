@@ -1,0 +1,13 @@
+//Select
+Select * from iuran_jkkjkm where tglgaji like'%2017%';
+Select i.kdsatker,s.nmsatker from satker_tbl s,iuran_jkkjkm i where s.KDSATKER=i.kdsatker;
+select i.nip,m.nama,i.gapok,i.iuran_jkk,i.iuran_jkm from iuran_jkkjkm i,mstpegawai m where i.nip=m.nip;
+select i.nip,m.nama,i.gapok,i.iuran_jkk,i.iuran_jkm,max(i.gapok) from iuran_jkkjkm i,mstpegawai m where i.nip=m.nip group by nip;
+select i.nip,m.nama,i.gapok,max(i.iuran_jkk),min(i.iuran_jkk),(i.iuran_jkm),max(iuran_jkm),avg(iuran_jkk),avg(iuran_jkm) from iuran_jkkjkm i,mstpegawai m where i.nip=m.nip group by nip;
+//Insert
+insert into iuran_jkkjkm values('195105061979031003','2017-10-10','1','007','D10200100700001',5500000,0,0,'2017-10-10 09:07:00'),
+('195204091986031001','2017-11-10','1','019','D10200101900004',500000,0,0,'2017-11-10 08:37:10');
+//Update
+Update iuran_jkkjkm set iuran_jkk='10000' where tglgaji='2017-11-10';
+//Delete
+Delete from iuran_jkkjkm where tglgaji='2017-11-10';
