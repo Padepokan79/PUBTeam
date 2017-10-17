@@ -1,0 +1,34 @@
+[1] DESKRIPSI QUERY:
+
+mengupdate nilai pada TJANAK yang berada di tabel fgaji_susulan menjadi TJANAK ditambah 1% dari GAPOK dikurangi 1% dari TJISTRI
+update ini akan dilakukan jika memenuhi kondisi, yaitu jika:
+	- PIWP nya < 1500000 dan KDPANGKATNYA=
+			- berasal dari kdstapeg=2 dan GAPOK nya=
+					- yang memiliki nilai_atas maksimal dan masker nya
+							- yang memiliki gapok 5 jutaan
+
+
+update fgaji_susulan set TJANAK=(TJANAK + (GAPOK*1/100) - (TJISTRI*1/100)) where PIWP<150000 and KDPANGKAT =(
+	select KDPANGKAT from historis_gapok where kdstapeg = 2 and GAPOK =(
+		select GAPOK from gapok_tbl having max(NILAI_ATAS) and MASKER =(
+			select MASKER as lama_masa_kerja_dalam_bulan from mstpegawai where GAPOK like '5______' order by GAPOK asc limit 0,1
+		)
+	)
+)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[2] DESKRIPSI QUERY
+
+manampilkan NIP, NAMA, PENDIDIKAN, KDPANGKAT, NMPANGKAT hasil join dari tabel mstpegawai, historis_gapok, pangkat_tbl, historis_fungsional
+yang memiliki kondisi:
+- KDPANGKAT yang bergolongan 3 sekiam dan GAPOK lebih dari 20000 dan KDFUNGSI yang dimiliki oleh yang bernama ZAI dan TJFUNGSI 750000
+
+select h.NIP as Nomor_Induk_Pegawai, p.NAMA as Nama_Pegawai, p.PENDIDIKAN as Pendidikan_Terakhir, h.KDPANGKAT as Kode_Pangkat, pn.NMPANGKAT as Nama_Pangkat
+from mstpegawai p inner join historis_gapok h inner join pangkat_tbl pn inner join historis_fungsional hf
+on p.NIP=h.NIP and h.KDPANGKAT=pn.KDPANGKAT and hf.NIP=p.NIP
+where h.KDPANGKAT like '3%' and h.GAPOK > 2000000 and hf.KDFUNGSI =(
+	select p.KDFUNGSI from mstpegawai p where p.TJFUNGSI =750000 and p.NAMA like 'ZAI%'
+)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
