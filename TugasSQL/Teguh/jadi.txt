@@ -18,7 +18,8 @@ select TGLWAFAT,TGLBAYAR,GAPOK,TJISTRI,TJANAK from fgaji_uangduka where NIP = 19
 //insert
 
 1.insert di semua field
-insert into fgaji_uangduka values('2016-09-08','7','195610041979126009','2017-10-11','2018-09-15',50695000,7069500,527800,0,2620000,0,0,0,0,0,0,0,969040,0,0,250000,70,24681400,34681400,4);
+-insert into fgaji_uangduka values('2016-09-08','7','195610041979126009','2017-10-11','2018-09-15',50695000,7069500,527800,0,2620000,0,0,0,0,0,0,0,969040,0,0,250000,70,24681400,34681400,4);
+-insert into fgaji_uangduka values('2016-09-08','7','195610041979126009','2017-10-11','2018-09-15',50695000,7069500,527800,0,2620000,0,0,0,0,0,0,0,969040,0,0,250000,70,24681400,34681400,4);
 
 //Update
 1.Ngupdate GAPOK dengan NIP yang di inginkan
@@ -28,3 +29,50 @@ update fgaji_uangduka set GAPOK = 90695000 where NIP = 197411281994021002;
 1.Delete semua field dengan NIP yang diinginkan
 delete from fgaji_uangduka where NIP = 198010152006042010;
 
+//Like
+1.select gapok yang TJISTRInya 10%;
+select GAPOK from fgaji_uangduka where TJISTRI like '10%';
+
+2.select GAPOK yang TJANAKnya 5%;
+select GAPOK from fgaji_uangduka where TJANAK like '5%';
+
+3.select GAPOK yang TJSELONnya 1%;
+select GAPOK from fgaji_uangduka where TJESELON like '1%';
+
+4. select GAPOK yang TJBERASNYA 8%;
+select GAPOK from fgaji_uangduka where TJBERAS like '8%';
+
+5.select GAPOK yang TBULAT 9%;
+select GAPOK from fgaji_uangduka where TBULAT like '9%';
+
+//wild card
+1.select gapok yang TJISTRInya 10%;
+select GAPOK from fgaji_uangduka where TJISTRI like '10%';
+
+2.select GAPOK yang TJANAKnya 5%;
+select GAPOK from fgaji_uangduka where TJANAK like '5%';
+
+3.select GAPOK yang TJSELONnya 1%;
+select GAPOK from fgaji_uangduka where TJESELON like '1%';
+
+4. select GAPOK yang TJBERASNYA 8%;
+select GAPOK from fgaji_uangduka where TJBERAS like '8%';
+
+5.select GAPOK yang TBULAT 9%;
+select GAPOK from fgaji_uangduka where TBULAT like '9%';
+
+//count dan AS
+1. count gapok yang TJISTRINYA 10%
+select count(GAPOK) as GAJI from fgaji_uangduka where TJISTRI like '10%' ;
+
+2.count TJANAk ;
+select COUNT(TJANAK) as Tunjangan_ANAK from fgaji_uangduka;
+
+3.count TJISTRI :
+select COUNT(TJISTRI) as Tunjangan_ISTRI from fgaji_uangduka;
+
+4.count TBERAS:
+select COUNT(TJBERAS) as Tunjangan_BERAS from fgaji_uangduka;
+
+5.count KOTOR
+select COUNT(KOTOR) as KOTOR from fgaji_uangduka;
