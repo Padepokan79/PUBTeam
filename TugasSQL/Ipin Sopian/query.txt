@@ -25,4 +25,9 @@
 DELETE
 - DELETE FROM fgaji_detil_ukp WHERE NIP='198205052009009899'; 
 
-select pg.nama ,fg.gapokb,fg.maskerb,a.nmagama  from mstpegawai pg right join fgaji_detil_ukp fg inner join agama_tbl a on fg.NIP=pg.NIP on a.KDAGAMA =pg.AGAMA limit 10;
++Union
+1. select gapok from fgaji limit 10 union select gapokb from fgaji_detil_ukp limit 10;
+2. select gapok from fgaji limit 10 union select gapokb from fgaji_detil_ukp where gapokb>3000000 limit 10;
+3. select jistri from fgaji limit 10 union all select jistrib from fgaji_detil_ukp limit 10;
+4. select nmjabatan from jabatan_tbl limit 10 union select nmfungsi from jabatan_fungsi;
+5. select nip from hutang limit 10 union select nip from mstpegawai limit 10;
