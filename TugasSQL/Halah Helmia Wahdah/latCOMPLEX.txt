@@ -1,3 +1,4 @@
+
 //Menampilkan NIP, Nama, Pangkat, gaji terbesar
 SELECT hg.NIP, m.NAMA AS Nama, MAX(hg.GAPOK) AS Gaji_Pokok, 
 p.NMPANGKAT AS Nama_Pangkat, hg.TMTGAJI 
