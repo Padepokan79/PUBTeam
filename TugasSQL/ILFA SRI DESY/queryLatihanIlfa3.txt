@@ -1,0 +1,14 @@
+//menampilkan NIP, NAMA dari mstpegawai dan TARIFBERAS dari detil_kekurangan yang di right join (cenderung ke mstpegawai) yang TARIFBERASNYA < 59000
+select p.NIP, p.NAMA, d.TARIFBERAS from detil_kekurangan d right join mstpegawai p on p.NIP=d.NIP where d.TARIFBERAS<59000;
+
+//menampilkan NIP dan NAMA pada mstpegawai dan KETERANGAN pada historis_gapok yang di left join bertumpu pada mstpegawai yang keterangannya tidak 'DATA AWAL'
+select p.NIP, p.NAMA, h.KETERANGAN from mstpegawai p left join historis_gapok h on p.NIP=h.NIP where KETERANGAN<>'DATA AWAL';
+
+//menampilkan NIP, NAMA dan KDHUTANG yang di right join (bertumpu pada hutang) yang KDHUTANG=0
+select p.NIP, p.NAMA, h.KDHUTANG from mstpegawai p right join hutang h on p.NIP=h.NIP where h.KDHUTANG=0
+
+//menampilkan NIP, NAMA, KDSTAPEG yang di right join (bertumpu pada historis_sapeg) yang KDSTAPEG nya = 4
+select p.NIP, p.NAMA, h.KDSTAPEG from mstpegawai p right join historis_stapeg h on p.NIP=h.NIP where h.KDSTAPEG=4
+
+//menampilkan NIP, NAMA dan hup yang di left join (bertumpu pada mstpegawai)
+select p.NIP, p.NAMA, h.bup from mstpegawai p  left join  bup_ind_tbl h on  h.NIP=p.NIP
