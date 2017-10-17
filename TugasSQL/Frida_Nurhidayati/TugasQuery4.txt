@@ -1,3 +1,4 @@
+
 1. menampilkan data nama satuan kerja gabungan dari tabel satker dan tbl satker pindahan  
 select nmsatker from satker_tbl union select nmsatker_l from satker_pindahan order by nmsatker;
 
