@@ -1,5 +1,7 @@
 Halah Helmia Wahdah
 table hutang
+
+@1st Task
 ////////////SELECT 
 
 //Menampilkan nama, jml hutang, jml cicilan, cicilan akhir, keterangan sebanyak 10 data
@@ -46,3 +48,25 @@ WHERE KDHUTANG=2;
 //////////////////DELETE
 DELETE FROM hutang
 WHERE NIP=03;
+
+
+@2nd Task
+
+//COUNT, AS
+SELECT COUNT(*) AS List_JumlahHutang FROM hutang
+WHERE CICILANAKHIR>0;
+
+//LIKE
+SELECT KETERANGAN FROM hutang
+WHERE KETERANGAN LIKE 'Terlanjur%';
+
+//WILDCARD
+SELECT JMLBULAN FROM hutang
+WHERE JMLBULAN LIKE '1_';
+
+//WILDCARD
+SELECT * FROM hutang
+WHERE NIP LIKE '12___' OR CICILANAKHIR=0;
+
+//AS
+SELECT KETERANGAN AS Keterangan FROM hutang;
