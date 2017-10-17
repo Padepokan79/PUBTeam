@@ -1,0 +1,66 @@
+Nama	: Riyan
+Materi	: Query yang rumit
+Jumlah	: 5 soal
+
+
+1. //----- Menampilkan nim dan nama dari 7 table dengan kondisi KDPANGKAT='3D' dan MASKER=20 kemudian dikelompokkan berdasarkan nama
+
+SELECT nip, nama FROM fgaji_01 as g1
+WHERE KDPANGKAT='3D' AND MASKER=20
+GROUP BY nama
+UNION
+	SELECT nip, nama FROM fgaji_02 as g2
+	WHERE KDPANGKAT='3D' AND MASKER=20
+	GROUP BY nama
+UNION
+	SELECT nip, nama FROM fgaji_03 as g3
+	WHERE KDPANGKAT='3D' AND MASKER=20
+	GROUP BY nama
+UNION
+	SELECT nip, nama FROM fgaji_04 as g4
+	WHERE KDPANGKAT='3D' AND MASKER=20
+	GROUP BY nip
+UNION
+	SELECT nip, nama FROM fgaji_baru AS gbaru
+	WHERE KDPANGKAT='3D' AND MASKER=20
+UNION
+	SELECT nip, nama FROM fgaji_copy AS gcopy
+	WHERE KDPANGKAT='3D' AND MASKER=20
+	GROUP BY nip
+UNION
+	SELECT nip, nama FROM fgaji_lama AS glama
+	WHERE KDPANGKAT='3D' AND MASKER=20
+	GROUP BY nip
+
+
+2. //----- Menampilkan Nip dan Nama dari 4 table (mstpegawai_01, mstpegawai_02, mstpegawai_03, mstpegawai_04) yang pendidikannya SARJANA 
+
+SELECT nip, nama FROM mstpegawai_01
+WHERE nip IN(
+	SELECT nip FROM mstpegawai_02
+	WHERE nip IN(
+		SELECT nip FROM mstpegawai_03
+		WHERE nip IN(
+			SELECT nip FROM mstpegawai_04
+			WHERE pendidikan='SARJANA'
+		)
+	)
+)
+
+
+3. //----- BELUM BERES
+
+SELECT mstp.NAMA, mst1.TEMPATLHR, mst2.TGLLHR, mst4.PENDIDIKAN, dr.GAPOK, dk.MASKER, fg.JISTRI
+FROM mstpegawai mstp
+INNER JOIN mstpegawai_01 mst1 
+INNER JOIN mstpegawai_02 mst2 
+INNER JOIN mstpegawai_03 mst3
+INNER JOIN mstpegawai_04 mst4 
+INNER JOIN data_rapel dr 
+INNER JOIN detil_kekurangan dk 
+INNER JOIN fgaji fg 
+INNER JOIN fgaji_01 fg1
+INNER JOIN fgaji_02 fg2
+INNER JOIN fgaji_03 fg3
+INNER JOIN fgaji_04 fg4
+WHERE mstp.NIP='195111211983031002'

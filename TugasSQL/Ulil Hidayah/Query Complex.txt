@@ -1,0 +1,40 @@
+//QUERY COMPLEX
+
+//1 mencari kode_pangkat dan rata_rata gaji bersihnya
+select g.kdpangkat as Kode_pangkat,avg(g.bersih) as Rata_rata_gaji,p.nmpangkat as Nama_Pangkat 
+from gaji_13_tmp g INNER JOIN pangkat_tbl p
+ON g.kdpangkat=p.KDPANGKAT and p.NMPANGKAT like 'juru%' GROUP BY g.KDPANGKAT Order by g.KDPANGKAT asc;
+
+//2 mencari kode pangkat, nama pangkat, dan rata_rata gaji bersih dari gaji lama dan gaji baru
+(select g.kdpangkat as Kode_pangkat,p.nmpangkat as Nama_Pangkat,avg(g.bersih) as Rata_rata_gaji, '0' as is_gaji_baru
+from fgaji_lama g INNER JOIN pangkat_tbl p
+ON g.kdpangkat=p.KDPANGKAT and p.NMPANGKAT like 'juru%' GROUP BY g.KDPANGKAT Order by g.KDPANGKAT asc)
+UNION
+(select g.kdpangkat as Kode_pangkat,p.nmpangkat as Nama_Pangkat,avg(g.bersih) as Rata_rata_gaji, '1' as is_gaji_baru
+from fgaji_baru g INNER JOIN pangkat_tbl p
+ON g.kdpangkat=p.KDPANGKAT and p.NMPANGKAT like 'juru%' GROUP BY g.KDPANGKAT Order by g.KDPANGKAT asc);
+
+//3mencari kode fungsi, nama fungsi dan rata_rata pensiunannya
+(select jabatan.KDFUNGSI as Kode_Fungsi, jabatanf.NMFUNGSI, avg(jabatan.PENSIUN)as rata_rata_pensiunan
+from jabatan_tbl jabatan inner join jabatan_fungsi jabatanf
+on jabatan.KDFUNGSI=jabatanf.KDFUNGSI AND jabatanf.NMFUNGSI like 'Fu%' group by jabatan.KDFUNGSI order by jabatan.PENSIUN desc);
+
+//4 mencari nip,nama,jistri,janak dari gaji_13_tmp yg nmfungsinya berawalan 'fungsi' dan fgaji yg berawalan 'non'
+(select g.nip,g.nama,g.jistri,g.janak,'1' as is_gaji_13_tmp from gaji_13_tmp g where g.NIP in(
+	select p.NIP from mstpegawai p where p.kdfungsi in(
+		select f.kdfungsi from jabatan_fungsi f where nmfungsi like 'fungsi%')))
+UNION
+(select g.nip,g.nama,g.jistri,g.janak,'0' as is_gaji_13_tmp from fgaji g where g.NIP in(
+	select p.NIP from mstpegawai p where p.kdfungsi in(
+		select f.kdfungsi from jabatan_fungsi f where nmfungsi like 'non%')));
+
+//5 mencari kode pangkat, nama pengkat dan rata-rata gaji pokoknya
+(select g.kdpangkatb as Kode_pangkat,p.nmpangkat as Nama_Pangkat,avg(g.gapokb) as Rata_rata_gapok, '0' as is_gaji_13_tmp
+from fgaji_detil_ukp g INNER JOIN pangkat_tbl p
+ON g.kdpangkatb=p.KDPANGKAT and p.NMPANGKAT like 'juru%' GROUP BY g.KDPANGKATb Order by g.KDPANGKATb asc)
+UNION
+(select g.kdpangkat as Kode_pangkat,p.nmpangkat as Nama_Pangkat,avg(g.gapok) as Rata_rata_gapok, '1' as is_gaji_13_tmp
+from gaji_13_tmp g INNER JOIN pangkat_tbl p
+ON g.kdpangkat=p.KDPANGKAT and p.NMPANGKAT like 'juru%' GROUP BY g.KDPANGKAT Order by g.KDPANGKAT asc);
+
+
