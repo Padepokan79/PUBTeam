@@ -1,0 +1,17 @@
+//SELECT
+1. select * from data_rapel ORDER BY KDSATKER DESC LIMIT 10;
+2. select NIP,NAMA,TGLLHR as 'Tanggal_Lahir',JISTRI as 'Jumlah_Istri' from data_rapel where NAMASATKER like '%100%' LIMIT 7;
+3. select NIP,NAMA,JISTRI as 'Jumlah_Istri',JANAK as 'Jumlah_Anak' from data_rapel where JISTRI >0 order by NIP   LIMIT 10;
+4. select * from data_rapel  where JANAK >1 order by NIP ASC LIMIT 10;
+5. select * from data_rapel where KDPANGKAT ='4A' and TGLLHR like '%03%'  order by KDSATKER   LIMIT 8;
+
+// UPDATE
+1. update data_rapel set JISTRI=2 where NAMA='REPONEJAYA';
+
+//INSERT
+insert into data_rapel VALUES 
+('D200038796116','SDN Gunung Halu','020344552','Fairish Hamza',3,'1965-10-10',3,3,'4A',2500000,4,012009,'042010','102010','022011','2009-01-03','2010-12-03'),
+('D2000387965676','SDN  2 Gunung Halu','02033887552','Hamza Amin Prabowo',3,'1978-08-08',1,3,'4A',2500000,4,012009,'042010','102010','022011','2009-01-03','2010-12-03');
+
+//DELETE
+delete from data_rapel where NAMA='Hamza Amin Prabowo';
