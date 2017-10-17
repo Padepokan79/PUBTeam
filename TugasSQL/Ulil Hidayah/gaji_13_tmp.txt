@@ -1,11 +1,11 @@
 //QUERY SELECT
-select nama,jistri,janak from gaji_13_tmp where kdpangkat='4A' and jistri>0 LIMIT 0,5;
+select nama,jistri,janak from gaji_13_tmp where kdpangkat='4A' and jistri>0 LIMIT 0,5; //menampilkan nama, jistri, janak yg kdpangkatnya 4A dan hanya ditampilkan 5 baris teratas saja
 select nama from gaji_13_tmp where KDPANGKAT IN(
 	SELECT KDPANGKAT from pangkat_tbl where gol='11'
-);
-select g.nama,p.nmpangkat from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT;
-select g.nama,p.nmpangkat from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT where p.NMGOL='II/a';
-select g.kdpangkat,count(g.nama) from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT group by g.KDPANGKAT;
+); // menampilkan nama yg golongannya 11
+select g.nama,p.nmpangkat from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT; // menampilkan nama dan nmpangkat
+select g.nama,p.nmpangkat from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT where p.NMGOL='II/a'; // menampilkan nama dan nmpangkat yg nmGol nya II/a
+select g.kdpangkat,count(g.nama) from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT group by g.KDPANGKAT; // menampilkan kdpangkat dan jumlahnya digrupkan berdasarkan kdpangkat
 
 //QUERY INSERT
 insert into gaji_13_tmp (TGLGAJI,KDJNSTRANS,NIP,NAMA,KDPANGKAT)values('2017-10-17','1','195903011985031037','Paijo','2A');
@@ -14,7 +14,7 @@ insert into gaji_13_tmp (TGLGAJI,KDJNSTRANS,NIP,NAMA,KDPANGKAT)values('2017-10-1
 //QUERY UPDATE
 update gaji_13_tmp set tmtSTOP='2017-10-17' where kdpangkat in(
 	select kdpangkat from pangkat_tbl where nmpangkat='juru muda'
-);
+); //mengupdate TMTSTOP dari tbl gaji_13_tmp yg nmpangkat nya juru muda
 
 //QUERY DELETE
-delete from gaji_13_tmp where nip='195903011985031038';
+delete from gaji_13_tmp where nip='195903011985031038'; //menghapus data dari gaji_13_tmp yg nip nya 195903011985031038
