@@ -1,0 +1,25 @@
+//UNION
+1.select NIP from data_rapel  
+union 
+select NIP  from fgaji_susulan limit 6;
+2. select NIP,NAMA,TGLLHR as 'Tanggal Lahir' from data_rapel  
+union all
+select NIP,NAMA,TGLLHR as 'Tanggal Lahir'  from fgaji_susulan  order by NIP asc limit 10;
+3. select NIP,GAPOK from data_rapel where GAPOK between 2000000 and 3000000
+union 
+select NIP,GAPOK from fgaji_uangduka limit 9;
+4. select NIP,TGLGAJI from fgaji_uangduka where TJANAK<100000 and TJISTRI<200000
+union 
+select NIP,TGLGAJI from gaji_13_tmp order by NIP asc limit 5;
+5.select NIP,KETERANGAN,TGLUPDATE from historis_fungsikhusus where NIP like '28%'
+union all
+select NIP,KETERANGAN,TGLUPDATE from historis_fungsional    order by NIP desc limit 8;
+6. select NIP,KDPANGKAT,GAPOK from data_rapel where TGLLHR between 1962 and 1964 
+union all
+select NIP,KDPANGKAT,GAPOK from historis_gapok   order by KDPANGKAT desc limit 5;
+7. select NIP,NAMA,TGLLHR from fgaji_copy where MASKER >3 or JANAK >3
+union all
+select NIP,NAMA,TGLLHR from fgaji_01 limit 8,10;
+8. select NIP,NAMA,GAPOK  from data_rapel  where JISTRI >2 and JANAK >2
+union 
+select NIP,NAMA,GAPOK   from fgaji_susulan order by  GAPOK ASC limit 6;
