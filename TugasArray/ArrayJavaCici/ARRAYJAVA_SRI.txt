@@ -1,0 +1,172 @@
+TUGAS ARRAY JAVA 
+SRI SUGIARTINI
+====================================================
+
+NO 1
+int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+        int tamJumlah=0;
+        int avg=0;
+        for(int x=0;x<10;x++){
+            tamJumlah=tamJumlah+arr1[x];
+        }
+        avg=tamJumlah/10;
+        System.out.println(avg);
+
+======================================================
+
+NO 2
+int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+       int a=14;
+       for(int x=0;x<10;x++){
+           if(arr1[x]==a){
+            System.out.println("bilangan "+a+" ada dalam array");
+            break;
+           }
+       }
+
+======================================================
+
+NO 3
+
+ int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+       int a=14;
+      
+       for(int x=0;x<10;x++){
+           
+           if(arr1[x]==a){
+            System.out.println("bilangan "+a+" ada pada index ke "+x);
+            break;
+           }
+       }
+=======================================================
+
+NO 4
+
+int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+        int ang;
+        int ind;
+        System.out.print("Masukkan angka Anda: ");
+        Scanner inputan=new Scanner(System.in);
+        ang= inputan.nextInt();
+        System.out.print("Masukkan index : ");
+        Scanner indexnya=new Scanner(System.in);
+        ind= indexnya.nextInt();
+        
+        for(int x=0;x<10;x++){
+            if(x==ind){
+                arr1[x]=ang;
+                System.out.print("index ke "+x+" = "+arr1[x]);
+                break;
+            }
+        }
+
+==========================================================
+ NO 8
+int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+       int min=arr1[0];
+       for(int x=0;x<10;x++){
+           if(min>arr1[x]){
+               min=arr1[x];
+           }
+       }
+        System.out.println(min);
+      
+=========================================================
+NO 9
+
+ int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+       int max=arr1[0];
+       for(int x=0;x<10;x++){
+           if(max<arr1[x]){
+               max=arr1[x];
+           }
+       }
+        System.out.println(max);
+
+==========================================================
+NO 7
+ int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+      int[] arr2 = new int[10];
+      for(int x=0;x<10;x++){
+          arr2[x]=arr1[x];
+          System.out.println(arr2[x]);
+      }
+      
+===========================================================
+NO 12
+
+int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+
+int[] arr3 = {2, 39, 47, 14, 36, 56, 57, 49, 43, 79};
+int[] arr4 = new int[10];
+for(int x=0;x<10;x++){
+    arr4[x]=arr1[x]+arr3[x];
+    System.out.println(arr4[x]);
+}
+
+=======================================================
+NO 13
+int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+
+        int ind1;
+        int ind2;
+        int tamp1;
+        
+        
+        
+        System.out.print("Masukkan index 1: ");
+        Scanner index1=new Scanner(System.in);
+        ind1= index1.nextInt();
+        System.out.print("Masukkan index 2: ");
+        Scanner index2=new Scanner(System.in);
+        ind2= index2.nextInt();
+        
+        tamp1=arr1[ind1];
+        arr1[ind1]=arr1[ind2];
+        arr1[ind2]=tamp1;
+        
+        for(int x=0;x<10;x++){
+            System.out.println(arr1[x]);
+        }
+
+=========================================================
+NO 11
+ int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+int[] arr3 = {2, 39, 47, 14, 36, 56, 57, 49, 43, 79};
+       
+        int x;
+        for(x=0;x<10;x++){
+            for(int z=0;z<10;z++){
+              if(arr1[x]==arr3[z]){
+                  System.out.println(arr1[x]);
+              
+              }  
+            }
+            
+        }
+
+=========================================================
+NO 14
+
+ int[] arr1 = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+ int l = arr1.length;  
+        int temp = 0; 
+       
+         for(int i=0; i < l; i++){  
+                 for(int z=1; z < (l-i); z++){  
+                          if(arr1[z-1] > arr1[z]){  
+                                 //swap elements  
+                                 temp = arr1[z-1];  
+                                 arr1[z-1] = arr1[z];  
+                                 arr1[z] = temp;  
+                         }  
+                          
+                 }  
+         }  
+        
+         
+         for(int x=0;x<arr1.length;x++){
+             System.out.println(arr1[x]);
+         }
+
+=========================================================

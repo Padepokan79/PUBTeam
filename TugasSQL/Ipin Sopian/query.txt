@@ -1,0 +1,19 @@
+///tabel fgaji_detil_ukp
++select
+
+1. select * from fgaji_detil_ukp where maskerb> 5 limit 10;
+2. select pg.nama ,fg.gapokb,fg.maskerb from fgaji_detil_ukp fg left join mstpegawai pg on fg.NIP=pg.NIP where pg.nip=197606111997032002;
+3. select pg.nama, fg.gapokb,fg.maskerb,pn.NMPANGKAT from pangkat_tbl pn left join fgaji_detil_ukp fg left join mstpegawai pg on pg.NIP=fg.NIP  on pn.KDPANGKAT=fg.KDPANGKATB where fg.nip=197606111997032002;
+4. select pg.nama ,fg.gapokb,fg.maskerb from fgaji_detil_ukp fg left join mstpegawai pg on fg.NIP=pg.NIP where fg.JISTRIL=1; //nyari yang udah nikah
+5. select pg.nama ,fg.gapokb,fg.maskerb from fgaji_detil_ukp fg left join mstpegawai pg on fg.NIP=pg.NIP where fg.JISTRIB=1 and fg.JANAKB=0;//udah nikah belum punya anak
+
+
++insert
+1. insert into fgaji_detil_ukp (TGLRENCANA,TGLGAJI,KDJNSTRANS,NIP,JISTRIB,JANAKB,KDSTAPEGB,KDPANGKATB,MASKERB,GAPOKB,JNSKEKURANGAN) VALUES ('2020-01-01','2020-01-01',4,'198205052009009878',1,4,4,'3B',2,34000000,1);
+2. insert into fgaji_detil_ukp (TGLRENCANA,TGLGAJI,KDJNSTRANS,NIP,JISTRIB,JANAKB,KDSTAPEGB,KDPANGKATB,MASKERB,GAPOKB,JNSKEKURANGAN) VALUES ('2020-01-01','2020-01-01',4,'198205052009009899',0,0,4,'3B',4,4000000,1);
+
++UPDATE
+1. UPDATE fgaji_detil_ukp SET JISTRIB=1,MASKERB=5,GAPOKB=5000000 WHERE NIP='198205052009009899';
+
+DELETE
+- DELETE FROM fgaji_detil_ukp WHERE NIP='198205052009009899'; 

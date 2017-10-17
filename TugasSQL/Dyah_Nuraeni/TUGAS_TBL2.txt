@@ -1,0 +1,14 @@
+select count(*) as Jumlah_kab from djpk_tbl where nm_pemda like 'kab%';
+
+select count(*) as Jumlah_provinsi from djpk_tbl where nm_pemda like 'Provinsi%';
+
+select count(*) as Jumlah_kota from djpk_tbl where nm_pemda like 'Kota%' ;
+
+
+select * from djpk_tbl where kd_satker like '9____9';
+
+select * from djpk_tbl where nm_pemda like '%J__%';
+
+
+
+
