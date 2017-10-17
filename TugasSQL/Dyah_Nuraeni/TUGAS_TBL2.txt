@@ -1,11 +1,23 @@
+
+'Menampilkan jumlah Kabupaten
+
 select count(*) as Jumlah_kab from djpk_tbl where nm_pemda like 'kab%';
 
+
+'Menampilkan jumlah Provinsi
+
 select count(*) as Jumlah_provinsi from djpk_tbl where nm_pemda like 'Provinsi%';
+
+'Menampilkan jumlah Kota
 
 select count(*) as Jumlah_kota from djpk_tbl where nm_pemda like 'Kota%' ;
 
 
+'Menampilkan semua data yang kode satker yang berawalan angka 9 dan akhir angka 9
+
 select * from djpk_tbl where kd_satker like '9____9';
+
+'Menampilkan semua yang nama pemerintahan terdapat huruf j
 
 select * from djpk_tbl where nm_pemda like '%J__%';
 
