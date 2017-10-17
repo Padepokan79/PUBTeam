@@ -1,0 +1,19 @@
+//menampilkan NAMA dan PENDIDIKAN dari mstpegawai yang di INNER JOIN
+SELECT mstpegawai.NAMA, mstpegawai.PENDIDIKAN FROM mstpegawai 
+INNER JOIN historis_eselon ON mstpegawai.NIP=historis_eselon.NIP;
+
+//menampilkan NAMA dan PENDIDIKAN dari tabel mstpegawai dan KETERANGAN dari tabel histori_eselon yang di INNER JOIN yang memiliki pendidikan SARJANA (S2)
+SELECT mp.NAMA, mp.PENDIDIKAN, he.KETERANGAN 
+FROM mstpegawai mp INNER JOIN historis_eselon he ON mp.NIP=he.NIP 
+WHERE mp.PENDIDIKAN='SARJANA (S2)';
+
+//menampilkan NAMA dari tabel mstpegawai dan bup dari tabel bup_ind_tbl yang di RIGHT JOIN (berpacu pada mstpegawai) yang JANAK = 1
+SELECT m.NAMA, b.bup FROM bup_ind_tbl b RIGHT JOIN mstpegawai m ON b.NIP=m.NIP WHERE m.JANAK = 1;
+
+//menampilkan NIP, NAMA dari tabel mstpegawai dan KDSTAPEG, TGLSTOP dari tabel historis_stapeg yang di LEFT JOIN (berpacu pada historis_stapeg) yang KDSTAPEG !=4
+SELECT m.NIP, m.NAMA, hs.KDSTAPEG, hs.TGLSTOP
+FROM historis_stapeg hs LEFT JOIN mstpegawai m ON hs.NIP=m.NIP  WHERE hs.KDSTAPEG!=4;
+
+//menampilkan NIP, NAMA dari tabel mstpegawai dan PENERBIT, JMLTERUSAN dari tabel twafat yang di LEFT JOIN (berpacu pada twafat) yang JMLTERUSAN =4
+SELECT m.NIP, m.NAMA, t.PENERBIT, t.JMLTERUSAN
+FROM twafat t LEFT JOIN mstpegawai m ON t.NIP=m.NIP WHERE t.JMLTERUSAN=4;
