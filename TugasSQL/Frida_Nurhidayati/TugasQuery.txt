@@ -1,3 +1,5 @@
+Tugas 1
+
 //Select
 Select * from iuran_jkkjkm where tglgaji like'%2017%';
 Select i.kdsatker,s.nmsatker from satker_tbl s,iuran_jkkjkm i where s.KDSATKER=i.kdsatker;
@@ -11,3 +13,16 @@ insert into iuran_jkkjkm values('195105061979031003','2017-10-10','1','007','D10
 Update iuran_jkkjkm set iuran_jkk='10000' where tglgaji='2017-11-10';
 //Delete
 Delete from iuran_jkkjkm where tglgaji='2017-11-10';
+
+Tugas 2
+
+menampilkan ada berapa row nip tsb
+select count(*) from iuran_jkkjkm where nip='195105061979031003' ;
+menampilkan nip nama ttl 
+select distinct m.nip,m.nama,concat(m.tempatlhr,m.tgllhr) as TempatTglLahir from iuran_jkkjkm i,mstpegawai m where i.nip=m.nip and m.nip='195105061979031003';
+menampilkan kode satker dan nama satker
+select s.kdsatker,s.nmsatker from iuran_jkkjkm i ,satker_tbl s where i.kdsatker=s.KDSATKER and s.nmsatker like '%Biro%';
+menampilkan jumlah gapok yg lebih dari 5 jt
+select count(gapok) from iuran_jkkjkm where gapok<'5000000';
+menampilkan total gapok yg ada di tahun 2015
+select count(gapok) as total_gaji_ditahun_2015 from iuran_jkkjkm where tglgaji like '%2015%';
