@@ -27,3 +27,25 @@ DELETE FROM historis_fungsikhusus where nip='0204151028';
 UPDATE historis_fungsikhusus set TJKHUSUS=1 where NIP='450006657';
 
 
+
+
+//TUGAS Ke-2
+
+//menampilkan yang memiliki NIP 10 character
+SELECT NIP as NIP_10character FROM historis_fungsikhusus where nip LIKE '__________';
+
+//menampilkan nip dan nama yang nip-nya di awali 0
+SELECT h.NIP, m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND h.NIP LIKE '0%';
+
+//menampilkan nip dan nama pegawai yang memiliki gelar S.Sos
+SELECT h.NIP, m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND m.NAMA LIKE '%S.Sos';
+
+//menampilkan nip dan nama yang memiliki gelar hj dan S.Sos
+SELECT h.NIP, m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND m.NAMA LIKE 'hj%S.Sos' GROUP BY h.nip;
+
+//menampilkan nama pegawai yang terdiri dari 7 character dan di awali huruf S
+SELECT m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND m.NAMA LIKE 'S______' GROUP BY h.nip;
