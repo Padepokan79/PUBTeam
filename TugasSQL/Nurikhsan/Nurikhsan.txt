@@ -1,0 +1,130 @@
+1. Menampilkan nip , tanggal bayar, tanggal mulai, tanggal selesai, gaji pokok , nama kekurangan, jumlah istri , jumlah anak, jumlah bulan, RP Eselon , Nama Fungsi, Nama Hitung yang gajinya kurang dari 3000000 , tanggal bayar 2014-09-22 , jumlah istri lebih dari 0 ,jumlah anak lebih dari 1 dan di sorting berdasarkan NIP  Sepuluh teratas
+
+
+SELECT dk.NIP,p.nama,dk.TGLBAYAR,dk.DARI,
+dk.SAMPAI,dk.GAPOK,jkg.NMKEKURANGAN,
+dk.JISTRI,dk.JANAK,dk.JMLBULAN,
+et.RP_ESELON, jf.NMFUNGSI,ht.NMHITUNG
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG
+WHERE dk.TGLBAYAR = '2014-09-22'
+AND dk.GAPOK < 3000000
+AND dk.JISTRI > 0
+AND dk.JANAK > 1
+ORDER BY dk.NIP
+LIMIT 0,10;
+
+
+2. Menampilkan nip , tanggal bayar, tanggal mulai, tanggal selesai, gaji pokok , nama kekurangan, jumlah istri , jumlah anak, jumlah bulan, RP Eselon , Nama Fungsi, Nama Hitung yang gajinya kurang dari 3000000 , tanggal bayar 2014-09-22 , jumlah istri lebih dari 0 ,jumlah anak lebih dari 1 dan di sorting berdasarkan NIP  Sepuluh dan menampilkan jberapa kali dilakukan pembayaran berdasarkan nip tertentu teratas
+
+SELECT dk.NIP,p.nama,dk.TGLBAYAR,dk.DARI,
+dk.SAMPAI,dk.GAPOK,jkg.NMKEKURANGAN,
+dk.JISTRI,dk.JANAK,dk.JMLBULAN,
+et.RP_ESELON, jf.NMFUNGSI,ht.NMHITUNG, COUNT(*) AS kali_pembayaran
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG
+WHERE dk.TGLBAYAR = '2014-09-22'
+AND dk.GAPOK < 3000000
+AND dk.JISTRI > 0
+AND dk.JANAK > 1
+GROUP BY dk.NIP
+ORDER BY dk.NIP
+LIMIT 0,10;
+
+
+3. Menampilkan total Gapok Seluruhnya
+
+SELECT SUM(dk.GAPOK) AS Total_Gaji_Pokok
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG
+
+4. Menampilkan Nip, nama dan jumlah gaji pokok yang didaptkan
+
+SELECT DISTINCT p.NIP,p.NAMA,SUM(dk.GAPOK) AS Total_Gaji_Pokok
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p 
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG
+GROUP BY dk.NIP
+LIMIT 0,10;
+
+5. Menampilkan rata - rata gaji poko pada tanggal 2012-06-21
+
+SELECT  AVG(dk.GAPOK) AS Rata_rata
+FROM detil_kekurangan dk
+INNER JOIN mstpegawai p 
+INNER JOIN fgaji_kekurangan AS fk
+INNER JOIN jenis_kekurangan_gaji AS jkg
+INNER JOIN eselon_tbl AS et
+INNER JOIN jabatan_fungsi AS jf
+INNER JOIN hitung_tbl AS ht
+ON p.nip = fk.nip
+AND dk.JENISKEKURANGAN = jkg.JENISKEKURANGAN
+AND dk.KDESELON = et.KDESELON
+AND dk.KDFUNGSI = jf.KDFUNGSI
+AND dk.kdhitung = ht.KDHITUNG 
+WHERE dk.TGLBAYAR =  '2012-06-21'
+LIMIT 0,10;
+
+
+
+
+
+Insert Pertama 
+insert into  detil_kekurangan   (TGLBAYAR,NIP,NORUT,KETER,JENISKEKURANGAN,DARI,SAMPAI,JISTRI,JANAK,KDSTAPEG,KDPANGKAT,GAPOK,MASKER,PRSNGAPOK,KDESELON,TJESELON,KDFUNGSI,TJFUNGSI,KDTJKHUSUS,TJKHUSUS,KDTKD,TJTKD,KDTERPENCIL,TJTERPENCIL,UPDSTAMP,JMLBULAN,kdhitung,TARIFBERAS,KDUKP)
+values ('2012-03-01','197909282005022005',1,1,1,'2012-03-01','2012-04-01',1,2,4,'3a',3287200,27,100,'00',0,'0000',0,'0000',0,0,0,0,0,'2012-07-18 09:58:34',2,1,59000,0 )
+
+
+
+Insert Kedua 
+insert into  detil_kekurangan   (TGLBAYAR,NIP,NORUT,KETER,JENISKEKURANGAN,DARI,SAMPAI,JISTRI,JANAK,KDSTAPEG,KDPANGKAT,GAPOK,MASKER,PRSNGAPOK,KDESELON,TJESELON,KDFUNGSI,TJFUNGSI,KDTJKHUSUS,TJKHUSUS,KDTKD,TJTKD,KDTERPENCIL,TJTERPENCIL,UPDSTAMP,JMLBULAN,kdhitung,TARIFBERAS,KDUKP)
+values ('2012-03-01','197909282005022000',1,1,1,'2012-03-02','2012-04-01',1,2,4,'3a',3287200,27,100,'00',0,'0000',0,'0000',0,0,0,0,0,'2012-07-18 09:58:34',2,1,59000,0 )
+
+
+Delete 
+DELETE FROM detil_kekurangan
+WHERE nip='197909282005022000'
+
+
+
+Update
+update detil_kekurangan set norut = 2, keter =3 , jeniskekurangan = 2 , Jistri= 10 where nip = '1979092820050221'
+
