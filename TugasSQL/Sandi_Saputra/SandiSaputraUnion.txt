@@ -1,0 +1,16 @@
+Sandi Saputra
+
+1. Menampilkan nama pegawai dari mstpegawai dan keluarga
+-> select nama from mstpegawai union select nmkel from keluarga limit 10;
+
+2. Menampilkan nama dan gapok dari mstpegawai dan fgaji
+-> select nama, gapok from mstpegawai union select nama, gapok from fgaji limit 10;
+
+3. Menampilkan jenis pendidikan dari mstpegawai dan pendidikan_tbl
+-> select pendidikan from mstpegawai union select pendidikan from pendidikan_tbl limit 10;
+
+4. Menampilkan gapok dari mstpegawai dan historis_gapok
+-> select gapok from mstpegawai union select gapok from historis_gapok limit 10;
+
+5. Menampilkan kodepangkat dari mstpegawai dan tb_pangkat
+-> select kdpangkat from mstpegawai union select pkt050 from tb_pangkat limit 10;
