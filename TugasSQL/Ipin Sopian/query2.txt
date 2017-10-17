@@ -1,0 +1,10 @@
+//nyari jml yang udah nikah
+1. select count(jistrib) from fgaji_detil_ukp where jistrib>0;
+//yang telah menikah dan memiliki anak
+2. select count(jistrib) as 'yang telah menikah' from fgaji_detil_ukp where janakb>0;
+//mencari nama,pangkat dengan pangkat muda
+3. select pg.nama, fg.gapokb,fg.maskerb,pn.NMPANGKAT from pangkat_tbl pn left join fgaji_detil_ukp fg left join mstpegawai pg on pg.NIP=fg.NIP  on pn.KDPANGKAT=fg.KDPANGKATB where fg.KDPANGKATB like '_a';
+//mencari nama pegawai dengan huruf awal a
+4. select pg.nama ,fg.gapokb,fg.maskerb from fgaji_detil_ukp fg left join mstpegawai pg on fg.NIP=pg.NIP where pg.NAMA like 'a%' limit 10;//nyari pegawai dengan huruf awal a
+//mencari pegawai dengan gaji terbesar
+5. select pg.nama, fg.gapokb,fg.maskerb,pn.NMPANGKAT from pangkat_tbl pn left join fgaji_detil_ukp fg left join mstpegawai pg on pg.NIP=fg.NIP  on pn.KDPANGKAT=fg.KDPANGKATB where fg.GAPOKB=(select max(gapokb) from fgaji_detil_ukp);
