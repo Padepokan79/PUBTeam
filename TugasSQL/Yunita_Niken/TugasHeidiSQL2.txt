@@ -1,0 +1,18 @@
+//Tugas2
+COUNT  & AS
+
+1. select count(*) as'Lahir Tahun 1964'  from data_rapel where TGLLHR LIKE '1964%';
+2. select count(*) as'Istri Lebih dari 1'  from data_rapel where JISTRI >1;
+3. select count(*) as'Anak Lebih dari 2'  from data_rapel where JANAK >2;
+4. select count(*) as'Kode Pangkat 4A'  from data_rapel where KDPANGKAT='4A';
+5. select count(*) as'Gaji Pokok Diatas 3 Juta'  from data_rapel where GAPOK>3000000;
+
+WILDCARD
+
+1.select * from data_rapel where GAPOK like '3%'limit 20;
+2.select * from data_rapel where NAMA like 'Yu%' limit 10;
+3.select NAMA,JISTRI as 'JUMLAH ISTRI',JANAK as 'JUMLAH ANAK ',GAPOK as 'GAJI POKOK' from data_rapel where NAMA like '_amin_';
+4.select NAMA,JISTRI as 'JUMLAH ISTRI',JANAK as 'JUMLAH ANAK ',GAPOK as 'GAJI POKOK' from data_rapel where KDPANGKAT like '3_' limit 28;
+5.select NIP,NAMA,KDSATKER,NAMASATKER,KDPANGKAT from data_rapel where KDPANGKAT like '4_' limit 6;
+
+
