@@ -1,3 +1,5 @@
+//Tabel gapok_tbl
+Tugas 1
 //Menampilkan tabel
 select * from gapok_tbl; // menampilkan seluruh isi table
 select * from gapok_tbl 
@@ -27,3 +29,21 @@ values (40,"2017-02-04","4E", 1, 900, 700); // mengisi field gapok_tbl dengan 39
 
 delete from gapok_tbl
 where MASKER = 40; // menghapus yang masa kerjanya = 40
+
+Tugas 2
+
+select COUNT(KDPANGKAT) as JUMLAH_PANGKAT, KDPANGKAT
+from gapok_tbl 
+group by KDPANGKAT;// menempilkan jumlah pangkat per kode pangkat di groupkan berdasarkan pangkat
+
+select * from gapok_tbl 
+where KDPANGKAT like "%A" order by MASKER;// menampilkan seluruh field yang kode pangkat memiliki hurup terakhir A dan digroupkan berdasarkan masker
+
+select COUNT(KDKELOMPOK) as JUMLAH_KODE_KELOMPOK, KDKELOMPOK, SUM(NILAI_BAWAH) as TOTAL_NILAI_BAWAH, KDPANGKAT from gapok_tbl
+where KDPANGKAT like "_A" group by KDPANGKAT;//menampilkan jumlah kode kelompok, kdkelompok, total nilai bawah, kode pangkat, yang hurup terakhirnya a di groupkan berdasarkan kdpangkat
+
+select AVG(MASKER) as JUMLAH_MASA_KERJA, KDPANGKAT from gapok_tbl group by KDPANGKAT;// menampilkan rata-rata jumlah masa kerja setiap pangkat di groupka berdasarkan kdpangkat
+
+select COUNT(TMT_GAPOK) as JUMLAH_TANGGAL_YANG_SAMA, TMT_GAPOK, KDPANGKAT, KDKELOMPOK
+from gapok_tbl
+where KDPANGKAT like "1_" and KDPANGKAT like "_A"; // menampilkan jumlah tiap tanggalnya, pangkat, kelompok yang memiliki huruf awal 1 dan huruf akhir A
