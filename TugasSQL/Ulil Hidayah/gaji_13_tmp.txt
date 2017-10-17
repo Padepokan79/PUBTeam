@@ -18,3 +18,27 @@ update gaji_13_tmp set tmtSTOP='2017-10-17' where kdpangkat in(
 
 //QUERY DELETE
 delete from gaji_13_tmp where nip='195903011985031038'; //menghapus data dari gaji_13_tmp yg nip nya 195903011985031038
+
+//JOIN
+select g.NIP,pg.nama,p.nmpangkat from gaji_13_tmp g right join mstpegawai pg  
+on g.nama=pg.nama right join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT; //data yg muncul mengacu pada p.nmpangkat
+
+select g.NIP,pg.nama,p.nmpangkat from gaji_13_tmp g left join mstpegawai pg  
+on g.nama=pg.nama left join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT; //ata yg muncul mengacu pada g.nip
+
+select g.NIP,g.nama,pg.pendidikan from gaji_13_tmp g inner join mstpegawai pg  
+on g.nama=pg.nama where pg.pendidikan = 'SLTA'; // ini cuma 2 tabel a soalnya kalo 3 tabel relasinya beda
+
+select g.NIP,g.nama,p.nmpangkat from gaji_13_tmp g inner join pangkat_tbl p  
+on g.KDPANGKAT=p.KDPANGKAT where p.nmpangkat = 'juru'; // sama yg diatas a cuma 2 tabel
+
+select g.NIP,pg.nama,p.nmpangkat from gaji_13_tmp g left join mstpegawai pg  
+on g.nama=pg.nama right join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT; // pertama data g.nip sebagai acuan untuk menampilkan pg.nama kemudian p.nmpangkat sebagai acuan terakhir
+
+
+
+
+
+
+
+

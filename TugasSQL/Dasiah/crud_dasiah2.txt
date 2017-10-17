@@ -1,0 +1,16 @@
+// ---> Dasiah <---
+
+// menghitung jumlah baris dalam tabel fgaji_baru yang gapoknya >= 3000000
+select count(*) from fgaji_baru where gapok>=3000000;
+
+// menghitung jumlah baris dalam tabel fgaji_baru yang bersihnya >= 4000000
+select count(*) from fgaji_baru where bersih>=4000000;
+
+// menampilkan tglgaji sebagai tanggalGaji, NIP dan nama dari tabel fgaji_baru
+select tglgaji as tanggalGaji, NIP, nama from fgaji_baru;
+
+// menampilkan gapok sebagai gajiPokok, nama sebagai namaPegawai, nip sebagai NomorIndukPegawai dari tabel fgaji_baru yang bernama HENDARINI, S.SOS
+select gapok as gajiPokok, nama as namaPegawai, nip as NomorIndukPegawai from fgaji_baru where nama="HENDARINI, S.SOS";
+
+// menampilkan gapok sebagai gajiPokok, nama sebagai namaPegawai, nip sebagai NomorIndukPegawai dari tabel fgaji_baru yang nama awalnya DA dan 2 huruf terakhirnya AH dan diantara DA dan AH ada 2 huruf
+select gapok as gajiPokok, nama as namaPegawai, nip as NomorIndukPegawai from fgaji_baru where nama LIKE "DA__AH";

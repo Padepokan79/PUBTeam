@@ -73,3 +73,23 @@ SELECT m.NIP, m.NAMA FROM historis_fungsikhusus as h INNER JOIN mstpegawai as m 
 //menapmilkan data nip dan nama yang berpadu pada tabel mst pegawai yang namanya di mulai dari huruf s
 SELECT m.NIP, m.NAMA FROM historis_fungsikhusus as h RIGHT JOIN mstpegawai as m ON h.NIP=m.NIP where m.NAMA LIKE 'S%' GROUP BY m.NAMA;
 
+
+
+//TUGAS Ke-4
+
+//menggabungkan TMTGAJI dan NIP yang ada di tabel historis_esselon dan historis_fungsi khusus dengan UNION
+SELECT TMTGAJI, NIP FROM historis_fungsikhusus UNION SELECT TMTGAJI, NIP from historis_eselon;
+
+//menggabungkan nip, nama di tabel mstpegawai yang namnya di awali huruf M dengan nmacabang, nickcbang di tabel cabang_tbl
+SELECT nip, nama from mstpegawai where nama lIKE 'M%' UNION SELECT nmcabang, nickcabang from cabang_tbl;
+
+//menggabungkan nip yang ada di mstpegawai dengan nip yang ada di historis_eselon walaupun ada data yang sama tetap akan di tampilkan semuanya
+SELECT nip from mstpegawai UNION ALL SELECT nip from historis_eselon;
+
+//menggabungkan nip yang ada di mstpegawai dengan nip yang ada di historis_eselon tapi jika ada data yang sama maka yang akan di tampilkan hanya satu
+SELECT nip from mstpegawai UNION SELECT nip from historis_eselon;
+
+//menggabungkan nip dan nama yang ada ada d tabel gaji_13_tmp dengan tabel historis_fungsikhusus yang merelasi ke mstpegawai
+SELECT h.nip, m.nama from historis_fungsikhusus h, mstpegawai m 
+where h.NIP=m.nip
+UNION SELECT nip, nama from gaji_13_tmp;
