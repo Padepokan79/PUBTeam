@@ -1,0 +1,22 @@
+'menampilkan nip,nama ,tanggal lahir dan agama (join)  -
+
+
+select p.NIP,p.Nama,p.tgllhr,a.nmagama from mstpegawai_01 p,agama_tbl a where p.agama=a.kdagama;
+
+
+'menampilkan nama ,status kawin  (inner join)
+
+select p.nama,st.nmstawin from mstpegawai_01 p inner join stawin_tbl st where p.KDSTAWIN=st.kdstawin;
+
+'menampilkan nip, nama ,pangkat  (left join)
+
+select mstpegawai_01.nip,mstpegawai_01.nama , pangkat_tbl.nmpangkat from mstpegawai_01  left join pangkat_tbl on mstpegawai_01.kdpangkat = pangkat_tbl.kdpangkat;
+
+
+'menampilkan nip, nama ,pangkat  (right join)
+
+select mstpegawai_01.nip,mstpegawai_01.nama , pangkat_tbl.nmpangkat from mstpegawai_01  right join pangkat_tbl on mstpegawai_01.kdpangkat = pangkat_tbl.kdpangkat;
+
+'menampilkan nip,nama, gol,pangkat (join)
+
+select mstpegawai_01.nip,mstpegawai_01.nama , pangkat_tbl.gol , pangkat_tbl.nmpangkat from mstpegawai_01 , pangkat_tbl where mstpegawai_01.kdpangkat = pangkat_tbl.kdpangkat;
