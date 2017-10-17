@@ -1,23 +1,51 @@
+//menampil semua data yang ada di tabel historis_fungsikhusus
 SELECT *FROM historis_fungsikhusus;
 
+//menampilkan nip, nama pegawai
 SELECT h.NIP, mp.Nama, h.TMTGAJi FROM historis_fungsikhusus h, mstpegawai mp WHERE h.NIP= mp.NIP;
 
+//menampilkan nip, nama, TMTGAJI yang TMTGAJI 2011-01-01
 SELECT h.NIP, mp.NAMA, h.TMTGAJI FROM historis_fungsikhusus h, mstpegawai mp WHERE h.NIP=mp.NIP and h.TMTGAJI='2011-01-01';
 
+//menampilkan nip yang TMTGAJI-nya paling pertama
 SELECT NIP, MIN(TMTGAJI) AS Pegawai_Paling_Lama FROM historis_fungsikhusus;
 
+//menampilkan jumlah pegai yang TMTGAJI=2017-05-01
 select count(*) from historis_fungsikhusus where TMTGAJI='2017-05-01';
 
 
-
+//menambah 2 data di tabel historis_fungsikhusus
 insert into historis_fungsikhusus (TMTGAJI, NIP, KDTJKHUSUS, TJKHUSUS, KETERANGAN) values
 ('2017-10-17', '0204151027', 0000, 0, 'DATA AWAL'),
 ('2017-10-17', '0204151028', 0000, 0, 'DATA AWAL');
 
-
+//menghapus data yang nip=0204151028
 DELETE FROM historis_fungsikhusus where nip='0204151028';
 
 
+//mengubah TJKHUSUS yang NIP=450006657
 UPDATE historis_fungsikhusus set TJKHUSUS=1 where NIP='450006657';
 
 
+
+
+//TUGAS Ke-2
+
+//menampilkan yang memiliki NIP 10 character
+SELECT NIP as NIP_10character FROM historis_fungsikhusus where nip LIKE '__________';
+
+//menampilkan nip dan nama yang nip-nya di awali 0
+SELECT h.NIP, m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND h.NIP LIKE '0%';
+
+//menampilkan nip dan nama pegawai yang memiliki gelar S.Sos
+SELECT h.NIP, m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND m.NAMA LIKE '%S.Sos';
+
+//menampilkan nip dan nama yang memiliki gelar hj dan S.Sos
+SELECT h.NIP, m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND m.NAMA LIKE 'hj%S.Sos' GROUP BY h.nip;
+
+//menampilkan nama pegawai yang terdiri dari 7 character dan di awali huruf S
+SELECT m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND m.NAMA LIKE 'S______' GROUP BY h.nip;

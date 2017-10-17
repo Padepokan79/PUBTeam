@@ -1,0 +1,14 @@
+//menampilkan jumlah pegawai yang memiliki gapok Rp 2400000
+select count(*) as JUMLAH_PEGAWAI_DENGAN_GAPOK_RP_2400000 from historis_gapok where GAPOK=2400000
+
+//menampilkan KDPANGKAT dan jumlah pegawai dengan masing-masing KDPANGKAT
+select KDPANGKAT, count(*) as JUMLAH_PEGAWAI_BERDASARKAN_MASING_MASING_KDPANGKAT from historis_gapok group by KDPANGKAT
+
+//menampilkan KDPANGKAT dan jumlah pegawai dengan masing-masing KDPANGKAT yang jumlahnya kurang dari 10
+select KDPANGKAT, count(*) as JUMLAH_PEGAWAI_BERDASARKAN_MASING_MASING_KDPANGKAT_YANG_KURANG_DARI_10 from historis_gapok group by KDPANGKAT having JUMLAH_PEGAWAI_BERDASARKAN_MASING_MASING_KDPANGKAT<10
+
+//menampilkan seluruh data yang NIP nya mengandung angka 1988 dan diurutkan ascending berdasarkan KDPANGKAT
+select * from historis_gapok where NIP like '%1988%' order by KDPANGKAT ASC ;
+
+//menampilkan NIP, NAMA dan GAPOK yang dialiaskan GAPOK STANDAR hasil inner join mstpegawai dan historis_gapok yang GAPOK nya diawali angka 3 (3 jutaan) diurutkan berdasarkan gapok secara ascending
+select h.NIP, p.NAMA, h.GAPOK as GAPOK_STANDAR from historis_gapok h inner join mstpegawai p on h.NIP=p.NIP where h.GAPOK like '3______' order by h.GAPOK ASC
