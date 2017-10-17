@@ -49,3 +49,27 @@ h.NIP=m.NIP AND m.NAMA LIKE 'hj%S.Sos' GROUP BY h.nip;
 //menampilkan nama pegawai yang terdiri dari 7 character dan di awali huruf S
 SELECT m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
 h.NIP=m.NIP AND m.NAMA LIKE 'S______' GROUP BY h.nip;
+
+
+
+
+
+//TUGAS Ke-3
+
+
+//menampilkan nip dan nama yang yang di historis_fungsikhusus dan mstpegawai dengan INNER JOIN
+SELECT h.NIP, m.NAMA as Nama_Pegawai FROM historis_fungsikhusus as h, mstpegawai as m where
+h.NIP=m.NIP AND m.NAMA LIKE 'hj%S.Sos' GROUP BY h.nip;
+
+//menampilkan data nip dan nama yang berpadu pada mstpegawai
+SELECT m.NIP, m.NAMA FROM historis_fungsikhusus as h RIGHT JOIN mstpegawai as m ON h.NIP=m.NIP;
+
+//menampilkan data nip dan nama yang berpadu pada historis_fungsikhusus
+SELECT m.NIP, m.NAMA FROM historis_fungsikhusus as h LEFT JOIN mstpegawai as m ON h.NIP=m.NIP;
+
+//menampilkan data nip dan nama berdsarkan historis_fungsikhusus dan mstpegawai dan yang hanya memiliki gelar S.Sos
+SELECT m.NIP, m.NAMA FROM historis_fungsikhusus as h INNER JOIN mstpegawai as m ON h.NIP=m.NIP AND m.NAMA LIKE '%Sos';
+
+//menapmilkan data nip dan nama yang berpadu pada tabel mst pegawai yang namanya di mulai dari huruf s
+SELECT m.NIP, m.NAMA FROM historis_fungsikhusus as h RIGHT JOIN mstpegawai as m ON h.NIP=m.NIP where m.NAMA LIKE 'S%' GROUP BY m.NAMA;
+
