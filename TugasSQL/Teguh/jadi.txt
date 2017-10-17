@@ -76,3 +76,19 @@ select COUNT(TJBERAS) as Tunjangan_BERAS from fgaji_uangduka;
 
 5.count KOTOR
 select COUNT(KOTOR) as KOTOR from fgaji_uangduka;
+
+//Up to Date
+1. select Nama dan GAPOK di mstpegawai_02 dan mstpegawai_03 dengan inner
+select mstpegawai_02.NAMA,mstpegawai_03.GAPOK from mstpegawai_02 inner join mstpegawai_03 on mstpegawai_02.NIP = mstpegawai_03.NIP;
+
+2. select Nama dan GAPOK di mstpegawai_02 dan mstpegawai_03 dengan left
+select mstpegawai_02.NAMA,mstpegawai_03.GAPOK from mstpegawai_02 left join mstpegawai_03 on mstpegawai_02.NIP = mstpegawai_03.NIP;
+
+3. select Nama dan GAPOK di mstpegawai_02 dan mstpegawai_03 dengan right
+select mstpegawai_02.NAMA,mstpegawai_03.GAPOK from mstpegawai_02 right join mstpegawai_03 on mstpegawai_02.NIP = mstpegawai_03.NIP;
+
+4.select Nama dan TGLLAHIR di mstpegawai_02 dan mstpegawai_03 dengan right
+select mstpegawai_02.NAMA,mstpegawai_03.TGLLHR from mstpegawai_02 right join mstpegawai_03 on mstpegawai_02.NIP = mstpegawai_03.NIP;
+
+5. select Nama dan TGLLAHIR di mstpegawai_02 dan mstpegawai_03 dengan left
+select mstpegawai_02.NAMA,mstpegawai_03.TGLLHR from mstpegawai_02 leftjoin mstpegawai_03 on mstpegawai_02.NIP = mstpegawai_03.NIP;
