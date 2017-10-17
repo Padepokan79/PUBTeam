@@ -1,0 +1,12 @@
+//menampilkan data gaji nama,nip,tgllahir,tanggalgaji,nama pangkat,pendididkan, nama agama, dan gaji pokoknya mendapatkan diatas ratarata, dan juga bergama Islam
+1.SELECT fgaji.NAMA, fgaji.NIP, fgaji.TGLLHR as Tanggal_Lahir,fgaji.TGLGAJI as Tanggal_Gaji, pangkat_tbl.NMPANGKAT as Nama_Pangkat, mstpegawai.PENDIDIKAN,agama_tbl.NMAGAMA as Nama_agama,fgaji.GAPOK as Gaji_Pokok 
+FROM fgaji 
+	INNER JOIN pangkat_tbl 
+		INNER JOIN mstpegawai
+			INNER JOIN agama_tbl
+				ON fgaji.NIP = mstpegawai.NIP AND fgaji.KDPANGKAT = pangkat_tbl.KDPANGKAT AND mstpegawai.AGAMA = agama_tbl.KDAGAMA
+					WHERE fgaji.GAPOK >= (SELECT AVG(GAPOK) FROM fgaji)  AND agama_tbl.KDAGAMA = 1 GROUP by fgaji.NAMA
+
+
+
+2. 
