@@ -1,0 +1,19 @@
+1. menampilkan data nama satuan kerja gabungan dari tabel satker dan tbl satker pindahan  
+select nmsatker from satker_tbl union select nmsatker_l from satker_pindahan order by nmsatker;
+
+2. menampilkan data nama satuan kerja gabungan dari tabel satker dan tbl satker pindahan  
+select nmsatker from satker_tbl union all select nmsatker_l from satker_pindahan order by nmsatker;
+
+3.menampilkan data nama satuan kerja gabungan dari tabel satker dan tbl satker pindahan dengan kondisi yang hanya kdskpd nya 001
+select kdskpd,nmsatker from satker_tbl where kdskpd='001' union select kdskpd,nmsatker_l from satker_pindahan
+where kdskpd='001' order by nmsatker; 
+
+4.menampilkan nama jabatan dan tmt jabatan gabungan dari tabel jabatankhsus dan tabel jabatan yang hanya tmt jabatan nya 2008-01-01
+select nmjabatan,tmtjabatan from jabatankhusus_tbl where tmtjabatan='2008-01-01'
+union all
+select nmjabatan,tmtjabatan from jabatan_tbl where tmtjabatan='2008-01-01'
+order by nmjabatan;
+
+5.menampilkan tipe jabatan,tmt jabatan,dan nama jabatan gabungan dari tbl jabatan khusus dan tbl jabatan
+SELECT 'Jabatan Khusus non fungsional' As Type, tmtjabatan, nmjabatan FROM jabatankhusus_tbl UNION SELECT 'Jabatan non fungsional', tmtjabatan, nmjabatan
+FROM jabatan_tbl;
