@@ -1,0 +1,20 @@
+Menampilkan kodeguru
+
+select kdguru from mstpegawai_02 mp union select kdguru from guru_tbl;
+
+Menampilkan kodefungsional
+
+select kdfungsi from mstpegawai_02 mp union select kdfungsi from fungsional_tbl;
+
+Menampilkan kodependidikan
+
+select pendidikan from mstpegawai_02 mp union select pendidikan from pendidikan_tbl;
+
+Menampilkan nama_pemda
+
+select kode_pemda from pemda mp union all select nm_pemda from djpk_tbl;
+
+Menampilkan nama akun dalam gaji
+
+select nmakun from akunsp2d union select nmakun from akun_tbl;
+
