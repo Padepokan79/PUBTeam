@@ -1,0 +1,8 @@
+/*select fk.nip,fg.nama,fk.gapokbaru from fgaji_kekurangan fk INNER JOIN fgaji fg ON fk.NIP=fg.nip LIMIT 5;
+select fg.nama,fk.tjistribaru,fk.tjanakbaru from fgaji_kekurangan fk INNER JOIN fgaji fg ON fk.NIP=fg.nip where fg.nama like 'a%' LIMIT 5;
+select fg.nama,fk.norut from fgaji_kekurangan fk INNER JOIN fgaji fg ON fk.NIP=fg.nip order by fk.norut asc limit 5;
+select * from fgaji_kekurangan limit 5;
+select nip,tglbayar,tglgaji from fgaji_kekurangan where tglbayar between '2012/06/11' and '2012/06/21' limit 10;
+INSERT INTO fgaji_kekurangan (tjistribaru,tjanakbaru) values (2,3);
+update fgaji_kekurangan set nip=0204151022 where norut < 20;*/
+delete from fgaji_kekurangan where norut <= 10; 
