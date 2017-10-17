@@ -1,0 +1,10 @@
+Cucu Yuni Yulianti
+coding complex
+
+
+//menampilkan nama dan gapok pegawai yang memiliki tgl lahir 17 dan gapok lebih dari 3jt
+
+
+select mstpegawai.NAMA , fgaji.GAPOK from mstpegawai INNER JOIN fgaji on mstpegawai.NIP = fgaji.NIP 
+INNER JOIN hutang on fgaji.NIP = hutang.NIP
+WHERE mstpegawai.TGLLHR like "%17" and fgaji.GAPOK > 3000000;
