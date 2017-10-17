@@ -10,3 +10,16 @@ tabel fgaji_susulan
 
 6)update fgaji_susulan set nama='SRI SUGIARTINI' where nip=198409292008032001
 //insertnya belum fildnya terlalu banyak
+
+============================================================
+1) select nama from fgaji_susulan where nama like "ir.%"
+//mencari nama yg bergelar Ir.
+2)select nama,tgllhr as tanggal_lahir from fgaji_susulan where tgllhr like "1980%"
+//mencari nama yg tahun lahirnya 1980
+3)select count(janak) as jumlah_anak from fgaji_susulan where gapok < 2000000
+//menjumlahkan janak yang gapoknya <2000000
+4)select avg(gapok) as rata_rata_gapok from fgaji_susulan
+//menampilkan rata-rata gaji pokok
+5)select nama,kdpangkat from fgaji_susulan where kdpangkat like '2_'
+menampilkan nama dan pangkat golongan 2
+
