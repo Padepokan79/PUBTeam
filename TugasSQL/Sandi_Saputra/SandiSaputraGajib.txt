@@ -1,0 +1,26 @@
+Sandi Saputra
+Tabel gajib
+// select
+
+1. 10 besar Nama dan gaji pokok bujangan
+-> select nama, gapok from gajib where tglahir > '1990-1-1' and kdjenkel = 1 limit 10 and kdstawin = 0;
+
+2. 10 besar Nama dan gaji pokok perawan
+-> select nama, gapok from gajib where tglahir > '1990-1-1' and kdjenkel = 2 limit 10 and kdstawin = 0;
+
+3. Bujangan dengan gaji pokok tergede
+-> select nama, gapok from gajib where tglahir > '1990-1-1' and kdjenkel = 1 and kdstawin = 0 order by gapok desc limit 1;
+
+4. Perawan dengan gaji tergede
+-> select nama, gapok from gajib where tglahir > '1990-1-1' and kdjenkel = 2 and kdstawin = 0 order by gapok desc limit 1;
+
+5. Suami muda dengan gaji pokok terbesar
+-> select nama, gapok from gajib where tglahir > '1990-1-1' and kdjenkel = 1 and kdstawin = 1 order by gapok desc  limit 1;
+
+// Delete
+
+1. Hapus duda lapuk dengan gaji pokok terkecil
+-> delete from gajib where tglahir < '1940-1-1' and kdjenkel = 1 and kdstawin = 3 order by gapok limit 1;
+
+2. Ubah nama bujangan gaji pokok terbesar jadi sumanto 
+-> update gajib set NAMA = 'Sumanto' WHERE tglahir > '1990-1-1' and kdjenkel = 1 and kdstawin = 0 order by gapok desc limit 1;  
