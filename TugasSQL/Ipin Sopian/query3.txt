@@ -1,0 +1,3 @@
++join inner dan right
+//mencari nama, gaji dan agama
+1.select hasil.nama ,hasil.gapokb,hasil.maskerb,a.nmagama from agama_tbl a inner join  ( select pg.nama ,fg.gapokb,fg.maskerb,pg.AGAMA from mstpegawai pg right join fgaji_detil_ukp fg  on fg.NIP=pg.NIP  limit 10)as hasil on hasil.AGAMA=a.KDAGAMA;
