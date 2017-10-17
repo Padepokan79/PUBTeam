@@ -1,0 +1,24 @@
+(select nip,nama,glrdepan,glrbelakang, '0' as is_spam from mstpegawai)
+UNION
+(select nip,nama,glrdepan,glrbelakang, '1' as is_spam from gaji_13_tmp)
+order by nip desc;
+
+(select kdfungsi, '0' as is_spam from fungsional_tbl)
+UNION
+(select kdfungsi, '1' as is_spam from jabatan_tbl)
+order by kdfungsi desc;
+
+(select kdpangkat, '0' as is_spam from gaji_13_tmp)
+UNION
+(select kdpangkat, '1' as is_spam from pangkat_tbl)
+order by kdpangkat asc;
+
+(select tglgaji,nip, '0' as is_spam from gaji_13_tmp)
+UNION
+(select tglgaji,nip, '1' as is_spam from fgaji_uangduka)
+order by nip asc;
+
+(select nip,nama,pendidikan, '0' as is_spam from mstpegawai)
+UNION
+(select nip,nama,pendidikan, '1' as is_spam from mstpegawaibackup)
+order by nama asc;
