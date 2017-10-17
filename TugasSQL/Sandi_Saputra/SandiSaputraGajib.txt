@@ -44,3 +44,23 @@ Tabel gajib
 // Alias 
 1. Daftar gaji wanita muda yang jomblo
 -> select nama as Nama, gapok as Gaji_Pokok, kdstawin as Status, tglahir as TTL from gajib where TTL > '1990-1-1' and kdjenkel = 2 and kdstawin = 0 order by gapok desc; 
+
+// Inner Join
+1. Daftar pegawai agama hindu
+-> select a.nama, b.nmagama as agama from mstpegawai a inner join agama_tbl b on a.AGAMA = b.KDAGAMA where b.NMAGAMA = 'HINDU' limit 10;  
+
+// Right Join
+1. Daftar pegawai agama hindu beserta status perkawinannya
+-> select a.nama, b.nm_stawin as status_kawin from mstpegawai a right join tb_stawin b on a.kdstawin = b.kd_stawin where agama = 4 limit 10;
+
+2. Daftar pegawai agama islam beserta jabatan fungsionalnya
+-> select a.nama, b.nmfungsi as fungsional from mstpegawai a right join jabatan_fungsi b on a.kdfungsi = b.kdfungsi where agama = 1 limit 10;
+ 
+
+// Left Join
+1. Daftar pegawai agama hindu beserta pangkat pekerjannya
+-> select b.nama, a.pkt030 as pangkat from tb_pangkat a left join mstpegawai b on a.pkt050 = b.kdpangkat where agama = 4 limit 10;
+
+2. Daftar pegawai agama hindu beserta jabatan eselonnya
+-> select b.nama, a.uraian as eselon from eselon_tbl a left join mstpegawai b on a.kdeselon = b.kdeselon where agama = 4 limit 10;
+  

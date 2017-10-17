@@ -70,3 +70,30 @@ WHERE NIP LIKE '12___' OR CICILANAKHIR=0;
 
 //AS
 SELECT KETERANGAN AS Keterangan FROM hutang;
+
+
+@3rd Task
+SELECT hutang.NIP, mstpegawai.NAMA
+FROM hutang
+LEFT JOIN mstpegawai ON hutang.NIP = mstpegawai.NIP
+ORDER BY mstpegawai.NAMA DESC;
+
+SELECT hutang.NIP, mstpegawai.NAMA
+FROM hutang
+RIGHT JOIN mstpegawai ON hutang.NIP = mstpegawai.NIP
+ORDER BY mstpegawai.NAMA DESC;
+
+SELECT hutang.NIP, mstpegawai.NAMA
+FROM hutang
+INNER JOIN mstpegawai ON hutang.NIP = mstpegawai.NIP
+ORDER BY mstpegawai.NAMA DESC;
+
+SELECT hutang.NIP, mstpegawai.NAMA
+FROM hutang
+RIGHT JOIN mstpegawai ON hutang.NIP = mstpegawai.NIP
+ORDER BY mstpegawai.NIP ASC;
+
+SELECT hutang.NIP, mstpegawai.NAMA, hutang.TMTHUTANG
+FROM hutang
+INNER JOIN mstpegawai ON hutang.NIP = mstpegawai.NIP
+GROUP BY hutang.TMTHUTANG;
