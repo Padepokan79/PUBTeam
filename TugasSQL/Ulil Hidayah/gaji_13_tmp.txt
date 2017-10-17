@@ -1,0 +1,20 @@
+//QUERY SELECT
+select nama,jistri,janak from gaji_13_tmp where kdpangkat='4A' and jistri>0 LIMIT 0,5;
+select nama from gaji_13_tmp where KDPANGKAT IN(
+	SELECT KDPANGKAT from pangkat_tbl where gol='11'
+);
+select g.nama,p.nmpangkat from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT;
+select g.nama,p.nmpangkat from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT where p.NMGOL='II/a';
+select g.kdpangkat,count(g.nama) from gaji_13_tmp g inner join pangkat_tbl p on g.KDPANGKAT=p.KDPANGKAT group by g.KDPANGKAT;
+
+//QUERY INSERT
+insert into gaji_13_tmp (TGLGAJI,KDJNSTRANS,NIP,NAMA,KDPANGKAT)values('2017-10-17','1','195903011985031037','Paijo','2A');
+insert into gaji_13_tmp (TGLGAJI,KDJNSTRANS,NIP,NAMA,KDPANGKAT)values('2017-10-17','1','195903011985031038','Paimin','3A');
+
+//QUERY UPDATE
+update gaji_13_tmp set tmtSTOP='2017-10-17' where kdpangkat in(
+	select kdpangkat from pangkat_tbl where nmpangkat='juru muda'
+);
+
+//QUERY DELETE
+delete from gaji_13_tmp where nip='195903011985031038';
