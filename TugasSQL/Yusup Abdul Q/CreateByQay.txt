@@ -1,0 +1,40 @@
+bY YUSUP ABDUL QOHAR
+ 
+//mengabungkan hasil dari detail kekurangan dengan fgaji kekurangan 
+select fk.nip,fk.norut,fk.jistribaru,janakbaru,fk.gapokbaru
+from fgaji_kekurangan fk 
+where fk.norut >10 and fk.gapokbaru >4000000
+	Union 
+select dk.nip,dk.norut,dk.jistri,dk.janak,dk.gapok 
+from  detil_kekurangan dk 
+where dk.norut <10 and dk.gapok <4000000 
+
+//menggabungkan dua tabel satker pindahan dan satker tbl 
+select sp.kdsatker_b,sp.kdssbp,sp.kdskpd 
+from satker_pindahan sp
+	union 
+select sk.kdsatker,sk.kdssbp,sk.kdskpd 
+from satker_tbl sk
+
+//menggabungkan tabel gajib dan gaji_13_tmp
+select gajib.NIP,gajib.NAMA,gajib.TGLAHIR 
+from gajib
+ union 
+select gaji_13_tmp.NIP,gaji_13_tmp.NAMA,gaji_13_tmp.TGLLHR 
+from gaji_13_tmp;
+
+
+//menggabungkan dua tabel dari fgaji dan mstpegawai
+select fgaji.NIP,fgaji.NAMA,fgaji.GLRDEPAN,fgaji.GLRBELAKANG,fgaji.KDJENKEL 
+from fgaji 
+where fgaji.NIP like '%30%'
+	union 
+select mstpegawai.NIP,mstpegawai.NAMA,mstpegawai.GLRDEPAN ,mstpegawai.GLRBELAKANG,mstpegawai.KDJENKEL 
+from mstpegawai  
+where mstpegawai.NIP like '%34%';
+
+
+//menggabungkan dua tabel pada tabel mstpegawai dan histori gapok 
+select hg.KDPANGKAT,hg.GAPOK,hg.MASKER from historis_gapok hg where hg.masker >30 
+	union 
+select mp.kdpangkat,mp.GAPOK,mp.MASKER from mstpegawai mp where mp.MASKER <30
