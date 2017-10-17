@@ -1,0 +1,12 @@
+tgl 17/10/2017
+SRI SUGIARTINI
+tabel fgaji_susulan
+=============================================================
+1 ) select nama,janak from fgaji_susulan where janak <= 2
+2) select nama,gapok,tjistri,tjanak from fgaji_susulan where kdpangkat = '3a'
+3) select nama,gapok from fgaji_susulan where gapok < 3000000 and kdpangkat ='3a'
+4) select nama,gapok from fgaji_susulan WHERE gapok BETWEEN 2000000 and 4000000 order by kdpangkat='3a'
+5) select nama ,max(gapok) as gaji_terbesar from fgaji_susulan 
+
+6)update fgaji_susulan set nama='SRI SUGIARTINI' where nip=198409292008032001
+//insertnya belum fildnya terlalu banyak
