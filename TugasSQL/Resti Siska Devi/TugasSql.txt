@@ -1,0 +1,23 @@
+SELECT *FROM historis_fungsikhusus;
+
+SELECT h.NIP, mp.Nama, h.TMTGAJi FROM historis_fungsikhusus h, mstpegawai mp WHERE h.NIP= mp.NIP;
+
+SELECT h.NIP, mp.NAMA, h.TMTGAJI FROM historis_fungsikhusus h, mstpegawai mp WHERE h.NIP=mp.NIP and h.TMTGAJI='2011-01-01';
+
+SELECT NIP, MIN(TMTGAJI) AS Pegawai_Paling_Lama FROM historis_fungsikhusus;
+
+select count(*) from historis_fungsikhusus where TMTGAJI='2017-05-01';
+
+
+
+insert into historis_fungsikhusus (TMTGAJI, NIP, KDTJKHUSUS, TJKHUSUS, KETERANGAN) values
+('2017-10-17', '0204151027', 0000, 0, 'DATA AWAL'),
+('2017-10-17', '0204151028', 0000, 0, 'DATA AWAL');
+
+
+DELETE FROM historis_fungsikhusus where nip='0204151028';
+
+
+UPDATE historis_fungsikhusus set TJKHUSUS=1 where NIP='450006657';
+
+
