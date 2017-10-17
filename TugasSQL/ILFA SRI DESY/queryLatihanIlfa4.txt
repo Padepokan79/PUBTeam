@@ -1,0 +1,24 @@
+//menampilkan hasil gabungan NIP dan KETERANGAN dari tabel hutang yang NIP nya mengandung angka 1980 dan di tabel historis_gapok yang NIP nya diakhiri angka 5
+select NIP, KETERANGAN from hutang where NIP like '%1980%' 
+UNION
+select NIP, KETERANGAN from historis_gapok where NIP like '_________________5';
+
+//menampilkan KDPANGKAT dan NMPANGKAT hasil select INNER JOIN gapok tbl dan pangkat_tbl yang NILAI_ATAS<1000 dan select dari pangkat_tbl yang mengndung kata penata
+select p.KDPANGKAT, p.NMPANGKAT from gapok_tbl g inner join pangkat_tbl p where g.NILAI_ATAS<1000
+UNION
+select KDPANGKAT, NMPANGKAT from pangkat_tbl where NMPANGKAT like '%penata%'
+
+//menampilkan hasil gabungan KDJABATAN dan NMJABATAN dari tabel jabatankhusus_tbl yang pensiunnya di umur 60 dan dari tabel jabatan_tbl yang KDFUNGSInya = 2
+select KDJABATAN, NMJABATAN from jabatankhusus_tbl where PENSIUN = 60
+UNION
+select KDJABATAN, NMJABATAN from jabatan_tbl where KDFUNGSI=2
+
+//menampilkan NIP, NAMA, KDFUNGSI, TJFUNGSI dari select inner join tabel mstpegawai dan historis_fungsional dan select dari mstpegawai yang NAMA nya di awali dr
+select h.NIP, p.NAMA, h.KDFUNGSI, h.TJFUNGSI from mstpegawai p inner join historis_fungsional h on p.NIP=h.NIP where h.TJFUNGSI<>0
+UNION
+select NIP, NAMA, KDFUNGSI, TJFUNGSI from mstpegawai where NAMA like 'dr%' 
+
+//menampilkan hasil gabungan select yang menampilkan NIP, NAMA, GAPOK yang gapoknya di angka 10 jutaan dan Select yang menmpilkan NIP, NAMA, GAPOK yang pangkatnya gol 4 dan masker<20
+select fg.NIP, p.NAMA, fg.GAPOK from fgaji_uangduka fg inner join mstpegawai p on fg.NIP=p.NIP where fg.GAPOK like '10______'
+union
+select h.NIP, p.NAMA, h.GAPOK from historis_gapok h inner join mstpegawai p on h.NIP=p.NIP where h.KDPANGKAT like '4_' and h.MASKER<20
