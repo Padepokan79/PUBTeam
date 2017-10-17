@@ -1,6 +1,5 @@
 Halah Helmia Wahdah
 table hutang
-
 ////////////SELECT 
 
 //Menampilkan nama, jml hutang, jml cicilan, cicilan akhir, keterangan sebanyak 10 data
