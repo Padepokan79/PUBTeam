@@ -1,0 +1,9 @@
+select masker from detil_kekurangan union select masker from skpp_pegawai  limit 10;
+//menampilkan nama pegawai yg kdstawin nya 1
+select nama from mstpegawai_03 where kdstawin=1 union select nmstawin from stawin_tbl where kdstawin=1 limit 10;
+//menampilkan nama pegawai yg mkgolt nya kurang dr 20
+select nama from mstpegawai_03 where mkgolt <20 UNION select mkgolt from mstpegawai_04 where mkgolt <20 limit 10;
+//menampilkan nama pegawai yg kdfungsi=08704
+select nama from mstpegawai_03 where kdfungsi=08704 UNION select kdfungsi from mstpegawai_04 where kdfungsi=08704 limit 10;
+//menampilkan nama pegawai yg tjfungsi=327000
+select nama from mstpegawai_03 where tjfungsi=327000 UNION select tjfungsi from mstpegawai_04 where tjfungsi=327000 limit 10;
