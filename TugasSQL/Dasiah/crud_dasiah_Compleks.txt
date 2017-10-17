@@ -1,0 +1,4 @@
+// ---> Tugas compleks Dasiah <---
+
+//menampilkan seluruh data pada tabel akunsp2d dimana kdtrans pada tabel akunsp2d berada di kdtrans pada tabel akun_konv yang urtnya bernilai 4
+select * from akunsp2d where kdtrans in (select kdtrans from akun_konv where urt=4);
