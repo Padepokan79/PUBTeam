@@ -1,0 +1,110 @@
+Nama	: Riyan
+Materi	: SQLSubQueries
+
+1. menemukan tim memainkan pertandingan pertama dari EURO cup 2016.
+
+select playing_club
+from player_mast
+where team_id IN (
+
+	select team_id
+	from match_details
+	where match_no IN (
+
+		select match_no
+		from match_mast
+		where match_no=1 
+	)
+)
+
+2. Menentukan Pemenang EURO cup 2016
+
+select country_name
+from soccer_country
+where country_id IN (
+
+	select team_id
+	from match_details
+	where play_stage='F' and win_lose='W'
+)
+
+3. menemukan match_no, play stage, goal score, dan audence yang merupakan pertandingan audence yang paling tinggi.
+
+select match_no, play_stage, goal_score, audence
+from match_mast
+where audence IN (
+
+select max(audence)
+from match_mast
+);
+
+4. menemukan match_no di mana Jerman bermain melawan Polandia
+
+select match_no
+from match_details
+where team_id IN (
+
+select country_id
+from soccer_country 
+where country_name='Poland')
+
+and match_no IN (
+
+select match_no
+from match_details
+where team_id IN (
+
+select country_id
+from soccer_country 
+where country_name='Germany'
+)
+);
+
+5.  menemukan match_no, play_stage, play_date, play_date, dan hasil pertandingan dimana Portugal bermain melawan Hungaria.
+
+select match_no, play_stage, play_date, goal_score, results
+from match_mast
+where match_no IN (
+
+select match_no
+from match_details
+where team_id IN (
+
+select country_id
+from soccer_country
+where country_name='Portugal')
+
+and match_no IN (
+
+select match_no
+from match_details
+where team_id IN (
+
+select country_id
+from soccer_country
+where country_name='Hungary'
+)
+)
+); 
+
+6.
+
+7. menentukan nama tim yang paling banyak
+
+select distinct(playing_club)
+from player_mast
+where team_id IN (
+
+select team_id
+from match_details
+where match_no IN (
+
+select match_no
+from match_mast
+where audence IN (
+
+select MAX(audence)
+from match_mast
+)
+)
+);
