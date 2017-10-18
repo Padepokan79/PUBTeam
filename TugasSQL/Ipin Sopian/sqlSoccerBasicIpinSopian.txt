@@ -1,0 +1,58 @@
+1. //mncari jumlah venue
+  select count(*) from soccer_venue
+2. //mencari jumlah negara yg berpartisipasi
+  select count(*) from soccer_country
+3. //mencari jumlah gol diwaktu normal
+  select count(*) from goal_details where goal_schedule='NT'
+4. //mencari pertandingan dengan hasil
+  select count(*) from  match_mast 
+5. //mencari pertandingan yg berakhir dengan draw
+  select count(*) from  match_mast where results='DRAW'
+6. //nyari tanggal mulai
+  select distinct play_date from match_mast order by play_date limit 1
+7. //mencari jml gol bunuh diri
+  select count(*) from goal_details where goal_type='o'
+8. //mencari jml pertadingan fase grup
+  select count(*) from match_mast where  play_stage='G'
+9. //mencari jumlah pertandingan yang berakhir dengan penalti
+  select count(*) from match_mast where  decided_by='P'
+10. //mencari jumlah pertandingan yang berakhir dengan penalti di fase 16 besar
+  select count(*) from match_mast where  decided_by='P'&play_stage='R'
+11. //mencari jumlah dol dipertandingan normal
+   select count(*) from goal_details group by match_no;
+12. // mencari no pertandingan ,skor dan tanggal tampa penghentian waktu babak pertama
+   select match_no,play_date,goal_score from match_mast where stop1_sec=0
+13. //
+   select count(*) from match_details where win_lose='D' and goal_score=0 and play_stage= 'G' ;
+14. //mencari pertandingan dengan skor 1 tanpa adu penalti
+  SELECT count(*)FROM match_details WHERE goal_score = 1 and  decided_by = 'N' ;
+15. //mencari jumlah pemain yang digantikan
+   SELECT count(*)FROM player_in_out WHERE in_out = 'O';
+16. //mencari jumlah pemain yang digantikan dalam waktu normal
+  SELECT count(*)FROM player_in_outWHERE in_out = 'O' and play_schedule='NT';
+17. ////mencari jumlah pemain yang digantikan dalam stop time
+  SELECT count(*)FROM player_in_out WHERE in_out='O' and play_schedule='ST' ;
+18. //mencari jumlah pemain yang digantikan dalam babak pertama
+   SELECT count(*)FROM player_in_out WHERE in_out='O' and play_half=1 ;
+19. // mencari jumlah pertandingan dengan hasil draw dan tanpa gol
+   SELECT count(*)FROM match_details WHERE win_lose='D' and goal_score=0 ;
+20. //mencari jumlah pemain yg diganti di extra time
+  SELECT count(*)FROM player_in_out WHERE in_out='O' and play_schedule='ET' ;
+21. //mencari list pemain pengganti
+  select count(*) from player_in_out where in_out='I';
+22. //mencari jumlah tendangan pinalti
+   select count(*) from penalty_shootout ;
+23. //mencari jumlah tendangan pinalti yang masuk
+   select count(*) from penalty_shootout where score_goal ='Y';
+24. //mencari jumlah tendangan pinalti yang tidak masuk
+   select count(*) from penalty_shootout where score_goal ='N';
+25. //mencari nama dan jumlah tendangan pinalti
+  select pm.player_name,count(ps.kick_id) from penalty_shootout ps inner join player_mast pm on ps.player_id=pm.player_id group by pm.player_id;
+26. //mencari jumlah gol dari tiap negara
+  select sc.country_name ,count(ps.team_id) from penalty_shootout ps , soccer_country sc where sc.country_id= ps.team_id group by sc.country_name;
+27. //mencari jumlah pemesanan pemain diwaktu normal
+   select count(*) from  player_booked where play_schedule='NT';
+28. //mencari jumlah pemesanan pemain diwaktu berhenti
+   select count(*) from  player_booked where play_schedule='ST';
+29. //mencari jumlah pemesanan pemain diwaktu tambahan
+   select count(*) from  player_booked where play_schedule='ET';
