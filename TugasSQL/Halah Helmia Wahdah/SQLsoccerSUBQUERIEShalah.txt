@@ -1,0 +1,65 @@
+w3resource
+
+1.to find the teams played the first match of EURO cup 2016
+SELECT country_name 
+FROM soccer_country
+WHERE country_id IN(SELECT team_id FROM match_details
+WHERE match_no = 1);
+
+2.to find the winner of EURO cup 2016
+SELECT country_name 
+FROM soccer_country
+WHERE country_id IN(SELECT team_id FROM match_details
+WHERE win_lose = 'W' AND play_stage='F');
+
+3.to find the match with match no, play stage, goal scored, and the audence which was the heighest audence match
+SELECT match_no, play_stage, goal_score, audence
+FROM match_mast WHERE audence IN
+(SELECT MAX(audence)FROM match_mast);
+
+4.to find the match no in which Germany played against Poland
+SELECT match_no FROM match_details
+WHERE team_id IN(SELECT country_id FROM soccer_country
+WHERE//BLM
+
+5.to find the match no, play stage, date of match, number of gole scored, and the result of the match where Portugal played against Hungary
+
+
+6.to display the list of players scored number of goals in every matches
+
+7.to find the teams who played the heighest audence match
+SELECT country_name FROM soccer_country
+WHERE country_id IN(SELECT team_id FROM goal_details
+WHERE match_no IN(SELECT match_no FROM match_mast
+WHERE audence IN(SELECT MAX(audence)FROM match_mast)));
+
+8.to find the player who scored the last goal for Portugal against Hungary
+
+9.to find the 2nd highest stoppage time which had been added in 2nd half of play
+
+10. to find the teams played the match where 2nd highest stoppage time had been added in 2nd half of play
+
+11. to find the match no, date of play and the 2nd highest stoppage time which have been added in the 2nd half of play
+
+12.to find the team which was defeated by Portugal in EURO cup 2016 final
+
+14.to find the player and his jersey number Who scored the first penalty of the tournament
+SELECT player_name, jersey_no FROM player_mast
+WHERE player_id IN(SELECT player_id FROM goal_details
+WHERE goal_id=1);
+
+15.to find the player along with his team and jersey number who scored the first penalty of the tournament
+SELECT player_name, jersey_no FROM player_mast
+WHERE player_id IN(SELECT player_id FROM goal_details
+WHERE match_no=1 GROUP BY team_id);//BLM
+
+16.
+
+17.to find the number of Germany scored at the tournament
+
+18.to find the players along with their jersey no., and playing club, who were the goalkeepers for the England squad for 2016 EURO cup
+SELECT player_name, jersey_no, playing_club FROM player_mast
+WHERE team_id IN(SELECT country_id FROM soccer_country
+WHERE posi_to_play='GK'AND country_name='England');
+
+19.
