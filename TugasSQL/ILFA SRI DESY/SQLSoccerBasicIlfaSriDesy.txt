@@ -1,0 +1,86 @@
+[1] Tulislah sebuah query di SQL untuk menemukan jumlah tempat untuk EURO cup 2016.
+select count(*) as jumlah_tempat from soccer_venue
+
+[2] Tulislah sebuah query di SQL untuk menemukan jumlah negara yang berpartisipasi dalam piala EURO 2016
+select count(distinct team_id) as jumlah_negara_yang_berpartisipasi from player_mast
+
+[3] Tuliskan query di SQL untuk menemukan nomor gol yang dicetak di EURO cup 2016 dalam jadwal main normal
+select count(*) from goal_details where goal_schedule='NT'
+
+[4] Tuliskan query di SQL untuk menemukan jumlah pertandingan yang berakhir dengan hasilnya.
+select count(*) as jumlah_pertandingan_menang from match_mast where results='WIN'
+
+[5] Tuliskan query di SQL untuk menemukan jumlah pertandingan yang berakhir dengan undian.
+select count(*) as jumlah_pertandingan_draw from match_mast where results='DRAW'
+
+[6] Tuliskan permintaan di SQL untuk menemukan tanggal kapan Football EURO cup 2016 dimulai.
+select play_date as tanggal_tanding_dimulai from match_mast
+
+[7] Tulislah sebuah query di SQL untuk menemukan jumlah self-goals yang dicetak di EURO cup 2016.
+select count(goal_type) as jumlah_goal_bunuh_diri from goal_details where goal_type='O'
+
+[8] Tuliskan query di SQL untuk menghitung jumlah pertandingan yang berakhir dengan hasil di babak grup.
+select count(play_stage) as jumlah_hasil_babak_grup from match_mast where play_stage='G'
+
+[9] Tuliskan query di SQL untuk menemukan jumlah goal yang didapat akibat adu penalti.
+select count(distinct match_no) from penalty_shootout
+
+[10] Tulislah sebuah query di SQL untuk menemukan jumlah pertandingan yang diputuskan melalui adu penalti di babak 16 besar
+select count(play_stage) as jumlah_hasil_babak_16_besar from match_mast where play_stage='R'
+
+[11] Tuliskan query di SQL untuk menemukan jumlah gol yang dicetak di setiap pertandingan dalam jadwal main normal
+select match_no, count(goal_schedule) from goal_details where goal_schedule='NT' group by match_no order by match_no asc
+
+[12] Tuliskan permintaan di SQL untuk menemukan kecocokan tidak, tanggal pertandingan, dan gol yang dicetak untuk pertandingan yang tidak ada waktu penghentian yang ditambahkan di babak pertama permainan.
+select match_no, play_date, goal_score from match_mast where stop1_sec=0;
+
+[13] Tulislah sebuah query di SQL untuk menemukan jumlah pertandingan yang diakhiri dengan hasil imbang tanpa gol di babak penyisihan grup.
+select count(distinct match_no) as jumlah_pertandingan_draw from match_details where win_lose='D' and play_stage='G';
+
+[14] Tulislah sebuah query di SQL untuk menemukan jumlah pertandingan yang berakhir dengan hanya satu kemenangan gol kecuali pertandingan yang diputuskan dengan adu penalti.
+select count(distinct match_no) from match_details where win_lose='W' and goal_score=1 and decided_by!='P';
+
+[15] Tulislah sebuah query di SQL untuk menemukan jumlah pemain yang diganti di turnamen.
+select count(*) as pemain_yang_diganti from player_in_out where in_out='O';
+
+[16] Tuliskan permintaan di SQL untuk menemukan jumlah pemain yang diganti dalam waktu bermain normal.
+select count(*) as pemain_yang_diganti from player_in_out where play_schedule='NT' and in_out='O';
+
+[17] Tuliskan query di SQL untuk menemukan jumlah pemain yang diganti pada saat penghentian.
+select count(*) as pemain_yang_diganti from player_in_out where play_schedule='ST' and in_out='O';
+
+[18] Tuliskan permintaan di SQL untuk menemukan jumlah pemain yang diganti pada paruh pertama permainan
+select count(*) from player_in_out where play_half='1' and in_out='O';
+
+[19] Tulislah sebuah query di SQL untuk menemukan jumlah total hasil imbang tanpa gol yang ada di seluruh turnamen.
+select sum(goal_score) as total_gol_draw from match_details where win_lose='D';
+
+[20] Tulislah sebuah query di SQL agar jumlah pemain diganti pada waktu bermain ekstra.
+select count(*) from player_in_out where play_schedule='ET' and in_out='O';
+
+[21] Tulislah sebuah query di SQL untuk menghitung daftar untuk menunjukkan jumlah pemain pengganti yang terjadi dalam berbagai tahap permainan untuk keseluruhan turnamen.
+select play_schedule, count(*) as jumlah_pergantian_pemain from player_in_out where in_out='O' group by play_schedule;
+
+[22] Tuliskan query di SQL untuk menemukan jumlah tembakan yang diambil dalam adu penalti.
+select count(*) as total_semua_tembakan from penalty_shootout;
+
+[23] Tuliskan query di SQL untuk menemukan jumlah tembakan gol yang dicetak di adu penalti.
+select count(*) as total_semua_tembakan_dengan_hasil_goal from penalty_shootout where score_goal='Y';
+
+[24] Tuliskan query di SQL untuk menemukan jumlah tembakan yang terlewatkan atau disimpan dalam adu penalti.
+select count(*) as total_semua_tembakan_dengan_hasil_goal from penalty_shootout where score_goal='N';
+
+[25] Tulislah sebuah query di SQL untuk menyiapkan daftar pemain dengan jumlah tembakan yang mereka ambil dalam adu penalti.
+select ps.player_id, p.player_name, ps.team_id, sc.country_name, ps.kick_no from soccer_country sc, penalty_shootout ps, player_mast p where p.player_id=ps.player_id and sc.country_id=ps.team_id;
+
+[26] Tuliskan query di SQL untuk menemukan jumlah tembakan hukuman yang diambil oleh tim. 
+select ps.team_id, sc.country_name, count(ps.score_goal) from penalty_shootout ps, soccer_country sc where sc.country_id=ps.team_id group by ps.team_id;
+
+[27] Tuliskan permintaan di SQL untuk menemukan jumlah pemesanan terjadi di setiap setengah permainan dalam jadwal bermain normal.
+select play_half, count(*) as jumlah_booking from player_booked where play_schedule='NT' group by play_half;
+
+[28] Tuliskan permintaan di SQL untuk menemukan jumlah pemesanan yang terjadi pada saat waktu tambahan.
+select count(*) as jumlah_booking_saat_ST from player_booked where play_schedule='ST';
+
+[29] Tuliskan permintaan di SQL untuk menemukan jumlah pemesanan yang terjadi pada saat waktu tambahan.
+select count(*) as jumlah_booking_saat_ST from player_booked where play_schedule='ET';
