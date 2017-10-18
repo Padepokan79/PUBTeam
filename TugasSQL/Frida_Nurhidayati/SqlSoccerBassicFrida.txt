@@ -1,0 +1,86 @@
+1. Menampilkan jumlah soccer venue
+select count(*) from soccer_venue;
+
+2. menampilkan jumlah negara yg berpartisipasi, dilihat dari id team karena id team sama dengan id negara
+select distinct count(*) from player_mast group by team_id;
+
+3.menampilkan jumlah goal normal
+select count(*) from goal_details where goal_type='N';
+
+4.menampilkan jumlah hasil pertandingan yg ada hasilnya/ada yang menang
+select count(*) from match_mast where results='WIN';
+
+5.menampilkan jumlah hasil pertandingan yang draw
+select count(*) from match_mast where results='DRAW';
+
+6.menampilkan tanggal awal pertandingan dimulai
+select min(play_date) from match_mast;
+
+7.menampilkan jumlah goal bunuh diri
+select count(*) from goal_details where goal_type='O';
+
+8.menampilkan jumlah hasil pertandingan menang di babak grup
+select count(*) from match_mast where play_stage='G';
+
+9.menampilkan jumlah match yang berasal dari adu pinalti
+select distinct count(*) from penalty_shootout;
+
+10.menampilkan jumlah pertandingan yang diputuskan berdasar pinalti pada babak 16 besar
+select count(*) from match_mast where decided_by='P' and play_stage='R';
+
+11.menemukan jumlah gol yang dicetak di setiap pertandingan dalam jadwal main normal
+select match_no,count(*) from goal_details where goal_schedule='NT' group by match_no order by match_no Asc;
+
+12.menampilkan no pertandingan,tanggal dan score yang tidak ada waktu tambahan di babak 1
+select g.match_no,m.play_date,m.goal_score from goal_details g inner join match_mast m on g.match_no=m.match_no where g.goal_schedule='NT' and goal_half=1;
+
+13.menampilkan jumlah pertandingan yang draw pada babak grup penyisihan
+select count(*) from match_details where play_stage='G' and win_lose='D';
+
+14.menampilkan jumlah pertandingan yang menang dan hanya 1 goal
+select count(*) from  match_details where goal_score=1 && decided_by='N' && win_lose='W';
+
+15.menampilkan jumlah pemain yang diganti pada saat turnamen
+select count(*) from player_in_out where in_out='O';
+
+16.menampilkan jumlah pemain yg diganti pada waktu bermain normal
+select count(*) from player_in_out where in_out='O' and play_schedule='NT';
+
+17.menampilkan jumlah pemain yg diganti pada waktu stoppage time.
+select count(*) from player_in_out where in_out='O' and play_schedule='ST';
+
+18.menampilkan jumlah pemain yang diganti pada babak ke 1
+select count(*) from player_in_out where in_out='O' and play_half=1;
+
+19.menampilkan jumlah draw tanpa goal
+select count(*) from match_details where win_lose='D' and goal_score=0; 
+
+20.menampilkan jumlah pemain yang diganti pada extra time
+select count(*) from player_in_out where in_out='O' and play_schedule='ET';
+
+21.menunjukkan jumlah pemain pengganti yang terjadi dalam berbagai tahap permainan untuk keseluruhan turnamen
+select count(*) from player_in_out where in_out='I';
+
+22.menemukan jumlah tembakan yang diambil dalam adu penalti.
+select count(*) from penalty_shootout;
+
+23.menemukan jumlah tembakan gol yang dicetak di adu penalti
+select count(*) from penalty_shootout where score_goal='Y';
+
+24.menemukan jumlah tembakan yang terlewatkan atau disimpan dalam adu penalti
+select count(*) from penalty_shootout where score_goal='N';
+
+25.menampilkan daftar pemain dengan jumlah tembakan yang mereka ambil dalam adu penalti
+select m.player_name,count(p.*) from penalty_shootout p,player_mast m where p.player_id=m.player_id group by m.player_name; 
+
+26.menemukan jumlah tembakan hukuman yang diambil oleh tim
+select team_id,count(*) from penalty_shootout group by team_id;
+
+27.menemukan jumlah pemesanan terjadi di setiap setengah permainan dalam jadwal bermain normal
+select play_half,count(*) from player_booked where play_schedule='NT' group by play_half; 
+
+28.menemukan jumlah pemesanan yang terjadi pada saat penghentian.
+select play_half,count(*) from player_booked where play_schedule='ST' group by play_half;
+
+29.menemukan jumlah pemesanan yang terjadi di waktu tambahan
+select play_half,count(*) from player_booked where play_schedule='ET' group by play_half; 
