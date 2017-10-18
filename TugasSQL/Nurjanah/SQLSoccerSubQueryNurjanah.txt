@@ -1,0 +1,30 @@
+1. menampilkan Tim yang memainkan permainan pertama
+select country_name from soccer_country where country_id IN (select team_id from match_details where match_no = 1);
+2. menampilkan pemenang uero cup 2016
+select country_name 
+from soccer_country 
+where country_id IN(
+select team_id from match_details where win_lose = 'W' and play_stage = 'F');
+3. menampilkan no pertandingan, tahap permainan, jumlah gol yang penontonnya terbanyak.
+select match_no, play_stage, goal_score
+from match_mast
+where match_no in(select MAX(audence) from match_mast);
+9. select stop2_sec
+from match_mast 
+where match_no in(select stop2_sec from match_mast where order by stop2_sec desc limit 1);//revisi
+10. menampilkan tim memainkan pertandingan di mana waktu penghentian tertinggi 2 telah ditambahkan di babak kedua
+select country_name
+from soccer_country
+where country_id in ( select team_id 
+from match_details 
+where  match_no in ( select match_no 
+from match_mast  
+order by stop2_sec desc Limit 2));
+12. menampilkan tim yang dikalahkan portugal di final
+select country_name 
+from soccer_country
+where country_id in ( select team_id from match_details where play_stage = 'F' and win_lose = 'L');
+17. menampilkan jumlah pemain jerman yang mencetak gol
+select COUNT(player_id)
+from goal_details
+where team_id in (select country_id from soccer_country where country_name = 'Germany');
