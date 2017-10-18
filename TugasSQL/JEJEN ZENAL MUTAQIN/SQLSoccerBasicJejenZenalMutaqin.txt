@@ -1,0 +1,86 @@
+1. Menampilkan jumlah dari venues EURO cup 2016
+- SELECT COUNT(*) FROM soccer_venue
+
+2. Menampilkan jumlah negara yang ikut berpartisipasi
+- SELECT COUNT(DISTINCT team_id) FROM player_mast 
+
+3. Menampilkan jumlah gol yang dicetak di EURO cup 2016 dalam jadwal main normal
+- SELECT COUNT(*) FROM goal_details WHERE goal_schedule = 'NT'
+
+4. Menampilkan Jumlah pertandingan yang mempunyai result(Hasil)
+- SELECT count(*) FROM match_mast WHERE results = 'WIN'
+
+5. Menampilkan jumlah pertandingan yang berakhir dengan DRAW
+- SELECT count(*) FROM match_mast WHERE results = 'DRAW'
+
+6. Menampilkan Tanggal Football EURO cup 2016 dimulai
+- SELECT play_date FROM match_mast ORDER BY play_date LIMIT 1
+
+7. Menampilkan Jumlah pertandingan yang bertipe gol bunuh diri
+- SELECT count(*) FROM goal_details WHERE goal_type = 'O'
+
+8. Menampilkan jumlah pertandingan yang berakhir dengan babak group
+- SELECT count(*) FROM match_mast WHERE play_stage = 'G'
+
+9. Menampilkan jumlah pertandingan yang mendapat hasil dengan adu penalti.
+- SELECT COUNT(DISTINCT match_no) FROM  penalty_shootout 
+
+10. Menampilkan jumlah pertandingan yang diputuskan melalui adu penalti
+- SELECT COUNT(*) FROM match_mast WHERE decided_by = 'P'
+
+11. Menampilkan jumlah score di setia[ pertandingan dengan jadwal normal
+- SELECT match_no, count(*) FROM goal_details WHERE goal_schedule='NT' GROUP BY match_no
+
+12. Menampilkan no pertandingan, tanggal pertandingan, dan gol yang dicetak untuk pertandingan yang tidak ada waktu penghentian yang ditambahkan di babak pertama permainan.
+- SELECT goal_details.match_no, match_mast.play_date, match_mast.goal_score FROM goal_details inner join match_mast ON goal_details.player_id=match_mast.plr_of_match WHERE goal_details.goal_schedule='ST'
+
+13. Menampilakan jumlah pertandingan yang diakhiri dengan hasil imbang tanpa gol di babak penyisihan grup
+- SELECT count(*) FROM match_details WHERE  win_lose='D'
+
+14. Menampilkan  jumlah pertandingan yang berakhir dengan hanya satu kemenangan gol kecuali pertandingan yang diputuskan dengan adu penalti.
+- SELECT count(*) FROM match_details WHERE goal_score = 1 and  decided_by = 'N'
+
+15. Menampilkan jumlah pemain yang diganti di turnamen
+-SELECT count(DISTINCT player_id) FROM player_in_out
+
+16. Menampilkan jumlah pemain yang diganti di turnamen dalam waktu bermain normal
+- SELECT count(DISTINCT player_id) FROM player_in_out WHERE play_schedule = 'NT';
+
+17. Menampilkan jumlah pemain yang diganti di turnamen dalam stoppage time
+- SELECT count(DISTINCT player_id) FROM player_in_out WHERE play_schedule = 'ST';
+
+18. Menampilkan jumlah pemain yang diganti di turnamen yang play half pertama
+- SELECT count(DISTINCT player_id) FROM player_in_out WHERE play_half = '1'
+
+19. Menampilkan jumlah total hasil imbang tanpa gol yang ada di seluruh turnamen
+- SELECT count(DISTINCT match_no) FROM match_details WHERE win_lose = 'D' && goal_score = 0
+
+20. Menampilkan jumlah pemain yang diganti di turnamen pada Extra Time
+- SELECT count(DISTINCT player_id) FROM player_in_out WHERE play_schedule = 'ET'
+
+21. Menghitung jumlah pemain pengganti dalam berbagai tahap untuk keseluruhan turnamen
+- SELECT play_half,count(player_id) FROM  player_in_out GROUP BY play_half
+
+22. Menampilkan jumlah shoot yang dicetak dalam  adu penalty
+- SELECT count(*) FROM penalty_shootout
+
+23. Menampilkan jumlah shoot gol yang dicetak dalam adu penalty
+- SELECT count(*) FROM penalty_shootout WHERE score_goal = 'Y'
+
+24. Menampilkan jumlah shoot yang missed  yang di cetak dalam adu penalty
+- SELECT count(*) FROM penalty_shootout WHERE score_goal = 'N'
+
+25. Menampilkan player dan jumlah tendangannya dalam adu penalty
+- SELECT player_mast.player_name,COUNT(penalty_shootout.player_id)FROM penalty_shootout INNER JOIN player_mast ON penalty_shootout.player_id = player_mast.player_id  GROUP BY penalty_shootout.player_id,player_mast.player_id
+
+26. Menampilkan nama team dan jumlah tendangan berdasarkan team 
+- SELECT s.country_name , COUNT(p.team_id) FROM penalty_shootout p INNER JOIN soccer_country s ON p.team_id = s.country_id GROUP BY p.team_id,s.country_id 
+
+27. Menampilkan jumlah booking yang terjadi di setiap half permainan dalam jadwal bermain normal.
+- SELECT play_half , COUNT(*) FROM player_booked WHERE play_schedule='NT' GROUP BY play_half
+
+28. Menampilkan jumlah booking yang terjadi pada stoppage time
+- SELECT COUNT(*) FROM player_booked WHERE play_schedule='ST' 
+
+29. Menampilkan jumlah booking yang terjadi pada extra time
+- SELECT COUNT(*) FROM player_booked WHERE play_schedule='ET' 
