@@ -1,0 +1,146 @@
+1. Mencari jumlah tempat untuk EURO cup 2016
+
+SELECT COUNT(*) 
+FROM soccer_venue;
+
+2. Mencari jumlah negara yang berpartisipasi dalam piala EURO 2016
+
+SELECT COUNT (DISTINCT team_id)
+ROM player_mast;
+
+3. Mencari jumlah gol yang dicetak di EURO cup 2016 dalam jadwal main normal
+
+SELECT COUNT(*)
+FROM goal_details WHERE goal_schedule='NT';
+
+4. Mencari jumlah pertandingan yang berakhir dengan kemenangan
+
+SELECT COUNT(*)
+FROM match_mast WHERE results='WIN'; 
+
+5. Mencari jumlah pertandingan yang berakhir dengan Draw
+
+SELECT COUNT(*)
+FROM match_mast WHERE results='DRAW';
+
+6. Mencari tanggal kapan Football EURO cup 2016 dimulai
+
+SELECT MIN(play_date) As date_EURO_cup_2016_begin
+FROM match_mast;
+
+7. Mencari jumlah Gol bunuh diri
+
+SELECT COUNT(*)
+FROM goal_details WHERE goal_type='O';
+
+8.Mencari jumlah pertandingan yang berakhir dengan group stage
+
+SELECT COUNT(*)
+FROM match_mast WHERE play_stage='G';
+
+9. Mencari jumlah pertandingan yang di tentukan oleh adu finalti
+
+SELECT COUNT (DISTINCT match_no)
+FROM penalty_shootout;
+
+10. Mencari jumlah pertandingan yang diputuskan melalui adu penalti di babak 16 besar
+
+SELECT COUNT(*)
+FROM match_mast WHERE play_stage='R' AND decided_by='P';
+
+11. Mencari jumlah Gol dari goal schedul normal
+
+SELECT match_no, COUNT(*)
+FROM goal_details WHERE goal_schedule='NT' GROUP BY match_no;
+
+12. Menampilkan match_no, play_date, goal_score yang tidak ada tambahan waktu di babak ke-1
+
+SELECT match_no, play_date, goal_score
+FROM match_mast WHERE stop1_sec=0;
+
+13. Mencari jumlah pertandingan yang berakhir draw di group stage
+
+SELECT COUNT (DISTINCT match_no)
+FROM match_details WHERE win_lose='D' AND play_stage='G';
+
+14. Mencari jumlah pertandingan yang menang hanya 1 gol saja tapi tidak berdasarkan finalty
+
+SELECT COUNT(DISTINCT match_no)
+FROM match_details WHERE win_lose='W' && goal_score=1 && decided_by!=0;
+
+15. Mencari jumlah total pergantian pemain selama turnamen
+
+SELECT COUNT(player_id)
+FROM player_in_out WHERE in_out= 'O';
+
+16. Mencari total pergantian pemain dalam play scedul normal
+
+SELECT COUNT(player_id)
+FROM player_in_out WHERE in_out= 'O' AND play_schedule='NT';
+
+17. Mencari jumlah pergantian pemain di stoppage time
+
+SELECT COUNT(player_id)
+FROM player_in_out WHERE play_schedule='ST' AND in_out= 'O'; 
+
+18. Mencari jumlah total pergantian pemain di babak pertama
+
+SELECT COUNT(player_id)
+FROM player_in_out WHERE in_out= 'O' AND play_half=1;
+
+19. Mencari jumlah yang draw tanpa ada gol
+
+SELECT COUNT(*)
+FROM match_details WHERE win_lose='D' AND goal_score=0; 
+
+20. Mencari jumlah pergantian pemain di extra time
+
+SELECT COUNT(player_id)
+FROM player_in_out WHERE play_schedule='ET' AND in_out= 'O';  
+
+21. Mencari jumlah pemain pengganti yang terjadi dalam berbagai tahap permainan untuk keseluruhan turnamen 
+SELECT play_schedule, COUNT(player_id)
+FROM player_in_out WHERE in_out= 'O' GROUP BY play_schedule;
+
+22. Mencari jumlah tembakan dalam adu finalty
+
+SELECT COUNT(*) AS shots_penalty
+FROM penalty_shootout;
+
+23. Mencari jumlah gol dalam adu finalty
+
+SELECT COUNT(*) AS shots_goal_penalty
+FROM penalty_shootout WHERE score_goal='Y';
+
+24. Mencari jumlah gagal mencetak gol dalam adu finalty
+
+SELECT COUNT(*) AS shots_goal_penalty
+FROM penalty_shootout WHERE score_goal='N';
+
+25. Menampilkan nama pemain dan jumlah tembakan finalty
+
+SELECT player_mast.player_name, COUNT(penalty_shootout.kick_id ) AS shot_finalty
+FROM player_mast, penalty_shootout
+WHERE penalty_shootout.player_id=player_mast.player_id GROUP BY player_mast.player_id;
+
+26. Menampilkan Team da jumlah tembakan finalty-nya
+
+SELECT soccer_country.country_name, COUNT(penalty_shootout.kick_id) AS shot_finalty
+FROM soccer_country INNER JOIN penalty_shootout
+ON penalty_shootout.team_id=soccer_country.country_id GROUP BY soccer_country.country_id;
+
+
+27. Mencari Jumlah booking di setiap setengah permainan dan dalam scadul_play normal
+
+SELECT COUNT(*) 
+FROM player_booked WHERE play_schedule='NT' GROUP BY play_half ;
+
+28. Mencari jumlah booking di play scandul stoppage time.
+
+SELECT COUNT(*) 
+FROM player_booked WHERE play_schedule='ST';
+
+29. Mencari jumlah booking pada waktu tambahan
+
+SELECT COUNT(*) 
+FROM player_booked WHERE play_schedule='ET';
