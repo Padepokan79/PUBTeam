@@ -1,0 +1,12 @@
+1.menampilkan nip,gapok dari tabel historis_gapok dimana nip lihat ke nip dari mstpegawai dimana kode pangkat lihat di table pangkat yang kode pangkatya '4B'
+
+select nip,gapok from historis_gapok where nip in
+	(select nip from mstpegawai where kdpangkat in
+		(select kdpangkat from pangkat_tbl where kdpangkat='4B')
+2.Menampilkan nip,nama pegawai dan jumlah gapok nya
+SELECT H.NIP,M.NAMA,SUM(H.GAPOK) AS TOTAL_GAPOK,H.KDPANGKAT,P.NMPANGKAT
+FROM HISTORIS_GAPOK H INNER JOIN MSTPEGAWAI M INNER JOIN PANGKAT_TBL P 
+ON H.NIP=M.NIP AND H.KDPANGKAT=P.KDPANGKAT GROUP BY H.NIP ORDER BY TOTAL_GAPOK;
+		
+		 
+		
