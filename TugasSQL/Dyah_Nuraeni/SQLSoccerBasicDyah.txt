@@ -1,0 +1,98 @@
+//Jumlah stadion di EURO cup 2016
+1.select count(*) as sum_of_venue from soccer_venue;
+
+//Jumlah negara yang berpartisipasi dalam EURO cup
+2.select count (distinct(team_id)) from player_mast ;
+
+//Jumlah goal di EURO Cup dalam Normal Play
+3.select count(*) as sum_of_goal_of_NT from goal_details where goal_schedule = 'NT';
+
+
+//Jumlah pertandingan yang berakhir dengan hasil Win
+4. select count(*) from match_mast where results = 'WIN';
+
+
+//Jumlah Pertandingan yang berakhir dengan hasil Imbang
+5. select count(*) from match_mast where results = 'DRAW';
+
+
+//Tanggal ketika EURO CUP dimulai
+6. select play_date from match_mast order by play_date ASC limit 1;
+
+// Jumlah Goal Bunuh-diri di EURO Cup 2016
+7. select count(*) as sum_of_sg from goal_details where goal_type = 'O';
+
+
+//Jumlah pertandingan yang hasilnya = Group Stage
+8. select count(*) from match_mast where play_stage='G';
+
+//Jumlah Pertandingan dengan hasi dari pinalty
+9.select count(distinct(match_no)) as sum_of_match from penalty_shootout;
+
+
+//Jumlah pertandingan diputuskan dari pinalti di Round 16
+10.select count(*) from match_mast where play_stage = 'R' AND decided_by = 'P' ;
+
+//Jumlah gol setiap pertandingan dalam Normal Play
+11.select count(*) AS SUM_OF_GOAL_NT from goal_details where goal_schedule = 'NT' group by match_no;
+
+//Menampilkan no_pertandingan,tgl, gol untuk pertandingan yang tidak ada pertambahan waktu
+//setelah ditambah di bbak pertama
+12. select goal_details.match_no,  match_mast.play_date, match_mast.goal_score from goal_details , match_mast where  match_mast.match_no=goal_details.match_no && goal_details.goal_schedule ='NT' goal_details goal_half='1';
+//Jumlah pertandingan yang berakhir dengan goal imbang di Group Stage
+13. select count(*) from match_details where win_lose='D' AND play_stage ='G';
+
+//Jumlah pertandingan yng berakhir dengan 1 gol untuk kemenangan kecuali diputuskn dengan pinalty
+14.  select count(*) from match_details where win_lose ='W' && decided_by ='N' && goal_score =1;
+
+//Jumlah pemain yang diganti dalam pertandingan
+15.select count(*) from player_in_out where in_out ='O'GROUP BY match_no;
+
+//Jumlah pemain yang diganti dalam pertandingan Dalam Normal Play
+16.select count(*) from player_in_out where in_out ='O' and play_schedule = 'NT' GROUP BY match_no;
+
+//Jumlah pemain yang diganti dalam pertandingan Dalam waktu
+17.select count(*) from player_in_out where in_out ='O' and play_schedule = 'ST' GROUP BY match_no;
+
+//Jumlah pemain yang digantikan di babak pertama
+18. select count(*) from player_in_out where in_out ='O' and play_half='1' GROUP BY match_no;
+
+//Jumlah goal imbang dalam turnamen
+19.select sum(goal_score) from match_details where win_lose ='D'
+
+//Jumlah pemain yang digantikan di Extra Time
+20.select count(*) from player_in_out where in_out ='O' and play_schedule = 'ET'  GROUP BY match_no;
+
+//Menghitung jumlah pemain yang digantikan dalam Normal Play, Pertambahan waktu dan Extra Time
+21.  select count(*) from player_in_out where in_out ='O' group by play_schedule;
+
+//Jumlah tendangan dalam pinalty perpertandingan
+22. select count(*) from penalty_shootout group by match_no ;
+//Jumlah tendangan dalam pinalty 
+22. select count(*) from penalty_shootout  ;
+
+//Jumlah tendangan yang mencetak gol perpertandingan
+23. select count(*) from penalty_shootout  where score_goal = 'Y' group by match_no ;
+//Jumlah tendangan yang mencetak gol 
+23. select count(*) from penalty_shootout  where score_goal = 'Y'  ;
+
+//Jumlah tendangan yang miss perpertandingan
+24.select count(*) from penalty_shootout  where score_goal = 'N' group by match_no ;
+//Jumlah tendangan yang miss 
+24.select count(*) from penalty_shootout  where score_goal = 'N'  ;
+
+//Jumlah pemain yang disipkan dengan jumlah tendangannya dalam pinalty
+25. select player_id, count(*) from penalty_shootout  group by player_id ;
+
+//Jumlah tendangan pinalty dalam tim
+26.select count(*) from penalty_shootout group by team_id ;
+
+//Jumlah booking yang terjadi setiap babak dalam Normal Play
+27. select count(*) from player_booked where play_schedule = 'NT' group by play_half;
+
+//Jumlah booking yang terjadi di ST
+28.select count(*) from player_booked where play_schedule = 'ST';
+      -select sum(booking_time) from player_booked where play_schedule = 'ST';
+
+//Jumlah booking yang terjadi di ET
+29. select count(*) from player_booked where play_schedule = 'ET';
