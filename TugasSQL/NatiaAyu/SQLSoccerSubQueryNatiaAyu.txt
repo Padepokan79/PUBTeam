@@ -1,0 +1,83 @@
+1.tim yang main pertandingan pertama dari EURO cup 2016.
+SELECT country_id, country_name FROM soccer_country WHERE country_id IN(
+SELECT team_id FROM match_details WHERE match_no=1
+);
+
+2.menemukan pemenang EURO cup 2016
+SELECT country_id, country_name FROM soccer_country WHERE country_id IN(
+SELECT team_id FROM match_details WHERE play_stage='F' AND win_lose='W'
+);
+
+3.menampilkan match_no, play_stage, goal_score, audence yang merupakan pertandingan audionya yang paling tinggi
+SELECT match_no, play_stage, goal_score, audence FROM match_mast WHERE audence IN(
+SELECT MAX(audence) FROM match_mast
+);
+
+4.menampilkan match_nodi mana Jerman bermain melawan Polandia
+
+
+5. 
+
+6.menampilkan daftar pemain yang mencetak sejumlah gol di setiap pertandingan
+
+7.menemukan tim yang memainkan pertandingan audionya yang paling tinggi
+SELECT country_name FROM soccer_country WHERE country_id IN(
+SELECT team_id FROM goal_details WHERE 
+match_no IN(
+SELECT match_no FROM match_mast WHERE audence IN(
+SELECT MAX(audence) FROM match_mast
+)));
+
+8.
+
+9.menemukan waktu penghentian tertinggi ke 2 yang telah ditambahkan di paruh kedua permainan
+
+10.
+
+11.
+
+12.menemukan tim yang dikalahkan Portugal di final Piala Euro 2016
+SELECT country_name FROM soccer_country WHERE country_id IN(
+SELECT team_id FROM match_details WHERE play_stage='F' AND win_lose='L'
+);
+
+13.menemukan klub yang memasok jumlah pemain terbanyak ke EURO CUP 2016
+
+
+14.menemukan pemain dan nomor jersey yang mencetak pinalty pertama turnamen.
+SELECT player_name, jersey_no FROM player_mast WHERE player_id IN(
+SELECT player_id FROM goal_details WHERE goal_type='P' LIMIT 1
+);
+
+15.menemukan pemain beserta timnya dan nomor jersey yang mencetak pinalty pertama turnamen.
+
+
+16.menemukan pemain kiper bagi Italia dalam adu penalti melawan Jerman di Football EURO cup 2016
+
+
+17.menemukan jumlah pemain Jerman yang mencetak gol di turnamen tersebut
+
+18.menemukan para pemain beserta no jersey mereka, dan bermainlah di klub, yang merupakan kiper untuk skuad Inggris untuk  EURO cup 2016
+SELECT player_name, jersey_no, playing_club FROM player_mast WHERE posi_to_play='GK' AND team_id IN(
+SELECT country_id FROM soccer_country WHERE country_name='England'
+);
+
+19.menemukan pemain dengan informasi lain yang berada di bawah kontrak ke Liverpool berada di Skuad Inggris pada tahun 2016 EURO cup
+SELECT * FROM player_mast WHERE playing_club='Liverpool' AND team_id IN(
+SELECT country_id FROM soccer_country WHERE country_name='England'
+);
+
+20.menemukan pemain dengan infromation lainnya. Yang mencetak gol terakhir pada pertandingan semifinal ke-2 yaitu ke-50 di EURO cub 2016
+
+21.
+
+22.
+
+23.
+
+24.menemukan runner-up di Football EURO cup 2016.
+SELECT country_name FROM soccer_country WHERE country_id IN(
+SELECT team_id FROM match_details WHERE play_stage='F' AND win_lose='L'
+);
+
+25.
