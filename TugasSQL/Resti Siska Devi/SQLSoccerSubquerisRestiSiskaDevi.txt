@@ -1,0 +1,92 @@
+1. Mencari team yang pertama main di pertandingan
+
+-SELECT country_name
+FROM soccer_country WHERE country_id IN
+(SELECT team_id FROM match_details WHERE match_no=1);
+
+2. Mencari pemenang EURO cup 2016
+
+-SELECT country_name
+FROM soccer_country WHERE country_id IN
+(SELECT team_id FROM match_details WHERE play_stage='F' AND win_lose='W');
+
+3. Menapilkan data pertandingan yang penontonnya terbanyak
+
+-SELECT match_no, play_stage, goal_score, audence
+FROM match_mast WHERE audence =
+(SELECT MAX(audence) FROM match_mast);
+
+//4. Mencatri nomor pertandingan ketika Germany melawan Palnd
+
+-SELECT match_no
+FROM match_details WHERE team_id IN
+(SELECT country_id FROM soccer_country WHERE country_name= 'Germany' AND country_name= 'Poland');
+ 
+
+//5. Mencari data pada saat Portugal melawan Hungary
+
+-SELECT match_no, play_stage, play_date, goal_score, results
+FROM match_mast WHERE match_no IN (
+SELECT match_no FROM match_details WHERE team_id IN(
+SELECT country_id FROM soccer_country WHERE country_name='Portugal' AND country_name= 'Hungary')
+);
+
+//6.
+
+7. Mencari negara yang paling tinggi penontonnya
+
+-SELECT country_name
+FROM soccer_country WHERE country_id IN(
+SELECT team_id FROM goal_details WHERE match_no IN(
+SELECT match_no FROM match_mast WHERE audence IN(
+SELECT MAX(audence) FROM match_mast)));
+
+//8.
+
+9. Mencari tambah waktu terbsar ke-2 di babak ke 2
+
+-SELECT stop2_sec
+FROM match_mast ORDER BY stop2_sec DESC
+LIMIT 1,1;
+
+10. Mencari team yang mendapatkan tambah waktu terbsar ke-2 di babak ke 2
+
+-SELECT country_name
+FROM soccer_country WHERE country_id IN(
+SELECT team_id FROM match_details WHERE match_no IN(
+SELECT match_no FROM match_mast WHERE stop2_sec =(
+SELECT stop2_sec FROM match_mast ORDER BY stop2_sec DESC
+LIMIT 1,1)));
+ 
+
+11.  Mencari data yang mendapatkan tambahan waktu terbanyak di babak ke-2
+
+-SELECT match_no, play_date, stop2_sec
+FROM match_mast WHERE stop2_sec =(
+SELECT stop2_sec FROM match_mast ORDER BY stop2_sec DESC
+LIMIT 1,1);
+
+12. Mencari team yang di kalahkan Potugal di final
+
+-SELECT country_name
+FROM soccer_country WHERE country_id =(
+SELECT team_id FROM match_details WHERE play_stage='F' AND win_lose='L');
+
+13.Mencari tem yang banyak mengirimkan pemain 
+
+-SELECT playing_club, COUNT(*) AS ammount
+FROM player_mast GROUP BY playing_club ORDER BY ammount DESC LIMIT 1; 
+
+14.
+
+15.
+
+16.
+
+17. Mencari jumlah pemain Germany yang mencetak gol
+
+-SELECT COUNT(DISTINCT player_id) AS jumlah_pemain_pencetak_gol_germany
+FROM goal_details WHERE team_id =(
+SELECT country_id FROM soccer_country WHERE country_abbr='GER'); 
+
+18.  
