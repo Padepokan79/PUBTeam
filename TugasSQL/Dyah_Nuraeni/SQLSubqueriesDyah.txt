@@ -1,0 +1,46 @@
+1.//Team yang bermain di pertandingan pertama dalam EURO Cup 2016
+select match_no,country_name from match_details m, soccer_country s where  m.team_id=s.country_id and m.match_no=1;
+
+2.// Mengetahui tim yang juara
+select c.country_name from soccer_country c , match_details m where m.team_id=c.country_id && m.win_lose ='W' &&  order by match_no DESC limit 0,1 ;
+
+3.//Mengetahui audience paling banyak
+select match_no, play_stage, goal_score, audence from match_mast where audence=(select max(audence) from match_mast);
+
+//6 menampilkan pemain yang mencetak goal setiap pertandingan
+select g.match_no, p.player_name
+from goal_details g ,player_mast p 
+where p.player_id=g.player_id order by match_no ;
+
+club yang menyuplai paling banyak pemain
+//13 select playing_club,count(*) as jum from player_mast group by playing_club order by jum desc limit 1;
+
+pemain  dan no jerse yang mencetak pertama di final
+//14 select p.player_name, p.jersey_no 
+from player_mast p ,goal_details g where p.player_id=g.player_id and g.goal_type ='P' and g.match_no=1;
+
+no pertandingan dan tim yang bermain dengan pinalty paling banyak
+28// select team_id, count(score_goal) as sum from penalty_shootout group by team_id order by sum desc;
+
+pemain ,no_jersey,dan club yang berasal dari england
+18// select p.jersey_no,p.player_name, p.playing_club from player_mast p,soccer_country s where p.team_id = country_id and s.country_name='England' and posi_to_play='GK';
+
+kapten portugal
+21 select p.player_name from player_mast p, match_captain m where p.team_d
+
+
+27//no pertandingan dan jumlah pinalty terbanyak
+select match_no,count(*) as jum from penalty_shootout group by match_no order by jum desc limit 1;
+
+
+//33 menemukan goal tercepat setelah 5 menit
+select * from goal_details where goal_time = 5;
+
+//32 tanggal pinalti
+select distinct(p.play_date) from match_mast p, penalty_shootout s where p.match_no=s.match_no ;
+
+31// stadion digunakan pinalty
+select v.venue_name from soccer_venue v, match_mast m where v.venue_id=m.venue_id and m.decided_by='P'; 
+
+30// stage pertandingan di mana tendangan pinalty no 23
+select p.play_stage from match_mast p, penalty_shootout s where p.match_no=s.match_no and s.kick_id=23;
