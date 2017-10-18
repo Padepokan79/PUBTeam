@@ -1,0 +1,89 @@
+SQL SoccerBasic Ulil Hidayah
+
+1. Mencari jumlah vanue
+SELECT COUNT(*) FROM soccer_venue;
+
+2. menampilkan julah country yang ikut berpartisipasi di EURO CUP 2016
+select DISTINCT(count(team_id)) FROM player_mast group by team_id;
+
+3. Mencari jumlah goals yang N
+SELECT count(*) from goal_details where goal_type='N';
+
+4. menampilkan results pertandingan beserta jumlahnya
+SELECT results,count(*) from match_mast GROUP BY results;
+
+5. mencari jumlah results yang DRAW
+SELECT count(*) from match_mast where results='DRAW';
+
+6. mencari tanggal mulai EURO CUP 2016
+SELECT play_date from match_mast where match_no='1';
+
+7. Mencari jumlah goals yang O
+SELECT count(*) from goal_details where goal_type='O';
+
+8. menampilkan play_stage beserta jumlah pertandingannya
+SELECT play_stage, count(*) from match_mast group by play_stage;
+
+9. Mencari jumlah goals yang masuk pada penalty
+SELECT count(*) from penalty_shootout where score_goal='Y';
+
+10. menampilkan pertandingan yg masuk 16 besar dan diputuskan melalui penalty
+SELECT COUNT(*) from match_mast where match_no>=35 AND match_no<=51 AND decided_by='P';
+
+11. manampilkan jumlah goal yg dicetak pada Normal Time
+SELECT COUNT(*) FROM goal_details WHERE goal_schedule='NT';
+
+12. menampilkan match_no, play_date, goal score pada ST babak 1
+SELECT g.match_no,m.play_date, count(g.match_no) FROM match_mast m INNER JOIN goal_details g ON m.match_no=g.match_no WHERE g.goal_half=1 and g.goal_schedule!='ST' group by m.play_date,g.match_no;
+
+13. manampilkan jumlah pertandingan DRAW dan goal 0 di Group stage (HASILNYA ANEH)
+select count(*) from match_details where play_stage='G' && win_lose='D' && goal_score=0;
+
+14. menampilkan jumlah pertandingan yang hanya mencetak 1 gol dan bukan penalty
+select count(*) from match_details where decided_by!='P' and goal_score='1';
+
+15. manampilkan jumlah pemain yang digantikakn saat turnemen
+select count(*) from player_in_out where in_out='O';
+
+16. manampilkan jumlah pemain yang digantikakn saat turnemen dalam Normal Time
+select count(*) from player_in_out where in_out='O' and play_schedule='NT'; 
+
+17. manampilkan jumlah pemain yang digantikakn saat turnemen dalam Stoppage Time
+select count(*) from player_in_out where in_out='O' and play_schedule='ST';
+
+18. manampilkan jumlah pemain yang digantikakn saat babak pertama
+select count(*) from player_in_out where in_out='O' and play_half='1';
+
+19. manampilkan jumlah pertandingan yang DRAW without goal
+select count(*) from match_details where win_lose='D' and goal_score='0';
+
+20. manampilkan jumlah pemain yang digantikakn saat turnemen pada Extra Time
+select count(*) from player_in_out where in_out='O' and play_schedule='ET';
+
+21. manampilkan jumlah pemain pengganti pada setiap tahap
+select play_schedule,count(*) from player_in_out where in_out='I' group by play_schedule;
+
+22. manampikan jumlah tendangan penalty
+select count(*) from penalty_shootout;
+
+23. manempilkan jumlah penalty yang masuk
+select count(*) from penalty_shootout where score_goal='Y';
+
+24. menampilkan jumlah goal masuk dan tidak
+select score_goal, count(*) from penalty_shootout group by score_goal;
+
+25. menampilkan player dan jumlah penaltynya
+select p.player_id, pm.player_name,pm.team_id,count(p.player_id) from penalty_shootout p INNER JOIN player_mast pm ON p.player_id=pm.player_id group by pm.player_name,pm.team_id,p.player_id;
+
+26. menampilkan team dan jumlah penaltynya
+select p.team_id, s.country_name, count(p.team_id) from penalty_shootout p INNER JOIN soccer_country s ON 
+p.team_id=s.country_id group by s.country_name,p.team_id;
+
+27. menampilkan jumlah booking time pada Normal Time
+select count(booking_time) from player_booked where play_schedule='NT';
+
+28. menampilkan jumlah booking time pada Stoppage Time
+select count(booking_time) from player_booked where play_schedule='ST';
+
+29. menampilkan jumlah booking time pada Extra Time
+select count(booking_time) from player_booked where play_schedule='ET';
