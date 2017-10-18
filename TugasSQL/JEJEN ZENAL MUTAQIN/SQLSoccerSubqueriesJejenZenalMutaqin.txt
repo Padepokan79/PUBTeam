@@ -1,0 +1,38 @@
+1. Menampilkan Tim yang pertama bertanding
+SELECT country_name from soccer_country WHERE country_id = (SELECT team_id FROM match_details ORDER BY match_no LIMIT 1)
+
+2. Menampilkan Tim Pemenang EURO Cup 2016
+SELECT country_name FROM soccer_country WHERE country_id IN (
+SELECT team_id FROM match_details WHERE play_stage='F' 
+AND win_lose = 'W');
+
+3. Menampilkan match_no, play stage, goal score, dan audence yang merupakan pertandingan audence nya yang paling tinggi.
+SELECT match_no, play_stage, goal_score, audence FROM match_mast WHERE audence IN (
+SELECT MAX(audence) FROM match_mast);
+
+4. Menampilkan pertandingan di mana Jerman bermain melawan Polandia 
+SELECT match_no FROM match_details WHERE team_id IN (
+SELECT country_id FROM soccer_country WHERE country_name = 'Germany') 
+AND match_no IN (
+SELECT match_no FROM match_details WHERE team_id IN (
+SELECT country_id FROM soccer_country WHERE country_name = 'Poland'));
+
+
+5. Menampilkan match_no, play_stage, play_date, gole_scored, dan result pada pertandingan  Portugal dan Hungary
+SELECT match_no, play_stage, play_date,goal_score, results 
+FROM match_mast WHERE match_no IN (
+SELECT match_no FROM match_details WHERE team_id IN (
+SELECT country_id FROM soccer_country WHERE country_name = 'Portugal')) AND match_no IN (
+SELECT match_no FROM match_details WHERE team_id IN (
+SELECT country_id FROM soccer_country WHERE country_name = 'Hungary'));
+
+6. Menampilkan daftar pemain yang mencetak sejumlah gol di setiap pertandingan
+SELECT player_name FROM player_mast WHERE player_id IN (
+SELECT player_id FROM goal_details )
+
+7. Menampilkan tim yang memainkan pertandingan dengan penonton tertinggi 
+SELECT country_name FROM soccer_country WHERE country_id IN (
+SELECT team_id FROM goal_details WHERE match_no IN (
+SELECT match_no FROM match_mast HAVING MAX(audence));
+
+8. 
