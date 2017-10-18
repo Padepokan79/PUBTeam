@@ -1,0 +1,151 @@
+
+
+1. Jumlah soccer_vanue 
+SELECT COUNT(*) 
+FROM soccer_venue;
+
+2. Jumlah soccer country
+SELECT COUNT(*) 
+FROM soccer_country;
+
+3. Jumlah goal_schedule yang Normal Time
+SELECT COUNT(*) as goal_scheduleNormalTime
+FROM goal_details
+WHERE goal_schedule = 'NT';
+
+4. Jumlah Pertandingan yang sudah ada hasilnya
+SELECT COUNT(*) 
+FROM match_mast
+
+5. Jumlah Pertandingan seri
+SELECT COUNT(*) 
+FROM match_mast
+WHERE results ='DRAW'
+
+6. Menampilkan tanggal dimulai euro 2016
+SELECT MIN(play_date) 
+FROM match_mast
+
+7. Jumlah Goal Bunuh diri
+SELECT COUNT(*) as SELF_GOAL 
+FROM goal_details 
+WHERE goal_type ='O'
+
+8. Jumlah pertandingan babak group
+SELECT COUNT(*) as Group_stage 
+FROM match_mast
+WHERE  play_stage ='G'
+
+9. Jumlah goal dari pinaltian
+SELECT COUNT(*) as Goal_penalty
+FROM penalty_shootout
+WHERE  score_goal ='Y'
+
+10. Goal di dalam waktu pertandingan tapi pake penalty
+SELECT COUNT(*) as decide_pinalty
+FROM match_mast
+WHERE  decided_by ='P'
+
+11 Goal pada waktu normal
+SELECT COUNT(*) as normal_schedule
+FROM goal_details
+WHERE  goal_schedule ='NT'
+
+12. Menampilkan match No, tanggal, score
+SELECT gd.match_no, mm.play_date, mm.goal_score
+FROM match_mast mm,  goal_details gd
+WHERE  gd.goal_schedule ='NT' 
+AND gd.goal_half=1;
+
+13. Menampilkan imbang tanpa goal di play_stage ='G';
+SELECT count(*)
+FROM match_details  
+WHERE goal_score = 0 and  win_lose = 'D' and play_stage ='G';
+
+14. Menang dengan score 1 dan tanpa pinalti
+SELECT count(*)
+FROM match_details  
+WHERE goal_score = 1 and  win_lose = 'W' and decided_by <> 'P'
+
+15. Pemain yang diganti
+SELECT count(*) 
+FROM player_in_out
+WHERE in_out ='O'
+
+16. pemain yang diganti pada waktu normal
+SELECT count(*) 
+FROM player_in_out
+WHERE play_schedule='NT' and in_out = 'O';
+
+17. pemain yang diganti pada waktu akhir/tambahan
+SELECT count(*) 
+FROM player_in_out
+WHERE play_schedule='ST' and in_out = 'O';
+
+18. Menampilkan pemain yang diganti pada babak pertama
+SELECT count(*) 
+FROM player_in_out
+WHERE play_half=1 and in_out = 'O';
+
+19. Menampilkan imbang tanpa goal
+SELECT count(*)
+FROM match_details  
+WHERE goal_score = 0 and  win_lose = 'D';
+
+
+20. pemain yang diganti pada extra time
+
+SELECT count(*) 
+FROM player_in_out
+WHERE play_schedule='ET' and in_out = 'O';
+
+
+21. Jumlah Pemain Pengganti yang ada di seluruh turnamen
+SELECT count(*) 
+FROM player_in_out
+WHERE in_out = 'I';
+
+22. Jumlah Pengganti yang di ambil 
+SELECT COUNT(*)
+FROM penalty_shootout
+
+
+23. Jumlah Pengganti yang di ambil dan goal
+SELECT COUNT(*)
+FROM penalty_shootout
+WHERE score_goal ='Y'
+
+
+24. Jumlah Pengganti yang di ambil dan tidak goal 
+
+SELECT COUNT(*)
+FROM penalty_shootout
+WHERE score_goal ='N'
+
+
+25. Menampilkan nama pemain dan score goal
+SELECT pm.player_name , ps.score_goal 
+FROM penalty_shootout ps, player_mast pm
+WHERE pm.player_id = ps.player_id ;
+
+26. Nama negara dan berapa kali nendang pinalty
+SELECT sc.country_name,count(ps.team_id) as jumlah
+FROM soccer_country sc, penalty_shootout ps
+WHERE sc.country_id = ps.team_id
+GROUP BY sc.country_name;
+
+27. menampilkan jumlah boking pada waktu normal
+SELECT count(*)
+FROM player_booked
+WHERE play_schedule = 'NT';
+
+28. menampilkan jumlah boking pada waktu stoppage 
+SELECT count(*)
+FROM player_booked
+WHERE play_schedule = 'NT';
+
+
+29. menampilkan jumlah boking pada waktu Extra 
+SELECT count(*)
+FROM player_booked
+WHERE play_schedule = 'ET';
