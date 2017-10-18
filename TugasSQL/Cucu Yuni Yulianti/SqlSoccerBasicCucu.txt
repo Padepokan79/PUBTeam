@@ -1,0 +1,88 @@
+Cucu Yuni Yulianti
+
+1. find the number of venues for EURO cup 2016.
+==> select count(*) as jml_venue from soccer_venue;
+
+2. find the number countries participated in the EURO cup 2016.
+==> SELECT distinct COUNT(team_id) FROM player_mast;
+ 
+3. Write a query in SQL to find the number goals scored in EURO cup 2016 within normal play schedule
+==> SELECT COUNT(*) FROM goal_details WHERE goal_schedule = 'NT';
+
+4. Write a query in SQL to find the number of matches ended with a result
+==> select count(results) from match_mast;
+
+5. Write a query in SQL to find the number of matches ended with draws
+==> select count(*) from match_mast where results = 'DRAW';
+
+6. Write a query in SQL to find the date when did Football EURO cup 2016 begin
+==> select distinct play_date from match_mast;
+
+7. menghitung goal bunuh diri
+==> select count(*) from goal_details where goal_type = 'O';
+
+8. menghitung pertandingan di babak grup
+==> select count(*) from match_mast where play_stage = 'G';
+
+9. find the number of matches got a result by penalty shootout.
+==> select count(*) from penalty_shootout;
+
+10. jumlah pertandingan 16 besar dgn hasil adu pinalty
+==> select count(*) from match_mast where play_stage = 'R' and decided_by ='P';
+
+11. jumlah gol di setiap pertandingan di jadwal main normal
+==> select count(*) from goal_details where goal_schedule = 'NT' group by match_no;
+
+12.pertandingan yang babak pertamanya tdk memiliki tambahan waktu
+==> select goal_details.match_no, match_mast.play_date, match_mast.goal_score from goal_details INNER JOIN match_mast on goal_details.match_no = match_mast.match_no where goal_half = 1 and goal_schedule = 'NT';
+
+13. pertandingan di babak peyisihan hasil imbang, tanpa gol.
+==> select count(*) from match_details where play_stage = 'G' && goal_score = '0 && win_lose='D';
+
+14. jumlah pertandingan yang berakhir dengan hanya satu kemenangan gol kecuali pertandingan yang diputuskan dengan adu penalti.
+==> select count(*) from match_details where win_lose = 'W' && decided_by = 'N' &&  goal_score=1;
+
+15. jumlah pemain yg di ganti dalam turnamen
+==> select count(*) from player_in_out where in_out = 'O';
+
+16. jumlah pemain pengganti dlm waktu normal
+==> select count(*) from player_in_out where in_out = 'I' and play_schedule = 'NT';
+
+17. jumlah pemain yg masuk/pengganti di waktu tambahan
+==> select count(*) from player_in_out where in_out = 'I' and play_schedule = 'ST';
+
+18. jumlah pemain yang diganti pada babak pertamas
+==> select count(*) from player_in_out where in_out ='O' and play_half ='1';
+
+19. jumlah total hasil imbang tanpa gol yang ada di seluruh turnamen
+==> select count(*) from match_details where goal_score = 0;
+
+20. jumlah pemain diganti pada waktu bermain ekstra
+==> select count(*) from player_in_out where in_out = 'O' and play_schedule = 'ET';
+
+21. jumlah pemain pengganti yang terjadi dalam berbagai tahap permainan untuk keseluruhan turnamen.// belum bnr
+==> select count (*) as jumlah_pertahap from player_in_out group by play_half, play_schedule;
+
+22. jumlah tembakan yang diambil dalam adu penalti
+==> select count(*) from penalty_shootout;
+
+23. jumlah tembakan gol socred dalam pertandingan adu penalti
+==> select count(*) from penalty_shootout where score_goal='Y';
+
+24. jumlah tembakan yang terlewatkan atau disimpan dalam adu penalti
+==> select count(*) from penalty_shootout where score_goal='N';
+
+25. daftar pemain dengan jumlah tembakan yang mereka ambil dalam adu penalti // masih salah
+==> select player_mast.player_name, count(penalty_shootout.kick_id) from player_mast, penalty_shootout where player_mast.player_id = penalty_shootout.player_id group by player_mast.player_name ;
+
+26. jumlah tembakan penalty yang diambil oleh tim
+==> select soccer_country.country_name, count(penalty_shootout.kick_id) from soccer_country INNER JOIN penalty_shootout on soccer_country.country_id = penalty_shootout.team_id group by soccer_country.country_name ;
+
+27.  Write a query in SQL to find the number of booking happened in each half of play within normal play schedule
+==> select count(*) from player_booked where play_schedule = 'NT' group by play_half;
+
+28. Write a query in SQL to find the number of booking happened in stoppage time.
+==> select count(*) from player_booked where play_schedule = 'ST';
+
+29. Write a query in SQL to find the number of booking happened in extra time.
+==> select count(*) from player_booked where play_schedule = 'ET';
