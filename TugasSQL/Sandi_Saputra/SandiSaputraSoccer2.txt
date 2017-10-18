@@ -1,0 +1,104 @@
+Sandi Saputra
+
+1. Mencari team yang bermain pertama
+-> select country_name from soccer_country where country_id in (
+   select team_id from match_details where match_no = 1);
+
+2. Mencari juara Euro 2016
+-> select country_name 
+   from soccer_country
+   where country_id in (
+
+   select team_id 
+   from match_details
+   where play_stage = 'F' and win_lose = 'W');
+
+3. Mencari pertandingan dengan penonton terbanyak
+-> select match_no, play_stage, goal_score, audence 
+   from match_mast
+   where audence in (
+
+   select max(audence) 
+   from match_mast); 
+
+4. Mencar match nomor pertandingan germany vs poland
+-> select match_no 
+   from match_details
+   where team_id in (
+   
+   select country_id 
+   from soccer_country 
+   where country_name = 'Germany') 
+   and match_no in (
+   
+   select match_no 
+   from match_details
+   where team_id in (
+   
+   select country_id 
+   from soccer_country 
+   where country_name = 'Poland'))
+
+5. Menampilkan match_no, play_date, play_stage, goal_score, and results dari pertandingan portugal vs hungary
+-> select match_no, play_stage, play_date, goal_score, results
+   from match_mast
+   where match_no in (
+
+   select match_no 
+   from match_details
+   where team_id in (
+
+   select country_id 
+   from soccer_country 
+   where country_name = 'Portugal') 
+   and match_no in (
+   
+   select match_no 
+   from match_details
+   where team_id in (
+   
+   select country_id 
+   from soccer_country 
+   where country_name = 'Hungary')))
+ 
+7. Menampilkan team yang memiliki penonton terbanyak saat bertanding
+-> select country_name 
+   from soccer_country 
+   where country_id in (
+
+   select team_id 
+   from goal_details
+   where match_no in(
+
+   select match_no 
+   from match_mast
+   where audence in(
+
+   select max(audence) 
+   from match_mast))); 
+  
+8. Menampilkan pencetak goal terakhir portugal
+-> select player_name 
+   from player_mast
+   where player_id in (
+
+   select player_id 
+   from goal_details 
+   where goal_time in (
+
+    select max(goal_time) 
+    from goal_details
+    where match_no in(
+
+     select match_no 
+     from match_details
+     where match_no in (
+
+      select max(match_no) from match_details
+      where team_id in (
+
+       select country_id 
+       from soccer_country
+       where country_name = 'Portugal')))));
+
+9.   
