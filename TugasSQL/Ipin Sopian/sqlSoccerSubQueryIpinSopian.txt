@@ -1,0 +1,12 @@
+1.//negara yg pertama main
+  select country_name from soccer_country where country_id in (select team_id from match_details where match_no=1);
+2. //mencari juara euro
+  select country_name from soccer_country where country_id in (select team_id from match_details where win_lose='W' and play_stage='F');
+3.// mencari pertandingan dengan penonton terbanyak
+  select match_no,play_stage,goal_score,audence from match_mast where audence = (select max(audence) from match_mast);
+4. //
+
+5.
+
+6. //mencari nama pemain yg mencetak gol
+  select player_name from player_mast where player_id in (  select player_id from goal_details order by match_no);
