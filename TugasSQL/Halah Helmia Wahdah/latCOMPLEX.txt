@@ -1,0 +1,15 @@
+
+//Menampilkan NIP, Nama, Pangkat, gaji terbesar
+SELECT hg.NIP, m.NAMA AS Nama, MAX(hg.GAPOK) AS Gaji_Pokok, 
+p.NMPANGKAT AS Nama_Pangkat, hg.TMTGAJI 
+FROM historis_gapok hg, mstpegawai m, pangkat_tbl p
+WHERE hg.NIP=m.NIP && hg.KDPANGKAT=P.KDPANGKAT; 
+
+//Menampilkan NIP, Nama, Pangkat, 3 gaji terbesar
+SELECT hg.NIP, m.NAMA AS Nama, hg.GAPOK AS Gaji_Pokok, 
+p.NMPANGKAT AS Nama_Pangkat, hg.TMTGAJI 
+FROM historis_gapok hg, mstpegawai m, pangkat_tbl p
+WHERE hg.NIP=m.NIP && hg.KDPANGKAT=P.KDPANGKAT
+ORDER BY hg.GAPOK DESC LIMIT 0,3;
+
+
