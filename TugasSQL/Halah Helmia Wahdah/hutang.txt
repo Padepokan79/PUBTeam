@@ -97,3 +97,5 @@ SELECT hutang.NIP, mstpegawai.NAMA, hutang.TMTHUTANG
 FROM hutang
 INNER JOIN mstpegawai ON hutang.NIP = mstpegawai.NIP
 GROUP BY hutang.TMTHUTANG;
+
+
