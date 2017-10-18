@@ -1,0 +1,95 @@
+SoccerDatabase
+
+1.Hitung jumlah tempat di Euro 2016
+select count(*) from soccer_venue
+
+2.Hitung Jumlah Negara yg berpatisipasi di Euro 2016
+select count(*) from soccer_country
+
+3.Untuk menemukan nomor gol yg dicetak di Euro 2016 dalam normal time
+select goal_id,goal_schedule from goal_details where goal_schedule='NT'
+
+4.Mencari pertandingan dengan hasilnya 
+select count(results) from match_mast 
+
+5.Mencari jumlah pertandingan yang hasilnya DRAW
+select count(results) from match_mast where results='DRAW'
+
+6.Mencari Tanggal main
+select match_no,play_date from match_mast
+
+7.Menemukan jumlah self-goal
+select count(goal_type) from goal_details where goal_type='O'
+
+8.Menghitung jumlah pertandingan yg berakhir dengan hasil di babak group
+select count(play_stage) from match_mast where play_stage = 'G'
+
+9.Menentukan dengan adu penalti
+select count(distinct match_no) from penalty_shootout 
+
+10.Menghitung jumlah pertandingan yg ada di 16 besar dengan adu penalti
+select count(play_stage= 'R') from match_mast where decided_by= 'P'
+
+11.Menghitung jumlah gol di setiap pertandingan dalam jadwal main normal
+select count(goal_id) from goal_details where goal_schedule='NT'
+
+12.Cari match no dengan tidak perpanjangan waktu 
+select match_no from goal_details where goal_schedule='NT' and goal_time < 45;
+
+13.Mencari jumlah pertandingan yg diakhiri dengan hasil tanpa gol di babak penyisihan group
+select count(play_stage='G') from match_details where goal_score ='0'
+
+14.Menemukan jumlah pertandingan yg berkahir dengan 1 gol kecuali dengan penalty
+select count(match_no) from match_details where goal_score=1 and decided_by!='P'
+
+15.Menghitung jumlah pemain yg diganti di lapangan
+select count(player_id) from player_in_out where in_out='O'
+
+16. Menghitung jumlah pemain yg diganti di waktu normal
+select count(player_id) from player_in_out where in_out='O' and play_schedule='NT';
+
+17. Menghitung jumlah pemain yg diganti di stoppage time
+select count(player_id) from player_in_out where in_out='O' and play_schedule='ST';
+
+18.Menghitung jumlah pemain yg diganti di paruh pertama
+select count(player_id) from player_in_out where in_out='O' and time_in_out<45;
+
+19.Menampilkan hasil imbang tanpa gol di seluruh turnamen
+select count(team_id) from match_details where goal_score=0 and win_lose='D' ;
+
+20.Menghitung pemain yg di ganti di extra time
+select count(player_id) from player_in_out where play_schedule='ET';
+
+21.Menghitung jumlah pemain dengan setiap babak
+SELECT play_half,play_schedule,COUNT(*) 
+FROM player_in_out 
+WHERE in_out='I'
+GROUP BY play_half,play_schedule
+ORDER BY play_half,play_schedule,count(*) DESC;
+
+22.Menghitung jumlah pemain yang menendang pinalty yg di ambil
+select count(kick_no) from penalty_shootout;
+
+23.Menghitung jumlah tembakan di pinalty
+select count(score_goal) from penalty_shootout;
+
+24.Menghitung jumlah tembakan yg diselamatkan atw gagal
+select count(score_goal) from penalty_shootout where score_goal='N';
+
+25.Menghitung jumlah tembakan yang di ambil pemain
+select player_mast.player_name,penalty_shootout.score_goal from player_mast inner join penalty_shootout on player_mast.player_id = penalty_shootout.player_id;
+
+26.Menghitung jumlah tembakan dari tim
+SELECT soccer_country.country_name, COUNT(penalty_shootout.*) as "Number of Shots" 
+FROM soccer_country , penalty_shootout 
+WHERE penalty_shootout.team_id=soccer_country.country_id
+GROUP BY soccer_country.country_name;
+
+27.Menghitung jumlah pemesanan di setiap setengah babak dalam waktu normal
+select count(booking_time) from player_booked  where booking_time<=45 and play_schedule='NT';
+
+28. Menghitung jumlah pemesanan di setiap setengah babak dalam stoppage time
+select count(booking_time) from player_booked where play_schedule='ST';
+
+29.Menghitung jumlah pemesanan di setiap setengah babak dalam extra time
+select count(booking_time) from player_booked where play_schedule='ET';

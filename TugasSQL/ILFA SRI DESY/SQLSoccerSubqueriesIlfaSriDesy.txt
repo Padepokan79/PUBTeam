@@ -1,0 +1,91 @@
+[1] Tulislah sebuah query di SQL untuk menemukan tim memainkan pertandingan pertama dari EURO cup 2016
+select country_id, country_name from soccer_country where country_id IN
+(select team_id from match_details where match_no=1);
+
+[2] Tuliskan query di SQL untuk menemukan pemenang EURO cup 2016.
+select country_id, country_name from soccer_country where country_id IN(
+select team_id from match_details where play_stage='F' and win_lose='W'
+);
+
+[3] Tuliskan permintaan di SQL untuk menemukan kecocokan dengan tidak ada pertandingan, tahap bermain, mencetak gol, dan penonton yang merupakan penonton tertinggi.
+select match_no, play_stage, goal_score, audence from match_mast where audence IN
+(select max(audence) from match_mast);
+
+[4] Tulislah sebuah query di SQL untuk menemukan kecocokan di mana Jerman bermain melawan Polandia
+select match_no
+from match_details
+where team_id IN(
+select country_id
+from soccer_country
+where country_name='Germany')
+or team_id IN(
+select country_id
+from soccer_country
+where country_name='Poland')
+group by match_no
+having count(distinct team_id)=2;
+
+[5] Tuliskan permintaan di SQL untuk menemukan tidak ada pertandingan, tahap bermain, tanggal pertandingan, jumlah skor gole, dan hasil pertandingan di mana Portugal bermain melawan Hungaria.
+
+[6] Tuliskan query di SQL untuk menampilkan daftar pemain yang mencetak sejumlah gol di setiap pertandingan.
+
+[7] Tulislah sebuah query di SQL untuk menemukan tim yang memainkan pertandingan dengan penonton tertinggi.
+select country_name from soccer_country
+where country_id IN(
+select team_id from goal_details
+where match_no IN(
+select  match_no from match_mast
+where audence IN(
+select max(audence) from match_mast)));
+
+[8] Tulislah sebuah query di SQL untuk menemukan pemain yang mencetak gol terakhir untuk Portugal melawan Hungaria.
+
+[9] Tulislah sebuah query di SQL untuk menemukan waktu penghentian tertinggi ke 2 yang telah ditambahkan di paruh kedua permainan
+
+[10] Tulislah sebuah query di SQL untuk menemukan tim memainkan pertandingan di mana waktu penghentian tertinggi 2 telah ditambahkan di babak kedua.
+
+[11] 
+
+[12] Tulislah sebuah query di SQL untuk menemukan tim yang dikalahkan Portugal di final Piala Euro 2016.
+select country_name from soccer_country
+where country_id IN(
+select team_id from match_details
+where play_stage='F' and win_lose='L');
+
+[13] Tulislah sebuah query di SQL untuk menemukan klub yang memasok jumlah pemain terbanyak ke cangkir EURO 2016.
+
+[14] Tuliskan permintaan di SQL untuk menemukan pemain dan nomor jerseynya Siapa yang mencetak hukuman pertama turnamen.
+select player_name, jersey_no
+from player_mast where player_id IN(
+select player_id 
+from goal_details
+where goal_type='P' limit 1);
+
+[15] Tuliskan permintaan di SQL untuk menemukan pemain beserta timnya dan nomor jersey yang mencetak hukuman pertama turnamen.
+select p.player_name, p.jersey_no, sc.country_name
+from player_mast p, soccer_country sc
+where p.team_id=sc.country_id and p.player_id IN(
+select player_id 
+from goal_details
+where goal_type='P' limit 1);
+
+[16] Tulislah sebuah query di SQL untuk menemukan pemain kiper bagi Italia dalam adu penalti melawan Jerman di Football EURO cup 2016.
+select player_name from player_mast
+where posi_to_play='GK' and team_id IN(
+select country_id from soccer_country
+where country_name='Italy') // blum beres
+
+[17] Tulislah sebuah query di SQL untuk menemukan jumlah pemain Jerman yang mencetak gol di turnamen tersebut.
+
+[18] Tulislah sebuah query di SQL untuk menemukan para pemain beserta no jersey mereka, dan bermainlah di klub, yang merupakan penjaga gawang untuk skuad Inggris pada 2016 EURO cup.
+select player_name, jersey_no, playing_club from player_mast
+where posi_to_play ='GK' and team_id IN(
+select country_id from soccer_country where country_name='England')
+
+[19] Tulislah sebuah query di SQL untuk menemukan pemain dengan informasi lain yang berada di bawah kontrak ke Liverpool berada di Skuad Inggris pada tahun 2016 EURO cup.
+
+[20]
+
+[21] Tuliskan permintaan di SQL untuk menemukan pemain Siapa kapten tim pemenang EURO 2016 dari Portugal.
+
+[22] 
