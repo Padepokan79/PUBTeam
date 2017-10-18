@@ -1,0 +1,58 @@
+//mencari jumkah vanue
+1.select count(*) AS jumlah_venue from soccer_venue;
+//mencari jumlah negara yg berpartisipasi
+2.select count(country_name) as jumlah_negara from soccer_country;
+//mencari jumlah goal pada waktu normal pertandingan
+3.select match_no,count(*) from goal_details group by match_no order by match_no;
+//jumlah tim yg meraih kemenangan
+4.select count(results) as jumlah_kemenangan from match_mast where results='WIN';
+//jumlah tim yg berakhir imbang/draw
+5.select count(results) as jumlah_draw from match_mast where results='DRAW'
+//menentukan jadwal awal mulai euro 2016
+6.select play_date AS jadwal_mulai from match_mast order by play_date asc LIMIT 1;
+//menghitung jumlah own goal
+7.select count(goal_type) as own_goal from  goal_details where goal_type='O';
+//mencari tim yg bertanding sampai group stage
+8.select count(play_stage) from match_mast where play_stage='G';
+//mencari jumlah tim yg kemenangan nya di tentukan oleh adu penalty
+9.select count(distinct match_no) from penalty_shootout;
+//mencari jumlah tim yg ada di 16 besar dan kemenangan nya di tentukan oleh adu penalty
+10.select count(distinct match_no) from match_mast where play_stage='R' 
+and decided_by='P';
+//menghitung jumlah goal semua pertandingan
+11.select match_no,count(*) as jumlah from goal_details group by match_no order by match_no;
+//mencari match_no play_date dan goal_time yg tidak ada tambahan waktu
+12.select gd.match_no,mm.play_date,gd.goal_time from goal_details gd INNER JOIN match_mast mm ON gd.goal_time <=45;
+//mencari jumlah pertandingan dalam group stage yg berakhir imbang
+13.select count(match_no) from match_details where play_stage='G' and win_lose='D' group by match_no;
+//mencari jumlah pertandingan tg diakhiri dgn 1 goal
+14.select count(match_no) from match_details where goal_score=1 and decided_by='N' group by match_no order by match_no;
+//mencari jumlah pergantian pemain
+15.select count(*) from player_in_out where in_out='I';
+//mencari jumlah pergantian pemain dalam waktu normal
+16.select count(*) from player_in_out where in_out='I' and play_schedule='NT';
+//mencari jumlah pergantian pemain dalam waktu tambahan
+17.select count(*) from player_in_out where in_out='I' and play_schedule='ST';
+//mencari jumlah pergantian pemain pada babk pertama
+18.select count(*) from player_in_out where in_out='I' and play_half=1;
+//jumlah pertandingan draw tanpa gol
+19.select count(*) from match_details where win_lose='D' and goal_score=0;
+//mencari jumlah pergantian pemain dalam waktu extra time
+20.select count(*) from player_in_out where in_out='I' and play_schedule='ET';
+//jumlah pergantian per tahap
+21.select play_schedule,play_half,count(*) from player_in_out where in_out='I' group by play_schedule,play_half;
+//menghitung jumlah tembakan penalty
+22.select count(kick_no) from penalty_shootout;
+//menghitung jumlah tembakan penalty yg masuk
+23.select count(kick_no) as masuk from penalty_shootout where score_goal='Y';
+//menghitung jumlah tembakan penalty yg gagal
+24.select count(kick_no) as masuk from penalty_shootout where score_goal='N';
+//list jumlah tembakan pemain dalam adu penalty
+25.SELECT ps.match_no,pb.player_name as nama,ps.score_goal ,ps.kick_no FROM soccer_country sc, penalty_shootout ps, player_mast pb WHERE ps.team_id=sc.country_id
+AND ps.player_id=pb.player_id order by match_no;
+//jumlah penalty per team
+26.select sc.country_name,count(sp.*) from soccer_country sc,penalty_shootout ps where ps.team_id=sc.country.id group by country_name;
+//menghitung pemesanan di setiap setengah pertandingan dalam normal time
+27.select play_schedule,play_half,count(*) from player_booked where play_schedule='NT' group by play_schedule,play_half;
+//menghitung pemesanan di setiap setengah pertandingan dalam stoppage time
+28.select play_schedule,play_half,count(*) from player_booked where play_schedule='ST' group by play_schedule,play_half;
