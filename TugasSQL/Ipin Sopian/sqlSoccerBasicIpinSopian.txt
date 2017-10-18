@@ -39,7 +39,7 @@
 20. //mencari jumlah pemain yg diganti di extra time
   SELECT count(*)FROM player_in_out WHERE in_out='O' and play_schedule='ET' ;
 21. //mencari list pemain pengganti
-  select count(*) from player_in_out where in_out='I';
+  select count(*) from player_in_out where in_out='I' group by play_schedule,play_half;
 22. //mencari jumlah tendangan pinalti
    select count(*) from penalty_shootout ;
 23. //mencari jumlah tendangan pinalti yang masuk
