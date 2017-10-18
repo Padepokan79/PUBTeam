@@ -1,0 +1,42 @@
+Cucu Yuni Yulianti
+
+
+1. Write a query in SQL to find the teams played the first match of EURO cup 2016.
+==> select country_name from soccer_country where country_id in (select team_id from match_details where match_no =1);
+
+2.  Write a query in SQL to find the winner of EURO cup 2016.
+==> select country_name from soccer_country where country_id in( select team_id from match_details where play_stage = 'F' and win_lose ='W');
+
+3. Write a query in SQL to find the match with match no, play stage, goal scored, and the audence which was the heighest audence match
+==> select match_no, play_stage, goal_score, audence from match_mast where audence in (select MAX(audence) from match_mast); 
+
+4.Write a query in SQL to find the match no in which Germany played against Poland//belum
+==> select match_no, play_stage, date _of_match, goal_score, results from match_mast where match_no in (select match_no from match_details where team_id in ( select country_id from soccer_country ) where 
+ 
+
+5.menmapilkan, match no, play stage, date of match goal score dan result dari pertandingan antara portugal dan hungary
+==> select match_no, play_stage, date _of_match, goal_score, results from match_mast where match_no in (select match_no from match_details where team_id in ( select country_id from soccer_country where  country_name='Portugal' or country_name='Hungary')); 
+
+6. 
+==> 
+
+
+7.Write a query in SQL to find the teams who played the heighest audence match
+==> select country_name from soccer_country where country_id in 
+ 	(select team_id from goal_details where match_no in 
+   		(select match_no from match_mast where audence in(select MAX(audence) from match_mast)));
+
+8.  Write a query in SQL to find the player who scored the last goal for Portugal against Hungary
+==>
+
+12. tim yg dikalahkan portugal di thn 2016
+==> select country_name from soccer_country where country_id in( select team_id from match_details where play_stage = 'F' and win_lose ='L');
+
+13.belum
+==> select team_id from player_mast where player_name in (select count(MAX(player_name) from player_mast));
+
+17. jumlah pemain germany yg mencetak gol pada turnamen
+==> select count(player_id) from goal_details where goal_id in (select goal_id from goal_details);
+
+19.
+==> select jersey_no, player_name , playing_club from player_mast where team_id in (select country_id from soccer_country where country_name = 'England'); 
