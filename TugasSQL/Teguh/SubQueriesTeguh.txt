@@ -1,0 +1,29 @@
+1.Mencari Tim pertama yg bermain
+select country_name from soccer_country where country_id in(select team_id from match_details where match_no=1);
+
+2.Cari tim yg menang
+select country_name from soccer_country where country_id in(select team_id from match_details where win_lose='W');
+
+3.Select audience terbanyak
+select match_no,play_stage,goal_score,audence as Audience from match_mast order by audence DESC;
+
+4.Select Poland dan Germany
+select country_name from soccer_country where country_id in(select team_id from match_details where match_no=18)
+
+7.Cari team yg audience terbanyak
+select country_name from soccer_country where country_id in
+(select team_id from goal_details where match_no in
+(select match_no from match_mast order by audence DESC));
+
+9.Mencari nilai terbesar ke 2 dengan perpanjangan waktu
+SELECT * FROM match_mast ORDER BY stop2_sec DESC LIMIT 2;
+
+11.Mencari match_no dan tanggal main
+SELECT match_no,play_date FROM match_mast ORDER BY stop2_sec DESC LIMIT 2;
+
+12.Team yg dikalahkan portugal
+SELECT country_name from soccer_country where country_id in
+(select team_id from match_details where match_no=12);
+
+
+
