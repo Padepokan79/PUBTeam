@@ -1,0 +1,171 @@
+w3resource
+
+1. Menampilkan jumlah venue
+SELECT COUNT(*)
+FROM soccer_venue;//10
+
+
+2.to find the number countries participated in the EURO cup 2016
+SELECT DISTINCT COUNT (team_id)
+FROM player_mast;//552
+
+
+3. to find the number goals scored in EURO cup 2016 within normal play schedule
+SELECT COUNT(*) 
+FROM goal_details
+WHERE goal_schedule='NT';//97
+
+
+4.to find the number of matches ended with a result.
+SELECT COUNT(results)
+FROM match_mast;//51
+
+
+5. to find the number of matches ended with draws
+SELECT COUNT(*)
+FROM match_mast
+WHERE results='DRAW';//11
+
+
+6. to find the date when did Football EURO cup 2016 begin
+SELECT MIN(play_date) 
+FROM match_mast;//2016-06-11
+
+
+7. to find the number of self-goals scored in EURO cup 2016
+SELECT COUNT(*)
+FROM goal_details
+WHERE goal_type='O';
+
+
+8. to count the number of matches ended with a results in group stage.
+SELECT COUNT(*)
+FROM match_mast
+WHERE play_stage='G';
+
+
+9. to find the number of matches got a result by penalty shootout. 
+SELECT COUNT(*) FROM penalty_shootout;
+
+
+10. to find the number of matches were decided on penalties in the Round of 16
+SELECT COUNT(*)
+FROM match_mast
+WHERE play_stage='R';//8
+
+
+11. to find the number of goal scored in every match within normal play schedule
+SELECT match_no, COUNT(*) 
+FROM goal_details
+WHERE goal_schedule='NT' 
+GROUP BY match_no ORDER BY match_no;
+
+
+12. to find the match no, date of play, and goal scored for that match in which no stoppage time have been added in 1st half of play
+SELECT match_no, goal_time FROM goal_details
+WHERE goal_schedule!='ST' AND goal_half = 1;
+
+
+13. to find the number of matches ending with a goalless draw in group stage of play
+SELECT COUNT(*) 
+FROM match_details
+WHERE play_stage ='G' && win_lose='D' && goal_score=0;//72
+
+
+14. to find the number of matches ending with only one goal win except those matches which was decided by penalty shootout.  
+SELECT COUNT(*) 
+FROM match_details
+WHERE goal_score=1 && win_lose='W' && decided_by='N';//39
+
+
+15.to find the total number of players replaced in the tournament. 
+SELECT DISTINCT player_id, COUNT(*) 
+FROM player_in_out
+WHERE in_out='O' GROUP BY player_id;
+//
+SELECT DISTINCT COUNT(*) 
+FROM player_in_out
+WHERE in_out='O';//293
+
+
+16. to find the total number of palyers replaced within normal time of play.
+SELECT DISTINCT COUNT(*) 
+FROM player_in_out
+WHERE play_schedule='NT'&& in_out='O';//550
+
+
+17.to find the number of players replaced in the stoppage time
+SELECT COUNT(*) 
+FROM player_in_out
+WHERE play_schedule='ST' AND in_out='O';//9
+
+
+18.to find the total number of players replaced in the first half of play
+SELECT COUNT(*) 
+FROM player_in_out
+WHERE play_half=1 AND in_out='O';//7
+
+
+19. to find the total number of goalless draws have there in the entire tournament
+SELECT COUNT(*) 
+FROM match_details
+WHERE win_lose='D' AND goal_score=0;
+
+
+20. to fine the total number of players replaced in the extra time of play
+SELECT COUNT(*) 
+FROM player_in_out
+WHERE in_out='O' AND play_schedule ='ET';//9
+
+
+21. List jumlah pemain pengganti yang terjadi di berbagai tahap permainan untuk seluruh turnamen
+SELECT COUNT(*) FROM player_in_out
+GROUP BY play_schedule, play_half;
+
+
+22. to find the number of shots taken in penalty shootout matches
+SELECT COUNT(*) 
+FROM penalty_shootout;
+
+
+23. to find the number of shots socred goal in penalty shootout matches
+SELECT COUNT(*) 
+FROM penalty_shootout
+WHERE score_goal='Y';
+
+
+24. to find the number of shots missed or saved in penalty shootout matches
+SELECT COUNT(*) 
+FROM penalty_shootout
+WHERE score_goal='N';
+
+
+25. list of players with number of shots they taken in penalty shootout matches
+SELECT pl.player_name, COUNT(p.kick_no)
+FROM player_mast pl, penalty_shootout p
+WHERE pl.player_id=p.player_id
+GROUP BY pl.player_name;
+
+
+26. to find the number of penalty shots taken by the teams
+
+SELECT p.team_id, s.country_name, COUNT(p.team_id)
+FROM penalty_shootout p, soccer_country s
+WHERE p.team_id=s.country_id
+GROUP BY p.team_id, s.country_name;
+
+
+27. to find the number of booking happened in each half of play within normal play schedule
+SELECT COUNT(*) FROM player_booked
+WHERE play_schedule = 'NT' AND booking_time = 45;
+
+
+28. to find the number of booking happened in stoppage time
+SELECT COUNT(*) FROM player_booked
+WHERE play_schedule = 'ST';
+
+
+29. to find the number of booking happened in extra time
+SELECT COUNT(*) FROM player_booked
+WHERE play_schedule = 'ET';
+
