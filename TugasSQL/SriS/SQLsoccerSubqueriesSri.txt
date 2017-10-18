@@ -1,0 +1,60 @@
+18/10/2017
+SRI SUGIARTINI
+SQL Soccer Subqueries
+========================================================
+//Write a query in SQL to find the teams played the first match of EURO cup 2016.
+1)select country_name from soccer_country
+where country_id in(select team_id from match_details
+where match_no=1);
+
+//Write a query in SQL to find the winner of EURO cup 2016
+2)select country_name from soccer_country
+where country_id in(select team_id from match_details
+where win_lose='W');
+
+//
+3)select match_no,play_stage,goal_score,audience from match_mast
+where audience in(select max(audience) from match_mast);
+
+//
+12)select country_name 
+from soccer_country
+where country_id in(select team_id 
+from match_details
+where play_stage='F' 
+and win_lose='L');
+
+//
+13)select team_id,max(jersey_no)from player_mast
+group by team_id;
+
+//Write a query in SQL to find the number of Germany scored at the tournament.
+17)select count(player_id) from goal_details
+where team_id in(select country_id from soccer_country
+where country_name='Germany')
+
+// Write a query in SQL to find the players along with their jersey no., and playing club, who were the goalkeepers for the England squad for 2016 EURO cup
+18)select jersey_no,player_name,playing_club from player_mast
+where team_id in(select country_id from soccer_country
+where country_name='England')
+
+//Write a query in SQL to find the players with other information under contract to Liverpool were in the Squad of England in 2016 EURO cup
+19)select player_name from player_mast
+where playing_club='Liverpool'
+&& team_id in(select country_id from soccer_country
+where country_name='England');
+
+// Write a query in SQL to find the player Who was the captain of the EURO cup 2016 winning team from Portugal.
+21)select player_name from player_mast
+where player_id in(select player_captain from match_captain
+where team_id=1214);
+
+//Write a query in SQL to find the number of players played for france in the final
+22)select count(player_id) 
+from player_in_out
+where  match_no in(select  max(match_no) 
+from player_in_out
+where team_id in(select country_id 
+from soccer_country
+where country_name='France'));
+
