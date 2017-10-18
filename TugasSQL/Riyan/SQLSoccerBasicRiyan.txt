@@ -1,0 +1,177 @@
+Nama	: Riyan Turmudi
+
+1. Menemukan jumlah tempat untuk Piala EURO 2016
+
+SELECT COUNT(*)
+FROM SOCCER_VENUE;
+
+
+2. Menemukan nomor negara/klub yang berpartisipasi di EURO cup 2016
+
+SELECT DISTINCT(COUNT(team_id))
+FROM player_mast;
+
+3. Menemukan jumlah goal_type yang N
+
+select count(goal_type)
+from goal_details
+where goal_type='N';
+
+4. menentukan jumlah dari setiap pertandingan
+
+select results, count(results)
+from match_mast
+group by results;
+
+5. menentukan jumlah draw dari setiap pertandingan
+
+select count(results) as JumlahDRAW
+from match_mast
+where results='DRAW';
+
+6. untuk menemukan tanggal kapan Football EURO cup 2016 dimulai.
+
+select play_date  
+from match_mast;
+
+7. menentukan jumlah dari setiap play_stage
+
+select play_stage, count(play_stage)
+from goal_details
+group by play_stage;
+
+8. menentukan jumlah yang hasil akhirnya group stage (G)
+
+select count(play_stage) as JumlahG
+from goal_details
+where play_stage='G';
+
+9. menentukan jumlah penalty dari setiap pertandingan
+
+select count(*) as jumlahP
+from penalty_shootout;
+
+10. menghitung pertandingan yang mendapatkan adu penalti dan playstagenya 'G' (group stage / 16 beasr) 
+
+select count(*)
+from match_mast
+where play_stage='G' and decided_by='P';
+
+11. menemukan jumlah gol yang dicetak di setiap pertandingan dalam jadwal main normal
+
+select count(goal_schedule) as jumlahNT
+from goal_details
+where goal_schedule='NT';
+
+12. menentukan match_no, tanggal di mulai pertandingan , dan score
+
+select gd.match_no, mm.play_date, mm.goal_score
+from goal_details gd inner join match_mast mm
+on gd.player_id=mm.plr_of_match
+where gd.goal_schedule='ST';
+
+13. menentukan jumlah pertandingan yang di group stage dan hasilnya Draw tanpa kebobolan
+
+select count(*)
+from match_details
+where goal_score=0 and play_stage='G' and win_lose='D';
+
+14. menentukan jumlah pertandingan diakhiri 1 goal kemenangan dengan adu penalti
+
+select count(md.*)
+from match_details md inner join penalty_shootout ps
+on md.match_no=ps.match_no
+where ps.score_goal='Y' and md.win_lose='W' and md.goal_score=1;
+
+15. menemukan jumlah pemain yang diganti di turnamen.
+
+select count(player_id)
+from player_in_out
+where in_out='O';
+
+16. menemukan jumlah pemain yang diganti dalam waktu bermain normal.
+
+select count(player_id)
+from player_in_out
+where in_out='O' and play_schedule='NT';
+
+17.  menentukan jumlah pemain yang diganti pada saat penghentian (ST)
+
+select count(player_id)
+from player_in_out
+where in_out='O' and play_schedule='ST';
+
+18.  menemukan jumlah pemain yang diganti pada paruh pertama permainan.
+
+select count(player_id)
+from player_in_out
+where in_out='O' and play_half=1;
+
+19. menemukan jumlah total hasil imbang tanpa gol yang ada di seluruh turnamen.
+
+select count(*)
+from match_details
+where win_lose='D' and goal_score=0;
+
+20. menghitung jumlah pemain yang diganti pada saat extra time (ET)
+
+select count(player_id)
+from player_in_out
+where in_out='O' and play_schedule='ET';
+
+21. menghitung jumlah pemain pengganti dari setiap stage
+
+select mm.play_stage, count(pio.player_id)
+from player_in_out pio inner join match_mast mm
+on pio.match_no=mm.match_no
+where pio.in_out='I'
+group by mm.play_stage;
+
+22. menentukan jumlah tembakan/tendangan pada adu penalti
+
+select count(*)
+from penalty_shootout;
+
+23. menentukan jumlah goal yang dicetak dalam adu penalti
+
+select count(score_goal)
+from penalty_shootout
+where score_goal='Y';
+
+24. menemukan jumlah tembakan yang tidak masuk dalam pertandingan adu penalti.
+
+select count(score_goal)
+from penalty_shootout
+where score_goal='N';
+
+25. menentukan daftar nama pemain dan jumlah tendangan penalti dari setiap pemain.
+
+select pm.player_name, count(ps.score_goal) JumlahTendanganPenalti
+from player_mast pm inner join penalty_shootout ps
+on pm.team_id=ps.team_id
+group by pm.player_name;
+
+26. menentukan daftar nama tim dan jumlah tendangan penalti dari setiap tim.
+
+select pm.playing_club, count(ps.score_goal) JumlahTendanganPenalti
+from player_mast pm inner join penalty_shootout ps
+on pm.team_id=ps.team_id
+group by pm.playing_club;
+
+27. Menemukan jumlah pemesanan yang terjadi di setiap setengah permainan (babak 1) dalam jadwal bermain normal (NT).
+
+select count(play_half)
+from player_booked
+where play_half=1 and play_schedule='NT';
+
+28. menemukan jumlah pemesanan yang terjadi pada saat penghentian (ST).
+
+select count(*)
+from player_booked
+where play_schedule='ST';
+
+29. menemukan jumlah pemesanan yang terjadi di waktu tambahan (ET).
+
+select count(*)
+from player_booked
+where play_schedule='ET';
