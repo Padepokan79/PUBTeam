@@ -1,0 +1,153 @@
+/*
+Author 		: Tegar Budi Septian
+File Name 	: sqlsoccerbasictegarbudiseptian.sql
+*/ 
+
+/*1. Displaying venue number*/
+SELECT COUNT(*) Venue_Number
+FROM soccer_venue
+
+/*2. Displaying the number of countries.*/
+SELECT COUNT(team_id_number.team_id) number_countries
+FROM (SELECT DISTINCT team_id FROM player_mast) team_id_number;
+
+/*3. Diplaying the goal number where the goal_schedule within nomal time.*/
+SELECT COUNT(goal_id) goals_number
+FROM goal_details
+WHERE goal_schedule = 'NT'
+
+/*4. Diplaying the number of matches ended with a result.*/
+SELECT COUNT(*) number_of_matches_ended_with_a_result
+FROM match_mast
+WHERE results = 'WIN'
+
+/*5. Diplaying the number of matches ended with draws.*/
+SELECT COUNT(*) number_of_matches_ended_with_draws
+FROM match_mast
+WHERE results = 'DRAW'
+
+/*6. Diplaying the beginning-date of Football EURO cup 2016*/
+SELECT play_date beginning_date
+FROM match_mast 
+ORDER BY play_date ASC
+LIMIT 1
+
+/*7. Diplaying the self-goals scored in EURO cup 2016. Self-goals means suicide-goal.*/
+SELECT COUNT(*) self_goals
+FROM goal_details
+WHERE goal_type = 'O'
+
+/*8. Displaying the count of the number of matches ended with a results in Group Stage*/
+SELECT COUNT(*) number_of_matches_ended_with_a_results_in_group_stage
+FROM match_mast
+WHERE play_stage = 'G'
+
+/*9. Displaying the count of the number of matches GOT A RESULT by penalty shootout.*/
+SELECT COUNT(*) number_of_matches_got_a_result_by_penalty_shootout
+FROM penalty_shootout
+WHERE score_goal = 'Y'
+
+/*10. Displaying number of match were decided on penalties in the Round of 16*/
+SELECT COUNT(*) number_of_matches_were_decided_on_penalties_in_the_Round_of_16
+FROM match_mast
+WHERE decided_by = 'P' AND play_stage = 'R';
+
+/*11. */
+SELECT match_no, COUNT(*) goal_numbers
+FROM goal_details
+WHERE goal_schedule = 'NT'
+GROUP BY match_no
+ORDER BY match_no ASC
+
+/*12. */ DONE! YAEE!!
+SELECT g.match_no, m.play_date, COUNT(g.match_no) goal_number
+FROM goal_details g INNER JOIN match_mast m
+ON m.match_no = g.match_no 
+WHERE g.goal_schedule != 'ST' AND g.goal_half = 1
+GROUP BY m.play_date, g.match_no;
+
+/*13. */ !
+SELECT COUNT(match_no)
+FROM match_details
+WHERE play_stage = 'G' AND goal_score = 0 AND win_lose = 'D';
+
+/*14. */ !
+SELECT COUNT(match_no)
+FROM match_details
+WHERE goal_score = 1 && win_lose = 'W' <> decided_by = 'P'
+
+/*15. Displaying player replaced.*/
+SELECT COUNT(*) player_replaced
+FROM player_in_out
+WHERE in_out = 'O';
+
+/*16. Displaying player replaced in normal time.*/
+SELECT COUNT(*) player_replaced_nt
+FROM player_in_out
+WHERE in_out = 'O' AND play_schedule = 'NT';
+
+/*17. Displaying player replaced in stoppage time.*/
+SELECT COUNT(*) player_replaced_st
+FROM player_in_out
+WHERE in_out = 'O' AND play_schedule = 'ST';
+
+/*18. Displaying player replaced in first half-time.*/
+SELECT COUNT(*) player_replaced_first
+FROM player_in_out
+WHERE in_out = 'O' AND play_half = 1;
+
+/*19. Displaying number of goalless draws*/ !
+SELECT COUNT(*) number_of_goalless_draws
+FROM match_details
+WHERE goal_score = 0 AND win_lose = 'D';
+
+/*20. Displaying number of players replaced in extra time.*/
+SELECT COUNT(*) player_replaced_et
+FROM player_in_out
+WHERE in_out = 'O' AND play_schedule = 'ET';
+
+/*21. Displaying the number of substitute happened in various stage.*/
+SELECT COUNT(in_out)/2 number_of_substitute
+FROM player_in_out
+
+/*22. Displaying number of shots.*/
+SELECT COUNT(kick_id) number_of_shots
+FROM penalty_shootout
+
+/*23. Displaying number of shots scored goal.*/
+SELECT COUNT(kick_id) number_of_shots_scored_goal
+FROM penalty_shootout
+WHERE score_goal = 'Y';
+
+/*24. Displaying number of shots missed or saved*/
+SELECT COUNT(kick_id) number_of_shots_missed_or_saved
+FROM penalty_shootout
+WHERE score_goal = 'N';
+
+/*25. Displaying list of players with number of shots they taken in penalty shootout.*/ DONE YAAA!!
+SELECT pe.player_id, pl.player_name, COUNT(pe.player_id) penalty_shot_number, pl.team_id 
+FROM penalty_shootout pe INNer JOIN player_mast pl
+ON pe.player_id = pl.player_id
+GROUP BY pe.player_id, pl.player_name, pl.team_id;
+
+/*26. Displaying the number of penalty shots taken by the teams*/ DONE YEAA!!
+SELECT c.country_name, pe.team_id, COUNT(pe.team_id) number_of_penalty_shots
+FROM penalty_shootout pe INNER JOIN soccer_country c
+ON pe.team_id = c.country_id
+GROUP BY c.country_name, pe.team_id;
+
+/*27. Displaying number of booking for each half of play.*/
+SELECT play_half, COUNT(booking_time) number_of_booking
+FROM player_booked
+WHERE play_schedule = 'NT'
+GROUP BY play_half
+
+/*28. Displaying number of booking in stoppage time.*/
+SELECT COUNT(booking_time) number_of_booking_st
+FROM player_booked
+WHERE play_schedule = 'ST'
+
+/*29. Displaying number of booking in extra time.*/
+SELECT COUNT(booking_time) number_of_booking_et
+FROM player_booked
+WHERE play_schedule = 'ET'
