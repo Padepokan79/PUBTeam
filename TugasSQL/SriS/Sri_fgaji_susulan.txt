@@ -107,3 +107,20 @@ SELECT '3d', nama
 FROM fgaji_susulan
 where kdpangkat='3d';
 //menampilkan golongan dan nama dari fgaji_lama dan fgaji_susulan
+
+===============TUGAS 5=========================
+select nama ,fgaji_susulan.kdpangkat,pangkat_tbl.NMPANGKAT as nama_pangkat 
+from fgaji_susulan
+inner join pangkat_tbl
+on fgaji_susulan.KDPANGKAT=pangkat_tbl.KDPANGKAT
+where pangkat_tbl.NMPANGKAT in
+(select nmpangkat 
+from pangkat_tbl
+where pangkat_tbl.kdpangkat in (
+select fgaji_baru.kdpangkat 
+from fgaji_baru
+where gapok < 2000000))
+
+
+//menampilkan nama,kdpangkat,nmpangkat(dari pangkat_tbl)
+yangmana nmpangkat tersebut memiliki gapok <2000000 dari fgaji_baru

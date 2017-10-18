@@ -1,0 +1,17 @@
+SELECT hg.NIP,mp.nama,hj.jistri,hj.janak,mp.tgllhr,
+mp.alamat,hg.tglupdate,
+hs.kdsatker,hs.keterangan,st.nmsatker
+FROM mstpegawai mp
+INNER JOIN historis_satker hs
+INNER JOIN historis_jiwa hj
+INNER JOIN historis_gapok hg
+INNER JOIN satker_tbl st
+ON mp.nip = hg.nip
+AND mp.janak = hj.JANAK
+AND hs.KDSATKER = st.KDSATKER
+WHERE mp.PENDIDIKAN='sarjana'
+AND mp.GAPOK < 4000000
+AND mp.JISTRI > 0
+AND mp.JANAK > 1
+ORDER BY mp.NIP
+LIMIT 0,10;
