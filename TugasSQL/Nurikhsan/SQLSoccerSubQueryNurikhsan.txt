@@ -1,0 +1,179 @@
+1. Menampilkan nama negara bertanding pertama
+
+SELECT country_name
+FROM soccer_country
+WHERE country_id IN
+(SELECT team_id
+FROM match_details
+where match_no=1)
+
+
+2. Mencari juara piala dunia
+SELECT country_name
+FROM soccer_country
+WHERE country_id  IN(
+   SELECT team_id 
+   FROM match_details
+   WHERE win_lose = 'W' 
+   AND play_stage ='F'
+);
+
+3. Menampilkan Penonton Terbanyak
+SELECT match_no ,play_stage,goal_score ,audence 
+FROM match_mast
+WHERE audence = (SELECT MAX(audence) FROM match_mast)
+
+4. Menampilkan nomer pertandingan germany vs poland
+SELECT DISTINCT match_no as nomor
+FROM match_details
+WHERE team_id IN (
+  SELECT country_id 
+  FROM soccer_country 
+  WHERE country_name IN(
+     'Germany','Poland'
+  )
+  and win_lose IN(
+     'D'
+  )
+)
+
+5. Menampilkan nomer , tanggal, goal_score dalam pertandingan Hungary, dan jerman
+SELECT match_no,play_date,goal_score    
+FROM match_mast 
+WHERE match_no IN( 
+  SELECT match_no 
+  FROM match_details
+  WHERE team_id IN (
+    SELECT country_id 
+    FROM soccer_country 
+    WHERE country_name IN(
+      'Hungary','Portugal'
+    )
+    AND  win_lose IN(
+     'D'
+    )
+    AND  goal_score IN(
+       3 
+    )   
+  )
+)
+
+6. Menampilkan pemain yang selalu mencetak goal
+SELECT player_name       
+FROM player_mast
+WHERE player_id IN(
+     SELECT player_id 
+     FROM goal_details
+     WHERE goal_time >108
+)
+
+7. Nama Team Dengan penonton terbanyak 
+SELECT country_name
+FROM soccer_country
+WHERE country_id IN(
+   SELECT team_id
+   FROM goal_details
+   WHERE match_no IN(
+     SELECT match_no
+     FROM match_mast
+     WHERE audence IN 
+     (
+       SELECT MAX(audence) 
+       FROM match_mast)
+   )
+)
+
+
+8. Menampilkan yang nggolin terakhir di pertandingan portugal dan hungary (Belum Tepat)
+SELECT player_id,player_name
+FROM player_mast
+WHERE player_id IN(
+   SELECT player_id 
+   FROM match_details
+   WHERE team_id IN(
+      SELECT country_id 
+    FROM soccer_country 
+    WHERE country_name IN(
+      'Hungary','Portugal'
+    )
+    AND  win_lose IN(
+     'D'
+    )
+    AND  goal_score IN(
+       3 
+    )  
+   )
+)
+
+9. Mencari tambahan babak kedua Terbanyak 
+SELECT stop2_sec 
+FROM match_mast
+WHERE stop2_sec = (
+    SELECT MAX(stop2_sec) FROM match_mast);
+
+10. Team yang dengan tambahan terbanyak
+SELECT country_name
+FROM soccer_country
+WHERE country_id IN (
+    SELECT team_id  
+    FROM match_details
+    WHERE match_no IN(
+      SELECT match_no 
+      FROM match_mast
+      WHERE stop2_sec IN (
+         SELECT MAX(stop2_sec) 
+         FROM match_mast)
+         
+ )
+);
+
+11. Menampilkan No, tanggal, tambahan babak kedua tertinggi
+SELECT match_no ,play_date  ,stop2_sec 
+FROM match_mast
+WHERE stop2_sec = (
+    SELECT MAX(stop2_sec) FROM match_mast);
+    
+12. Team yang pernah kalah dari portugal
+SELECT country_name
+FROM soccer_country
+WHERE country_id IN(
+   SELECT team_id 
+   FROM match_details
+   WHERE win_lose = 'L'
+   AND team_id IN(
+     SELECT team_id 
+     FROM soccer_country
+     WHERE country_name='Portugal'
+   )
+)  
+
+13.   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
