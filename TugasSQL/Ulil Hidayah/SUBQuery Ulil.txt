@@ -1,0 +1,48 @@
+SUBQUERY Ulil Hidayah
+
+1. menampilkan team yang pertama main
+select country_name from soccer_country where country_id in(
+select team_id from match_details where match_no='1');
+
+2. menampilkan team yang menjadi pemenang
+select country_name from soccer_country where country_id in(
+select team_id from match_details where play_stage='F' and win_lose='W');
+
+3.menampilkan match no, play stage, goal score dan audance yg memiliki audance tertinggi (ngga jadi)
+select match_no, play_stage, goal_score, audence from match_mast where audence in(select max(audence) from match_mast);
+
+4. menampilkan match no germany yg bertanding dg poland
+select match_no from match_details where team_id in(
+select country_id from soccer_country where country_name='Germany' or country_name='Poland'
+) group by match_no having count(match_no)=2;
+
+5. belum
+select match_no, play_stage,
+(select play_date from match_mast where match_no in(
+select match_no from match_details where team_id in(
+select country_id from soccer_country where country_name='Portugal' or country_name='Hungary'
+)group by match_no having count(match_no)=2
+)),
+goal_score, results from match_details where team_id in(
+select country_id from soccer_country where country_name='Portugal' or country_name='Hungary'
+)group by match_no having count(match_no)=2;
+
+6.
+
+7. manampilkan teams yg memiliki audance tertinggi
+select country_name from soccer_country where country_id in(
+select team_id from goal_details where match_no in(
+select match_no from match_mast where audence in(
+select max(audence) from match_mast
+)
+)
+);
+
+8. belum
+select player_name from player_mast where player_id in(
+select player_id from goal_details where match_no in(
+select match_no from match_details where team_id in(
+select country_id from soccer_country where country_name='Portugal' or country_name='Hungary'
+)group by match_no having count(match_no)=2
+)
+)
