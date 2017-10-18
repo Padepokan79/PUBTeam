@@ -1,0 +1,91 @@
+1. jumlah tempat untuk EURO cup 2016.
+SELECT COUNT(*) FROM soccer_venue;
+
+2.Tulislah sebuah query di SQL untuk menemukan jumlah negara yang berpartisipasi dalam piala EURO 2016
+SELECT COUNT(DISTINCT team_id) FROM player_mast;
+
+3. Tuliskan query di SQL untuk menemukan nomor gol yang dicetak di EURO cup 2016 dalam jadwal main normal.
+SELECT COUNT(goal_schedule) FROM goal_details WHERE goal_schedule='NT';
+
+4. jumlah pertandingan yang berakhir dengan hasilnya
+SELECT COUNT(results) FROM match_mast;
+
+5. jumlah pertandingan yang berakhir dengan draw
+SELECT COUNT(results) FROM match_mast WHERE results='DRAW';
+
+6. menemukan tanggal kapan Football EURO cup 2016 dimulai
+SELECT MIN(play_date) FROM match_mast;
+
+7. menemukan jumlah self-goals yang dicetak di EURO cup 2016
+SELECT COUNT(goal_type) FROM goal_details WHERE goal_type='O';
+
+8. menghitung jumlah pertandingan yang berakhir dengan hasil di babak grup
+SELECT COUNT(play_stage)FROM match_mast WHERE play_stage='G';
+
+9. menemukan jumlah pertandingan yang didapat akibat adu penalti
+SELECT COUNT(DISTINCT match_no)FROM penalty_shootout;
+
+10. menemukan jumlah pertandingan yang diputuskan melalui adu penalti di babak 16 besar
+SELECT COUNT(*) FROM match_mast WHERE decided_by='P' && play_stage='R';
+
+11. menemukan jumlah gol yang dicetak di setiap pertandingan dalam jadwal main normal
+SELECT COUNT(goal_schedule) FROM goal_details WHERE goal_schedule='NT' GROUP BY match_no;
+
+12. menemukan match_no, play_date, goal_score untuk pertandingan yang tidak ada waktu penghentian yang telah ditambahkan di babak pertama permainan
+SELECT match_no, play_date, goal_score FROM match_mast WHERE stop1_sec=0;
+
+13. jumlah pertandingan yang diakhiri dengan hasil imbang tanpa gol di babak penyisihan grup.
+SELECT COUNT(DISTINCT match_no) FROM match_details WHERE win_lose='D' && play_stage='G';
+
+14. jumlah pertandingan yang berakhir dengan hanya satu kemenangan gol kecuali pertandingan yang diputuskan dengan adu penalti
+SELECT COUNT(DISTINCT match_no) FROM match_details WHERE goal_score=1 && decided_by !='P';
+
+15. jumlah pemain yang diganti di turnamen.
+SELECT COUNT(player_id) FROM player_in_out WHERE in_out='O';
+
+16. jumlah total pemain yang diganti dalam waktu bermain yang normal
+SELECT COUNT(player_id) FROM player_in_out WHERE play_schedule='NT' AND in_out='O';
+
+17. jumlah pemain yang diganti pada saat penghentian
+SELECT COUNT(player_id) FROM player_in_out WHERE play_schedule='ST' AND in_out='O';
+
+18. jumlah pemain yang diganti pada paruh pertama permainan
+SELECT COUNT(in_out) FROM player_in_out WHERE play_half=1 AND in_out='O';
+
+19. jumlah total hasil imbang tanpa gol yang ada di seluruh turnamen
+SELECT COUNT(*) FROM match_details WHERE  win_lose='D' AND goal_score=0;
+
+20. jumlah pemain diganti pada waktu bermain ekstra
+SELECT COUNT(player_id) FROM player_in_out WHERE play_schedule='ET' AND in_out='O';
+
+21. jumlah pemain pengganti yang terjadi dalam berbagai tahap permainan untuk keseluruhan turnamen
+SELECT play_schedule, COUNT(player_id) FROM player_in_out WHERE in_out='I' GROUP BY play_schedule;
+
+22. jumlah tembakan yang diambil dalam adu penalti
+SELECT COUNT(score_goal) FROM penalty_shootout;
+
+23. jumlah tembakan gol socred dalam pertandingan adu penalti
+SELECT COUNT(score_goal) FROM penalty_shootout WHERE score_goal='Y';
+
+24.jumlah tembakan yang terlewatkan atau disimpan dalam adu penalti
+SELECT COUNT(score_goal) FROM penalty_shootout WHERE score_goal='N';
+
+25. menyiapkan daftar pemain dengan jumlah tembakan yang mereka ambil dalam adu penalti
+SELECT player_mast.player_name, COUNT(*) as jumlah_goal 
+FROM penalty_shootout INNER JOIN player_mast 
+ON player_mast.player_id=penalty_shootout.player_id GROUP BY player_mast.player_name;
+
+26.jumlah tembakan hukuman yang diambil oleh tim
+SELECT soccer_country.country_name, COUNT(*) 
+FROM penalty_shootout INNER JOIN soccer_country 
+ON soccer_country.country_id=penalty_shootout.team_id GROUP BY soccer_country.country_id;
+
+
+27. jumlah pemesanan terjadi di setiap setengah permainan dalam jadwal bermain normal
+SELECT play_half, COUNT(*) FROM player_booked WHERE play_schedule='NT' GROUP BY play_half;
+
+28.  jumlah pemesanan yang terjadi pada saat penghentian
+SELECT COUNT(*) FROM player_booked WHERE play_schedule='ST'
+
+29. 
+SELECT COUNT(*) FROM player_booked WHERE play_schedule='ET'
