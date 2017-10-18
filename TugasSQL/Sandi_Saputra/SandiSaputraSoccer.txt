@@ -1,0 +1,106 @@
+Sandi Saputra
+
+1. Menghitung jumlah venue
+-> select count(*) as Jumlah_Venue from soccer_venue
+
+2. Menghitung jumlah negara yang berpartisipasi dalam Euro 2016
+-> select count(distinct team_id) as Jumlah_Negara from player_mast;
+
+3. Menghitung jumlah goal yang dicetak pada saat normal time
+-> select count(goal_id) as Jumlah_Goal from goal_details where goal_schedule = 'NT';
+
+4. Menghitung jumlah pertandingan yang berakhir dengan hasil/kemenangan
+-> select count(*) as Jumlah_Pertandingan from match_mast where results = 'WIN';
+
+5. Menghitung jumlah pertandingan yang berakhir dengan hasil/imbang
+-> select count(*) as Jumlah_Pertandingan from match_mast where results = 'DRAW';
+
+6. Mencari tanggal dimulai nya Euro 2016
+-> select play_date from match_mast order by play_date asc limit 1;
+
+7. Meghitung jumlah goal yang terjadi akibat bunuh diri
+-> select count(*) as Jumlah_pertandingan from goal_details where goal_type = 'O';
+
+8. Menghitung jumlah pertandingan di babak grup yang berakhir dengan hasil/kemenangan
+-> select count(*) as Jumlah_pertandingan from match_mast where play_stage = 'G' and results = 'WIN'; 
+
+9. Menghitung jumlah pertandingan yang berakhir dengan adu penalti
+-> select count(distinct match_no) as Jumlah_pertandingan from penalty_shootout;
+
+10. Menghitung jumlah pertandingan di babak 16 besar yang berakhir dengan adu penalty
+->  select count(*) as Jumlah_pertandingan from match_mast where play_stage = 'R' and decided_by = 'P'; 
+
+11. Menghitung jumlah goal di setiap pertandingan yang tejadi di waktu normal
+->  select match_no, count(*) as Jumlah_Goal from goal_details where goal_schedule = 'NT' group by match_no; 
+
+12. Mencari nomor_pertandingan, tanggal_pertandingan dan skornya yang pertandingan tersebut tidak memiliki tambahan waku di babak pertama
+->  select distinct a.match_no, b.play_date, b.goal_score
+    from goal_details a inner join match_mast b 
+    on a.match_no = b.match_no 
+    where b.stop1_sec = 0;
+
+13. Mencari pertandingan yang draw tanpa gol dan terjadi di fase group
+->  select count(distinct match_no) as Jumlah_pertandingan from match_details where play_stage = 'G' && win_lose = 'D' && goal_score = 0;
+
+14. Mencari pertandingan yang menghasilkan hanya 1 goal kecuali pertandingan adu penalty.
+->  select count(distinct match_no) as Jumlah_pertandingan from match_details where win_lose = 'W' && goal_score = 1 && decided_by <> 'P';
+
+15. Menghitung jumlah pemain yang diganti selama turnamen Euro 2016
+->  select count(match_no) as Jumlah_pemain_diganti from player_in_out where in_out = 'O';
+
+16. Menghitung jumlah pemain yang diganti pada waktu normal
+->  select count(match_no) as Jumlah_pemain_diganti from player_in_out where in_out = 'O' and play_schedule = 'NT';
+
+17. Menghitung jumlah pemain yang diganti pada waktu tambahan
+->  select count(match_no) as Jumlah_pemain_diganti from player_in_out where in_out = 'O' and play_schedule = 'ST'; 
+
+18. Menghitung jumlah pemain yang diganti pada babak pertama
+->  select count(match_no) as Jumlah_pemain_diganti from player_in_out where in_out = 'O' and time_in_out < 46;
+
+19. Menghitung jumlah pertandingan yang berakhir draw tanpa goal di turnamen tersebut
+->  select count(match_no) as Jumlah_pertandingan from match_details where win_lose = 'D' && goal_score = 0;
+
+20. Menghitung jumlah pemain yang diganti pada saat extra time  
+->  select count(match_no) as Jumlah_pemain_diganti from player_in_out where in_out = 'O' and time_in_out > 90; 
+
+21. Menghitung jumlah pergantian pemain di setiap stage permainan
+->  select play_schedule, count(match_no) as Jumlah_pergantian
+    from player_in_out
+    where in_out = 'O'
+    group by play_schedule;
+
+22. Menghitung jumlah tendangan penalty
+->  select count(*) as jumlah_tendangan from penalty_shootout;
+
+23. Menghitung jumlah tendangan penalty yang masuk 
+->  select count(*) as jumlah_tendangan_masuk from penalty_shootout where score_goal = 'Y' ;
+   
+24. Menghitung jumlah tendangan penalty yang tidak masuk 
+->  select count(*) as jumlah_tendangan_gagal from penalty_shootout where score_goal = 'N' ;
+
+25. Menghitung jumlah tendangan penalty yang dilakukan oleh tiap pemain
+->  select distinct b.player_name, count(a.kick_id) as jumlah_tendangan 
+    from penalty_shootout a inner join player_mast b
+    on a.player_id = b.player_id 
+    group by b.player_name; 
+
+26. Menghitung jumlah tendangan penalty yang dilakukn oleh setiap team
+->  select distinct b.country_name, count(a.kick_id) as jumlah_tendangan 
+    from penalty_shootout a inner join soccer_country b
+    on a.team_id = b.country_id 
+    group by b.country_id;
+
+27. Menghitung jumlah pemain yang di booked pada babak pertama di normal time
+->  select count(*) as jumlah_booked 
+    from player_booked 
+    where booking_time < 46 and play_schedule = 'NT';
+
+28. Menghitung jumlah pemain yang di booked pada babak pertama di stoppage time
+->  select count(*) as jumlah_booked 
+    from player_booked 
+    play_schedule = 'ST';
+
+29. Menghitung jumlah pemain yang di booked pada babak pertama di ekstra time
+->  select count(*) as jumlah_booked 
+    from player_booked 
+    play_schedule = 'ET'; 
