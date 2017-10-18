@@ -10,3 +10,68 @@
 
 6. //mencari nama pemain yg mencetak gol
   select player_name from player_mast where player_id in (  select player_id from goal_details order by match_no);
+7. //mencari nama negara dg penonton terbanyak
+select country_name
+from soccer_country
+where country_id in(
+  select distinct team_id
+  from goal_details
+  where match_no in(
+   select match_no
+   from match_mast 
+   where audence = (
+     select max(audence) 
+     from match_mast
+   )
+  )
+);
+12 //
+select country_name
+from soccer_country
+where country_id in(
+select team_id
+from match_details
+where match_no in (
+  select match_no
+  from match_details 
+  where team_id in (
+    select country_id hj
+    from soccer_country 
+    where country_name ='Portugal'
+  )
+)
+);
+17. //mencari jml pemain jerman yg gol
+ select count(player_id)
+  from goal_details 
+  where team_id in (
+    select country_id hj
+    from soccer_country 
+    where country_name ='Germany'
+  );
+18. // mencari gk pemain inggris
+ select jersey_no, player_name,playing_club
+  from player_mast 
+  where team_id in (
+    select country_id hj
+    from soccer_country 
+    where country_name ='England'
+  ) and posi_to_play='GK';
+19.//mencari pemain liverpool
+select jersey_no, player_name,playing_club
+  from player_mast 
+  where team_id in (
+    select country_id hj
+    from soccer_country 
+    where country_name ='England'
+  ) and playing_club='Liverpool';
+20. // last gol
+select  player_name 
+from player_mast
+where player_id =(
+select player_id 
+from goal_details 
+where goal_time=(
+select max(goal_time) 
+from goal_details 
+where match_no=50));
