@@ -81,7 +81,7 @@ FROM player_mast GROUP BY playing_club ORDER BY ammount DESC LIMIT 1;
 
 15.
 
-16.
+16. 
 
 17. Mencari jumlah pemain Germany yang mencetak gol
 
@@ -101,19 +101,20 @@ SELECT country_id FROM soccer_country WHERE country_name='England');
 WHERE playing_club='Liverpool' AND team_id IN(
 SELECT country_id FROM soccer_country WHERE country_name='England');
 
-//20. Mencari Pemain yang terakhir mencetak goal di semiFinal d pertandingan 50
+20. Mencari Pemain yang terakhir mencetak goal di semiFinal d pertandingan 50
 
 -SELECT *FROM player_mast
 WHERE player_id IN(
 SELECT player_id FROM goal_details
-WHERE match_no=50 && goal_half=2 && goal_time IN(
-SELECT MAX(goal_time) FROM goal_details));
+WHERE goal_time IN(
+SELECT MAX(goal_time) FROM goal_details
+WHERE match_no=50 AND goal_half=2));
 
 21. menvari capten portugal yang menang di final
 
 -select player_name from player_mast where player_id in (
-select player_captain from match_captain where match_no in (
-select match_no from match_details where (play_stage='F' AND win_lose='W')); 
+select player_captain from match_captain where team_id in (
+select team_id from match_details where play_stage='F' AND win_lose='W')); 
 
 22. Mencari jml pemain yang main di final dari team Inggris 
 
