@@ -1,0 +1,78 @@
+//mencari team euro yg bertanding pertama
+1.SELECT country_name FROM soccer_country WHERE country_id IN (SELECT team_id FROM match_details where match_no=1)
+//mencari negara yg juara euro 2016
+2.SELECT country_name 
+FROM soccer_country 
+WHERE country_id IN (
+SELECT team_id
+FROM match_details
+where play_stage='F' AND win_lose='W')
+//mencari pertandingan yg audence nya paling tinggi
+3.select match_no,play_stage,goal_score,audence from match_mast where audence in (select max(audence) from match_mast);
+//belum nampil
+4.select match_no from match_details
+ where team_id in 
+(select country_id 
+from soccer_country 
+where country_id=1208 and country_id=1213)
+//
+7.select country_name
+from soccer_country
+where country_id in (
+select match_no 
+from goal_details 
+where match_no in (
+select max(audence)
+from match_mast))
+//tim yg di kalah kan portugal di final
+12.SELECT country_name 
+FROM soccer_country 
+WHERE country_id IN (
+SELECT team_id
+FROM match_details
+where play_stage='F' AND win_lose='L')
+//pencetak gol penalty pertama
+14.SELECT player_name,jersey_no
+FROM player_mast 
+WHERE player_id IN (
+select player_id 
+from goal_details
+where goal_type='P' and match_no=1)
+//belum jadi
+15.SELECT player_name,jersey_no,country_name
+FROM player_mast 
+WHERE player_id IN (
+select player_id 
+from goal_details
+where goal_type='P' and team_id in (
+select country_id
+from soccer_country))
+//pemain germain yg mencetak goal
+17.SELECT count(*)
+from goal_details
+where team_id in (
+select country_id
+from soccer_country
+where country_id=1208)
+//mencari penjaga gawang yg bermain di timnas england
+18.SELECT player_name,jersey_no,playing_club
+from player_mast
+where posi_to_play='GK' and team_id in (
+select country_id
+from soccer_country
+where country_id=1206)
+//pemain liverpool yg bermain untuk england
+19.SELECT player_name,jersey_no,playing_club
+from player_mast
+where playing_club='Liverpool' and team_id in (
+select country_id
+from soccer_country
+where country_id=1206)
+
+
+
+
+
+
+
+
