@@ -1,3 +1,4 @@
+Nurjanah
 1. menampilkan Tim yang memainkan permainan pertama
 select country_name from soccer_country where country_id IN (select team_id from match_details where match_no = 1);
 2. menampilkan pemenang uero cup 2016
