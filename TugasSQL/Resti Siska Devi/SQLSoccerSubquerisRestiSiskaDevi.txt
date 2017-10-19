@@ -81,7 +81,7 @@ FROM player_mast GROUP BY playing_club ORDER BY ammount DESC LIMIT 1;
 
 15.
 
-16.
+16. 
 
 17. Mencari jumlah pemain Germany yang mencetak gol
 
@@ -89,4 +89,109 @@ FROM player_mast GROUP BY playing_club ORDER BY ammount DESC LIMIT 1;
 FROM goal_details WHERE team_id =(
 SELECT country_id FROM soccer_country WHERE country_abbr='GER'); 
 
-18.  
+18. Mencari Kiper team Inggris  
+
+-SELECT player_name, jersey_no, playing_club
+FROM player_mast WHERE posi_to_play='GK' AND team_id IN(
+SELECT country_id FROM soccer_country WHERE country_name='England');
+
+19. Mencari pemain di bawah kontrak Liverpool di team Inggris
+
+-SELECT *FROM player_mast
+WHERE playing_club='Liverpool' AND team_id IN(
+SELECT country_id FROM soccer_country WHERE country_name='England');
+
+20. Mencari Pemain yang terakhir mencetak goal di semiFinal d pertandingan 50
+
+-SELECT *FROM player_mast
+WHERE player_id IN(
+SELECT player_id FROM goal_details
+WHERE goal_time IN(
+SELECT MAX(goal_time) FROM goal_details
+WHERE match_no=50 AND goal_half=2));
+
+21. menvari capten portugal yang menang di final
+
+-select player_name from player_mast where player_id in (
+select player_captain from match_captain where team_id in (
+select team_id from match_details where play_stage='F' AND win_lose='W')); 
+
+22. Mencari jml pemain yang main di final dari team Inggris 
+
+-SELECT COUNT(*) AS jml_pemain
+FROM player_in_out WHERE team_id IN(
+SELECT country_id FROM soccer_country WHERE country_name='France')
+AND match_no IN(
+SELECT match_no FROM match_mast WHERE play_stage='F');
+
+23. mencari kiper Germany yang tidak pernah kebobolan
+
+-SELECT player_name
+FROM player_mast WHERE posi_to_play='GK' AND team_id IN(
+SELECT team_id FROM match_details WHERE goal_score=0 AND team_id IN(
+SELECT country_id FROM soccer_country WHERE country_name='Germany'));
+
+24. Mencari runners-up in Football EURO cup 2016
+
+-SELECT country_name
+FROM soccer_country WHERE country_id IN(
+SELECT team_id FROM match_details WHERE play_stage='F' AND win_lose='L');
+
+25. mencari team yang paling banyak finalty
+
+-SELECT country_name FROM soccer_country
+where country_id in(
+select team_id from penalty_shootout GROUP BY team_id ORDER BY COUNT(team_id) DESC LIMIT 1);
+
+//kurang tepat 26. mencari pemain yang paling banyak melakukan tendangan finalty
+
+-select player_name from player_mast where player_id in (
+select player_id from penalty_shootout group by player_id order by count(player_id) desc limit 1);
+
+27. mencari pertandingan terbanyak tendangan pinalty-nya
+
+-select DISTINCT match_no from penalty_shootout where match_no in (
+select match_no from penalty_shootout group by match_no order by count(match_no) desc limit 1); 
+
+-SELECT match_no FROM penalty_shootout
+where match_no in(
+select count(match_no)
+from penalty_shootout
+group by match_no order by match_no desc limit 1);
+
+28. mencari pertandingan dan tean yang tendangan fianlty terbanyak
+
+-select DISTINCT match_no, team_id from penalty_shootout where match_no in (
+select match_no from penalty_shootout group by match_no order by count(match_no) desc limit 1);
+
+29. mencari pemain portugal yang melakukan tendangan finalty urutan ke 7
+
+-SELECT player_id
+FROM penalty_shootout WHERE kick_no=7 AND team_id IN(
+SELECT country_id FROM soccer_country WHERE country_name='Portugal');
+
+30. mencari babak pertandingan dimana no. tendangan pinalty 2e3 di lakukan
+
+-SELECT play_stage
+FROM match_mast WHERE match_no IN(
+SELECT match_no FROM penalty_shootout WHERE kick_id=23);
+
+31. mencari tempat adu finalty
+
+-SELECT venue_name
+FROM soccer_venue WHERE venue_id IN(
+SELECT venue_id FROM match_mast WHERE match_no IN(
+SELECT match_no FROM penalty_shootout)); 
+
+32. mencari tanggal adu finalty
+
+-SELECT play_date
+FROM match_mast WHERE match_no IN(
+SELECT match_no FROM penalty_shootout);
+
+33. mencari goal tercepat di atas 5 menit
+
+-SELECT goal_time
+FROM goal_details WHERE goal_time IN(
+SELECT goal_time FROM goal_details WHERE goal_time > 5 ORDER BY goal_time ASC LIMIT 1);
+ 
