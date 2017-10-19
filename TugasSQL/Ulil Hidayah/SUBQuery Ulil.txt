@@ -157,4 +157,4 @@ select distinct match_no from penalty_shootout)
 select * from goal_details where goal_time>5 order by goal_time limit 1;
 
 ALHAMDULILLAH YAA ALLOH :)
-Note : jawaban FIX hanya 26 nomor 
+Note : jawaban FIX hanya 25 nomor 
