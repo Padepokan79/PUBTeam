@@ -1,0 +1,47 @@
+1. menemukan tim memainkan pertandingan pertama dari EURO cup 2016
+select country_name from soccer_country where country_id in(select team_id from match_details where match_no=1);
+*team_id - ini adalah ID untuk setiap tim. Setiap tim mewakili sebuah negara yang merujuk 
+kolom country_id tabel soccer_country
+
+2.mencari pemenang 
+select country_name from soccer_country where country_id in(
+select team_id from match_details where play_stage='F' and win_lose='W');
+
+3.menemukan menampilkan no pertandingan, tahap bermain, mencetak gol, dan penonton yang merupakan penonton tertinggi
+select match_no,play_stage,goal_score,audence from match_mast where audence in(select max(audence) from match_mast);
+
+//4.menemukan pertandingan di mana Jerman bermain melawan Polandia
+select match_no from match_details where team_id in(
+select country_id from soccer_country where country_name='Germany' or country_name='Poland');
+
+//5.menemukan pertandingan, tahap bermain, tanggal pertandingan, jumlah skor gole, dan hasil pertandingan di mana Portugal bermain melawan Hungaria
+select match_no,play_stage,play_date,goal_score,results from match_mast where match_no in
+( select match_no from match_details where team_id in
+(select country_id from soccer_country where country_name='Portugal' or country_name='Hungary'));
+
+//6.menampilkan daftar pemain yang mencetak sejumlah gol di setiap pertandingan
+select player_id,player_name from player_mast where team_id in(
+select country_id from soccer_country where country_id in(
+select team_id from goal_details)); 
+
+7.menemukan tim yang memainkan pertandingan dengan penonton tertinggi
+select country_name from soccer_country where country_id in(
+select team_id from goal_details where match_no in(
+select match_no from match_mast where audence in(select max(audence) from match_mast)));
+
+8.untuk menemukan pemain yang mencetak gol terakhir untuk Portugal melawan Hungaria.
+
+9.menemukan waktu penghentian tertinggi ke 2 yang telah ditambahkan di paruh kedua permainan
+select stop2_sec from match_mast where stop2_sec in(select stop2_sec from match_mast order by stop2_sec limit 1,1);
+
+//10.menemukan tim memainkan pertandingan di mana waktu penghentian tertinggi 2 telah ditambahkan di babak kedua
+
+
+// belum pasti 11. menemukan no pertandingan, tanggal bermain dan waktu penghentian tertinggi kedua yang telah ditambahkan di babak kedua permainan.
+select match_no,play_date,stop2_sec as second_highest_stoppage_time from match_mast where stop2_sec in
+(select stop2_sec from match_mast group by match_no having max(stop2_sec)) limit 1,1;
+
+12.menemukan tim yang dikalahkan Portugal di final Piala Euro 2016
+
+//13.menemukan klub yang memasok jumlah pemain terbanyak ke EURO 2016
+ 
