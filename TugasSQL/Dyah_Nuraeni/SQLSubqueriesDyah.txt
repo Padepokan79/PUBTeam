@@ -7,6 +7,10 @@ select c.country_name from soccer_country c , match_details m where m.team_id=c.
 3.//Mengetahui audience paling banyak
 select match_no, play_stage, goal_score, audence from match_mast where audence=(select max(audence) from match_mast);
 
+4//menampilkan pertandingan german melawan polandia
+select  m.match_no from match_details m, soccer_country s where m.team_id = s.country_id and s.country_name='Germany' and s.country_name='Poland';
+
+
 //6 menampilkan pemain yang mencetak goal setiap pertandingan
 select g.match_no, p.player_name
 from goal_details g ,player_mast p 
@@ -34,7 +38,7 @@ select match_no,count(*) as jum from penalty_shootout group by match_no order by
 
 
 //33 menemukan goal tercepat setelah 5 menit
-select * from goal_details where goal_time = 5;
+select * from goal_details where goal_time > 5 limit 0,7;
 
 //32 tanggal pinalti
 select distinct(p.play_date) from match_mast p, penalty_shootout s where p.match_no=s.match_no ;
