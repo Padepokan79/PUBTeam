@@ -25,5 +25,87 @@ SELECT match_no,play_date FROM match_mast ORDER BY stop2_sec DESC LIMIT 2;
 SELECT country_name from soccer_country where country_id in
 (select team_id from match_details where match_no=12);
 
+33.Mencari gol tercepat setelah 5 minute
+select player_id,goal_time from goal_details where goal_id in
+(select goal_time from goal_details where goal_time > 5 )order by goal_time ASC; 
+
+32.Cari tgl yg ada pinaltinya
+select play_date from match_mast where decided_by='P';
+
+5.Melihat kompetisi antara portugal dan hungary
+select match_no, play_stage, play_date, results, goal_score
+from match_mast
+where match_no 
+in(
+select match_no 
+from match_details 
+where team_id=(
+select country_id 
+from soccer_country 
+where country_name='Portugal') OR team_id=(
+select country_id 
+from soccer_country 
+where country_name='Hungary') 
+group by match_no 
+having count(distinct team_id)=2);
 
 
+31.Tempat yg dimainkan dengan adu pinalti
+select venue_name from soccer_venue where venue_id in
+(select venue_id from match_mast where decided_by='P');
+
+29.Mencari pemain yg menendang dngn urutan ke -7
+select country_name from soccer_country where country_id in 
+(select team_id  from penalty_shootout where kick_no=7);
+
+27.Mencari match_no dan Team dengan penalti terbanyak //
+select match_no,team_id from penalty_shootout where score_goal='Y';
+
+24.Mencari Runner UP
+SELECT country_name 
+FROM soccer_country 
+WHERE country_id in(
+SELECT team_id 
+FROM match_details 
+WHERE play_stage='F' AND win_lose='L');
+
+22. Mencari pemain perancis
+select player_id from player_in_out where team_id in
+(select country_id from soccer_country where country_name='France');
+
+21.Mencari Kapten yg menang di Final
+select player_name 
+from player_mast 
+where player_id in(
+select player_captain 
+from match_captain 
+where team_id =(
+select team_id 
+from match_details 
+where play_stage='F' and win_lose='W'));
+
+19.Mencari Pemain yg ada di liverpool dan Timnas Inggris
+select player_id 
+from player_mast 
+where playing_club='Liverpool' and team_id in(
+select country_id 
+from soccer_country 
+where country_name='England');
+
+16.Mencari GK Italy
+select player_id 
+from player_mast 
+where posi_to_play='GK' and team_id in(
+select team_id 
+from penalty_gk 
+where team_id=(
+select country_id from soccer_country 
+where country_name='Italy')); 
+
+18.Menampilkan no_jersey serta club yang Timnasnya Inggris
+select jersey_no,playing_club 
+from player_mast 
+where posi_to_play='GK' and team_id in(
+select country_id 
+from soccer_country 
+where country_name='England');
