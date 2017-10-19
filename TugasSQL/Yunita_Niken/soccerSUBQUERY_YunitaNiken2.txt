@@ -1,0 +1,258 @@
+SubQuery
+
+1. Tulislah sebuah query di SQL untuk menemukan tim memainkan 
+pertandingan pertama dari EURO cup 2016.
+
+select country_id from  soccer_country where country_id in(
+select team_id from match_details where match_no=1);
+
+2. Tuliskan query di SQL untuk menemukan pemenang EURO cup 2016
+
+select country_name
+ from soccer_country 
+where country_id 
+in (
+select team_id
+ from match_details 
+where play_stage='F' AND win_lose='W');
+
+.3. Tuliskan permintaan di SQL untuk menemukan kecocokan 
+dengan tidak ada pertandingan, tahap bermain, mencetak gol,
+ dan audisi yang merupakan pertandingan audionya yang paling tinggi
+
+select match no, play stage, goal scored,audence 
+where audence in (select max(audence) 
+from match_mast) ;
+
+4. Tulislah sebuah query di SQL untuk menemukan kecocokan di mana Jerman 
+bermain melawan Polandia
+
+select match_no
+from match_details 
+where team_id in (
+select country_id 
+from soccer_country
+where country_name='Germany')
+and  match_no in (
+select match_no
+from match_details 
+where team_id in (
+select country_id 
+from soccer_country
+where country_name='Poland'));
+
+
+.5. Tuliskan permintaan di SQL untuk menemukan 
+match-no, tahap bermain, tanggal pertandingan,
+ jumlah skor gole, dan hasil pertandingan di mana Portugal 
+bermain melawan Hungaria.
+
+SELECT match_no, play_stage,play_date,goal_score 
+where play_stage in (
+select play_stage 
+from match_details 
+where team_id in(
+select country_id 
+from soccer_country 
+where country_name='Portugal'))
+and match_no,play_stage,play_date,goal_score where play_stage in (
+SELECT match_no, play_stage,play_date,goal_score 
+where play_stage in (
+select play_stage 
+from match_details 
+where team_id in(
+select country_id 
+from soccer_country 
+where country_name='Hungary')));
+
+
+6. Tuliskan query di SQL untuk menampilkan daftar pemain yang mencetak
+ sejumlah gol di setiap pertandingan. 
+
+select player_name 
+from player_mast 
+where team_id in(
+select country_id 
+from soccer_country 
+where country_id in (
+select team_id 
+from goal_details 
+where player_id in(
+select match_no 
+from goal_details)));
+
+
+7. Tulislah sebuah query di SQL untuk menemukan tim yang memainkan 
+pertandingan audionya yang paling tinggi.
+
+select country_name 
+from soccer_country 
+where country_id in (
+select team_id 
+from goal_details 
+where match_no in(
+select match_no 
+from match_mast 
+where audence in (
+select max(audence) 
+from match_mast)));
+
+8. Tulislah sebuah query di SQL untuk menemukan pemain yang 
+mencetak gol terakhir untuk Portugal melawan Hungaria.
+
+
+9. Tulislah sebuah query di SQL untuk menemukan waktu 
+penghentian tertinggi ke 2 yang telah ditambahkan di paruh
+ kedua permainan.
+
+10. Tulislah sebuah query di SQL untuk menemukan 
+waktu penghentian tertinggi ke 2 yang telah ditambahkan 
+di paruh kedua permainan.
+
+11.Tuliskan permintaan di SQL untuk menemukan match_no, 
+tanggal bermain dan waktu penghentian tertinggi kedua yang
+ telah ditambahkan di babak kedua permainan.
+
+select max(stop2_sec) 
+from match_mast 
+where stop2_sec<(
+select max(stop2_sec) 
+from match_mast);
+
+12. Tulislah sebuah query di SQL untuk menemukan tim
+ yang dikalahkan Portugal di final Piala Euro 2016.
+
+select country_name from soccer_country where 
+country_id in(select team_id from match_details where 
+play_stage='F' and win_lose='L');
+
+
+.15.Tuliskan permintaan di SQL untuk 
+menemukan pemain beserta timnya dan 
+nomor jersey yang mencetak pinalty pertama turnamen
+
+select player_name, playing_club,jersey_no 
+from player_mast 
+where team_id in (
+select country_id 
+from soccer_country 
+where country_id in(
+select team_id from goal_details 
+where match_no='1' and goal_type='P'));
+
+
+17.Tulislah sebuah query di SQL untuk menemukan 
+jumlah pemain Jerman yang mencetak gol di turnamen tersebut
+
+select player_id, team_id, goal_time,goal_type,play_stage 
+from goal_details 
+where team_id in(
+select country_id 
+from soccer_country 
+where country_abbr='GER');
+
+18.Tulislah sebuah query di SQL untuk menemukan para
+ pemain beserta no jersey mereka, dan tim_club, 
+yang merupakan penjaga gawang untuk tim Inggris pada 
+2016 EURO cup.
+
+select player_id,posi_to_play,player_name, jersey_no,playing_club 
+from player_mast 
+where posi_to_play='GK' 
+and team_id in(
+select country_id 
+from soccer_country 
+where country_abbr='ENG');
+
+19.Tulislah sebuah query di SQL untuk menemukan 
+pemain dengan informasi lain yang berada di bawah 
+kontrak ke Liverpool berada di Skuad Inggris pada tahun 2016 EURO cup.
+
+select player_id, player_name,posi_to_play, playing_club 
+from player_mast 
+where playing_club='Liverpool' 
+and team_id in (
+select country_id 
+from soccer_country 
+where country_abbr='ENG');
+
+
+24.Tulislah sebuah query di SQL untuk menemukan 
+runner-up di Football EURO cup 2016.
+
+select country_name from soccer_country 
+where country_id in (
+select team_id from match_details where play_stage='F' 
+and win_lose='L');
+
+26.Tuliskan kueri di SQL untuk menemukan jumlah maksimum 
+gol penalty yang diambil oleh para pemain.
+
+
+
+27.Tuliskan query di SQL untuk menemukan match_no.
+ dimana jumlah gol penalty terbanyak diambil
+
+select match_no 
+from penalty_shootout 
+where kick_no in (
+select max(kick_no) 
+from penalty_shootout);
+
+28. Tuliskan query di SQL untuk menemukan match_ no.
+ dan tim yang memainkan pertandingan di mana jumlah 
+gol penalti tertinggi telah dilakukan.
+
+select match_no,team_id 
+from penalty_shootout 
+where kick_id=(
+select max(kick_id) 
+from penalty_shootout);
+
+
+29. Tulislah sebuah query di SQL untuk 
+menemukan pemain portugal yang mengambil 
+tendangan ke-7 melawan poland.
+
+
+
+30.Tulislah sebuah query di SQL untuk menemukan 
+tahap pertandingan dimana tendangan penalti nomor 23 telah diambil
+
+select play_stage from match_mast 
+where match_no in (select match_no 
+from penalty_shootout where kick_id=23);
+
+31.Tuliskan permintaan di SQL untuk menemukan tempat 
+pertandingan adu penalti dimainkan.
+
+select venue_name 
+from soccer_venue 
+where venue_id in (
+select venue_id 
+from match_mast 
+where match_no in(
+select match_no 
+from penalty_shootout));
+
+
+
+32. Tuliskan permintaan di SQL untuk menemukan tanggal 
+saat adu penalti dimainkan.
+
+
+select play_date as Tanggal_Penalthy 
+from match_mast 
+where match_no in (select match_no 
+from penalty_shootout) ;
+
+33.Tulislah sebuah query di SQL untuk menemukan goal 
+ paling cepat di cup EURO 2016, setelah 5 menit
+
+
+
+select min(goal_time) as most_quickest_goal
+from goal_details 
+where goal_time>5;
+
+

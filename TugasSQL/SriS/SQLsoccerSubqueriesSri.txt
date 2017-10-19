@@ -2,54 +2,58 @@
 SRI SUGIARTINI
 SQL Soccer Subqueries
 ========================================================
-//Write a query in SQL to find the teams played the first match of EURO cup 2016.
+1//Write a query in SQL to find the teams played the first match of EURO cup 2016.
 1)select country_name from soccer_country
 where country_id in(select team_id from match_details
 where match_no=1);
 
-//Write a query in SQL to find the winner of EURO cup 2016
+2//Write a query in SQL to find the winner of EURO cup 2016
 2)select country_name from soccer_country
 where country_id in(select team_id from match_details
 where win_lose='W');
 
-//
+3//
 3)select match_no,play_stage,goal_score,audience from match_mast
 where audience in(select max(audience) from match_mast);
 
-//
-12)select country_name 
-from soccer_country
-where country_id in(select team_id 
-from match_details
-where play_stage='F' 
-and win_lose='L');
+4//
+12/)select country_name from soccer_country
+where country_id in(
+select team_id from match_details
+where play_stage='F' and win_lose='L');
 
-//
-13)select team_id,max(jersey_no)from player_mast
+5//
+13)select team_id,count(*) from player_mast
 group by team_id;
 
-//Write a query in SQL to find the number of Germany scored at the tournament.
+6//Write a query in SQL to find the number of Germany scored at the tournament.
 17)select count(player_id) from goal_details
 where team_id in(select country_id from soccer_country
 where country_name='Germany')
 
-// Write a query in SQL to find the players along with their jersey no., and playing club, who were the goalkeepers for the England squad for 2016 EURO cup
+7// Write a query in SQL to find the players along with their jersey no., and playing club, who were the goalkeepers for the England squad for 2016 EURO cup
 18)select jersey_no,player_name,playing_club from player_mast
 where team_id in(select country_id from soccer_country
 where country_name='England')
 
-//Write a query in SQL to find the players with other information under contract to Liverpool were in the Squad of England in 2016 EURO cup
+8//Write a query in SQL to find the players with other information under contract to Liverpool were in the Squad of England in 2016 EURO cup
 19)select player_name from player_mast
 where playing_club='Liverpool'
 && team_id in(select country_id from soccer_country
 where country_name='England');
 
-// Write a query in SQL to find the player Who was the captain of the EURO cup 2016 winning team from Portugal.
+9// Write a query in SQL to find the player Who was the captain of the EURO cup 2016 winning team from Portugal.
 21)select player_name from player_mast
-where player_id in(select player_captain from match_captain
-where team_id=1214);
+where player_id in(
+select player_captain 
+from match_captain
+where team_id in(
+select team_id 
+from match_details
+where play_stage='F' and win_lose='W'))
+;
 
-//Write a query in SQL to find the number of players played for france in the final
+10//Write a query in SQL to find the number of players played for france in the final
 22)select count(player_id) 
 from player_in_out
 where  match_no in(select  max(match_no) 
@@ -58,3 +62,45 @@ where team_id in(select country_id
 from soccer_country
 where country_name='France'));
 
+11//Write a query in SQL to find the player of portugal who taken the 7th kick against poland
+29)select  player_id from  penalty_shootout
+where kick_id=7 
+&& team_id in(select country_id from soccer_country
+where country_name='Poland');
+
+12//Write a query in SQL to find the venues where penalty shootout matches played
+31)select venue_name from soccer_venue
+where venue_id in(select venue_id 
+from match_mast
+where decided_by='P');
+
+13//Write a query in SQL to find the date when penalty shootout matches played
+32)select play_date from match_mast
+where match_no in(select match_no from penalty_shootout);
+
+14//Write a query in SQL to find the most quickest goal at the EURO cup 2016, after 5 minutes
+33)select min(goal_time) 
+from goal_details
+where goal_time in(
+select goal_time 
+from goal_details
+where goal_time>5);
+
+15//Write a query in SQL to find the player and his jersey number Who scored the first penalty of the tournament.
+14)select jersey_no,player_name from player_mast
+where player_id in(select player_id from goal_details
+where goal_type='P' limit 1);
+
+16//Write a query in SQL to find the player with other infromation Who scored the last goal in the 2nd semi final i.e. 50th match in EURO cub 2016
+20)select player_name from player_mast
+where player_id in(
+select player_id from goal_details
+where match_no=50 and goal_half=2);
+
+
+17//Write a query in SQL to find the player along with his team and jersey number who scored the first penalty of the tournament
+15)select soccer_country.country_name,jersey_no,player_name from player_mast
+inner join soccer_country
+on soccer_country.country_id=player_mast.team_id
+where player_mast.player_id in(select player_id from goal_details
+where goal_type='P' limit 1);
