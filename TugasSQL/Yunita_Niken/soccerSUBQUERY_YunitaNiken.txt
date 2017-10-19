@@ -1,0 +1,115 @@
+SubQuery
+
+1. Tulislah sebuah query di SQL untuk menemukan tim memainkan 
+pertandingan pertama dari EURO cup 2016.
+
+select country_id from  soccer_country where country_id in(
+select team_id from match_details where match_no=1);
+
+2. Tuliskan query di SQL untuk menemukan pemenang EURO cup 2016
+
+select country_name
+ from soccer_country 
+where country_id 
+in (
+select team_id
+ from match_details 
+where play_stage='F' AND win_lose='W');
+
+.3. Tuliskan permintaan di SQL untuk menemukan kecocokan 
+dengan tidak ada pertandingan, tahap bermain, mencetak gol,
+ dan audisi yang merupakan pertandingan audionya yang paling tinggi
+
+select match no, play stage, goal scored,audence 
+where audence in (select max(audence) 
+from match_mast) ;
+
+4. Tulislah sebuah query di SQL untuk menemukan kecocokan di mana Jerman 
+bermain melawan Polandia
+
+select match_no
+from match_details 
+where team_id in (
+select country_id 
+from soccer_country
+where country_name='Germany')
+and  match_no in (
+select match_no
+from match_details 
+where team_id in (
+select country_id 
+from soccer_country
+where country_name='Poland'));
+
+
+.5. Tuliskan permintaan di SQL untuk menemukan 
+match-no, tahap bermain, tanggal pertandingan,
+ jumlah skor gole, dan hasil pertandingan di mana Portugal 
+bermain melawan Hungaria.
+
+SELECT match_no, play_stage,play_date,goal_score 
+where play_stage in (
+select play_stage 
+from match_details 
+where team_id in(
+select country_id 
+from soccer_country 
+where country_name='Portugal'))
+and match_no,play_stage,play_date,goal_score where play_stage in (
+SELECT match_no, play_stage,play_date,goal_score 
+where play_stage in (
+select play_stage 
+from match_details 
+where team_id in(
+select country_id 
+from soccer_country 
+where country_name='Hungary')));
+
+
+6. Tuliskan query di SQL untuk menampilkan daftar pemain yang mencetak
+ sejumlah gol di setiap pertandingan. 
+
+select player_name 
+from player_mast 
+where team_id in(
+select country_id 
+from soccer_country 
+where country_id in (
+select team_id 
+from goal_details 
+where player_id in(
+select match_no 
+from goal_details)));
+
+
+7. Tulislah sebuah query di SQL untuk menemukan tim yang memainkan 
+pertandingan audionya yang paling tinggi.
+
+select country_name 
+from soccer_country 
+where country_id in (
+select team_id 
+from goal_details 
+where match_no in(
+select match_no 
+from match_mast 
+where audence in (
+select max(audence) 
+from match_mast)));
+
+8. Tulislah sebuah query di SQL untuk menemukan pemain yang 
+mencetak gol terakhir untuk Portugal melawan Hungaria.
+
+
+9. Tulislah sebuah query di SQL untuk menemukan waktu 
+penghentian tertinggi ke 2 yang telah ditambahkan di paruh
+ kedua permainan.
+
+10. Tulislah sebuah query di SQL untuk menemukan 
+waktu penghentian tertinggi ke 2 yang telah ditambahkan 
+di paruh kedua permainan.
+
+
+
+
+
