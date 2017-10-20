@@ -1,0 +1,103 @@
+Quiz SQL
+1. [Ulil Hidayah]
+//Tampilkan kode pangkat, nama pangkat dan rata-rata gaji bersihnya 
+yang nama pangkatnya berawalan 'juru' diurutkan secara ascending berdasarkan kode pangkat
+
+select pangkat_tbl.KDPANGKAT, pangkat_tbl.NMPANGKAT, avg(gaji_13_tmp.bersih)
+from pangkat_tbl inner join gaji_13_tmp
+on pangkat_tbl.KDPANGKAT=gaji_13_tmp.KDPANGKAT
+where pangkat_tbl.NMPANGKAT like 'juru%'
+group by pangkat_tbl.KDPANGKAT order by pangkat_tbl.KDPANGKAT asc
+
+2. [Frida Nur Hidayati]
+//Tampilkan nama pegawai beserta golongan dan pangkatnya 
+yang gaji pokoknya diatas rata-rata gaji pokok
+dan masa kerjanya > 30 tahun
+
+select mstpegawai.NAMA, pangkat_tbl.NMGOL, pangkat_tbl.NMPANGKAT, mstpegawai.MASKER
+from mstpegawai, pangkat_tbl
+where mstpegawai.MASKER > 30 AND mstpegawai.GAPOK > (
+select avg(GAPOK) from mstpegawai
+where KDPANGKAT in (
+select KDPANGKAT from pangkat_tbl));
+
+3 [Nurjanah]
+//tampilkan nama, alamat, nama pangkat, tanggal lahir, tangga wafat yang pendidikannya s1 yang sudah meninggal
+
+select m.NAMA, m.ALAMAT, p.NMPANGKAT, m.TGLLHR, t.TGLWAFAT
+FROM mstpegawai m, pangkat_tbl p, twafat t
+where t.TGLWAFAT < '2017-10-10' and t.NIP in (
+select NIP from mstpegawai 
+where pendidikan='sarjana (s1)' and kdpangkat in(
+select kdpangkat from pangkat_tbl));
+
+4. [Teguh Prabowo]
+//Cari nama, dengan golongan 3A yang statusnya 'kawin' dan tampilkan jistri, janak, dan total gapoknya
+
+select m.nama, m.jistri, m.janak, m.gapok, s.nmstawin
+from mstpegawai m, stawin_tbl s
+where s.nmstawin='KAWIN' AND m.KDPANGKAT in(
+select KDPANGKAT from pangkat_tbl
+where gol='3A');
+
+5. [Dyah Nuraeni]
+//Tampilkan anggota keluarga pegawai yang merupakan kepala sekolah, beserta tanggal lahir anggota keluarga 
+yang memiliki gaji pokok paling tinggi
+
+select nama as tokoh_utama, nmkel1 as istri, nmkel2 as anak_pertama, nmkel3 as anak_kedua, 
+nmkel4 as anak_ketiga, nmkel5 as anak_keempat, nmkel6 as anak_kelima, nmkel7 as anak_keenam, 
+tgllhr1, tgllhr2, tgllhr3, tgllhr4, tgllhr5, tgllhr6, tgllhr7, gapok
+from skpp_pegawai
+where gapok in(
+select max(gapok) from skpp_pegawai
+where kdguru in(
+select kdguru from guru_tbl
+where NMGURU like 'kepala sekolah%'));
+
+6. [Nurikhsan]
+//Tampilkan nama pegawai, tempat lahir
+yang nama fungsinya 'Dokter' dan jumlah anaknya > 1
+
+select p.nama, p.tempatlhr, p.janak, f.namafungsi
+from mstpegawai p inner join fungsi f
+on p.kdfungsi = f.kdjabatan
+where p.janak > 1 and f.namafungsi= 'dokter'
+
+7. [Yusup Abdul Qohar]
+//Mencari daftar duda yang memiliki anak, status pegawai tetap, dan gapok < 4000000 dan beragama islam
+
+select m.nama from mstpegawai m inner join stapeg_tbl s 
+inner join tb_stawin ts inner join agama_tbl a
+on m.KDSTAPEG=s.KDSTAPEG and m.KDSTAWIN=ts.KD_STAWIN 
+and m.AGAMA=a.KDAGAMA
+where s.NMSTAPEG='pegawai tetap(pns)' and ts.NM_STAWIN='duda'
+and a.NMAGAMA='islam' and m.GAPOK=4000000
+
+8. [Riyan Turmudi]
+//Tampilkan NIP, nama, gaji pokok yang pendidikan terakhirnya 'SLTA' dimana gaji pokoknya >= 2jt
+dan kode pangkat='2A' serta memiliki jml istri 2
+select m.NIP, m.NAMA, d.GAPOK 
+from mstpegawai m inner join data_rapel d
+where d.GAPOK>=2000000 and m.PENDIDIKAN = 'SLTA'
+AND m.KDPANGKAT = '2A' AND m.jistri=2; 
+
+9. [Sandi Saputra]
+Cari nama pegawai yg memiliki hutang diatas 10 jt dengan cicilan diatas 100rb dan belum lunas
+
+select m.NAMA 
+from mstpegawai m inner join hutang h
+on m.NIP=h.NIP
+where h.JMLHUTANG > 10000000 and h.JMLCICILAN > 100000
+and h.CICILANAKHIR >0;
+
+10. [Ulil Hidayah]
+//Menampilkan nip, nama, jistri, janak dan tgl gaji yang pendidikannya S1 dan tempat lahir tidak kosong dan mempunyai istri min. 1
+
+select NIP, NAMA, JISTRI, JANAK, tglgaji 
+from gaji_13_tmp
+where JISTRI>=1 AND NIP in (
+select NIP from mstpegawai
+where pendidikan='SARJANA (S1)'AND TEMPATLHR != '');
+
+11. [Sri Sugiartini]
+//Tampilkan gapok dari laki-laki yang pangkatnya '3D' dan memiliki gaji>gaji laki2 yang memiliki 1 istri dan gajinya paling besar
