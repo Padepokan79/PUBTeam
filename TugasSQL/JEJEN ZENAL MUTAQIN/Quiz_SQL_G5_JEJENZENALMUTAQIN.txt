@@ -1,0 +1,81 @@
+1. YUSUP
+Mencari Daftar duda yang memiliki anak memeiliki status pegawai tetap yg memiliki gapok kurang dari 400000 dan bragama islam
+SELECT m.nama FROM mstpegawai m  WHERE m.KDSTAWIN IN (
+SELECT s.KD_STAWIN FROM tb_stawin s WHERE s.NM_STAWIN = 'DUDA') AND m.KDSTAPEG IN(
+SELECT st.KDSTAPEG FROM stapeg_tbl st WHERE st.NMSTAPEG = 'PEGAWAI TETAP (PNS)') AND m.NIP IN(
+SELECT f.NIP FROM fgaji f WHERE f.GAPOK<4000000) AND m.AGAMA IN (
+SELECT a.KDAGAMA FROM agama_tbl a WHERE a.NMAGAMA = 'ISLAM')
+
+2. NOPAN
+mencari nama,nip,kdskpd,tmtgaji,tglupddate, kdsatker yang stopnya tdk samadengan null dan tmtgajinya tahun 2011
+SELECT f.NAMA, f.KDSKPD , sta.TMTGAJI,sta.TGLUPDATE,sat.KDSATKER 
+FROM fgaji f INNER JOIN historis_satker sat INNER JOIN historis_stapeg sta 
+ON f.NIP = sat.NIP AND sat.NIP = sta.NIP AND sta.TGLSTOP NOT null AND sta.TMTGAJI LIKE '2011%'
+
+3. SRI S
+Menampilkan GAPOK dari laki-laki yang pangkatnya 3D dan memiliki gaji>dari gaji laki laki yang memiliki istri dan gajinya palingbesar
+SELECT f.GAPOK FROM fgaji f WHERE f.KDPANGKAT = '3D' AND f.KDJENKEL= 1  AND f.GAPOK > 
+(SELECT MAX(f.GAPOK) FROM fgaji_susulan f WHERE f.JISTRI>=1 AND f.KDJENKEL=1)
+
+4. SANDI S
+Menampilkan pegawai yang mempunyai istri, mempunyai anak >1 dan berpangkat 'Penata Muda tk 1'
+SELECT m.NAMA FROM mstpegawai m  WHERE m.JISTRI >=1 AND m.JANAK>1 AND m.KDPANGKAT IN (
+SELECT KDPANGKAT FROM pangkat_tbl WHERE NMPANGKAT = 'Penata Muda Tk.I')
+
+5. RESTI
+Menampilkan NIP,NAMA,GAJI_13 bersih yang status nya janda dan memiliki pangkat 'Penata Muda tk 1'
+SELECT g.NIP ,g.NAMA ,g.BERSIH,g.KDSTAWIN FROM gaji_13_tmp g  WHERE g.KDSTAWIN IN (
+SELECT KD_STAWIN FROM tb_stawin WHERE NM_STAWIN = 'JANDA') AND g.KDPANGKAT IN (
+SELECT KDPANGKAT FROM pangkat_tbl WHERE NMPANGKAT='Penata Tk.I')
+
+6. IPIN
+Cari nama , gapok, dan pangkat dari orang yang memiliki hutang tertinggi
+SELECT m.NAMA,m.GAPOK, p.NMPANGKAT FROM mstpegawai m INNER JOIN pangkat_tbl p ON m.KDPANGKAT = p.KDPANGKAT
+WHERE m.NIP IN (
+SELECT h.NIP FROM hutang h WHERE h.JMLHUTANG IN(
+SELECT MAX(JMLHUTANG) FROM hutang))
+
+7. SRI S
+Menampilkan nama, laki laki yg statusya duda tdk memiliki anak pangkatnya 4a Yang gapok nya lebih dari gapok paling tinggi dari laki laki yang tidak kawin dan pangkatnya penata
+SELECT g.NAMA,g.GAPOK FROM fgaji g WHERE g.KDSTAWIN IN (
+SELECT s.KD_STAWIN  FROM tb_stawin s WHERE s.NM_STAWIN = 'DUDA') AND g.JANAK=0 AND g.KDPANGKAT='4A' AND g.GAPOK > (
+SELECT MAX(f.GAPOK) FROM fgaji_baru f WHERE f.KDSTAWIN IN (
+SELECT st.kdstawin FROM stawin_tbl st WHERE st.nmstawin='TIDAK KAWIN') AND f.KDPANGKAT IN (
+SELECT kdpangkat FROM pangkat_tbl  WHERE nmpangkat = 'penata'
+))
+
+8. TEGUH
+Menampilkan nama,jistri,janak,gapok yang gol 3A statusnya kawin
+SELECT m.NAMA,m.JISTRI,m.JANAK,m.GAPOK FROM mstpegawai m WHERE m.KDPANGKAT = '3A' AND m.KDSTAWIN IN (
+SELECT st.kdstawin FROM stawin_tbl st WHERE st.nmstawin = 'KAWIN'
+)
+
+9. TEGUH
+Menampilkan nama,pendidikan (S2) agama islam dan urutkan gapok tertinggi
+SELECT m.NAMA,m.PENDIDIKAN FROM mstpegawai m WHERE m.AGAMA IN (
+SELECT a.KDAGAMA FROM agama_tbl a WHERE a.NMAGAMA = 'ISLAM'
+) AND m.PENDIDIKAN LIKE '%(S2)%' ORDER BY GAPOK DESC
+
+10. TEGAR
+Menampilkan nama pegawau yang mempunyai pangkay 'wakil bupati/walikota' dan bergelar 'haji' dan mempunyai istru max dalam islam poligami(4)
+SELECT m.NAMA,m.JISTRI FROM mstpegawai m WHERE m.JISTRI= '4'  AND m.AGAMA IN (
+SELECT a.KDAGAMA FROM agama_tbl a WHERE a.NMAGAMA = 'ISLAM') 
+AND (m.GLRDEPAN LIKE'%H%' or m.NAMA LIKE 'H.%' or m.NAMA LIKE 'HJ.%') AND m.KDPANGKAT IN (
+SELECT p.KDPANGKAT FROM pangkat_tbl p WHERE p.NMPANGKAT = 'Wakil. Bupati/Walikota' 
+) 
+
+11. DYAH N
+Tampilkan anggota keluarga yang mrupakan kepala sekloah beserta tgl lahir anggota kluarga yang memiliki gajipokok palingtinggi 
+SELECT sp.NAMA,sp.TGLLHR FROM skpp_pegawai sp WHERE sp.KDGURU IN (
+SELECT KDGURU FROM guru_tbl WHERE NMGURU LIKE 'KEPALA SEKOLAH%') AND sp.GAPOK IN (
+SELECT MAX(sp.GAPOK) FROM skpp_pegawai sp )
+
+12. DYAH N
+Tampilkan pegawai yang mendapat kekurangan gaji yang memiliki potongan paling besar dan anak paling banyak
+SELECT fk.NIP FROM fgaji_kekurangan fk WHERE fk.JANAKBARU IN (
+SELECT MAX(JANAKBARU) FROM fgaji_kekurangan) OR fk.POTONGANBARU IN (
+SELECT MAX(POTONGANBARU) FROM fgaji_kekurangan)
+
+13. ILFA
+Menampilkan NIP,NAMA,TANAK,PANGKAT,JHUTANG,NAMAPERWAKILAN KELUARGA HUBUNGAN KELUARGA yang memiliki tunjangan anak terbesar
+
