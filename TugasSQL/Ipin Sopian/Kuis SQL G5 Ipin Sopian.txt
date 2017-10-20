@@ -1,0 +1,168 @@
+1. menampilkan nama pegawai dan alamat dengan nama fungsi "dokter" dan anak lebih dari 1.
+   dari Nurikhsan.
+   select nama,alamat
+   from mstpegawai
+   where kdfungsi in(
+    select kdjabatan
+    from fungsi
+    where namafungsi like 'Dokter%'
+    ) and janak>1;
+2. menampilkan kode fungsi dan rata rata pensiun dengan rata -rata lbih dari 60 diurutkan dengan rata rata desc
+   dari ulil
+   SELECT kdfungsi,avg(pensiun)
+   from jabatan_tbl
+   where kdfungsi in(
+    select kdfungsi
+    from jabatan_fungsi
+    where nmfungsi like 'FUNGSIONAL%'
+  )
+  group by kdfungsi
+  having avg(pensiun)>60
+  order by avg(pensiun) desc;
+3. menampilkan nama pegawai yg memiliki istri anak lebih dari 1 dengan pangkat Penata Muda Tk.I
+   dari Nurikhsan
+   select nama
+from mstpegawai
+where kdpangkat=(
+ select kdpangkat
+ from pangkat_tbl
+ where nmpangkat='Penata Muda Tk.I'
+)and kdstawin =(
+ select kdstawin
+ from tb_stawin
+ where nm_stawin='NIKAH'
+) and janak>1
+and kdjenkel=1;
+4. mencari nama tgl lahir dan pangkat dengan masker paling tinggi 
+   dari cucu
+select pg.nama,pg.tgllhr,p.pkt030 as pangkat,g.bersih,pg.pendidikan
+from tb_pangkat p left join mstpegawai pg on p.PKT050=pg.KDPANGKAT left join fgaji_baru g
+on pg.NIP=g.NIP
+where pg.masker=(select max(masker) from mstpegawai);
+5. mencari nama nama pen didikan dll dgn ketentuan islam dan gapok diatas rata rata
+  dari jejen
+select g.NIP,g.nama,g.tgllhr,p.pkt030 as pangkat,pg.pendidikan,a.NMAGAMA,g.GAPOK
+from tb_pangkat p left join mstpegawai pg 
+on p.PKT050=pg.KDPANGKAT 
+left join fgaji g
+on pg.NIP=g.NIP
+right join agama_tbl a 
+on a.kdagama=pg.AGAMA
+where g.GAPOK>(select avg(gapok) from fgaji)
+and a.NMAGAMA='ISLAM'  limit 10;
+6. mencari nama dan gapok dengan status tdk kawin dan gapok diatas rata rata 
+   dari frida
+SELECT nama,gapok
+from mstpegawai
+where gapok =(
+select max(gapok) 
+from mstpegawai
+where kdstawin=(
+select kdstawin 
+from stawin_tbl
+where nmstawin='TIDAK KAWIN'));
+7. mencari nip nma pangkat dan gaji lbih dari 4 juta
+   dari yunita
+select g.NIP,g.nama,p.pkt030 as pangkat
+from tb_pangkat p left join mstpegawai pg 
+on p.PKT050=pg.KDPANGKAT 
+left join fgaji_lama g
+on pg.NIP=g.NIP
+where g.GAPOK>4000000;
+8.mencari nip nama pangkat dengan jmlhutang=6345000 and jmlcicilan=500000
+  dari riyan
+select NIP,nama,KDPANGKAT
+from mstpegawai
+where nip=(
+select nip 
+from hutang
+where jmlhutang=6345000 and jmlcicilan=500000);
+9. mencari pangkat tertinggi
+  dari tegar
+select nmpangkat
+from pangkat_tbl
+order by kdpangkat desc limit 1;
+10. mencari seluruh data dengan urt 4
+   dari dasiah
+   select *
+from akunsp2d
+where kdtrans=(
+select kdtrans
+from akun_konv 
+where urt=4);
+11. mencari bujangan dengan gaji paling tinggi
+    dari Nurjanah
+select p.nama,p.ALAMAT
+ from  mstpegawai p join fgaji f
+ on p.nip=f.NIP
+ where p.nip not in(
+  select  nip 
+  from hutang
+ ) and p.kdstawin=(
+  select kdstawin
+  from stawin_tbl
+  where nmstawin='TIDAK KAWIN'
+ ) 
+ and p.KDJENKEL=1
+ AND f.BERSIH=(
+  select max(bersih)
+  from fgaji
+ ) =p
+ ;
+12. nama nip dll dengan tglstop not null dan tmt gaji tahun 2011
+    dari nopan
+    select g.nama,g.nip,hs.kdskpd,hs.tmtgaji,hs.tglupdate,hs.kdsatker
+from fgaji g inner join historis_satker hs
+on g.NIP=hs.NIP
+inner join historis_stapeg h 
+on h.NIP= g.NIP
+where h.TGLSTOP is not null
+and (YEAR(hs.TMTGAJI)='2011')
+limit 1;
+13. mencari agama dari duda yang tidak berhutang 
+  dari halah
+select distinct a.nmagama
+from agama_tbl a left join mstpegawai pg
+on a.KDAGAMA=pg.AGAMA
+inner join hutang hu
+on  hu.NIP<>pg.nip
+inner join stawin_tbl tt
+on tt.kdstawin=pg.KDSTAWIN
+where pg.KDJENKEL=1
+and tt.nmstawin='JANDA/DUDA';
+14. menampilkan gapok  dari bujangan yg lebih besar dari yg udah nikah
+   dari cici
+select distinct a.nmagama
+from agama_tbl a left join mstpegawai pg
+on a.KDAGAMA=pg.AGAMA
+inner join hutang hu
+on  hu.NIP<>pg.nip
+inner join stawin_tbl tt
+on tt.kdstawin=pg.KDSTAWIN
+where pg.KDJENKEL=1
+and tt.nmstawin='JANDA/DUDA';
+15. menampilkan nip, nama, dan bersih dari janda dan pangkat Penata Tk.I
+    dari  
+select nip, nama,bersih
+from stawin_tbl st left join gaji_13_tmp g13
+on st.kdstawin=g13.KDSTAWIN
+inner join pangkat_tbl pt
+on g13.KDPANGKAT=pt.KDPANGKAT
+where st.nmstawin='JANDA/DUDA'
+AND pt.NMPANGKAT='Penata Tk.I'
+and g13.KDJENKEL=2;
+16. jumlah karyawan yg tidak memiliki tjistri
+    dari jejen
+select count(*)
+from fgaji
+where tjistri=0
+and potongan>700000
+and gapok>4000000
+and kdjenkel=1
+group by kdpangkat;
+17. mencari nama tanggal wafat dll dgn gapok > 3jt
+select fb.nama,fu.tglwafat,fb.tjistri,fb.tjanak
+from fgaji_uangduka fu inner join fgaji_baru fb
+on fu.NIP=fb.NIP
+where fb.GAPOK>3000000
+limit 1;
