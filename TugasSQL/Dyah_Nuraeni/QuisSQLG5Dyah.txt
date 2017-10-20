@@ -71,7 +71,7 @@ select * from akun_konv a, akunsp2d a2 where a.kdtrans=a2.KDTRANS and a.urt=4;
 
 16.menampilkan keluarga kepala sekolah beserta tgl lahir yang memiliki gaji pokok tertinggi
 Select s.nmkel1,s.nmkel2,s.nmkel3,s.nmkel4,s.nmkel5,s.nmkel6, s.NMKEL7 ,s.TGLLHR1,s.TGLLHR2,s.TGLLHR3,
-s.TGLLHR4,s.TGLLHR5,s.TGLLHR6,s.TGLLHR7,s.GAPOK from skpp_pegawai s,guru_tbl g
+s.TGLLHR4,s.TGLLHR5,s.TGLLHR6,s.TGLLH7,s.GAPOK from skpp_pegawai s,guru_tbl g
  where s.KDGURU=g.KDGURU and  s.kdguru = 001 or g.kdguru = 002 or g.kdguru = 003 or g.kdguru = 004 or
  g.kdguru = 005 or g.kdguru = 006 or g.kdguru = 007 or g.kdguru = 008  order by s.gapok desc limit 1;
 
@@ -85,5 +85,5 @@ select kdpangkat from pangkat_tbl where nmpangkat = "pembina" ) group by nama ha
 select nip,nama,kdpangkat from mstpegawai where nip in (
 select nip from hutang where jmlhutang =6345000 and jmlcicilan =500000);
 
-19.s
+
 
