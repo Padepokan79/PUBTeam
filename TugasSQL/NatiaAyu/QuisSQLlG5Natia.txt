@@ -1,0 +1,145 @@
+SOAL 1 (SANDI SAPUTRA)
+
+- Cari keluarga dari pegawai bernama IR. YUSFIQ RIZAL tabel keluarga dan hubkel_tbl
+
+SELECT NMKEL FROM keluarga WHERE KDHUBKEL IN(
+SELECT KDHUBKEL FROM hubkel_tbl WHERE NIP IN(
+SELECT NIP FROM keluarga WHERE NMKEL='IR. YUSFIQ RIZAL'
+));
+
+SOAL 2 (HALAH HELMIA WAHDAH)
+
+- tampilkan agama yang paling banyak dianut duda yang tidak pernah berhutang
+
+SELECT a.NMAGAMA, COUNT(a.NMAGAMA)
+FROM agama_tbl a
+INNER JOIN mstpegawai m
+INNER JOIN hutang h
+INNER JOIN stawin_tbl t
+ON a.KDAGAMA=m.AGAMA
+AND m.NIP=h.NIP
+AND m.KDSTAWIN=t.kdstawin
+WHERE m.KDSTAWIN=3 AND m.nip NOT IN(
+SELECT nip FROM hutang) GROUP BY t.kdstawin=3;
+
+SOAL 3 (NURJANAH)
+
+- menampilkan nama, alamat, nama pangkat, tanggal lahir, tanggal wafat yang pendidikan sarjana (s1) yang sudah meninggal
+
+SELECT  m.NAMA, m.ALAMAT, p.NMPANGKAT, m.TGLLHR, t.TGLWAFAT 
+FROM mstpegawai m 
+INNER JOIN twafat t
+INNER JOIN pangkat_tbl p
+ON m.KDPANGKAT=p.KDPANGKAT
+AND m.NIP=t.NIP
+WHERE m.PENDIDIKAN='SARJANA (S1)';
+
+SOAL 4 (DASIAH)
+
+- Buatlah query SQL yang menapilkan nmakun pada tabel akunsp2d sebagai NamaAkunS, kdakun pada tabel akun_tbl sebagai kodeAKunT
+dari tabel akun_tbl, dimana jika ada data yang kosong pada tabel akunsp2d maka akan tetap ditampilkan digantikan dengan NULL ketika
+kdakun pada tabel akun_tbl sama dengan kdakun pada tabel tabel akunsp2d
+
+SELECT a.nmakun as NamaAkunS, t.kdakun as kodeAkunT
+FROM akunsp2d a 
+RIGHT JOIN akun_tbl t
+ON a.KDTRANS=t.KDTRANS;
+
+SOAL 5 (NURIKHSAN)
+
+- Tampilkan nama pegawai yang mempunyai istri dan anak>1 dan berpangkat 'Penata Muda Tk.I'
+
+SELECT m.NAMA, COUNT(m.NIP)
+FROM mstpegawai m INNER JOIN tb_pangkat p
+ON m.KDPANGKAT = p.PKT050
+WHERE m.JANAK>1 AND p.PKT030='Penata Muda Tk.I' AND m.JISTRI != 0;
+
+SOAL 6 (IPIN SOPIAN)
+
+- Cari nama, gaji pokok dan pangkat dari orang yang memiliki hutang tertinggi
+
+SELECT m.NAMA, m.GAPOK, t.PKT030
+fROM mstpegawai m
+INNER JOIN hutang h
+INNER JOIN tb_pangkat t
+ON m.NIP=h.NIP
+AND t.PKT050=m.KDPANGKAT
+HAVING MAX(h.JMLHUTANG);
+
+SOAL 7 (RIYAN TURMUDI)
+
+- Tampilkan NIP, NAMA, Gaji Pokok yang pendidikan terakhirnya SLTA dimana gaji pokoknya>=2jt dari kode pangkat 2A serta
+memiliki jumlah istri 2
+
+SELECT m.NIP, m.NAMA, m.GAPOK
+FROM data_rapel d
+INNER JOIN mstpegawai m
+ON d.NIP=m.NIP
+WHERE m.PENDIDIKAN='SLTA' 
+AND m.GAPOK>2000000 
+AND d.KDPANGKAT='2A' 
+AND m.JISTRI=2;
+
+SOAL 8 (NURIKHSAN)
+
+- Tampilkan nama, NIP, Agama, Pendidikan, Nama Pangkat yang agamanya Islam, punya istri dan Anak, dengan gaji diatas
+3jt dan nama Fungsi='NON FUNGSIONAL'
+
+SELECT m.NAMA, m.NIP, a.NMAGAMA, m.PENDIDIKAN, t.NMPANGKAT
+FROM pangkat_tbl t
+INNER JOIN mstpegawai m
+INNER JOIN fungsional_tbl f
+
+INNER JOIN agama_tbl a
+ON m.AGAMA=a.KDAGAMA
+AND m.KDPANGKAT=t.KDPANGKAT
+WHERE a.NMAGAMA='ISLAM'
+AND m.JANAK >0
+AND m.JISTRI >0
+AND m.GAPOK>3000000
+AND f.NM_FUNGSI='NON FUNGSIONAL';
+
+SOAL 9 (CUCU YUNI YULIANTI)
+
+- Menampilkan nama, tanggal lahir, pangkat, total penghasilan, pendidikan dan masa kerja pegawai paling lama
+
+SELECT m.NAMA, m.TGLLHR, p.NMPANGKAT, f.BERSIH, m.PENDIDIKAN
+FROM mstpegawai m
+INNER JOIN fgaji_baru f
+INNER JOIN pangkat_tbl p
+ON m.NIP=f.NIP
+AND m.KDPANGKAT=p.KDPANGKAT
+HAVING MAX(m.MASKER);
+
+SOAL 10 (RIYAN TURMUDI)
+
+- Tampilkan nip, nama dan kode pangkat yang memiliki jumlah hutang 6.345.000 dan jumlah cicilan 500.000
+
+SELECT m.NIP, m.NAMA, m.KDPANGKAT
+FROM mstpegawai m
+INNER JOIN hutang h
+ON m.NIP=h.NIP
+WHERE h.JMLHUTANG=6345000
+AND h.JMLCICILAN=500000;
+
+SOAL 11 (IPIN SOPIAN)
+
+- cari nama, gaji bersih, dan pendidikan dari pegawai yang memiliki hutang
+
+SELECT m.NAMA, f.BERSIH, m.PENDIDIKAN
+FROM mstpegawai m
+INNER JOIN hutang h
+INNER JOIN fgaji f
+ON m.NIP=h.NIP
+AND h.NIP=f.NIP
+WHERE m.NIP IN(
+SELECT NIP FROM hutang WHERE TGLLUNAS is NULL);
+
+SOAL 12 (RESTI SISKA DEVI)
+
+- Tampilkan nama hutang dan berapa banyak jumlah dari masing-masing nama hutang
+
+SELECT t.NMHUTANG, COUNT(t.NMHUTANG)
+FROm hutang h
+INNER JOIN hutang_tbl t
+ON h.KDHUTANG=t.KDHUTANG GROUP BY t.NMHUTANG;
