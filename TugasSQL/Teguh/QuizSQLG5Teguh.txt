@@ -1,0 +1,77 @@
+1.Cari Nama dengan Hutang > 10jt dan cicilan < 100rb dan belum lunas(Sandi)
+
+select NAMA from mstpegawai where NIP in(
+select NIP from hutang where JMLHUTANG > 10000000 and JMLCICILAN > 100000 and TGLLUNAS is null );
+
+2.Mencari UPTDSTAMP,STATUS,NAMA,TGLLHR,PENDIDIKAN (NATIA)
+
+select c.UPDSTAMP,c.STATUS,m.NAMA,m.TGLLHR,m.PENDIDIKAN 
+from close_gaji c 
+inner join fgaji f on c.TGLGAJI=f.TGLGAJI 
+inner join mstpegawai m on m.NIP=f.NIP 
+where m.PENDIDIKAN='SLTA' and m.KDPANGKAT='2A';
+
+3.Cari Semua Informasi yg urt nya 4 (Dasiah)
+ select * from akunsp2d where KDTRANS in(select KDTRANS from akun_konv where urt=4);
+
+4.Cari Nama dengan gaji pokok yg tertinggi dari pegawai yg berstatus belum Kawin/Tidak kawin (Frida)
+select NAMA,MAX(GAPOK)as Gaji_Tertinggi 
+from mstpegawai 
+where KDSTAWIN in(select kdstawin from stawin_tbl where nmstawin='TIDAK KAWIN');
+
+5.Tampilkan Nama pegawai,TmptLHR (Nurikhsan)
+select DISTINCT m.NAMA,m.TGLLHR from mstpegawai m 
+inner join detil_kekurangan d 
+on m.NIP=d.NIP 
+inner join jabatan_tbl f on 
+ d.KDFUNGSI=f.KDFUNGSI inner join fungsional_tbl t on f.KDFUNGSI=t.KDFUNGSI where NM_FUNGSI='DOKTER' and m.JANAK > 1;
+
+6.Cari Jumlah pegawai yg jk=laki dan tidak mempunyai tunjangan (Jejen)
+select COUNT(*)as Jumlahnya 
+from fgaji 
+where KDJENKEL=1 and 
+TJISTRI=0 and 
+TJANAK=0 and 
+TJTPP=0 and 
+TJESELON=0 and 
+TJFUNGSI=0 and 
+TJSTRUK=0 and 
+TJGURU=0 and 
+TJLANGKA=0 and 
+TJUMUM=0 and 
+TJTKD=0 and 
+TJTERPENCIL=0 and 
+TJKHUSUS=0 and 
+TJBERAS=0 and 
+TJPAJAK=0 and 
+TJASKES=0 and 
+TJUMUM=0 and TJKK=0 and TJKM=0 AND GAPOK > 4000000 and POTONGAN < 700000 GROUP BY KDPANGKAT;
+
+7.Tampilkan Nip,nama,nama pangkat yg gapoknya > 4jt (Niken)
+select DISTINCT m.NAMA,f.NIP,p.NMPANGKAT
+from mstpegawai m
+inner join fgaji_lama f on m.NIP=f.NIP inner join pangkat_tbl p on f.KDPANGKAT=p.KDPANGKAT;
+
+8.Tampil Nama dan Statusnya Janda/Duda dengan jumlah anak yg terbanyak (Frida)
+select m.NAMA,MAX(h.JANAK)as Anak_Terbanyak,s.nmstawin
+from mstpegawai m
+inner join historis_Jiwa h on m.NIP=h.NIP 
+inner join stawin_tbl s on h.kdstawin=s.kdstawin 
+where s.nmstawin='JANDA/DUDA';
+
+9.Mencari Pangkat Tertinggi (Tegar)
+select NMPANGKAT from pangkat_tbl order by KDPANGKAT desc limit 1;
+
+10.Tampilkan 10 nama dan nomor golongan yg gajinya antara 2jt dan 2,5jt (Tegar)
+select DISTINCT f.NAMA,p.NMGOL 
+from fgaji f 
+inner join pangkat_tbl p on f.KDPANGKAT=p.KDPANGKAT 
+where f.GAPOK BETWEEN 2000000 and 2500000 order by p.NMGOL desc limit 10;
+
+11.Tampilkan pegawai jk wanita,jmlh anak yg pendidikannya tertinggi dan gapok terkecil,tunjangan anak terbesar (Halah)
+select m.NAMA,m.JANAK 
+from mstpegawai m 
+inner join fgaji f on m.NIP=f.NIP 
+where m.PENDIDIKAN like 'SARJANA' and m.KDJENKEL=2 and f.GAPOK=
+(select MIN(f.GAPOK)as TERKECIL from fgaji f where m.KDJENKEL=2) and 
+(select MAX(f.TJANAK)from fgaji f where m.KDJENKEL=2);
