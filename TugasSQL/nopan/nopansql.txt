@@ -1,8 +1,23 @@
-/*select fk.nip,fg.nama,fk.gapokbaru from fgaji_kekurangan fk INNER JOIN fgaji fg ON fk.NIP=fg.nip LIMIT 5;
+//menampilkan nip,nama,dan gapok baru
+select fk.nip,fg.nama,fk.gapokbaru from fgaji_kekurangan fk INNER JOIN fgaji fg ON fk.NIP=fg.nip LIMIT 5;
+//menampilkan nama tjistribaru tjanakbaru yg huruf pertamanya A
 select fg.nama,fk.tjistribaru,fk.tjanakbaru from fgaji_kekurangan fk INNER JOIN fgaji fg ON fk.NIP=fg.nip where fg.nama like 'a%' LIMIT 5;
+//menampilkan nama dan norut yg norut nya berurutan
 select fg.nama,fk.norut from fgaji_kekurangan fk INNER JOIN fgaji fg ON fk.NIP=fg.nip order by fk.norut asc limit 5;
+//menampilkan semua yg ada di tbl fgaji_kekurangan
 select * from fgaji_kekurangan limit 5;
+menampilkan nip tglbayar tglgaji antar tlg 2012/06/11 sampai 2012/06/21
 select nip,tglbayar,tglgaji from fgaji_kekurangan where tglbayar between '2012/06/11' and '2012/06/21' limit 10;
 INSERT INTO fgaji_kekurangan (tjistribaru,tjanakbaru) values (2,3);
-update fgaji_kekurangan set nip=0204151022 where norut < 20;*/
+update fgaji_kekurangan set nip=0204151022 where norut < 20;
 delete from fgaji_kekurangan where norut <= 10; 
+//menghitung gapokbaru yg jistribaru=1
+select count(gapokbaru) from fgaji_kekurangan where jistribaru=1 limit 5;
+//menghitung gapokbaru yg jistribaru=0
+select count(gapoklama) from fgaji_kekurangan where jistribaru=0 limit 5;
+//mengaliaskan nama gapokbaru menjadi GajiPokokBaru
+select gapokbaru as GajiPokokBaru from fgaji_kekurangan limit 10;
+//mengaliaskan nama gapoklama menjadi GajiPokokLama
+select gapoklama as GajiPokokLama from fgaji_kekurangan limit 10;
+//menampilkan kdpangkatbaru yg huruf akhir nya A
+select kdpangkatbaru from fgaji_kekurangan where kdpangkatbaru like '%A'

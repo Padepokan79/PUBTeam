@@ -1,0 +1,54 @@
+Sandi Saputra
+
+// Union
+
+1. Menampilkan nama pegawai dari mstpegawai dan keluarga
+-> select nama from mstpegawai union select nmkel from keluarga limit 10;
+
+2. Menampilkan nama dan gapok dari mstpegawai dan fgaji
+-> select nama, gapok from mstpegawai union select nama, gapok from fgaji limit 10;
+
+3. Menampilkan jenis pendidikan dari mstpegawai dan pendidikan_tbl
+-> select pendidikan from mstpegawai union select pendidikan from pendidikan_tbl limit 10;
+
+4. Menampilkan gapok dari mstpegawai dan historis_gapok
+-> select gapok from mstpegawai union select gapok from historis_gapok limit 10;
+
+5. Menampilkan kodepangkat dari mstpegawai dan tb_pangkat
+-> select kdpangkat from mstpegawai union select pkt050 from tb_pangkat limit 10;
+
+// Complex
+
+1. Menampilkan data kepala sekolah dengan kriteria beragama islam, jomblo, bukan eselon, memiliki jabatan fungsi, masa kerja
+   lebih dari 20 tahun dengan gaji pokok diatas 4 juta dan berjenis kelamin laki laki.
+
+------->select * from mstpegawai 
+	where agama = (select kdagama from agama_tbl where nmagama = 'ISLAM') 
+	and kdstawin = (select kd_stawin from tb_stawin where nm_stawin = 'sendiri')
+	and kdeselon = (select kdeselon from eselon_tbl where uraian = 'non eselon')
+	and kdfungsi = (select kdjabatan from fungsi where kdjabatan = '08704')
+	and kdguru = (select kdguru from guru_tbl where nmguru = 'KEPALA SEKOLAH SMP.GOL.II')
+	and kdpangkat = (select pkt050 from tb_pangkat where pkt010 = '05')
+	and masker > 20
+	and gapok > 4000000
+	and kdjenkel = 1;
+
+2. Menampilkan data pegawai yang begaji tinggi di atas 5 juta dengan kriteria sudah menikah, laki laki, bukan pegawai 
+   eselon dan memiliki masa kerja lebih dari 10 tahun.
+
+------->select nama as Nama_Lengkap, gapok as Gaji_Pokok from mstpegawai 
+	where agama = (select kdagama from agama_tbl where nmagama = 'ISLAM')
+	and kdstawin = (select kd_stawin from tb_stawin where nm_stawin = 'nikah')
+	and kdeselon = (select kdeselon from eselon_tbl where uraian = 'non eselon')
+	and masker > 10
+	and gapok > 5000000
+	and kdjenkel = 1
+	union
+	select nama as Nama_lengkap, gapok as Gaji_Pokok from fgaji
+	where kdstawin = (select kd_stawin from tb_stawin where nm_stawin = 'nikah')
+	and kdeselon = (select kdeselon from eselon_tbl where uraian = 'non eselon')
+	and masker > 10
+	and gapok > 5000000
+	and kdjenkel = 1;
+
+3.   

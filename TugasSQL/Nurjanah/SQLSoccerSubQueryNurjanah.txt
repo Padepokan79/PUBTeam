@@ -1,0 +1,149 @@
+1. menampilkan Tim yang memainkan permainan pertama
+select country_name from soccer_country where country_id IN (select team_id from match_details where match_no = 1);
+
+2. menampilkan pemenang uero cup 2016
+select country_name 
+from soccer_country 
+where country_id IN(
+select team_id from match_details where win_lose = 'W' and play_stage = 'F');
+
+3. menampilkan no pertandingan, tahap permainan, jumlah gol yang penontonnya terbanyak.
+select match_no, play_stage, goal_score
+from match_mast
+where match_no in(select MAX(audence) from match_mast);
+
+4.
+
+5.
+6.
+7.
+8.
+9. select stop2_sec
+from match_mast 
+where match_no in(select stop2_sec from match_mast where order by stop2_sec desc limit 1);//revisi
+10. menampilkan tim memainkan pertandingan di mana waktu penghentian tertinggi 2 telah ditambahkan di babak kedua
+select country_name
+from soccer_country
+where country_id in ( select team_id 
+from match_details 
+where  match_no in ( select match_no 
+from match_mast  
+order by stop2_sec desc Limit 2));
+11.
+12. menampilkan tim yang dikalahkan portugal di final
+select country_name 
+from soccer_country
+where country_id in ( select team_id from match_details where play_stage = 'F' and win_lose = 'L');
+13.
+14.
+15. menampilkan nama pemain, tim id, no jersey yang mencetak pinalti pertama
+select player_name, team_id, jersey_no
+from player_mast
+where player_id in (
+select player_id 
+from goal_details
+where goal_type = 'P' and match_no = 1);
+select player_name, team_id, jersey_no
+from player_mast
+where player_id in (
+select player_id 
+from goal_details
+where goal_type = 'P' and match_no = 1);
+
+16. 
+select player_name
+from player_mast
+where posi_to_play = 'GK' and  player_id in (
+select player_gk 
+from penalty_gk 
+where team_id in (
+select country_id 
+from soccer_country));//belum selesai
+
+17. menampilkan jumlah pemain jerman yang mencetak gol
+select COUNT(player_id)
+from goal_details
+where team_id in (select country_id from soccer_country where country_name = 'Germany');
+18. menampilkan pemain, no jersey, club yang main di inggris
+select player_name, jersey_no, playing_club
+from player_mast
+where posi_to_play = 'GK' and team_id in (
+select country_id 
+from soccer_country
+where country_name = 'England');
+
+19. menampilkan pemain liverpool yang main di inggris
+select player_name
+from player_mast
+where playing_club = 'Liverpool' and team_id in (
+select country_id 
+from soccer_country
+where country_name = 'England');
+
+20. menampilkan nama pemain yang mencetak gol terakhir pada pertandingan ke 50
+select player_name
+from player_mast
+where player_id in (
+select player_id 
+from goal_details
+where match_no = 50 and goal_half = 2 and play_stage = 'S');
+
+21. menampilkan kaptain yang pemenang euro yang dari portugal
+select player_name
+from player_mast
+where player_id in (
+select player_captain 
+from match_captain 
+where team_id in (
+select team_id 
+from match_details 
+where play_stage = 'F' and win_lose = 'W'));
+
+22.
+23. menampikan kipper jerman yang tidak kemasukan goal dalam penyisihan group
+select player_name 
+from player_mast
+where posi_to_play = 'GK' and team_id in(
+select team_id 
+from match_details 
+where goal_score = 0 and play_stage = 'G' and team_id in(
+select country_id 
+from soccer_country 
+where country_name = 'Germany'));
+
+24. menampilkan runner-up uoro cup 2016
+select country_name
+from soccer_country
+where country_id in (
+select team_id 
+from match_details 
+where play_stage = 'F' and win_lose = 'L');
+
+25.
+26.
+27.menampilkan no pertandingan jumlah tembakan pinalti terbanyak
+select match_no
+from penalty_shootout
+where kick_no in (select MAX(kick_no) from penalty_shootout);
+
+28. 
+29. 
+30. menampilkan tahap pertandingan dengan no pinalti 37
+select play_stage
+from match_mast
+where match_no in ( select match_no from penalty_shootout where kick_id = 37);
+
+31. menampilkan stadion saat pertandingan adu pinalti
+select venue_name
+from soccer_venue
+where venue_id in (select venue_id from match_mast where  match_no in (select match_no from penalty_shootout));
+
+32.menampilkan tanggal saat pertandingan adu pinalti
+select play_date
+from match_mast
+where match_no in (select match_no from penalty_shootout);
+
+33. menampilkan goal tercepat setelah 5 menit
+select goal_id
+from goal_details
+where goal_id in ( select MIN(goal_time) from goal_details where goal_time > 5);

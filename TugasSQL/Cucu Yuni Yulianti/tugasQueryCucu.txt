@@ -15,4 +15,20 @@ Update ==> update form_1721_a2 set Jml_Kel = 4 where Nama_peg = "Britney Spears"
 
 Delete ==> delete from form_1721_a2 where Nama_peg = "Britney Spears";
 
+ss
+
+Tugas 2 :
+1. select Nama_peg, Nip, Jabatan_Gol from form_1721_a2 where Nama_peg like "%MM";
+2. select Nama_peg, Jabatan_Gol from form_1721_a2 where Jabatan_Gol like "%Pengatur%";s
+3. select count(*) as Pegawai_dgn_StatusMenikah from form_1721_a2 where Tahun_Pajak = 2015 and Status = "1";
+4. select count(Nama_peg) as Pegawai_dgn_gelar_Ir from form_1721_a2 where Nama_peg like "Ir%";
+5. select count(Jabatan_Gol) as jumlah_pengatur from form_1721_a2 where kdSatker like "%_1";
+
+
+Tugas 3:
+1. select p.NAMA, p.PENDIDIKAN, g.TGLGAJI, g.GAPOK, g.TJISTRI, g.TJANAK, g.TJESELON, g.TJFUNGSI from mstpegawai p INNER JOIN fgaji_baru g ON p.NIP = g.NIP;
+2. select mstpegawai.NAMA, agama_tbl.NMAGAMA from mstpegawai INNER JOIN agama_tbl on mstpegawai.AGAMA = agama_tbl.KDAGAMA ;
+3. select jabatan_tbl.NMJABATAN, jabatan_fungsi.NMFUNGSI from jabatan_tbl LEFT JOIN jabatan_fungsi on jabatan_tbl.KDFUNGSI = jabatan_fungsi.KDFUNGSI;
+4. select mstpegawai.NAMA, jabatan_tbl.TMTJABATAN from mstpegawai RIGHT JOIN jabatan_tbl on mstpegawai.KDFUNGSI = jabatan_tbl.KDFUNGSI;
+5. select mstpegawai.NAMA , pangkat_tbl.NMPANGKAT from mstpegawai INNER JOIN pangkat_tbl on mstpegawai.KDPANGKAT = pangkat_tbl.KDPANGKAT;
 

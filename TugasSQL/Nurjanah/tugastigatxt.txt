@@ -1,0 +1,4 @@
+select p.nip, p.nama, g.bersih, SUM(h.jmlhutang) as jumlah_hutang , pkt.nmpangkat from
+mstpegawai_copy p, fgaji_copy g, hutang h , pangkat_tbl pkt
+where p.NIP=g.nip
+&& p.NIP=h.nip && g.KDPANGKAT=pkt.kdpangkat;\\menampilkan jumlah hutang tertinggi

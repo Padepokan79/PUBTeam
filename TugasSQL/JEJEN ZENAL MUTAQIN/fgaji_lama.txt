@@ -32,3 +32,53 @@ QUERY DELETE :
 ///Menghapus smua record yang akan d gaji pada 2017-10-20 
 1. DELETE FROM fgaji_lama WHERE TGLBAYAR = '2017-10-20'
 
+
+
+bikin 5 lagi, menggunakan COUNT, ALIAS, WILDCARD, masih di tabel yang sama
+
+COUNT
+///Menampilkan Jumlah nama-nama yang di gaji pada 2017-04-01
+1. select COUNT(nama) from fgaji_lama where TGLGAJI = '2017-04-01'
+
+///Menampilkan Jumlah yang mempunyai istri
+2. select count(*) as Jumlah_yang_punya_istri from fgaji_lama where JISTRI>0
+
+///ALIAS
+1. select a.NAMA,a.TGLLHR,a.KDPANGKAT,a.KDGURU,GAPOK,a.TJISTRI,a.TJANAK,a.TJFUNGSI,a.POTONGAN,a.TGLBAYAR from fgaji_lama AS a ORDER BY a.TGLBAYAR
+
+WILDCARD
+///Menampilkan data yang tanggalbayarnya pada 2012 bulan 10
+1. select * from fgaji_lama where TGLBAYAR like '2012-10-__'
+
+///Menampilkan data fgaji_lama yang nama  nya mengandung "IJ"
+2. select * from fgaji_lama where NAMA like '%IJ%'
+
+
+
+////Menampilkan nama dan nama pangkat melalui tabel fgaji_lama dan pangkat_tbl
+
+1. SELECT fgj.nama,fgj.kdpangkat, pangkat.nmpangkat
+FROM fgaji_lama as fgj
+INNER JOIN pangkat_tbl as pangkat ON fgj.kdpangkat = pangkat.kdpangkat;
+
+
+//menampilkan nama dan pangkatnya melalui Left Join tabel pangkat
+2. SELECT  fgj.nama, pangkat.nmpangkat
+FROM fgaji_lama as fgj
+LEFT JOIN pangkat_tbl as pangkat ON fgj.KDPANGKAT = pangkat.KDPANGKAT;
+
+
+//Menampilkan nama dan nama pangkat yang rightjoin ke  table pangkat
+3. SELECT  fgj.nama, pangkat.nmpangkat
+FROM fgaji_lama as fgj
+RIGHT JOIN pangkat_tbl as pangkat ON fgj.KDPANGKAT = pangkat.KDPANGKAT;
+
+
+//memapilkan data fgaji_lama dan alamat dari mstpegawai
+4.SELECT fgaji_lama.NIP,fgaji_lama.TGLGAJI,fgaji_lama.TGLBAYAR , fgaji_lama.GAPOK,mstpegawai.ALAMAT
+FROM fgaji_lama
+INNER JOIN mstpegawai ON fgaji_lama.NIP = mstpegawai.NIP WHERE fgaji_lama.GAPOK >= '3000000'; 
+
+//meanmpilkan data fgaji_lama dan alamadri mst_pegawai dan agama dri tabel agama
+5.SELECT fgaji_lama.NIP,fgaji_lama.TGLGAJI,fgaji_lama.TGLBAYAR , fgaji_lama.GAPOK,mstpegawai.ALAMAT,agama_tbl.NMAGAMA
+FROM fgaji_lama INNER JOIN mstpegawai INNER JOIN agama_tbl ON fgaji_lama.NIP = mstpegawai.NIP AND mstpegawai.AGAMA = agama_tbl.KDAGAMA;

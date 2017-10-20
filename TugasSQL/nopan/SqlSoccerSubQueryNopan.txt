@@ -1,0 +1,174 @@
+//mencari team euro yg bertanding pertama
+1.SELECT country_name FROM soccer_country WHERE country_id IN (SELECT team_id FROM match_details where match_no=1)
+//mencari negara yg juara euro 2016
+2.SELECT country_name 
+FROM soccer_country 
+WHERE country_id IN (
+SELECT team_id
+FROM match_details
+where play_stage='F' AND win_lose='W')
+//mencari pertandingan yg audence nya paling tinggi
+3.select match_no,play_stage,goal_score,audence from match_mast where audence in (select max(audence) from match_mast);
+//belum nampil
+4.select match_no from match_details
+ where team_id in 
+(select country_id 
+from soccer_country 
+where country_id=1208 and country_id=1213)
+//
+7.select country_name
+from soccer_country
+where country_id in (
+select match_no 
+from goal_details 
+where match_no in (
+select max(audence)
+from match_mast))
+//tim yg di kalah kan portugal di final
+12.SELECT country_name 
+FROM soccer_country 
+where country_id IN (
+select team_id
+from match_details
+where play_stage='F' and win_lose='L')
+//pencetak gol penalty pertama
+14.select player_name,jersey_no
+from player_mast 
+where player_id in (
+select player_id 
+from goal_details
+where goal_type='P' and match_no=1)
+//belum jadi
+15.select player_name,jersey_no,country_name
+from player_mast 
+where player_id in (
+select player_id 
+from goal_details
+where goal_type='P' and team_id in (
+select country_id
+from soccer_country))
+//pemain germain yg mencetak goal
+17.select count(*)
+from goal_details
+where team_id in (
+select country_id
+from soccer_country
+where country_id=1208)
+//mencari penjaga gawang yg bermain di timnas england
+18.select player_name,jersey_no,playing_club
+from player_mast
+where posi_to_play='GK' and team_id in (
+select country_id
+from soccer_country
+where country_id=1206)
+//pemain liverpool yg bermain untuk england
+19.select player_name,jersey_no,playing_club
+from player_mast
+where playing_club='Liverpool' and team_id in (
+select country_id
+from soccer_country
+where country_id=1206)
+//hari ke 2
+//menampilkan match_no
+4.select match_no
+from match_details
+where match_no in(
+  select match_no 
+  from match_details
+  where team_id in(
+    select country_id hj
+    from soccer_country 
+    where country_name ='Germany'
+  )
+)and team_id=(
+  select country_id hj
+    from soccer_country 
+    where country_name ='Poland'
+);
+//mencari nama pemain yg mencetak gol terakhir saat semi final
+20.select player_name
+from player_mast
+where player_id in (
+select player_id
+from goal_details
+where match_no=50);
+//nama pemain portugal yg menjabat sebagai captain saat di final
+21.select player_name as nama_captain
+from player_mast
+where team_id in (
+select team_id
+from match_captain
+where player_id='160322' and team_id in (
+select team_id
+from match_details
+where play_stage='F' and win_lose='W'))
+//runner up euro 2016
+24.select country_name as runner_up
+from soccer_country 
+where country_id in (
+select team_id
+from match_details
+where play_stage='F' and win_lose='L')
+//tim yg dapat hadiah penalty terbanyak
+25.select country_name 
+from soccer_country 
+where country_id IN (
+select max(team_id)
+from penalty_shootout)
+//belum jadi
+26.select player_name
+from player_mast
+where player_id in (
+select player_id 
+from soccer_country 
+where country_id IN (
+select max(team_id)
+from penalty_shootout))
+//mancari match_no terbanyak dalam tendangan penalty
+27.select match_no
+from penalty_shootout
+where kick_no in (
+select max(kick_no)
+from penalty_shootout)
+//mancari match_no dan team_id terbanyak dalam tendangan penalty
+28.select match_no,team_id
+from penalty_shootout
+where kick_no in (
+select max(kick_no)
+from penalty_shootout)
+//penendang penalty ke 7 portugal vs polandia
+29.select player_id
+from penalty_shootout
+where kick_no=7 and team_id in (
+select country_id
+from soccer_country
+where country_id=1214)
+//mencari play_stage yg kick_id 23
+30.select play_stage
+from match_mast
+where match_no in (
+select match_no
+from penalty_shootout
+where kick_id=23)
+//venue yg di jadikan tempat pertandingan adu penalty
+31.select venue_name
+from soccer_venue
+where venue_id in (
+select venue_id
+from match_mast
+where decided_by='P' and match_no in(
+select match_no
+from penalty_shootout))
+//mencari tgl yg ada penalty nya
+32.select play_date
+from match_mast
+where decided_by='P' and match_no in (
+select match_no
+from penalty_shootout);
+//mencari gol tercepat setelah 5 menit
+33.select player_id
+from goal_details
+where goal_id in (
+select goal_time
+from goal_details
+where goal_time > 5) order by goal_time limit 1;
