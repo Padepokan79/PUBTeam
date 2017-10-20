@@ -1,216 +1,123 @@
-CREATE BY YUSP ABDUL QOHAR 
-
-SUBSELECT 
-
-1//MENCARI NAMA NEGARA YANG BERTANDING PERTAMA PADA EURO 2016
-SELECT SC.COUNTRY_NAME 
-FROM SOCCER_COUNTRY SC,MATCH_DETAILS MD 
-WHERE SC.COUNTRY_ID =MD.TEAM_ID 
-AND MD.MATCH_NO = 1 
-
-2//MENCARI NAMA NEGARA YANG JUARA PADA EURO 2016
-SELECT SC.COUNTRY_NAME 
-FROM SOCCER_COUNTRY SC 
-INNER JOIN MATCH_DETAILS MD 
-ON SC.COUNTRY_ID =MD.TEAM_ID WHERE WIN_LOSE ='W' AND MD.PLAY_STAGE = 'F'
-
-3//MENCARI MATCH_NO, PLAY_STAGE,GOAL_SCORE, DAN AUDENCE YANG MEMILIKI AUDENCE YANG TERTINGGI PADA EURO 2016  
-SELECT match_no ,PLAY_STAGE,GOAL_SCORE,AUDENCE AS AUDENCE_TERBANYAK  
-FROM MATCH_MAST 
-WHERE AUDENCE 
-IN (SELECT MAX(AUDENCE) FROM MATCH_MAST)
-
-4//MENCARI MATCH_NO ANTARA GERMANY DAN POLAND PADA EURO 2017
-SELECT MATCH_NO FROM MATCH_DETAILS 
-WHERE TEAM_ID IN(
-SELECT COUNTRY_ID 
-FROM SOCCER_COUNTRY 
-WHERE COUNTRY_ID = 1208  
-AND COUNTRY_ID = 1213) 
-
-5//
-SELECT MATCH_NO,PLAY_STAGE,PLAY_DATE,GOAL_SCORE,RESULTS 
-FROM MATCH_DETAILS 
-WHERE MATCH_NO IN(
-SELECT MATCH_NO FROM MATCH_MAST 
-WHERE TEAM_ID IN(
-SELECT COUNTRY_ID FROM SOCCER_COUNTRY 
-WHERE COUNTRY_ID = 1209 OR COUNTRY_ID = 1214))
-
-6//PADA EURO 2016
-
-7//PADA EURO 2016
-
-8//PADA EURO 2016
-
-9//PADA EURO 2016
-
-10//PADA EURO 2016
-
-11//PADA EURO 2016
-
-12//PADA EURO 2016
-
-13//PADA EURO 2016
-
-14//PADA EURO 2016
-
-15//MENCARI PENCETAK GOL PERTAMA PADA EURO 2016
-SELECT TEAM_ID,JERSEY_NO 
-FROM PLAYER_MAST 
-WHERE PLAYER_ID IN(
-SELECT PLAYER_ID 
-FROM GOAL_DETAILS 
-WHERE GOAL_ID = 1 AND TEAM_ID IN( 
-SELECT COUNTRY_ID 
-FROM SOCCER_COUNTRY))
-
-16//MENCARI NAMA PENJAGA GAWANG DARI ITALIA PADA EURO 2016
-SELECT PLAYER_NAME 
-FROM PLAYER_MAST 
-WHERE PLAYER_ID IN(
-SELECT PLAYER_GK 
-FROM PENALTY_GK 
-WHERE TEAM_ID IN(
-SELECT COUNTRY_ID 
-FROM SOCCER_COUNTRY 
-WHERE COUNTRY_NAME ='Italy') )
-
-17//MENAMPILKAN JUMLAH GOL DARI TEAM GERMANY PADA EURO 2016
-SELECT COUNT(GOAL_ID) 
-FROM GOAL_DETAILS 
-WHERE TEAM_ID IN(
-SELECT COUNTRY_ID 
-FROM SOCCER_COUNTRY 
-WHERE COUNTRY_NAME ='Germany')
-
-18//MENAMPILKAN NO_JERSEY,NAMA PEMAIN, POSISI SEBAGAI PENJAGA GAWANG PADA TEAM ENLISH PADA EURO 2016
-SELECT JERSEY_NO,PLAYER_NAME,POSI_TO_PLAY 
-FROM PLAYER_MAST 
-WHERE TEAM_ID IN(
-SELECT country_id FROM SOCCER_COUNTRY 
-WHERE country_name ='England') 
-&& POSI_TO_PLAY ='GK' 
-
-19//PADA EURO 2016
-SELECT PLAYER_NAME 
-FROM PLAYER_MAST 
-WHERE TEAM_ID IN(
-SELECT COUNTRY_ID 
-FROM SOCCER_COUNTRY 
-WHERE COUNTRY_ID =1206) 
-AND  PLAYING_CLUB ='Liverpool'
-
-20//MENCARI NAMA PEMAIN YANG MENCETAK GOLA TERAKHIR PADA BABAK SEMI FINAL KEDUA PADA EURO 2016
-SELECT PLAYER_NAME 
-FROM PLAYER_MAST 
-WHERE PLAYER_ID IN(
-SELECT PLAYER_ID 
-FROM GOAL_DETAILS 
-WHERE MATCH_NO = 50 AND PLAY_STAGE ='S')
-
-21//MENAMPILKAN NAMA CAPTAIN DARI WINNING PADA EURO 2016
-SELECT PLAYER_NAME FROM PLAYER_MAST 
-WHERE PLAYER_ID IN(
-SELECT PLAYER_CAPTAIN 
-FROM MATCH_CAPTAIN 
-WHERE TEAM_ID IN(
-SELECT TEAM_ID FROM MATCH_DETAILS 
-WHERE PLAY_STAGE='F' 
-&& WIN_LOSE = 'W'))
-
-22//PADA EURO 2016
-SELECT TEAM_ID, COUNT(TEAM_ID) 
-FROM PLAYER_IN_OUT WHERE MATCH_NO IN (
-SELECT MATCH_NO FROM MATCH_MAST 
-WHERE PLAY_STAGE = 'F' && TEAM_ID IN(
-SELECT COUNTRY_ID 
-FROM SOCCER_COUNTRY 
-WHERE COUNTRY_ID= 1207)) 
-GROUP BY TEAM_ID //BLM BERES
+Cucu Yuni Yulianti
 
 
-23//MENCARI PENJAGA GAWAI DARI TEAM GERMANY YANG TIDAK KEBOBOLAN DI PENYISIHAN GROUP PADA EURO 2016
-SELECT PLAYER_ID FROM PLAYER_MAST WHERE TEAM_ID IN(
-SELECT TEAM_ID FROM MATCH_DETAILS WHERE PLAY_STAGE ='G' AND TEAM_ID IN(
-SELECT COUNTRY_ID FROM SOCCER_COUNTRY WHERE COUNTRY_ID =1208))
-AND POSI_TO_PLAY ='GK'//BLM BERES 
+1. Write a query in SQL to find the teams played the first match of EURO cup 2016.
+==> select country_name from soccer_country where country_id in (select team_id from match_details where match_no =1);
 
-24//MENCARI RUNNER-UP PADA EURO 2016
-SELECT SC.COUNTRY_NAME 
-FROM SOCCER_COUNTRY SC 
-INNER JOIN MATCH_DETAILS MD 
-ON SC.COUNTRY_ID =MD.TEAM_ID 
-WHERE MD.PLAY_STAGE ='F' AND MD.WIN_LOSE ='L'
+2.  Write a query in SQL to find the winner of EURO cup 2016.
+==> select country_name from soccer_country where country_id in( select team_id from match_details where play_stage = 'F' and win_lose ='W');
 
-25//MENCARI JUMLAH TENDANGAN PINALTI YANG TERBANYAK DI LAKUKAN OLEH TIAP TEAM PADA EURO 2016
-SELECT MAX(KICK_NO) 
-FROM PENALTY_SHOOTOUT 
-WHERE KICK_NO IN(
-SELECT COUNT(KICK_NO) AS JUMLAH_MAX 
-FROM PENALTY_SHOOTOUT 
-WHERE TEAM_ID IN(
-SELECT COUNTRY_ID 
-FROM SOCCER_COUNTRY) GROUP BY TEAM_ID) 
+3. Write a query in SQL to find the match with match no, play stage, goal scored, and the audence which was the heighest audence match
+==> select match_no, play_stage, goal_score, audence from match_mast where audence in (select MAX(audence) from match_mast); 
 
-26//MENCARI JUMLAH MAXIMUM TEMBAKAN PENALTI YNAG DI LAKUKAN OLEH SETIAP PEMAIN PADA EURO 2016
-SELECT MAX(KICK_ID) 
-FROM PENALTY_SHOOTOUT 
-WHERE PLAYER_ID IN(
-SELECT PLAYER_ID 
-FROM PLAYER_MAST 
-WHERE TEAM_ID IN (
-SELECT TEAM_ID FROM SOCCER_COUNTRY)) 
+4.Write a query in SQL to find the match no in which Germany played against Poland//belum
+==> select match_no, play_stage, date _of_match, goal_score, results from match_mast where match_no in (select match_no from match_details where team_id in ( select country_id from soccer_country ) where 
+ 
 
-27//MENCARI MATCH_NO YANG MEMILIKI TENDANAN PENALTI TEBANYAK PADA EURO 2016
-SELECT MATCH_NO 
-FROM PENALTY_SHOOTOUT 
-WHERE TEAM_ID IN(
-SELECT MAX(TEAM_ID) 
-FROM PENALTY_SHOOTOUT) 
-GROUP BY MATCH_NO
+5.menmapilkan, match no, play stage, date of match goal score dan result dari pertandingan antara portugal dan hungary
+==> select match_no, play_stage, date _of_match, goal_score, results from match_mast where match_no in (select match_no from match_details where team_id in ( select country_id from soccer_country where  country_name='Portugal' or country_name='Hungary')); 
 
-28//PADA EURO 2016
+6. 
+==> 
 
-29//MENCARI PEMAIN PORTUGAL YANG MENENDANG KE 7 SAAT ADU PENALTY MELAWAN POLAND PADA EURO 2016
-SELECT PLAYER_ID 
-FROM PENALTY_SHOOTOUT 
-WHERE KICK_NO = 7 
-AND TEAM_ID IN(
-SELECT COUNTRY_ID 
-FROM SOCCER_COUNTRY 
-WHERE COUNTRY_ID = 1214) 
-AND MATCH_NO IN(
-SELECT MATCH_NO 
-FROM PENALTY_SHOOTOUT)
 
-30//MENCARI PLAY_STAGE DIMANA TENDANGAN PENALTI KE 23 DI TENDANG PADA EURO 2016
-SELECT PLAY_STAGE 
-FROM MATCH_MAST 
-WHERE MATCH_NO IN(
-SELECT MATCH_NO 
-FROM PENALTY_SHOOTOUT 
-WHERE KICK_ID = 23) 
+7.Write a query in SQL to find the teams who played the heighest audence match
+==> select country_name from soccer_country where country_id in 
+ 	(select team_id from goal_details where match_no in 
+   		(select match_no from match_mast where audence in(select MAX(audence) from match_mast)));
 
-31//MENAMPILKAN TEMPAT BERLANGSUNGNYA PERTANDINGAN YANG DILANJUTKAN DENGAN ADU PENALTI PADA EURO 2016
-SELECT VENUE_NAME 
-FROM SOCCER_VENUE 
-WHERE VENUE_ID IN(
-SELECT VENUE_ID FROM MATCH_MAST 
-WHERE MATCH_NO IN(
-SELECT MATCH_NO 
-FROM PENALTY_SHOOTOUT))
+8.  Write a query in SQL to find the player who scored the last goal for Portugal against Hungary
+==>
+9.belum
+==> select stop2_sec from match_mast where stop2_sec in (
+select max(stop2_se2) from match_mas);
+10.
+==>
+11.
+==>
+12. tim yg dikalahkan portugal di thn 2016
+==> select country_name from soccer_country where country_id in( select team_id from match_details where play_stage = 'F' and win_lose ='L');
 
-32//MENCARI TANGGAGL PERTANDINGAN YANG DITENTUKAN DENGAN ADU PENALTI PADA EURO 2016
-SELECT PLAY_DATE 
-FROM MATCH_MAST 
-WHERE MATCH_NO IN 
-(SELECT MATCH_NO 
-FROM PENALTY_SHOOTOUT)
+13.belum
+==> select team_id from player_mast where player_name in (select count(MAX(player_name) from player_mast));
+14. 
+==>
+15.
+==>
+16.
+==>
 
-33//MENCARI  7 GOAL TERCEPAT SETELAH 5 MENIT PADA EURO 2016
-SELECT * FROM GOAL_DETAILS 
-WHERE GOAL_TIME IN (
-SELECT GOAL_TIME FROM GOAL_DETAILS WHERE GOAL_TIME > 5 ) 
-ORDER BY GOAL_TIME 
-LIMIT 7
+17. jumlah pemain germany yg mencetak gol pada turnamen
+==> select count(player_id) from goal_details where goal_id in (select goal_id from goal_details);
+
+18. mencari pemain yg menjadi kiper tim inggris
+==>  select player_name, jersey_no, playing_club from player_mast where posi_to_play = 'GK' and team_id in(
+select country_id from soccer_country where country_name = 'England');   
+
+19. pemain inggris yang dibawah kontrak liverpool
+==> select * from player_mast where playing_club ='Liverpool' and team_id in(
+select country_id from soccer_country where country_name ='England');
+
+20. mencari pemain yg mncetak gol terakhir di permainan ke 50 semifinal babak kedua// belum
+==>select match_no from match_details where play_stage='F' and win_lose='W')); 
+SELECT *FROM player_mast
+WHERE player_id IN(
+SELECT player_id FROM goal_details
+WHERE goal_time IN(
+SELECT MAX(goal_time) FROM goal_details
+WHERE match_no=50 AND goal_half=2));
+
+21. pemain portugal yg menjadi captain di pertandingan final.
+==> select player_name from player_mast where player_id in (
+select player_captain from match_captain where team_id in (
+select team_id from match_details where play_stage='F' and win_lose='W')); 
+ 
+
+22. jumlah pemain yg dimainkan Prancis di laga final
+==> select count(distinct player_id) jumlah_pemain from player_in_out where team_id = 1207 and match_no in(
+select match_no from match_mast where play_stage = 'F');
+
+
+23. kiper Germany yg tidak kebobolan di laga semi final
+==> select player_name from player_mast where posi_to_play = 'GK' and team_id in (
+select team_id from match_details where goal_score = 0 and team_id in(
+select country_id from soccer_country where country_name = 'Germany'));
+
+
+24. runner up liga 2016
+==> select country_name from soccer_country where country_id in( select team_id from match_details where play_stage = 'F' and win_lose ='L');
+
+25. mencari negara dengan jumlah tendangan penalty terbanyak
+==> select country_name from soccer_country where country_id in (
+select team_id from penalty_shootout group by team_id order by count(team_id) desc limit 1);
+
+26. pemain yg melakukan tendangan penalty terbanyak
+==> select player_name from player_mast where player_id in (
+select player_id from penalty_shootout group by player_id order by count(player_id) desc limit 1);
+
+27. pertandingan dgn jumlah tendangan penalty terbanyak
+==> select distinct match_no from penalty_shootout where match_no in (
+select match_no from penalty_shootout group by match_no order by count(match_no) desc limit 1);
+
+28. pertandingan dan tim dgn jumlah tendangan penalty terbanyak
+==> select distinct match_no, team_id from penalty_shootout where match_no in (
+select match_no from penalty_shootout group by match_no order by count(team_id) desc limit 1);
+
+29.pemain portugal yang melakukan tendangan penalty no 7 melawan Polandia
+==> select player_id from penalty_shootout where kick_no = 7 and team_id in(
+select country_id from soccer_country where country_name = 'Portugal');
+
+30. mencari babak pertandingan dimana no tendangan 23 di lakukan
+==> select play_stage from match_mast where match_no in (
+select match_no from penalty_shootout where kick_id =23);
+
+31. stadion tempat diadkannya adu penalty
+==> select venue_name from soccer_venue where venue_id in (
+select venue_id from match_mast where decided_by = 'P');
+
+32. tanggal saat adu penalty
+==> select play_date from match_mast where decided_by = 'P';
+
+33. gol tercepat yg lebih dari 5 menit  
+==> select * from goal_details where goal_time > 5 order by goal_time limit 1; 
+ 
