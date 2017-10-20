@@ -1,0 +1,62 @@
+1. Cucu Yuni Y
+select p.nama, h.jmlhutang as jumlah_hutang, h.jmlcicilan as jumlah_cicilan, h.keterangan
+from mstpegawai p inner join hutang h on
+(select min(h.JMLHUTANG) && max(((p.GAPOK - h.JMLHUTANG) - h.JMLCICILAN)) && p.KDPANGKAT='4a');
+
+2. Nurjannah
+select p.nama, p.alamat, pk.nmpangkat as namaPangkat, p.tgllhr as tanggal_lahir, w.tglwafat as tanggal_wafat
+from mstpegawai p inner join pangkat_tbl pk on p.kdpangkat=pk.kdpangkat inner join twafat w on w.NIP=p.NIP
+where p.PENDIDIKAN='SARJANA (S1)' && w.NIP=p.NIP;
+
+3. Nopan Rahmadi
+select p.nama, k.nmkel as nama_Keluarga, p.gapok as gaji_pokok, p.jistri as jumlah_istri, p.janak as jumlah_anak
+from mstpegawai p inner join keluarga k
+on p.NIP=k.NIP where k.KDHUBKEL=10 && k.INPUTER <> 'USER()';
+
+4. Ulil Hidayah
+select p.NIP, p.NAMA, p.JISTRI as jumlah_istri, p.JANAK as jumlah_anak, g.TGLGAJI as tanggal_gaji 
+from mstpegawai p inner join gaji_13_tmp g on p.NIP=g.NIP 
+where p.PENDIDIKAN='SARJANA (S1)' && p.TEMPATLHR='                                        ' && p.JISTRI>0;
+// di dalam kondidi tempat lahir memang diisi spasi
+
+5. Ulil Hidayah
+select p.KDPANGKAT as kode_pangkat, p.NMPANGKAT as nama_pangkat, g.BERSIH 
+from pangkat_tbl p inner join gaji_13_tmp g on p.KDPANGKAT=g.KDPANGKAT 
+where p.NMPANGKAT like 'juru%';
+
+6. Nurikhsan
+select p.NAMA as Nama_Pegawai, p.NIP, a.NMAGAMA as Agama, p.PENDIDIKAN, pk.NMPANGKAT as nama_pangkat 
+from mstpegawai p inner join agama_tbl a inner join pangkat_tbl pk inner join fungsional_tbl f 
+on p.AGAMA=a.KDAGAMA && pk.KDPANGKAT=p.KDPANGKAT
+where a.NMAGAMA='ISLAM' && p.JISTRI>0 && p.JANAK>0 && p.GAPOK>3000000 && f.NM_FUNGSI='NON FUNGSIONAL';
+
+7. Frida Nur Hidayati
+select p.NAMA as nama_pegawai, pk.NMGOL as nama_Golongan, pk.NMPANGKAT as nama_pangkat
+from mstpegawai p inner join pangkat_tbl pk on pk.KDPANGKAT=p.KDPANGKAT
+where p.MASKER>30 && p.GAPOK>(select avg(GAPOK) from mstpegawai);
+
+8. Dyah Nuraeni
+select p.NIP, p.PENDIDIKAN from mstpegawai p inner join pangkat_tbl pk inner join terpencil_tbl t
+on p.KDPANGKAT=pk.KDPANGKAT && t.KDDAERAH=p.KDTERPENCIL
+where pk.NMPANGKAT='GUBERNUR' && t.KDDAERAH=000;
+
+9. Nurikhsan
+select p.NAMA as nama_pegawai, p.TEMPATLHR as tempat_lahir 
+from mstpegawai p inner join fungsi f 
+on p.KDFUNGSI=f.kdjabatan
+where f.namafungsi like 'DOKTER%' && p.JANAK>1;
+
+10. Teguh Prabowo
+select fb.NAMA, fu.TGLWAFAT as tanggal_wafat, fu.TJISTRI as tunjangan_istri, fu.TJANAK as tunjangan_anak 
+from fgaji_baru fb inner join fgaji_uangduka fu
+on fb.NIP=fu.NIP
+where fb.GAPOK>3000000;
+
+11.Yunita Niken S
+select p.NIP, p.NAMA, pk.NMPANGKAT as nama_pangkat 
+from mstpegawai p inner join pangkat_tbl pk inner join fgaji_lama f
+on p.KDPANGKAT=pk.KDPANGKAT && p.NIP=f.NIP
+where f.GAPOK>4000000 limit 10;
+
+12. Ryan Turmudzi
+select nip, nama, gapok as gaji_pokok from mstpegawai where pendidikan='SLTA' && gapok>=2000000 && jistri=2;

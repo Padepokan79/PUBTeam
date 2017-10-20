@@ -1,0 +1,89 @@
+1.cari pegawai yang  berjabat sbg dokter muda
+-------------------------------------------------------------------------------------------------------------------
+select count(*) AS Jumlah_dokter_gigi from mstpegawai m ,fungsi f 
+where m.KDFUNGSI=f.kdjabatan and f.namafungsi like "DOKTER GIGI%";
+------------------------- ------------------------------------------------------------------------------------------
+
+
+2.mencari nama pegawai yang mempunyai anak terbanyak yang janda/duda
+--------------------------------------------------------------------------------------------------------------------
+select m.nama,h.JANAK, s.nmstawin from mstpegawai m, stawin_tbl s, historis_jiwa h where s.kdstawin = h.kdstawin and 
+h.nip = m.nip and s.nmstawin= "Janda/Duda" order by h.janak desc limit 9;
+--------------------------------------------------------------------------------------------------------------------
+
+
+3.mencari nama pegawai yang potongannya terkecil dan anak terbanayk yang beragaman islam
+-------------------------------------------------------------------------------------------------------------------------------
+select m.nama,m.janak,f.potongan from mstpegawai m, fgaji f, agama_tbl a where m.nip = f.NIP and 
+m.AGAMA = a.KDAGAMA  and a.NMAGAMA="Islam" order  by m.JANAK desc,f.POTONGAN asc limit 1;
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4.nama satuan kerja ,nim ,dan nama yang ber nip .............
+------------------------------------------------------------------------------------------------------------------------------------------
+select d.NAMASATKER,d.NIP,m.NAMA from data_rapel d, mstpegawai m where d.NIP=m.NIP and m.NIPLAMA = 050011569;
+
+
+5.mencari namapegawai,gajipokok tertinggi dan pangkat
+--------------------------------------------------------------------------------------------------------------------------------
+select m.nama, max(m.gapok),p.nmpangkat from fgaji_detil_ukp f, pangkat_tbl p,mstpegawai m
+where f.NIP=m.NIP and m.KDPANGKAT=p.KDPANGKAT ;
+------------------------------------------------------------------------------------------------------------------------------
+
+6.Cari keluarga IR Yusfiq Rizal
+------------------------------------------------------------------------------------------------------------------------------
+select NMKEL1,NMKEL2,NMKEL3,NMKEL4,NMKEL5,NMKEL6,NMKEL7 from skpp_pegawai  where nama = "IR. YUSFIQ RIZAL"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7.nama pegawai yang punya istri 4 dan wakil bupati/walikota Yang bergelar haji
+select f.nama from fgaji f, pangkat_tbl p 
+where f.KDPANGKAT=p.KDPANGKAT and p.NMPANGKAT="Wakil. Bupati/Walikota" and f.NAMA like "H.%" and f.JISTRI=4;
+
+8.pegawai yang hutang diatas 10000000 dan cicilan > 100000 dan belum lunas
+select m.nama,h.JMLHUTANG,h.JMLCICILAN,h.TGLLUNAS from mstpegawai m, hutang h where m.NIP= h.NIP and h.JMLHUTANG > 10000000 and h.JMLCICILAN>100000 and h.TGLLUNAS is NULL;
+
+9.menampilkan 10 nama dan gol yang gajinya >  2000000 dan 2500000
+select f.nama,p.NMGOL from fgaji f,pangkat_tbl p 
+where f.kdpangkat=p.KDPANGKAT and f.GAPOK > 2000000 and f.GAPOK < 2500000;
+
+10.menampilkan nama pegawai duda yan memiliki anak gaji < 400000 berstatus pns
+select m.nama from mstpegawai m , tb_stawin t,fgaji g 
+where m.nip=g.nip and g.KDSTAPEG=m.KDSTAPEG and m.KDSTAWIN=t.KD_STAWIN and m.JANAK>0 and g.gapok <400000 and m.KDSTAPEG in (
+select kdstapeg from stapeg_tbl where nmstapeg = "PEGAWAI TETAP (PNS)"); 
+
+11.menamplikan jenis hutang dan jumlah
+select ht.NMHUTANG ,sum(h.JMLHUTANG) from hutang h, hutang_tbl ht where h.KDHUTANG =ht.KDHUTANG group by ht.KDHUTANG;
+
+12.menampilkan nama,pangkat dan pendidikan yang sarjana, gapok < 4500000 dan masker > 30 dan nm gol berakhiran b
+select m.nama,p.nmpangkat,m.PENDIDIKAN from mstpegawai m, pangkat_tbl p 
+where m.KDPANGKAT=p.KDPANGKAT and m.PENDIDIKAN like "Sarjana%" and m.GAPOK < 4500000 and m.MASKER > 30 
+AND p.NMGOL LIKE "%B";
+
+13.menampilkan nama ,kdpangkat,penghasilan yang paling besar di satker dinas
+select m.nama , m.kdpangkat,MAX(m.bersih) from fgaji_baru m, satker_tbl s where m.KDSATKER = s.KDSATKER  AND s.NMSATKER LIKE "DINAS%";
+
+14.menampilkan nama memiliki pangkat duta besar% memiliki hutang terbanyak dan tidak ada keterangan
+select m.nama from mstpegawai m, pangkat_tbl p,hutang h where
+ p.KDPANGKAT=m.KDPANGKAT and m.nip =h.NIP and p.NMPANGKAT ="DUTA BESAR%" and h.KETERANGAN is null order by h.JMLHUTANG desc group by m.NAMA limit 1;
+
+15.menampilkan semua informasi yang memiliki no urut 4
+select * from akun_konv a, akunsp2d a2 where a.kdtrans=a2.KDTRANS and a.urt=4;
+
+16.menampilkan keluarga kepala sekolah beserta tgl lahir yang memiliki gaji pokok tertinggi
+Select s.nmkel1,s.nmkel2,s.nmkel3,s.nmkel4,s.nmkel5,s.nmkel6, s.NMKEL7 ,s.TGLLHR1,s.TGLLHR2,s.TGLLHR3,
+s.TGLLHR4,s.TGLLHR5,s.TGLLHR6,s.TGLLH7,s.GAPOK from skpp_pegawai s,guru_tbl g
+ where s.KDGURU=g.KDGURU and  s.kdguru = 001 or g.kdguru = 002 or g.kdguru = 003 or g.kdguru = 004 or
+ g.kdguru = 005 or g.kdguru = 006 or g.kdguru = 007 or g.kdguru = 008  order by s.gapok desc limit 1;
+
+17.menampilkan kepala sekolah yng memiliki gaji tertinggi,islam,tidak memiliki eselon menikah,lk,pembina
+select nama from mstpegawai where tjeselon =0 and agama in (
+select kdagama from agama_tbl where nmagama = "islam") and kdstawin in ( 
+select kd_stawin from tb_stawin where nm_stawin = "nikah") and kdjenkel = 1 and kdpangkat in(
+select kdpangkat from pangkat_tbl where nmpangkat = "pembina" ) group by nama having(max(gapok));
+
+18.select nip nama kdpangkat yang memiliki hutang 6345000 dan 500000
+select nip,nama,kdpangkat from mstpegawai where nip in (
+select nip from hutang where jmlhutang =6345000 and jmlcicilan =500000);
+
+
+
