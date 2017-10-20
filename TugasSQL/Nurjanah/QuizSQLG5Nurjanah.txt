@@ -1,0 +1,62 @@
+Quiz SQL
+
+1. ulil
+menampilkan nip, nama, jistri, janak, tglgaji yang pendidikannya sarjana s1 tempat lagir tidak kosong dan minimal 1 istri
+select distinct tglgaji,nip,nama,jistri,janak 
+from gaji_13_tmp 
+where NIP in(select NIP from mstpegawai  where pendidikan='SARJANA (S1)' and TEMPATLHR!='' AND JISTRI>='1');
+
+2. riyan 
+menampilkan namasatker , nip , nama dari pegawai yang mempunyai nip lama = 050011569
+select namasatker, nip , nama 
+from data_rapel
+where kdsatker in (select kdsatker from mstpegawai where niplama = '050011569' );
+
+3. sandi
+cari kepala sekolah dengan ciri -ciri
+-memiliki gaji pokok tertinggi
+-tidak memiliki eselon
+-beragama islam
+-sudah menikah
+-jenis kelamin laki-laki
+-berpangkat sebagi pembina
+
+select mstpegawai.nama
+from mstpegawai , guru_tbl , agama_tbl, stawin_tbl, pangkat_tbl
+where  mstpegawai.kdguru = guru_tbl.KDGURU 
+and agama_tbl.kdagama = mstpegawai.agama
+and stawin_tbl.kdstawin = mstpegawai.kdstawin
+and pangkat_tbl.KDPANGKAT = mstpegawai.KDPANGKAT
+and (select MAX(mstpegawai.GAPOK) from mstpegawai)
+and mstpegawai.KDJENKEL = 1 
+and mstpegawai.kdeselon = 00 
+and guru_tbl.NMGURU like 'Kepala Sekolah%' 
+and agama_tbl.NMAGAMA = 'islam'
+and stawin_tbl.nmstawin = 'kawin'
+and pangkat_tbl.NMPANGKAT = 'pembina';
+
+4. riyan
+menampilkan nip ,nama, gaji pokok, pendidikan terakhirnya slta dimana gaji pokoknya > 2 juta kode pangkat 2a dan memiliki istri 2
+
+select nip, nama, gapok
+from mstpegawai
+where pendidikan = 'SLTA' and nip in ( 
+select nip from data_rapel 
+where gapok >= 2000000 and kdpangkat = '2A' and jistri = 2);
+
+5. tegar
+menampilkan 10 nama pegawau dan no golongan yang gaji pokoknya diantara 2000000 - 2500000
+
+select nama , (select gol from pangkat_tbl where pangkat_tbl.KDPANGKAT = fgaji.KDPANGKAT ) as no_golongan
+from fgaji
+where gapok between 2000000 and 2500000 limit 10;
+
+6. menampilkan nama, nmkel, gapok, jistri, janak yang kdhubkel 10dan inputernya != user
+
+select nama, (select nmkel from keluarga where keluarga.nip = mstpegawai.nip and keluarga.kdhubkel = 10) as nama_keluarga, gapok, jistri, janak
+from mstpegawai
+where inputer != 'USER';
+
+
+
+
