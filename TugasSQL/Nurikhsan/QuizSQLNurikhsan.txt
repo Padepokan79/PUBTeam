@@ -1,0 +1,195 @@
+1.Nama Ipin
+Soal : Mencari Nama gaji bersih dan pendidikan dari pegawai yang memiliki hutang
+
+SELECT p.nama,p.pendidikan,bersih
+FROM mstpegawai p
+INNER JOIN fgaji f
+INNER JOIN hutang h
+ON p.nip=f.nip 
+AND p.nip=h.nip
+WHERE  EXISTS
+(SELECT nip FROM hutang)
+
+
+2. Niken
+ Mencari pegawai dengan gaji terbesar 
+SELECT p.nama,p.GAPOK,pt.NMPANGKAT
+FROM mstpegawai p
+INNER JOIN pangkat_tbl pt
+INNER JOIN fgaji_detil_ukp fdu
+ON p.NIP=fdu.NIP
+AND p.KDPANGKAT=pt.KDPANGKAT
+AND p.GAPOK = (
+select MAX(GAPOK) 
+FROM mstpegawai)
+
+3.Dasiah
+ Left join akuns2spd dengan akun tbl
+SELECT ap.nmakun
+AS NamaAkunS,atb.KDAKUN
+AS KodeAkuntT 
+FROM akunsp2d ap
+LEFT JOIN akun_tbl atb
+ON ap.KDAKUN=atb.KDAKUN 
+
+4. IPin
+ Menampilkan nama, gapok . pangkat dengan hutang tertinggi
+SELECT p.nama,p.GAPOK,pt.NMPANGKAT
+FROM mstpegawai p
+INNER JOIN pangkat_tbl pt
+INNER JOIN hutang h
+ON p.nip=h.NIP 
+AND p.KDPANGKAT=pt.KDPANGKAT
+WHERE h.JMLHUTANG = (
+SELECT MAX(JMLHUTANG) 
+FROM hutang
+)
+
+5.Dyah
+ Nip pendidikan yang pangkatnya gubernur dan bukan daerah terpencil
+SELECT p.NIP,p.PENDIDIKAN 
+FROM mstpegawai p
+INNER JOIN pangkat_tbl pt
+INNER JOIN terpencil_tbl tt
+ON p.KDPANGKAT=pt.KDPANGKAT 
+AND p.KDTERPENCIL <> tt.KDDAERAH
+WHERE pt.NMPANGKAT = 'GUBERNUR'
+
+
+6.Ilfa
+ Menampilkan data nama,pangkat hutang gaji terbesar kedua yang status janda/duda dan punya anak
+SELECT p.NAMA,pt.NMPANGKAT , h.JMLHUTANG
+FROM mstpegawai p
+INNER JOIN pangkat_tbl pt
+INNER JOIN hutang h
+INNER JOIN stawin_tbl st
+INNER JOIN gaji_13_tmp gt
+ON p.KDPANGKAT=pt.KDPANGKAT
+AND h.NIP=p.NIP 
+AND p.NIP=gt.NIP
+AND st.kdstawin = p.KDSTAWIN
+WHERE st.nmstawin = 'JANDA/DUDA'
+AND p.JANAK > 0
+OR h.JMLHUTANG IN (SELECT 
+jmlhutang 
+FROM hutang 
+)
+AND h.JMLHUTANG < (
+SELECT MAX(jmlhutang) 
+FROM hutang 
+)
+ORDER BY h.JMLHUTANG
+DESC
+LIMIT 0,2
+
+7. Ucup
+duda yang gajinya 4000000 , islam , punya anak, dan pegawai tetap
+SELECT p.nama
+FROM mstpegawai p
+INNER JOIN tb_stawin ts
+INNER JOIN stapeg_tbl st
+INNER JOIN fgaji f
+INNER JOIN agama_tbl atb
+ON p.NIP = f.NIP
+AND ts.KD_STAWIN = p.KDSTAWIN
+AND st.KDSTAPEG = p.KDSTAPEG
+AND atb.KDAGAMA = p.AGAMA
+WHERE p.KDJENKEL = 1
+AND st.NMSTAPEG = 'PEGAWAI TETAP (PNS)'
+AND p.GAPOK <4000000
+AND atb.NMAGAMA = 'ISLAM'
+AND ts.NM_STAWIN = 'JANDA/DUDA'
+AND p.JANAK>0
+
+8. teguh
+cari nama, janak, jistri total gapok yang gol 3a dan satatus kawin
+SELECT p.nama,p.JISTRI,p.JANAK,p.GAPOK
+FROM mstpegawai_02 p
+INNER JOIN stawin_tbl st
+ON p.KDSTAWIN = st.kdstawin
+WHERE st.nmstawin ='KAWIN'
+AND p.KDPANGKAT ='3A'
+
+9. dasiah
+tampil semua dengan nomor urut 4
+SELECT DISTINCT p.*,a.*,ak.*
+FROM mstpegawai p
+INNER JOIN akunsp2d a
+INNER JOIN akun_konv ak
+ON p.KDSSBP = a.KDSSBP
+AND a.KDTRANS = ak.kdtrans
+WHERE ak.urt = 4
+
+10. CICI
+menampilkan laki laki yang punya pangkat 3d dan gaji > dari laki laki yang punya istri
+SELECT f.nama,f.GAPOK
+FROM fgaji f
+INNER JOIN fgaji_susulan fs
+WHERE f.KDPANGKAT = '3D'
+AND f.KDJENKEL = 1
+AND f.GAPOK >( 
+SELECT MAX(gapok) 
+FROM fgaji 
+)
+
+11. ULIL 
+menampilkan nip, nama ,jistri, janak,tgl_gaji  yang sarjana (s1) dan tempat lahir tidak kosong
+SELECT p.nip,p.nama,p.JISTRI,p.JANAK,gt.TGLGAJI
+FROM mstpegawai p
+INNER JOIN gaji_13_tmp gt
+ON p.NIP=gt.NIP 
+WHERE p.PENDIDIKAN = 'SARJANA (S1)'
+AND p.TEMPATLHR <>''
+
+12. Teguh
+Tampil nama,tanggal wafat, tjistri, tj anak yang gajinya > 3jt 
+SELECT f.nama,tw.TGLWAFAT,f.TJISTRI ,f.TJANAK
+FROM fgaji f
+INNER JOIN twafat tw
+ON f.NIP=tw.NIP
+WHERE f.GAPOK >3000000
+
+13. RESTI
+menampilkan nip, nama, gaji bersih
+yang pangkatnya penata tk1
+SELECT gt.nip,gt.nama,gt.BERSIH
+FROM gaji_13_tmp gt
+INNER JOIN stawin_tbl st
+INNER JOIN pangkat_tbl pt
+ON gt.KDPANGKAT =  pt.KDPANGKAT
+AND gt.KDSTAWIN = st.kdstawin
+WHERE pt.NMPANGKAT = 'Penata Tk.I'
+AND st.nmstawin = 'JANDA/DUDA' 
+
+14. CICI
+Menampilkan nip nama, jml huatang , jml cicilan lakilaki  yang pengkatnya pembina utama
+yang gajinya lebih besar dari gaji laki lak yang belum menikah dan pembina
+SELECT h.nip,ht.NMHUTANG,h.JMLHUTANG,h.JMLCICILAN
+FROM hutang h
+INNER JOIN hutang_tbl ht
+INNER JOIN mstpegawai p
+INNER JOIN pangkat_tbl pt
+ON h.KDHUTANG = ht.KDHUTANG
+AND p.KDPANGKAT = pt.KDPANGKAT
+AND h.NIP = p.NIP
+WHERE p.KDJENKEL = 1
+AND pt.NMPANGKAT = 'Pembina Utama'
+AND p.JISTRI = 0
+AND p.GAPOK > (
+SELECT MAX(gapok) 
+FROM mstpegawai
+WHERE kdjenkel = 1
+AND kdpangkat =(
+SELECT kdpangkat from pangkat_tbl 
+WHERE nmpangkat = 'Pembina'
+)
+)
+
+15. Tegar
+nama pegawai dan golongan yang gajinya 2 jt dan 2jt 500rb
+SELECT f.nama ,pt.NMGOL
+FROM fgaji f
+INNER JOIN pangkat_tbl pt
+ON f.KDPANGKAT=pt.KDPANGKAT
+WHERE f.GAPOK between 
+2000000 AND 2500000
