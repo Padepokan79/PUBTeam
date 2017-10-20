@@ -1,0 +1,153 @@
+   soal buatan cucu
+1. cari nama, kode_pangkat, total_penghasilan, yang memiliki gaji terbesar.
+-> select nama, kdpangkat, bersih as total_penghasilan 
+   from fgaji 
+   group by nama
+   order by bersih desc limit 1;
+
+   teguh
+2. cari nama, tglwafat, tjistri, tjanak yang memiliki gaji lebih besar dari 3 juta
+-> select distinct a.nama, b.tglwafat, b.tjistri, b.tjanak, b.gapok
+   from fgaji_baru a inner join fgaji_uangduka b
+   on a.nip = b.nip 
+   where b.GAPOK > 3000000 limit 10;
+
+   frida
+3. mencari janda atau duda dengan anak terbanyak
+-> select distinct nama 
+   from mstpegawai
+   where kdstawin in (
+   select kdstawin
+ 
+   from stawin_tbl
+   where nmstawin = 'JANDA/DUDA') 
+   group by nama 
+   having max(janak);
+
+   dyah
+4. Mencari gubernur yang bukan dari daerah terpencil
+-> select a.nip, a.pendidikan 
+   from mstpegawai a inner join pangkat_tbl b 
+   on a.kdpangkat = b.kdpangkat  
+   inner join terpencil_tbl c
+   on a.kddati4 = c.KDDAERAH
+   where b.NMPANGKAT = 'gubernur' and c.NMDAERAH = 'non daerah terpencil';
+     
+   ilfa
+5. Menampilkan data pegawai yang gapok nya lebih dari rata rata
+-> select distinct a.nama, a.KDPANGKAT, b.NMPANGKAT, c.jmlhutang, d.nmstawin, e.nmkel
+   from mstpegawai a 
+   inner join pangkat_tbl b 
+   on a.kdpangkat = b.kdpangkat  
+   inner join hutang c
+   on a.nip = c.nip
+   inner join stawin_tbl d
+   on a.KDSTAWIN = d.kdstawin
+   inner join keluarga e
+   on a.nip = e.nip
+   where gapok > (
+
+   select avg(gapok) 
+   from mstpegawai)
+   group by a.nama;
+
+   cucu
+6. mencari pegawai dengan masa kerja terlama
+-> select a.nama, a.tgllhr, a.kdpangkat, b.bersih,a.pendidikan
+   from mstpegawai a 
+   inner join fgaji_baru b
+   on a.nip = b.nip
+   having max(a.masker);
+
+   halah
+7. mencari duda yang tidak pernah ngutang
+-> select distinct d.nama ,a.nmagama
+   from mstpegawai d
+   inner join agama_tbl a
+   on a.kdagama = d.AGAMA
+   inner join stawin_tbl b
+   on d.kdstawin = b.kdstawin
+   inner join hutang c
+   on c.NIP <> d.NIP
+   where b.nmstawin = 'JANDA/DUDA' and d.KDJENKEL <> 2;
+
+   natia
+8. mencari pegawai dan nilai atas nya yang kdpangkat = 3a, jistri = 1 dan janak 2
+-> select a.nip, a.nama, count(b.nilai_atas)
+   from data_rapel a
+   inner join gapok_tbl b
+   on a.KDPANGKAT = b.KDPANGKAT
+   where b.KDPANGKAT = '3a' and a.JISTRI = 1 and a.janak = 2 and a.GAPOK > 2000000;
+
+   Nurikhsan
+9. mencari pegawai yang punya istri, anak 1 dan penata muda tk 1
+-> select a.nama
+   from mstpegawai a
+   inner join pangkat_tbl b
+   on a.KDPANGKAT = b.KDPANGKAT
+   where a.janak > 1 and b.NMPANGKAT = 'Penata Muda tk.I' and a.kdjenkel = 1 and kdstawin = 2;
+
+    halah
+10. mencari pegawai wanita dan jumlah anaknya yg memiliki pendidikan tertinggi gaji pokok terbesar dan tj anak tertinggi
+-> select a.nama, a.janak
+   from mstpegawai a
+   inner join fgaji b
+   on a.nip = b.nip
+   where a.PENDIDIKAN like 'sarjana%' and a.kdjenkel = 2 and a.GAPOK = (
+
+   select min(a.gapok) 
+   from mstpegawai where a.KDJENKEL = 2) 
+   and b.TJANAK = (
+
+   select max(b.tjanak)
+   from fgaji
+   where a.KDJENKEL = 2)
+   limit 1;
+
+    Yunita
+11. mencari nip, nama, pangkat yg gajinya lebih dari 4 juta
+->  select a.nip, a.nama, b.nmpangkat
+    from mstpegawai a
+    inner join pangkat_tbl b
+    on a.kdpangkat = b.kdpangkat
+    where a.GAPOK > 4000000 limit 1;
+
+   tegar
+12. mencari pangkat teringgi
+-> select nmpangkat from pangkat_tbl order by kdpangkat desc limit 1;
+
+   Riyan
+13. mencari pegawai yang memiliki hutang 6 juta dan cicilan 500 rebu
+->  select a.nip, a.nama, a.kdpangkat
+from mstpegawai a
+inner join hutang b
+on a.nip = b.nip
+where b.JMLHUTANG like '6345000' and b.jmlcicilan like '500000'; 
+
+dasiah
+14. menampilkan nama dan kode akun
+->  select a.nmakun as NamaAkunS, b.kdakun as KodeAkunT
+from akunsp2d a
+inner join akun_tbl b
+on a.kdakun = b.kdakun or a.KDAKUN <> b.KDAKUN
+limit 300;
+
+ilfa
+15. Mencari pegawai dengan hutang terbesar kedua
+-> select a.nama, b.nmpangkat, c.jmlhutang 
+from mstpegawai a
+inner join pangkat_tbl b
+on a.kdpangkat = b.kdpangkat
+inner join hutang c
+on a.nip = c.nip
+inner join stawin_tbl d
+on a.KDSTAWIN = d.kdstawin
+
+where c.JMLHUTANG = (
+
+select max(c.JMLHUTANG)
+from hutang
+where c.jmlhutang < (
+
+select max(c.jmlhutang)
+from hutang)) or d.nmstawin = 'JANDA/DUDA' and a.JANAK > 0 limit 1;
