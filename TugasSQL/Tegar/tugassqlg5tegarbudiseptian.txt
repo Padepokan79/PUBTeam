@@ -1,0 +1,122 @@
+/*1. FROM JEJEN : Menampilkan jumlah pegawai laki-laki dari setiap pangkatnya 
+yang tidak mempunyai tunjangan lain yang potongan gajinya < 700000 dan gaji pokoknya > 4000000*/
+
+SELECT COUNT(NIP) jumlah_pegawai, kdpangkat
+FROM fgaji
+WHERE tjistri = 0 AND tjanak = 0 AND tjtpp = 0 
+AND tjeselon = 0 AND tjfungsi = 0 AND tjstruk = 0 
+AND tjguru = 0 AND tjlangka = 0 AND tjtkd = 0 
+AND tjterpencil = 0 AND tjkhusus = 0 AND tjberas = 0 
+AND tjpajak = 0 AND tjaskes = 0 AND tjumum = 0 AND tjkk = 0 AND tjkm = 0
+AND POTONGAN < 700000 AND gapok > 4000000
+AND kdjenkel = 1
+GROUP BY kdpangkat
+
+/*2. FROM RYAN : */
+SELECT namasatker, nip, nama
+FROM data_rapel
+WHERE nip = (SELECT nip
+FROM mstpegawai
+WHERE niplama = '050011569')
+
+/*3. FROM RYAN : Tampilkan NIP, nama, gaji pokok yang pendidikan terakhirnya SLTA, dimana gaji pokoknya lebih dari sama dengan 2 jutadan kode pangkat 2A*/
+SELECT d.nip, d.nama, d.gapok
+FROM data_rapel d, mstpegawai p
+WHERE d.gapok >= 2000000 AND d.kdpangkat = '2A'
+AND p.pendidikan = 'SLTA';
+
+/*4. FROM TEGAR : Tampilkan nama pangkat tertinggi. TABEL : pangkat_tbl*/
+SELECT nmpangkat
+FROM pangkat_tbl
+WHERE kdpangkat = (SELECT kdpangkat
+FROM pangkat_tbl
+ORDER BY kdpangkat DESC
+LIMIT 1)
+
+/*5. FROM YUSUP : Jumlah pegawai yang memiliki fungsi sebagai DOKTER GIGI MUDA. TABEL: mstpegawai dan fungsional_tbl*/
+SELECT COUNT(NIP) jumlah_pegawai_dokter_gigi_muda
+FROM mstpegawai 
+WHERE kdfungsi = (SELECT kdfungsi FROM fungsional_tbl
+WHERE nm_fungsi = 'DOKTER GIGI MUDA');
+
+/*6. FROM ULIL : Tampilkan kode pangkat, nama pangkat dan rata_rata_gaji_bersih nya yang nama pangkatnya berawalan 'juru' diurutkan
+secara ascending berdasarkan kode_pangkat. TABEL: gaji_13_tmp dan pangkat_tbl*/
+SELECT g.kdpangkat, p.nmpangkat, AVG(g.bersih) rata_rata_gaji_bersih
+FROM gaji_13_tmp g INNER JOIN pangkat_tbl p
+ON g.kdpangkat = p.kdpangkat
+AND p.nmpangkat LIKE 'juru%'
+GROUP BY kdpangkat
+ORDER BY kdpangkat ASC
+
+/*7. FROM SANDI SAPUTRA : Cari nama" pegawai yang memiliki hutang di atas 10000000 dg cicilan di atas 100000 dan belum lunas TABEL : mstpegawai dan hutang*/
+SELECT nama
+FROM mstpegawai
+WHERE nip IN (SELECT nip
+FROM hutang
+WHERE jmlhutang > 10000000 AND jmlcicilan > 100000 AND tgllunas IS NULL)
+
+/*8. FROM DYAH NURAENI : Tampilkan pegawai yang mendapat kekurangan gaji yang memiliki potongan paling besar dan anak paling banyak. TABEL : fgaji_kekurangan*/
+SELECT nip
+FROM fgaji_kekurangan
+WHERE potonganbaru = (SELECT MAX(potonganbaru) FROM fgaji_kekurangan)
+AND janakbaru = (SELECT MAX(janakbaru) FROM fgaji_kekurangan)
+
+/*9. FROM FRIDA Tampilkan nama pegawai dan gaji pokok tertinggi dari pegawai yang masih berstatus belum kawin/tidak kawin. TABEL: mstpegawai dan stawin_tbl*/
+SELECT nama, gapok
+FROM mstpegawai
+WHERE kdstawin = (SELECT kdstawin FROM stawin_tbl WHERE nmstawin = 'TIDAK KAWIN')
+AND gapok = (SELECT MAX(gapok) FROM mstpegawai WHERE kdstawin = (
+SELECT kdstawin FROM stawin_tbl WHERE nmstawin = 'TIDAK KAWIN'))
+
+/*10. FROM TEGUH : Cari nama, pendidikan(S2), agama(ISLAM), dan urut dari gapok tertinggi. TABEL : mstpegawai dan agama_tbl*/
+SELECT p.nama, p.PENDIDIKAN, a.nmagama, gapok
+FROM mstpegawai p, agama_tbl a
+WHERE p.agama = a.kdagama
+AND p.pendidikan = 'SARJANA (S2)'
+AND p.agama = (SELECT kdagama FROM agama_tbl WHERE nmagama = 'ISLAM')
+ORDER BY gapok DES
+
+/*11. FROM YUNITA NIKEN : Mencari pegawai dg gaji terbesar. (NOTE: kata Niken, tabel fgaji_detil_ukp hanya sebagai relasi) 
+TABEL : mstpegawai, pangkat_tbl, dan fgaji_detil_ukp*/
+SELECT pe.nama, pe.gapok, pa.nmpangkat
+FROM mstpegawai pe, pangkat_tbl pa, fgaji_detil_ukp ukp
+WHERE pe.kdpangkat = pa.kdpangkat AND pe.nip = ukp.nip
+AND pe.gapok = (SELECT MAX(gapok) FROM mstpegawai)
+
+/*12. FROM IPIN : Mencari nama, gaji bersih, dan pendidikan dari pegawai yg memiliki hutang. TABEL : hutang, fgaji, dan mstpegawai*/
+SELECT p.nama, g.bersih, p.pendidikan
+FROM fgaji g INNER JOIN mstpegawai p
+ON g.nip = p.nip
+AND g.nip IN (SELECT nip FROM hutang WHERE tgllunas IS NULL)
+
+/*13. Menampilkan nama pegawai yg beragama Islam perempuan yg jabatan gurunya sebagai KEPALA SEKOLAH SMP.GOL.II yg masa kerjanya 24
+dan mempunyai gelar depan DRA serta kelahiran 63. TABEL : agama_tbl, guru_tbl, dan mstpegawai*/
+SELECT nama
+FROM mstpegawai
+WHERE agama = (SELECT kdagama FROM agama_tbl WHERE nmagama = 'ISLAM')
+AND kdjenkel = 2
+AND kdguru = (SELECT kdguru FROM guru_tbl WHERE nmguru = 'KEPALA SEKOLAH SMP.GOL.II')
+AND glrdepan = 'DRA'
+AND masker = 24
+AND tgllhr LIKE '%63%'
+
+/*14. FROM YUNITA NIKEN : Tampilkan nip, nama, nama pangkat, yang gaji pokoknya lebih dari 4 juta. TABEL : fgaji_lama, pangkat_tbl, dan mstpegawai*/
+SELECT pe.nip, pe.nama, pa.nmpangkat
+FROM mstpegawai pe INNER JOIN pangkat_tbl pa
+ON pe.kdpangkat = pa.kdpangkat
+AND nip IN (SELECT nip
+FROM fgaji_lama
+WHERE gapok > 4000000)
+
+/*15. FROM NURIKHSAN : Tampilkan nama pegawai yang mempunyai istri, mempunyai anak lebih dari 1 dan berpangkat "Penata Muda Tk.1". TABEL : pangkat_tbl dan mstpegawai*/
+SELECT nama
+FROM mstpegawai
+WHERE kdpangkat = (SELECT kdpangkat FROM pangkat_tbl WHERE nmpangkat = 'Penata Muda Tk.I')
+AND jistri != 0
+AND janak > 1
+
+/*16. FROM CUCU : Cari nama, kdpangkat, total_penghasilan, yang memiliki penghasilan terbesar yg bekerja di satuan kerja. TABEL : fgaji_baru dan satker_tbl*/
+SELECT nama, kdpangkat, MAX(bersih) total_penghasilan
+FROM fgaji_baru
+WHERE kdsatker IN (SELECT kdsatker FROM satker_tbl WHERE nmsatker LIKE 'Dinas%')
+LIMIT 10
