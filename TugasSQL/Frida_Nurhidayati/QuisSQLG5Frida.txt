@@ -1,0 +1,68 @@
+1.From Dyah
+Tampilkan pegawai yang mendapat kekurangan gaji yang memiliki potongan gaji baru paling besar dan anak baru paling banyak
+Tabel: fgaji_kekurangan
+	mstpegawai_copy
+Query:
+select distinct fgaji_kekurangan.nip,mstpegawai_copy.nama from fgaji_kekurangan,mstpegawai_copy where fgaji_kekurangan.NIP=mstpegawai_copy.nip and fgaji_kekurangan.janakbaru in(
+select max(janakbaru) from fgaji_kekurangan) and potonganbaru in(
+select max(potonganbaru));
+
+2.From Nurjanah
+Tampilkan nama pegawai,nama istri/anak,alamat yang paling sering membayar pajak berdasarkan kd pangkat
+Tabel:	Mst_pegawai
+	hit_pajak
+	keluarga
+Query:
+select mstpegawai.NAMA,keluarga.NMKEL,mstpegawai.ALAMAT from mstpegawai inner join keluarga on 
+mstpegawai.nip=keluarga.nip where mstpegawai.nip in(
+select count(nip) as jumlah from hit_pajak group by nip order by jumlah desc limit 1) group by mstpegawai.kdpangkat;
+
+3.From Frida
+Tampilkan nama pegawai yang memiliki gaji tertinggi dari pegawai yang tidak kawin
+Query:
+select nama,max(gapok) from mstpegawai where kdstawin in(
+select kdstawin from stawin_tbl where nmstawin='TIDAK KAWIN');
+
+4.From Resti
+Tampilkan nama pegawai yang potongan gajinya paling kecil yang memiliki anak terbanyak dan agama nya islam
+select nama from mstpegawai where janak in(
+select max(janak) from mstpegawai) and agama in(
+select kdagama from agama_tbl where nmagama='ISLAM') and nip in(
+select min(potongan) from fgaji);
+
+select nama from fgaji where nip in(
+select nip from mstpegawai where agama in(
+select kdagama from agama_tbl where nmagama='ISLAM') and janak in(
+select max(janak) from fgaji) and potongan in(
+select min(potongan) from fgaji));
+
+5.From Dasiah
+Tampilkan kdakun dan nama akun yang nmskpd nya berada di bengkulu
+Query:select kdakun,nmakun from akunsp2d where kdskpd in(
+select kdskpd from skpd_tbl where kdssbp in(
+select kdssbp from ssbp_tbl where nmssbp like'%Bengkulu%'));
+
+6.From Cucu
+Tampilkan nama,kdpangkat,total penghasilan yang memiliki penghasilan terbesar dan bekerja di dinas
+Query:select distinct nama,kdpangkat,bersih as penghasilan from fgaji_baru where kdpangkat in(
+select kdpangkat from satker_tbl where nmsatker like'%Dinas%') and bersih in(
+select max(bersih) from satker_tbl) limit 10;
+
+7.From Teguh
+Tampilkan nama,jumlah istri,jumlah anak,gapok yang status pegawai nya kawin golongan 3A
+Query:select nama,jistri,janak,gapok from mstpegawai_02 where kdpangkat='3A' and kdstawin in(
+select kdstawin from stawin_tbl where nmstawin='KAWIN');
+
+8.From Sandi
+Tampilkan nama pegawai yang memiliki hutang diatas 10 jt dengan cicilan diatas 100 rb dan belum lunas
+Query:select nama from mstpegawai where nip in(
+select nip from hutang where jmlhutang>10000000 and jmlcicilan>100000 and tgllunas is null);
+
+9.From Riyan
+Tampilkan nama satuan kerja ,nip,nama,yang memiliki nip lama 050011569
+Query:
+select mstpegawai.nip,mstpegawai.nama,data_rapel.namasatker from mstpegawai inner join data_rapel
+on mstpegawai.KDSATKER=data_rapel.kdsatker where mstpegawai.NIPLAMA='050011569';
+
+
+
