@@ -1,0 +1,137 @@
+1. Soal dari Jejen :
+
+Menampilkan nama, nip, tgl lahir, nama pangkat, pendidikan, agama, dan gaji pokok yang beragama islam dan gajipokoknya diatas rata-rata gaji pokok
+
+select mp.NAMA, mp.NIP, mp.TGLLHR, pt.NMPANGKAT,mp.PENDIDIKAN, ag.NMAGAMA, fg.GAPOK
+from fgaji fg INNER JOIN pangkat_tbl pt INNER JOIN mstpegawai mp INNER JOIN agama_tbl ag
+on fg.NIP=mp.NIP AND mp.AGAMA=ag.KDAGAMA AND mp.KDPANGKAT=pt.KDPANGKAT
+where ag.NMAGAMA='ISLAM' AND fg.GAPOK > (
+select avg(gapok)
+from fgaji
+)
+
+
+2. Soal dari Frida
+
+Menampilkan nama dan gaji pokok tertinggi dimana statusnya Tidak kawin
+
+select mp.NAMA, MAX(mp.GAPOK)
+from mstpegawai mp INNER JOIN stawin_tbl st
+where st.nmstawin='TIDAK KAWIN'
+
+
+3. soal dari tegar
+
+menampilkan nama pegawai , nama golongan, dan gaji pokok dimana gaji pokoknya diantara 2000000 dan 2500000
+
+
+SELECT distinct(fg.NAMA), pt.NMGOL, fg.GAPOK
+from fgaji fg INNER JOIN pangkat_tbl pt
+ON fg.KDPANGKAT=pt.KDPANGKAT
+where fg.GAPOK BETWEEN 2000000 AND 2500000
+LIMIT 10
+
+
+4. soal dari ikhsan
+
+menampilkan nama, nip, agaman, pendidikan, nama pangkat yang gaji pokoknya lebih dari 3000000, beragama islam, nama fungsinya NON fungsional mempunyai istri dan anak.
+
+SELECT distinct(mp.NAMA), mp.NIP, ag.NMAGAMA, mp.PENDIDIKAN, pt.NMPANGKAT
+from pangkat_tbl pt INNER JOIN mstpegawai mp INNER JOIN agama_tbl ag INNER JOIN detil_kekurangan dk INNER JOIN fungsional_tbl fc
+ON pt.KDPANGKAT=mp.KDPANGKAT and mp.KDFUNGSI=dk.KDFUNGSI and mp.AGAMA=ag.KDAGAMA
+where mp.GAPOK>3000000 and ag.NMAGAMA='ISLAM' and fc.NM_FUNGSI='NON FUNGSIONAL' and mp.JISTRI>0 and mp.JANAK>0
+
+
+5. soal dari halah
+
+menampilkan nama, dan jumlah anak dimana pendidikan terakhirnya paling tinggi 
+
+SELECT DISTINCT(NAMA), JANAK
+from mstpegawai
+where pendidikan='SARJANA' and gapok IN (
+
+select MIN(gapok)
+from mstpegawai
+where nip IN (
+
+select nip
+from fgaji
+having MAX(TJANAK)
+)
+)
+
+6. Soal dari frida
+
+menampilkan nama pegawai, nama golongan, nama pangkat yang gaji pokoknya lebih dari rata-rata dan masa kerjanya lebih dari 30 tahun
+
+select mp.NAMA, pt.NMGOL, pt.NMPANGKAT
+from mstpegawai mp INNER JOIN pangkat_tbl pt
+on mp.KDPANGKAT=pt.KDPANGKAT
+where mp.GAPOK > (
+
+select  AVG(gapok)
+from mstpegawai
+where masker > 30
+)
+
+7. Soal dari Nurjanah
+
+menampilkan nama pegawai, nama istri/suami (Keluarga) dan alamat yang pernah membayar pajak
+
+select DISTINCT(mp.NAMA), k.NMKEL,mp.ALAMAT
+from mstpegawai mp INNER JOIN keluarga k INNER JOIN hit_pajak hp
+on mp.NIP=k.NIP AND k.NIP=hp.nip AND hp.nip=mp.NIP
+group by mp.KDPANGKAT
+having count(hp.nip)
+
+8. Soal dari Natia
+
+Menampilkan UPDSTAMP, status, nama pegawai, tgl lahir, pendidikan dimana pendidikannya SLTA dan kode pangkatnya 2A
+
+select DISTINCT cg.UPDSTAMP, cg.`STATUS`, mp.NAMA, mp.TGLLHR, mp.PENDIDIKAN
+from close_gaji cg INNER JOIN mstpegawai mp INNER JOIN fgaji fg
+where mp.PENDIDIKAN='SLTA' and fg.KDPANGKAT='2A'
+
+9. Soal dari Ipin
+
+menampilkan NIP, nama pegawai, gaji bersih yang jenis kelamin perempuan dan tidak memiliki hutang
+
+select mp.NIP, mp.NAMA, fg.BERSIH
+from mstpegawai mp INNER JOIN fgaji fg
+on mp.NIP=fg.NIP
+where mp.KDJENKEL=2 and mp.NIP NOT IN (
+
+select nip
+from hutang
+)
+
+10. Soal dari resti
+
+menampilkan nama hutang dan jumah dari masing-masing hutang
+
+select ht.NMHUTANG, SUM(h.JMLHUTANG)
+from hutang_tbl ht INNER JOIN hutang h
+on ht.KDHUTANG=h.KDHUTANG
+GROUP BY ht.NMHUTANG
+
+
+11. Soal dari Cucu
+
+menampilkan nama , jumlah hutang, jumlah cicilan, keterangan yang memiliki hutang terkecil dan pengahasilan terbesar
+dengan pangkat 4A
+
+select fgb.NAMA, h.JMLHUTANG, h.JMLCICILAN, h.KETERANGAN
+from hutang h INNER JOIN fgaji_baru fgb
+on h.NIP=fgb.NIP
+where fgb.KDPANGKAT='4A' and h.JMLHUTANG IN (
+
+select MIN(JMLHUTANG)
+from hutang h INNER JOIN fgaji_baru fgb
+on h.NIP=fgb.NIP
+having MAX(fgb.BERSIH)
+) 
+
+
+12. 
+
+
