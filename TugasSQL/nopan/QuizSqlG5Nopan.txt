@@ -1,0 +1,82 @@
+//soal dari tegar
+soal :
+1.temukan nama pegawai yang mempunyai pangkat 'wakil. Bupati/walikota' bergelar 'H.' dan mempunyai istri
+  maksimal dalam islam(4)
+jawab :
+1.select nama
+from fgaji
+where nama like '%H.%' and jistri=4 and kdpangkat in (
+select kdpangkat
+from pangkat_tbl
+where nmpangkat='Wakil. Bupati/Walikota') limit 10;
+//soal dari tegar
+soal :
+2.temukan nama_pangkat tertinggi
+jawab :
+2.select nmpangkat from pangkat_tbl order by kdpangkat desc limit 1;
+//soal dari ulil
+soal :
+3.tampilkan kode fungsi dan rata-rata pensiunan yang nama fungsinya berawalan 'fungsional'
+  yang memiliki rata-rata pensiunan lebih dari 60 dan diurutkan berdasarkan rata-rata pensiunan
+  secara desc
+jawab :
+3.select jf.kdfungsi,avg(jt.pensiun) as rat_pensiun
+from jabatan_fungsi jf
+INNER JOIN jabatan_tbl jt 
+on jf.kdfungsi=jt.kdfungsi
+where jf.nmfungsi like 'FUNGSIONAL%' and jf.kdfungsi in (
+select jt.kdfungsi
+from jabatan_tbl jt)
+group by jf.kdfungsi
+having avg(jt.pensiun) > 60
+order by avg(jt.pensiun) desc;
+//soal dari ipin
+soal :
+4.mencari nip,nama,gaji bersih dari pegawai yang tidak memiliki hutang dan belum menikah serta berjenis
+  kelamin wanita
+jawab :
+4.select nip,nama,bersih
+from fgaji f
+where nip in (
+select nip
+from hutang h 
+where nip in (
+select nip
+from mstpegawai 
+where kdstawin=1 and kdjenkel=2)) limit 10;
+//soal dari resti
+soal :
+5.tampilkan nama hutang dan berapa jumlah nya dari masing-masing nama hutang
+jawab :
+5.select ht.nmhutang,sum(h.jmlhutang) as jumlah_hutang
+from hutang_tbl ht
+inner join hutang h
+on ht.KDHUTANG=h.KDHUTANG
+group by ht.NMHUTANG;
+//soal dari niken
+soal :
+6.mencari nama,gaji pokok,nama pangkat yg gaji nya terbesar
+jawab :
+6.select m.nama,max(f.gapokb) as gaji_terbesar,p.nmpangkat
+from ((mstpegawai m
+inner join fgaji_detil_ukp f on m.NIP=f.NIP)
+inner join pangkat_tbl p on m.KDPANGKAT=p.KDPANGKAT);
+//soal dari yusup
+soal :
+7.mencari daftar duda yang memiliki anak, status nya pegawai tetap yang meiliki
+  gapok kurang dari 4000000 dan beragama islam
+jawab :
+7.select nama
+from ((((mstpegawai m
+inner join tb_stawin t on m.KDSTAWIN=t.KD_STAWIN where t.KD_STAWIN=3)
+inner join stapeg_tbl s on m.KDSTAPEG=s.KDSTAPEG where nmstapeg='PEGAWAI TETAP (PNS)')
+inner join fgaji f on m.nip=f.NIP where gapok < 4000000)
+inner join agama_tbl a on m.agama=a.KDAGAMA where nmagama='islam');
+//soal dari riyan
+soal :
+8.tampilkan nip nama dan kdperangkat yg jumlah hutang nya 6345000 dan jumlah cicilan nya 500000
+jawab :
+8.select h.nip,m.nama,m.kdpangkat
+from mstpegawai m
+inner join hutang h on m.NIP=h.NIP
+where h.jmlhutang=6345000 and h.jmlcicilan=500000;
