@@ -1,0 +1,96 @@
+1. Mencari pegawai yang hidup sendiri memiliki status calon pegawai yang termasuk jenis pegawai negeri sipil (Yusup)
+tabel : mstpegawai, stapeg_tbl, jenis_peg, tb_stawin
+select nama from mstpegawai where kdstapeg in(
+	select kdstapeg from stapeg_tbl where kd_jns_peg in(
+		SELECT kd_jns from jenis_peg where nm_jns='Pegawai Negeri Sipil')
+	) 
+and kdstawin in(
+select KD_STAWIN from tb_stawin where NM_STAWIN='SENDIRI')
+
+2. Mencari nama, jistri,janak dan total_gapok dengan gol 3A yg statusnya kawin (Teguh)
+tabel : mstpegawai_02, stawin_tbl
+select nama,jistri,janak, gapok from mstpegawai_02 where kdstawin in(
+select KDSTAWIN from stawin_tbl where NMSTAWIN='KAWIN') AND KDPANGKAT='3A';
+
+3. Temukan nama pegawai yang mempunyai pangkat 'wakil bupati/malikota', bergelar 'haji' dan mempunyai istri maximal yang diperbolehkan dalam islam (poligami) (Tegar)
+tabel : fgaji, pangkat_tbl, catatan 'H'/ 'H,' -> haji
+select nama from fgaji where kdpangkat in(
+	select kdpangkat from pangkat_tbl where nmpangkat='Wakil. Bupati/Walikota')
+and (nama like 'H.%' or nama like 'Hj.%' or glrdepan='H') and jistri = 4;
+
+4. menampilkan nama, alamat yg nama fungsinya DOKTER dan janak>1 (Ikhsan) 
+tabel : mstpegawai, fungsi
+SELECT NAMA, tempatlhr from mstpegawai where kdfungsi in(
+select kdjabatan from fungsi where namafungsi like 'DOKTER%') and janak>1;
+
+5. tampilkan nama_hitang dna jumlahnya (resti)
+tabel : hutang, hitang_tbl
+select ht.NMHUTANG, sum(h.JMLHUTANG) from hutang h inner join hutang_tbl ht 
+on h.KDHUTANG=ht.KDHUTANG group by h.KDHUTANG;
+
+6. menampilkakn nama, gajibersih, dan pendidikakn pegawai yg memiliki hutang (ipin)
+tabel : hutang, fgaji, mstpegawai
+select p.nama,p.pendidikan, g.bersih from mstpegawai p inner join fgaji g on p.NIP=g.NIP and p.NIP in(
+select NIP from fgaji where nip not in(
+select distinct nip from hutang))
+
+7. menampilkan gapok dari laki2 yg berpangkat 3D dan yg gapoknya lebih dari gapok terbesar dari laki2 yg beristri (Sri s)
+tabel : fgaji. fgaji_susulan
+select gapok from fgaji where KDJENKEL='1' AND kdpangkat='3D' and gapok> (
+select max(gapok) from fgaji_susulan where jistri>=1);
+
+8. menampilkan nip, nama, bersih yg statusnya janda/duda yg pengkatnya penata Tk.I (resti)
+tabel : gaji_13_tmp, pengkat_tbl, stawin_tbl
+select nip,nama,bersih from gaji_13_tmp where kdstawin in(
+select kdstawin from stawin_tbl where nmstawin='JANDA/DUDA') and kdpangkat in(
+select kdpangkat from pangkat_tbl where nmpangkat='Penata Tk.I')
+
+9. cari nama, gapok, nama pangkat yg memiliki hutang tertinggi (ipin)
+tabel: hutang, mstpegawai, pangkat_tbl
+select m.nama,m.gapok,p.nmpangkat from mstpegawai m inner join pangkat_tbl p 
+on m.KDPANGKAT=p.KDPANGKAT where nip in(
+select nip from hutang where jmlhutang=(
+	select max(jmlhutang) from hutang
+))
+
+10.menampilkan nama,alamat,nmpangkat,tgllhr, tglwafat yg pendidikannya s1 dan sudah wafat (nurjanah)
+tabel: mstpegawai, twafat, pangkat_tbl
+select m.nama, m.alamat, p.nmpangkat, m.tgllhr, t.tglwafat 
+from mstpegawai m inner join twafat t inner join pangkat_tbl p
+on m.NIP=t.NIP and m.KDPANGKAT=p.KDPANGKAT and m.PENDIDIKAN='SARJANA (S1)' and m.NIP in(
+	select nip from twafat
+	)
+
+11. menampilkan nama, tglwafat,jistri,janak dengan gapok lebih dari 3jt (Teguh)
+tabel: fgaji_uangduka, fgaji_baru
+select distinct b.nama, ud.tglwafat, ud.gapok, ud.tjistri, ud.tjanak
+from fgaji_uangduka ud inner join fgaji_baru b on ud.NIP=b.NIP and b.NIP in(
+select nip from fgaji_uangduka where gapok>3000000);
+
+12. manampilkan nip,namahutang,jmlhutang,jmlcicilan yg laki2 nama pangkatnya pembina utama belum menikah
+gajinya lebih besar dari gaji max laki2 yang belum menikah yg pengkatnya pembina
+tabel : fgaji_baru, pangkat_tbl, stawin_tbl
+select h.nip, ht.nmhutang, h.jmlhutang, h.jmlcicilan from
+hutang h inner join hutang_tbl ht inner join fgaji_baru g 
+on h.KDHUTANG=ht.KDHUTANG and h.NIP=g.NIP and h.NIP in(
+	select nip from fgaji_baru where kdjenkel='1' and kdpangkat =(
+		select kdpangkat from pangkat_tbl where nmpangkat='Pembina Utama'
+	) and kdstawin=(
+		select kdstawin from stawin_tbl where nmstawin='TIDAK KAWIN'
+		) 	
+)and g.GAPOK>(
+select max(gapok) from fgaji_baru where kdjenkel='1' and kdstawin=(
+select kdstawin from stawin_tbl where nmstawin='TIDAK KAWIN'
+) AND KDPANGKAT = (select kdpangkat from pangkat_tbl where nmpangkat='pembina'));
+
+13. tampilkan UPDSTAMP, status (close_gaji), nama, tgllhr, pendidikan, yg pendidikannya SLTA dan kdpangkatnya 2A
+tabel: fgaji, mstpegawai, close_gaji
+select distinct m.updstamp, c.`STATUS`, m.nama, m.tgllhr, m.pendidikan
+from close_gaji c inner join mstpegawai m inner join fgaji f 
+on c.KDJNSTRANS=f.KDJNSTRANS and f.NIP=m.NIP and m.PENDIDIKAN='SLTA' and m.KDPANGKAT='2A'
+group by c.`STATUS`, m.NAMA;
+
+14. tampilkan nmakun dan dakun right join dimana nmakun kosong diganti null (dasiah)
+tabel : akunsp2d, akun_tbl
+select a.nmakun as NamaAkunS, b.kdakun as KodeAkunT from akunsp2d a right join akun_tbl b
+on a.KDAKUN=b.KDAKUN;
