@@ -1,6 +1,7 @@
 /*
 Author 		: Tegar Budi Septian
 File Name 	: sqlsoccersubqueriestegarbudiseptian.sql
+Last Modified : 3.50 pm, 19th October, 2017
 */ 
 
 /*1. Finding the teams played the first match.*/
@@ -37,6 +38,64 @@ FROM match_mast m, goal_details g, soccer_country c
 WHERE m.match_no = g.match_no AND g.team_id = c.country_id
 AND m.audence = (SELECT MAX(audence) FROM match_mast);
 
+/*9. Finding the 2nd highest stoppage time which had been added in 2nd half of play*/
+SELECT stop2_sec second_highest_stoppage_time_in_2nd_half_of_play
+FROM match_mast
+ORDER BY stop2_sec DESC
+LIMIT 1 OFFSET 1;
+
+/*11. Displaying the match_no, date of play, and 2ND HIGHEST STOPPAGE time which have been added in the 2ND HALF OF PLAY*/
+SELECT match_no, play_stage, stop2_sec
+FROM match_mast
+WHERE stop2_sec = (
+SELECT stop2_sec
+FROM match_mast
+ORDER BY stop2_sec DESC
+LIMIT 1 OFFSET 1);
+
+/*12. Displaying the team who DEFEATED by PORTUGAL in FINAL.*/
+SELECT country_name the_team_who_defeated_by_PORTUGAL_in_final
+FROM soccer_country
+WHERE country_id = (
+SELECT team_id
+FROM match_details
+WHERE play_stage = 'F'
+AND win_lose = 'L');
+
+/*13. Displaying CLUB which supplied the MOST NUMBER OF PLAYER*/
+SELECT playing_club, COUNT(player_id)
+FROM player_mast
+GROUP BY playing_club
+ORDER BY COUNT(player_id) DESC
+LIMIT 2
+
+/*14. Displaying the player and his jersey number who scored the FIRST PENALTY.*/
+SELECT player_id, player_name, jersey_no
+FROM player_mast
+WHERE player_id = (
+SELECT player_id
+FROM goal_details
+WHERE match_no = (
+SELECT match_no
+FROM goal_details
+WHERE goal_type = 'P'
+LIMIT 1)
+AND goal_type = 'P')
+
+/*15. Displaying the player, HIS TEAM, and his jersey number who scored the FIRST PENALTY.*/
+SELECT player_id, player_name, jersey_no, team_id, s.country_name team_name
+FROM player_mast p, soccer_country s 
+WHERE player_id = (
+SELECT player_id
+FROM goal_details
+WHERE match_no = (
+SELECT match_no
+FROM goal_details
+WHERE goal_type = 'P'
+LIMIT 1)
+AND goal_type = 'P')
+AND s.country_id = p.team_id
+
 /*17. To find the number of Germany scored*/
 SELECT COUNT(goal_id) Germany_scored_number
 FROM goal_details
@@ -47,3 +106,96 @@ SELECT jersey_no, player_name, team_id, posi_to_play
 FROM player_mast
 WHERE team_id IN(SELECT country_id FROM soccer_country WHERE country_name='England')
 AND posi_to_play='GK';
+
+----------------------------------------------------------------
+
+/*19. PLAYERS of LIVERPOOL!*/
+SELECT *
+FROM player_mast
+WHERE team_id = (
+SELECT country_id
+FROM soccer_country
+WHERE country_name = 'England')
+AND playing_club = 'Liverpool';
+
+/*20. LAST GOAL Player of 50th match!.*/
+SELECT *
+FROM player_mast
+WHERE player_id = (
+SELECT player_id
+FROM goal_details
+WHERE goal_time = (
+SELECT MAX(goal_time)
+FROM goal_details
+WHERE match_no = 50)
+AND match_no = 50)
+
+/*21. Portugal CAPTAIN! Of winning team.*/ ---------- There was a problem with the request. -----------
+SELECT player_id, player_name
+FROM player_mast
+WHERE player_id = (
+SELECT match_no, player_captain, team_id
+FROM match_captain
+WHERE match_no IN (
+SELECT match_no
+FROM match_details
+WHERE team_id = (
+SELECT country_id
+FROM soccer_country
+WHERE country_name = 'Portugal')
+AND win_lose = 'W')
+AND team_id = (
+SELECT country_id
+FROM soccer_country
+WHERE country_name = 'Portugal'));
+
+/*22. Number of player of FRANCE in FINAL!*/
+SELECT 11 + ((
+SELECT COUNT(player_id)
+FROM player_in_out
+WHERE team_id = (
+SELECT country_id
+FROM soccer_country
+WHERE country_name = 'France')
+AND match_no = (
+SELECT match_no
+FROM match_mast
+WHERE play_stage = 'F'))/2)
+
+/*24. The RUNNER-UP!*/
+SELECT country_name
+FROM soccer_country
+WHERE country_id = (
+SELECT team_id 
+FROM match_details 
+WHERE play_stage='F' AND win_lose='L')
+
+/*26. The MAX number of penalty shots*/
+SELECT MAX(number_of_penalty_shots) maximum_number
+FROM (SELECT COUNT(kick_id) number_of_penalty_shots
+FROM penalty_shootout
+GROUP BY player_id) a;
+
+/*27. Finding the match no. where highest number of penalty shots taken*/
+SELECT match_no, COUNT(kick_id)
+FROM penalty_shootout
+GROUP BY match_no
+ORDER BY COUNT(kick_id) DESC
+LIMIT 1
+
+/*28. Finding the match no. and TEAM where highest number of penalty shots taken*/
+SELECT match_no, team_id
+FROM penalty_shootout
+GROUP BY match_no, team_id
+ORDER BY COUNT(kick_id) DESC
+LIMIT 1
+
+/*32.  The DATE of penalty shootout matches.*/
+SELECT play_date 
+FROM match_mast
+WHERE decided_by = 'P';
+
+/*33. The QUICKEST GOAL after 5 MINUTES.*/
+SELECT goal_id, match_no, player_id, team_id, goal_time
+FROM goal_details g
+WHERE goal_time = (SELECT goal_time FROM goal_details WHERE goal_time > 5 ORDER BY goal_time LIMIT 1);
