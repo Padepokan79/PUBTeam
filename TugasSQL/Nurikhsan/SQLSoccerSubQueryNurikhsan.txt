@@ -24,38 +24,32 @@ FROM match_mast
 WHERE audence = (SELECT MAX(audence) FROM match_mast)
 
 4. Menampilkan nomer pertandingan germany vs poland
-SELECT DISTINCT match_no as nomor
+SELECT match_no
 FROM match_details
-WHERE team_id IN (
-  SELECT country_id 
-  FROM soccer_country 
-  WHERE country_name IN(
-     'Germany','Poland'
-  )
-  and win_lose IN(
-     'D'
-  )
+WHERE team_id IN(
+SELECT country_id
+FROM soccer_country
+WHERE country_name ='Germany'
+OR country_name='Poland'
 )
+group by match_no 
+having count(match_no) =2
 
 5. Menampilkan nomer , tanggal, goal_score dalam pertandingan Hungary, dan jerman
-SELECT match_no,play_date,goal_score    
-FROM match_mast 
-WHERE match_no IN( 
-  SELECT match_no 
-  FROM match_details
-  WHERE team_id IN (
-    SELECT country_id 
-    FROM soccer_country 
-    WHERE country_name IN(
-      'Hungary','Portugal'
-    )
-    AND  win_lose IN(
-     'D'
-    )
-    AND  goal_score IN(
-       3 
-    )   
-  )
+SELECT match_no,play_date,  goal_score ,results 
+FROM match_mast
+WHERE match_no IN(
+SELECT match_no
+FROM match_details
+WHERE team_id IN(
+SELECT country_id
+FROM soccer_country
+WHERE country_name ='Portugal'
+OR country_name='Hungary'
+)
+group by match_no 
+having count(match_no) =2
+
 )
 
 6. Menampilkan pemain yang selalu mencetak goal
@@ -85,25 +79,26 @@ WHERE country_id IN(
 
 
 8. Menampilkan yang nggolin terakhir di pertandingan portugal dan hungary (Belum Tepat)
-SELECT player_id,player_name
+SELECT player_name,dt_of_bir
 FROM player_mast
-WHERE player_id IN(
-   SELECT player_id 
+WHERE player_id in(
+  SELECT player_id
+  FROM goal_details
+  WHERE match_no IN(
+   SELECT match_no
    FROM match_details
    WHERE team_id IN(
-      SELECT country_id 
-    FROM soccer_country 
-    WHERE country_name IN(
-      'Hungary','Portugal'
-    )
-    AND  win_lose IN(
-     'D'
-    )
-    AND  goal_score IN(
-       3 
-    )  
-   )
+     SELECT country_id
+     FROM soccer_country
+     WHERE country_name ='Portugal'
+     OR country_name='Hungary'
+     )
+    group by match_no 
+    having count(match_no) =2
+  )
 )
+
+
 
 9. Mencari tambahan babak kedua Terbanyak 
 SELECT stop2_sec 
@@ -145,35 +140,230 @@ WHERE country_id IN(
      FROM soccer_country
      WHERE country_name='Portugal'
    )
-)  
+) 
 
-13.   
+13.  
+
+14. Yang Nendang penalty Pertama
+SELECT player_name,jersey_no
+FROM player_mast
+WHERE player_id IN(
+SELECT player_id 
+FROM goal_details
+WHERE  goal_type = 'P'
+AND match_no = (
+SELECT MIN(match_no) 
+FROM goal_details
+) 
+)
+
+15 menampilkan nama jersey dan team yang nendang penalty pertama
+SELECT pm.player_name,pm.jersey_no,sc.country_name
+FROM player_mast pm,soccer_country sc
+WHERE sc.country_id=pm.team_id
+AND pm.player_id IN(
+SELECT player_id 
+FROM goal_details
+WHERE  goal_type = 'P'
+AND match_no = (
+SELECT MIN(match_no) 
+FROM goal_details
+) 
+)
+
+16. yang jadi kiper italy saat lawan jerman
+SELECT player_name
+FROM player_mast 
+WHERE player_id IN (
+SELECT player_gk
+FROM penalty_gk
+WHERE team_id IN(
+SELECT country_id 
+FROM soccer_country
+WHERE country_name ='Italy' OR country_name = 'Germany ' 
+)
+)
     
     
+17. Banyak goal yang di cetak pemain jerman
+SELECT COUNT(*)
+FROM goal_details
+WHERE team_id IN(
+SELECT country_id 
+FROM soccer_country 
+WHERE country_name = 'Germany'
+
+)
+GROUP BY team_id ;
+
+18. nama kiper inggris ,no jersey dan clubnya 
+SELECT player_name,jersey_no ,playing_club
+FROM player_mast
+WHERE team_id IN(
+SELECT country_id
+FROM soccer_country
+WHERE country_name = 'England'
+)
+AND posi_to_play = 'GK'
     
     
+19. Pemain inggris yang main diliverpool
+SELECT player_name,jersey_no ,playing_club
+FROM player_mast
+WHERE playing_club = 'Liverpool'
+AND team_id IN(
+SELECT country_id 
+FROM soccer_country
+WHERE country_name ='England'
+)
+
+20. Yang mencetak goal di pertandingan ke 50
+SELECT player_name,jersey_no ,playing_club
+FROM player_mast
+WHERE player_id IN(
+SELECT player_id
+FROM goal_details
+WHERE match_no = 50
+AND goal_schedule = 'ST'
+)
+
+21. Yang jadi kapten juara euro
+SELECT player_name
+FROM player_mast
+WHERE player_id IN(
+SELECT player_captain 
+FROM match_captain
+WHERE team_id IN(
+SELECT team_id
+FROM match_details
+WHERE win_lose ='W'
+AND play_stage ='F'
+)
+)
+
+22. pemain francis yang dimainkan di final
+SELECT COUNT(player_id)
+FROM player_in_out 
+WHERE in_out = 'I'
+AND match_no IN(
+SELECT match_no 
+FROM match_mast
+WHERE play_stage = 'F';
+
+)
+GROUP BY player_id ;
     
     
+23. Keeper jerman yang tidak pernah kebobolan
+SELECT player_name
+FROM player_mast
+WHERE posi_to_play ='GK'
+AND player_id IN(
+SELECT player_GK
+FROM match_details
+WHERE play_stage = 'G'
+AND team_id IN(
+SELECT country_id
+FROM soccer_country
+WHERE country_name='Germany'
+)
+)
+
+    
+24. runner UP
+SELECT country_name
+FROM soccer_country
+WHERE country_id  IN(
+   SELECT team_id 
+   FROM match_details
+   WHERE win_lose = 'L' 
+   AND play_stage ='F'
+);    
+    
+25. penalty yang paling banyak
+SELECT team_id,COUNT(team_id) as jum
+FROM match_details
+GROUP BY team_id
+ORDER BY jum DESC limit 1    
+    
+26. Pemain yang paling banyak mengambil pinalty
+SELECT player_id,count(player_id) jum
+FROM penalty_shootout
+GROUP BY player_id
+ORDER BY COUNT(player_id) DESC
+limit 1
+
+27. no _pertandingan dengan pinalti terbanyak
+SELECT match_no 
+FROM penalty_shootout
+GROUP BY match_no
+ORDER BY match_no DESC
+limit 1
+  
+28. no _pertandingan dan team dengan pinalti terbanyak
+SELECT DISTINCT ps.match_no ,sc.country_name
+FROM penalty_shootout ps, soccer_country sc
+WHERE match_no IN(
+SELECT match_no 
+FROM penalty_shootout
+GROUP BY match_no
+ORDER BY match_no DESC
+limit 1
+)
+AND sc.country_id=ps.team_id; 
+
+
+29. penendang pinalti ke 7 di portugal
+SELECT player_name
+FROM player_mast
+WHERE player_id IN(
+SELECT player_id
+FROM penalty_shootout
+WHERE kick_no =7
+)
+AND team_id IN(
+SELECT country_id
+FROM soccer_country
+WHERE country_name='Portugal'
+)
+
+
     
     
+30. stage yang ada di tendang pinalti ke 23
+SELECT play_stage
+FROM match_mast
+WHERE match_no IN(
+SELECT match_no 
+FROM penalty_shootout
+WHERE kick_id =23
+) 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 31. tempat adu pinalty
+SELECT venue_name        
+FROM soccer_venue
+WHERE venue_id IN(
+SELECT venue_id 
+FROM match_mast
+WHERE match_no IN(
+SELECT match_no 
+FROM penalty_shootout
+)
+)
+
+32.  Tanggal pinaltian dilaksanakan
+SELECT play_date  
+FROM  match_mast
+WHERE match_no IN(
+SELECT match_no 
+FROM penalty_shootout
+)
+
+
+33.    goal tercepat setelah 5 menit
+SELECT MIN(goal_time) 
+FROM goal_details
+WHERE goal_time>5
     
     
     
