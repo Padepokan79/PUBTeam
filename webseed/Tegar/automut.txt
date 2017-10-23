@@ -1,0 +1,43 @@
+/*
+Author : Tegar Budi Septian
+File Name : automut.txt
+Date Created : Monday, 23th October, 2017
+*/
+
+/*1. Getting Token with the account: tujuhsembilan
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg3NDI4MzcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODI5MjM3fQ.hEov8Q67wDaEgmA1g8yqsocxnxdTIre6ZVIypZEMnQI*/
+
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+
+
+/*2. Adding a first data with nip: 0204151036.*/
+
+{
+	"tglgaji" : "2017-10-23",
+	"nip" : "0204151036",
+	"kdjiwa_l" : "1102",
+	"kdjiwa_b" : "1000",
+	"kdstapeg_l" : 4,
+	"kdstapeg_b" : 4,
+	"tglpensiun" : "2046-01-01"
+}
+
+
+/*3. Adding a second data with nip: 111111111111.*/
+
+{
+	"tglgaji" : "2017-09-09",
+	"nip" : "111111111111",
+	"kdjiwa_l" : "1103",
+	"kdjiwa_b" : "1000",
+	"kdstapeg_l" : 4,
+	"kdstapeg_b" : 4,
+	"tglpensiun" : "2050-01-01"
+}
+
+
+
+
