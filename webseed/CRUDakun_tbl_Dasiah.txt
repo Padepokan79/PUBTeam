@@ -1,0 +1,78 @@
+// ---> Rabu, 23 oktober 2017 <---
+// --->        Dasiah         <---
+// ===============================
+
+1. auto token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+
+2. read all
+{
+  "totalItems": 18,
+
+  "items": [
+
+    {
+
+      "Model_ID": "$id0=null",
+
+      "idakun": "",
+
+      "kdakun": "120.18.00.00.5.1.1.01.01",
+
+      "kdtrans": 101,
+
+      "nmakun": "Gaji Pokok"
+
+    },
+
+    {
+      "Model_ID": "$id0=null",
+
+      "idakun": "",
+
+      "kdakun": "120.18.00.00.5.1.1.01.02",
+
+      "kdtrans": 102,
+
+      "nmakun": "Tunjangan Keluarga"
+
+    },
+
+    {
+
+      "Model_ID": "$id0=null",
+
+      "idakun": "",
+
+      "kdakun": "120.18.00.00.5.1.1.01.03",
+
+      "kdtrans": 103,
+
+      "nmakun": "Tunjangan Struktural"
+
+    }
+
+  ]
+}
+
+3. create
+{
+
+  "Model_ID":
+ "$id0=-1",
+
+  "id": -1,
+
+  "idakun": "",
+
+  "kdakun": "120.18.00.00.5.1.1.01.XX",
+
+  "kdtrans": 209,
+
+  "nmakun": "Tunjangan Baday"
+
+}
+
