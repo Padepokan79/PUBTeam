@@ -1,0 +1,88 @@
+1.Menampilkan angota keluarga berserta tanggal lahirnya yang merupakan keluarga kepala sekolah yang gaji pokoknya retinggi
+
+Soal dari: Dyah Nuraini
+
+==> select NAMA, NMKEL1, TGLLHR1, KET1, NMKEL2, TGLLHR2, KET2, NMKEL3, TGLLHR3, KET3, NMKEL4, TGLLHR4, KET4, NMKEL5, TGLLHR5, KET5, NMKEL6, TGLLHR6, KET6, NMKEL7, TGLLHR7, KET7
+from skpp_pegawai where KDGURU IN(
+select KDGURU from guru_tbl where NMGURU='KEPALA SEKOLAH SD GOL.IV' OR NMGURU='KEPALA SEKOLAH SD GOL.III'
+OR NMGURU='KEPALA SEKOLAH SD GOL.II' OR NMGURU='KEPALA SEKOLAH SMP.GOL.IV' OR NMGURU='KEPALA SEKOLAH SMP.GOL.III'
+OR NMGURU='KEPALA SEKOLAH SMP.GOL.II' OR NMGURU='KEPALA SEKOLAH SMA.GOL.IV' OR NMGURU='KEPALA SEKOLAH SMA.GOL.III'
+OR NMGURU='KEPALA SEKOLAH SMA.GOL.II') AND GAPOK IN(
+select MAX(GAPOK) from skpp_pegawai);
+
+
+
+2. Menampilkan NIP, NAMA, dam KODE Panggakat  yang memiliki hutang= 6.345.000 dan jumlah ciciclan=500.000
+
+Soal dari: Riyan Turmudi
+
+==> select h.NIP, m.NAMA, m.KDPANGKAT
+from hutang h INNER JOIN mstpegawai m
+on h.NIP=m.NIP
+where h.JMLHUTANG=6345000 AND h.JMLCICILAN=500000;
+
+
+
+3. Mencari pegawai yang memiliki  hutang > 10.000.000 dengan cicilan > 100.000 dan belum lunas
+
+Soal dari: Sandi Saputra
+
+==>select NAMA
+from mstpegawai where nip IN(
+select nip from hutang where JMLHUTANG > 10000000 AND JMLCICILAN > 100000 AND TGLLUNAS is null);
+
+4. Menampilkan nip, nama, KDKPD, TMTGAJI, TGLUPDATE, dan KDSATKER yang tglstop!=null dan tmtgaji=2011
+
+Soal dari: Nopan
+
+==> select f.NIP, f.NAMA, f.KDSKPD, sa.TMTGAJI, sa.TGLUPDATE, sa.KDSATKER
+from fgaji f INNER JOIN historis_satker sa INNER JOIN historis_stapeg st
+on f.NIP=sa.NIP AND f.NIP=st.NIP AND sa.TMTGAJI=st.TMTGAJI AND st.TGLSTOP is not null AND sa.TMTGAJI LIKE '2011%'; 
+
+5. Mencari nip, nama, gaji bersih, dari pegawai yang tidak memiliki hutang dan belum menikah dan jk= wanita
+
+Soal dari: Ipin
+
+==> select nip, nama, bersih
+from fgaji where KDJENKEL=2 AND KDSTAWIN =(
+select kdstawin from stawin_tbl where nmstawin='TIDAK KAWIN') AND (nip IN(
+select nip from hutang where TGLLUNAS is not null) OR nip NOT IN(
+select nip from hutang));
+
+6. mencari detail pegawai dan jumlah tunjangan yang janda/duda memiliki anak atau yang memiliki hutang terbesar ke 2
+
+Soal dari : Ilfa
+
+==> select g.nip, g.nama, p.NMPANGKAT, h.JMLHUTANG, s.nmstawin, g.janak, g.tjistri+g.tjanak+g.tjtpp+g.tjeselon+g.tjfungsi+g.tjstruk+g.tjguru+g.tjlangka+g.tjtkd+g.tjterpencil+g.tjkhusus+g.tjberas+g.tjpajak+g.tjaskes+g.tjumum as jumlah_tunjangan
+from mstpegawai m INNER JOIN pangkat_tbl p INNER JOIN gaji_13_tmp g INNER JOIN stawin_tbl s INNER JOIN hutang h
+on m.KDPANGKAT= p.KDPANGKAT AND m.NIP=g.NIP AND g.KDSTAWIN=s.kdstawin AND g.NIP=h.NIP
+where (g.KDSTAWIN in(
+select kdstawin from stawin_tbl where nmstawin='janda/duda') AND g.JANAK>0) OR h.JMLHUTANG in(
+select jmlhutang from hutang) group by h.jmlhutang order by h.jmlhutang  DESC limit 1,1;
+
+7. menampilkan kdsatker, nip, nama di tabel data_rapel yang memiliki nip lama 050011569
+
+Soal dari : Riyan
+
+==> select kdsatker, nip, nama
+from data_rapel where nip in(
+select nip from mstpegawai where niplama='050011569');
+
+8. mencari nama, gapok dan pangkat dari pegawai yang memiliki hutang tertinggi
+
+Soal dari : Ipin
+
+==> select m.nama, m.gapok, p.nmpangkat, h.JMLHUTANG
+from mstpegawai m inner join pangkat_tbl p inner join hutang h
+on  m.KDPANGKAT=p.KDPANGKAT and h.NIP=m.NIP
+where h.JMLHUTANG in(
+select MAX(jmlhutang) from hutang );
+
+9. mencari data pegawai yang agamanya islam dan memilikimistri dan anak denganm gaji >3000000 dan non fungsional
+
+Soal dari: nurikhsan
+
+==> select m.nama, m.nip, a.nmagama, m.pendidikan, p.nmpangkat
+from mstpegawai m inner join agama_tbl a inner join pangkat_tbl p inner join jabatan_tbl f
+on m.AGAMA=a.KDAGAMA and m.KDPANGKAT=p.KDPANGKAT and m.KDFUNGSI=f.kdjabatan
+where m.JISTRI>0 and m.JANAK>1 and m.GAPOK>3000000 and a.NMAGAMA='islam' and f.NMjabatan='non fungsional';
