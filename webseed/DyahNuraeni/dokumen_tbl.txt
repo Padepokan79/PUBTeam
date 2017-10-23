@@ -1,0 +1,248 @@
+Tabel 		: dokumen_tbl
+
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg3NDM0MTUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODI5ODE1fQ.1cBjyVl4_4hRDeR872OaJlZ5atlImZyZ6S__I3EHxZc",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+{
+    "totalItems": 23,
+    "items":
+ 	[
+        
+		{
+            "Model_ID": "$id0=null",
+  
+		              "kddokumen": "01",
+   
+		              "nmdokumen": "GAJI INDUK"
+       
+		 },
+        
+		{
+            "Model_ID": "$id0=null",
+ 
+		            "kddokumen": "02",
+		
+            "nmdokumen": "GAJI SUSULAN"
+	                
+        },
+		 {
+            "Model_ID": "$id0=null",
+ 
+		              "kddokumen": "03",
+		  
+            "nmdokumen": "GAJI KEKURANGAN"
+ 
+	                         },
+	                
+        {
+            "Model_ID": "$id0=null",
+		
+             "kddokumen": "04",
+ 
+		            "nmdokumen": "GAJI TERUSAN"
+		
+  },
+		
+  {
+            "Model_ID": "$id0=null",
+		  
+            "kddokumen": "05",
+
+		              "nmdokumen": "UANG DUKA"
+ 
+		   },
+       
+		 {
+            "Model_ID": "$id0=null",
+
+		              "kddokumen": "06",
+ 
+		             "nmdokumen": "REKAPITULASI GAJI PEGAWAI"
+
+		        },
+ 
+		       {
+            "Model_ID": "$id0=null",
+		        
+            "kddokumen": "07",
+
+		                    "nmdokumen": "REKAPITULASI GAJI SUSULAN"
+ 
+		       },
+
+		        {
+            "Model_ID": "$id0=null",
+ 
+		                    "kddokumen": "08",
+		        
+            "nmdokumen": "LEMBAR TANDA TANGAN"
+		
+        },
+  
+		      {
+            "Model_ID": "$id0=null",
+ 
+		                   "kddokumen": "09",
+		                  "nmdokumen": "GAJI GOLONGAN"
+
+       		        },
+ 
+		       {
+            "Model_ID": "$id0=null",
+ 
+		                    "kddokumen": "10",
+		        
+            "nmdokumen": "GOLONGAN SELURUHNYA"
+ 
+		       },
+ 
+		       {
+            "Model_ID": "$id0=null",
+ 
+		                    "kddokumen": "11",
+
+		                    "nmdokumen": "RINCIAN GAJI PEGAWAI"
+ 
+		       },
+       
+		      {
+            "Model_ID": "$id0=null",
+  
+		                   "kddokumen": "12",
+ 
+		                  "nmdokumen": "PUNGUTAN TAPERUM"
+ 
+		       },
+      
+		      {
+            "Model_ID": "$id0=null",
+ 
+		                   "kddokumen": "13",
+ 
+		                   "nmdokumen": "PAJAK PEGAWAI"
+
+		        },
+		
+        {
+            "Model_ID": "$id0=null",
+
+		                     "kddokumen": "14",
+ 
+		                     "nmdokumen": "GAJI UNIT PEGAWAI"
+
+		        },
+		
+        {
+            "Model_ID": "$id0=null",
+
+		                     "kddokumen": "15",
+		        
+            "nmdokumen": "GAJI INDUK GOLONGAN"
+		
+        },
+		
+        {
+            "Model_ID": "$id0=null",
+ 
+		                     "kddokumen": "16",
+ 
+		                     "nmdokumen": "IURAN WAJIB PEGAWAI (IWP)"
+      
+		        },
+ 
+		       {
+            "Model_ID": "$id0=null",
+ 
+		                    "kddokumen": "17",
+
+		                   "nmdokumen": "REKAP GAJI PNS"
+
+		        },
+ 
+		       {
+            "Model_ID": "$id0=null",
+		       
+             "kddokumen": "18",
+		       
+            "nmdokumen": "KARTU PEGAWAI BAGIAN DEPAN"
+       
+		     },
+		
+        {
+            "Model_ID": "$id0=null",
+
+		                     "kddokumen": "18.B",
+ 
+		                     "nmdokumen": "KARTU PEGAWAI BAGIAN BELAKANG"
+ 
+		       },
+		
+        {
+            "Model_ID": "$id0=null",
+		
+                     "kddokumen": "19",
+		         
+            "nmdokumen": "DAFTAR ANAK DEWASA"
+
+		        },
+ 
+		       {
+            "Model_ID": "$id0=null",
+
+		                    "kddokumen": "20",
+ 
+		                   "nmdokumen": "DAFTAR PEGAWAI PENSIUN"
+ 
+		       },
+		
+        {
+            "Model_ID": "$id0=null",
+		         
+            "kddokumen": "21",
+		        
+            "nmdokumen": "REALISASI STATUS PEMBAYARAN GAJI
+		
+        },
+ 
+		       {
+            "Model_ID": "$id0=null",
+		        
+            "kddokumen": "22",
+ 
+		                   "nmdokumen": "DAFTAR POTONGAN LUNAS"
+ 
+		       }
+ 
+	   ]
+
+}
+
+{
+    "Model_ID": "$id0=-1",
+ 
+     "id": -1,
+ 
+      "kddokumen": "23",
+
+      "nmdokumen":  "DAFTAR POTONGAN BELUM LUNAS"
+
+}
+
+{
+    "Model_ID": "$id0=-1",
+    
+     "id": -1,
+
+    "kddokumen": "24",
+
+    "nmdokumen": "GAJI TUNGGAKAN"
+ }
+
