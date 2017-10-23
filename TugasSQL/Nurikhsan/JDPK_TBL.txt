@@ -1,0 +1,25 @@
+DJPK Tabel
+
+Create
+1.
+{
+	"prov": "01",
+	"Kab": 98,
+	"nm_pemda": "Hikari",
+	"kd_satker" : 963327
+}
+2.
+{
+	"prov": "02",
+	"Kab": 98,
+	"nm_pemda": "Hikari No Yosa",
+	"kd_satker" : 963327
+}
+3.
+
+
+getToken
+{
+	"nama_login" : "hendra",
+	"password" : 11
+}
