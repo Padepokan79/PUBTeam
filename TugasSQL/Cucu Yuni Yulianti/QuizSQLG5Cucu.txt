@@ -1,0 +1,143 @@
+soal dari dyah nuraeni
+
+1. tampilkan nip, pendidikan yang memiliki pangkat gubernur yg bukan dari daerah terpencil
+
+
+select mstpegawai.NIP, mstpegawai.PENDIDIKAN 
+from mstpegawai INNER JOIN pangkat_tbl on mstpegawai.KDPANGKAT = pangkat_tbl.KDPANGKAT 
+INNER JOIN terpencil_tbl on mstpegawai.KDTERPENCIL = terpencil_tbl.KDDAERAH 
+where pangkat_tbl.NMPANGKAT = 'GUBERNUR' and terpencil_tbl.KDDAERAH = 000;
+
+2. tampilkan nip, nama, gaji bersih yg meiliki status janda dan jabatan penata tk 1
+
+select gaji_13_tmp.NIP, gaji_13_tmp.NAMA, gaji_13_tmp.BERSIH 
+from gaji_13_tmp 
+INNER JOIN pangkat_tbl on gaji_13_tmp.KDPANGKAT = pangkat_tbl.KDPANGKAT
+INNER JOIN stawin_tbl on gaji_13_tmp.KDSTAWIN = stawin_tbl.kdstawin  
+where pangkat_tbl.NMPANGKAT = 'Penata Tk.I' and stawin_tbl.nmstawin = 'JANDA/DUDA';
+
+
+3. menampilkan jumlah pegawai laki2 yang tdk memiliki tunjangan lain yg gapoknya > 4jt dan potongan < 700000 berdasarkan pangkatnya
+
+select count(*) 
+from fgaji 
+where KDJENKEL = 1 and TJISTRI = 0 
+and TJANAK = 0 and TJTPP = 0 and TJESELON = 0 and TJFUNGSI = 0 and TJSTRUK = 0 
+AND TJGURU = 0 AND TJLANGKA = 0 AND TJTKD = 0 AND TJTERPENCIL = 0 AND TJKHUSUS = 0 AND TJBERAS = 0
+ AND TJPAJAK = 0 AND TJASKES = 0 AND TJUMUM = 0 AND TJKK = 0 AND TJKM = 0 AND
+ GAPOK > 4000000 AND POTONGAN < 700000 group by KDPANGKAT; 
+
+
+4. tampilkan nama pegawai yang pangkatnya wakil bupati/walikota bergelar haji dan meiliki istri 4
+
+select fgaji.NAMA 
+from fgaji 
+INNER JOIN pangkat_tbl 
+on fgaji.KDPANGKAT = pangkat_tbl.KDPANGKAT 
+where fgaji.JISTRI = 4 and (fgaji.NAMA like 'H%' or fgaji.NAMA like 'Ir.H.%') and pangkat_tbl.NMPANGKAT = 'Wakil. Bupati/Walikota';
+
+
+5. menampilkan nama pegawai yg beragama Islam perempuan yg jabatan gurunya sbg kepala sekolah smp gol II masa kerja 24 dan memiliki gelar dra kelahiran 63
+select mstpegawai.NAMA 
+from  mstpegawai 
+INNER JOIN agama_tbl on mstpegawai.AGAMA = agama_tbl.KDAGAMA 
+INNER JOIN guru_tbl on mstpegawai.KDGURU = guru_tbl.KDGURU 
+where agama_tbl.NMAGAMA = 'ISLAM' and mstpegawai.KDJENKEL = 2 
+and guru_tbl.NMGURU = 'KEPALA SEKOLAH SMP.GOL.II' AND mstpegawai.MASKER =24 
+and mstpegawai.TGLLHR like '1963%' and mstpegawai.NAMA like 'dra%';
+
+6. tampilkan nama, tgl wafat, gapok, tunjanagn istri, tunjanagn anak, yang gapoknya lebih dari 3 jt
+==> select distinct fgaji_baru.NAMA, fgaji_uangduka.TGLWAFAT, fgaji_uangduka.GAPOK, fgaji_uangduka.TJISTRI, fgaji_uangduka.TJANAK  
+from fgaji_baru
+INNER JOIN fgaji_uangduka 
+on fgaji_baru.NIP = fgaji_uangduka.NIP 
+where fgaji_uangduka.GAPOK > 3000000; 
+
+7. mencari pegawai dgn gaji terbesar( nama, gapok, nama_pangkat)
+==> select mstpegawai.NAMA, fgaji_detil_ukp.GAPOKB, pangkat_tbl.NMPANGKAT 
+from mstpegawai 
+INNER JOIN fgaji_detil_ukp 
+on mstpegawai.NIP = fgaji_detil_ukp.NIP
+INNER JOIN pangkat_tbl 
+on mstpegawai.KDPANGKAT = pangkat_tbl.KDPANGKAT
+order by fgaji_detil_ukp.GAPOKB desc limit 1;
+
+8. tampilkan nama pegawai, nip, agama, pendidikan, nama pangkat, yg agamanya Islam , punya istri dan anak dgn gaji lebih dari 3 jt dan nama fungsi fungsional
+==>select mstpegawai.NAMA, mstpegawai.NIP, agama_tbl.NMAGAMA, mstpegawai.PENDIDIKAN, pangkat_tbl.NMPANGKAT 
+from mstpegawai 
+INNER JOIN agama_tbl
+on mstpegawai.AGAMA = agama_tbl.KDAGAMA
+INNER JOIN pangkat_tbl
+on mstpegawai.KDPANGKAT = pangkat_tbl.KDPANGKAT
+INNER JOIN jabatan_tbl
+on mstpegawai.KDFUNGSI = jabatan_tbl.KDFUNGSI
+where agama_tbl.NMAGAMA = 'ISLAM' 
+and mstpegawai.JISTRI > 0 
+and mstpegawai.JANAK > 0 
+and mstpegawai.GAPOK > 3000000
+and jabatan_tbl.NMJABATAN = 'NON FUNGSIONAL';
+
+9. mencari jumlah pegawai yang meimiliki fungsi sbg dokter gigi muda
+==> 
+SELECT count(*)
+from mstpegawai
+INNER JOIN fungsi
+on mstpegawai.KDFUNGSI = fungsi.kdjabatan
+where fungsi.namafungsi = 'Dokter Gigi Muda';
+
+10. cari nama pegawai yang memiliki hutang diatas 10jt dgn cicilan diatas 100rb dan belum lunas
+
+==> select DISTINCT mstpegawai.NAMA 
+from mstpegawai
+INNER JOIN hutang
+where hutang.JMLHUTANG > 10000000
+ and hutang.JMLCICILAN > 100000 
+ and hutang.TGLLUNAS IS NULL ;
+
+11. cari nama, pendidikan(s2), agama (islam), dan urut berdasarkan gapok tertinggi
+ 
+==> select mstpegawai.NAMA, mstpegawai.PENDIDIKAN, agama_tbl.NMAGAMA,
+from mstpegawai
+INNER JOIN agama_tbl
+on mstpegawai.AGAMA = agama_tbl.KDAGAMA 
+where mstpegawai.PENDIDIKAN = 'SARJANA (S2)' and agama_tbl.NMAGAMA = 'ISLAM' order by mstpegawai.GAPOK desc;
+
+12. tampilkan nama, tempat lahir, yg nama fungsinya dokter dan jumlah anaknya > 1
+==> select mstpegawai.NAMA, mstpegawai.TEMPATLHR
+from mstpegawai
+INNER JOIN fungsi
+on mstpegawai.KDFUNGSI = fungsi.kdjabatan
+where fungsi.namafungsi = 'Dokter' and mstpegawai.JANAK > 1;
+
+13. cari keluarga dari pegawai bernama IR yusfiq rizal
+==> select keluarga.NMKEL 
+from keluarga
+INNER JOIN mstpegawai
+on keluarga.NIP = mstpegawai.NIP
+where mstpegawai.NAMA = 'IR. YUSFIQ RIZAL';
+
+
+14. menampilkan nama, alamat, nama pangkat tanggal lahir, tgl wafat, yg pendidikannya S1
+==> SELECT mstpegawai.NAMA, mstpegawai.ALAMAT, pangkat_tbl.NMPANGKAT, mstpegawai.TGLLHR, twafat.TGLWAFAT
+from mstpegawai
+INNER JOIN pangkat_tbl
+on mstpegawai.KDPANGKAT = pangkat_tbl.KDPANGKAT 
+INNER JOIN twafat
+on mstpegawai.NIP = twafat.NIP
+WHERE mstpegawai.PENDIDIKAN = 'SARJANA (S1)';
+
+15. tampilkan nama satker, nip, nama, yang memiliki nip lama 0050011569
+==>select data_rapel.NAMASATKER, mstpegawai.NIP, mstpegawai.NAMA
+from mstpegawai
+INNER JOIN data_rapel
+on mstpegawai.NIP = data_rapel.NIP
+where mstpegawai.NIPLAMA = '050022569';
+
+16. tampilkan nama, nip, kdkspd, tmtgaji, tglupdate, kdsatker, yg tgl stopnya tdk = nul, dan tmt gajinya tahun 2011
+==> select fgaji.NAMA, fgaji.NIP, historis_satker.KDSKPD, historis_satker.TMTGAJI, historis_satker.TGLUPDATE 
+from fgaji
+INNER JOIN historis_satker
+on fgaji.NIP = historis_satker.NIP
+INNER JOIN historis_stapeg
+on fgaji.NIP = historis_stapeg.NIP
+where historis_stapeg.TGLSTOP is not null and historis_satker.TMTGAJI like '2011%';

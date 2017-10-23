@@ -1,0 +1,148 @@
+QUIS 1
+soal dari : jejen
+
+==========================================================
+menampilkan nama pegawai yg beragama islam,perempuan,
+yg jabatannya kepala sekolah SMP.GOL.II ,yg masa
+kerjanya 24 dan mempunyai gelar depan DR,kelahiran 1963
+ref tabel : agama,mstpegawai,guru_tbl
+
+JAWABAN:
+select nama from mstpegawai
+inner join agama_tbl inner join guru_tbl
+on mstpegawai.AGAMA=agama_tbl.KDAGAMA and
+guru_tbl.KDGURU=mstpegawai.KDGURU
+where mstpegawai.masker=24 
+and mstpegawai.nama like 'dra%' 
+and mstpegawai.tgllhr like '1963%'
+and mstpegawai.kdjenkel=2
+and mstpegawai.AGAMA=1
+and mstpegawai.kdguru in(select kdguru from guru_tbl
+where nmguru='KEPALA SEKOLAH SMP.GOL.II');
+=======================================================
+
+QUIZ 2
+dari : TEGUH
+ cari nama,pendidikan (s2) ,agama (islam) yang memiliki gapok tertinggi
+atau mengurutkan berdasarkan gapok DESC
+ref : mstpegawai, agama_tbl
+
+JAWABAN :
+
+select nama,pendidikan,gapok, agama_tbl.NMAGAMA from mstpegawai
+inner join agama_tbl
+on agama_tbl.KDAGAMA=mstpegawai.AGAMA
+where 
+mstpegawai.PENDIDIKAN='SARJANA (S2)'
+and mstpegawai.agama in(select kdagama from agama_tbl
+where nmagama='islam')
+order by gapok desc;
+
+===========================================================
+
+QUIZ 3
+dari : YUSUF
+mencari daftar duda yang memiliki anak>=1 ,status pegawai tetap,
+gapok <4000000,agama islam
+ref : mstpegawai, tb_stawin, stapeg_tbl, fgaji, agama_tbl
+
+JAWAB :
+
+select mstpegawai.NAMA,mstpegawai.kdstawin from mstpegawai
+
+inner join tb_stawin inner join stapeg_tbl
+inner join agama_tbl inner join fgaji
+
+on mstpegawai.AGAMA=agama_tbl.KDAGAMA
+and mstpegawai.KDSTAWIN=tb_stawin.KD_STAWIN
+and mstpegawai.KDSTAPEG=stapeg_tbl.KDSTAPEG
+and mstpegawai.NIP=fgaji.NIP
+
+where mstpegawai.JANAK>=1
+and mstpegawai.kdjenkel=1
+and fgaji.GAPOK< 4000000
+and mstpegawai.KDSTAWIN in(select kd_stawin from tb_stawin
+where nm_stawin='duda')
+and mstpegawai.kdstapeg in(
+select kdstapeg from stapeg_tbl
+where nmstapeg='PEGAWAI TETAP (PNS)');
+
+=========================================================
+QUIS 4
+dari : SRI
+tampilkan nip,nama hutang,jumlah hutang,jml cicilan,
+yg jeniskelaminnya laki-laki,nama pangkatnya 'pembina utama',
+belum menikah,gapoknya > gapok terbesar laki-laki,
+belum menikah yg nama pangkatnya 'pembina', agama islam
+
+ref : fgaji_baru,hutang,hutang_tbl,pangkat_tbl
+
+JAWABAN :
+
+select hutang.NIP,hutang_tbl.NMHUTANG, jmlhutang,jmlcicilan
+from hutang
+inner join hutang_tbl 
+inner join fgaji_baru
+on fgaji_baru.NIP=hutang.NIP
+and hutang.KDHUTANG=hutang_tbl.KDHUTANG
+
+where fgaji_baru.KDJENKEL=1
+and fgaji_baru.KDPANGKAT in(
+select kdpangkat from pangkat_tbl
+where nmpangkat='pembina utama')
+and fgaji_baru.KDSTAWIN=1
+and fgaji_baru.gapok in(
+select gapok from fgaji_baru
+where kdjenkel=1 
+and kdstawin=1
+and kdpangkat in(select kdpangkat 
+from pangkat_tbl
+where nmpangkat='pembina')
+group by nama
+order by gapok desc
+);
+
+
+===================================================
+QUIZ 5
+dari : CUCU
+menampilkan nama,jumlah hutang,jumlah cicilan
+yang memiliki hutang palimg kecil dan penghasilan terbesar (gaji bersih)
+ref : hutang, fgaji_baru
+
+JAWABAN : 
+
+select .fgaji_baru.nama,hutang.jmlhutang,hutang.jmlcicilan 
+from hutang
+inner join fgaji_baru
+on fgaji_baru.nip=hutang.nip
+
+where jmlhutang in(
+select min(jmlhutang)
+from hutang)
+
+and 
+
+fgaji_baru.BERSIH in(
+select max(bersih) 
+from fgaji_baru
+where kdpangkat='4a')
+
+
+===========================================================
+QUIZ 6
+dari : yunita niken
+mencari pegawai dengan gaji terbesar (nama,gapok,nama pangkat)
+ref : pangkat_tbl,fgaji_detail_ukp,mstpegawai
+
+JAWABAN : (belum di run/ laptop lemot)
+select NAMA,fgaji_detil_ukp.gapokb,pangkat_tbl.NMPANGKAT 
+from mstpegawai
+inner join fgaji_detil_ukp
+inner join pangkat_tbl
+on fgaji_detil_ukp.NIP=mstpegawai.nip
+and mstpegawai.KDPANGKAT=pangkat_tbl.KDPANGKAT
+
+where mstpegawai.nip in(
+select nip from fgaji_detil_ukp
+having max(gapokb))
