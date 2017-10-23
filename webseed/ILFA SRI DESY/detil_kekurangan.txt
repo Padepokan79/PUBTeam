@@ -1,0 +1,80 @@
+[auth token]
+POST localhost:7979/auth/token
+di body:
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+
+=======================================================================
+
+[readAll]
+GET localhost:7979/api/masterdata/MdDetilKekurangan/readAll?$top=5&$skip=0
+
+
+=======================================================================
+[create]=>data pertama
+{
+	"TGLBAYAR" : "2017-10-23",
+	"NIP" : "197907202006042012",
+	"NORUT" : 1,
+	"KETER" : 1,
+	"JENISKEKURANGAN" : 1,
+	"DARI" : "2017-08-01",
+	"SAMPAI" : "2017-10-01",
+	"JISTRI" : 1,
+	"JANAK" : 1,
+	"KDSTAPEG" : 4,
+	"KDPANGKAT" : "4B",
+	"GAPOK" : 4000000,
+	"MASKER" : 30,
+	"PRSNGAPOK" : 100,
+	"KDESELON" : "00",
+	"TJESELON" : 0,
+	"KDFUNGSI" : "08725",
+	"TJFUNGSI" : 345000,
+	"KDTJKHUSUS" : "00000",
+	"TJKHUSUS" : 0,
+	"KDTKD" : 0,
+	"TJTKD" : 0,
+	"KDTERPENCIL" : 0,
+	"TJTERPENCIL" : 0,
+	"UPDSTAMP" : "2017-10-23 14:27:00",
+	"JMLBULAN" : 3,
+	"kdhitung" : 1,
+	"TARIFBERAS" : 58050,
+	"KDUKP" : 0
+}
+[create]=>data kedua
+{
+	"TGLBAYAR" : "2017-10-24",
+	"NIP" : "195401301977031001",
+	"NORUT" : 1,
+	"KETER" : 1,
+	"JENISKEKURANGAN" : 1,
+	"DARI" : "2017-08-01",
+	"SAMPAI" : "2017-10-01",
+	"JISTRI" : 1,
+	"JANAK" : 1,
+	"KDSTAPEG" : 4,
+	"KDPANGKAT" : "4B",
+	"GAPOK" : 3000000,
+	"MASKER" : 30,
+	"PRSNGAPOK" : 100,
+	"KDESELON" : "00",
+	"TJESELON" : 0,
+	"KDFUNGSI" : "08725",
+	"TJFUNGSI" : 345000,
+	"KDTJKHUSUS" : "00000",
+	"TJKHUSUS" : 0,
+	"KDTKD" : 0,
+	"TJTKD" : 0,
+	"KDTERPENCIL" : 0,
+	"TJTERPENCIL" : 0,
+	"UPDSTAMP" : "2017-10-23 14:27:00",
+	"JMLBULAN" : 3,
+	"kdhitung" : 1,
+	"TARIFBERAS" : 58050,
+	"KDUKP" : 0
+}
+===========================================================================
