@@ -1,0 +1,19 @@
+//untuk auth token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+} 
+
+//create data
+create ke 1
+{
+	"kdtrans" :208,
+	"urt" :23
+}
+create ke 2
+{
+	"kdtrans" :209,
+	"urt" :24
+}
+
+
