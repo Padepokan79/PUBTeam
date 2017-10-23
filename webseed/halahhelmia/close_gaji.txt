@@ -1,0 +1,27 @@
+@table close_gaji
+
+>>auth-token
+{
+	
+	"nama_login" : "tujuhsembilan",
+	
+	"password"   : "a"
+
+}
+
+>>create
+{
+	
+	"TGLGAJI" 	: "2017-10-23",
+	
+	"KDJNSTRANS" 	: 1,
+	
+	"STATUS" 	: 2,
+	
+	"UPDSTAMP" 	: "2017-10-26 14:57:13"
+
+}
+
+>>update
+
+>>delete
