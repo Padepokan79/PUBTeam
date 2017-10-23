@@ -1,0 +1,196 @@
+POSTMAN
+Tabel : akunsp2d
+===========================================================
+TOKKEN :
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg3NDIyNTcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODI4NjU3fQ.SFh_d48ncykkoA0hZImH1kFlaoT3W4N9wfjBbPe_0UU",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+==========================================================
+
+read tabel akunsp2d limit 5 :
+
+{
+    "totalItems": 901,
+    "items": [
+       
+ {
+            "Model_ID": "$id0=null",
+            
+"kdakun": "120.18.00.00.5.1.1.01.01      ",
+           
+ "kdskpd": "001",
+            
+"kdssbp": "001",
+           
+ "kdtrans": 101,
+            
+"nmakun": "Gaji Pokok                                        "
+        },
+       
+ {
+            "Model_ID": "$id0=null",
+           
+ "kdakun": "120.18.00.00.5.1.1.01.02      ",
+           
+ "kdskpd": "001",
+            "kdssbp": "001",
+           
+ "kdtrans": 102,
+           
+ "nmakun": "Tunjangan Keluarga                                "
+        },
+       
+ {
+            "Model_ID": "$id0=null",
+            
+"kdakun": "120.18.00.00.5.1.1.01.03      ",
+            
+"kdskpd": "001",
+            "kdssbp": "001",
+            
+"kdtrans": 103,
+           
+ "nmakun": "Tunjangan Struktural                              "
+        },
+        
+{
+            "Model_ID": "$id0=null",
+           
+ "kdakun": "120.18.00.00.5.1.1.01.04      ",
+           
+ "kdskpd": "001",
+            
+"kdssbp": "001",
+            
+"kdtrans": 104,
+           
+ "nmakun": "Tunjangan Fungsional                              "
+        },
+       
+ {
+            "Model_ID": "$id0=null",
+            
+"kdakun": "120.18.00.00.5.1.1.01.05      ",
+           
+ "kdskpd": "001",
+            
+"kdssbp": "001",
+            
+"kdtrans": 105,
+           
+ "nmakun": "Tunjangan Umum                                    "
+        }
+    
+]
+}
+
+===========================================================
+CREATE /INSERT:
+localhost:7979/api/masterdata/MdAkunsp2d/create
+
+{
+ "Model_ID": "$id0=null",
+           
+ 
+"kdakun": "120.18.00.00.5.1.1.01.04      ",
+           
+ 
+"kdskpd": "001",
+           
+ 
+"kdssbp": "002",
+            
+
+"kdtrans": 104,
+           
+
+ "nmakun": "Tunjangan Fungsional                              "
+        }
+============================================================
+READ :
+localhost:7979/api/masterdata/MdAkunsp2d/readAll?$top=5&$skip=896
+
+{
+    "totalItems": 902,
+    
+"items": [
+        {
+            "Model_ID": "$id0=null",
+            
+"kdakun": "120.18.00.00.5.1.1.01.XX      ",
+           
+ "kdskpd": "049",
+            
+"kdssbp": "001",
+            
+"kdtrans": 203,
+            
+"nmakun": "Potongan ASKES                                    "
+        },
+       
+ {
+            "Model_ID": "$id0=null",
+            
+"kdakun": "120.18.00.00.5.1.1.01.XX      ",
+            
+"kdskpd": "049",
+            
+"kdssbp": "001",
+            
+"kdtrans": 204,
+           
+ "nmakun": "Potongan Taperum                                  "
+        },
+       
+ {
+            "Model_ID": "$id0=null",
+            
+"kdakun": "120.18.00.00.5.1.1.01.XX      ",
+            
+"kdskpd": "049",
+            
+"kdssbp": "001",
+            
+"kdtrans": 205,
+            
+"nmakun": "Potongan Lain-lain                                "
+        },
+        
+{
+            "Model_ID": "$id0=null",
+            
+"kdakun": "120.18.00.00.5.1.1.01.XX      ",
+            
+"kdskpd": "049",
+            
+"kdssbp": "001",
+            
+"kdtrans": 206,
+            
+"nmakun": "Potongan Sewa Rumah                               "
+        },
+        
+{
+            "Model_ID": "$id0=null",
+            
+"kdakun": "120.18.00.00.5.1.1.01.04      ",
+            
+"kdskpd": "001",
+            
+"kdssbp": "002",
+           
+ "kdtrans": 104,
+            
+"nmakun": "Tunjangan Fungsional                              "
+        }
+    ]
+}
+=========================================================
