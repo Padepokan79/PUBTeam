@@ -1,0 +1,116 @@
+1.Nuriksan
+tampilkan NAMA,NIP,AGAMA,PENDIDIKAN,NAMAPANGKAT yg punya anak
+punya istri, gajipokok lebih dari 3 juta, agamanya islam dan status NON FUNGSIONAL
+select peg.NAMA,peg.NIP,  ag.NMAGAMA as agama, peg.PENDIDIKAN, pg.NMPANGKAT as nama_pangkat
+ from mstpegawai peg inner join  agama_tbl ag inner join  pangkat_tbl pg
+  inner join fungsional_tbl fu on peg.AGAMA=ag.KDAGAMA 
+  && peg.KDPANGKAT=pg.KDPANGKAT 
+  where peg.JISTRI>0 && peg.JANAK>0  && peg.GAPOK>3000000 
+  && fu.NM_FUNGSI='NON FUNGSIONAL' && ag.NMAGAMA='ISLAM' limit 5 ;
+  
+
+2.Halah Helmia 
+tampilkan pegawai wanita yang pendidikannya tertinggi dan gajipokoknya terkecil dan 
+tunjangan anaknya terbesar 
+ select peg.nama, peg.janak from mstpegawai peg inner join fgaji ga on peg.NIP=ga.NIP
+where peg.PENDIDIKAN='PROFESOR' and ga.GAPOK=(select min(gapok) from fgaji) and 
+ga.TJANAK=(select max(tjanak) from fgaji) and peg.KDJENKEL=2;
+
+3.Dasiah 
+tampilkan namaakun,kdakun yg apabila ada yang apabila record ada yang kosong maka akan
+langsung tertulis NULL
+select ak2.NMAKUN as NamaAkunS,akt.KDAKUN as kodeAkunT from 
+akun_tbl akt left join akunsp2d ak2  on  ak2.KDAKUN=akt.KDAKUN ;
+
+4. riyan turmudzi
+tampilkan NIP,NAMA,KDPANGKAT yang mempunyai jumlah hutang 6345000 dan cicilan 500000
+select p.NIP, p.NAMA, p.KDPANGKAT from mstpegawai p inner join 
+hutang h on p.NIP=h.NIP where h.JMLHUTANG=6345000 and h.JMLCICILAN=500000 ;
+
+5.Nurjanah
+tampilkan laki2 bujang yang tidak punya hutang dan gaji tertinggi 
+select peg.NAMA, peg.ALAMAT from mstpegawai peg inner join fgaji ga
+inner join hutang h inner join stawin_tbl kwn on peg.NIP=h.NIP && kwn.kdstawin=
+ga.KDSTAWIN where peg.KDSTAWIN=1 and h.JMLHUTANG=0 and peg.GAPOK=(select 
+max(gapok) from mstpegawai) ;
+
+6.Resti
+tampilkan NIP,NAMA,GAJI bersih janda yang status pekerjaannya sbg Penata Tk.I
+select g13.NIP, g13.NAMA, g13.BERSIH as Gaji_Bersih from gaji_13_tmp g13 join pangkat_tbl pa
+ join stawin_tbl st on g13.KDSTAWIN=st.kdstawin and  g13.KDPANGKAT=pa.KDPANGKAT
+ where st.kdstawin=3 and pa.NMPANGKAT='Penata Tk.I' limit 10;
+
+7. Nuriksan 
+Tampilkan nama pegawai yang mempunyai istri, anak >1, pangkat "Penata Muda TK.I"
+select peg.NAMA from mstpegawai peg join pangkat_tbl pang on  peg.KDPANGKAT=
+pang.KDPANGKAT where peg.JISTRI>0 && peg.JANAK>1 && pang.NMPANGKAT='Penata Tk.I'
+limit 10;
+
+8.Diah Nuraeni
+tampilkan NIP,Pendidikan yang memiliki pangkat gubernur yang bukan dari daerah terpencil
+
+
+select NIP,pendidikan from mstpegawai where kdpangkat in (
+select kdpangkat from pangkat_tbl where nmpangkat='GUBERNUR' and kdpangkat in
+(select  kdpangkat from mstpegawai where kdterpencil in(
+select kddaerah from terpencil_tbl where kddaerah=000 )));
+
+9.Yusup Abdul Qohar
+mencari jumlah pegawai yang memiliki fungsi sebagai dokter gigi muda
+select count(kdfungsi) as Dokter_Gigi_Muda from mstpegawai where kdfungsi in (
+select kdjabatan from fungsi where kdjabatan=04303 );
+
+10.Tegar Budi Septian
+tampilkan 10 nama pegawai dan nomor golongan yang gaji pokoknya diantara 2jt 
+- 25 juta
+select ga.NAMA, pa.GOL from fgaji ga join pangkat_tbl pa on ga.KDPANGKAT=pa.KDPANGKAT
+where ga.GAPOK between 2000000 and 25000000 limit 10;
+
+11.ilfa srii desy
+tampilkan detail (nama,pangkat,hutang,status kawin,nama keluarga dll) pegawai yang gapok.nya diatas rata-rata,
+select peg.NAMA, pa.nmpangkat, h.jmlhutang, st.nmstawin,kel.nmkel, his.gapok
+from mstpegawai peg inner join  hutang h inner join pangkat_tbl pa inner join historis_gapok his inner join 
+stawin_tbl st inner join keluarga kel on peg.NIP=h.NIP && peg.KDSTAWIN=st.kdstawin && 
+peg.KDPANGKAT=pa.KDPANGKAT && peg.NIP=his.NIP && peg.NIP=kel.NIP 
+where his.GAPOK>(select avg(gapok) from historis_gapok);
+
+
+12. Frida Nurhidayati
+tampilkan nama pegawai beserta golongan dan pangkat yang gaji pokoknya diatas rata-rata gaji pokok dan masa 
+kerjanya lebih dari 30 tahun
+
+select peg.NAMA, pa.GOL,pa.nmpangkat from mstpegawai peg join pangkat_tbl pa on
+peg.KDPANGKAT=pa.KDPANGKAT where peg.MASKER>30 and peg.GAPOK>(select avg(gapok)from mstpegawai );
+
+
+13.Tegar Budi Septian
+Temukan nama pangkat tertinggi
+select nmpangkat from pangkat_tbl where kdpangkat=(select max(kdpangkat) from pangkat_tbl);
+
+14.Ulil Hidayah
+tampilkan kode pangkat, nama pangkat, dan gaji bersihnya yang nama pangkatnya berawalan 'juru'
+diurutkan secara ascending berdasarkan kode_pangkat
+
+select  pa.kdpangkat,pa.nmpangkat,ga.bersih as gaji_bersih from pangkat_tbl
+pa join gaji_13_tmp ga on pa.KDPANGKAT=ga.KDPANGKAT where pa.NMPANGKAT like 'juru%'
+order by ga.KDPANGKAT asc limit 10;
+
+15.Nopan Rahmadi
+tampilkan NAMA,NIP,KDSKPD,TMTGAJI,TGLUPDATE,KDSATKER, yang tanggal stopnya null dan
+yang tmtgaji nya tahun 2011
+
+select fg.NAMA, fg.NIP, hisat.KDSKPD,hisat.TMTGAJI, hisat.TGLUPDATE ,hisat.KDSATKER
+ from fgaji fg,historis_satker hisat join historis_stapeg hista where hista.TGLSTOP is
+not   NULL and hista.TMTGAJI like '2011%'limit 5;
+
+16. Dasiah
+buatlah query sql untuk menampilkan kdakun dan namaakun yang nmskpd nya berada 
+di bengkulu
+
+select ak.kdakun,ak.nmakun from akunsp2d ak  inner  join skpd_tbl sk
+on ak.KDSSBP=sk.KDSSBP where sk.NMSKPD like '%bengkulu%' limit 5;
+
+17.Sri Sugiartini
+tampilkan nama pegawai laki-laki yang status kawinnya duda,tidak memiliki anak,
+pangkatnya 4a memiliki gaji pokok paling besar dari gaji pokok laki laki yang stawin nya 
+tidak kawin dengan pangkat penata
