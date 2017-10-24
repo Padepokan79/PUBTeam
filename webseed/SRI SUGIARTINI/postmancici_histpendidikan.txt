@@ -1,0 +1,89 @@
+POSTMAN SRI
+tabel : hist_pendidikan
+
+==========================================================
+TOKEN :
+localhost:7979/auth/token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTg0ODAsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA0ODgwfQ.zamS55dxv4bLprFiepcJkLqeMP4E-9Zs6XiiJWDIPak
+
+==========================================================
+READ AWAL:
+localhost:7979/api/masterdata/MdhistPendidikan/readAll
+HASIL :
+{
+    "totalItems": 0,
+    "items": []
+}
+
+========================================================
+CREATE:
+localhost:7979/api/masterdata/MdhistPendidikan/create
+
+{
+    "Model_ID": "$id0=-1",
+    "id": -1,
+    "kddidik": 1,
+    "nip": "1234567890",
+    "noijazah": "999888777",
+    "penerbit": "cahaya",
+    "tglijazah": "2017-09-10",
+    "tmtakhir": "2017-10-10",
+    "tmtawal": "2010-10-10"
+}
+
+HASIL READ :
+{
+    "totalItems": 1,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "kddidik": 1,
+            "nip": "1234567890",
+            "noijazah": "999888777",
+            "penerbit": "cahaya",
+            "tglijazah": "2017-09-10",
+            "tmtakhir": "2017-10-10",
+            "tmtawal": "2010-10-10",
+            "updstamp": 1508819051000
+        }
+    ]
+}
+
+=========================================================
+UPDATE :
+{
+    "Model_ID": "$id0=1234567890",
+    "kddidik": 2,
+    "nip": "1234567890",
+    "noijazah": "999888777",
+    "penerbit": "cahaya putri",
+    "tglijazah": "2017-09-10",
+    "tmtakhir": "2017-10-10",
+    "tmtawal": "2010-10-10"
+}
+
+HASIL :
+{
+    "totalItems": 1,
+    "items": [
+        {
+            "Model_ID": "$id0=1234567890",
+            "kddidik": 2,
+            "nip": "1234567890",
+            "noijazah": "999888777",
+            "penerbit": "cahaya putri",
+            "tglijazah": "2017-09-10",
+            "tmtakhir": "2017-10-10",
+            "tmtawal": "2010-10-10"
+        }
+    ]
+}
+
+============================================================
+DELETE :
+localhost:7979/api/masterdata/MdhistPendidikan/delete?nip=1234567890
+HASIL:
+{
+    "totalItems": 0,
+    "items": []
+}
