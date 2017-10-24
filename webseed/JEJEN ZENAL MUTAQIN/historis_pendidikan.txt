@@ -1,0 +1,74 @@
+1.-----------------------------------------------------------------------------
+auth-token
+localhost:7979/auth/token
+
+{
+	
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+===============================================================================
+
+2.-----------------------------------------------------------------------------
+read All
+
+localhost:7979/api/masterdata/MdHistorisPendidikan/readAll
+
+===============================================================================
+
+3.-----------------------------------------------------------------------------
+Insert data ke-1 pada tabel historis_pendidikan
+
+ {
+
+	"nip": "195811101984111002",
+
+	"jnsdidik": 1,
+
+	"kddidik": 8,
+
+	"tmtawal": "2017-10-24",
+
+	"tmtakhir": "2017-12-31",
+
+	"noijazah": "0000012345",
+
+	"tglijazah": "2015-10-10",
+
+	"penerbit": "UNAS PASIM",
+
+    	"catatan": "DATA AWAL",
+
+    	"updstanmp":"2017-10-10;10;10"
+
+}
+
+Insert data ke-1 pada tabel historis_pendidikan
+
+ {
+
+	"nip": "196606041994052001",
+
+	"jnsdidik": 1,
+
+	"kddidik": 9,
+
+	"tmtawal": "2017-10-24",
+
+	"tmtakhir": "2017-12-31",
+
+	"noijazah": "1234500000",
+
+	"tglijazah": "2015-10-10",
+
+	"penerbit": "PUB UNAS PASIM",
+
+    	"catatan": "DATA AWAL",
+
+    	"updstanmp":"2017-10-10;10;10"
+
+}
+
