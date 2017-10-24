@@ -1,0 +1,372 @@
+
+fgaji_detil_ukp	localhost:7979/auth/token	
+//AuthToken
+{
+	
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+output: 
+{
+    
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+
+    "token_type": "Bearer",
+
+    "scope": null,
+
+    "expires_in": 86400000,
+
+    "status": "success",
+
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MDk1MzksInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk1OTM5fQ.o1YTdgjzP1alZj3R-ub-aaAKcnCgJYZksqNVJi6Dztw",
+
+    "id": 79,
+
+    "nama_login": "tujuhsembilan"
+
+}
+
+//Read All	localhost:7979/api/masterdata/MdFGajiDetilUkp/readAll
+{
+    
+	"totalItems": 4959,
+
+    	"items": [
+       
+	{
+         
+	   "Model_ID": "$id0=null",
+
+            "gapokb": 1921000,
+
+            "janakb": 0,
+
+            "jistrib": 0,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "3A",
+
+            "kdstapegb": 4,
+
+            "maskerb": 8,
+
+            "nip": "197606111997032002",
+
+            "tglgaji": "2010-03-01",
+
+            "tglrencana": "2012-09-20"
+       
+ },
+
+
+ {
+            
+	    "Model_ID": "$id0=null",
+
+            "gapokb": 2604700,
+
+            "janakb": 2,
+
+            "jistrib": 1,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "3B",
+
+            "kdstapegb": 4,
+
+            "maskerb": 20,
+
+            "nip": "196503151985111001",
+
+            "tglgaji": "2010-11-01",
+
+            "tglrencana": "2012-07-19"
+
+},
+        
+{
+           "Model_ID": "$id0=null",
+
+            "gapokb": 3246500,
+
+            "janakb": 2,
+
+            "jistrib": 1,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "4B",
+
+            "kdstapegb": 4,
+
+            "maskerb": 24,
+
+            "nip": "195205111987111001",
+
+            "tglgaji": "2011-01-01",
+
+            "tglrencana": "2012-09-20"
+        
+},
+        
+{
+            "Model_ID": "$id0=null",
+
+            "gapokb": 2679400,
+
+            "janakb": 0,
+
+            "jistrib": 0,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "3D",
+
+            "kdstapegb": 4,
+
+            "maskerb": 16,
+
+            "nip": "196212301992032002",
+
+            "tglgaji": "2011-01-01",
+
+            "tglrencana": "2012-08-03"
+        
+},
+        
+{
+            "Model_ID": "$id0=null",
+
+            "gapokb": 1801100,
+       
+	     "janakb": 0,
+
+            "jistrib": 0,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+ 
+           "kdpangkatb": "2A",
+
+            "kdstapegb": 4,
+
+            "maskerb": 8,
+
+            "nip": "198205052009011021",
+
+            "tglgaji": "2011-01-01",
+
+            "tglrencana": "2012-06-26"
+        
+},
+        
+{
+            "Model_ID": "$id0=null",
+
+            "gapokb": 1801100,
+
+            "janakb": 1,
+
+            "jistrib": 1,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+  
+            "kdpangkatb": "2A",
+ 
+            "kdstapegb": 4,
+
+            "maskerb": 7,
+ 
+            "nip": "198310282009011010",
+
+            "tglgaji": "2011-01-01",
+
+            "tglrencana": "2012-06-26"
+        
+},
+        
+{
+            "Model_ID": "$id0=null",
+
+            "gapokb": 4416900,
+
+            "janakb": 0,
+
+            "jistrib": 1,
+            
+	    "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "4D",
+
+            "kdstapegb": 4,
+
+            "maskerb": 32,
+
+            "nip": "195311011978031005",
+
+            "tglgaji": "2011-02-01",
+
+            "tglrencana": "2012-07-16"
+        
+},
+        
+{
+            "Model_ID": "$id0=null",
+
+            "gapokb": 2466400,
+
+            "janakb": 2,
+            
+	    "jistrib": 1,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "3B",
+
+            "kdstapegb": 4,
+
+            "maskerb": 16,
+
+            "nip": "196912121990021001",
+
+            "tglgaji": "2011-02-01",
+
+            "tglrencana": "2012-07-19"
+        
+},
+        
+{
+            "Model_ID": "$id0=null",
+
+            "gapokb": 2788500,
+
+            "janakb": 2,
+
+            "jistrib": 1,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "3D",
+
+            "kdstapegb": 4,
+
+            "maskerb": 12,
+
+            "nip": "197012251996022001",
+
+            "tglgaji": "2011-02-01",
+
+            "tglrencana": "2012-07-18"
+        
+},
+        
+{
+            "Model_ID": "$id0=null",
+
+            "gapokb": 1801100,
+
+            "janakb": 0,
+
+            "jistrib": 0,
+ 
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "2A",
+
+            "kdstapegb": 4,
+
+            "maskerb": 8,
+
+            "nip": "198205052009011021",
+
+            "tglgaji": "2011-02-01",
+
+            "tglrencana": "2012-06-26"
+        
+}
+    
+]
+}
+
+//Create	localhost:7979/api/masterdata/MdFGajiDetilUkp/readAll/create
+Create 1
+{
+            
+	 "gapokb": 2000000,
+
+         "janakb": 1,
+
+         "jistrib": 1,
+
+         "jnskekurangan": 1,
+
+         "kdjnstrans": 4,
+
+         "kdpangkatb": "3B",
+
+         "kdstapegb": 4,
+
+         "maskerb": 2,
+
+         "nip": "197606111997032222",
+
+         "tglgaji": "2016-10-22",
+
+         "tglrencana": "2017-10-24"
+
+}
+
+
+Create 2
+{
+            
+	"gapokb": 2200000,
+
+            "janakb": 0,
+
+            "jistrib": 0,
+
+            "jnskekurangan": 1,
+
+            "kdjnstrans": 4,
+
+            "kdpangkatb": "4A",
+
+            "kdstapegb": 4,
+
+            "maskerb": 2,
+
+            "nip": "197606111997032221",
+
+            "tglgaji": "2016-10-20",
+
+            "tglrencana": "2017-10-25"
+
+}
+
+
