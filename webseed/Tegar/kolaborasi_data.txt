@@ -1,0 +1,49 @@
+/*
+Author : Tegar Budi Septian
+File Name : kolaborasi_data.txt
+Date Created : Tuesday, 24th October, 2017
+Note :there is no primary key.
+*/
+
+/*Getting token*/
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTgzNzMsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA0NzczfQ.fORpI932ajYiFjiWc7llgZ5BYjNNrmQSIdhtjy5q75Q
+
+/*Reading data from historis_fungsikhusus table.*/
+request url : localhost:7979/api/masterdata/MdKolaborasiData/readAll?$top=5&$skip=0
+
+/*Adding a data to kolaborasi_data.*/
+request url : localhost:7979/api/masterdata/MdKolaborasiData/create
+{
+	"pegawai_id" : 1,
+	"nip_lama" : "0204151036",
+	"nip_baru" : "0204151040",
+	"nama" : "Tegra Budi Septian",
+	"status_pegawai_id" : 1,
+	"status_pegawai_nama" : "Direktur",
+	"tipe_pegawai_id" : 2,
+	"tipe_pegawai_nama" : "Direktur",
+	"pangkat_id" : "4D",
+	"pangkat_nama" : "Presiden",
+	"gaji_pokok" : 1000000,
+	"masa_kerja_tahun" : 1,
+	"masa_kerja_bulan" : 6,
+	"no_sk" : "1291839",
+	"tanggal_sk" : "2017-10-24",
+	"tmt_sk" : "2017-10-24",
+	"jenis_kenaikan_id" : 1,
+	"jenis_kenaikan_nama" : "Epic",
+	"bulan_dibayar" : "2017-10-30",
+	"satuan_kerja_nama" : "Legendary",
+	"satuan_kerja_id" : "8974983274",
+	"npwp" : "3289478326478236",
+	"no_telp" : "089893473685",
+	"tanggal_update" : "2017-11-10",
+	"kdjabatan" : "4D",
+	"kdeselon" : "87",
+	"pejabat_penetap" : "shfddshf",
+	"nama_jabatan" : "Presiden"
+}
