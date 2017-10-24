@@ -1,0 +1,133 @@
+//Auth Token	localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+token:
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+
+    "token_type": "Bearer",
+
+    "scope": null,
+
+    "expires_in": 86400000,
+
+    "status": "success",
+   
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTU2NjQsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAyMDY0fQ.-K0GAZEW_qsjFvnISxbmdqpqoaZweuW2cRvn7YOVcbE",
+
+    "id": 79,
+
+    "nama_login": "tujuhsembilan"
+
+}
+
+//read all	localhost:7979/api/masterdata/MdHitungTbl/readAll
+$top=3
+$skip=0
+
+{
+    "totalItems": 13,
+
+    "items": [
+        
+	{
+            
+	"Model_ID": "$id0=1",
+
+        "kdhitung": 1,
+
+        "nmhitung": "NORMAL"
+
+        },
+        
+	{
+            
+	"Model_ID": "$id0=2",
+
+        "kdhitung": 2,
+
+        "nmhitung": "BERAS -1 JIWA"
+        
+	},
+
+        {
+            
+	"Model_ID": "$id0=3",
+
+        "kdhitung": 3,
+
+        "nmhitung": "BERAS=0"
+        
+	}
+    
+]
+}
+
+//create	//read all	localhost:7979/api/masterdata/MdHitungTbl/create
+create 1
+ {
+            
+	"kdhitung": 14,
+
+        "nmhitung": "TUNJANGAN KELUARGA 20%"
+ 
+ }
+output:
+{
+    "Model_ID": "$id0=14",
+
+    "kdhitung": 14,
+
+    "nmhitung": "TUNJANGAN KELUARGA 20%"
+
+}
+
+create 2
+ {
+            
+	"kdhitung": 15,
+
+        "nmhitung": "UDW 8x"
+ 
+}
+output:
+{
+    "Model_ID": "$id0=15",
+
+    "kdhitung": 15,
+
+    "nmhitung": "UDW 8x"
+
+}
+
+//update	//read all	localhost:7979/api/masterdata/MdHitungTbl/update?kdhitung=15
+param : kdhitung=15
+{
+	
+	"nmhitung": "UDW 7x"
+
+}
+
+output:
+{
+    
+	"Model_ID": "$id0=15",
+    
+    "kdhitung": 15,
+	
+"nmhitung": "UDW 7x"
+}
+
+//delete	localhost:7979/api/masterdata/MdHitungTbl/delete?kdhitung=15
+param : kdhitung=15
+output:
+{
+    
+	"message": "No Data Found"
+
+}
