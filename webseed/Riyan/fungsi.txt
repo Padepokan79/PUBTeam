@@ -1,0 +1,51 @@
+Nama 	: Riyan
+table	: fungsi
+
+
+1. Auth Token
+
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+====================================================
+2. Menambah data di table fungsi (CREATE)
+
+
+
+
+{
+	"namafungsi" : "Penerimaan Karyawan",
+	
+	"rp" : 500000,
+
+	"kdjabatan" : "01465",
+
+	"jml" : 5
+
+}
+
+
+
+{
+	"namafungsi" : "Dokter Bedah",
+
+	"rp" : 300000,
+
+	"kdjabatan" : "05151",
+
+	"jml" : 1
+
+}
+
+
+====================================================
+3 Update SKIP, Tidak ada Primary key
+ 
+====================================================
+4 Delete SKIP, Tidak ada Primary key
