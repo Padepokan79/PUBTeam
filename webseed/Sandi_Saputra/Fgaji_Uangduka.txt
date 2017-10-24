@@ -1,0 +1,50 @@
+Sandi Saputra
+
+1. Mengambil token
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Melakukan create data baru
+-> localhost:7979/api/masterdata/MdFgajiUangDuka/create
+-> {
+            "tglgaji": "2017-10-10",
+            "kdjnstrans": 1,
+            "Nip": "DATA001",
+            "tglwafat": "2020-10-10",
+            "tglbayar": "2017-11-11",
+            "gapok": 10000000,
+            "tjistri": 100000,
+            "tjanak": 100000,
+            "tjtpp": 100000,
+            "tjeselon": 100000,
+            "tjfungsi": 100000,
+            "tjstruk": 100000,
+            "tjguru": 100000,
+            "tjlangka": 100000,
+            "tjtkd": 100000,
+            "tjterpencil": 100000,
+            "tjkhusus": 100000,
+            "tjberas": 100000,
+            "tjpajak": 100000,
+            "tjaskes": 100000,
+            "tjumum": 100000,
+            "tjbulat": 100000,
+            "kotor": 0,
+            "bersih": 0,
+            "jnshitung": 0
+        }
+
+3. Mengubah Data
+-> localhost:7979/api/masterdata/MdFgajiUangDuka/update?id0=2017-10-10&id1=1&id2=DATA001
+-> {
+	"gapok" : 20000000
+}
+
+4. Menampilkan Data
+-> localhost:7979/api/masterdata/MdFgajiUangDuka/readAll?$top=2&$skip=0
+
+5. Menghapus Data
+-> localhost:7979/api/masterdata/MdFgajiUangDuka/delete?id0=2017-10-10&id1=1&id2=DATA001

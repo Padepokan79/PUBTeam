@@ -1,0 +1,473 @@
+				// ----> Selasa, 24 Oktober 2017 <----
+
+// ----> Tabel 1 (fgaji_04) <----
+// ----------------------------------
+
+1. auto token
+{
+
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+2. readAll
+{
+
+  "totalItems": 16869,
+
+  "items":
+ [
+
+    {
+
+      "Model_ID": "$id0=null",
+
+      "bersih": 2354800,
+
+      "catatan": "DATA MIGRASI AWAL                                 ",
+
+      "gapok": 1852500,
+      "glrbelakang": "                              ",
+
+      "glrdepan": "                              ",
+
+      "hal": 1,
+
+      "janak": 2,
+
+      "jistri": 1,
+
+      "kdberas": 2,
+
+      "kdeselon": "00",
+
+      "kdfungsi": "00000",
+
+      "kdguru": "006",
+
+      "kdhitung": 1,
+
+      "kdirdhata": "  ",
+
+      "kdjenkel": 1,
+
+      "kdjnstrans": 1,
+
+      "kdkoperasi": "  ",
+
+      "kdkorpri": "  ",
+
+      "kdlangka": 0,
+
+      "kdpangkat": "2A",
+
+      "kdsatker": "D10200612200001     ",
+
+      "kdskpd": "122",
+
+      "kdssbp": "006",
+
+      "kdstapeg": 4,
+
+      "kdstawin": 2,
+
+      "kdstruk": 0,
+
+      "kdterpencil": "000",
+
+      "kdtjkhusus": "00000",
+
+      "kdtkd": 0,
+
+      "kodebyr": "000       ",
+
+      "kotor": 2570985,
+
+      "masker": 5,
+
+      "nama": "SUANDI",
+
+      "nip": "196811052007011019",
+
+      "niplama": "450019147",
+
+      "nodosir": "0         ",
+
+      "norek": "                                        ",
+
+      "npwp": "                    ",
+
+      "nu": 1,
+      "paskes": 0,
+
+      "pbulog": 0,
+
+      "phutang": 0,
+
+      "pirdhata": 0,
+
+      "piwp": 211185,
+
+      "pkoperasi": 0,
+
+      "pkorpri": 0,
+
+      "potongan": 216185,
+
+      "ppajak": 0,
+
+      "prsngapok": 100,
+
+      "psewa": 0,
+
+      "ptaperum": 5000,
+
+      "tbulat": 95,
+
+      "tglgaji": "2014-04-01",
+
+      "tgllhr": "1968-11-05",
+
+      "tjanak": 74100,
+
+      "tjaskes": 0,
+
+      "tjberas": 279040,
+
+      "tjeselon": 0,
+
+      "tjfungsi": 0,
+
+      "tjguru": 0,
+
+      "tjistri": 185250,
+
+      "tjkhusus": 0,
+
+      "tjlangka": 0,
+
+      "tjpajak": 0,
+
+      "tjstruk": 0,
+
+      "tjterpencil": 0,
+
+      "tjtkd": 0,
+
+      "tjtpp": 0,
+
+      "tjumum": 180000,
+
+      "tmttabel": "2013-01-01"
+
+    }
+
+  ]
+
+}
+
+3. create
+{
+	"TGLGAJI" : "2014-04-01" ,
+	"KDJNSTRANS" : 1 ,
+	"NIP" : "196811052007011027" ,
+	"NAMA" : "Dasiah" ,
+	"GLRDEPAN" : "Drs, " ,
+	"GLRBELAKANG" : "S.Kom" ,
+	"KDJENKEL" : 1 ,
+	"TGLLHR" : "1997-08-07" ,
+	"KDSTAWIN" : 1 ,
+	"JISTRI" : 0 ,
+	"JANAK" : 0 ,
+	"KDSTAPEG" : 4 ,
+	"TMTSTOP" : "0000-00-00" ,
+	"KDPANGKAT" : "2A" ,
+	"MASKER" : 3 ,
+	"PRSNGAPOK" : 100.00 ,
+	"TMTTABEL" : "2013-01-01" ,
+	"KDESELON" : "00" ,
+	"KDFUNGSI" : "00000" ,
+	"KDGURU" : "006" ,
+	"KDSTRUK" : 0 ,
+	"KDBERAS" : 0 ,
+	"KDLANGKA" : 0 ,
+	"KDTERPENCIL" : "000" ,
+	"KDTKD" : 0 ,
+	"KDTJKHUSUS" : "00000" ,
+	"KDKORPRI" : "" ,
+	"KDKOPERASI" : "" ,
+	"KDIRDHATA" : "" ,
+	"GAPOK" : 3000000 ,
+	"TJISTRI" : 0 ,
+	"TJANAK" : 0 ,
+	"TJTPP" : 0 ,
+	"TJESELON" : 0 ,
+	"TJFUNGSI" : 0 ,
+	"TJSTRUK" : 0 ,
+	"TJGURU" : 0 ,
+	"TJLANGKA" : 0 ,
+	"TJTKD" : 0 ,
+	"TJTERPENCIL" : 0 ,
+	"TJKHUSUS" : 0 ,
+	"TJBERAS" : 0 ,
+	"TJPAJAK" : 100000 ,
+	"TJASKES" : 0 ,
+	"TJUMUM" : 0 ,
+	"TBULAT" : 7 ,
+	"KOTOR" : 4000000 ,
+	"PIWP" : 100000 ,
+	"PASKES" : 0 ,
+	"PPAJAK" : 0 ,
+	"PBULOG" : 0 ,
+	"PTAPERUM" : 5000 ,
+	"PSEWA" : 0 ,
+	"PHUTANG" : 0 ,
+	"PKORPRI" : 0 ,
+	"PIRDHATA" : 0 ,
+	"PKOPERASI" : 0 ,
+	"POTONGAN" : 100000 ,
+	"BERSIH" : 3500000 ,
+	"NODOSIR" : "0" ,
+	"KDSSBP" : "006" ,
+	"KDSKPD" : 122 ,
+	"KDSATKER" : "D10200612200001" ,
+	"NPWP" : "" ,
+	"NIPLAMA" : "450019147" ,
+	"KDHITUNG" : 1 ,
+	"KODEBYR" : "000" ,
+	"NOREK" : "" ,
+	"CATATAN" : "DATA MIGRASI AWAL" ,
+	"NU" : 1 ,
+	"HAL" : 1 
+}
+
+// ----> Tabel 2 (f_spt) <----
+// ----------------------------------
+1. auto token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+
+2. readAll
+{
+  "totalItems": 13008,
+  "items": [
+    {
+      "Model_ID": "$id0=null",
+      "kdsatker": "                    ",
+      "kdskpd": "   ",
+      "nama": "HERAWATI S.PD                                     ",
+      "nip": "197906252007012003",
+      "nourt": 1,
+      "th_pajak": 2016
+    },
+    {
+      "Model_ID": "$id0=null",
+      "kdsatker": "                    ",
+      "kdskpd": "   ",
+      "nama": "VIVIEN OKTAVIANTI                                 ",
+      "nip": "198110212005022002",
+      "nourt": 2,
+      "th_pajak": 2016
+    },
+    {
+      "Model_ID": "$id0=null",
+      "kdsatker": "                    ",
+      "kdskpd": "   ",
+      "nama": "ITA DESTI                                         ",
+      "nip": "198411262014022001",
+      "nourt": 3,
+      "th_pajak": 2016
+    }
+  ]
+}
+
+3. create
+{
+  "Model_ID": "$id0=-1",
+  "id": -1,
+  "kdsatker": "",
+  "kdskpd": "",
+  "nama": "Dasiah S.Kom",
+  "nip": "197906252007012027",
+  "nourt": 1,
+  "th_pajak": 2.16
+}
+
+
+
+// ----> Tabel 3 (jadual_hutang) <----
+// ----------------------------------
+1. auto token 
+{
+  "password": "0cc175b9c0f1b6a831c399e269772661",
+  "token_type": "Bearer",
+  "scope": null,
+  "expires_in": 86400000,
+  "status": "success",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTU0NTYsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAxODU2fQ.EcDAR8Jc_mwRNSooHbk14m1GWnK-UpjDQaZmOSVq2aU",
+  "id": 79,
+  "nama_login": "tujuhsembilan"
+}
+
+2. read all
+{
+  "totalItems": 0,
+  "items": []
+}
+
+3. create
+{
+  "Model_ID": "$id0=-1",
+  "id": -1,
+  "jumlah": 10,
+  "kd_lunas": 102,
+  "kode_lbg": "008",
+  "nip": "196811052007011027",
+  "tgl_lunas": "2017-08-07",
+  "tgl_potong": "2016-08-07",
+  "urut": 7
+}
+
+
+// ----> Tabel 4 (jabatan_fungsi) <----
+// ----------------------------------
+1. auto token 
+{
+  "password": "0cc175b9c0f1b6a831c399e269772661",
+  "token_type": "Bearer",
+  "scope": null,
+  "expires_in": 86400000,
+  "status": "success",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTgyMzYsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA0NjM2fQ.hbJVX1JE1lBO_h1_0m2zYnF1fj7Iim1qAa-uvsZcr9M",
+  "id": 79,
+  "nama_login": "tujuhsembilan"
+}
+
+2. read All
+{
+  "totalItems": 39,
+  "items": [
+    {
+      "Model_ID": "$id0=null",
+      "kdfungsi": 0,
+      "nmfungsi": "NON JABATAN"
+    },
+    {
+      "Model_ID": "$id0=null",
+      "kdfungsi": 1,
+      "nmfungsi": "FUNGSIONAL HUB.MASYARAKAT"
+    },
+    {
+      "Model_ID": "$id0=null",
+      "kdfungsi": 2,
+      "nmfungsi": "FUNGSIONAL PENELITI"
+    }
+  ]
+}
+
+3. create
+{
+  "Model_ID": "$id0=-1",
+  "id": -1,
+  "kdfungsi": 39,
+  "nmfungsi": "PENGAWASAN BADAY"
+}
+
+4. update
+{
+  "Model_ID": "$id0=null",
+  "kdfungsi": 39,
+  "nmfungsi": "PENGAWASAN KECE BADAY"
+}
+
+// ----> Tabel 5 (otostruk) <----
+// ----------------------------------
+-------> Data Kosong <------------
+1. auto token
+{
+  "password": "0cc175b9c0f1b6a831c399e269772661",
+  "token_type": "Bearer",
+  "scope": null,
+  "expires_in": 86400000,
+  "status": "success",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MzEwOTEsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTE3NDkxfQ.ALPGzsBAGbbxQGAVjNzVvxLVboXM-RUiCLOAdFz7aGE",
+  "id": 79,
+  "nama_login": "tujuhsembilan"
+}
+
+2. create
+{
+  "Model_ID": "$id0=null&$id1=null&$id2=null",
+  "blbayar": 10,
+  "identitas": "x",
+  "jabkp4": "x",
+  "judul1": "x",
+  "judul2": "x",
+  "kdberas": 0,
+  "kdjnstrans": "2016-08-07 15:06:19",
+  "kdjudul": 0,
+  "kdsatker": "003",
+  "kdskpd": "002",
+  "kdssbp": "001",
+  "kdtdt": 0,
+  "nipatas": "x",
+  "nipbend": "x",
+  "nipbuat": "x",
+  "nipkk": "x",
+  "nipkp4": "x",
+  "niptrek": "x",
+  "nmatas": "x",
+  "nmbend": "x",
+  "nmbuat": "x",
+  "nmkk": "x",
+  "nmkp4": "x",
+  "nmtrek": "x",
+  "norek": "x",
+  "npwp": "x",
+  "tgbuat": "2016-09-07",
+  "thbayar": 10,
+  "tpbayar": "x",
+  "tpbuat": "x",
+  "urutcet": 0
+}
+
+3. update (masih data not found)
+{
+	"KDSSBP" : "001" ,
+	"KDSKPD" : "002" ,
+	"KDSATKER" : "003" ,
+	"KDJNSTRANS" : "2016-08-07 15:06:19" ,
+	"BLBAYAR" : 10 ,
+	"THBAYAR" : 10 ,
+	"TPBUAT" : "x" ,
+	"TGBUAT" : "2016-09-07" ,
+	"TPBAYAR" : "x" ,
+	"NOREK" : "x" ,
+	"NPWP" : "x" ,
+	"NIPBUAT" : "x" ,
+	"NIPKK" : "x" ,
+	"NMKK" : "x" ,
+	"NMBUAT" : "x" ,
+	"NIPBEND" : "x" ,
+	"NMBEND" : "x" ,
+	"NIPATAS" : "x" ,
+	"NMATAS" : "x" ,
+	"NIPTREK" : "x" ,
+	"NMTREK" : "x" ,
+	"KDBERAS" : 0 ,
+	"KDJUDUL" : 0 ,
+	"URUTCET" : 0 ,
+	"KDTDT" : 0 ,
+	"IDENTITAS" : "x" ,
+	"JUDUL1" : "Dasiah Kece Baday" ,
+	"JUDUL2" : "x" ,
+	"NIPKP4" : "x" ,
+	"NMKP4" : "x" ,
+	"JABKP4" : "x"
+}
+
+
