@@ -1,0 +1,134 @@
+[auth token iuran_jkkjkm]
+localhost:7979/auth/token
+//di body
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTU0NTEsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAxODUxfQ.1dCHobTdJsKkqZz9x89Zvvbm0XLZrO7jg53fUHSKCxg
+
+===========================================================================
+[readAll]
+localhost:7979/api/masterdata/MdIuranJkkjkm/readAll?$top=5&$skip=0
+//output
+{
+    "totalItems": 49091,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "gapok": 4078100,
+            "iuran_jkk": 0,
+            "iuran_jkm": 0,
+            "kdjnstrans": 1,
+            "kdsatker": "D10200101400013",
+            "kdskpd": "014",
+            "nip": "010122831",
+            "tglgaji": "2017-04-01",
+            "updstamp": 1489635712000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "gapok": 5227600,
+            "iuran_jkk": 0,
+            "iuran_jkm": 0,
+            "kdjnstrans": 1,
+            "kdsatker": "D10200100700001",
+            "kdskpd": "007",
+            "nip": "195105061979031003",
+            "tglgaji": "2015-10-01",
+            "updstamp": 1442200949000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "gapok": 5227600,
+            "iuran_jkk": 0,
+            "iuran_jkm": 0,
+            "kdjnstrans": 1,
+            "kdsatker": "D10200100700001",
+            "kdskpd": "007",
+            "nip": "195105061979031003",
+            "tglgaji": "2015-11-01",
+            "updstamp": 1444878963000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "gapok": 5227600,
+            "iuran_jkk": 0,
+            "iuran_jkm": 0,
+            "kdjnstrans": 1,
+            "kdsatker": "D10200100700001",
+            "kdskpd": "007",
+            "nip": "195105061979031003",
+            "tglgaji": "2015-12-01",
+            "updstamp": 1447397364000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "gapok": 5227600,
+            "iuran_jkk": 0,
+            "iuran_jkm": 0,
+            "kdjnstrans": 1,
+            "kdsatker": "D10200100700001",
+            "kdskpd": "007",
+            "nip": "195105061979031003",
+            "tglgaji": "2016-03-01",
+            "updstamp": 1455847675000
+        }
+    ]
+}
+
+===========================================================================
+[create]
+localhost:7979/api/masterdata/MdIuranJkkjkm/create
+//dibody
+{
+	"nip" : "132279450",
+	"tglgaji" : "2017-10-01",
+	"KdJnsTrans" : 1,
+	"kdskpd" : "014",
+	"kdsatker" : "D10200101400013",
+	"Gapok" : 10000000,
+	"iuran_jkk" : 10000,
+	"iuran_jkm" : 20000,
+	"updstamp" : "2017-10-24 10:34:11"
+}
+//output
+{
+    "Model_ID": "$id0=-1",
+    "gapok": 10000000,
+    "id": -1,
+    "iuran_jkk": 10000,
+    "iuran_jkm": 20000,
+    "kdjnstrans": 1,
+    "kdsatker": "D10200101400013",
+    "kdskpd": "014",
+    "nip": "132279450",
+    "tglgaji": "2017-10-01",
+    "updstamp": "2017-10-24 10:34:11"
+}
+
+=================================================================================
+[update]
+localhost:7979/api/masterdata/MdIuranJkkjkm/update?id0=010122831&id1=2017-04-01&id2=1
+//di body mengubah gapok menjadi 50000000 yg NIP nya 132279450
+{
+	"Gapok" : 50000000
+}
+//output
+{
+    "Model_ID": "$id0=null",
+    "gapok": 50000000,
+    "iuran_jkk": 10000,
+    "iuran_jkm": 20000,
+    "kdjnstrans": 1,
+    "kdsatker": "D10200101400013",
+    "kdskpd": "014",
+    "nip": "132279450",
+    "tglgaji": "2017-10-01",
+    "updstamp": 1508816051000
+}
+==================================================================================
+[delete]
+localhost:7979/api/masterdata/MdIuranJkkjkm/delete?id0=010122831&id1=2017-04-01&id2=1
+menghapus yang nip nya 132279450
