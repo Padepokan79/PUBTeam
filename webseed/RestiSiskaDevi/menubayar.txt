@@ -1,0 +1,41 @@
+//JURUBAYAR
+
+1. token
+url:localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read
+
+url: localhost:7979/api/masterdata/MdMenuBayar/readAll
+
+2. create
+
+url: localhost:7979/api/masterdata/MdMenuBayar/create
+{
+
+            "kodebyr": "004",
+
+            "nmbayar": "TUNAI"
+
+}
+
+
+3. update kodebyr: 004
+
+localhost:7979/api/masterdata/MdJuruBayar/update?kodebyr=004
+
+{
+
+            "nmbayar": "BCA"
+}
+
+4. delete kodebyr: 004
+
+localhost:7979/api/masterdata/MdJuruBayar/delete?kodebyr=004
