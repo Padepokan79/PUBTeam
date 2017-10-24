@@ -1,0 +1,58 @@
+tabel  mutasi_skep
+
+localhost:7979/api/masterdata/MdMutasiSkep/readAll
+
+localhost:7979/api/masterdata/MdMutasiSkep/create
+1. create/insert
+{
+
+	"nip":"1234567890",
+
+	"noagenda":"vxfrt",
+
+	"jenissk":1,
+
+	"nomorskep":"0987654321",
+
+	"penerbitskep":"skpd01",
+
+	"tanggalskep":"2017-08-09",
+
+	"perihalskep":"Salah",
+
+	"kdpangkat":"4a",
+
+	"gapok":32000000,
+
+	"masker":7,
+
+	"kdeselon":"a4",
+
+	"tjeselon":0,
+
+	"kdfungsi":"kd43",
+
+	"tjfungsi":0,
+
+	"kdtjkhusus":"jh3",
+
+	"tjkhusus":0,
+
+	"tglupdate":"2017-10-10",
+
+	"tmtberlaku":"2017-11-11"
+
+}
+
+localhost:7979/api/masterdata/MdMutasiSkep/create
+2. update
+parameter : id0=1234567987
+            id1=vxfppp
+{
+		"gapok":33000000
+}
+
+localhost:7979/api/masterdata/MdMutasiSkep/delete?id0=1234567987&id1=vxfppp
+3. delete
+parameter : id0=1234567987
+            id1=vxfppp
