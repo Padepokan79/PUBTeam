@@ -1,0 +1,50 @@
+//MENUTBL yang tidak ada primary-nya
+
+1. token
+
+url: localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read
+
+url:localhost:7979/api/masterdata/MdMenuTbl/readAll
+
+3. create
+
+url:localhost:7979/api/masterdata/MdMenuTbl/create
+
+ {
+
+            "mkey": "AC",
+            "mparent": "AC1",
+
+            "mtext": "Accounting",
+
+            "namaform": " ",
+
+            "mImage": null
+
+ }
+
+4. update mkey: AC
+
+url: localhost:7979/api/masterdata/MdMenuTbl/update?Mkey=AC
+
+{
+
+
+            "mtext": "Accounting One"
+
+
+}
+
+5. delete mkey : Ac
+
+localhost:7979/api/masterdata/MdMenuTbl/delete?mkey=AC
