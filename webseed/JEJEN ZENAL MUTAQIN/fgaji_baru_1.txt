@@ -1,0 +1,339 @@
+1.-----------------------------------------------------------------------------
+auth-token
+localhost:7979/auth/token
+
+{
+	
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+===============================================================================
+
+2.-----------------------------------------------------------------------------
+read All
+
+localhost:7979/api/masterdata/MdFgaji_baru_1/readAll
+
+===============================================================================
+
+3.-----------------------------------------------------------------------------
+Insert data ke-1 pada tabel fgaji_baru_1
+
+{
+	
+    "tglgaji": "2017-10-24",
+
+    "kdjnstrans": 1,
+
+    "nip": "195811101984111002",
+
+    "nama": "SUKIRMAN, S.PD",
+
+    "glrdepan": "",
+
+    "glrbelakang": "",
+
+    "kdjenkel": 1,
+
+    "tgllhr": "1958-11-10",
+
+    "kdstawin": 2,
+
+    "jistri": 1,
+
+    "janak": 1,
+
+    "kdstapeg": 4,
+
+    "tmtstop":null,
+
+    "kdpangkat": "4A",
+
+    "masker": 24,
+
+    "prsngapok": 100,
+
+    "tmttabel": "2017-10-23",
+
+    "kdeselon": "3A",
+
+    "kdfungsi": "08704",
+
+    "kdguru": "004",
+
+    "kdstruk": 0,
+
+    "kdberas": 2,
+
+    "kdlangka": 0,
+
+    "kdterpencil": "000",
+
+    "kdtkd": 0,
+
+    "kdtjkhusus": "00000",
+
+    "kdkorpri": "  ",
+
+    "kdkoperasi": "  ",
+
+    "kdirdhata": "  ",
+
+    "gapok": 20000000,
+
+    "tjistri": 374370,
+
+    "tjanak": 74874,
+
+    "tjtpp": 0,
+
+    "tjeselon": 389000,
+
+    "tjfungsi": 510000,
+
+    "tjstruk": 0,
+
+    "tjguru": 0,
+
+    "tjlangka": 0,
+
+    "tjtkd": 0,
+
+    "tjterpencil": 0,
+
+    "tjkhusus": 0,
+
+    "tjberas": 209280,
+
+    "tjpajak": 99495,
+
+    "tjaskes": 0,
+
+    "tjumum": 0,
+
+    "tbulat": 78,
+
+    "kotor": 4890789,
+    
+"piwp": 419294,
+
+    "paskes": 0,
+
+    "ppajak": 91920,
+
+    "pbulog": 0,
+
+    "ptaperum": 10000,
+
+    "psewa": 0,
+
+    "phutang": 0,
+
+    "pkorpri": 0,
+
+    "pirdhata": 0,
+ 
+   "pkoperasi": 0,
+
+    "potongan": 10,
+
+    "bersih": 4362000,
+
+    "nodosir": "0",
+
+    "kdssbp": "006",
+
+    "kdskpd": "015",
+
+    "kdsatker": "D10200611200020",
+
+    "npwp": "",
+
+    "niplama": "450005889",
+
+    "kdhitung": 1,
+
+    "kodebyr": "000",
+
+    "norek":"",
+
+    "catatan": "DATA MIGRASI AWAL",
+ 
+    "tglbayar": "2017-10-29",
+
+    "kdposting":0,
+
+    "nourut":1,
+
+    "jeniskekurangan":1
+ 
+}            
+
+
+Insert data ke-1 pada tabel fgaji_baru_1
+
+{
+
+    "tglgaji": "2017-10-24",
+
+    "kdjnstrans": 1,
+
+    "nip": "196606041994052001",
+
+    "nama": "HARTATI SUMARNI",
+
+    "glrdepan": "",
+
+    "glrbelakang": "",
+
+    "kdjenkel": 2,
+
+    "tgllhr": "1966-06-04",
+
+    "kdstawin": 2,
+
+    "jistri": 1,
+
+    "janak": 2,
+
+    "kdstapeg": 4,
+
+    "tmtstop":null,
+
+    "kdpangkat": "3C",
+
+    "masker": 14,
+    "prsngapok": 100,
+
+    "tmttabel": "2017-10-24",
+
+    "kdeselon": "00",
+
+    "kdfungsi": "08703",
+
+    "kdguru": "004",
+
+    "kdstruk": 0,
+    "kdberas": 2,
+
+    "kdlangka": 0,
+
+    "kdterpencil": "000",
+
+    "kdtkd": 0,
+
+    "kdtjkhusus": "00000",
+
+    "kdkorpri": "  ",
+    "kdkoperasi": "  ",
+
+    "kdirdhata": "  ",
+
+    "gapok": 2951100,
+
+    "tjistri": 295110,
+
+    "tjanak": 118044,
+
+    "tjtpp": 0,
+
+    "tjeselon": 389000,
+
+    "tjfungsi": 327000,
+
+    "tjstruk": 0,
+
+    "tjguru": 0,
+
+    "tjlangka": 0,
+
+    "tjtkd": 0,
+
+    "tjterpencil": 0,
+
+    "tjkhusus": 0,
+
+    "tjberas": 279040,
+
+    "tjpajak": 79345,
+
+    "tjaskes": 0,
+
+    "tjumum": 0,
+
+    "tbulat": 31,
+
+    "kotor": 4049670,
+    
+"piwp": 336425,
+
+    "paskes": 0,
+
+    "ppajak": 79345,
+
+    "pbulog": 0,
+
+    "ptaperum": 7000,
+
+    "psewa": 0,
+
+    "phutang": 0,
+
+    "pkorpri": 0,
+    "pirdhata": 0,
+ 
+    "pkoperasi": 0,
+
+    "potongan": 422770,
+
+    "bersih": 3626900,
+
+    "nodosir": "0",
+
+    "kdssbp": "006",
+
+    "kdskpd": "112",
+
+    "kdsatker": "D10200611200026",
+
+    "npwp": "",
+
+    "niplama": "132076985",
+
+    "kdhitung": 1,
+
+    "kodebyr": "000",
+
+    "norek":"",
+
+    "catatan": "DATA MIGRASI AWAL",
+
+    "tglbayar": "2017-10-31",
+
+    "kdposting":0,
+    "nourut":1,
+
+    "jeniskekurangan":1
+ 
+}   
+
+
+===============================================================================
+
+4.-----------------------------------------------------------------------------
+Update data pada tabel fgaji_baru_1         
+localhost:7979/api/masterdata/MdFgaji01/update?id0=2017-10-24&id1=1&id2=195811101984111002
+{
+	"gapok":30000000
+}
+
+===============================================================================
+
+5.-----------------------------------------------------------------------------
+delete data pada tabel fgaji_baru_1         
+
+
+localhost:7979/api/masterdata/MdFgaji01/delete?id0=2017-10-24&id1=1&id2=195811101984111002
