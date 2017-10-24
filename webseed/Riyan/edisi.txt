@@ -1,0 +1,43 @@
+Nama 	: Riyan
+Table	: Edisi
+
+
+1. auth token
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+
+2. Menambah data di table Edisi
+
+/// ke-1
+{
+	"TGLDB" : "2017-10-23",
+
+	"TGLEDISI" : "2016-10-23",
+
+	"KETERANGAN" : "CREATE KE 1"
+
+}
+
+
+/// ke-2
+{
+	
+	"TGLDB" : "2017-10-25",
+	
+	"TGLEDISI" : "2016-10-25",
+	
+	"KETERANGAN" : "CREATE KE 2"
+
+}
+
+
+3. Update SKIP
+
+4. Delete SKIP
+
