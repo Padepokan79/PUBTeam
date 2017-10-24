@@ -1,0 +1,170 @@
+[auth token gajib]
+localhost:7979/auth/token
+//di body
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTE1MTQsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk3OTE0fQ.5Ee7w84GphHZ1qxxQPJwlrFwuReI9AbWM_mB58AzE1E
+
+=============================================================================================
+[readAll]
+localhost:7979/api/masterdata/MdGajiB/readAll?$top=5&$skip=0
+//ditampilkan hanya 5 rows
+{
+    "totalItems": 4762,
+    "items": [.....]}
+
+======================================================================================
+[create]
+localhost:7979/api/masterdata/MdGajiB/create
+//dibody
+{
+	"KD" : "ilfa",
+	"SATKER" : "sri desy",
+	"NAMASAT" : "18, DINAS KESEHATAN",
+	"NOTTL" : 1029,
+	"NO" : 29,
+	"NAMA" : "ILFA SRI DESY",
+	"GLRDEPAN" : "A",
+	"GLRBELAKANG" : "B",
+	"SEX" : "1",
+	"KDJENKEL" : "1",
+	"TGLAHIR" : "1997-12-06",
+	"TGLLHR" : "1997-12-06",
+	"NIP" : "140296990",
+	"AGAMA" : "1",
+	"KDAKTIF" : "12",
+	"KDSTAPEG" : "12",
+	"PKT" : "III/C-PNS",
+	"PKT1" : "III/C",
+	"PKT2" : "PNS",
+	"JNS" : "K",
+	"STAWIN" : "1",
+	"KDSTAWIN" : "1",
+	"ISTRI" : "1",
+	"JISTRI" : "1",
+	"ANAK" : "1",
+	"JANAK" : "1",
+	"ESELON" : "4A",
+	"FUNGSI" : "A39",
+	"MKG" : "12",
+	"MKGOLT" : "12",
+	"GOLONGAN" : "3C",
+	"KDPANGKAT" : "3C",
+	"GAPOK" : 10000000,
+	"TISTRI" : 1000000,
+	"TESELON" : 500000,
+	"TFUNGSI" : 200000,
+	"TBERAS" : 200000,
+	"TANAK" : 0,
+	"T_ISTRI" : 100000,
+	"T_ANAK" : 80000,
+	"BERAS" : 200000,
+	"KDFUNGSI" : "00000"
+}
+//output
+{
+    "Model_ID": "$id0=-1",
+    "agama": "1",
+    "anak": "1",
+    "beras": 200000,
+    "eselon": "4A",
+    "fungsi": "A39",
+    "gapok": 10000000,
+    "glrdepan": "A",
+    "golongan": "3C",
+    "id": -1,
+    "istri": "1",
+    "janak": "1",
+    "jistri": "1",
+    "jns": "K",
+    "kd": "ilfa",
+    "kdaktif": "12",
+    "kdfungsi": "00000",
+    "kdjenkel": "1",
+    "kdpangkat": "3C",
+    "kdstapeg": "12",
+    "kdstawin": "1",
+    "mkg": "12",
+    "mkgolt": "12",
+    "nama": "ILFA SRI DESY",
+    "namasat": "18, DINAS KESEHATAN",
+    "nip": "140296990",
+    "no": 29,
+    "nottl": 1029,
+    "pkt": "III/C-PNS",
+    "pkt1": "III/C",
+    "pkt2": "PNS",
+    "satker": "sri desy",
+    "sex": "1",
+    "stawin": "1",
+    "t_anak": 80000,
+    "t_istri": 100000,
+    "tanak": 0,
+    "tberas": 200000,
+    "teselon": 500000,
+    "tfungsi": 200000,
+    "tglahir": "1997-12-06",
+    "tgllhr": "1997-12-06",
+    "tistri": 1000000
+}
+
+====================================================================================
+[update]
+localhost:7979/api/masterdata/MdGajiB/update?id=140296990
+//di body
+{
+	"NAMA" : "ILFA CANTIK"
+}
+//output
+{
+    "Model_ID": "$id0=null",
+    "agama": "1",
+    "anak": "2",
+    "beras": 226240,
+    "eselon": "4A",
+    "fungsi": "",
+    "gapok": 2190700,
+    "glrbelakan": "",
+    "glrdepan": "",
+    "golongan": "3C",
+    "istri": "1",
+    "janak": "2",
+    "jistri": "1",
+    "jns": "K",
+    "kd": "",
+    "kdaktif": "12",
+    "kdfungsi": "00000",
+    "kdjenkel": "1",
+    "kdpangkat": "3C",
+    "kdstapeg": "12",
+    "kdstawin": "1",
+    "mkg": "12",
+    "mkgolt": "12",
+    "nama": "ILFA CANTIK",
+    "namasat": "18, DINAS KESEHATAN",
+    "nip": " 140296990",
+    "no": 89,
+    "nottl": 1029,
+    "pkt": "III/C - PNS",
+    "pkt1": "III/C",
+    "pkt2": "PNS",
+    "satker": "",
+    "sex": "1",
+    "stawin": "1",
+    "t_anak": 87628,
+    "t_istri": 219070,
+    "tberas": 226240,
+    "teselon": 540000,
+    "tfungsi": 0,
+    "tglahir": "1973-10-11",
+    "tgllhr": "1973-10-11",
+    "tistri": 219070
+}
+
+================================================================================================
+[delete]
+localhost:7979/api/masterdata/MdGajiB/delete?id=140296990
+//data ILFA CANTIK terhapus

@@ -1,0 +1,178 @@
+[aunt token]
+localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MzIxMTYsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTE4NTE2fQ.l3vKrwxJl__QUqy_sZ1RPsvEwYbPl-j7pJUsOtOEFO4
+
+==========================================================================================
+
+[readAll]
+localhost:7979/api/masterdata/MdMstPegawai04a/readAll?$top=1&$skip=0
+//output
+{
+    "totalItems": 4203,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "agama": 1,
+            "alamat": "",
+            "blgolt": 0,
+            "bup": 60,
+            "catatan": "DATA MIGRASI AWAL",
+            "gapok": 3861600,
+            "glrbelakang": "",
+            "glrdepan": "",
+            "inputer": "TASPEN",
+            "janak": 2,
+            "jistri": 0,
+            "kdberas": 2,
+            "kdcabtaspen": "102",
+            "kddati1": "",
+            "kddati2": "",
+            "kddati3": "",
+            "kddati4": "",
+            "kdeselon": "00",
+            "kdfungsi": "08704",
+            "kdguru": "000",
+            "kdhitung": 1,
+            "kdirdhata": "",
+            "kdjenkel": 0,
+            "kdjnstrans": 1,
+            "kdkoperasi": "",
+            "kdkorpri": "",
+            "kdlangka": 0,
+            "kdpangkat": "4A",
+            "kdsatker": "D10200610000008",
+            "kdskpd": "100",
+            "kdssbp": "006",
+            "kdstapeg": 4,
+            "kdstawin": 3,
+            "kdstruk": 0,
+            "kdterpencil": "000",
+            "kdtjkhusus": "00000",
+            "kdtkd": 0,
+            "kodebyr": "000",
+            "masker": 26,
+            "mkgolt": 26,
+            "nama": "ROSMAWATI. BA",
+            "nip": "195711101981112003",
+            "nip_lama": "130946600",
+            "niplama": "130946600",
+            "nodosir": "0",
+            "nokarpeg": "",
+            "norek": "",
+            "notelp": "",
+            "npwp": "",
+            "pendidikan": "SARJANA",
+            "pirdhata": 0,
+            "pkoperasi": 0,
+            "pkorpri": 0,
+            "prsngapok": 100,
+            "psewa": 0,
+            "taperum": 10000,
+            "tempatlhr": "",
+            "tgllhr": "1957-11-10",
+            "tjeselon": 0,
+            "tjfungsi": 389000,
+            "tjguru": 0,
+            "tjkhusus": 0,
+            "tjlangka": 0,
+            "tjstruk": 0,
+            "tjterpencil": 0,
+            "tjtkd": 0,
+            "tmtberlaku": "2014-04-01",
+            "tmtcapeg": "2006-04-01",
+            "tmtskmt": "2006-04-01",
+            "tmttabel": "2013-01-01"
+        }
+    ]
+}
+
+=========================================================================================
+[create]
+localhost:7979/api/masterdata/MdMstPegawai04a/create
+//di body
+{
+	"agama": 1,
+    "alamat": "",
+    "blgolt": 0,
+    "bup": 60,
+    "catatan": "DATA MIGRASI AWAL",
+    "gapok": 3861600,
+            "glrbelakang": "",
+            "glrdepan": "",
+            "inputer": "TASPEN",
+            "janak": 2,
+            "jistri": 0,
+            "kdberas": 2,
+            "kdcabtaspen": "102",
+            "kddati1": "",
+            "kddati2": "",
+            "kddati3": "",
+            "kddati4": "",
+            "kdeselon": "00",
+            "kdfungsi": "08704",
+            "kdguru": "000",
+            "kdhitung": 1,
+            "kdirdhata": "",
+            "kdjenkel": 0,
+            "kdjnstrans": 1,
+            "kdkoperasi": "",
+            "kdkorpri": "",
+            "kdlangka": 0,
+            "kdpangkat": "4A",
+            "kdsatker": "D10200610000008",
+            "kdskpd": "100",
+            "kdssbp": "006",
+            "kdstapeg": 4,
+            "kdstawin": 3,
+            "kdstruk": 0,
+            "kdterpencil": "000",
+            "kdtjkhusus": "00000",
+            "kdtkd": 0,
+            "kodebyr": "000",
+            "masker": 26,
+            "mkgolt": 26,
+            "nama": "ilfa",
+            "nip": "100000000000000000",
+            "nip_lama": "130946600",
+            "niplama": "130946600",
+            "nodosir": "0",
+            "nokarpeg": "",
+            "norek": "",
+            "notelp": "",
+            "npwp": "",
+            "pendidikan": "SARJANA",
+            "pirdhata": 0,
+            "pkoperasi": 0,
+            "pkorpri": 0,
+            "prsngapok": 100,
+            "psewa": 0,
+            "taperum": 10000,
+            "tempatlhr": "",
+            "tgllhr": "1957-11-10",
+            "tjeselon": 0,
+            "tjfungsi": 389000,
+            "tjguru": 0,
+            "tjkhusus": 0,
+            "tjlangka": 0,
+            "tjstruk": 0,
+            "tjterpencil": 0,
+            "tjtkd": 0,
+            "tmtberlaku": "2014-04-01",
+            "tmtcapeg": "2006-04-01",
+            "tmtskmt": "2006-04-01",
+            "tmttabel": "2013-01-01"
+}
+
+==============================================================================
+[update]
+localhost:7979/api/masterdata/MdMstPegawai04a/update?id=430009464
+//update yg memiliki id=430009464
+
+================================================================================
+[delete]
+localhost:7979/api/masterdata/MdMstPegawai4a/delete?id=430009464
