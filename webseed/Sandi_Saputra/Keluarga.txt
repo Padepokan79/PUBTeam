@@ -1,0 +1,44 @@
+Sandi Saputra
+
+1. Mengambil Token
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah Data
+-> localhost:7979/api/masterdata/MdKeluarga/create
+-> {
+	"Nip" : "DATA001",
+	"kdhubkel" : 1,
+	"nmkel" : "Jaret Fajrianto",
+	"glrdepan" : "Master",
+	"glrbelakang" : "Master Gacha",
+	"kdjenkel" : 1,
+	"tgllahir" : "2017-10-10",
+	"kdstawin" : 1,
+	"tglnikah" : "2017-10-10",
+	"tglcerai" : "2017-10-10",
+	"tglwafat" : "2017-10-10",
+	"tglsks" : "2017-10-10",
+	"tatsks" : "2017-10-10",
+	"nosks" : "null",
+	"kdtunjang" : 1,
+	"nipsuamiistri" : "nikah1",
+	"updstamp" : "2017-10-10;10;10",
+	"inputer" : "SandiCB",
+	"pekerjaan" : "Gacha"
+}
+
+3. Mengubah Data
+-> localhost:7979/api/masterdata/MdKeluarga/update?id0=DATA001&id1=1
+-> {
+	"nmkel" : "Jaret Jonns"
+}
+
+4. Menampilkan data
+-> localhost:7979/api/masterdata/MdKeluarga/readAll?$top=2&$skip=0
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdKeluarga/delete?id0=DATA001&id1=1
