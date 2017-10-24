@@ -1,0 +1,103 @@
+Sandi Saputra
+
+1. Mengambil token
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah Data
+-> localhost:7979/api/masterdata/MdFMutasiMst/create
+-> {
+	"Nip" : "DATA001",
+	"Nama" : "Jaret Fajrianto",
+	"glrdepan" : "Haji",
+	"glrbelakang" : "Alm",
+	"Kdjenkel" : 1,
+	"tempatlhr" : "201",
+	"tgllhr" : "1980-12-12",
+	"agama" : 1,
+	"zakat_dg" : 2,
+	"pendidikan" : "Sarjana Gacha",
+	"tmtcapeg" : "2017-10-10",
+	"tmtskmt" : "2017-10-10",
+	"kdstawin" : 1,
+	"jistri" : 1,
+	"janak" : 0,
+	"kdstapeg" : 1,
+	"tmtstop" : "2020-10-10",
+	"kdpangkat" : "1",
+	"mkgolt" : 1,
+	"blgolt" : 1,
+	"gapok" : 10000000,
+	"masker" : 10,
+	"prsngapok" : 1,
+	"tmttabel" : "2020-10-10",
+	"tmtkgb" : "2020-10-10",
+	"tmtkgbyad" : "2020-10-10",
+	"kdeselon" : "1",
+	"tjeselon" : 1,
+	"kdfungsi" : "1",
+	"tjfungsi" : 1,
+	"bup" : 3,
+	"kdstruk" : 2,
+	"tjstruk" : 2,
+	"kdguru" : "1",
+	"tjguru" : 1,
+	"kdberas" : 2,
+	"kdlangka" : 3,
+	"tjlangka" : 2,
+	"kdtkd" : 1,
+	"tjtkd" : 1,
+	"kdterpencil" : "1",
+	"tjterpencil" : 1,
+	"kdtjkhusus" : "1",
+	"tjkhusus" : 1,
+	"kdkorpri" : "1",
+	"pkorpri" : 1,
+	"kdkoperasi" : "1",
+	"pkoperasi" : 1,
+	"kdirdhata" : "1",
+	"pirdhata" : 1,
+	"taperum" : 1,
+	"psewa" : 1,
+	"nodosir" : "null",
+	"kdcabtaspen" : "0",
+	"kdssbp" : "0",
+	"kdskpd" : "0",
+	"kdsatker" : "null",
+	"alamat" : "Jakarta",
+	"kddati4" : "0",
+	"kddati3" : "0",
+	"kddati2" : "0",
+	"kddati1" : "0",
+	"notelp" : "089909",
+	"noktp" : "089909",
+	"npwp" : "0890909",
+	"npwpz" : "909088",
+	"niplama" : "DATA001",
+	"kdhitung" : 1,
+	"kodebyr" : "10",
+	"norek" : "1001234",
+	"tmtberlaku" : "2020-10-10",
+	"catatan" : "di ubah sandi",
+	"kdjtrans" : 1,
+	"updstamp" : "2020-10-10;20;10",
+	"inputer" : "SandiCb",
+	"kd_infaq" : 1,
+	"nokarpeg" : "null"
+}
+
+3. Mengubah data
+-> localhost:7979/api/masterdata/MdFMutasiMst/update?"Nip"=DATA001
+-> {
+	"Catatan" : "Telah di update oleh sandi CB",
+	"Inputer" : "SandiCb"
+}
+
+4. Menampilkan data
+-> localhost:7979/api/masterdata/MdFMutasiMst/readAll
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdDprdPst/delete?Nip=DATA001
