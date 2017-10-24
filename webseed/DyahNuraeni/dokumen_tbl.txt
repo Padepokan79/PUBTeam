@@ -1,3 +1,7 @@
+Session 1
+
+READ
+
 Tabel 		: dokumen_tbl
 
 {
@@ -225,6 +229,7 @@ Tabel 		: dokumen_tbl
 
 }
 
+CREATE 
 {
     "Model_ID": "$id0=-1",
  
@@ -244,5 +249,248 @@ Tabel 		: dokumen_tbl
     "kddokumen": "24",
 
     "nmdokumen": "GAJI TUNGGAKAN"
+
+
  }
+
+SESI 2
+
+Tabel 		: FGAJI_DPRD
+
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTAyODAsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk2NjgwfQ.M43gPMAaWJ546tbsG7eDaugSDpC1zw2kZlcsgvo2PDs",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+READ
+{
+    "totalItems": 0,
+    "items": []
+}
+
+CREATE
+{
+    "Model_ID": "$id0=-1",
+    "bersih": 4389200,
+    "id": -1,
+    "janak": 2,
+    "jistri": 1,
+    "kdjenkel": 1,
+    "kdjnstrans": 1,
+    "kdpangkat": "4A",
+    "kdstapeg": 4,
+    "kdstawin": 2,
+    "ketjab": "sdasfdfsd",
+    "kotor": 4892240,
+    "nama": "KHAIRUL ARZAN, S.PD",
+    "nip": "196612021988031005",
+    "norek": "34324234234",
+    "npwp": "23232334324231",
+    "paskes": 0,
+    "potongan": 503040,
+    "pplain": 0,
+    "ppph": 444444,
+    "pswrmh": 0,
+    "tanak": 140744,
+    "taskes": 4444,
+    "tbanggar": 4444,
+    "tbanmus": 4545454,
+    "tberas": 279040,
+    "tbk": 44444,
+    "tbpperda": 44444,
+    "tbulat": 76,
+    "tglgaji": "2014-01-01",
+    "tgllahir": "1966-12-02",
+    "tistri": 351860,
+    "tkomisi": 454444,
+    "tpph": 44444,
+    "trepre": 3
+}
+
+
+SESI 3
+
+Tabel 		: HISTORIS_JIWA
+{
+    "totalItems": 67631,
+    "items": 
+[
+        {
+            "Model_ID": "$id0=null",
+
+                       "janak": 1,
+
+                        "jistri": 1,
+
+                        "kdstawin": 2,
+           
+            "keterangan": "",
+ 
+                       "nip": "450006657         ",
+
+                       "tglupdate": 1375165254000,
+                       "tmtgaji": "2004-04-01"
+        }
+
+        {
+            "Model_ID": "$id0=null",
+         
+            "janak": 2,
+
+                     "jistri": 1,
+        
+            "kdstawin": 2,
+       
+            "keterangan": "                                                                                                    ",
+
+                  "nip": "195107311978121001",
+
+                   "tglupdate": 1388989859000,
+ 
+                   "tmtgaji": "2007-07-01"
+        }
+
+]}
+
+SESI 3
+
+TABLE : JADWAL
+{
+    "Model_ID": "$id0=-1",
+    "id": -1,
+    "janak": 1,
+    "jistri": 1,
+    "kdstawin": 2,
+    "keterangan": "data awal",
+    "nip": "195107311978121001",
+    "tglupdate": "2013-07-30 13:20:54",
+    "tmt": "2004-04-01",
+    "tmtgaji": "2004-04-01"
+}
+
+
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTYwOTUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAyNDk1fQ.9bm3WWF7A4ZnG6W1yD6TFPGkV3WJBOGUZw4gObguevk",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+READ
+{
+    "totalItems": 7380,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+				
+            "flagbayar": 0,
+   
+				         "jmlcicilan": 175000,
+ 
+				           "kdhutang": 1,
+ 
+				           "nip": "09900             ",
+ 
+				           "norut": 1,
+ 
+				           "tglcicilan": "2011-01-01"
+        },
+  
+			      {
+            "Model_ID": "$id0=null",
+ 
+				           "flagbayar": 0,
+				
+            "jmlcicilan": 175000,
+ 
+				           "kdhutang": 1,
+  
+				          "nip": "09900             ",
+ 
+				           "norut": 1,
+				
+            "tglcicilan": "2011-02-01"
+        }
+]}
+
+CREATE
+
+{
+    "Model_ID": "$id0=-1",
+    "flagbayar": "0",
+    "id": -1,
+    "jmlcicilan": 75000,
+    "kdhutang": 1,
+    "nip": "195205111987111001",
+    "norut": 1,
+    "tglcicilan": "2011-01-01",
+    "tglcreate": "2011-01-01"
+}
+TABLE : kompensasi_rampung
+
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTk1NDksInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA1OTQ5fQ.FG-t5bp3SJrXvXdYYoeSzna-w_XX8fkqIX-52vtOag4",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+READ ALL
+{
+    "totalItems": 0,
+    "items": []
+}
+
+CREATE
+{
+    "Model_ID": "$id0=-1",
+    "harus": "0",
+    "id": -1,
+    "nip": "195002201972091001",
+    "telah": 1,
+    "tglgaji": "2014-01-01"
+}
+
+UPDATE
+{
+    "totalItems": 1,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "harus": 0,
+            "nip": "195002201972091001",
+            "telah": 1,
+            "tglgaji": "2014-01-01"
+        }
+    ]
+}
+
+delete
+{
+    "harus": 0,
+    "tglgaji": "2014-10-10",
+    "nip": "123",
+    "telah": 2
+}
+
+{
+    "Model_ID": "$id0=null&$id1=null",
+    "harus": 0,
+    "nip": "123",
+    "telah": 2,
+    "tglgaji": "2014-10-10"
+}
+
 
