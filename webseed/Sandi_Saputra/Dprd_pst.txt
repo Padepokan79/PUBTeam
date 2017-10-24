@@ -1,0 +1,44 @@
+Sandi Saputra
+
+1. Mengambil token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Insert Data
+{
+	"Nip" : "DATA001",
+	"Tmt_kerja" : "2017-10-10",
+	"Tat_kerja" : "2020-10-10",
+	"Banmus" : "2017-10-10",
+	"Komisi" : "2017-10-10",
+	"Bk" : "2017-10-10",
+	"Bpperda" : "2017-10-10",
+	"Sts_Banmus" : 1,
+	"Sts_Komisi" : 1,
+	"Sts_Banggar" : 1,
+	"Sts_Bk" : 1,
+	"Sts_Bpperda" : 1,
+	"Tgl_update" : "2017-10-10 10-10-10",
+	"Inputer" : "Sandi",
+	"Catatan" : "Input ke satu"
+}
+
+{
+	"nip" : "DATA002",
+	"Tmt_kerja" : "2017-12-12",
+	"Tat_kerja" : "2020-12-12",
+	"Banmus" : "2017-12-12",
+	"komisi" : "2017-12-12",
+	"bk" : "2017-12-12",
+	"Bpperda" : "2017-12-12",
+	"Sts_Banmus" : 2,
+	"Sts_komisi" : 2,
+	"Sts_Banggar" : 2,
+	"Sts_Bk" : 2,
+	"Sts_Bpperda" : 2,
+	"Tgl_update" : "2017-12-12 12-12-12",
+	"Inputer" : "Sandi",
+	"Catatan" : "Input ke dua"
+}
