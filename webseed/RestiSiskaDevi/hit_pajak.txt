@@ -1,0 +1,60 @@
+//HIT_PAJAK
+
+1. token
+
+url:localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read
+
+url: localhost:7979/api/masterdata/MdHitPajak/readAll
+
+3. create
+url: localhost:7979/api/masterdata/MdHitPajak/create
+
+ {
+
+            "anak": 5,
+
+            "istri": 2,
+
+            "kotorinduk": 4649034,
+
+            "nip": "0204151011",
+
+            "subkotor": 5000000,
+
+            "thp": 0
+ 
+
+ }
+
+4. update nip: 0204151011
+
+localhost:7979/api/masterdata/MdHitPajak/update?nip=0204151011
+
+ {
+
+            "anak": 10,
+
+            "istri": 4,
+
+            "kotorinduk": 4000000,
+
+            "nip": "0204151011",
+
+            "subkotor": 5000000,
+
+            "thp": 0
+
+ }
+4. delete nip: 0204151011
+
+localhost:7979/api/masterdata/MdHitPajak/delete?nip=0204151011
