@@ -1,3 +1,4 @@
+
 fgaji_detil_ukp	localhost:7979/auth/token	
 //AuthToken
 {

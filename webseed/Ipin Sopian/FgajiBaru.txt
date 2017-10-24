@@ -1,0 +1,342 @@
+ tabel fgaji_baru
+
+localhost:7979/api/masterdata/MdFGajiBaru/readAll?$top=1&$skip=0
+1. auth/token
+{
+
+	"nama_login":"tujuhsembilan",
+
+	"password":"a"
+
+}
+
+localhost:7979/api/masterdata/MdFGajiBaru/readAll?$top=1&$skip=0
+2. Read all limit 1
+{
+
+    "totalItems": 350383,
+
+    "items": [
+
+        {
+
+            "Model_ID": "$id0=null",
+
+            "bersih": 2036400,
+
+            "catatan": "",
+
+            "gapok": 1921000,
+
+            "glrbelakang": "",
+
+            "glrdepan": "",
+
+            "janak": 0,
+
+            "jeniskekurangan": 0,
+
+            "jistri": 0,
+
+            "kdberas": 2,
+
+            "kdeselon": "00",
+
+            "kdfungsi": "08405",
+
+            "kdguru": "   ",
+
+            "kdhitung": 1,
+
+            "kdirdhata": "0",
+
+            "kdjenkel": 2,
+            "kdjnstrans": 4,
+
+            "kdkoperasi": "0",
+
+            "kdkorpri": "0",
+
+            "kdlangka": 0,
+
+            "kdpangkat": "3A",
+
+            "kdposting": 0,
+
+            "kdsatker": "D10200101900001",
+
+            "kdskpd": "019",
+
+            "kdssbp": "001",
+
+            "kdstapeg": 4,
+
+            "kdstawin": 1,
+
+            "kdstruk": 0,
+
+            "kdterpencil": "0",
+
+            "kdtjkhusus": "00000",
+
+            "kdtkd": 0,
+
+            "kodebyr": "",
+
+            "kotor": 2271120,
+
+            "masker": 8,
+
+            "nama": "NETRIANIS, ST",
+
+            "nip": "197606111997032002",
+
+            "niplama": "140331208",
+
+            "nodosir": "300114",
+
+            "norek": "",
+
+            "norut": 1,
+
+            "npwp": "00.000.00.0-000.000",
+
+            "paskes": 0,
+
+            "pbulog": 0,
+
+            "phutang": 0,
+
+            "pirdhata": 0,
+
+            "piwp": 192100,
+
+            "pjkk": 0,
+
+            "pjkm": 0,
+
+            "pkoperasi": 0,
+
+            "pkorpri": 0,
+
+            "potongan": 234720,
+
+            "ppajak": 35620,
+
+            "prsngapok": 100,
+
+            "psewa": 0,
+
+            "ptaperum": 7000,
+
+            "tbulat": 0,
+
+            "tglbayar": "2012-09-20",
+
+            "tglgaji": "2010-03-01",
+
+            "tgllhr": "1976-06-11",
+
+            "tjanak": 0,
+
+            "tjaskes": 0,
+
+            "tjberas": 49500,
+
+            "tjeselon": 0,
+
+            "tjfungsi": 265000,
+
+            "tjguru": 0,
+
+            "tjistri": 0,
+
+            "tjkhusus": 0,
+
+            "tjkk": 0,
+
+            "tjkm": 0,
+
+            "tjlangka": 0,
+
+            "tjpajak": 35620,
+
+            "tjstruk": 0,
+
+            "tjterpencil": 0,
+
+            "tjtkd": 0,
+
+            "tjtpp": 0,
+            "tjumum": 0,
+
+            "tmttabel": "2012-01-01"
+
+        }
+
+    ]
+
+}
+
+localhost:7979/api/masterdata/MdFGajiBaru/create
+3. Create record
+{
+
+            "bersih": 3036400,
+
+            "catatan": "",
+
+            "gapok": 2921000,
+
+            "glrbelakang": "",
+
+            "glrdepan": "",
+
+            "janak": 0,
+
+            "jeniskekurangan": 0,
+
+            "jistri": 0,
+
+            "kdberas": 2,
+
+            "kdeselon": "00",
+
+            "kdfungsi": "08405",
+
+            "kdguru": "   ",
+
+            "kdhitung": 1,
+            "kdirdhata": "0",
+
+            "kdjenkel": 2,
+
+            "kdjnstrans": 4,
+
+            "kdkoperasi": "0",
+
+            "kdkorpri": "0",
+
+            "kdlangka": 0,
+
+            "kdpangkat": "3A",
+
+            "kdposting": 0,
+
+            "kdsatker": "D10200101900001",
+
+            "kdskpd": "019",
+
+            "kdssbp": "001",
+
+            "kdstapeg": 4,
+
+            "kdstawin": 1,
+
+            "kdstruk": 0,
+
+            "kdterpencil": "0",
+
+            "kdtjkhusus": "00000",
+
+            "kdtkd": 0,
+
+            "kodebyr": "",
+
+            "kotor": 2271120,
+
+            "masker": 8,
+
+            "nama": "MONULIA, ST",
+
+            "nip": "997606161997034004",
+
+            "niplama": "",
+
+            "nodosir": "300114",
+
+            "norek": "",
+
+            "norut": 1,
+
+            "npwp": "00.000.00.0-000.000",
+
+            "paskes": 0,
+
+            "pbulog": 0,
+
+            "phutang": 0,
+
+            "pirdhata": 0,
+
+            "piwp": 192100,
+
+            "pjkk": 0,
+
+            "pjkm": 0,
+
+            "pkoperasi": 0,
+
+            "pkorpri": 0,
+
+            "potongan": 234720,
+
+            "ppajak": 35620,
+
+            "prsngapok": 100,
+
+            "psewa": 0,
+
+            "ptaperum": 7000,
+
+            "tbulat": 0,
+
+            "tglbayar": "2017-09-20",
+
+            "tglgaji": "2017-03-01",
+
+            "tgllhr": "1993-06-11",
+
+            "tjanak": 0,
+
+            "tjaskes": 0,
+
+            "tjberas": 49500,
+
+            "tjeselon": 0,
+
+            "tjfungsi": 365000,
+
+            "tjguru": 0,
+
+            "tjistri": 0,
+
+            "tjkhusus": 0,
+
+            "tjkk": 0,
+
+            "tjkm": 0,
+
+            "tjlangka": 0,
+
+            "tjpajak": 35620,
+
+            "tjstruk": 0,
+
+            "tjterpencil": 0,
+
+            "tjtkd": 0,
+
+            "tjtpp": 0,
+
+            "tjumum": 0,
+
+            "tmttabel": "2017-01-01"
+
+}
+
+localhost:7979/api/masterdata/MdFGajiBaru/update?id0=2012-03-01&id1=5&id2=GUB201003         &id3=2012-11-08&id4=1
+4. update
+{
+	"tjeselon":1
+}
