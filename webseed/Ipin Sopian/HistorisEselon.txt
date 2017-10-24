@@ -1,0 +1,58 @@
+tabel historis_eselon
+
+localhost:7979/api/masterdata/MdHistorisEselon/readAll
+1.read 
+{
+
+            "Model_ID": "$id0=null",
+
+            "kdeselon": "00",
+
+            "keterangan": "DATA AWAL",
+
+            "nip": "195212221984101001",
+
+            "nomorskep": " ",
+
+            "penerbitskep": " ",
+
+            "tglupdate": 1367393891000,
+
+            "tjeselon": 0,
+
+            "tmtgaji": "2008-04-01"
+        
+}
+
+localhost:7979/api/masterdata/MdHistorisEselon/create
+2. insert
+{
+
+            "kdeselon": "00"
+,
+            "keterangan": "DATA AWAL",
+
+            "nip": "196132321987021001",
+
+            "nomorskep": " ",
+
+            "penerbitskep": " ",
+
+            "tglupdate": "2017-01-01 08:54:59",
+
+            "tjeselon": 0,
+
+            "tmtgaji": "2017-06-01"
+
+}
+
+localhost:7979/api/masterdata/MdHistorisEselon/update?id0=2004-04-01&id1=450006657
+3. update 
+param : id0=2004-04-01
+        id1=450006657
+{
+            "tjeselon": 0
+}
+
+4. delete
+localhost:7979/api/masterdata/MdHistorisEselon/delete?id0=2004-04-01&id1=450006657
