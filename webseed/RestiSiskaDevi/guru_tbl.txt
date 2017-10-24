@@ -1,0 +1,62 @@
+//GURU_TBL
+
+1. token
+
+url: localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read
+
+url: localhost:7979/api/masterdata/MdGuruTbl/readAll
+
+3. create
+url: localhost:7979/api/masterdata/MdGuruTbl/create
+
+ {
+
+            "kdguru": "018",
+
+            "nmguru": "WAKIL KEPALA SEKOLAH SMA GOL.IV",
+
+            "tjguru": 0,
+
+            "tmtberlaku": "2017-10-01"
+
+ }
+
+
+Coba-Coba:
+
+1. token
+
+url: localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. update kdguru= 017
+
+localhost:7979/api/masterdata/MdGuruTbl/update?id=018
+
+ {
+
+            "tjguru": 500000
+
+ }
+
+3. delete kdguru= 018
+
+localhost:7979/api/masterdata/MdGuruTbl/delete?id=018
+
