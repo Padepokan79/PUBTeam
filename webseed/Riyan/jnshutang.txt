@@ -1,0 +1,70 @@
+Nama	: Riyan
+table	: jnshutang
+
+1. auth Token
+
+localhost:7979/auth/token
+
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+
+}
+\
+========================================================
+2. Create di table jnshutang
+
+localhost:7979/api/masterdata/MdJnsHutang/create
+
+
+{
+
+	"NO" : 1,
+
+	"NMHUTANG" : "Hutang Kosipa",
+
+	"SFTHUTANG" : 1,
+
+	"TARIF" : 100000,
+
+	"PLAGTARIF" : 2
+
+}
+
+
+{
+	"NO" : 2,
+
+	"NMHUTANG" : "Hutang bank",
+
+	"SFTHUTANG" : 2,
+
+	"TARIF" : 500000,
+
+	"PLAGTARIF" : 3
+
+}
+
+========================================================
+3. update di table jnshutang
+
+localhost:7979/api/masterdata/MdJnsHutang/update?no=2
+
+
+Param : Key(No), value(2)
+
+{
+	
+	"NMHUTANG" : "Hutang Ke Tetangga"
+
+}
+
+========================================================
+4. delete di table jnshutang
+
+localhost:7979/api/masterdata/MdJnsHutang/delete?no=1
+
+Param : Key(No), value(1)

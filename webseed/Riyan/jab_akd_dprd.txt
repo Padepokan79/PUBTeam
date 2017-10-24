@@ -1,0 +1,51 @@
+Nama	: Riyan
+table 	: jab_akd_dprd
+
+
+1. Auth Token
+
+localhost:7979/auth/token
+
+{
+	
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+==================================================
+2. Create di table jab_akd_dprd
+
+localhost:7979/api/masterdata/MdJabAkdDprd/create
+
+{
+	
+	"kd_jab" : 6,
+
+	"nm_jab" : "Bendahara",
+
+	"prosen" : 1
+
+}
+
+==================================================
+3. Update di table jab_akd_dprd (PUT)
+
+localhost:7979/api/masterdata/MdJabAkdDprd/update?kd_jab=6
+
+
+Param : key (kd_jab), value(6)
+
+{
+	
+	"nm_jab" : "Bendahara Internal"
+
+}
+
+==================================================
+4. Delete di table jab_akd_dprd (DELETE)
+
+localhost:7979/api/masterdata/MdJabAkdDprd/delete?kd_jab=6
+
+Param : key(kd_jab), value(6)

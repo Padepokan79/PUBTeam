@@ -1,0 +1,202 @@
+Nama	: Riyan
+table	: mstpegawai
+
+
+1. aut token
+
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+
+======================================================
+
+2. Menambah data di table mstpegawai (CREATE)
+
+localhost:7979/api/masterdata/MdMstPegawai/create
+
+
+{
+	"NIP" : "0204151028",
+
+	"NAMA" : "RIYAN TURMUDI",
+
+	"GLRDEPAN" : "",
+
+	"GLRBELAKANG" : "",
+
+	"KDJENKEL" : 1,
+
+	"TEMPATLHR" : "TASIKMALAYA",
+
+	"TGLLHR" : "1997-03-26",
+
+	"AGAMA" : 1,
+
+	"zakat_dg" : 0,
+
+	"PENDIDIKAN" : "SARJANA",
+
+	"TMTCAPEG" : "2016-10-10",
+
+	"TMTSKTM" : "",
+
+	"KDSTAWIN" : 1,
+
+	"JISTRI" : 1,
+
+	"JANAK" : 10,
+
+	"KDSTAPEG" : 4,
+
+	"TMTSTOP" : "2017-10-10",
+
+	"KDPANGKAT" : "4A",
+
+	"MKGOLT" : 0,
+
+	"BLGOLT" : 0,
+
+	"GAPOK" : 4000000,
+
+	"MASKER" : 22,
+
+	"PRSNGAPOK" : 100,
+
+	"TMTTABEL" : "2017-10-10",
+
+	"TMTKGB" : "2017-10-10",
+
+	"TMTKGBYAD" : "2017-10-10",
+
+	"KDESELON" : "00",
+
+	"TJESELON" : 0,
+
+	"KDFUNGSI" : "01501",
+
+	"TJFUNGSI" : 1000000,
+
+	"BUP" : 58,
+
+	"KDSTRUK" : 0,
+
+	"TJSTRUK" : 0,
+
+	"KDGURU" : "001",
+
+	"TJGURU" : 0,
+
+	"KDBERAS" : 2,
+
+	"KDLANGKA" : 0,
+
+	"TJLANGKA" : 0,
+
+	"KDTKD" : 0,
+
+	"TJTKD" : 0,
+
+	"KDTERPENCIL" : "000",
+
+	"TJTERPENCIL" : 0,
+
+	"KDTJKHUSUS" : "00000",
+
+	"TJKHUSUS" : 0,
+
+	"KDKORPRI" : "0",
+
+	"PKORPRI" : 0,
+
+	"KDKOPERASI" : "0",
+
+	"PKOPERASI" : 0,
+
+	"KDIRDHATA" : "0",
+
+	"PIRDHATA" : 0,
+
+	"TAPERUM" : 10000,
+
+	"PSEWA" : 0,
+
+	"NODOSIR" : "0000",
+
+	"KDCABTASPEN" : "",
+
+	"KDSSBP" : "001",
+
+	"KDSKPD" : "014",
+
+	"KDSATKER" : "D10200101400013",
+
+	"ALAMAT" : "",
+
+	"KDDATI4" : "000",
+
+	"KDDATI3" : "00",
+
+	"KDDATI2" : "00",
+
+	"KDDATI1" : "07",
+
+	"NOTELP" : "",
+
+	"NOKTP" : "",
+
+	"NPWP" : "",
+
+	"NPWPZ" : "",
+
+	"NIPLAMA" : "",
+
+	"KDHITUNG" : 1,
+
+	"KODEBYR" : "0000",
+
+	"NOREK" : "",
+
+	"TMTBERLAKU" : "2017-10-10",
+
+	"CATATAN" : "",
+
+	"KDJNSTRANS" : 1,
+
+	"UPDSTAMP" : "2017-10-10 14:14:14",
+
+	"INPUTER" : "TASPEN",
+
+	"kd_infaq" : 0,
+
+	"NOKARPEG" : "",
+
+	"jnsguru" : 1
+
+}
+
+
+=====================================================
+3. Update di table mstpegawai
+
+localhost:7979/api/masterdata/MdMstPegawai/update?nip=0204151028
+
+
+Param : key(NIP), value(0204151028)
+
+{
+
+	"NAMA" : "RIYAN"
+
+}
+
+======================================================
+
+4. Delete di table mstpegawai (DELETE)
+
+localhost:7979/api/masterdata/MdMstPegawai/delete?nip=010122831
+
+
+Param : Key(NIP), value(010122831)
