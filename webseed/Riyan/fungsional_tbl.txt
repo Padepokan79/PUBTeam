@@ -1,0 +1,54 @@
+Nama	: Riyan
+table	: fungsional_tbl
+
+
+1. Auth Token
+
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+===================================================
+
+2. Create table fungsional_tbl
+
+localhost:7979/api/masterdata/MdFungsionaltbl/create
+
+
+{
+	"TMT_FUNGSI" : "2017-10-24",
+
+	"KDFUNGSI" : "A999",
+
+	"NM_FUNGSI" : "Dokter Hewan",
+
+	"RP_FUNGSI" : 1200000
+
+}
+
+
+===================================================
+3. Update table fungsional_tbl
+
+localhost:7979/api/masterdata/MdFungsionaltbl/update?kdfungsi=A999
+
+Param : key : KDFUNGSI = "A999"
+
+{
+	
+	"NM_FUNGSI" : "Dokter Kandungan"
+
+}
+
+===================================================
+4. Delete table fungsional_tbl
+
+localhost:7979/api/masterdata/MdFungsionaltbl/delete?kdfungsi=A999
+
+
+Param : Key : KDFUNGSI = "A999"

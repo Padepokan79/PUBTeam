@@ -1,0 +1,113 @@
+[auth token jenis_kekurangan_gaji]
+localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTk2OTIsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA2MDkyfQ.I9egPRyWD-NTlvve6NBexk4o2C78C7Bba4pfxT95BgA
+
+====================================================================
+[readAll]
+
+localhost:7979/api/masterdata/MdJenisKekuranganGaji/readAll
+//output
+{
+    "totalItems": 12,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 1,
+            "nmkekurangan": "Kekurangan Gaji Pokok Kenaikan Pangkat"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 2,
+            "nmkekurangan": "Kekurangan Tunjangan Keluarga"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 3,
+            "nmkekurangan": "Kekurangan Tunjangan Struktural"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 4,
+            "nmkekurangan": "Kekurangan Tunjangan Fungsional"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 5,
+            "nmkekurangan": "Kekurangan Gaji Terusan"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 6,
+            "nmkekurangan": "Kekurangan Gaji 13"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 7,
+            "nmkekurangan": "Kekurangan Susulan"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 8,
+            "nmkekurangan": "Kekurangan Tunjangan Beras"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 9,
+            "nmkekurangan": "Perbaikan Rapel Beras"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 10,
+            "nmkekurangan": "Kekurangan Gaji Pokok Gaji Berkala"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 11,
+            "nmkekurangan": "Kekurangan Pengangkatan PNS"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jeniskekurangan": 12,
+            "nmkekurangan": "Kekurangan Gaji 14"
+        }
+    ]
+}
+
+=====================================================================================
+[create]
+localhost:7979/api/masterdata/MdJenisKekuranganGaji/create
+//dibody
+{
+    "jeniskekurangan": 13,
+    "nmkekurangan": "BUATAN ILFA"
+}
+//output
+{
+    "Model_ID": "$id0=null",
+    "jeniskekurangan": 13,
+    "nmkekurangan": "BUATAN ILFA"
+}
+
+===================================================================================
+[update]
+localhost:7979/api/masterdata/MdJenisKekuranganGaji/update?id=13
+//di body
+{
+	"NMKEKURANGAN" : "BUATAN ILFA SRI DESY"
+}
+//output
+{
+    "Model_ID": "$id0=null",
+    "jeniskekurangan": 13,
+    "nmkekurangan": "BUATAN ILFA SRI DESY"
+}
+
+========================================================================================
+[delete]
+localhost:7979/api/masterdata/MdJenisKekuranganGaji/delete?id=13
+//menghapus yang kode jenisnya 13
