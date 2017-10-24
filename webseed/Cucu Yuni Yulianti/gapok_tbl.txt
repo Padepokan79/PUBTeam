@@ -1,0 +1,31 @@
+gapok_tbl
+
+1. auth token
+{
+	
+ "nama_login" : "tujuhsembilan",
+ "password" : "a"
+
+}
+
+
+2. Insert table gapok_tbl
+ {
+       
+  "Model_ID": "$id0=0",
+         
+  "kdkelompok": 1,
+          
+  "kdpangkat": "3A",
+          
+  "masker": 3,
+           
+  "nilai_atas": 50000,
+         
+  "nilai_bawah": 50000,
+         
+  "tmt_gapok": "1997-01-01"
+      
+  }
+
+localhost:7979/api/masterdata/MdGapokTbl/create
