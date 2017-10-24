@@ -1,0 +1,61 @@
+//login
+{
+
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+//create histtht0tbl
+localhost:7979/api/masterdata/MdHistThtTbl/create
+{
+	"nip" : "0204151022",
+
+	"tglgaji" : "2017-02-03",
+
+	"tmtberlaku" : "2017-06-03",
+
+	"kdjnstrans" : "1",
+
+	"gapok" : 1000000,
+
+	"kdjiwa" : "abcd",
+
+	"iuran" : 500000,
+
+	"kdskpd" : "asd",
+
+	"kdsatker" : "asd2456",
+
+	"tgl_update" : "2017-03-07 11:09:06",
+
+	"inputer" : "user"
+
+}
+{
+	"nip" : "0204151023",
+
+	"tglgaji" : "2017-03-03",
+
+	"tmtberlaku" : "2017-07-03",
+
+	"kdjnstrans" : "2",
+
+	"gapok" : 1000000,
+
+	"kdjiwa" : "abcd",
+
+	"iuran" : 500000,
+
+	"kdskpd" : "asd",
+
+	"kdsatker" : "asd2456",
+
+	"tgl_update" : "2017-03-07 11:09:06",
+
+	"inputer" : "admin"
+
+}
+//update
+//url
+localhost:7979/api/masterdata/MdHistThtTbl/update?$id0=2017-03-03&$id1=2&$id20204151023
