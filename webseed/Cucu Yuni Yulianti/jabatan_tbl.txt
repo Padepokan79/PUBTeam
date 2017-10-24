@@ -1,0 +1,32 @@
+jabatan_tbl
+
+1. auth token
+{
+	
+ "nama_login" : "tujuhsembilan",
+ "password" : "a"
+
+}
+
+
+2. Insert ke table  jabatan_tbl
+{
+          
+  "Model_ID": "$id0=01",
+            
+  "jml": 150000,
+           
+  "kdfungsi": 3,
+            
+ "kdjabatan": "04004",
+            
+ "nmjabatan": "PENYULUH KEHUTANAN",
+           
+  "pensiun": 60,
+          
+  "tmtjabatan": "2017-01-01"
+        
+
+}
+
+localhost:7979/api/masterdata/MdJabatanTbl/create
