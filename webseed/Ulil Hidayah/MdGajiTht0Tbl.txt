@@ -1,0 +1,8 @@
+auth token
+localhost:7979/auth/token
+
+read
+localhost:7979/api/masterdata/MdGajiTht0Tbl/readAll
+
+create
+localhost:7979/api/masterdata/MdGajiTht0Tbl/create
