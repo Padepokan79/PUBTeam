@@ -1,0 +1,153 @@
+//login
+{
+
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+//create gaji13tmp
+{
+
+            "Model_ID": "$id0=null",
+
+            "bersih": 9218632,
+
+            "catatan": "                                                  ",
+ 
+           "gapok": 4741500,
+
+            "glrbelakang": "                              ",
+
+            "glrdepan": "                              ",
+
+            "hal": 2,
+
+            "janak": 3,
+
+            "jistri": 4,
+
+            "kdberas": 1,
+
+            "kdeselon": "1A",
+
+            "kdfungsi": "00000",
+
+            "kdguru": "000",
+
+            "kdhitung": 2,
+
+            "kdirdhata": "0 ",
+
+            "kdjenkel": 2,
+
+            "kdjnstrans": 1,
+
+            "kdkoperasi": "0 ",
+
+            "kdkorpri": "0 ",
+
+            "kdlangka": 0,
+
+            "kdpangkat": "2A",
+
+            "kdsatker": "B30200100100001     ",
+
+            "kdskpd": "001",
+
+            "kdssbp": "001",
+
+            "kdstapeg": 4,
+
+            "kdstawin": 2,
+
+            "kdstruk": 0,
+
+            "kdterpencil": "000",
+
+            "kdtjkhusus": "00000",
+
+            "kdtkd": 0,
+
+            "kodebyr": "0000      ",
+
+            "kotor": 9197923,
+
+            "masker": 30,
+
+            "nama": "FAKHRI BUSTAMAM, SH                            ",
+
+            "nip": "195211101977021001",
+
+            "niplama": "130605131",
+ 
+           "nodosir": "0000      ",
+
+            "norek": "                                        ",
+ 
+           "npwp": "00.000.00.0-000.000 ",
+
+            "nu": 1,
+ 
+           "paskes": 0,
+ 
+           "pbulog": 0,
+ 
+           "phutang": 0,
+
+            "pirdhata": 0,
+
+            "piwp": 523928,
+
+            "pkoperasi": 0,
+
+            "pkorpri": 0,
+
+            "potongan": 975291,
+
+            "ppajak": 439295,
+
+            "prsngapok": 100,
+
+            "psewa": 0,
+
+            "ptaperum": 10000,
+
+            "tbulat": 68,
+
+            "tglgaji": "2014-03-01",
+
+            "tgllhr": "1956-12-10",
+
+            "tjanak": 94630,
+
+            "tjaskes": 0,
+
+            "tjberas": 209280,
+
+            "tjeselon": 3250000,
+            "tjfungsi": 0,
+
+            "tjguru": 0,
+
+            "tjistri": 473150,
+
+            "tjkhusus": 0,
+
+            "tjlangka": 0,
+
+            "tjpajak": 439295,
+
+            "tjstruk": 0,
+
+            "tjterpencil": 0,
+
+            "tjtkd": 0,
+
+            "tjtpp": 0,
+
+            "tjumum": 0,
+
+            "tmttabel": "2014-02-01"
+
+        }
