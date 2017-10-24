@@ -1,0 +1,46 @@
+                                        Tabel   Cabang_tbl
+
+1. auth/token
+{
+
+	"nama_login":"tujuhsembilan",
+
+	"password":"a"
+
+}
+
+localhost:7979/api/masterdata/MdCabangTbl/create
+2.create
+{
+
+	"kdcabang": "706",
+
+        "nickcabang": "IND",
+
+        "nmcabang": "TASPEN CABANG iNDRAMAYU"
+
+}
+
+localhost:7979/api/masterdata/MdCabangTbl/update?KDCABANG=706
+3. update
+param : kdcabang=706
+{
+
+	"nickcabang": "CMS",
+
+    "nmcabang": "TASPEN CABANG CIAMIS"
+
+}
+
+localhost:7979/api/masterdata/MdCabangTbl/delete?kdcabang=706
+4. delete 
+param : kdcabang=706
+{
+
+    "nmcabang": "TASPEN CABANG CIAMIS",
+
+    "kdcabang": "706",
+
+    "nickcabang": "CMS"
+
+}

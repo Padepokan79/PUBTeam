@@ -1,0 +1,59 @@
+Tabel irdhata_tbl
+
+localhost:7979/api/masterdata/MdIrdhataTbl/read?kdirdhata=4
+1.read limit 1
+{
+
+            "Model_ID": "$id0=null",
+
+            "kdirdhata": "0",
+
+            "keter": "Tanpa Iuran Dharma Wanita",
+
+            "nilai": 0,
+
+            "tmt": "2000-01-01"
+        
+}
+
+localhost:7979/api/masterdata/MdIrdhataTbl/create
+2. insert 
+{
+
+            "kdirdhata": "5",
+
+            "keter": "Golongan v",
+
+            "nilai": 30000,
+
+            "tmt": "2017-11-01"
+
+}
+
+localhost:7979/api/masterdata/MdIrdhataTbl/update?id=5
+3. update
+param : id=5
+{
+
+    "keter": "Golongan V",
+
+    "nilai": 19000,
+
+    "tmt": "2017-12-01"
+
+}
+
+localhost:7979/api/masterdata/MdIrdhataTbl/delete?id=5
+4. delete
+param : id=5
+{
+
+    "keter": "Golongan V",
+
+    "tmt": "2017-12-01",
+
+    "kdirdhata": "5",
+
+    "nilai": 19000
+
+}
