@@ -1,0 +1,51 @@
+//PANGKAT_TBL
+
+1. token
+
+url: localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+}
+
+2. read
+
+url: localhost:7979/api/masterdata/MdPangkatTbl/readAll
+
+3. create
+
+url:localhost:7979/api/masterdata/MdGajiTht0Tbl/create
+
+{
+
+	"gol": "9c",
+
+    	"kdpangkat": "9c",
+
+    	"nmgol": "9c",
+	"nmpangkat": "Mentri Keuangan"
+
+}
+
+4. update kdpangkat: 9c
+
+url: localhost:7979/api/masterdata/MdPangkatTbl/update?id=9c
+
+{
+
+
+	"gol": "9c",
+
+	"nmgol": "9c",
+
+	"nmpangkat": "Mentri Pendididkan"
+
+
+}
+
+5. delete kdpangkat: 9c
+
+localhost:7979/api/masterdata/MdPangkatTbl/delete?KDPANGKAT=9c
