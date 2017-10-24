@@ -1,0 +1,33 @@
+tabel jenis_didik
+
+localhost:7979/api/masterdata/MdJenisDidik/readAll
+1.read
+ {
+
+            "Model_ID": "$id0=1",
+
+            "jnsdidik": 1,
+
+            "nmjenisdidik": "SD"
+        
+}
+
+localhost:7979/api/masterdata/MdJenisDidik/create
+2.insert 
+{
+
+            "jnsdidik": 0,
+
+            "nmjenisdidik": "TK"
+
+}
+
+localhost:7979/api/masterdata/MdJenisDidik/update?id=0
+3.update 
+{
+            "nmjenisdidik": "Tk"
+}
+
+localhost:7979/api/masterdata/MdJenisDidik/delete?id=0
+4.delete
+param : id=0
