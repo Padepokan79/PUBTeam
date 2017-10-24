@@ -1,0 +1,124 @@
+//auth token	localhost:7979/auth/token
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+
+    "token_type": "Bearer",
+
+    "scope": null,
+
+    "expires_in": 86400000,
+
+    "status": "success",
+
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTg0OTAsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA0ODkwfQ.HhHi0RCNY9UXzatSGqqvGiYEhz732cREmd46PAmB0sc",
+
+    "id": 79,
+
+    "nama_login": "tujuhsembilan"
+
+}
+//create 	localhost:7979/api/masterdata/MdLangkaTbl/create
+create 1
+ {
+            
+	    "kdlangka":1,
+
+            "uraian_langka": "Langka ke 1",
+
+            "jumlah" :10
+ 
+}
+
+output:
+{
+    "Model_ID": "$id0=1",
+
+    "jumlah": 10,
+
+    "kdlangka": 1,
+
+    "uraian_langka": "Langka ke 1"
+
+}
+
+create 2
+ {
+            
+	"kdlangka":2,
+
+        "uraian_langka": "Langka ke 2",
+
+        "jumlah" :20
+ 
+}
+
+output:
+{
+    
+	"Model_ID": "$id0=2",
+
+	"jumlah": 20,
+
+    	"kdlangka": 2,
+    
+    "uraian_langka": "Langka ke 2"
+
+}
+
+//read all	localhost:7979/api/masterdata/MdLangkaTbl/readAll
+{
+    "totalItems": 2,
+
+     "items": [
+        
+	{
+            
+	"Model_ID": "$id0=1",
+
+        "jumlah": 10,
+
+        "kdlangka": 1,
+
+        "uraian_langka": "Langka ke 1"
+        
+	},
+        
+	{
+            
+	"Model_ID": "$id0=2",
+
+        "jumlah": 20,
+
+        "kdlangka": 2,
+
+        "uraian_langka": "Langka ke 2"
+        
+	}
+    
+]
+}
+//update	localhost:7979/api/masterdata/MdLangkaTbl/update?kdlangka=2
+param : kdlangka=2
+{
+	"jumlah=2"
+}
+output:
+{
+    "Model_ID": "$id0=2",
+
+     "jumlah": 25,
+
+     "kdlangka": 2,
+
+    "uraian_langka": "Langka ke 2"
+
+}
+//delete	localhost:7979/api/masterdata/MdLangkaTbl/delete?kdlangka=2
+param: kdlangka=2
+output:
+{
+    
+	"message": "No Data Found"
+
+
+}

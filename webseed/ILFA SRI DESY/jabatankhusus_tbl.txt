@@ -1,0 +1,101 @@
+[auth token]
+localhost:7979/auth/token
+//dibody
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTgyNzQsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA0Njc0fQ.Sw-Q2SlgV1wd2jiX28uPAe-zDQ__5F_JAMMw7Lz75-M
+
+======================================================================================
+[readAll]
+localhost:7979/api/masterdata/MdJabatanKhususTbl/readAll?$top=5&$skip=0
+//output
+{
+    "totalItems": 80,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "jml": 0,
+            "kdjabatan": "00000",
+            "nmjabatan": "NON TUNJANGAN KHUSUS",
+            "pensiun": 66,
+            "tmtjabatan": "2008-01-01"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jml": 1400000,
+            "kdjabatan": "05901",
+            "nmjabatan": "PRANATA NUKLIR UTAMA",
+            "pensiun": 65,
+            "tmtjabatan": "2008-01-01"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jml": 1200000,
+            "kdjabatan": "05902",
+            "nmjabatan": "PRANATA NUKLIR MADYA",
+            "pensiun": 60,
+            "tmtjabatan": "2008-01-01"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jml": 750000,
+            "kdjabatan": "05903",
+            "nmjabatan": "PRANATA NUKLIR MUDA",
+            "pensiun": 60,
+            "tmtjabatan": "2008-01-01"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "jml": 325000,
+            "kdjabatan": "05904",
+            "nmjabatan": "PRANATA NUKLIR PERTAMA",
+            "pensiun": 56,
+            "tmtjabatan": "2008-01-01"
+        }
+    ]
+}
+//hanya ditampilkan 5
+
+=========================================================================================
+[create]
+localhost:7979/api/masterdata/MdJabatanKhususTbl/create
+//di body
+ {
+    "jml": 0,
+    "kdjabatan": "99999",
+    "nmjabatan": "BUATAN ILFA",
+    "pensiun": 100,
+    "tmtjabatan": "2017-01-01"
+}
+//output
+{
+    "Model_ID": "$id0=null",
+    "jml": 0,
+    "kdjabatan": "99999",
+    "nmjabatan": "BUATAN ILFA",
+    "pensiun": 100,
+    "tmtjabatan": "2017-01-01"
+}
+====================================================================================
+[update] kode 99999 JML nya 100000000
+localhost:7979/api/masterdata/MdJabatanKhususTbl/update?id0=2008-01-01&id1=00000
+//di body
+{
+	"JML" : 100000000
+}
+//output
+{
+    "Model_ID": "$id0=null",
+    "jml": 100000000,
+    "kdjabatan": "99999",
+    "nmjabatan": "BUATAN ILFA",
+    "pensiun": 100,
+    "tmtjabatan": "2017-01-01"
+}
+=================================================================================
+[delete]
+localhost:7979/api/masterdata/MdJabatanKhususTbl/delete?id0=2008-01-01&id1=00000
+//menghapus yang kode nya 99999
