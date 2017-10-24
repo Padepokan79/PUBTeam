@@ -1,0 +1,38 @@
+Sandi Saputra
+
+1. Mengambil Token
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdHutang/create
+-> {
+	"Nip" : "DATA001",
+	"kdhutang" : 1,
+	"norut" : 1,
+	"jmlhutang" : 1000000,
+	"jmlcicilan" : 100000,
+	"cicilanakhir" : 100000,
+	"jmlbulan" : 1,
+	"tmthutang" : "2017-10-10",
+	"tathutang" : "2017-10-10",
+	"keterangan" : "panggih lunas",
+	"tgllunas" : "2017-10-10",
+	"jmllunas" : 100000,
+	"tmtgaji" : "2017-10-10"
+}
+
+3. Mengubah Data
+-> localhost:7979/api/masterdata/MdHutang/update?id0=DATA001&id1=1&id2=1
+-> {
+	"jmlhutang" : 20000000
+}
+
+4. Menampilkan Data 
+-> localhost:7979/api/masterdata/MdHutang/readAll?$top=1&$skip=0
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdHutang/delete?id0=DATA001&id1=1&id2=1
