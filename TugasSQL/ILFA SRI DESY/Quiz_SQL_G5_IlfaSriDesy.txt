@@ -1,0 +1,285 @@
+[1]==========================================================================
+Pertanyaan dari : CUCU YUNI YULIYANTI
+Perintah	: 
+	tampilkan nama, tanggal lahir, pangkat, gaji bersih dan pendidikan
+dari pegawai yang memiliki masa kerja terlama
+
+select p.NAMA, f.TGLLHR, pn.NMPANGKAT, f.BERSIH, p.PENDIDIKAN 
+from mstpegawai p inner join fgaji_baru f inner join pangkat_tbl pn
+on p.NIP=f.NIP and p.KDPANGKAT=pn.KDPANGKAT
+having max(p.MASKER);
+
+[2]==============================================================================
+
+Pertanyaan dari : SANDI SAPUTRA
+Perintah	: 
+	cari nama pegawai yang memiliki hutang diatas 10000000 dg cicilan
+di atas 100000 dan belum lunas
+
+
+select p.NAMA, h.JMLHUTANG, h.JMLCICILAN
+from hutang h inner join mstpegawai p
+on h.NIP=p.NIP
+where h.JMLHUTANG>10000000 and h.JMLCICILAN>100000 and h.CICILANAKHIR>0;
+
+[3]======================================================================================
+
+Pertanyaan dari : NURJANAH
+Perintah	: 
+	menampilkan nama, alamat, laki2 yang belum menikah yang tidak memiliki hutang
+dengan gaji bersih tertinggi
+
+select p.nama, p.alamat from mstpegawai p inner join hutang h inner join fgaji f
+on p.NIP=h.NIP and f.NIP=p.NIP
+where p.KDJENKEL=1 and p.KDSTAWIN =(
+select kdstawin from stawin_tbl where nmstawin='TIDAK KAWIN')
+and h.JMLHUTANG=0 having max(f.BERSIH)
+
+[4]=================================================================================
+
+Pertanyaan dari : SRI SUGIARTINI
+Perintah	: 
+	tampilkan nama pangkat laki2 yang status kawinnya "duda", tidak memiliki anak, pangkatnya "4a" (Referensi: fgaji)
+memiliki gaji pokok paling besar dari gaji pokok laki2 yang status kawinnya "tidak kawin" dengan pangkat "penata"
+
+select p.NAMA from mstpegawai p inner join fgaji f inner join fgaji_baru fb 
+on p.NIP=f.NIP and p.NIP=fb.NIP
+where p.KDSTAWIN=(
+select kdstawin from stawin_tbl where nmstawin='JANDA/DUDA')
+and p.KDPANGKAT='4a' and f.GAPOK>(
+select max(fb.GAPOK) from fgaji_baru fb inner join pangkat_tbl pn 
+on fb.KDPANGKAT=pn.KDPANGKAT
+where fb.KDSTAWIN=(select kdstawin from stawin_tbl where nmstawin='TIDAK KAWIN')
+and fb.KDPANGKAT=(select kdpangkat from pangkat_tbl where nmpangkat='Penata')) limit 0,1;
+[5]================================================================================
+
+Pertanyaan dari : SRI SUGIARTINI
+Perintah	:
+	tampilkan gapok dari laki2 yang pangkatnya '3D' dan memiliki gapok
+lbih dari gaji laki2 yang memiliki istri dan gajinya paling besar
+
+select f.NIP, f.NAMA, f.GAPOK 
+from fgaji f 
+where f.KDJENKEL=1 and f.KDPANGKAT='3D' and f.GAPOK > (
+select max(fs.GAPOK) from fgaji_susulan fs
+where f.KDJENKEL=1 and fs.jistri>0)
+
+[6]=================================================================================================
+
+Pertanyaan dari : TEGUH PRABOWO
+Perintah	:
+	cari nama, jistri, janak, gapok yang memiliki pangkat 3a yang sttusnya KAWIN
+
+
+select p.NIP, p.NAMA, p.JISTRI as jumlah_istri, p.JANAK as jumlah_anak, p.GAPOK, s.nmstawin 
+from mstpegawai_02 p inner join stawin_tbl s
+on p.KDSTAWIN=s.kdstawin
+where p.KDPANGKAT='3A' and p.KDSTAWIN=(
+select s.kdstawin from stawin_tbl s where s.nmstawin='KAWIN')
+
+[7]=================================================================
+
+Pertanyaan dari : JEJEN ZENAL M
+Perintah	:
+	menampilkan nip, nama, tgl lahir, pangkat, pendidikan yang
+gapok nya di atas rata2 dan beragama islam
+select p.NIP, p.NAMA, p.TGLLHR, pn.NMPANGKAggT, p.PENDIDIKAN, a.NMAGAMA
+from fgaji f inner join pangkat_tbl pn inner join mstpegawai p inner join agama_tbl a
+on f.NIP=p.NIP and p.KDPANGKAT=pn.KDPANGKAT 
+where a.KDAGAMA=p.AGAMA and f.GAPOK>(
+select avg(f.GAPOK) from fgaji f) and p.AGAMA=(
+select kdagama from agama_tbl where nmagama='ISLAM')
+
+[8]=======================================================
+
+Pertanyaan dari : CUCU YUNI Y
+Perintah	:
+	tampilkan nama, jumlah_hutang, jumlah_cicilan, keterangan yang memiliki
+hutang terkecil dan penghasilan terbesar dengan pangkat 4A
+
+select p.NAMA, h.JMLHUTANG, h.JMLCICILAN, h.KETERANGAN
+from mstpegawai p inner join hutang h inner join fgaji f
+on p.NIP=h.NIP and p.NIP=f.NIP
+where p.KDPANGKAT='4A' and h.JMLHUTANG=(
+select min(h.JMLHUTANG) from hutang h) and f.BERSIH=(
+select max(f.BERSIH) from fgaji f)
+
+[9]=================================================================
+
+Pertanyaan dari : ULIL HIDAYAH
+Perintah	:
+	tampilkan NIP, nama, jistri, janak, tgl gaji, yag pendidikannya 'SARJANA (S1)'
+dan tmpat lahir yg tdk kosong dam mempunyai minimal istri 1
+
+select g.NIP, g.NAMA, g.JISTRI as jumlah_istri, g.JANAK as jumlah_anak, g.TGLGAJI
+from gaji_13_tmp g
+where g.JISTRI>=1 and g.NIP IN(
+select p.NIP from mstpegawai p where p.PENDIDIKAN='SARJANA (S1)' and p.TEMPATLHR is not null)
+
+
+[10]==================================================================
+Pertanyaan dari : IPIN
+Perintah	:
+	mencari nip, nama, gajibersih, dari pegawai yang tdk memiliki hutang dan belum menikah
+serta berjenis kelamin wanita
+
+select p.NIP, p.NAMA, f.BERSIH 
+from mstpegawai p inner join fgaji f inner join hutang h
+on p.NIP=f.NIP 
+where h.JMLHUTANG=0 and p.KDJENKEL=2 and p.KDSTAWIN=(
+select kdstawin from stawin_tbl where nmstawin='TIDAK KAWIN')
+
+[11]===================================================================
+
+Pertanyaan dari : TEGAR BUDI S
+Perintah	:
+	temukan nama pangkat tertinggi
+
+select nmpangkat from pangkat_tbl order by kdpangkat desc limit 0,1
+[12]====================================================================
+Pertanyaan dari : NOPAN
+Perintah	:
+	tampilkan nama, nmkel, gapok, jistri, j anak
+yang kdhubkel 10 dan inputer nya tidak sama dengan user
+
+select p.NAMA, k.NMKEL, p.GAPOK, p.JISTRI as jumlah_istri, p.JANAK as jumlah_anak 
+from mstpegawai p inner join keluarga k 
+on p.NIP=k.NIP 
+where k.KDHUBKEL=10 and k.INPUTER<>'%user%'
+
+[13]=======================================================================
+
+Pertanyaan dari : JEJEN ZENAL M
+Perintah	:
+	menampilkan jumlah pegawai laki2 setiap pangkatnya yang tidak memiliki tunjangan istri
+yg potongan gajinya<700000 dan gaji pokok nya >4000000
+
+select f.KDPANGKAT, count(*) from fgaji f 
+where f.KDJENKEL=1 and f.TJISTRI=0 and f.POTONGAN<700000 and f.GAPOK>4000000 
+group by f.KDPANGKAT
+
+[14]=======================================================================
+Pertanyaan dari : DASIAH
+Perintah	:
+	buatlah query SQL untuk menampilkan seluruh informasi
+mengenai akunsp2d yang memiliki nilai urt 4
+
+select a.*, ak.*
+from akun_konv ak inner join akunsp2d a 
+on ak.kdtrans=a.KDTRANS 
+where ak.urt=4;
+
+[15]===========================================================================
+Pertanyaan dari : HALAH HELMIA W
+Perintah	:
+	tampilkan nama pegawai yang masih memiliki hutang terbanyak dan tidak memiliki
+keterangan juga jumlah cicilan diatas rata2 yang berpangkat duta besar
+
+select p.NIP, p.NAMA 
+from mstpegawai p inner join pangkat_tbl pn inner join hutang h 
+on p.NIP=h.NIP and p.KDPANGKAT=pn.KDPANGKAT 
+where h.JMLCICILAN>(
+select avg(h.JMLCICILAN) from hutang h) and p.KDPANGKAT=(
+select pn.KDPANGKAT from pangkat_tbl pn where pn.NMPANGKAT='DUTA BESAR') and h.KETERANGAN is null having max(h.JMLHUTANG);
+
+[16]=====================================================================
+
+Pertanyaan dari : YUNITA NIKEN S
+Perintah	:
+	tampilkan nip, nama, nama pangkat yang gaji pokok lama nya lebih dari 4juta
+
+select distinct p.NIP, p.NAMA, pn.NMPANGKAT 
+from mstpegawai p inner join pangkat_tbl pn inner join fgaji_lama f 
+on p.NIP=f.NIP and p.KDPANGKAT=pn.KDPANGKAT 
+where f.GAPOK>4000000 limit 0,10
+//yang ditampilkan hanya 10 saja, karena nge lag.. hee
+
+[17]===============================================================
+
+Pertanyaan dari : YUNITA NIKEN S
+Perintah	:
+	mencari pegawai dg gapok terbesar di tbl fgaji_detil_ukp(nama, gapok, nama pangkat)
+
+select p.NIP, p.NAMA, f.GAPOKB, pn.NMPANGKAT 
+from mstpegawai p inner join pangkat_tbl pn inner join fgaji_detil_ukp f 
+on p.NIP=f.NIP and p.KDPANGKAT=pn.KDPANGKAT having max(f.GAPOKB)
+
+[18]=====================================================================
+Pertanyaan dari : IPIN
+Perintah	:
+	tampilkan nama, gaji bersih, pendidikan dri pegawai yg memiliki hutang
+
+select p.NAMA, f.BERSIH, p.PENDIDIKAN 
+from mstpegawai p inner join hutang h inner join fgaji f 
+on p.NIP=h.NIP and p.NIP=f.NIP and h.NIP=f.NIP 
+where h.JMLHUTANG>0
+
+[19]========================================================================
+
+Pertanyaan dari : NURJANAH
+Perintah	:
+	menampilkan nama, alamat, nama_pangkat, tanggal_lahir, tgl_wafat
+yang pendidikanya sarjana (s1) yang sudah wafat
+
+select w.NIP, p.NAMA, p.ALAMAT, pn.NMPANGKAT, p.TGLLHR, w.TGLWAFAT 
+from twafat w inner join mstpegawai p inner join pangkat_tbl pn 
+on w.NIP=p.NIP and p.KDPANGKAT=pn.KDPANGKAT 
+where p.PENDIDIKAN='SARJANA (S1)'
+
+[20]============================================
+
+Pertanyaan dari : ILFA SRI DESY
+Perintah	:
+	tampilkan detai pegawai yang gapoknya di atas rata2
+(nip, nama, nm pangkat, detail hutang, status kawin, nama keluarga)
+
+select p.NIP, p.NAMA, pn.NMPANGKAT, h.JMLHUTANG, h.JMLCICILAN, h.CICILANAKHIR, s.nmstawin, k.NMKEL 
+from keluarga k inner join mstpegawai p inner join pangkat_tbl pn inner join hutang h inner join stawin_tbl s
+on p.NIP=k.NIP and p.KDPANGKAT=pn.KDPANGKAT and h.NIP=p.NIP and s.kdstawin=p.KDSTAWIN 
+where p.GAPOK>(
+select avg(p.GAPOK) from mstpegawai p) limit 0,10
+
+[21]===================================================
+
+Pertanyaan dari : NURIKHSAN
+Perintah	:
+	tampilkan nama pegawai yang mempunyai istri, anak lbih dri 1 dan pangkat 'Penata Muda Tk1'
+
+select p.NIP, p.NAMA 
+from mstpegawai p inner join pangkat_tbl pn 
+on p.KDPANGKAT=pn.KDPANGKAT 
+where p.JISTRI>0 and p.JANAK>1 and pn.NMPANGKAT='Penata Muda Tk.I'
+
+[22]=================================================================
+
+Pertanyaan dari : FRIDA NURHIDAYATI
+Perintah	:
+	tampilkan nama pegawai yang memiliki jumlah anak terbanyak dan status nya janda/duda
+
+select p.NAMA 
+from mstpegawai p inner join historis_jiwa h inner join stawin_tbl s 
+on p.NIP=h.NIP and p.KDSTAWIN=s.kdstawin 
+where s.nmstawin='JANDA/DUDA' and h.JANAK=(
+select max(h.JANAK) from historis_jiwa h)
+
+[23]============================================================================
+
+Pertanyaan dari : YUSUP ABDUL QOHAR
+Perintah	:
+	mencari jumlah pegawai yang memiliki fungsu sebagai dokter gigi muda
+
+select count(*) as jumlah_pegawai_dengan_jabatan_sebagai_Dokter_Gigi_Muda
+from mstpegawai
+where KDFUNGSI =(
+select kdjabatan from fungsi where namafungsi='Dokter Gigi Muda')
+
+[24]=========================================================================
+
+Pertanyaan dari : NATIA AYU UTARI
+Perintah	:
+	menampilkan nama, pendidikan, agama yg memiliki KDSKPD=019
+
+select distinct p.NAMA, p.PENDIDIKAN, a.NMAGAMA 
+from mstpegawai p inner join historis_satker h inner join agama_tbl a 
+on p.NIP=h.NIP 
+where h.KDSKPD='019' and p.AGAMA=a.KDAGAMA

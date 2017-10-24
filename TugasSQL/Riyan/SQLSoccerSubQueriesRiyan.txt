@@ -89,7 +89,7 @@ where country_name='Hungary'
 
 6.
 
-7. menentukan nama tim yang paling banyak
+7. menentukan nama tim yang paling banyak audence
 
 select distinct(playing_club)
 from player_mast
@@ -108,3 +108,187 @@ from match_mast
 )
 )
 );
+
+8. 
+
+
+
+
+
+9. menemukan waktu penghentian tertinggi ke 2 yang telah ditambahkan pada paruh kedua permainan (babak ke 2).
+
+select MAX(stop2_sec)
+from match_mast
+where match_no IN (
+
+select match_no
+from match_mast
+limit 1.1
+);
+
+
+10. menemukan tim memainkan pertandingan di mana waktu penghentian tertinggi 2
+    telah ditambahkan di babak kedua permainan.
+
+select playing_club
+from player_mast
+where team_id IN (
+
+select team_id
+from match_details
+where match_no IN (
+
+select match_no
+from match_mast
+where stop2_sec IN (
+
+select MAX(stop2_sec)
+from match_mast
+limit 1.1
+)
+)
+);
+
+11. menemukan match_no, tanggal bermain dan waktu penghentian tertinggi kedua yang
+    telah ditambahkan di babak kedua permainan
+
+select match_no, play_date, MAX(stop2_sec)
+from match_mast
+where match_no IN (
+
+select match_no
+from match_mast
+limit 1.1
+);
+
+12. menentukan nama tim yang kalah di final
+
+select country_name
+from soccer_country
+where country_id IN (
+
+select team_id
+from match_details
+where play_stage='F' and win_lose='L'
+)
+
+13. 
+
+
+
+14. menampilkan pemain dan no_jersey yang melakukan penalti tercepat
+
+
+select player_name, jersey_no
+from player_mast
+where player_id IN (
+
+select player_id
+from goal_details
+where goal_time IN (
+
+select MIN(goal_time)
+from goal_details
+where goal_type='P'
+)
+)
+
+15. menampilkan pemain, klub dan no_jersey yang melakukan penalti tercepat
+
+select player_name, playing_club, jersey_no
+from player_mast
+where player_id IN (
+
+select player_id
+from goal_details
+where goal_time IN (
+
+select MIN(goal_time)
+from goal_details
+where goal_type='P'
+)
+)
+
+16. menentukan nama pemain yang menjadi kiper Itali yang melawan germany
+
+SELECT  player_name
+FROM player_mast
+WHERE player_id IN(
+
+SELECT player_gk 
+FROM penalty_gk 
+WHERE team_id IN (
+
+SELECT country_id 
+FROM soccer_country 
+WHERE country_name = 'Italy') 
+
+AND match_no IN (
+
+SELECT match_no
+FROM penalty_gk 
+WHERE team_id IN (
+
+SELECT country_id 
+FROM soccer_country 
+WHERE country_name = 'Germany')
+)
+);
+
+17. Mencari jumlah pemain yang mencetak gol yang berasal dari Germany
+
+select count(player_id)
+from goal_details
+where goal_type='N' or goal_type='P' and team_id IN (
+
+select country_id
+from soccer_country
+where country_name='Germany'
+)
+
+18. menentukan nama pemain, no jersey dan klub nya dengan pemain kiper yang berasal dari inggris
+
+select player_name, jersey_no, playing_club
+from player_mast
+where posi_to_play='GK' and team_id IN (
+
+select country_id
+from soccer_country
+where country_name='England'
+)
+
+19. menentukan pemain yang dibawah kontrak liverpool dan berasal dari inggris 
+
+select player_name
+from player_mast
+where playing_club='Liverpool' and team_id IN (
+
+select country_id
+from soccer_country
+where country_name='England'
+)
+
+20.
+
+
+21.
+
+select player_name
+from player_mast
+where team_id IN (
+
+select team_id
+from match_captain
+where match_no IN (
+
+select match_no
+from match_details
+where play_stage='F' and win_lose='W' and player_gk IN (
+
+select player_captain
+from match_captain
+)
+)
+)
+
+22. 
