@@ -1,0 +1,23 @@
+
+Create localhost:7979/api/masterdata/MdPajakAcc/create
+
+{
+	
+"kdcabang" : "A23",
+	
+"kdssbp" : "A20",
+	
+"tgl_srt" : "2013-03-21",
+	
+"no_srt" : "0987613"
+
+}
+
+Update localhost:7979/api/masterdata/MdPajakAcc/update?id0=A23&id1=A20
+{
+	
+	"no_srt" : "0887615"
+
+}
+
+Delete localhost:7979/api/masterdata/MdPajakAcc/delete?id0=A23&id1=A20
