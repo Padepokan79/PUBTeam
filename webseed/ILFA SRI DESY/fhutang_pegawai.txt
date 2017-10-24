@@ -1,0 +1,97 @@
+[auth token fhutang_pegawai]
+localhost:7979/auth/token
+//di body:
+{
+	"nama_login" : "tujuhsembilan",
+	"password" :"a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MDg1MTMsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk0OTEzfQ.X-62flXfCw7D-n3DeV8X7_MlIJcNTTRDoEy76p9Ti1E
+
+======================================================================
+[readAll]
+localhost:7979/api/masterdata/MdFHutangPegawai/readAll
+//Output:
+{
+    "totalItems": 0,
+    "items": []
+}
+
+=====================================================================
+[create]
+localhost:7979/api/masterdata/MdFHutangPegawai/create
+//dibody
+{
+	"nip" : "196109171985031010",
+	"tglgaji" : "2017-10-01",
+	"KdJnsTrans" : 1,
+	"kdskpd" : "001",
+	"kdsatker" : "D10200100100001",
+	"bersih" : 2000000,
+	"kdhutang1" : 1,
+	"hutang 1" : 1000,
+	"kdhutang2" : 1,
+	"hutang 2" : 1000,
+	"kdhutang3" : 1,
+	"hutang 3" : 1000,
+	"kdhutang4" : 1,
+	"hutang 4" : 1000,
+	"kdhutang5" : 1,
+	"hutang 5" : 1000,
+	"kdhutang6" : 1,
+	"hutang 6" : 1000,
+	"kdhutang7" : 1,
+	"hutang 7" : 1000,
+	"kdhutang8" : 1,
+	"hutang 8" : 1000,
+	"kdhutang9" : 1,
+	"hutang 9" : 1000,
+	"kdhutang10" : 1,
+	"hutang 10" : 1000,
+	"kdhutang11" : 1,
+	"hutang 11" : 1000,
+	"kdhutang12" : 1,
+	"hutang 12" : 1000,
+	"kdhutang13" : 1,
+	"hutang 13" : 1000,
+	"kdhutang14" : 1,
+	"hutang 14" : 1000,
+	"kdhutang15" : 1,
+	"hutang 15" : 1000,
+	"kdhutang16" : 1,
+	"hutang 16" : 1000,
+	"bersih_terima" : 1000000,
+	"updstamp" : "2017-10-24 09:07:07"
+}
+//output
+{
+    "Model_ID": "$id0=-1",
+    "bersih": 2000000,
+    "bersih_terima": 1000000,
+    "id": -1,
+    "kdhutang1": 1,
+    "kdhutang10": 1,
+    "kdhutang11": 1,
+    "kdhutang12": 1,
+    "kdhutang13": 1,
+    "kdhutang14": 1,
+    "kdhutang15": 1,
+    "kdhutang16": 1,
+    "kdhutang2": 1,
+    "kdhutang3": 1,
+    "kdhutang4": 1,
+    "kdhutang5": 1,
+    "kdhutang6": 1,
+    "kdhutang7": 1,
+    "kdhutang8": 1,
+    "kdhutang9": 1,
+    "kdjnstrans": 1,
+    "kdsatker": "D10200100100001",
+    "kdskpd": "001",
+    "nip": "196109171985031010",
+    "tglgaji": "2017-10-01",
+    "updstamp": "2017-10-24 09:07:07"
+}
+
+============================================================================
+

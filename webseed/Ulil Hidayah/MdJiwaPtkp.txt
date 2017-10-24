@@ -1,0 +1,18 @@
+auth token
+localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+} => get access token
+
+read
+localhost:7979/api/masterdata/MdJiwaPtkp/readAll
+
+create
+localhost:7979/api/masterdata/MdJiwaPtkp/create
+{
+	"NIP" : "195002201972091001",
+	"TAHUN" : "2017",
+	"JISTRI" : 1,
+	"JANAK" : 1
+} =>create
