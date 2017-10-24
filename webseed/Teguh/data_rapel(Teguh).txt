@@ -1,12 +1,13 @@
-Teguh P
-
 Login
 {
+	
 	"nama_login" : "hendra",
+	
 	"password" : 11
+
 } auth token
 
-Create (Data_Rapel)
+Create (Data_Rapel) localhost:7979/api/masterdata/MdDataRapel/create
 {
 	
 "KDSATKER" :"D200876543",

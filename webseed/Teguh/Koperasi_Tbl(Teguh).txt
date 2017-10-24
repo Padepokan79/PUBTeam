@@ -1,0 +1,21 @@
+Create localhost:7979/api/masterdata/MdKoperasiTbl/create
+{
+	
+"TMT" : "2019-08-13",
+	
+"KDKOPERASI" : "3A",
+	
+"NILAI" : 34000,
+	
+"KETER" : "BAGUS"
+
+}
+
+update localhost:7979/api/masterdata/MdKoperasiTbl/update?id0=2019-08-13&id1=3A
+{
+	
+	"NILAI" : 44000
+
+}
+
+Delete localhost:7979/api/masterdata/MdKoperasiTbl/delete?id0=2019-08-13&id1=3A
