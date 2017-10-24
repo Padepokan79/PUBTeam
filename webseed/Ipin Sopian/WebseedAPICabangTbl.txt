@@ -19,3 +19,23 @@
         "nmcabang": "TASPEN CABANG iNDRAMAYU"
 
 }
+3. update
+param : kdcabang=706
+{
+
+	"nickcabang": "CMS",
+
+    "nmcabang": "TASPEN CABANG CIAMIS"
+
+}
+4. delete 
+param : kdcabang=706
+{
+
+    "nmcabang": "TASPEN CABANG CIAMIS",
+
+    "kdcabang": "706",
+
+    "nickcabang": "CMS"
+
+}

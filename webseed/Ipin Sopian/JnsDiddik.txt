@@ -1,0 +1,29 @@
+tabel jenis_didik
+
+1.read
+ {
+
+            "Model_ID": "$id0=1",
+
+            "jnsdidik": 1,
+
+            "nmjenisdidik": "SD"
+        
+}
+
+2.insert 
+{
+
+            "jnsdidik": 0,
+
+            "nmjenisdidik": "TK"
+
+}
+
+3.update 
+{
+            "nmjenisdidik": "Tk"
+}
+
+4.delete
+param : id=0
