@@ -1,5 +1,6 @@
 Tabel irdhata_tbl
 
+localhost:7979/api/masterdata/MdIrdhataTbl/read?kdirdhata=4
 1.read limit 1
 {
 
@@ -15,6 +16,7 @@ Tabel irdhata_tbl
         
 }
 
+localhost:7979/api/masterdata/MdIrdhataTbl/create
 2. insert 
 {
 
@@ -28,6 +30,7 @@ Tabel irdhata_tbl
 
 }
 
+localhost:7979/api/masterdata/MdIrdhataTbl/update?id=5
 3. update
 param : id=5
 {
@@ -40,6 +43,7 @@ param : id=5
 
 }
 
+localhost:7979/api/masterdata/MdIrdhataTbl/delete?id=5
 4. delete
 param : id=5
 {

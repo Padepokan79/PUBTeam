@@ -1,5 +1,8 @@
 tabel  mutasi_skep
 
+localhost:7979/api/masterdata/MdMutasiSkep/readAll
+
+localhost:7979/api/masterdata/MdMutasiSkep/create
 1. create/insert
 {
 
@@ -41,6 +44,7 @@ tabel  mutasi_skep
 
 }
 
+localhost:7979/api/masterdata/MdMutasiSkep/create
 2. update
 parameter : id0=1234567987
             id1=vxfppp
@@ -48,6 +52,7 @@ parameter : id0=1234567987
 		"gapok":33000000
 }
 
+localhost:7979/api/masterdata/MdMutasiSkep/delete?id0=1234567987&id1=vxfppp
 3. delete
 parameter : id0=1234567987
             id1=vxfppp

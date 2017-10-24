@@ -1,5 +1,6 @@
  tabel fgaji_baru
 
+localhost:7979/api/masterdata/MdFGajiBaru/readAll?$top=1&$skip=0
 1. auth/token
 {
 
@@ -9,6 +10,7 @@
 
 }
 
+localhost:7979/api/masterdata/MdFGajiBaru/readAll?$top=1&$skip=0
 2. Read all limit 1
 {
 
@@ -176,6 +178,7 @@
 
 }
 
+localhost:7979/api/masterdata/MdFGajiBaru/create
 3. Create record
 {
 
@@ -332,6 +335,7 @@
 
 }
 
+localhost:7979/api/masterdata/MdFGajiBaru/update?id0=2012-03-01&id1=5&id2=GUB201003         &id3=2012-11-08&id4=1
 4. update
 {
 	"tjeselon":1

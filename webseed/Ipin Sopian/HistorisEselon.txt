@@ -1,5 +1,6 @@
 tabel historis_eselon
 
+localhost:7979/api/masterdata/MdHistorisEselon/readAll
 1.read 
 {
 
@@ -23,6 +24,7 @@ tabel historis_eselon
         
 }
 
+localhost:7979/api/masterdata/MdHistorisEselon/create
 2. insert
 {
 
@@ -44,9 +46,13 @@ tabel historis_eselon
 
 }
 
+localhost:7979/api/masterdata/MdHistorisEselon/update?id0=2004-04-01&id1=450006657
 3. update 
 param : id0=2004-04-01
         id1=450006657
 {
             "tjeselon": 0
 }
+
+4. delete
+localhost:7979/api/masterdata/MdHistorisEselon/delete?id0=2004-04-01&id1=450006657

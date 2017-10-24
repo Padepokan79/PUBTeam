@@ -9,6 +9,7 @@
 
 }
 
+localhost:7979/api/masterdata/MdCabangTbl/create
 2.create
 {
 
@@ -19,6 +20,8 @@
         "nmcabang": "TASPEN CABANG iNDRAMAYU"
 
 }
+
+localhost:7979/api/masterdata/MdCabangTbl/update?KDCABANG=706
 3. update
 param : kdcabang=706
 {
@@ -28,6 +31,8 @@ param : kdcabang=706
     "nmcabang": "TASPEN CABANG CIAMIS"
 
 }
+
+localhost:7979/api/masterdata/MdCabangTbl/delete?kdcabang=706
 4. delete 
 param : kdcabang=706
 {
