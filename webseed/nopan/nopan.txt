@@ -9,7 +9,7 @@
 //menambah kan data pada AkunKonvTbl
 {
 	
-	"nmakun" : "padepokan",
+	"nmakun" : "nopan",
 
 	"kdtrans" : 111,
 	
@@ -44,4 +44,8 @@
 	
 	"idAkun" : "b2"
 
+}
+//update
+{
+	"nmakun" : "padepokan"
 }

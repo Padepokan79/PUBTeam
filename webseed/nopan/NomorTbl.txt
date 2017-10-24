@@ -1,0 +1,30 @@
+//login
+{
+
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+//create NomorTbl
+{
+
+	"tglgaji" : "2017-10-25",
+
+	"kdjnstrans" : 2,
+
+	"kdskpd" : "abc",
+
+	"kdtrans" : 5,
+
+	"nomor" : "0897847740",
+
+	"updstamp" : "2017-03-03 11:10:09"
+
+}
+//update
+{
+
+	"nomor" : 222
+
+}
