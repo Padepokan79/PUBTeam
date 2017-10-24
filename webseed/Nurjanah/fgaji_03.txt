@@ -1,0 +1,291 @@
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+
+
+{
+       "bersih": 4729900,
+            
+	"catatan": "DATA MIGRASI AWAL                                 ",
+            
+	"gapok": 3075900,
+            
+	"glrbelakang": "                              ",
+            
+	"glrdepan": "                              ",
+            
+	"hal": 1,
+            
+	"janak": 2,
+            
+	"jistri": 1,
+            
+	"kdberas": 2,
+            
+	"kdeselon": "00",
+            
+	"kdfungsi": "08704",
+            
+	"kdguru": "004",
+            
+	"kdhitung": 1,
+            
+	"kdirdhata": "  ",
+            
+	"kdjenkel": 1,
+            
+	"kdjnstrans": 1,
+            
+	"kdkoperasi": "  ",
+            
+	"kdkorpri": "  ",
+            
+	"kdlangka": 0,
+            
+	"kdpangkat": "3A",
+            
+	"kdsatker": "D10200611900012          ",
+            
+	"kdskpd": "119",
+            
+	"kdssbp": "006",
+            
+	"kdstapeg": 4,
+            
+	"kdstawin": 2,
+            
+	"kdstruk": 0,
+            
+	"kdterpencil": "000",
+            
+	"kdtjkhusus": "00000",
+            
+	"kdtkd": 0,
+            
+	"kodebyr": "000       ",
+            
+	"kotor": 5318019,
+            
+	"masker": 30,
+            
+	"nama": "LISTIAN SUMARNI, S.PD",
+            
+	"nip": "197511281997042001",
+            
+	"niplama": "132025261",
+            
+	"nodosir": "0         ",
+            
+	"norek": "                                        ",
+            
+	"npwp": "                    ",
+            
+	"nu": 1,
+            
+	"paskes": 0,
+            
+	"pbulog": 0,
+            
+	"phutang": 0,
+            
+	"pirdhata": 0,
+            
+	"piwp": 350652,
+            
+	"pkoperasi": 0,
+            
+	"pkorpri": 0,
+            
+	"potongan": 588119,
+            
+	"ppajak": 117945,
+            
+	"prsngapok": 100,
+            
+	"psewa": 0,
+            
+	"ptaperum": 10000,
+            
+	"tbulat": 50,
+            
+	"tglgaji": "2014-02-01",
+            
+	"tgllhr": "1956-04-24",
+            
+	"tjanak": 82174,
+            
+	"tjaskes": 0,
+            
+	"tjberas": 209280,
+            
+	"tjeselon": 0,
+            
+	"tjfungsi": 389000,
+            
+	"tjguru": 0,
+            
+	"tjistri": 410870,
+            
+	"tjkhusus": 0,
+            
+	"tjlangka": 0,
+            
+	"tjpajak": 117945,
+            
+	"tjstruk": 0,
+            
+	"tjterpencil": 0,
+            
+	"tjtkd": 0,
+            
+	"tjtpp": 0,
+            
+	"tjumum": 0,
+            
+	"tmttabel": "2013-01-01"
+        
+}
+
+{
+       "bersih": 4729900,
+            
+	"catatan": "DATA MIGRASI AWAL                                 ",
+            
+	"gapok": 3075900,
+            
+	"glrbelakang": "                              ",
+            
+	"glrdepan": "                              ",
+            
+	"hal": 1,
+            
+	"janak": 2,
+            
+	"jistri": 1,
+            
+	"kdberas": 2,
+            
+	"kdeselon": "00",
+            
+	"kdfungsi": "08704",
+            
+	"kdguru": "004",
+            
+	"kdhitung": 1,
+            
+	"kdirdhata": "  ",
+            
+	"kdjenkel": 1,
+            
+	"kdjnstrans": 1,
+            
+	"kdkoperasi": "  ",
+            
+	"kdkorpri": "  ",
+            
+	"kdlangka": 0,
+            
+	"kdpangkat": "3A",
+            
+	"kdsatker": "D10200611900012          ",
+            
+	"kdskpd": "119",
+            
+	"kdssbp": "006",
+            
+	"kdstapeg": 4,
+            
+	"kdstawin": 2,
+            
+	"kdstruk": 0,
+            
+	"kdterpencil": "000",
+            
+	"kdtjkhusus": "00000",
+            
+	"kdtkd": 0,
+            
+	"kodebyr": "000       ",
+            
+	"kotor": 5318019,
+            
+	"masker": 30,
+            
+	"nama": "HASNATUL AINI",
+            
+	"nip": "195604241988032001",
+            
+	"niplama": "132025261",
+            
+	"nodosir": "0         ",
+            
+	"norek": "                                        ",
+            
+	"npwp": "                    ",
+            
+	"nu": 1,
+            
+	"paskes": 0,
+            
+	"pbulog": 0,
+            
+	"phutang": 0,
+            
+	"pirdhata": 0,
+            
+	"piwp": 350652,
+            
+	"pkoperasi": 0,
+            
+	"pkorpri": 0,
+            
+	"potongan": 588119,
+            
+	"ppajak": 117945,
+            
+	"prsngapok": 100,
+            
+	"psewa": 0,
+            
+	"ptaperum": 10000,
+            
+	"tbulat": 50,
+            
+	"tglgaji": "2014-02-01",
+            
+	"tgllhr": "1956-04-24",
+            
+	"tjanak": 82174,
+            
+	"tjaskes": 0,
+            
+	"tjberas": 209280,
+            
+	"tjeselon": 0,
+            
+	"tjfungsi": 389000,
+            
+	"tjguru": 0,
+            
+	"tjistri": 410870,
+            
+	"tjkhusus": 0,
+            
+	"tjlangka": 0,
+            
+	"tjpajak": 117945,
+            
+	"tjstruk": 0,
+            
+	"tjterpencil": 0,
+            
+	"tjtkd": 0,
+            
+	"tjtpp": 0,
+            
+	"tjumum": 0,
+            
+	"tmttabel": "2013-01-01"
+        
+}
