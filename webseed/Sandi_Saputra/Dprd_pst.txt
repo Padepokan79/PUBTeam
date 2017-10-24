@@ -1,12 +1,14 @@
 Sandi Saputra
 
 1. Mengambil token
+-> localhost:7979/auth/token
 -> {
 	"nama_login" : "hendra",
 	"password" : "11"
 }
 
 2. Insert Data
+-> localhost:7979/api/masterdata/MdDprdPst/create
 {
 	"Nip" : "DATA001",
 	"Tmt_kerja" : "2017-10-10",
@@ -42,3 +44,16 @@ Sandi Saputra
 	"Inputer" : "Sandi",
 	"Catatan" : "Input ke dua"
 }
+
+3. Mengupdate data
+-> localhost:7979/api/masterdata/MdDprdPst/update?"Nip"=DATA002
+-> {
+	"Inputer" : "SandiCb",
+	"Catatan" : "Telah di update oleh sandi CB"
+}
+
+4. Menampilkan Data
+-> localhost:7979/api/masterdata/MdDprdPst/readAll
+
+5. Menghapus Data
+-> localhost:7979/api/masterdata/MdDprdPst/delete?Nip=DATA002

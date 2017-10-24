@@ -1,0 +1,102 @@
+Sandi Saputra
+
+1. Mengambil Token
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah Data
+-> localhost:7979/api/masterdata/MdMstPegawaiCopy/create
+-> {
+	"nip" : "DATA001",
+	"nama" : "Jaret Fajrianto",
+	"glrdepan" : "Master",
+	"glrbelakang" : "Gacha",
+	"kdjenkel" : 1,
+	"tempatlhr" : "Jakarta",
+	"tgllhr" : "1980-10-10",
+	"agama" : 1,
+	"zakat_dg" : 1,
+	"pendidikan" : "Sarjana",
+	"tmtcapeg" : "2017-10-10",
+	"tmtskmt" : "2017-10-10",
+	"kdstawin" : 1,
+	"jistri" : 1,
+	"janak" : 0,
+	"kdstapeg" : 1,
+	"tmtstop" : "2017-10-10",
+	"kdpangkat" : 1,
+	"mkgolt" : 1,
+	"blgolt" : 1,
+	"gapok" : 10000000,
+	"masker" : 10,
+	"prsngapok" : 2,
+	"tmttabel" : "2017-10-10",
+	"tmtkgb" : "2017-10-10",
+	"tmtkgbyad" : "2017-10-10",
+	"kdeselon" : "1",
+	"tjeselon" : 1,
+	"kdfungsi" : "1",
+	"tjfungsi" : 1,
+	"bup" : 1,
+	"kdstruk" : "1",
+	"tjstruk" : 1,
+	"kdguru" : "1",
+	"tjguru" : 1,
+	"kdberas" : 1,
+	"kdlangka" : 1,
+	"tjlangka" : 1,
+	"kdtkd" : 1,
+	"tjtkd" : 1,
+	"kdterpencil" : "1",
+	"tjterpencil" : 1,
+	"kdtjkhusus" : "1",
+	"tjkhusus" : 1,
+	"kdkorpri" : "1",
+	"pkorpri" : 1,
+	"kdkoperasi" : "1",
+	"pkoperasi" : 1,
+	"kdirdhata" : "1",
+	"pirdhata" : 1,
+	"taperum" : 1,
+	"psewa" : 1,
+	"nodosir" : "null",
+	"kdcabtaspen" : "0",
+	"kdssbp" : "0",
+	"kdskpd" : "0",
+	"kdsatker" : "null",
+	"alamat" : "Jakarta",
+	"kddati4" : "0",
+	"kddati3" : "0",
+	"kddati2" : "0",
+	"kddati1" : "0",
+	"notelp" : "089909",
+	"noktp" : "089909",
+	"npwp" : "0890909",
+	"niplama" : "DATA002",
+	"kdhitung" : 1,
+	"kodebyr" : "10",
+	"norek" : "1001234",
+	"tmtberlaku" : "2020-10-10",
+	"catatan" : "di ubah sandi",
+	"kdjnstrans" : 1,
+	"updstamp" : "2020-10-10;20;10",
+	"inputer" : "SandiCb",
+	"kd_infaq" : 1,
+	"nokarpeg" : "null",
+	"jns_guru" : 1
+}
+
+3. Mengubah Data
+-> localhost:7979/api/masterdata/MdMstPegawaiCopy/update?Nip=DATA001
+-> {
+	"nama" : "jaret fajrianto jons"
+}
+
+4. Menampilkan data
+-> localhost:7979/api/masterdata/MdMstPegawaiCopy/readAll?$top=2&$skip=0
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdMstPegawaiCopy/delete?Nip=DATA001
