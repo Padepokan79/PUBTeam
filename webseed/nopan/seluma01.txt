@@ -1,0 +1,77 @@
+//login seluma01
+url : localhost:7979/auth/token
+{
+
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+//create seluma01
+url : localhost:7979/api/masterdata/MdSeluma01/create
+{
+
+            "Model_ID": "$id0=null",
+
+            "alamat": "",
+
+            "fd_kdbag": "000",
+
+            "fd_kdbras": 2,
+
+            "fd_kdgiat": "01",
+
+            "fd_satker1": "990739",
+
+            "fd_satker2": "1037",
+
+            "gapok": 3172700,
+
+            "janak": 2,
+
+            "jistri": 1,
+
+            "kdpangkat": "3A",
+
+            "kdsatker": "",
+
+            "kdstapeg": 1,
+
+            "nama": "Nopan rahmadi. S.Pd",
+
+            "namabkn": "",
+
+            "nip": "0204151022",
+
+            "nip_old": "19640201",
+
+            "nip_pemda": "196402011997022001",
+
+            "nodosir": "300001",
+
+            "plag": "S",
+
+            "satkerpemd": "990739103701",
+
+            "tempatlhr": "",
+
+            "tgllhr": "1964-02-01",
+
+            "tjeselon": 0,
+
+            "tjfungsi": 327000,
+
+            "tmtcapeg": "1997-02-01"
+
+}
+//read all seluma01
+url : localhost:7979/api/masterdata/MdSeluma01/readAll?$top=3&$skip=0
+//update seluma01
+url : localhost:7979/api/masterdata/MdSeluma01/update?$id0=0204151022
+{
+
+	"nama" : "DRS.Nopan Rahmadi"
+
+}
+//delete seluma01
+url : localhost:7979/api/masterdata/MdSeluma01/delete?$id0=0204151022
