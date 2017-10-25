@@ -1,0 +1,27 @@
+Sandi Saputra
+
+1. Mengambil token 
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdStatus/create
+-> {
+	"kd_status" : "88",
+	"nm_status" : "lajang"
+}
+
+3. Menampilkan data
+-> localhost:7979/api/masterdata/MdStatus/readAll
+
+4. Mengubah data
+-> localhost:7979/api/masterdata/MdStatus/update?kd_status=88
+-> {
+	"nm_status" : "jalang"
+}
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdStatus/delete?kd_status=88
