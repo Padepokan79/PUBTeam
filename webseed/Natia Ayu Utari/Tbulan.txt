@@ -1,0 +1,43 @@
+//  TBULAN
+
+1. Token
+
+url : localhost:7979/auth/token
+
+{
+
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+2. read all
+
+url : localhost:7979/api/masterdata/MdTbulan/readAll
+
+3. create
+
+url : localhost:7979/api/masterdata/MdTbulan/create
+
+{
+
+	"kdbulan" : 13,
+
+	"nmbulan" : "Ramadhan"
+
+}
+
+4. update
+
+url :localhost:7979/api/masterdata/MdTbulan/update?id0=13
+
+{
+
+	"nmbulan" : "Muharram"
+
+}
+
+5. delete
+
+url : localhost:7979/api/masterdata/MdTbulan/delete?id0=13

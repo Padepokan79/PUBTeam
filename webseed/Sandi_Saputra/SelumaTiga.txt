@@ -1,0 +1,49 @@
+Sandi Saputra
+
+1. Mengambil token
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdSelumaTiga/create
+-> {
+	"fd_satker1" : "null",
+	"fd_satker2" : "null",
+	"fd_kdgiat" : "01",
+	"satkerpemd" : "penjualan",
+	"fd_kdbag" : "001",
+	"nip_pemda" : "DATA0001",
+	"nip_old" : "DATA000",
+	"nama" : "Jaret Jons",
+	"tempatlhr" : "Jakarta",
+	"tgllhr" : "1980-10-10",
+	"sex" : 1,
+	"jistri" : 1,
+	"janak" : 0,
+	"kdstapeg" : 1,
+	"alamat" : "Garut",
+	"kdpangkat" : "1",
+	"gapok" : 10000000,
+	"tjeselon" : 1,
+	"tjfungsi" : 1,
+	"nodosir" : "100",
+	"tmtcapeg" : "2017-10-10",
+	"nip" : "Data001",
+	"plag" : "1",
+	"kdsatker" : "100"
+}
+
+3. Menampilkan data
+-> localhost:7979/api/masterdata/MdSelumaTiga/readAll?$Top=2&$Skip=0
+
+4. Mengubah data
+-> localhost:7979/api/masterdata/MdSelumaTiga/update?Nip=Data001
+-> {
+	"nama" : "Jaret Fajrianto"
+}
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdSelumaTiga/delete?Nip=Data001
