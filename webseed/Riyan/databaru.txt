@@ -1,0 +1,121 @@
+Nama	: Riyan
+table	: databaru
+
+1. auth token
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+
+====================================================
+2. readAll data di table databaru
+
+localhost:7979/api/masterdata/MdDatabaru/readAll
+
+
+
+====================================================
+3. Create data di table databaru
+
+localhost:7979/api/masterdata/MdDatabaru/create
+
+{
+	"NIP" : "0204151028",
+
+	"NAMA" : "RIYAN TURMUDI",
+
+	"GLRDEPAN" : "",
+
+	"GLRBELAKANG" : "",
+
+	"KDJENKEL" : 1,
+
+	"TGLLHR" : "1997-03-26",
+
+	"JISTRI" : 1,
+	"JANAK" : 10,
+
+	"KDSTAPEG" : 4,
+
+	"KDPANGKAT" : "4A",
+
+	"GAPOK" : 4000000,
+
+	"MASKER" : 22,
+
+	"MKGOLT" : 0,
+
+	"BLGOLT" : 0,
+
+	"PRSNGAPOK" : 100,
+
+	"KDESELON" : "00",
+
+	"TJESELON" : 0,
+
+	"KDFUNGSI" : "01501",
+
+	"TJFUNGSI" : 1000000,
+
+	"KDCABTASPEN" : "",
+
+	"KDSSBP" : "001",
+
+	"KDSKPD" : "014",
+
+	"KDSATKER" : "D10200101400013",
+
+	"ALAMAT" : "",
+
+	"KDDATI4" : "000",
+
+	"KDDATI3" : "00",
+
+	"KDDATI2" : "00",
+
+	"KDDATI1" : "07",
+
+	"TMTGAJI" : "2017-10-10",
+
+	"TMTTABEL" : "2017-10-10",
+
+	"TGLSKEP" : "2017-10-10",
+
+	"NOMORSKEP" : "",
+
+	"PENERBITSKEP" : "",
+
+	"TMT" : "2017-10-10",
+
+	"KETERANGAN" : "",
+
+	"FLAG" : 0,
+
+	"TYPE_DATA" : 0,
+
+	"TANDA" : 0,
+
+	"NAMAEXCEL" : ""
+
+}
+
+
+====================================================
+4. Update data di table databaru
+
+localhost:7979/api/masterdata/MdDatabaru/update?NIP=0204151028
+
+{
+	"Nama" : "Thon Thomas"
+
+}
+
+====================================================
+5. Delete data di table databaru
+
+localhost:7979/api/masterdata/MdDatabaru/delete?NIP=0204151028
