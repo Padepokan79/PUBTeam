@@ -1,4 +1,5 @@
 //login
+url : localhost:7979/auth/token
 {
 
 	"nama_login" : "hendra",
@@ -7,7 +8,7 @@
 
 }
 //create histtht0tbl
-localhost:7979/api/masterdata/MdHistThtTbl/create
+url : localhost:7979/api/masterdata/MdHistThtTbl/create
 {
 	"nip" : "0204151022",
 
@@ -56,6 +57,13 @@ localhost:7979/api/masterdata/MdHistThtTbl/create
 	"inputer" : "admin"
 
 }
+//read
+url : localhost:7979/api/masterdata/MdHistThtTbl/readAll
 //update
 //url
 localhost:7979/api/masterdata/MdHistThtTbl/update?$id0=2017-03-03&$id1=2&$id20204151023
+{
+
+	"gapok" : 500000
+
+}

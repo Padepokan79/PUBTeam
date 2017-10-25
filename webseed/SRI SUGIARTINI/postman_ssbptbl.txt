@@ -1,0 +1,56 @@
+POSTMAN 
+25/10/2017
+SRI SUGIARTINI
+TABEL : ssbp_tbl
+==================================================================
+TOKEN :
+localhost:7979/auth/token
+===================================================================
+READ :
+localhost:7979/api/masterdata/MdSsbpTbl/readAll
+ HASIL :
+{
+    "totalItems": 1,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "kdcabang": "102",
+            "kddjpk": "990718",
+            "kdkab": "00",
+            "kdprov": "07",
+            "kdssbp": "001",
+            "nmssbp": "PEMPROV BENGKULU"
+        }
+    ]
+}
+=================================================================
+CREATE :
+{
+	"kdssbp":"002",
+"nmssbp":"CIAMIS",
+"kdcabang":"111",
+"kddjpk":"888888",
+"kdprov":"01",
+"kdkab":"11"
+}
+
+=================================================================
+UBAH :
+localhost:7979/api/masterdata/MdSsbpTbl/update?id0=002
+
+{
+	"nmssbp":"CIAMIS UTARA"
+}
+HASIL :
+{
+    "Model_ID": "$id0=null",
+    "kdcabang": "111",
+    "kddjpk": "888888",
+    "kdkab": "11",
+    "kdprov": "01",
+    "kdssbp": "002",
+    "nmssbp": "CIAMIS UTARA"
+}
+===================================================================
+HAPUS :
+localhost:7979/api/masterdata/MdSsbpTbl/delete?id0=002
