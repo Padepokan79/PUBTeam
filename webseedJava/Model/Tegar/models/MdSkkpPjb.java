@@ -4,8 +4,8 @@ import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.CompositePK;
 import org.javalite.activejdbc.annotations.Table;
 
-@Table("kolaborasi_data")
-@CompositePK({"pegawai_id","nip_baru"})
-public class MdKolaborasiData extends Model {
+@Table("skkp_pjb")
+@CompositePK({"kddati1","kddati2"})
+public class MdSkkpPjb extends Model {
 
 }

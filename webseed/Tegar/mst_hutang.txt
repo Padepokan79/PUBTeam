@@ -1,0 +1,46 @@
+/*
+Author : Tegar Budi Septian
+File Name : mst_hutang.txt
+Date Created : Wednesday, 25th October, 2017
+*/
+
+/*Getting token*/
+request url : localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTUyMzcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgxNjM3fQ.6m5p4esMeSw34l4_xyceyy8ZPbEX-3BHuJifg0DAqFU
+
+
+/*Reading data from mst_hutang table.*/
+request url : localhost:7979/api/masterdata/MdMstHutang/readAll?$top=2&$skip=0
+
+
+/*Adding a data in mst_hutang table.*/
+request url : localhost:7979/api/masterdata/MdMstHutang/create
+{
+	"nip" : "0204151036",
+	"urut" : 1,
+	"kode_lbg" : "LBG1",
+	"tmt_hutang" : "2017-10-25",
+	"tat_hutang" : "2017-12-25",
+	"jumlah" : 1000000,
+	"pot_bln" : 80000,
+	"pot_akhir" : 100000,
+	"kd_lunas" : 500000,
+	"tgl_lunas" : "2017-11-02",
+	"j_wkt" : 2
+}
+
+
+/	*Updating a data of mst_hutang.*/
+request url : localhost:7979/api/masterdata/MdMstHutang/update?id0=0204151036&id1=1
+{
+	"jumlah" : 600000
+}
+
+
+
+/*Deleting a data of mst_hutang.*/
+request url : localhost:7979/api/masterdata/MdMstHutang/delete?id0=0204151036&id1=1
