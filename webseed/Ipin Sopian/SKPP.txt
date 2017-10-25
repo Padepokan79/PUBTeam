@@ -45,3 +45,6 @@ localhost:7979/api/masterdata/MdSKPP/update?id0=2017-10-10&id1=1&id2=2&id3=11111
 
 localhost:7979/api/masterdata/MdSKPP/delete?id0=2017-10-10&id1=1&id2=2&id3=1111111
 3.delete
+
+localhost:7979/api/masterdata/MdSKPP/readAll
+4.read
