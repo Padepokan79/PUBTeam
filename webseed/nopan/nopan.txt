@@ -1,0 +1,51 @@
+//login
+{
+	
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+//menambah kan data pada AkunKonvTbl
+{
+	
+	"nmakun" : "nopan",
+
+	"kdtrans" : 111,
+	
+	"Kd_Rek_1" : 1,
+
+	"Kd_Rek_2" : 2,
+
+	"Kd_Rek_3" : 3,
+
+	"Kd_Rek_4" : 4,
+
+	"Kd_Rek_5" : 5,
+	
+	"idAkun" : "a1"
+
+}
+{
+
+	"nmakun" : "tujuhsembilan",
+
+	"kdtrans" : 222,
+
+	"Kd_Rek_1" : 11,
+
+	"Kd_Rek_2" : 22,
+
+	"Kd_Rek_3" : 33,
+	
+	"Kd_Rek_4" : 44,
+	
+	"Kd_Rek_5" : 55,
+	
+	"idAkun" : "b2"
+
+}
+//update
+{
+	"nmakun" : "padepokan"
+}

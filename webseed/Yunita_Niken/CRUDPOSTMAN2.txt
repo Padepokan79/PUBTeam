@@ -1,0 +1,1283 @@
+============================TABEL 1 ESELON_TBL======================================================
+4. update 
+
+localhost:7979/api/masterdata/MdEselontbl/update?kdeselon=6A
+
+coding :
+{
+			
+"rp_eselon": 64000000,
+            
+"tmteselon": "2008-01-01",
+            
+"uraian": "presiden"
+        
+}
+
+output : 
+{
+    
+"Model_ID": "$id0=null",
+    
+"kdeselon": "6A",
+    
+"rp_eselon": 64000000,
+    
+"tmteselon": "2008-01-01",
+    
+"uraian": "presiden"
+
+}
+
+5.delete
+localhost:7979/api/masterdata/MdEselontbl/delete?kdeselon=6A
+
+
+output :
+{
+    
+"tmteselon": "2008-01-01",
+    
+"rp_eselon": 64000000,
+   
+ "kdeselon": "6A",
+    
+"uraian": "presiden"
+
+}
+
+
+
+================================================TABEL 2 FGAJI_COPY=========================================================
+
+1. auth token
+localhost:7979/auth/token
+
+coding : 
+{
+	
+"nama_login" : "tujuhsembilan",
+	
+"password" : "a"
+
+}
+
+output : 
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+
+    "token_type": "Bearer",
+ 
+   "scope": null,
+ 
+   "expires_in": 86400000,
+  
+  "status": "success",
+  
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MDk4NzksInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk2Mjc5fQ.N2LaiQbMZIfFC2rzV6dZOFcQkzp3r-d-hGB9pl8Lqf8",
+ 
+   "id": 79,
+   
+ "nama_login": "tujuhsembilan"
+
+}
+
+
+
+2. readAll limit $top = 10, $skip = 0
+ localhost:7979/api/masterdata/MdFgajiCopy/readAll?$top=3&$skip=0
+
+output :
+
+{
+   
+ "totalItems": 33806,
+    
+"items": [
+        
+{
+            
+"Model_ID": "$id0=null",
+            
+"bersih": 2354800,
+            
+"catatan": "DATA MIGRASI AWAL                                 ",
+            
+"gapok": 1852500,
+            
+"glrbelakang": "",
+            
+"glrdepan": "",
+           
+ "hal": 1,
+            
+"janak": 2,
+            
+"jistri": 1,
+            
+"kdberas": 2,
+           
+ "kdeselon": "00",
+            
+"kdfungsi": "00000",
+           
+ "kdguru": "006",
+            
+"kdhitung": 1,
+            
+"kdirdhata": "  ",
+            
+"kdjenkel": 1,
+           
+ "kdjnstrans": 1,
+            
+"kdkoperasi": "  ",
+            
+"kdkorpri": "  ",
+            
+"kdlangka": 0,
+            
+"kdpangkat": "2A",
+           
+ "kdsatker": "D10200612200001     ",
+           
+ "kdskpd": "122",
+            
+"kdssbp": "006",
+            
+"kdstapeg": 4,
+            
+"kdstawin": 2,
+           
+ "kdstruk": 0,
+            
+"kdterpencil": "000",
+            
+"kdtjkhusus": "00000",
+            
+"kdtkd": 0,
+            
+"kodebyr": "000       ",
+           
+ "kotor": 2570985,
+            
+"masker": 5,
+            
+"nama": "SUANDI",
+            
+"nip": "196811052007011019",
+           
+ "niplama": "450019147",
+            
+"nodosir": "0         ",
+           
+ "norek": "                                        ",
+           
+ "npwp": "                    ",
+            
+"nu": 1,
+            
+"paskes": 0,
+            
+"pbulog": 0,
+            
+"phutang": 0,
+            
+"pirdhata": 0,
+            
+"piwp": 211185,
+           
+ "pkoperasi": 0,
+            
+"pkorpri": 0,
+            
+"potongan": 216185,
+           
+ "ppajak": 0,
+            
+"prsngapok": 100,
+           
+ "psewa": 0,
+          
+  "ptaperum": 5000,
+          
+  "tbulat": 95,
+           
+ "tglgaji": "2014-04-01",
+           
+ "tgllhr": "1968-11-05",
+          
+  "tjanak": 74100,
+            
+"tjaskes": 0,
+            
+"tjberas": 279040,
+           
+ "tjeselon": 0,
+           
+ "tjfungsi": 0,
+            
+"tjguru": 0,
+            
+"tjistri": 185250,
+            
+"tjkhusus": 0,
+           
+ "tjlangka": 0,
+            
+"tjpajak": 0,
+            
+"tjstruk": 0,
+           
+ "tjterpencil": 0,
+           
+ "tjtkd": 0,
+            
+"tjtpp": 0,
+          
+  "tjumum": 180000,
+       
+     "tmttabel": "2013-01-01"
+        
+},
+        
+{
+            
+"Model_ID": "$id0=null",
+           
+ "bersih": 2455200,
+           
+ "catatan": "DATA MIGRASI AWAL                                 ",
+           
+ "gapok": 2054400,
+           
+ "glrbelakang": "",
+          
+  "glrdepan": "",
+            
+"hal": 1,
+           
+ "janak": 1,
+           
+ "jistri": 1,
+            
+"kdberas": 2,
+           
+ "kdeselon": "00",
+           
+ "kdfungsi": "00000",
+            
+"kdguru": "006",
+          
+  "kdhitung": 1,
+            
+"kdirdhata": "  ",
+            
+"kdjenkel": 1,
+            
+"kdjnstrans": 1,
+            
+"kdkoperasi": "  ",
+         
+   "kdkorpri": "  ",
+           
+ "kdlangka": 0,
+           
+ "kdpangkat": "2B",
+           
+ "kdsatker": "D10200612200001     ",
+           
+ "kdskpd": "122",
+            
+"kdssbp": "006",
+           
+ "kdstapeg": 4,
+          
+  "kdstawin": 2,
+           
+ "kdstruk": 0,
+           
+ "kdterpencil": "000",
+        
+    "kdtjkhusus": "00000",
+        
+    "kdtkd": 0,
+            
+"kodebyr": "000       ",
+            
+"kotor": 2694483,
+           
+ "masker": 9,
+            
+"nama": "JHON SOPIAN BAHRI",
+           
+ "nip": "198407122007011004",
+           
+ "niplama": "450019350",
+            
+"nodosir": "0         ",
+            
+"norek": "                                        ",
+           
+ "npwp": "                    ",
+           
+ "nu": 1,
+            "paskes": 0,
+           
+ "pbulog": 0,
+            "phutang": 0,
+          
+  "pirdhata": 0,
+            "piwp": 230092,
+          
+  "pkoperasi": 0,
+            "pkorpri": 0,
+           
+ "potongan": 239283,
+            "ppajak": 4191,
+           
+ "prsngapok": 100,
+            "psewa": 0,
+            
+"ptaperum": 5000,
+            "tbulat": 84,
+            
+"tglgaji": "2014-04-01",
+           
+ "tgllhr": "1984-07-12",
+        
+    "tjanak": 41088,
+           
+ "tjaskes": 0,
+            
+"tjberas": 209280,
+          
+  "tjeselon": 0,
+            
+"tjfungsi": 0,
+           
+ "tjguru": 0,
+            
+"tjistri": 205440,
+    
+        "tjkhusus": 0,
+           
+ "tjlangka": 0,
+            
+"tjpajak": 4191,
+            
+"tjstruk": 0,
+            
+"tjterpencil": 0,
+            "
+tjtkd": 0,
+            
+"tjtpp": 0,
+            
+"tjumum": 180000,
+          
+  "tmttabel": "2013-01-01"
+       
+ },
+       
+ {
+           
+ "Model_ID": "$id0=null",
+           
+ "bersih": 2732200,
+            
+"catatan": "DATA MIGRASI AWAL                                 ",
+           
+ "gapok": 2326300,
+            
+"glrbelakang": "",
+          
+  "glrdepan": "",
+          
+  "hal": 1,
+            
+"janak": 1,
+          
+  "jistri": 1,
+            
+"kdberas": 2,
+            
+"kdeselon": "00",
+            
+"kdfungsi": "00000",
+          
+  "kdguru": "006",
+           
+ "kdhitung": 1,
+            
+"kdirdhata": "  ",
+            
+"kdjenkel": 1,
+          
+  "kdjnstrans": 1,
+          
+  "kdkoperasi": "  ",
+          
+  "kdkorpri": "  ",
+            
+"kdlangka": 0,
+           
+ "kdpangkat": "3A",
+           
+ "kdsatker": "D10200612200001     ",
+           
+ "kdskpd": "122",
+            
+"kdssbp": "006",
+           
+ "kdstapeg": 4,
+            
+"kdstawin": 2,
+            
+"kdstruk": 0,
+           
+ "kdterpencil": "000",
+            
+"kdtjkhusus": "00000",
+           
+ "kdtkd": 0,
+          
+  "kodebyr": "000       ",
+           
+ "kotor": 3017915,
+           
+ "masker": 4,
+            
+"nama": "DESON ASMARAHADI",
+           
+ "nip": "198108102007011019",
+            
+"niplama": "450019155",
+           
+ "nodosir": "0         ",
+          
+  "norek": "                                        ",
+           
+ "npwp": "                    ",
+            
+"nu": 1,
+            "paskes": 0,
+           
+ "pbulog": 0,
+        
+    "phutang": 0,
+            
+"pirdhata": 0,
+            
+"piwp": 260545,
+            
+"pkoperasi": 0,
+           
+ "pkorpri": 0,
+            
+"potongan": 285715,
+         
+   "ppajak": 18170,
+            
+"prsngapok": 100,
+            
+"psewa": 0,
+          
+  "ptaperum": 7000,
+            
+"tbulat": 9,
+            
+"tglgaji": "2014-04-01",
+           
+ "tgllhr": "1981-08-10",
+           
+ "tjanak": 46526,
+            
+"tjaskes": 0,
+            
+"tjberas": 209280,
+            
+"tjeselon": 0,
+           
+ "tjfungsi": 0,
+            
+"tjguru": 0,
+           
+ "tjistri": 232630,
+            
+"tjkhusus": 0,
+            
+"tjlangka": 0,
+            
+"tjpajak": 18170,
+            
+"tjstruk": 0,
+            
+"tjterpencil": 0,
+            
+"tjtkd": 0,
+            
+"tjtpp": 0,
+           
+ "tjumum": 185000,
+            
+"tmttabel": "2013-01-01"
+        
+}
+
+
+
+3. create 
+localhost:7979/api/masterdata/MdFgajiCopy/create
+
+coding : 
+{
+   
+ "Model_ID": "$id0=-1",
+    
+"bersih": 2732200,
+    
+"catatan": "DATA MIGRASI AWAL                                 ",
+    
+"gapok": 2326300,
+    
+"glrbelakang": "",
+    
+"glrdepan": "",
+    
+"hal": 1,
+   
+ "id": -1,
+    
+"janak": 1,
+    
+"jistri": 1,
+    
+"kdberas": 2,
+    
+"kdeselon": "00",
+    
+"kdfungsi": "00000",
+    
+"kdguru": "006",
+    
+"kdhitung": 1,
+    
+"kdirdhata": "  ",
+   
+ "kdjenkel": 1,
+    
+"kdjnstrans": 1,
+    
+"kdkoperasi": "  ",
+   
+ "kdkorpri": "  ",
+    
+"kdlangka": 0,
+   
+ "kdpangkat": "3A",
+    
+"kdsatker": "D10200612200001     ",
+    
+"kdskpd": "122",
+   
+ "kdssbp": "006",
+    
+"kdstapeg": 4,
+    
+"kdstawin": 2,
+    
+"kdstruk": 0,
+    
+"kdterpencil": "000",
+   
+ "kdtjkhusus": "00000",
+    
+"kdtkd": 0,
+    
+"kodebyr": "000       ",
+    
+"kotor": 3017915,
+    
+"masker": 4,
+    
+"nama": "DESON ASMARAHADI",
+    
+"nip": "198108102007009999",
+    
+"niplama": "450019155",
+    
+"nodosir": "0         ",
+    
+"norek": "                                        ",
+   
+ "npwp": "                    ",
+    
+"nu": 1,
+    
+"paskes": 0,
+   
+ "pbulog": 0,
+   
+ "phutang": 0,
+    
+"pirdhata": 0,
+   
+ "piwp": 260545,
+   
+ "pkoperasi": 0,
+   
+ "pkorpri": 0,
+    
+"potongan": 285715,
+    
+"ppajak": 18170,
+    
+"prsngapok": 100,
+  
+  "psewa": 0,
+    
+"ptaperum": 7000,
+    
+"tbulat": 9,
+    
+"tglgaji": "2014-04-01",
+   
+ "tgllhr": "1981-08-10",
+    
+"tjanak": 46526,
+   
+ "tjaskes": 0,
+   
+ "tjberas": 209280,
+    
+"tjeselon": 0,
+    
+"tjfungsi": 0,
+   
+ "tjguru": 0,
+   
+ "tjistri": 232630,
+    
+"tjkhusus": 0,
+    
+"tjlangka": 0,
+    
+"tjpajak": 18170,
+    
+"tjstruk": 0,
+   
+ "tjterpencil": 0,
+   
+ "tjtkd": 0,
+   
+ "tjtpp": 0,
+    
+"tjumum": 185000,
+   
+ "tmttabel": "2014-04-01"
+
+}
+
+output : 
+
+{
+   
+ "Model_ID": "$id0=-1",
+    
+"bersih": 2732200,
+    
+"catatan": "DATA MIGRASI AWAL                                 ",
+    
+"gapok": 2326300,
+    
+"glrbelakang": "",
+    
+"glrdepan": "",
+    
+"hal": 1,
+   
+ "id": -1,
+    
+"janak": 1,
+    
+"jistri": 1,
+    
+"kdberas": 2,
+    
+"kdeselon": "00",
+    
+"kdfungsi": "00000",
+    
+"kdguru": "006",
+    
+"kdhitung": 1,
+    
+"kdirdhata": "  ",
+   
+ "kdjenkel": 1,
+    
+"kdjnstrans": 1,
+    
+"kdkoperasi": "  ",
+   
+ "kdkorpri": "  ",
+    
+"kdlangka": 0,
+   
+ "kdpangkat": "3A",
+    
+"kdsatker": "D10200612200001     ",
+    
+"kdskpd": "122",
+   
+ "kdssbp": "006",
+    
+"kdstapeg": 4,
+    
+"kdstawin": 2,
+    
+"kdstruk": 0,
+    
+"kdterpencil": "000",
+   
+ "kdtjkhusus": "00000",
+    
+"kdtkd": 0,
+    
+"kodebyr": "000       ",
+    
+"kotor": 3017915,
+    
+"masker": 4,
+    
+"nama": "DESON ASMARAHADI",
+    
+"nip": "198108102007009999",
+    
+"niplama": "450019155",
+    
+"nodosir": "0         ",
+    
+"norek": "                                        ",
+   
+ "npwp": "                    ",
+    
+"nu": 1,
+    
+"paskes": 0,
+   
+ "pbulog": 0,
+   
+ "phutang": 0,
+    
+"pirdhata": 0,
+   
+ "piwp": 260545,
+   
+ "pkoperasi": 0,
+   
+ "pkorpri": 0,
+    
+"potongan": 285715,
+    
+"ppajak": 18170,
+    
+"prsngapok": 100,
+  
+  "psewa": 0,
+    
+"ptaperum": 7000,
+    
+"tbulat": 9,
+    
+"tglgaji": "2014-04-01",
+   
+ "tgllhr": "1981-08-10",
+    
+"tjanak": 46526,
+   
+ "tjaskes": 0,
+   
+ "tjberas": 209280,
+    
+"tjeselon": 0,
+    
+"tjfungsi": 0,
+   
+ "tjguru": 0,
+   
+ "tjistri": 232630,
+    
+"tjkhusus": 0,
+    
+"tjlangka": 0,
+    
+"tjpajak": 18170,
+    
+"tjstruk": 0,
+   
+ "tjterpencil": 0,
+   
+ "tjtkd": 0,
+   
+ "tjtpp": 0,
+    
+"tjumum": 185000,
+   
+ "tmttabel": "2014-04-01"
+
+}
+
+================================================TABEL 3 HISTORIS_FUNGSIONAL================================================
+
+
+1. auth token
+
+localhost:7979/auth/token
+
+output :
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTYxMjUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAyNTI1fQ.GrZ5T4pjmAYp5UQJq40HJFzBdxoTSamYXE1GDeClVy4",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+
+
+2. read
+
+localhost:7979/api/masterdata/MdHistorisFungsional/readAll?$top=3&$skip=0
+
+
+{
+   
+ "totalItems": 68327,
+   
+ "items": [
+        
+{
+            
+"Model_ID": "$id0=null",
+            
+"jnsguru": 1,
+            
+"kdfungsi": "00000",
+            
+"keterangan": "DATA AWAL",
+            
+"nip": "450006657         ",
+            
+"nomorskep": " ",
+            
+"penerbitskep": " ",
+            
+"tglupdate": 1375166128000,
+            
+"tjfungsi": 0,
+            
+"tmtgaji": "2004-04-01"
+        },
+       
+ {
+            
+"Model_ID": "$id0=null",
+            
+"jnsguru": 1,
+           
+ "kdfungsi": "08602",
+            
+"keterangan": "DATA AWAL",
+           
+ "nip": "195212221984101001",
+            
+"nomorskep": " ",
+            
+"penerbitskep": " ",
+           
+ "tglupdate": 1367393893000,
+            
+"tjfungsi": 660000,
+           
+ "tmtgaji": "2008-04-01"
+        
+},
+        
+{
+           
+ "Model_ID": "$id0=null",
+           
+ "jnsguru": 1,
+            
+"kdfungsi": "00804",
+            
+"keterangan": "DATA AWAL",
+            
+"nip": "196112221987021001",
+            
+"nomorskep": " ",
+            
+"penerbitskep": " ",
+           
+ "tglupdate": 1367393893000,
+           
+ "tjfungsi": 300000,
+            
+"tmtgaji": "2010-05-01"
+        
+}
+  
+  ]
+}
+
+
+3. create
+localhost:7979/api/masterdata/MdHistorisFungsional/create
+
+coding :
+
+ {
+          
+"Model_ID": "$id0=null",
+            
+"jnsguru": 1,
+           
+ "kdfungsi": "00980",
+            
+"keterangan": "DATA AWAL",
+            
+"nip": "450006657999999999",
+            
+"nomorskep": "8A",
+            
+"penerbitskep": "Mohammed Hamzah",
+            
+"TGLSKEP" : "2002-09-09",
+            
+"tjfungsi": 0,
+            
+"tmtgaji": "2004-04-01"
+       
+ }
+
+output :
+
+ {
+          
+"Model_ID": "$id0=null",
+            
+"jnsguru": 1,
+           
+ "kdfungsi": "00980",
+            
+"keterangan": "DATA AWAL",
+            
+"nip": "450006657999999999",
+            
+"nomorskep": "8A",
+            
+"penerbitskep": "Mohammed Hamzah",
+            
+"TGLSKEP" : "2002-09-09",
+            
+"tjfungsi": 0,
+            
+"tmtgaji": "2004-04-01"
+       
+ }
+
+ ================================================TABEL 4 HUTANG_TBL================================================
+
+1. auth token
+
+
+output :
+{
+    
+"password": "0cc175b9c0f1b6a831c399e269772661",
+    
+"token_type": "Bearer",
+    
+"scope": null,
+    
+"expires_in": 86400000,
+    
+"status": "success",
+    
+"access_token": 
+"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTgyMDEsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA0NjAxfQ.Z3Sfpz7CGSGHwwy1uoT2idPTHe8HJd7FKQ29K_t6_k0",
+ 
+   "id": 79,
+   
+ "nama_login": "tujuhsembilan"
+
+}
+
+
+2. read all
+
+
+{
+    
+"totalItems": 2,
+    
+"items": [
+        
+{
+            
+"Model_ID": "$id0=null",
+            
+"kdhutang": 1,
+            
+"nmhutang": "HUTANG KELEBIHAN BAYAR GAJI"
+        
+},
+        
+{
+           
+ "Model_ID": "$id0=null",
+            
+"kdhutang": 2,
+            
+"nmhutang": "HUTANG POT PIHAK KE.III"
+        
+}
+    
+]
+}
+
+
+
+3 create 
+
+coding :
+{
+            
+"Model_ID": "$id0=null",
+            
+"kdhutang": 4,
+            
+"nmhutang": "HUTANG KELEBIHAN BAYAR GAJI"
+        
+},
+        
+{
+           
+ "Model_ID": "$id0=null",
+           
+ "kdhutang": 5,
+            
+"nmhutang": "HUTANG TANPA BAYAR"
+        
+}
+
+4 update 
+
+localhost:7979/api/masterdata/MdHutangTbl/update?KDHUTANG=4
+
+coding :
+{
+            
+"nmhutang": "update HUTANG "
+        
+}
+
+output : 
+{
+    
+"Model_ID": "$id0=null",
+   
+ "kdhutang": 4,
+    
+"nmhutang": "update HUTANG "
+
+}
+
+5.delete
+
+localhost:7979/api/masterdata/MdHutangTbl/delete?KDHUTANG=4
+
+output :
+{
+   
+ "nmhutang": "update HUTANG ",
+    
+"kdhutang": 4
+
+}
+
+
+ ================================================ TABEL 5 MST_TP===============================================
+ 
+
+1.auth token
+localhost:7979/auth/token
+
+output :
+{
+    
+"password": "0cc175b9c0f1b6a831c399e269772661",
+    
+"token_type": "Bearer",
+    
+"scope": null,
+    "expires_in": 86400000,
+    
+"status": "success",
+    
+"access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4Mjg2NzAsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTE1MDcwfQ.Pv896WiW9J6Uhcn9dXcnKaOnEeiC5WjvYLEWkYljEtE",
+    
+"id": 79,
+   
+ "nama_login": "tujuhsembilan"
+
+}
+
+2.readAll
+
+localhost:7979/api/masterdata/MdMstTp/readAll
+
+output : 
+{
+    
+"totalItems": 0,
+    
+"items": []
+
+}
+
+3. create
+
+localhost:7979/api/masterdata/MdFgajiCopy/create
+
+coding:
+
+{
+	
+"nip" :"0987654189899988",
+
+"nama" : "create nama satu",
+
+"glrdepan" : "create glrdpn satu",
+
+"glrbelakang" : "create glrdpn satu",
+
+"kdpangkat": "2A",
+
+"kdjab" : "3A",
+
+"kdskpd": "aa",
+
+"kdsatker" : "aaa",
+
+"pr_tp1":"00.1",
+
+"pr_tp2":"00.2",
+
+"pr_tp3":"00.3",
+
+"pr_tp4":"00.4",
+
+"pr_tp5":"00.5",
+
+"pr_tp6":"00.6",
+
+"pr_tp7":"00.7",
+
+"tmt_berlaku" : "2017-03-03",
+
+"flag" :  28
+
+}
+
+output :
+ 
+{
+    
+"Model_ID": "$id0=null&$id1=null&$id2=null",
+    
+"glrbelakang": "create glrdpn satu",
+    
+"glrdepan": "create glrdpn satu",
+    
+"kdpangkat": "2A",
+    
+"kdsatker": "aaa",
+    
+"kdskpd": "aa",
+    
+"nama": "create nama satu",
+    
+"nip": "098765418989898"
+
+}
+
+
+create 2
+
+coding :
+{
+	
+"nip" :"098765418988888",
+
+"nama" : "create nama dua",
+
+"glrdepan" : "create glrdpn dua",
+
+"glrbelakang" : "create glrdpn dua",
+
+"kdpangkat": "2A",
+
+"kdjab" : "3A",
+
+"kdskpd": "aa",
+
+"kdsatker" : "aaa",
+
+"pr_tp1":"00.1",
+
+"pr_tp2":"00.2",
+
+"pr_tp3":"00.3",
+
+"pr_tp4":"00.4",
+
+"pr_tp5":"00.5",
+
+"pr_tp6":"00.6",
+
+"pr_tp7":"00.7",
+
+"tmt_berlaku" : "2017-03-03",
+
+"flag" :  28
+
+}
+
+output: 
+{
+    
+"Model_ID": "$id0=null&$id1=null&$id2=null",
+    
+"glrbelakang": "create glrdpn dua",
+    
+"glrdepan": "create glrdpn dua",
+    
+"kdpangkat": "2A",
+    
+"kdsatker": "aaa",
+    
+"kdskpd": "aa",
+    
+"nama": "create nama dua",
+    
+"nip": "098765418988888"
+
+}
+
+4. update 

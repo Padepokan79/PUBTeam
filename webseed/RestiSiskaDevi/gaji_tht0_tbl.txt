@@ -1,0 +1,61 @@
+//GAJI_THT0_TBL
+
+1. token
+
+url: localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read
+
+url: localhost:7979/api/masterdata/MdGajiTht0Tbl/readAll
+
+3. create
+url: localhost:7979/api/masterdata/MdGajiTht0Tbl/create
+
+{
+
+            "gapok": 15000000,
+
+            "inputer": "",
+
+            "iuran": 1500000,
+
+            "kdjiwa": "",
+
+            "kdjnstrans": 2,
+
+            "kdsatker": "",
+
+            "kdskpd": "",
+
+            "nip" : "0204151011",
+
+            "tgl_update": "2013-02-01 14:57:59",
+
+            "tglgaji": "2013-01-01",
+
+            "tglsetor": "2013-01-01"
+
+}
+
+4. update nip: 0204151011, tglgaji:2013-01-01, kdjnstrans:2
+url: localhost:7979/api/masterdata/MdGajiTht0Tbl/update?id0=0204151011&id1=2013-01-01&id2=2
+
+{
+
+    "gapok": 3000000,
+
+     "iuran": 300000
+
+}
+
+5. delete nip: 0204151011, tglgaji:2013-01-01, kdjnstrans:2
+
+localhost:7979/api/masterdata/MdGajiTht0Tbl/delete?id0=0204151011&id1=2013-01-01&id2=2
