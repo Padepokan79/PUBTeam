@@ -1,4 +1,8 @@
-1. Create 1
+1. read all
+url : localhost:7979/api/masterdata/MdFgajiKekurangan/readAll?$top=10&$skip=0
+
+2. Create 1
+url : localhost:7979/api/masterdata/MdFgajiKekurangan/create
 {
 			"bersihbaru": 2705209,
             "bersihlama": 2611920,
@@ -152,7 +156,7 @@
             "tjumumtotal": 0
         }
 
-2. Create 2
+3. Create 2
 {
 			"bersihbaru": 2705209,
             "bersihlama": 2611909,
@@ -305,3 +309,9 @@
             "tjumumselisih": 0,
             "tjumumtotal": 0
         }
+
+4. update
+url : localhost:7979/api/masterdata/MdFgajiKekurangan/update?id=196902102007011011
+
+5. delete : 
+localhost:7979/api/masterdata/MdFgajiKekurangan/delete?id=196902102007011011

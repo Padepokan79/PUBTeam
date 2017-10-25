@@ -1,0 +1,96 @@
+//loginsubskpd
+url : localhost:7979/auth/token
+{
+
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+//create subskpd
+url : localhost:7979/api/masterdata/MdSubSkpd/create
+{
+
+	"kdskpd" : "a12",
+
+	"subskpd" : "b23",
+
+	"nmsubskpd" : "jabar",
+
+	"nmkepala" : "nopan",
+
+	"nipkepala" : "0204151022",
+
+	"nmbendahara" : "ayu",
+
+	"nipbendahara" : "0204151002",
+
+	"nmpembuatdaftar" : "sely",
+
+	"nippembuatdaftar" : "092137987129",
+
+	"norek" : "123432", 
+
+	"npwp" : "2874622",
+
+	"kota" : "indramayu",
+
+	"jab_kepala" : "direktur",
+
+	"jab_bendahara" : "bendahara",
+
+	"jab_pembuatdaftar" : "pembuat daftar",
+
+	"notelp" : "0815729860"
+
+
+}
+{
+
+	"kdskpd" : "c12",
+
+	"subskpd" : "d23",
+
+	"nmsubskpd" : "jabar",
+
+	"nmkepala" : "nopan rahmadi",
+
+	"nipkepala" : "0204151022",
+
+	"nmbendahara" : "ayu",
+
+	"nipbendahara" : "0204151002",
+
+	"nmpembuatdaftar" : "sely",
+
+	"nippembuatdaftar" : "092137987129",
+
+	"norek" : "123432", 
+
+	"npwp" : "2874622",
+
+	"kota" : "indramayu",
+
+	"jab_kepala" : "direktur",
+
+	"jab_bendahara" : "bendahara",
+
+	"jab_pembuatdaftar" : "pembuat daftar",
+
+	"notelp" : "0815729860"
+
+
+}
+//read
+url : localhost:7979/api/masterdata/MdSubSkpd/readAll
+//update subskpd
+url : localhost:7979/api/masterdata/MdSubSkpd/update?$id0=a12&$id1=b23
+{
+
+	"nmbendahara" : "ayu suryani"
+
+}
+//delete subskpd
+url : localhost:7979/api/masterdata/MdSubSkpd/delete?$id0=c12&$id1=d23
+//read all subskpd
+url : localhost:7979/api/masterdata/MdSubSkpd/readAll

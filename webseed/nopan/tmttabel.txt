@@ -1,0 +1,29 @@
+//login tmt_tabel
+url : localhost:7979/auth/token
+{
+
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+//create tmt_tabel
+url : localhost:7979/api/masterdata/MdTmtTabel/create
+{
+
+	"nmtabel" : "guru_tbl",
+
+	"tmtberlaku" : "2017-10-26"
+
+}
+//read all tmt_tabel
+url : localhost:7979/api/masterdata/MdTmtTabel/readAll
+//update
+url :localhost:7979/api/masterdata/MdTmtTabel/update?$id0=tkd_tbl&$id1=2017-10-11
+{
+
+	"tmtberlaku" : "2017-10-10"
+
+}
+//delete
+url : localhost:7979/api/masterdata/MdTmtTabel/delete?$id0=guru_tbl&$id1=2017-10-26

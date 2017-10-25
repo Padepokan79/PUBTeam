@@ -1,0 +1,52 @@
+1. Read All
+localhost:7979/api/masterdata/MdSptPPhPs21/readAll
+2. Create
+localhost:7979/api/masterdata/MdSptPPhPs21/create
+Body: 
+{
+            "alamat": " ",
+            "alamatktr": "Jln. RAYA  BATUBARA                                         ",
+            "dari": "2011-05-01",
+            "jabatan": "Penata Tk.I",
+            "jmlbln": 1,
+            "jmljiwa": 0,
+            "kdjenkel": 1,
+            "kdsatker": "000000000000029",
+            "kdskpd": "029",
+            "kdstawin": 1,
+            "kolom1": 2829700,
+            "kolom10": 0,
+            "kolom11": 0,
+            "kolom12": 147852,
+            "kolom13": 147852,
+            "kolom14": 4120268,
+            "kolom15": 0,
+            "kolom16": 49443216,
+            "kolom17": 0,
+            "kolom18": 49443000,
+            "kolom19": 0,
+            "kolom2": 0,
+            "kolom20": 0,
+            "kolom21": 0,
+            "kolom22": 123838,
+            "kolom23": -123838,
+            "kolom24": 123838,
+            "kolom25": 0,
+            "kolom26": 0,
+            "kolom3": 1438420,
+            "kolom4": 0,
+            "kolom5": 0,
+            "kolom6": 0,
+            "kolom7": 4268120,
+            "kolom8": 0,
+            "kolom9": 4268120,
+            "nama": "AZHAR LUBIS",
+            "namaktr": "PEMKAB BATUBARA                                   ",
+            "nip": "195911141986021229",
+            "norut": 1,
+            "npwp": "00.000.00.0-000.000",
+            "npwpktr": "2930920000124            ",
+            "sampai": "2011-05-01",
+            "tahun": 2011
+        }
+3. Update 

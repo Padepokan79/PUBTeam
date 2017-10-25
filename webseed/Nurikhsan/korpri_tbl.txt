@@ -1,0 +1,27 @@
+1. read all
+localhost:7979/api/masterdata/MdKorpriTbl/readAll
+
+2. Create
+localhost:7979/api/masterdata/MdKorpriTbl/create
+{
+    "Model_ID": "$id0=null&$id1=null",
+    "kdkorpri": "5",
+    "keter": "Mbuh Pot KORPRI",
+    "nilai": 0,
+    "tmt": "2000-01-01"
+}
+3. Create 2
+ {
+            "kdkorpri": "6",
+            "keter": "Mbuh",
+            "nilai": 0,
+            "tmt": "2000-01-01"
+        }
+4. Update
+localhost:7979/api/masterdata/MdKorpriTbl/update?id0=2000-01-01&id1=5
+ {
+          "keter": "Bli Weru"
+        }
+5 delete udah
+
+localhost:7979/api/masterdata/MdKorpriTbl/delete?id0=2000-01-01&id1=5
