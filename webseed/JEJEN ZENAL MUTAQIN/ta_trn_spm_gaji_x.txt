@@ -15,58 +15,59 @@ localhost:7979/auth/token
 2.-----------------------------------------------------------------------------
 read All
 
-localhost:7979/api/masterdata/Mdgagal1721a2/readAll
+localhost:7979/api/masterdata/MdTaTrnSpmGajiX/readAll
 
 ===============================================================================
 
 3.-----------------------------------------------------------------------------
-Insert data ke-1 pada tabel Mdgagal_1721_a2
+Insert data ke-1 pada tabel MdTaTrnSpmGajiX
 
-localhost:7979/api/masterdata/Mdgagal1721a2/create
-
-{
-
-
-	"nip": "196606041994052001",
-
-	"tahun_pajak":2017,
-
-	"kdskpd":"02"
-
-
-}
-
-Insert data ke-1 pada tabel historis_pendidikan
+localhost:7979/api/masterdata/MdTaTrnSpmGajiX/create
 
 {
-
-
-	"nip": "195811101984111002",
-
-	"tahun_pajak":2011,
-
-	"kdskpd":"02"
-
-
+	"V_Bulan_Th":"Januari",
+	"C_Tipe_Data":1,
+	"C_Urusan_Keu":1,
+	"C_Bidang_Keu":1,
+	"C_Unit_Keu":1,
+	"C_Sub_Keu":1,
+	"Kd_Rek_1_Keu":1,
+	"Kd_Rek_2_Keu":1,
+	"Kd_Rek_3_Keu":1,
+	"Kd_Rek_4_Keu":1,
+	"Kd_Rek_5_Keu":1,
+	"Nilai":90,
+	"KdSkpd": "3A",
+	"kdtrans": "3B"
 }
+
+
 ================================================================================
 
 4. -----------------------------------------------------------------------------
 update
 
-localhost:7979/api/masterdata/Mdgagal1721a2/update?id0=195811101984111002&id1=2011
+localhost:7979/api/masterdata/MdTaTrnSpmGajiX/update?id0=Januari&id1=3A&id2=3B
+
 
 {
-	"kdskpd":"100"
+	"C_Tipe_Data":2,
+	"C_Urusan_Keu":2,
+	"C_Bidang_Keu":2,
+	"C_Unit_Keu":2,
+	"C_Sub_Keu":2,
+	"Kd_Rek_1_Keu":2,
+	"Kd_Rek_2_Keu":2,
+	"Kd_Rek_3_Keu":2,
+	"Kd_Rek_4_Keu":2,
+	"Kd_Rek_5_Keu":2,
+	"Nilai":100
 }
 
-
-}
 ================================================================================
 
 5. -----------------------------------------------------------------------------
 delete
 
-localhost:7979/api/masterdata/Mdgagal1721a2/delete?id0=195811101984111002&id1=2011
-
+localhost:7979/api/masterdata/MdTaTrnSpmGajiX/delete?id0=Januari&id1=3A&id2=3B
 
