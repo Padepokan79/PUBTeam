@@ -1,0 +1,264 @@
+
+//Auth Token	localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+output token:
+{
+    
+	"password": "0cc175b9c0f1b6a831c399e269772661",
+
+    	"token_type": "Bearer",
+	
+"scope": null,
+	
+"expires_in": 86400000,
+
+    	"status": "success",
+
+        "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTE3NjYsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk4MTY2fQ.kkcvPM4P9LqokL6dD8g3cB4eivj7d5FMu_1XNkYIpg4",
+
+    	"id": 79,
+	
+"nama_login": "tujuhsembilan"
+
+}
+
+//ReadAll	localhost:7979/api/masterdata/MdHistorisSatker/readAll	
+$skip 0
+$top 5
+
+{
+    
+	"totalItems": 56626,
+
+    	"items": [
+
+        {
+            
+		"Model_ID": "$id0=null",
+    
+            "kdsatker": "D10200103300001     ",
+    
+            "kdskpd": "033",
+    
+            "kdssbp": "001",
+    
+            "keterangan": "DATA AWAL",
+    
+            "nip": "450006657         ",
+    
+            "nomorskep": " ",
+
+            	"penerbitskep": " ",
+
+            	"tglupdate": 1375166129000,
+
+                "tmtgaji": "2004-04-01"
+        
+	},
+        
+	{
+            
+		"Model_ID": "$id0=null",
+
+                "kdsatker": "D10200101200001     ",
+
+            	"kdskpd": "012",
+
+            	"kdssbp": "001",
+	
+        "keterangan": "DATA AWAL",
+
+            	"nip": "195212221984101001",
+
+                "nomorskep": " ",
+    
+            "penerbitskep": " ",
+
+                "tglupdate": 1367393894000,
+            
+                "tmtgaji": "2008-04-01"
+        
+       },
+        
+	{
+            
+		"Model_ID": "$id0=null",
+
+            	"kdsatker": "D10200101000004     ",
+
+                "kdskpd": "010",
+    
+            "kdssbp": "001",
+
+                "keterangan": "DATA AWAL",
+    
+                "nip": "196112221987021001",
+     
+                "nomorskep": " ",
+ 
+                "penerbitskep": " ",
+     
+                "tglupdate": 1367393894000,
+     
+                "tmtgaji": "2010-05-01"
+        
+	},
+        
+	{
+            
+		"Model_ID": "$id0=null",
+
+            	"kdsatker": "D10200101100001     ",
+
+            	"kdskpd": "011",
+    
+            "kdssbp": "001",
+        
+                "keterangan": "DATA AWAL",
+      
+                "nip": "195711051979021001",
+      
+                "nomorskep": " ",
+         
+                "penerbitskep": " ",
+        
+                "tglupdate": 1371603875000,
+    
+                "tmtgaji": "2010-07-01"
+        
+	},
+        
+	{
+            
+		"Model_ID": "$id0=null",
+
+            	"kdsatker": "D10200102000002     ",
+  
+	        "kdskpd": "020",
+ 
+           	"kdssbp": "001",
+
+            	"keterangan": "DATA AWAL",
+    
+            "nip": "195409231990021001",
+  
+                "nomorskep": " ",
+  
+                "penerbitskep": " ",
+    
+                "tglupdate": 1388412862000,
+    
+                "tmtgaji": "2010-10-01"
+       
+	 }
+    
+]
+
+}
+
+//Create	localhost:7979/api/masterdata/MdHistorisSatker/create
+create 1
+{
+            
+	"kdsatker": "D10200103300001     ",
+
+        "kdskpd": "033",
+
+        "kdssbp": "001",
+
+        "keterangan": "DATA AWAL",
+
+        "nip": "195212221984101221",
+
+        "nomorskep": " ",
+
+        "penerbitskep": " ",
+
+        "tglupdate": "2017-10-25 10:20:10",
+
+        "tmtgaji": "2017-10-24"
+
+}
+output:
+{
+    
+	"Model_ID": "$id0=-1",
+	
+"id": -1,
+
+        "kdsatker": "D10200103300001     ",
+    
+    "kdskpd": "033",
+    
+    "kdssbp": "001",
+    
+    "keterangan": "DATA AWAL",
+ 
+        "nip": "195212221984101221",
+
+        "nomorskep": " ",
+  
+        "penerbitskep": " ",
+ 
+        "tglupdate": "2017-10-25 10:20:10",
+  
+        "tmtgaji": "2017-10-24"
+
+}
+
+create 2
+{
+            
+	"kdsatker": "D10200103300001     ",
+
+        "kdskpd": "033",
+
+        "kdssbp": "001",
+
+        "keterangan": "DATA AWAL",
+
+        "nip": "195212221984101222",
+
+        "nomorskep": " ",
+
+        "penerbitskep": " ",
+
+        "tglupdate": "2017-10-26 09:30:19",
+
+        "tmtgaji": "2017-10-24"
+
+}
+output:
+{
+    
+	"Model_ID": "$id0=-1",
+    
+    "id": -1,
+    "kdsatker": "D10200103300001     ",
+	
+"kdskpd": "033",
+
+        "kdssbp": "001",
+
+    	"keterangan": "DATA AWAL",
+    
+    "nip": "195212221984101222",
+ 
+        "nomorskep": " ",
+  
+        "penerbitskep": " ",
+    
+        "tglupdate": "2017-10-26 09:30:19",
+    
+	"tmtgaji": "2017-10-24"
+
+}
+
+//update
+

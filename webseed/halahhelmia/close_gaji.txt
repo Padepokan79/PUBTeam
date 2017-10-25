@@ -24,4 +24,22 @@
 
 >>update
 
+localhost:7979/api/masterdata/MdCloseGaji/update?id0=2017-10-25&id1=1
+{
+	"status" : 5
+}
+
+//output
+{
+    "Model_ID": "$id0=null&$id1=null",
+    
+	"kdjnstrans": 1,
+    
+	"status": 5,
+    
+	"tglgaji": "2017-10-25",
+    
+	"updstamp": 1509004633000
+}
+
 >>delete
