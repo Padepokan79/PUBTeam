@@ -1,0 +1,14 @@
+Tabel : t_tunjangan
+
+auth token => localhost:7979/auth/token
+
+readAll => localhost:7979/api/masterdata/MdTtunjangan/readAll
+
+create => localhost:7979/api/masterdata/MdTtunjangan/create
+{
+            "jml": 5500000,
+            "kdjab": "33",
+            "kdkel": "001",
+            "nmjabatan": "ESELON I A",
+            "pensiun": 60
+        }
