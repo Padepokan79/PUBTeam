@@ -1,0 +1,50 @@
+Tabel SKPP
+
+
+localhost:7979/api/masterdata/MdSKPP/create
+1.insert 
+{
+
+	"TGLGAJI":"2017-10-10",
+
+	"KDJNSTRANS":1,
+	"JNSSKPP":2,
+
+	"NIP":1111111,
+	"CATATAN":"",
+
+	"PENERBITSK":"",
+
+	"NOMORSK":"",
+
+	"TANGGALSK":"2017-10-10",
+
+	"TGLWAFAT":"2017-10-11",
+
+	"TMTPENSIUN":"2018-10-10",
+
+	"PENPOK":30000000,
+
+	"NOMORSKPP":"",
+
+	"TGLSKPP":"2017-11-11",
+
+	"PINDAHKE":"",
+
+	"HUTANG":0,
+
+	"KETHUTANG":""
+
+}
+
+localhost:7979/api/masterdata/MdSKPP/update?id0=2017-10-10&id1=1&id2=2&id3=1111111
+2.update
+{
+		"PENPOK":31000000
+}
+
+localhost:7979/api/masterdata/MdSKPP/delete?id0=2017-10-10&id1=1&id2=2&id3=1111111
+3.delete
+
+localhost:7979/api/masterdata/MdSKPP/readAll
+4.read

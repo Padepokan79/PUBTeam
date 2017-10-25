@@ -44,3 +44,7 @@ param : kdcabang=706
     "nickcabang": "CMS"
 
 }
+
+
+localhost:7979/api/masterdata/MdCabangTbl/readAll
+5.reaD
