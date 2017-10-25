@@ -1,0 +1,83 @@
+Nama	: Riyan
+table	: sertifikasi00
+
+
+
+============================================================
+1. auth Token
+
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+
+============================================================
+2. ReadAll data di table sertifikasi00
+
+localhost:7979/api/masterdata/MdSertifikasi00/readAll
+
+jumlah data : 0
+
+
+
+============================================================
+3. Create data di table sertifikasi00
+
+localhost:7979/api/masterdata/MdSertifikasi00/create
+
+
+{
+	"Tglgaji" : "2017-10-25",
+
+	"Nip" : "0123",
+
+	"Nama" : "Ezechiel",
+
+	"Gapok" : 5000000,
+
+	"Gol" : "FW",
+
+	"no_srt_kep" : "012345678",
+
+	"Npwp" : "011345275830",
+
+	"KdSkpd" : "01",
+
+	"KdSatker" : "01",
+
+	"tmt_berlaku" : "2017-10-23",
+
+	"pajak" : 200000,
+
+	"TglBayar" : "2017-09-10",
+
+	"masker" : 1,
+
+	"jBulan" : 2
+
+}
+
+
+============================================================
+4. Update data di table sertifikasi00
+
+localhost:7979/api/masterdata/MdSertifikasi00/update?Id0=2017-10-25&Id1=0123
+
+
+
+{
+	"Nama" : "Riyan Turmudi",
+
+	"gol" : "GK"
+
+}
+
+============================================================
+5. Delete data di table sertifikasi00
+
+localhost:7979/api/masterdata/MdSertifikasi00/delete?Id0=2017-10-25&Id1=0123

@@ -1,0 +1,143 @@
+//Geting token
+localhost:7979/auth/token
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+
+    "token_type": "Bearer",
+
+    "scope": null,
+
+    "expires_in": 86400000,
+
+    "status": "success",
+
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDEyOTgsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg3Njk4fQ.Ff3OAqe8li5HUNLuI_tyYamoJ1fVt9y5VoGDSTR2mOQ",
+
+    "id": 79,
+
+    "nama_login": "tujuhsembilan"
+
+}
+
+//ReadAll
+localhost:7979/api/masterdata/MdTParamTbl/readAll
+
+//Create
+localhost:7979/api/masterdata/MdTParamTbl/create
+{
+	"tmtberlaku" : "2017-10-10",
+
+	"kddati1": "07",
+
+	"kddati2" : "00",
+
+	"tht_pns_1" : 0.00,
+
+	"tht_pns_2" : 0.00,
+
+	"tmt_tht_pns" : "2017-10-09",
+
+	"tistri" : 0.10,
+
+	"tanak" : 0.02,
+
+	"tpp" : 000,
+
+	"tlain" : 0.00,
+
+	"tberas" : 10.00,
+
+	"tbulog" : 10.00,
+
+	"iwp" : 0.10,
+
+	"paskes" : 0.0100,
+
+	"biayajab" : 0.05,
+
+	"biayajabmax" : 500000,
+
+	"biayapensiun": 0.0475,
+
+	"biayapensiunmax": 0,
+
+	"ptkp1" : 24000000,
+
+	"ptkp2" : 18500000,
+
+	"ptkp3" : 63000000,
+
+	"ptkp4" : 33000000,
+
+	"ptkp5" : 13000000,
+
+	"pkp1" : 50000000,
+
+	"pkp2" : 50000000,
+
+	"pkp3" : 50000000,
+
+	"pkp4" : 50000000,
+
+	"php1" : 0.05,
+
+	"php2" : 0.05,
+
+	"php3" : 0.05,
+
+	"php4" : 0.05,
+
+	"pphnonnpwp" : 1.00,
+
+	"jiwaptkp" : 0,
+
+	"ptkpwanita" : 1,
+
+	"ptkpjanda" : 1,
+
+	"biayatht" : 0.0000,
+
+	"kdjiwaptkp" : 0,
+
+	"zakat" : 0,
+
+	"infaq" : 0,
+
+	"prsnzakat" : 0.00,
+
+	"prsninfaq" : 0.00,
+
+	"nisab" : 0,
+
+	"dg_akses" : 0,
+
+	"opsi" : 2,
+
+	"opsi2" : 1,
+
+	"bup" : 56,
+
+	"zakat_dg" : 0,
+
+	"dasar_zakat" : 0,
+
+	"askeda_pjk" : 0,
+
+	"jkk" : 0.00,
+
+	"jkm" : 0.00,
+
+	"jkk_jkm_dg" : 0,
+
+	"pjk_jkkjkm" : 0
+
+}
+
+//Update
+localhost:7979/api/masterdata/MdTParamTbl/update?id0=2012-05-01&id1=07&id2=00
+
+{
+	"tbulog" : 20.000
+
+
+}
