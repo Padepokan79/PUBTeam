@@ -1,0 +1,30 @@
+Sandi Saputra
+
+1. Mengambil token 
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdSkpdKonvTbl/create
+->{
+	"kd_skpd" : "123",
+	"C_urusan_keu" : 1,
+	"C_bidang_keu" : 1,
+	"C_unit_keu" : 1,
+	"C_sub_keu" : 1
+}
+
+3. Menampilkan data
+-> localhost:7979/api/masterdata/MdSkpdKonvTbl/readAll?$Top=2&$Skip=0
+
+4. Mengubah data
+-> localhost:7979/api/masterdata/MdSkpdKonvTbl/update?Nip=123
+->{
+	"C_urusan_keu" : 2
+}
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdSkpdKonvTbl/delete?Nip=123  
