@@ -1,0 +1,106 @@
+/*
+Author : Tegar Budi Septian
+File Name : mstpegawaibackup.txt
+Date Created : Tuesday, 24th October, 2017
+Note :there is one primary key.
+*/
+
+/*Getting token*/
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4Mjk0MzEsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTE1ODMxfQ.O5QeYSQTtrrhAbkJU8zEXstzhXqDeO0xkF2SrdqqQp8
+
+
+/*Reading data from mstpegawaibackup table.*/
+request url : localhost:7979/api/masterdata/MdMstPegawaiBackup/readAll?$top=5&$skip=0
+
+
+/*Adding a data to mstpegawaibackup.*/
+request url : localhost:7979/api/masterdata/MdMstPegawaiBackup/create
+{
+	"NIP" : "0204151036",
+	"NAMA" : "TEGAR BUDI SEPTIAN",
+	"GLRDEPAN" : "H",
+	"GLRBELAKANG" : "S.Kom",
+	"KDJENKEL" : 1,
+	"TEMPATLHR" : "Banjarnegara",
+	"TGLLHR" : "1996-09-09",
+	"AGAMA" : 1,
+	"PENDIDIKAN" : "Sarjana",
+	"TMTCAPEG" : "2017-10-24",
+	"TMTSKMT" : "2017-10-26",
+	"KDSTAWIN" : 1,
+	"JISTRI" : 0,
+	"JANAK" : 0,
+	"KDSTAPEG" : 0,
+	"TMTSTOP" : null,
+	"KDPANGKAT" : "",
+	"MKGOLT" : 0,
+	"BLGOLT" : 0,
+	"GAPOK" : 0,
+	"MASKER" : 0,
+	"PRSNGAPOK" : 0,
+	"TMTTABEL" : null,
+	"TMTKGB" : null,
+	"TMTKGBYAD" : null,
+	"KDESELON" : "",
+	"TJESELON" : 0,
+	"KDFUNGSI" : "",
+	"TJFUNGSI" : 0,
+	"BUP" : 0,
+	"KDSTRUK" : 0,
+	"TJSTRUK" : 0,
+	"KDGURU" : "",
+	"TJGURU" : 0,
+	"KDBERAS" : 0,
+	"KDLANGKA" : 0,
+	"TJLANGKA" : 0,
+	"KDTKD" : 0,
+	"TJTKD" : 0,
+	"KDTERPENCIL" : "",
+	"TJTERPENCIL" : 0,
+	"KDTJKHUSUS" : "",
+	"TJKHUSUS" : 0,
+	"KDKORPRI" : "",
+	"PKORPRI" : 0,
+	"KDKOPERASI" : "",
+	"PKOPERASI" : 0,
+	"KDIRDHATA" : "",
+	"PIRDHATA" : 0,
+	"TAPERUM" : 0,
+	"NODOSIR" : "",
+	"KDCABTASPEN" : "",
+	"KDSSBP" : "",
+	"KDSKPD" : "",
+	"KDSATKER" : "",
+	"ALAMAT" : "",
+	"KDDATI4" : "",
+	"KDDATI3" : "",
+	"KDDATI2" : "",
+	"KDDATI1" : "",
+	"NOTELP" : "",
+	"NPWP" : "",
+	"NIPLAMA" : "",
+	"KDHITUNG" : 0,
+	"KODEBYR" : "",
+	"NOREK" : "",
+	"TMTBERLAKU" : null,
+	"CATATAN" : "",
+	"KDJNSTRANS" : 0,
+	"UPDSTAMP" : null,
+	"INPUTER" : ""
+}
+
+
+/*Updating a data of mstpegawaibackup.*/
+request url : localhost:7979/api/masterdata/MdMstPegawaiBackup/update?id=0204151036
+{
+	"glrbelakang" : "M.T.",
+	"pendidikan" : "Magister"
+}
+
+
+/*Deleting a data of mstpegawaibackup.*/
+request url : localhost:7979/api/masterdata/MdMstPegawaiBackup/delete?id=0204151036
