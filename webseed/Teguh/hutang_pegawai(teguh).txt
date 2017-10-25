@@ -1,0 +1,44 @@
+localhost:7979/api/masterdata/MdHutangPegawai/readAll
+
+Create localhost:7979/api/masterdata/MdHutangPegawai/create
+{
+	
+"NIP" : "A902192",
+	
+"KDHUTANG" : 11,
+	
+"NORUT" : 212,
+	
+"JMLHUTANG" : 21000000,
+	
+"JMLCICILAN" : 500000,
+	
+"CICILANAKHIR" : 250000,
+	
+"JMLBULAN" : 3,
+	
+"TMTHUTANG" : "2013-02-13",
+	
+"TATHUTANG" : "2014-06-12",
+	
+"KETERANGAN" : "LUNAS",
+
+"TGLLUNAS" : "2015-07-13",
+	
+"JMLLUNAS" : 30000000,
+	
+"TMTGAJI" : "2013-05-13",
+	
+"KECUALI" : 3
+
+}
+
+Update localhost:7979/api/masterdata/MdHutangPegawai/update?id0=A902192&id1=11&id2=212
+{
+
+	"CICILANAKHIR" : 350000
+
+}
+
+Delete localhost:7979/api/masterdata/MdHutangPegawai/delete?id0=A902192&id1=11&id2=212
+

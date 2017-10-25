@@ -247,7 +247,9 @@ localhost:7979/api/masterdata/MdMstPegawai01/create
 ================================================================================================
 [update]
 localhost:7979/api/masterdata/MdMstPegawai01/update?id=430009464
-//mengubah yg memiliki id=430009464
+{
+	"glrdepan" : "ILFA"
+}
 =================================================================================
 [delete]
 localhost:7979/api/masterdata/MdMstPegawai01/delete?id=430009464

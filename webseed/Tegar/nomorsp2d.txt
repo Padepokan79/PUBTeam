@@ -1,0 +1,44 @@
+/*
+Author : Tegar Budi Septian
+File Name : nomorsp2d.txt
+Date Created : Tuesday, 24th October, 2017
+*/
+
+/*Getting token*/
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MzMxMTIsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTE5NTEyfQ.vNCR2dr1ktftmntWa4jyeTEBDbpsqTsNrBPeVRwDc1k
+
+
+/*Reading data from nomorsp2d table.*/
+request url : localhost:7979/api/masterdata/MdNomorsp2d/readAll?$top=5&$skip=0
+
+
+/*Adding a data in nomorsp2d table.*/
+request url : localhost:7979/api/masterdata/MdNomorsp2d/create
+{
+	"tahun" : 2017,
+	"tglgaji" : "2017-10-24",
+	"kdjnstrans" : 1,
+	"kdskpd" : "009",
+	"tglsp2d" : "2017-09-24",
+	"nomorsp2d" : "SP2D0047/032012",
+	"KETERANGAN" : "",
+	"BERSIH" : 0,
+	"NOMORSPM" : "",
+	"TGLSPM" : null,
+	"pilih_cetak" : 2
+}
+
+
+/*Updating a data of nomorsp2d.*/
+request url : localhost:7979/api/masterdata/MdNomorsp2d/update?id0=2017-10-24&id1=1&id2=009
+{
+	"tahun" : "2050"
+}
+
+
+/*Deleting a data of nomorsp2d.*/
+request url : localhost:7979/api/masterdata/MdNomorsp2d/delete?id0=2017-10-24&id1=1&id2=009

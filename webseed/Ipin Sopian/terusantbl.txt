@@ -1,0 +1,22 @@
+Tabel terusan tbl
+
+
+localhost:7979/api/masterdata/MdTerusanTbl/readAll
+1. read
+
+localhost:7979/api/masterdata/MdTerusanTbl/create
+2. insert
+{
+    "Model_ID": "$id0=11&$id1=null",
+    "kdjnstrans": 1,
+    "nip": "11"
+}
+
+localhost:7979/api/masterdata/MdTerusanTbl/update?id0=11
+3.update
+{
+	"kdjnstrans": 2
+}
+
+localhost:7979/api/masterdata/MdTerusanTbl/delete?id=11
+4. delete

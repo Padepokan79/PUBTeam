@@ -1,0 +1,38 @@
+/*
+Author : Tegar Budi Septian
+File Name : terpencil_tbl.txt
+Date Created : Wednesday, 25th October, 2017
+*/
+
+/*Getting token*/
+request url : localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDE2MzIsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg4MDMyfQ.GBqUvI3HfDU2Ej3z-UALnrOYDaLbHNtRBv1GvSLvAjI
+
+
+/*Reading data from terpencil_tbl table.*/
+request url : localhost:7979/api/masterdata/MdTerpencilTbl/readAll?$top=2&$skip=0
+
+
+/*Adding a data in terpencil_tbl table.*/
+request url : localhost:7979/api/masterdata/MdTerpencilTbl/create
+{
+	"TMTBERLAKU" : "2017-10-25",
+	"KDDAERAH" : "005",	
+	"NMDAERAH" : "Shire",
+	"TJDAERAH" : 150000000
+}
+
+
+/*Updating a data of terpencil_tbl.*/
+request url : localhost:7979/api/masterdata/MdTerpencilTbl/update?id0=2017-10-25&id1=005
+{
+	"nmdaerah" : "Gondor"
+}
+
+
+/*Deleting a data of terpencil_tbl.*/
+request url : localhost:7979/api/masterdata/MdTerpencilTbl/delete?id0=2017-10-25&id1=005

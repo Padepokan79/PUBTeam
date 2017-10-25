@@ -1,0 +1,48 @@
+// PENDIDIKAN_TBL
+
+1. token
+
+url : localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read All
+
+url : localhost:7979/api/masterdata/MdPendidikanTbl/readAll
+
+3. create
+
+url : localhost:7979/api/masterdata/MdPendidikanTbl/create
+
+{
+            "jnsdidik": 3,
+
+            "kddidik": 3,
+
+            "pendidikan": "TK"
+
+}
+
+4. update
+
+url : localhost:7979/api/masterdata/MdPendidikanTbl/update?id0=3&id1=3
+
+{
+
+            "jnsdidik": 3,
+
+            "kddidik": 3,
+
+            "pendidikan": "Profesor Senior"
+
+}
+
+5. delete
+
+url : localhost:7979/api/masterdata/MdPendidikanTbl/delete?id0=3&id1=3

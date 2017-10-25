@@ -1,0 +1,18 @@
+Tabel : fileweb
+
+auth token
+localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+} => untuk mendapatkan access token
+
+read
+localhost:7979/api/masterdata/MdFileWeb/readAll
+
+create => localhost:7979/api/masterdata/MdFileWeb/create
+{
+	"namafile" : "D:\\Pelatihan\\Training\\PANDUAN IMPLEMENTASI BE MENGGUNAKAN METODE CRUD.doc"
+}
+
+

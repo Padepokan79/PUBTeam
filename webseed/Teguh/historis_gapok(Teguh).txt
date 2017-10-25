@@ -1,0 +1,47 @@
+
+localhost:7979/api/masterdata/MdHistorisGapok/readAll?$top=3&$skip=0 (ReadAll)
+
+localhost:7979/auth/token (auth token)
+
+Membuat di MdHistorisgapok localhost:7979/api/masterdata/MdHistorisGapok/create
+{
+	
+"TMTGAJI" : "2010-02-13",
+	
+"NIP" : "A09921029",
+	
+"kdstapeg" : 1,
+	
+"KDPANGKAT" : "2A",
+	
+"GAPOK" : 5000000,
+	
+"MASKER" : 2,
+	
+"PRSNGAPOK" : 432,
+	
+"TMTTABEL" : "2019-08-21",
+	
+"TGLSKEP" : "2017-04-12",
+	
+"NOMORSKEP" : "0902901290",
+	
+"PENERBITSKEP" : "Presiden",
+	
+"tmt" : "2013-08-03",
+	
+"KETERANGAN" : "BAIK",
+	
+"TGLUPDATE" : "2016-08-17 10:01:01"
+
+}
+
+Update di MdHistorisgapok localhost:7979/api/masterdata/MdHistorisGapok/update?id=A09921029
+{
+	
+	"GAPOK" : 9000000'
+
+}
+
+Delete di MdhistorisGapok
+localhost:7979/api/masterdata/MdHistorisGapok/delete?id=A09921029

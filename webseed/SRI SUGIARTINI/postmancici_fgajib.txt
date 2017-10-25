@@ -1,0 +1,154 @@
+POSTMAN SRI
+24/10/2017
+tabel : fgaji_b
+======NO 1======================================================
+TOKEN :
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MjA2MzQsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA3MDM0fQ.QQtrSzgxGpUt0SJjeig3LwzwURZEdvXMUSihD0MgLb4
+
+===========================================================
+READ ALL AWAL :
+localhost:7979/api/masterdata/MdFgajiB/readAll
+
+{
+    "totalItems": 0,
+    "items": []
+}
+
+==========================================================
+CREATE :
+localhost:7979/api/masterdata/MdFgajiB/create
+
+{
+
+"tglgaji":"2017-10-24",
+"kdjnstrans":2,
+"nip":"020415103211111",
+"nama":"SRI SUGIARTINI",
+"glrdepan":"Drs",
+"glrbelakang":"MM",
+"kdjenkel":2,
+"tgllhr":"1976-06-11",
+"kdstawin":1,
+"jistri":0,
+"janak":0,
+"kdstapeg":4,
+"tmtstop":"2000-11-09",
+"kdpangkat":"3a",
+"masker":8,
+"prsngapok":100,
+"tmttabel":"2012-01-01",
+"kdselon":"00",
+"kdfungsi":"08405",
+"kdguru":"90",
+"kdstruk":0,
+"kdberas":2,
+"kdlangka":0,
+"kdterpencil":"0",
+"kdtdk":0,
+"kdtjkhsus":"999",
+"gapok":1921000,
+"tjistri":0,
+"tjanak":0,
+"tjtpp":0,
+"tjselon":0,
+"tjfungsi":265000,
+"tjstruk":0,
+"tjguru":0,
+"tjlangka":0,
+"tjdkd":0,
+"tjterpencil":0,
+"tjkhusus":0,
+"tjberas":49500,
+"tjpajak":35620,
+"tjasles":0,
+"tjumum":0,
+"tbulat":0,
+"kotor":2271120,
+"piwp":192100,
+"pakses":0,
+"ppajak":35620,
+"pbulog":0,
+"ptaperum":7000,
+"phutang":0,
+"potongan":234720,
+"bersih":2036400,
+"nodosir":"300114",
+"kdssbp":"001",
+"kdskpd":"019",
+"kdsatker":"D10200101900001",
+"npwp":"00.000.00.0-000.000",
+"niplama":"140331208",
+"kdhitung":1,
+"kodebyr":"999",
+"norek":"888",
+"catatan":null,
+"nu":1,
+"hal":1
+
+}
+HASIL READ :
+{
+            "Model_ID": "$id0=null&$id1=null&$id2=null&$id3=null",
+            "bersih": 2036400,
+            "catatan": "",
+            "gapok": 1921000,
+            "glrbelakang": "MM",
+            "glrdepan": "Drs",
+            "hal": 1,
+            "janak": 0,
+            "jistri": 0,
+            "kdberas": 2,
+            "kdfungsi": "08405",
+            "kdguru": "90",
+            "kdhitung": 1,
+            "kdjenkel": 2,
+            "kdjnstrans": 2,
+            "kdlangka": 0,
+            "kdpangkat": "3a",
+            "kdsatker": "D10200101900001",
+            "kdskpd": "019",
+            "kdssbp": "001",
+            "kdstapeg": 4,
+            "kdstawin": 1,
+            "kdstruk": 0,
+            "kdterpencil": "0",
+            "kdtjkhusus": "00000",
+            "kodebyr": "999",
+            "kotor": 2271120,
+            "masker": 8,
+            "nama": "SRI SUGIARTINI",
+            "nip": "020415103211111",
+            "niplama": "140331208",
+            "nodosir": "300114",
+            "norek": "888",
+            "npwp": "00.000.00.0-000.000",
+            "nu": 1,
+            "pbulog": 0,
+            "phutang": 0,
+            "piwp": 192100,
+            "potongan": 234720,
+            "ppajak": 35620,
+            "prsngapok": 100,
+            "ptaperum": 7000,
+            "tbulat": 0,
+            "tglgaji": "2017-10-24",
+            "tgllhr": "1976-06-11",
+            "tjanak": 0,
+            "tjberas": 49500,
+            "tjfungsi": 265000,
+            "tjguru": 0,
+            "tjistri": 0,
+            "tjkhusus": 0,
+            "tjlangka": 0,
+            "tjpajak": 35620,
+            "tjstruk": 0,
+            "tjterpencil": 0,
+            "tjtpp": 0,
+            "tjumum": 0,
+            "tmtstop": "2000-11-09",
+            "tmttabel": "2012-01-01"
+        }
+==========================================================
+
+
+
