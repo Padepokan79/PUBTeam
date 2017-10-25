@@ -1,0 +1,102 @@
+////Token
+{
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    
+	"token_type": "Bearer",
+    
+	"scope": null,
+    
+	"expires_in": 86400000,
+    
+	"status": "success",
+    
+	"access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTE4ODcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk4Mjg3fQ.8g2iB5NSpw0fOC7oNf1dRVue5BN5r0InaKSHaTnwtl0",
+    
+	"id": 79,
+    
+	"nama_login": "tujuhsembilan"
+
+}
+
+////Read All
+
+localhost:7979/api/masterdata/MdhistorisStapeg/readAll?$top=2&$skip=0
+
+
+///Create
+localhost:7979/api/masterdata/MdhistorisStapeg/create
+{
+       "kdstapeg": 4,
+            
+	"keterangan": "DATA AWAL",
+            
+	"nip": "010122831                  ",
+            
+	"nomorskep": " ",
+            
+	"penerbitskep": " ",
+            
+	"tglupdate": "2017-09-09 13:13:13",
+            
+	"tmtgaji": "2004-04-01"
+    
+}
+
+{
+       "kdstapeg": 4,
+            
+	"keterangan": "DATA AWAL",
+            
+	"nip": "195212221984101001                  ",
+            
+	"nomorskep": " ",
+            
+	"penerbitskep": " ",
+            
+	"tglupdate": "2017-12-12 13:13:13",
+            
+	"tmtgaji": "2004-04-01"
+    
+}
+
+/////Update
+
+localhost:7979/api/masterdata/MdhistorisStapeg/update?id0=2004-04-01&id1=010122831
+
+id0 : 2004-04-01
+id1 : 010122831
+
+{
+        "kdstapeg": 23
+      }
+
+////Delete
+
+localhost:7979/api/masterdata/MdhistorisStapeg/delete?id0=2004-04-01&id1=010122831
+
+id0 : 2004-04-01
+id1 : 010122831
+
+{
+    "penerbitskep": " ",
+    
+	"keterangan": "DATA AWAL",
+    
+	"tglupdate": 1508829193000,
+    
+	"nomorskep": " ",
+    
+	"nip": "010122831         ",
+    
+	"kdstapeg": 23,
+    
+	"tmtgaji": "2004-04-01"
+
+}

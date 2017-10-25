@@ -98,4 +98,3 @@ localhost:7979/api/masterdata/MdJabatanKhususTbl/update?id0=2008-01-01&id1=00000
 =================================================================================
 [delete]
 localhost:7979/api/masterdata/MdJabatanKhususTbl/delete?id0=2008-01-01&id1=00000
-//menghapus yang kode nya 99999
