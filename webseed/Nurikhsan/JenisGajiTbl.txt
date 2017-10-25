@@ -1,0 +1,15 @@
+1. create
+ {
+            "kdgaji": 12,
+            "nmgaji": "GAJI Gak Bisa Liat"
+        }
+2. create 
+{
+    "kdgaji": 13,
+    "nmgaji": "GAJI SAPI"
+}
+3. update 
+{
+    "nmgaji": "GAJI Kambing"
+}
+4. Delete udah jadi tapi ga tau harus nulis apa

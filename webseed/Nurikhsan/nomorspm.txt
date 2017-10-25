@@ -1,0 +1,32 @@
+1. Create
+ {
+            "kdjnstrans": 1,
+            "kdsatker": "D70300900100009     ",
+            "keterangan": "",
+            "nomorspm": "SPM0195/032019",
+            "pilih_cetak": 2,
+            "tahun": 2012,
+            "tglgaji": "2012-03-29",
+            "tglspm": "2012-02-29"
+        }
+2. Create 2
+ {
+            "kdjnstrans": 1,
+            "kdsatker": "D70300900100029     ",
+            "keterangan": "",
+            "nomorspm": "SPM0195/032029",
+            "pilih_cetak": 2,
+            "tahun": 2012,
+            "tglgaji": "2012-03-09",
+            "tglspm": "2012-02-09"
+        }
+3. 
+ {
+          
+            "keterangan": "",
+            "nomorspm": "SPM0195/032012",
+            "pilih_cetak": 2,
+            "tahun": 2029,
+            "tglspm": "2012-02-21"
+        }
+4. Delete Udah
