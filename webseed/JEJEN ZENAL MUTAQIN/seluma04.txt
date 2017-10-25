@@ -1,0 +1,73 @@
+1.-----------------------------------------------------------------------------
+auth-token
+localhost:7979/auth/token
+
+{
+	
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+===============================================================================
+
+2.-----------------------------------------------------------------------------
+read All
+
+localhost:7979/api/masterdata/MdSeluma04/readAll
+
+===============================================================================
+
+3.-----------------------------------------------------------------------------
+Insert data ke-1 pada tabel MdSeluma04
+
+
+localhost:7979/api/masterdata/MdSeluma04/create
+
+{
+            "alamat": "Tasikmalaya",
+            "fd_kdgiat": "99",
+            "fd_satker1": "999999",
+            "fd_satker2": "9999",
+            "gapok": 9999999,
+            "janak": 20,
+            "jistri": 1,
+            "kdpangkat": "34",
+            "kdsatker": "",
+            "kdstapeg": 1,
+            "nama": "JEJEN ZENAL MUTAQIN AmdKom",
+            "nip": "9999999999",
+            "nip_old": "19640201",
+            "nip_pemd": "196402011997022001",
+            "nodosir": "300001",
+            "plag": "S",
+            "satkerpemd": "990739103701",
+            "tempatlhr": "",
+            "tgllhr": "1996-10-18",
+            "tjeselon": 0,
+            "tjfungsi": 327000,
+            "tmtcapeg": "1997-02-01"
+}
+
+
+================================================================================
+
+4. -----------------------------------------------------------------------------
+update
+
+localhost:7979/api/masterdata/MdSeluma04/update?id0=999999&id1=9999&id2=99
+
+ {
+            "alamat": "Bandung",
+            "nama": "JEJEN ZENAL MUTAQIN AmdKom",
+            "tempatlhr": "Tasikmalaya"
+}
+
+================================================================================
+
+5. -----------------------------------------------------------------------------
+delete
+
+localhost:7979/api/masterdata/MdSeluma04/delete?id0=999999&id1=9999&id2=99
+
