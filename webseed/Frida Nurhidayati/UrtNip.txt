@@ -1,0 +1,203 @@
+//geting token
+localhost:7979/auth/token
+
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+
+    "token_type": "Bearer",
+
+    "scope": null,
+
+    "expires_in": 86400000,
+
+    "status": "success",
+
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MTM0NzgsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTk5ODc4fQ.xcSP3FxRxN38qqZ-Rsn_rVtUwAuY6384LdXsTf6H5_E",
+
+    "id": 79,
+
+    "nama_login": "tujuhsembilan"
+
+}
+//read all
+localhost:7979/api/masterdata/MdUrtNip/readAll?$top=1&$skip=0
+
+{
+    "totalItems": 5017,
+
+    "items": [
+        
+	{
+            
+	"Model_ID": "$id0=197004201992031004",
+
+        "c_agama": "ISLAM",
+
+        "c_golongan": "IV/A",
+
+            "c_jbt_fungsi": "9999",
+
+            "c_jbt_struktur": "4A",
+
+            "c_jns_kelamin": "P",
+
+            "c_sts_kwn": "K",
+ 
+           "c_sts_peg": "K",
+
+            "c_sts_sipil": "WK/2-4",
+
+            "kd_guru": "N",
+
+            "n_gaji_pokok": 2380000,
+
+            "n_jab_struktur": 540000,
+
+            "n_jml_anak": 2,
+ 
+           "n_jml_si": 1,
+
+            "n_masakerja": 12,
+
+            "nip_v": "197004201992031004",
+
+            "v_nama": "ERWAN FAHMI, S.Pd",
+
+            "v_tmp_lahir": "-"
+       
+	 }
+    
+]
+}
+
+//create
+localhost:7979/api/masterdata/MdUrtNip/create
+
+{
+            "c_agama": "ISLAM",
+
+            "c_golongan": "IV/A",
+
+            "c_jbt_fungsi": "9999",
+
+            "c_jbt_struktur": "4A",
+
+            "c_jns_kelamin": "l",
+
+            "c_sts_kwn": "K",
+
+            "c_sts_peg": "K",
+
+            "c_sts_sipil": "WK/2-4",
+
+            "kd_guru": "N",
+
+            "n_gaji_pokok": 2380000,
+
+            "n_jab_struktur": 540000,
+
+            "n_jml_anak": 2,
+
+            "n_jml_si": 1,
+
+            "n_masakerja": 5,
+
+            "nip_v": "20101000",
+
+            "v_nama": "RIDWAN KAMIL, S.Pd",
+
+            "v_tmp_lahir": "-"
+        
+}
+
+output:
+{
+    "Model_ID": "$id0=20101000",
+
+    "c_agama": "ISLAM",
+
+    "c_golongan": "IV/A",
+
+    "c_jbt_fungsi": "9999",
+
+    "c_jbt_struktur": "4A",
+
+    "c_jns_kelamin": "l",
+
+    "c_sts_kwn": "K",
+
+    "c_sts_peg": "K",
+
+    "c_sts_sipil": "WK/2-4",
+
+    "kd_guru": "N",
+
+    "n_gaji_pokok": 2380000,
+
+    "n_jab_struktur": 540000,
+
+    "n_jml_anak": 2,
+
+    "n_jml_si": 1,
+
+    "n_masakerja": 5,
+
+    "nip_v": "20101000",
+
+    "v_nama": "RIDWAN KAMIL, S.Pd",
+
+    "v_tmp_lahir": "-"
+
+}
+//update
+localhost:7979/api/masterdata/MdUrtNip/update?id=20101000
+mengubah gaji 
+{
+	"n_gaji_pokok": 5000000	
+}
+
+output:
+{
+    "Model_ID": "$id0=20101000",
+
+    "c_agama": "ISLAM",
+
+    "c_golongan": "IV/A",
+
+    "c_jbt_fungsi": "9999",
+
+    "c_jbt_struktur": "4A",
+
+    "c_jns_kelamin": "l",
+
+    "c_sts_kwn": "K",
+
+    "c_sts_peg": "K",
+
+    "c_sts_sipil": "WK/2-4",
+
+    "kd_guru": "N",
+
+    "n_gaji_pokok": 5000000,
+
+    "n_jab_struktur": 540000,
+
+    "n_jml_anak": 2,
+
+    "n_jml_si": 1,
+ 
+   "n_masakerja": 5,
+
+    "nip_v": "20101000",
+
+    "v_nama": "RIDWAN KAMIL, S.Pd",
+
+    "v_tmp_lahir": "-"
+
+}
+//delete
+localhost:7979/api/masterdata/MdUrtNip/delete?id=20101000
+
+{
+    "message": "No Data Found"
+}
