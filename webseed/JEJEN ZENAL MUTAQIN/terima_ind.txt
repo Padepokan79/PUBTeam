@@ -15,58 +15,40 @@ localhost:7979/auth/token
 2.-----------------------------------------------------------------------------
 read All
 
-localhost:7979/api/masterdata/Mdgagal1721a2/readAll
+localhost:7979/api/masterdata/MdTerimaInd/readAll?$Top=2&$Skip=0
 
 ===============================================================================
 
 3.-----------------------------------------------------------------------------
-Insert data ke-1 pada tabel Mdgagal_1721_a2
+Insert data ke-1 pada tabel MdTerimaInd
 
-localhost:7979/api/masterdata/Mdgagal1721a2/create
-
-{
-
-
-	"nip": "196606041994052001",
-
-	"tahun_pajak":2017,
-
-	"kdskpd":"02"
-
-
-}
-
-Insert data ke-1 pada tabel historis_pendidikan
+localhost:7979/api/masterdata/MdTerimaInd/create
 
 {
-
-
-	"nip": "195811101984111002",
-
-	"tahun_pajak":2011,
-
-	"kdskpd":"02"
-
-
+            "kddati1": "99",
+            "kddati2": "99",
+            "kdsatker": "D9999",
+            "kdskpd": "999",
+            "nip": "010122831",
+            "sukses": 1,
+            "timestamp": "2017-10-10;10;10"
 }
+
+
 ================================================================================
 
 4. -----------------------------------------------------------------------------
 update
 
-localhost:7979/api/masterdata/Mdgagal1721a2/update?id0=195811101984111002&id1=2011
+localhost:7979/api/masterdata/MdTerimaInd/update?id0=010122831&id1=99&id2=99
 
 {
-	"kdskpd":"100"
-}
-
-
+            "kdskpd": "111",
+            "timestamp": "2017-10-25;10;10"
 }
 ================================================================================
 
 5. -----------------------------------------------------------------------------
 delete
 
-localhost:7979/api/masterdata/Mdgagal1721a2/delete?id0=195811101984111002&id1=2011
-
-
+localhost:7979/api/masterdata/MdTerimaInd/delete?id0=010122831&id1=99&id2=99
