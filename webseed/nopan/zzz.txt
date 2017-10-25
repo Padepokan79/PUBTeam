@@ -1,0 +1,167 @@
+//login zzz
+url : localhost:7979/auth/token
+{
+
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+//read all zzz
+url : localhost:7979/api/masterdata/MdZzz/readAll?$top=2&$skip=0
+//create
+url : localhost:7979/api/masterdata/MdZzz/create
+{
+
+            "Model_ID": "$id0=140055726         ",
+
+            "bersih": 5398300,
+
+            "catatan": " ",
+
+            "gapok": 4417400,
+
+            "glrbelakang": "                              ",
+
+            "glrdepan": "                              ",
+
+            "hal": 1,
+
+            "janak": 0,
+
+            "jistri": 1,
+
+            "kdberas": 2,
+
+            "kdeselon": "00",
+
+            "kdfungsi": "06902",
+
+            "kdguru": "001",
+
+            "kdhitung": 1,
+
+            "kdirdhata": "0 ",
+
+            "kdjenkel": 1,
+
+            "kdjnstrans": 1,
+
+            "kdkoperasi": "0 ",
+
+            "kdkorpri": "0 ",
+
+            "kdlangka": 0,
+
+            "kdpangkat": "4B",
+
+            "kdsatker": "D10200101900004     ",
+
+            "kdskpd": "019",
+
+            "kdssbp": "001",
+
+            "kdstapeg": 4,
+
+            "kdstawin": 1,
+
+            "kdstruk": 0,
+
+            "kdterpencil": "000",
+
+            "kdtjkhusus": "00000",
+
+            "kdtkd": 0,
+
+            "kodebyr": "0000      ",
+
+            "kotor": 6052955,
+
+            "masker": 32,
+
+            "nama": "H.RP.ABD.RACHMAN.SKM",
+
+            "nip": "020123         ",
+
+            "niplama": "140055726",
+
+            "nodosir": "0000      ",
+
+            "norek": "                                        ",
+
+            "npwp": "00.000.00.0-000.000 ",
+
+            "nu": 1,
+
+            "paskes": 0,
+
+            "pbulog": 0,
+
+            "phutang": 0,
+
+            "pirdhata": 0,
+
+            "piwp": 485914,
+
+            "pkoperasi": 0,
+
+            "pkorpri": 0,
+
+            "potongan": 654655,
+
+            "ppajak": 158741,
+
+            "prsngapok": 100,
+
+            "psewa": 0,
+
+            "ptaperum": 10000,
+
+            "tbulat": 74,
+
+            "tglgaji": "2013-09-01",
+
+            "tgllhr": "1950-05-13",
+
+            "tjanak": 0,
+
+            "tjaskes": 0,
+
+            "tjberas": 135000,
+
+            "tjeselon": 0,
+
+            "tjfungsi": 900000,
+
+            "tjguru": 0,
+
+            "tjistri": 441740,
+
+            "tjkhusus": 0,
+
+            "tjlangka": 0,
+
+            "tjpajak": 158741,
+
+            "tjstruk": 0,
+
+            "tjterpencil": 0,
+
+            "tjtkd": 0,
+
+            "tjtpp": 0,
+
+            "tjumum": 0,
+
+            "tmttabel": "2017-01-01"
+
+        }
+//update zzz
+url : localhost:7979/api/masterdata/MdZzz/update?$id0=020123
+{
+
+	"nama" : "IR.Nopan"
+
+}
+//delete zzz
+url : localhost:7979/api/masterdata/MdZzz/delete?$id0=020123 
