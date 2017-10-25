@@ -1,15 +1,16 @@
 [auth token]
-POST localhost:7979/auth/token
+localhost:7979/auth/token
 di body:
 {
 	"nama_login" : "tujuhsembilan",
 	"password" : "a"
 }
-
+//token:
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTQ1OTIsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgwOTkyfQ.xXX1AszrFfyh5KV3X9DEuUi689-wISlX0yx3wtWzQMk
 =======================================================================
 
 [readAll]
-GET localhost:7979/api/masterdata/MdDetilKekurangan/readAll?$top=5&$skip=0
+localhost:7979/api/masterdata/MdDetilKekurangan/readAll?$top=5&$skip=0
 
 
 =======================================================================
@@ -77,4 +78,46 @@ GET localhost:7979/api/masterdata/MdDetilKekurangan/readAll?$top=5&$skip=0
 	"TARIFBERAS" : 58050,
 	"KDUKP" : 0
 }
+[create]=>data ke tiga
+{
+	"TGLBAYAR" : "2017-10-25",
+	"NIP" : "DATAILFA",
+	"NORUT" : 1,
+	"KETER" : 1,
+	"JENISKEKURANGAN" : 1,
+	"DARI" : "2017-08-01",
+	"SAMPAI" : "2017-10-01",
+	"JISTRI" : 1,
+	"JANAK" : 1,
+	"KDSTAPEG" : 4,
+	"KDPANGKAT" : "4B",
+	"GAPOK" : 4000000,
+	"MASKER" : 30,
+	"PRSNGAPOK" : 100,
+	"KDESELON" : "00",
+	"TJESELON" : 0,
+	"KDFUNGSI" : "08725",
+	"TJFUNGSI" : 345000,
+	"KDTJKHUSUS" : "00000",
+	"TJKHUSUS" : 0,
+	"KDTKD" : 0,
+	"TJTKD" : 0,
+	"KDTERPENCIL" : 0,
+	"TJTERPENCIL" : 0,
+	"UPDSTAMP" : "2017-10-23 14:27:00",
+	"JMLBULAN" : 3,
+	"kdhitung" : 1,
+	"TARIFBERAS" : 58050,
+	"KDUKP" : 0
+}
+
 ===========================================================================
+[update]
+localhost:7979/api/masterdata/MdDetilKekurangan/update?id0=2017-10-25&id1=DATAILFA&id2=1&id3=1
+//dibody
+{
+	"GAPOK" : 20000000
+}
+=======================================================================
+[delete]
+localhost:7979/api/masterdata/MdDetilKekurangan/delete?id0=2017-10-25&id1=DATAILFA&id2=1&id3=1

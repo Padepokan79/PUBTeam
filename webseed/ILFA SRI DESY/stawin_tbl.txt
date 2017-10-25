@@ -1,0 +1,51 @@
+[auth token]
+localhost:7979/auth/token
+//dibody
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTkwNjUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg1NDY1fQ.LtitUu6rPaMf14q2BNdknI9SMKNylR46jflG2rxQOZ0
+===================================================================================
+[readAll]
+localhost:7979/api/masterdata/MdStawinTbl/readAlllocalhost:7979/api/masterdata/MdStawinTbl/readAll
+//output
+{
+    "totalItems": 3,
+    "items": [
+        {
+            "Model_ID": "$id0=1",
+            "kdstawin": 1,
+            "nmstawin": "TIDAK KAWIN"
+        },
+        {
+            "Model_ID": "$id0=2",
+            "kdstawin": 2,
+            "nmstawin": "KAWIN"
+        },
+        {
+            "Model_ID": "$id0=3",
+            "kdstawin": 3,
+            "nmstawin": "JANDA/DUDA"
+        }
+    ]
+}
+========================================================================================
+[create]
+localhost:7979/api/masterdata/MdStawinTbl/create
+//DI BODY
+{
+	"kdstawin" : 4,
+	"nmstawin" : "ILFA SRI DESY"
+}
+===================================================================================
+[update]
+localhost:7979/api/masterdata/MdStawinTbl/update?id=4
+//DI BODY
+{
+	"nmstawin" : "TIDAK JELAS"
+}
+========================================================================
+[delete]
+localhost:7979/api/masterdata/MdStawinTbl/delete?id=4

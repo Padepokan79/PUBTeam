@@ -22,6 +22,8 @@ localhost:7979/api/masterdata/MdJenisSkppTbl/readAll
 3.-----------------------------------------------------------------------------
 Insert data ke-1 pada tabel MdJenisPeg
 
+localhost:7979/api/masterdata/MdJenisSkppTbl/create
+
 {
             "jenis": 6,
             "nama_skpp": "SKPP Sakit"

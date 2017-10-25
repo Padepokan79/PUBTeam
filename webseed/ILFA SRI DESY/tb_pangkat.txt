@@ -1,0 +1,176 @@
+[auth token]
+localhost:7979/auth/token
+//dibody
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDEzMzcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg3NzM3fQ.-cvNAjxQ-Wr8CpavYqgYx0_0ZeOr0c_vcATv6W-_x5I
+
+===================================================================================
+[readAll]
+localhost:7979/api/masterdata/MdTbPangkat/readAll
+//output
+{
+    "totalItems": 17,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "01",
+            "pkt020": "IV/e",
+            "pkt030": "Pembina Utama",
+            "pkt040": "0145",
+            "pkt050": "4E"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "02",
+            "pkt020": "IV/d",
+            "pkt030": "Pembina Utama Madya",
+            "pkt040": "0144",
+            "pkt050": "4D"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "03",
+            "pkt020": "IV/c",
+            "pkt030": "Pembina Utama Muda",
+            "pkt040": "0143",
+            "pkt050": "4C"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "04",
+            "pkt020": "IV/b",
+            "pkt030": "Pembina Tingkat I",
+            "pkt040": "0142",
+            "pkt050": "4B"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "05",
+            "pkt020": "IV/a",
+            "pkt030": "P e m b i n a",
+            "pkt040": "0141",
+            "pkt050": "4A"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "06",
+            "pkt020": "III/d",
+            "pkt030": "Penata Tingkat I",
+            "pkt040": "0134",
+            "pkt050": "3D"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "07",
+            "pkt020": "III/c",
+            "pkt030": "P e n a t a",
+            "pkt040": "0133",
+            "pkt050": "3C"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "08",
+            "pkt020": "III/b",
+            "pkt030": "Penata Muda Tk.I",
+            "pkt040": "0132",
+            "pkt050": "3B"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "09",
+            "pkt020": "III/a",
+            "pkt030": "Penata Muda",
+            "pkt040": "0131",
+            "pkt050": "3A"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "10",
+            "pkt020": "II/d",
+            "pkt030": "Pengatur Tk.I",
+            "pkt040": "0124",
+            "pkt050": "2D"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "11",
+            "pkt020": "II/c",
+            "pkt030": "Pengatur",
+            "pkt040": "0123",
+            "pkt050": "2C"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "12",
+            "pkt020": "II/b",
+            "pkt030": "Pengatur Muda Tk.I",
+            "pkt040": "0122",
+            "pkt050": "2B"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "13",
+            "pkt020": "II/a",
+            "pkt030": "Pengatur Muda",
+            "pkt040": "0121",
+            "pkt050": "2A"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "14",
+            "pkt020": "I/d",
+            "pkt030": "Juru Tingkat I",
+            "pkt040": "0114",
+            "pkt050": "1D"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "15",
+            "pkt020": "I/c",
+            "pkt030": "J u r u",
+            "pkt040": "0113",
+            "pkt050": "1C"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "16",
+            "pkt020": "I/b",
+            "pkt030": "Juru Muda Tk.I",
+            "pkt040": "0112",
+            "pkt050": "1B"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "pkt010": "17",
+            "pkt020": "I/a",
+            "pkt030": "Juru Muda",
+            "pkt040": "0111",
+            "pkt050": "1A"
+        }
+    ]
+}
+========================================================================
+[create]
+localhost:7979/api/masterdata/MdTbPangkat/create
+//di body
+{
+	"pkt010" : "20",
+	"pkt020" : "XX",
+	"pkt030" : "ilfasridesy",
+	"pkt040" : "0612",
+	"pkt050" : "9A"
+}
+========================================================================
+[update]
+localhost:7979/api/masterdata/MdTbPangkat/update?id=20
+//di body
+{
+	"pkt030" : "Ilfa Sri Desy"
+}
+=========================================================================
+[delete]
+localhost:7979/api/masterdata/MdTbPangkat/delete?id=20

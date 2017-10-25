@@ -15,58 +15,47 @@ localhost:7979/auth/token
 2.-----------------------------------------------------------------------------
 read All
 
-localhost:7979/api/masterdata/Mdgagal1721a2/readAll
+localhost:7979/api/masterdata/MdSkpdImport/readAll
 
 ===============================================================================
 
 3.-----------------------------------------------------------------------------
-Insert data ke-1 pada tabel Mdgagal_1721_a2
+Insert data ke-1 pada tabel MdSkpdImport
 
-localhost:7979/api/masterdata/Mdgagal1721a2/create
-
-{
-
-
-	"nip": "196606041994052001",
-
-	"tahun_pajak":2017,
-
-	"kdskpd":"02"
-
-
-}
-
-Insert data ke-1 pada tabel historis_pendidikan
+localhost:7979/api/masterdata/MdSkpdImport/create
 
 {
-
-
-	"nip": "195811101984111002",
-
-	"tahun_pajak":2011,
-
-	"kdskpd":"02"
-
-
+            "kdskpd": "099",
+            "kdssbp": "099",
+            "kota": "TASIKMALAYA",
+            "nipbendahara": "999990",
+            "nipkepala": "999999",
+            "nippembuatdaftar": "197412312006041055",
+            "nmbendahara": "RIYAN TURMUDZI",
+            "nmkepala": "IPIN SOPIAN",
+            "nmpembuatdaftar": "SANDI SAPUTRA",
+            "nmskpd": "DINAS PEKERJAAN UMUM",
+            "norek": " ",
+            "npwp": " "
 }
+
+
 ================================================================================
 
 4. -----------------------------------------------------------------------------
 update
 
-localhost:7979/api/masterdata/Mdgagal1721a2/update?id0=195811101984111002&id1=2011
+localhost:7979/api/masterdata/MdSkpdImport/update?id0=099&id1=099
 
 {
-	"kdskpd":"100"
+            "kota": "KOTA TASIKMALAYA",
+            "nmbendahara": "RIYAN TURMUDZI",
+            "nmkepala": "RIDHO MUSLIM"
 }
 
-
-}
 ================================================================================
 
 5. -----------------------------------------------------------------------------
 delete
 
-localhost:7979/api/masterdata/Mdgagal1721a2/delete?id0=195811101984111002&id1=2011
-
-
+localhost:7979/api/masterdata/MdSkpdImport/delete?id0=099&id1=099
