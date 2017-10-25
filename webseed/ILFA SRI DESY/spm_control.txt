@@ -1,0 +1,38 @@
+[auth token]
+localhost:7979/auth/token
+//dibody
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTgyNzcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg0Njc3fQ.shaFw8mNEaitzexhHjdotpydltsDNAC7W-s0y3KRCqQ
+=================================================================================================================
+[readAll]
+localhost:7979/api/masterdata/MdSpmControl/readAll
+//output
+{
+    "totalItems": 0,
+    "items": []
+}
+======================================================================
+[create]
+localhost:7979/api/masterdata/MdSpmControl/create
+//di body
+{
+	"no_spm" : "ilfasridesy",
+	"v_bulan_th" : "ilfa",
+	"kd_skpd" : "i",
+	"tgl_update" : "2017-10-25 09:09:09"
+}
+
+===========================================================================
+[update]
+localhost:7979/api/masterdata/MdSpmControl/update?id=ilfasridesy
+//dibody
+{
+	"v_bulan_th" : "ii"
+}
+=================================================================================
+[delete]
+localhost:7979/api/masterdata/MdSpmControl/delete?id=ilfasridesy

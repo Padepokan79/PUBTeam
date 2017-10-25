@@ -131,4 +131,3 @@ localhost:7979/api/masterdata/MdIuranJkkjkm/update?id0=010122831&id1=2017-04-01&
 ==================================================================================
 [delete]
 localhost:7979/api/masterdata/MdIuranJkkjkm/delete?id0=010122831&id1=2017-04-01&id2=1
-menghapus yang nip nya 132279450

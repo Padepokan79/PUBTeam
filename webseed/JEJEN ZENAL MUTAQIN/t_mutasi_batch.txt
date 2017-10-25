@@ -15,58 +15,41 @@ localhost:7979/auth/token
 2.-----------------------------------------------------------------------------
 read All
 
-localhost:7979/api/masterdata/Mdgagal1721a2/readAll
+localhost:7979/api/masterdata/MdTmutasiBatch/readAll?$Top=3&$Skip=0
 
 ===============================================================================
 
 3.-----------------------------------------------------------------------------
-Insert data ke-1 pada tabel Mdgagal_1721_a2
+Insert data ke-1 pada tabel MdTmutasiBatch
 
-localhost:7979/api/masterdata/Mdgagal1721a2/create
-
-{
-
-
-	"nip": "196606041994052001",
-
-	"tahun_pajak":2017,
-
-	"kdskpd":"02"
-
-
-}
-
-Insert data ke-1 pada tabel historis_pendidikan
+localhost:7979/api/masterdata/MdTmutasiBatch/create
 
 {
-
-
-	"nip": "195811101984111002",
-
-	"tahun_pajak":2011,
-
-	"kdskpd":"02"
-
-
+            "inputer": "Jejen Zenal Mutaqin",
+            "kdsatker_b": "D199999",
+            "kdsatker_l": "D111111",
+            "kdskpd_b": "099",
+            "kdskpd_l": "099",
+            "nip": "1234567890",
+            "updstamp": "2017-10-25;10;10"
 }
+
+
 ================================================================================
 
 4. -----------------------------------------------------------------------------
 update
 
-localhost:7979/api/masterdata/Mdgagal1721a2/update?id0=195811101984111002&id1=2011
+localhost:7979/api/masterdata/MdTmutasiBatch/update?id0=1234567890&id1=099&id2=D111111
 
 {
-	"kdskpd":"100"
-}
-
-
+    "inputer": "Jejen Zenal",
+    "updstamp": "2017-01-01;01;01"
 }
 ================================================================================
 
 5. -----------------------------------------------------------------------------
 delete
 
-localhost:7979/api/masterdata/Mdgagal1721a2/delete?id0=195811101984111002&id1=2011
-
+localhost:7979/api/masterdata/MdTmutasiBatch/delete?id0=1234567890&id1=099&id2=D111111
 
