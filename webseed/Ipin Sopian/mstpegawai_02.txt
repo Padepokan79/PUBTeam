@@ -1,0 +1,161 @@
+tabel mstpegawai_2
+
+1. read 
+localhost:7979/api/masterdata/MdMstPegawai2/readAll?$top=1&$skip=0
+
+2. create
+localhost:7979/api/masterdata/MdMstPegawai2/create
+ {
+
+            "agama": 1,
+
+            "alamat": "Garut",
+
+            "blgolt": 0,
+
+            "bup": 58,
+
+            "catatan": "DATA  AWAL",
+
+            "gapok": 2802000,
+
+            "glrbelakang": "",
+
+            "glrdepan": "",
+
+            "inputer": "TASPEN",
+
+            "janak": 1,
+
+            "jistri": 1,
+
+            "kdberas": 2,
+
+            "kdcabtaspen": "102",
+
+            "kddati1": "17",
+
+            "kddati2": "05",
+
+            "kddati3": "00",
+
+            "kddati4": "000",
+
+            "kdeselon": "00",
+
+            "kdfungsi": "04606",
+
+            "kdguru": "001",
+
+            "kdhitung": 1,
+
+            "kdirdhata": "",
+
+            "kdjenkel": 0,
+
+            "kdjnstrans": 1,
+
+            "kdkoperasi": "",
+
+            "kdkorpri": "",
+
+            "kdlangka": 0,
+
+            "kdpangkat": "3A",
+
+            "kdsatker": "D10200604500001",
+
+            "kdskpd": "045",
+
+            "kdssbp": "006",
+
+            "kdstapeg": 4,
+
+            "kdstawin": 2,
+
+            "kdstruk": 0,
+
+            "kdterpencil": "000",
+
+            "kdtjkhusus": "00000",
+
+            "kdtkd": 0,
+
+            "kodebyr": "000",
+
+            "masker": 16,
+
+            "mkgolt": 16,
+
+            "nama": "Putra, SKM",
+
+            "nip": "11111111",
+
+            "nip_lama": "11111112",
+
+            "niplama": "",
+
+            "nodosir": "0",
+
+            "nokarpeg": "",
+
+            "norek": "",
+
+            "notelp": "",
+
+            "npwp": "",
+
+            "pendidikan": "SARJANA",
+
+            "pirdhata": 0,
+
+            "pkoperasi": 0,
+
+            "pkorpri": 0,
+
+            "prsngapok": 100,
+
+            "psewa": 0,
+
+            "taperum": 7000,
+
+            "tempatlhr": "",
+
+            "tgllhr": "1988-01-01",
+
+            "tjeselon": 0,
+
+            "tjfungsi": 290000,
+
+            "tjguru": 0,
+
+            "tjkhusus": 0,
+
+            "tjlangka": 0,
+
+            "tjstruk": 0,
+
+            "tjterpencil": 0,
+
+            "tjtkd": 0,
+
+            "tmtberlaku": "2016-02-01",
+
+            "tmtcapeg": "1999-03-01",
+
+            "tmtskmt": "1999-03-01",
+
+            "tmttabel": "2015-01-01",
+
+            "updstamp": "2017-10-23 08:59:59"
+ 
+}
+
+localhost:7979/api/masterdata/MdMstPegawai2/update?id=11111111
+3. update
+{
+	"gapok": 30002000
+}
+
+localhost:7979/api/masterdata/MdMstPegawai2/delete?id=11111111
+4.delete
