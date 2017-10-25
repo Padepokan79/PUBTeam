@@ -1,0 +1,59 @@
+//  REKAP_SERTIFIKASI
+
+1. Token
+
+url : localhost:7979/auth/token
+
+{
+
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+2. read all
+
+url : localhost:7979/api/masterdata/MdRekapSertifikasiTbl/readAll
+
+3. create
+
+url : localhost:7979/api/masterdata/MdRekapSertifikasiTbl/create
+
+{
+	
+	"tglgaji" : "2017-07-12",
+
+	"tgl_byr" : "2017-08-08",
+
+	"kdsatker" : "KDS001",
+
+	"peg" : 700000,
+	"Gapok" : 2400000,
+
+	"Pajak" : 200000,
+
+	"tgl_cutoff" : "2017-09-09"
+
+}
+
+4. update
+
+url :localhost:7979/api/masterdata/MdRekapSertifikasiTbl/update?id0=2017-07-12&id1=KDS001
+
+{
+
+	"tgl_byr" : "2017-08-08",
+
+	"peg" : 700000,
+
+	"Gapok" : 3000000,
+
+	"Pajak" : 200000,
+
+	"tgl_cutoff" : "2017-09-09"
+
+}
+5. delete
+
+url : localhost:7979/api/masterdata/MdRekapSertifikasiTbl/delete?id0=2017-07-12&id1=KDS001
