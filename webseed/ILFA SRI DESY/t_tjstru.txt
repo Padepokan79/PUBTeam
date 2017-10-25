@@ -1,0 +1,116 @@
+[auth token]
+localhost:7979/auth/token
+//dibody
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDMwNjEsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg5NDYxfQ.LH9KXL_-DL-E5972rDoK2N6kQb3DHDITUYAl-cex-Kg
+===============================================================================
+[read all]
+localhost:7979/api/masterdata/MdTTjstru/readAll
+//output
+{
+    "totalItems": 11,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "ese": "11",
+            "nmese": "I/A",
+            "strulama": 4500000,
+            "tjstru": 5500000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "12",
+            "nmese": "I/B",
+            "strulama": 3500000,
+            "tjstru": 4375000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "21",
+            "nmese": "II/A",
+            "strulama": 2500000,
+            "tjstru": 3250000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "22",
+            "nmese": "II/B",
+            "strulama": 1500000,
+            "tjstru": 2025000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "31",
+            "nmese": "III/A",
+            "strulama": 900000,
+            "tjstru": 1260000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "32",
+            "nmese": "III/B",
+            "strulama": 675000,
+            "tjstru": 950000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "41",
+            "nmese": "IV/A",
+            "strulama": 360000,
+            "tjstru": 540000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "42",
+            "nmese": "IV/B",
+            "strulama": 315000,
+            "tjstru": 490000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "51",
+            "nmese": "V/A",
+            "strulama": 225000,
+            "tjstru": 360000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "52",
+            "nmese": "V/B",
+            "strulama": 120000,
+            "tjstru": 120000
+        },
+        {
+            "Model_ID": "$id0=null",
+            "ese": "99",
+            "nmese": "",
+            "strulama": 0,
+            "tjstru": 0
+        }
+    ]
+}
+
+=========================================================================================
+[create]
+localhost:7979/api/masterdata/MdTTjstru/create
+//di body
+{
+	"ESE" : "88",
+	"NMESE" : "XX",
+	"tjstru" : 10000000,
+	"strulama" : 500
+}
+=======================================================================================
+[update]
+localhost:7979/api/masterdata/MdTTjstru/update?id=88
+// di body
+{
+	"nmese" : "YY"
+}
+============================================================================
+[delete]
+localhost:7979/api/masterdata/MdTTjstru/delete?id=88

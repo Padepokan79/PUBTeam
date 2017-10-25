@@ -1,0 +1,34 @@
+[auth token]
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTcyMTUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgzNjE1fQ.ATJ97WCBLfr7yedl-B5CmKLlu_Y5_aokOg59mDJPizQ
+=================================================================
+[readAll]
+localhost:7979/api/masterdata/MdPhoto/readAll
+==============================================================================
+[create]
+localhost:7979/api/masterdata/MdPhoto/create
+//dibody
+{
+	"nip" : "DATAILFA06",
+	"gambar" : "ilfa.png"
+}
+//output
+{
+    "Model_ID": "$id0=DATAILFA06",
+    "gambar": "ilfa.png",
+    "nip": "DATAILFA06"
+}
+====================================================================================
+[update]
+localhost:7979/api/masterdata/MdPhoto/update?id=DATAILFA06
+//dibody
+{
+	"gambar" : "isd.jpg"
+}
+=================================================================
+[delete]
+localhost:7979/api/masterdata/MdPhoto/delete?id=DATAILFA06

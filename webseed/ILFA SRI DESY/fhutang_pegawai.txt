@@ -20,10 +20,53 @@ localhost:7979/api/masterdata/MdFHutangPegawai/readAll
 =====================================================================
 [create]
 localhost:7979/api/masterdata/MdFHutangPegawai/create
-//dibody
+//dibody=>data 1
 {
 	"nip" : "196109171985031010",
 	"tglgaji" : "2017-10-01",
+	"KdJnsTrans" : 1,
+	"kdskpd" : "001",
+	"kdsatker" : "D10200100100001",
+	"bersih" : 2000000,
+	"kdhutang1" : 1,
+	"hutang 1" : 1000,
+	"kdhutang2" : 1,
+	"hutang 2" : 1000,
+	"kdhutang3" : 1,
+	"hutang 3" : 1000,
+	"kdhutang4" : 1,
+	"hutang 4" : 1000,
+	"kdhutang5" : 1,
+	"hutang 5" : 1000,
+	"kdhutang6" : 1,
+	"hutang 6" : 1000,
+	"kdhutang7" : 1,
+	"hutang 7" : 1000,
+	"kdhutang8" : 1,
+	"hutang 8" : 1000,
+	"kdhutang9" : 1,
+	"hutang 9" : 1000,
+	"kdhutang10" : 1,
+	"hutang 10" : 1000,
+	"kdhutang11" : 1,
+	"hutang 11" : 1000,
+	"kdhutang12" : 1,
+	"hutang 12" : 1000,
+	"kdhutang13" : 1,
+	"hutang 13" : 1000,
+	"kdhutang14" : 1,
+	"hutang 14" : 1000,
+	"kdhutang15" : 1,
+	"hutang 15" : 1000,
+	"kdhutang16" : 1,
+	"hutang 16" : 1000,
+	"bersih_terima" : 1000000,
+	"updstamp" : "2017-10-24 09:07:07"
+}
+//di body=>data 2
+{
+	"nip" : "DATAILFA",
+	"tglgaji" : "2017-10-25",
 	"KdJnsTrans" : 1,
 	"kdskpd" : "001",
 	"kdsatker" : "D10200100100001",
@@ -94,4 +137,12 @@ localhost:7979/api/masterdata/MdFHutangPegawai/create
 }
 
 ============================================================================
-
+[update]
+localhost:7979/api/masterdata/MdFHutangPegawai/update?id0=DATAILFA&id1=2017-10-25&id2=1
+//dibody
+{
+	"bersih" : 70000000
+}
+====================================================================================
+[delete]
+localhost:7979/api/masterdata/MdFHutangPegawai/delete?id0=DATAILFA&id1=2017-10-25&id2=1
