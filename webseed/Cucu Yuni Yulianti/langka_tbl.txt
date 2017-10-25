@@ -1,0 +1,22 @@
+langka_tbl
+
+1. auth token 
+{
+	
+	"nama_login" : "hendra",
+
+	"password" : 11
+
+}
+
+2. insert table langka_tbl
+{
+	"kdlangka" : 3,
+	
+	"uraian_langka" : "langka saja",
+
+	"jumlah" : 10
+
+}
+
+localhost:7979/api/masterdata/MdLangkaTbl/create

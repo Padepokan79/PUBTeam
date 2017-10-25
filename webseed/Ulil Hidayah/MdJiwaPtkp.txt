@@ -1,0 +1,30 @@
+Tabel : jiwaptkp
+
+auth token
+localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+} => get access token
+
+read
+localhost:7979/api/masterdata/MdJiwaPtkp/readAll
+
+create
+localhost:7979/api/masterdata/MdJiwaPtkp/create
+{
+	"NIP" : "1950022",
+	"TAHUN" : "2017",
+	"JISTRI" : 1,
+	"JANAK" : 1
+}
+
+update
+localhost:7979/api/masterdata/MdJiwaPtkp/update?id0=1950022&id1=2017
+{
+	"JISTRI" : 2,
+	"JANAK" : 3
+}
+
+delete 
+localhost:7979/api/masterdata/MdJiwaPtkp/delete?id0=1950022&id1=2017

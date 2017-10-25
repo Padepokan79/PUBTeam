@@ -1,0 +1,205 @@
+//form_1721_a2
+
+1. token
+
+url:localhost:7979/auth/token
+
+{
+	
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read
+
+url: localhost:7979/api/masterdata/MdForm1721A2/readAll
+
+
+3. create
+
+url: localhost:7979/api/masterdata/MdForm1721A2/create
+
+{
+
+            "a01": 15000000,
+
+            "a02": 10000000,
+
+            "a03": 0,
+
+            "a04": 5000000,
+            "a05": 0,
+
+            "a06": 10000000,
+
+            "a07": 1000000,
+
+            "a08": 0,
+
+            "a09": 10000,
+
+            "a10": 100000000,
+
+            "a11": 1000000,
+
+            "a12": 1000000,
+
+            "a13": 1000000,
+
+            "a14": 10000000,
+
+            "a15": 10000000,
+
+            "a16": 10000000,
+
+            "a17": 10000000,
+
+            "a18": 1000000,
+
+            "a19": 1000000,
+
+            "a20": 0,
+
+            "a21": null,
+
+            "a22": null,
+            "a23a": null,
+
+            "a23b": null,
+
+            "zero": null,
+
+            "jab_bend": null,
+
+            "akhir_pajak": "2017-10-24",
+
+            "alamat_peg": "",
+
+            "awal_pajak": "2017-01-01",
+
+            "jabatan_gol": "Pembina Utama",
+
+            "jml_kel": "2",
+
+            "kdsatker": "D10200100800001",
+
+            "kdskpd": "008",
+
+            "nama_bend": "",
+
+            "nama_peg": "dr. Resti Siska Devi,Sp.PD,KGEH,MM",
+
+            "nip": "111111111111",
+
+            "nm_instansi": "",
+
+            "nourt": 2000,
+
+            "npwp_bend": "",
+
+            "npwp_peg": "00.000.00.0-000.000",
+
+            "sex": "1",
+
+            "status": "1",
+
+            "tahun_pajak": 2017
+
+}
+
+4. update Tahun_pajak=2017 dan nip= 111111111111
+
+url:localhost:7979/api/masterdata/MdForm1721A2/update?id0=2017&id1=111111111111
+{
+
+
+            "a01": 1,
+
+            "a02": 1,
+
+            "a03": 0,
+
+            "a04": 5,
+
+            "a05": 0,
+
+            "a06": 1,
+
+            "a07": 1,
+
+            "a08": 0,
+
+            "a09": 1,
+
+            "a10": 100000000,
+
+            "a11": 1000000,
+
+            "a12": 1000000,
+
+            "a13": 1000000,
+
+            "a14": 10000000,
+
+            "a15": 10000000,
+
+            "a16": 10000000,
+
+            "a17": 10000000,
+
+            "a18": 1000000,
+
+            "a19": 1000000,
+
+            "a20": 0,
+
+            "a21": null,
+
+            "a22": null,
+
+            "a23a": null,
+
+            "a23b": null,
+
+            "zero": null,
+
+            "jab_bend": null,
+            "akhir_pajak": "2017-10-24",
+
+            "alamat_peg": "",
+
+            "awal_pajak": "2017-01-01",
+
+            "jabatan_gol": "Pembina Utama",
+
+            "jml_kel": "2",
+
+            "kdsatker": "D10200100800001",
+
+            "kdskpd": "008",
+
+            "nama_bend": "",
+
+            "nama_peg": "dr. Resti Siska Devi Lukman,Sp.PD,KGEH,MM",
+
+            "nm_instansi": "",
+
+            "nourt": 2000,
+
+            "npwp_bend": "",
+
+            "npwp_peg": "00.000.00.0-000.000",
+
+            "sex": "1",
+
+            "status": "1"
+
+}
+
+
+5. delete
+ Tahun_pajak=2017 dan nip= 111111111111
+
+localhost:7979/api/masterdata/MdForm1721A2/delete?id0=2017&id1=111111111111

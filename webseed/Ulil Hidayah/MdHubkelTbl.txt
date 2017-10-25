@@ -1,0 +1,30 @@
+Tabel : hubkel_tbl
+
+auth token
+localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+} => get access token
+
+read
+localhost:7979/api/masterdata/MdHubkelTbl/readAll
+
+create
+localhost:7979/api/masterdata/MdHubkelTbl/readAll
+{
+    "Model_ID": "$id0=00",
+    "kdhubkel": "8A",
+    "nmhubkel": "HANYA DIRI SENDIRI"
+} => create
+
+update
+localhost:7979/api/masterdata/MdHubkelTbl/update?id=8A
+{
+    "Model_ID": "$id0=00",
+    "kdhubkel": "8A",	"nmhubkel": "ONLY DIRI SENDIRI"
+} => update
+
+
+untuk delete juga ada
+localhost:7979/api/masterdata/MdHubkelTbl/delete?id=8A
