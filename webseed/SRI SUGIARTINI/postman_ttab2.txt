@@ -1,0 +1,57 @@
+POSTMAN
+SRI SUGIARTINI
+25/10/2017
+TABEL : t_tab2
+=====================================================================
+TOKEN :
+localhost:7979/auth/token
+=====================================================================
+READ :
+localhost:7979/api/masterdata/MdTtab2/readAll
+HASIL :
+{
+    "totalItems": 9,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "agama": "ISLAM",
+            "jenjab": "Pelaksana",
+            "kode": 1,
+            "sekolah": "DOKTOR",
+            "stakaw": "Kawin",
+            "stakaw1": "K",
+            "stapeg": "Pegawai Negeri",
+            "stapeg1": "PNS"
+====================================================================
+CREATE :
+localhost:7979/api/masterdata/MdTtab2/create
+{
+"kode":10,
+"jenjab":"pelkasana",
+"stapeg":"pegawai negeri",
+"stapeg1":"pns",
+"stawin":"tidak kawin",
+"stawin1":"tk",
+"agama":"islam",
+"sekolah":"doktor"
+}
+HASIL :
+{
+    "Model_ID": "$id0=-1",
+    "agama": "islam",
+    "id": -1,
+    "jenjab": "pelkasana",
+    "kode": 10,
+    "sekolah": "doktor",
+    "stapeg": "pegawai negeri",
+    "stapeg1": "pns"
+}
+===================================================================
+UBAH :
+localhost:7979/api/masterdata/MdTtab2/update?id0=10
+{
+	"sekolah":"sarjana"
+}
+====================================================================
+HAPUS :
+localhost:7979/api/masterdata/MdTtab2/delete?id0=10

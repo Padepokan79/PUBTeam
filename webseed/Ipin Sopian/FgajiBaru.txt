@@ -340,3 +340,6 @@ localhost:7979/api/masterdata/MdFGajiBaru/update?id0=2012-03-01&id1=5&id2=GUB201
 {
 	"tjeselon":1
 }
+
+localhost:7979/api/masterdata/MdFGajiBaru/delete?id0=2012-03-01&id1=5&id2=GUB201003  &id3=2012-11-08&id4=1
+5.delete

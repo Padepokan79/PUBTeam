@@ -1,0 +1,31 @@
+Sandi Saputra
+
+1. Mengambil token 
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdSkpdKota/create
+-> {
+	"kdcabang" : "123",
+	"kdssbp" : "123",
+	"nmskpd" : "Caheum",
+	"updstamp" : "percobaan input",
+	"inputer" : "sandi cb",
+	"kelssbp" : "D"
+}
+
+3. Menampilkan data
+-> localhost:7979/api/masterdata/MdSkpdKota/readAll?$Top=2&$Skip=0
+
+4. Mengubah data
+-> localhost:7979/api/masterdata/MdSkpdKota/update?kdskpd=123
+-> {
+	"inputer" : "Sandi tea"
+}
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdSkpdKota/delete?kdskpd=123

@@ -1,0 +1,57 @@
+// SKPD_PINDAHAN
+
+1. token
+
+url : localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read All
+
+url : localhost:7979/api/masterdata/MdSkpdPindahan/readAll?$top=5&$skip=0
+
+3. create
+
+url : localhost:7979/api/masterdata/MdSkpdPindahan/create
+
+ {
+
+            "kddati1": "10",
+
+            "kddati2": "10",
+            "kdskpd_l": "10",
+
+            "kdssbp": "010",
+
+            "nmskpd_l": "Dinas Perhubungan, Komunikasi Dan Pariwisata",
+
+            "KDSKPD_B": "010",
+
+            "NMSKPD_B": "DISHUBKOMINFIPAR"
+ 
+}
+
+4. update
+
+url : localhost:7979/api/masterdata/MdSkpdPindahan/update?id0=10&id1=10&id2=10&id3=010
+
+{
+
+            
+"nmskpd_l": "Dinas Perhubungan, Komunikasi Dan Pariwisata",
+
+            "KDSKPD_B": "010",
+
+            "NMSKPD_B": "DISHUBKOMINFIPAR KOTA BANJAR"
+ 
+}
+
+5. delete
+
+url : localhost:7979/api/masterdata/MdSkpdPindahan/delete?id0=10&id1=10&id2=10&id3=010
