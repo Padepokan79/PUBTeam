@@ -1,4 +1,141 @@
-============================TABEL 1 ESELON_TBL======================================================
+============================ TABEL 1 ESELON_TBL======================================================
+1. auth token
+
+{
+ "nama_login" : "tujuhsembilan",
+	
+"password" : "a"
+
+}
+
+2. read limit 3
+
+localhost:7979/api/masterdata/MdEselontbl/readAll?$top=3&$skip=0
+
+output :
+
+{
+   
+ "totalItems": 15,
+
+    "items": [
+        
+{
+            
+"Model_ID": "$id0=null",
+            
+"kdeselon": "00",
+            
+"rp_eselon": 0,
+           
+ "tmteselon": "2008-01-01",
+            
+"uraian": "NON ESELON"
+       
+ },
+ 
+       {
+           
+ "Model_ID": "$id0=null",
+            
+"kdeselon": "01",
+            
+"rp_eselon": 5400000,
+           
+ "tmteselon": "2008-01-01",
+            
+"uraian": "GUBERNUR"
+        
+},
+     
+   {
+            
+"Model_ID": "$id0=null",
+            
+"kdeselon": "02",
+            
+"rp_eselon": 4320000,
+           
+ "tmteselon": "2008-01-01",
+            
+"uraian": "WAKIL GUBERNUR"
+        
+}
+   
+ ]
+}
+
+3.create 
+
+localhost:7979/api/masterdata/MdEselontbl/create
+
+coding 1 :
+
+{
+         
+   "Model_ID": "$id0=null",
+        
+    "kdeselon": "6A",
+   
+         "rp_eselon": 5000000,
+    
+        "tmteselon": "2008-01-01",
+    
+        "uraian": "ESELON 6A"
+      
+  }
+
+output :
+
+{
+  
+  "Model_ID": "$id0=-1",
+  
+  "id": -1,
+  
+  "kdeselon": "6A",
+  
+  "rp_eselon": 5000000,
+   
+ "tmteselon": "2008-01-01",
+   
+ "uraian": "ESELON 6A"
+
+}
+
+
+coding 2 :
+
+{
+    "Model_ID": "$id0=null",
+    
+        "kdeselon": "6B",
+       
+     "rp_eselon": 5500000,
+        
+    "tmteselon": "2008-01-01",
+       
+     "uraian": "ESELON 6B"
+        
+}
+
+
+output : 
+
+{
+  "Model_ID": "$id0=-1",
+   
+ "id": -1,
+    "kdeselon": "6B",
+   
+ "rp_eselon": 5500000,
+  
+  "tmteselon": "2008-01-01",
+   
+ "uraian": "ESELON 6B"
+
+}
+
 4. update 
 
 localhost:7979/api/masterdata/MdEselontbl/update?kdeselon=6A
@@ -603,7 +740,7 @@ coding :
     
 "nama": "DESON ASMARAHADI",
     
-"nip": "198108102007009999",
+"nip": "1",
     
 "niplama": "450019155",
     
@@ -829,6 +966,310 @@ output :
 
 }
 
+4. update 
+localhost:7979/api/masterdata/MdFgajiCopy/update?ID0=2014-04-01&ID1=1&ID2=1
+
+coding :
+{
+	
+ "nama": "UPDATE DESON ASMARAHADI"
+
+}
+
+output : 
+{
+    
+"Model_ID": "$id0=null&$id1=null&$id2=null",
+    
+"bersih": 2732200,
+    
+"catatan": "DATA MIGRASI AWAL                                 ",
+    
+"gapok": 2326300,
+   
+ "glrbelakang": "",
+    
+"glrdepan": "",
+    
+"hal": 1,
+    
+"janak": 1,
+    
+"jistri": 1,
+    
+"kdberas": 2,
+    
+"kdeselon": "00",
+    
+"kdfungsi": "00000",
+    
+"kdguru": "006",
+    
+"kdhitung": 1,
+    
+"kdirdhata": "  ",
+    
+"kdjenkel": 1,
+    
+"kdjnstrans": 1,
+    
+"kdkoperasi": "  ",
+    
+"kdkorpri": "  ",
+   
+ "kdlangka": 0,
+    
+"kdpangkat": "3A",
+   
+ "kdsatker": "D10200612200001     ",
+    
+"kdskpd": "122",
+    
+"kdssbp": "006",
+    
+"kdstapeg": 4,
+    
+"kdstawin": 2,
+    
+"kdstruk": 0,
+    
+"kdterpencil": "000",
+    
+"kdtjkhusus": "00000",
+    
+"kdtkd": 0,
+    
+"kodebyr": "000       ",
+    
+"kotor": 3017915,
+    
+"masker": 4,
+    
+"nama": "UPDATE DESON ASMARAHADI",
+    
+"nip": "1",
+    
+"niplama": "450019155",
+    
+"nodosir": "0         ",
+   
+ "norek": "                                        ",
+   
+ "npwp": "                    ",
+    
+"nu": 1,
+    
+"paskes": 0,
+    
+"pbulog": 0,
+    
+"phutang": 0,
+   
+ "pirdhata": 0,
+    
+"piwp": 260545,
+    
+"pkoperasi": 0,
+    
+"pkorpri": 0,
+    
+"potongan": 285715,
+    
+"ppajak": 18170,
+    
+"prsngapok": 100,
+    
+"psewa": 0,
+    
+"ptaperum": 7000,
+    
+"tbulat": 9,
+    
+"tglgaji": "2014-04-01",
+    
+"tgllhr": "1981-08-10",
+   
+ "tjanak": 46526,
+    
+"tjaskes": 0,
+    
+"tjberas": 209280,
+    
+"tjeselon": 0,
+    
+"tjfungsi": 0,
+    
+"tjguru": 0,
+    
+"tjistri": 232630,
+    
+"tjkhusus": 0,
+    
+"tjlangka": 0,
+   
+ "tjpajak": 18170,
+    
+"tjstruk": 0,
+    
+"tjterpencil": 0,
+   
+ "tjtkd": 0,
+    
+"tjtpp": 0,
+    
+"tjumum": 185000,
+    
+"tmttabel": "2014-04-01"
+
+}
+
+5. delete 
+
+localhost:7979/api/masterdata/MdFgajiCopy/delete?ID0=2014-04-01&ID1=1&ID2=1
+
+output :
+
+{
+    
+"tjanak": 46526,
+   
+ "niplama": "450019155",
+    
+"tbulat": 9,
+   
+ "glrbelakang": "",
+   
+ "kdstruk": 0,
+    
+"pkorpri": 0,
+    
+"kdsatker": "D10200612200001     ",
+    
+"kdlangka": 0,
+    
+"tjtpp": 0,
+    
+"ptaperum": 7000,
+   
+ "prsngapok": 100,
+    
+"kdssbp": "006",
+    
+"tjfungsi": 0,
+    
+"psewa": 0,
+    
+"tgllhr": "1981-08-10",
+    
+"pkoperasi": 0,
+    
+"gapok": 2326300,
+    
+"tjtkd": 0,
+    
+"ppajak": 18170,
+   
+ "masker": 4,
+   
+ "glrdepan": "",
+    
+"kdjenkel": 1,
+    
+"tjeselon": 0,
+    
+"tmttabel": "2014-04-01",
+    
+"piwp": 260545,
+    
+"phutang": 0,
+    
+"nip": "1",
+    
+"potongan": 285715,
+   
+ "kdstapeg": 4,
+    
+"kdskpd": "122",
+    
+"pirdhata": 0,
+    
+"kdeselon": "00",
+    
+"kdkorpri": "  ",
+    
+"kdfungsi": "00000",
+    
+"norek": "                                        ",
+    
+"nodosir": "0         ",
+    
+"catatan": "DATA MIGRASI AWAL                                 ",
+    
+"hal": 1,
+    "tglgaji": "2014-04-01",
+    
+"tjberas": 209280,
+    "tjumum": 185000,
+    
+"tjterpencil": 0,
+    "kdirdhata": "  ",
+    
+"kodebyr": "000       ",
+    
+"kdjnstrans": 1,
+    
+"tjguru": 0,
+    
+"kdberas": 2,
+    
+"bersih": 2732200,
+    
+"tjstruk": 0,
+    
+"kdstawin": 2,
+   
+ "nama": "UPDATE DESON ASMARAHADI",
+    
+"kotor": 3017915,
+    
+"kdhitung": 1,
+    
+"kdguru": "006",
+    
+"kdterpencil": "000",
+    
+"janak": 1,
+    
+"tjaskes": 0,
+    
+"kdtjkhusus": "00000",
+    
+"nu": 1,
+    
+"paskes": 0,
+    
+"kdkoperasi": "  ",
+    
+"kdpangkat": "3A",
+   
+ "npwp": "                    ",
+   
+ "tjpajak": 18170,
+   
+ "tjkhusus": 0,
+    
+"tjistri": 232630,
+    
+"pbulog": 0,
+    
+"kdtkd": 0,
+    
+"tjlangka": 0,
+    
+"jistri": 1
+
+}
+
 ================================================TABEL 3 HISTORIS_FUNGSIONAL================================================
 
 
@@ -951,7 +1392,7 @@ coding :
             
 "keterangan": "DATA AWAL",
             
-"nip": "450006657999999999",
+"nip": "1",
             
 "nomorskep": "8A",
             
@@ -977,7 +1418,7 @@ output :
             
 "keterangan": "DATA AWAL",
             
-"nip": "450006657999999999",
+"nip": "1",
             
 "nomorskep": "8A",
             
@@ -990,6 +1431,73 @@ output :
 "tmtgaji": "2004-04-01"
        
  }
+
+4. update 
+
+localhost:7979/api/masterdata/MdHistorisFungsional/update?id0=2004-04-01&id1=1
+
+coding : 
+{
+	 
+"penerbitskep": "Update Mohammed Hamzah"
+
+}
+
+output :
+{
+    
+"Model_ID": "$id0=null&$id1=null",
+    
+"jnsguru": 1,
+    
+"kdfungsi": "00980",
+    
+"keterangan": "DATA AWAL",
+    
+"nip": "1",
+    
+"nomorskep": "8A",
+    
+"penerbitskep": "Update Mohammed Hamzah",
+    
+"tglskep": "2002-09-09",
+   
+ "tglupdate": 1508903784000,
+    
+"tjfungsi": 0,
+    
+"tmtgaji": "2004-04-01"
+
+}
+
+5. delete 
+
+localhost:7979/api/masterdata/MdHistorisFungsional/delete?id0=2004-04-01&id1=1
+
+output :
+{
+    
+"penerbitskep": "Update Mohammed Hamzah",
+    
+"tglupdate": 1508903944000,
+    
+"tjfungsi": 0,
+    
+"nomorskep": "8A",
+    
+"keterangan": "DATA AWAL",
+    
+"jnsguru": 1,
+    
+"nip": "1",
+    
+"tglskep": "2002-09-09",
+    
+"kdfungsi": "00980",
+    
+"tmtgaji": "2004-04-01"
+
+}
 
  ================================================TABEL 4 HUTANG_TBL================================================
 
@@ -1159,39 +1667,59 @@ coding:
 
 {
 	
+
+
 "nip" :"0987654189899988",
+
 
 "nama" : "create nama satu",
 
+
 "glrdepan" : "create glrdpn satu",
+
 
 "glrbelakang" : "create glrdpn satu",
 
+
 "kdpangkat": "2A",
+
 
 "kdjab" : "3A",
 
+
 "kdskpd": "aa",
+
 
 "kdsatker" : "aaa",
 
-"pr_tp1":"00.1",
 
-"pr_tp2":"00.2",
+"pr_tp1":"00000.10",
 
-"pr_tp3":"00.3",
 
-"pr_tp4":"00.4",
+"pr_tp2":"00000.20",
 
-"pr_tp5":"00.5",
 
-"pr_tp6":"00.6",
+"pr_tp3":"00000.30",
 
-"pr_tp7":"00.7",
+
+"pr_tp4":"00000.40",
+
+
+"pr_tp5":"00000.50",
+
+
+"pr_tp6":"00000.60",
+
+
+"pr_tp7":"00000.70",
+
 
 "tmt_berlaku" : "2017-03-03",
 
-"flag" :  28
+
+"flag" :2
+
+
 
 }
 
@@ -1199,11 +1727,15 @@ output :
  
 {
     
-"Model_ID": "$id0=null&$id1=null&$id2=null",
+"Model_ID": "$id0=null",
+    
+"flag": 2,
     
 "glrbelakang": "create glrdpn satu",
     
 "glrdepan": "create glrdpn satu",
+    
+"kdjab": "3A",
     
 "kdpangkat": "2A",
     
@@ -1212,8 +1744,24 @@ output :
 "kdskpd": "aa",
     
 "nama": "create nama satu",
+   
+ "nip": "0987654189899988",
     
-"nip": "098765418989898"
+"pr_tp1": "00000.10",
+    
+"pr_tp2": "00000.20",
+    
+"pr_tp3": "00000.30",
+    
+"pr_tp4": "00000.40",
+    
+"pr_tp5": "00000.50",
+    
+"pr_tp6": "00000.60",
+    
+"pr_tp7": "00000.70",
+    
+"tmt_berlaku": "2017-03-03"
 
 }
 
@@ -1222,62 +1770,417 @@ create 2
 
 coding :
 {
-	
-"nip" :"098765418988888",
 
-"nama" : "create nama dua",
 
-"glrdepan" : "create glrdpn dua",
+"nip" :"11",
 
-"glrbelakang" : "create glrdpn dua",
 
-"kdpangkat": "2A",
+"nama" : "create nama tiga",
 
-"kdjab" : "3A",
 
-"kdskpd": "aa",
 
-"kdsatker" : "aaa",
+"glrdepan" : "create glrdpn tiga",
 
-"pr_tp1":"00.1",
 
-"pr_tp2":"00.2",
+"glrbelakang" : "create glrdpn tiga",
 
-"pr_tp3":"00.3",
 
-"pr_tp4":"00.4",
+"kdpangkat": "2B",
 
-"pr_tp5":"00.5",
 
-"pr_tp6":"00.6",
+"kdjab" : "3B",
 
-"pr_tp7":"00.7",
 
-"tmt_berlaku" : "2017-03-03",
+"kdskpd": "bb",
 
-"flag" :  28
+
+"kdsatker" : "bbb",
+
+
+"pr_tp1":"00000.20",
+
+
+"pr_tp2":"00000.30",
+
+
+"pr_tp3":"00000.40",
+
+
+"pr_tp4":"00000.50",
+
+
+"pr_tp5":"00000.60",
+
+
+"pr_tp6":"00000.70",
+
+
+"pr_tp7":"00000.80",
+
+
+"tmt_berlaku" : "2017-06-06",
+
+
+"flag" :3
+
+
 
 }
 
 output: 
 {
     
-"Model_ID": "$id0=null&$id1=null&$id2=null",
+"Model_ID": "$id0=null",
     
-"glrbelakang": "create glrdpn dua",
+"flag": 3,
     
-"glrdepan": "create glrdpn dua",
+"glrbelakang": "create glrdpn tiga",
     
-"kdpangkat": "2A",
+"glrdepan": "create glrdpn tiga",
     
-"kdsatker": "aaa",
+"kdjab": "3B",
     
-"kdskpd": "aa",
+"kdpangkat": "2B",
     
-"nama": "create nama dua",
+"kdsatker": "bbb",
     
-"nip": "098765418988888"
+"kdskpd": "bb",
+    
+"nama": "create nama tiga",
+    
+"nip": "11",
+    
+"pr_tp1": "00000.20",
+    
+"pr_tp2": "00000.30",
+    
+"pr_tp3": "00000.40",
+    
+"pr_tp4": "00000.50",
+    
+"pr_tp5": "00000.60",
+   
+ "pr_tp6": "00000.70",
+    
+"pr_tp7": "00000.80",
+    
+"tmt_berlaku": "2017-06-06"
 
 }
 
 4. update 
+localhost:7979/api/masterdata/MdMstTp/update?id=11
+
+coding :
+{
+       
+ "nama" : "update  nama tiga",
+
+
+"glrdepan" : "update glrdpn tiga",
+
+
+"glrbelakang" : "update glrdpn tiga"
+          
+        
+}
+
+output : 
+{
+    
+"Model_ID": "$id0=null",
+    
+"flag": 3,
+    
+"glrbelakang": "update glrdpn tiga",
+    
+"glrdepan": "update glrdpn tiga",
+    
+"kdjab": "3B",
+   
+ "kdpangkat": "2B",
+    
+"kdsatker": "bbb",
+    
+"kdskpd": "bb",
+    
+"nama": "update  nama tiga",
+    
+"nip": "11",
+    
+"pr_tp1": 0.2,
+    
+"pr_tp2": 0.3,
+    
+"pr_tp3": 0.4,
+    
+"pr_tp4": 0.5,
+   
+ "pr_tp5": 0.6,
+    
+"pr_tp6": 0.7,
+    
+"pr_tp7": 0.8,
+    
+"tmt_berlaku": "2017-06-06"
+
+}
+
+5. delete 
+
+localhost:7979/api/masterdata/MdMstTp/delete?id=11
+
+output :
+{
+   
+ "pr_tp4": 0.5,
+   
+ "glrdepan": "update glrdpn tiga",
+    
+"glrbelakang": "update glrdpn tiga",
+    
+"pr_tp7": 0.8,
+    
+"pr_tp6": 0.7,
+    
+"kdsatker": "bbb",
+    
+"nip": "11",
+    
+"pr_tp5": 0.6,
+    
+"kdpangkat": "2B",
+   
+ "tmt_berlaku": "2017-06-06",
+    
+"kdjab": "3B",
+    
+"flag": 3,
+    
+"kdskpd": "bb",
+   
+ "pr_tp3": 0.4,
+    
+"pr_tp1": 0.2,
+    
+"nama": "update  nama tiga",
+    
+"pr_tp2": 0.3
+
+}
+
+
+ ================================================TABEL 6 REKAP_JKKJKM ================================================
+1. auth token 
+
+localhost:7979/auth/token
+
+coding :
+
+{
+	
+"nama_login" : "tujuhsembilan",
+	
+"password" : "a"
+
+}
+
+output : 
+{
+   
+ "password": "0cc175b9c0f1b6a831c399e269772661",
+    
+"token_type": "Bearer",
+    
+"scope": null,
+    
+"expires_in": 86400000,
+   
+ "status": "success",
+   
+ "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTUzOTgsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgxNzk4fQ.EWhwA571DokQzHJxvWmaJSBk1h3kNStnWzbbdGKydH0",
+    
+"id": 79,
+    
+"nama_login": "tujuhsembilan"
+
+}
+
+
+2. readAll
+
+localhost:7979/api/masterdata/MdRekapJkkjkm/readAll
+
+output : 
+{
+    
+"totalItems": 0,
+   
+ "items": []
+
+}
+
+3. create :
+
+localhost:7979/api/masterdata/MdRekapJkkjkm/create
+
+coding : 
+
+{
+	
+"tglgaji" : "2011-01-01",
+
+"KdJnsTrans" : 13,
+
+"kdskpd" : "kd1",
+
+"kdsatker" : "create satu",
+
+"gapok" : 2000000,
+
+"iuran_jkk" : 100000,
+
+"iuran_jkm" : 50000,
+
+"updstamp" : "2011-02-02 04:05:08"
+
+}
+
+{
+	
+"tglgaji" : "2011-01-01",
+
+"KdJnsTrans" : 13,
+
+"kdskpd" : "kd1",
+
+"kdsatker" : "create dua",
+
+"gapok" : 2000000,
+
+"iuran_jkk" : 100000,
+
+"iuran_jkm" : 50000,
+"updstamp": "2011-02-02 08:08:08"
+
+}
+
+
+output : 
+{
+    
+"Model_ID": "$id0=2011-01-01&$id1=null",
+    
+"gapok": 2000000,
+    
+"iuran_jkk": 100000,
+    
+"iuran_jkm": 50000,
+    
+"kdjnstrans": 13,
+    
+"kdsatker": "create dua",
+    
+"kdskpd": "kd1",
+    
+"tglgaji": "2011-01-01",
+    
+"updstamp": "2011-02-02 04:05:08"
+
+}
+
+{
+    
+"Model_ID": "$id0=2011-01-01&$id1=null",
+    
+"gapok": 2000000,
+    
+"iuran_jkk": 100000,
+    
+"iuran_jkm": 50000,
+    
+"kdjnstrans": 13,
+    
+"kdsatker": "create dua",
+    
+"kdskpd": "kd1",
+    
+"tglgaji": "2011-01-01",
+"updstamp": "2011-02-02 08:08:08"}
+
+
+4. update :
+
+localhost:7979/api/masterdata/MdRekapJkkjkm/update?id0=2011-02-03&id1=11
+
+coding :
+
+{
+	
+
+
+
+"kdsatker" : "update satu",
+
+
+"gapok" : 2500000,
+
+
+"iuran_jkk" : 150000,
+
+
+"iuran_jkm" : 55000
+
+
+
+}
+
+
+output : 
+{
+    
+"Model_ID": "$id0=2011-02-03&$id1=null",
+    
+"gapok": 2500000,
+    
+"iuran_jkk": 150000,
+    
+"iuran_jkm": 55000,
+    
+"kdjnstrans": 11,
+    
+"kdsatker": "update satu",
+    
+"kdskpd": "kd1",
+    
+"tglgaji": "2011-02-03",
+    
+"updstamp": 1296608888000
+
+}
+
+5. delete ;
+
+localhost:7979/api/masterdata/MdRekapJkkjkm/delete?id0=2011-02-03&id1=11
+
+output : 
+
+{
+    
+"tglgaji": "2011-02-03",
+    
+"kdjnstrans": 11,
+    
+"kdsatker": "update satu",
+    
+"iuran_jkm": 55000,
+    
+"gapok": 2500000,
+    
+"iuran_jkk": 150000,
+    
+"kdskpd": "kd1",
+    
+"updstamp": 1296608888000
+
+}

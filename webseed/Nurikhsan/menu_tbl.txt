@@ -1,0 +1,18 @@
+1. Create
+ {
+            "form_menu": "c:\\dbgaji\\Form\\BliJelas.scx",
+            "kd_menu": "OZ29",
+            "nama_menu": "Data Bli Jelas"
+        }
+2. Create 2
+ {
+            "form_menu": "c:\\dbgaji\\Form\\bliweru.scx",
+            "kd_menu": "OX29",
+            "nama_menu": "Data Durung jelas"
+        }
+3. Update
+{
+            "form_menu": "c:\\dbgaji\\Form\\kosong.scx",
+            "nama_menu": "Data Kecapruk"
+        }
+4. delete udah

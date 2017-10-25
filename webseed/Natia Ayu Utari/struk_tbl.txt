@@ -1,0 +1,54 @@
+//  STRUK_TBL
+
+1. Token
+
+url : localhost:7979/auth/token
+
+{
+
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+2. read all
+
+url : localhost:7979/api/masterdata/MdStrukTbl/readAll
+
+3. create
+
+url : localhost:7979/api/masterdata/MdStrukTbl/create
+
+{
+
+	"Nip" : "001",
+
+	"No_urt" : 1,
+
+	"Kode_Lbg" : "001",
+
+	"Jml_hutang" : 2000000,
+
+	"awal_hutang" : "2017-10-03",
+
+	"akhir_hutang" : "2017-10-13",
+
+	"Pot_bln" : 1,
+
+	"Pot_akhir" : 2
+
+}
+4. update
+
+url :localhost:7979/api/masterdata/MdStrukTbl/update?id0=001&id1=1&id2=001
+
+{
+
+	"Jml_hutang" : 1000000
+
+}
+
+5. delete
+
+url : localhost:7979/api/masterdata/MdStrukTbl/delete?id0=001&id1=1&id2=001
