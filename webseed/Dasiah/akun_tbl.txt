@@ -1,0 +1,120 @@
+// ---> Rabu, 23 oktober 2017 <---
+// --->        Dasiah         <---
+// ===============================
+
+1. auto token
+url : localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+Hasil : 
+{
+  "password": "0cc175b9c0f1b6a831c399e269772661",
+  "token_type": "Bearer",
+  "scope": null,
+  "expires_in": 86400000,
+  "status": "success",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDU2MzcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTkyMDM3fQ.ube9iANnG8zJS8JZko1pa1Qwq58BeFjbwxJmOs9lcgk",
+  "id": 79,
+  "nama_login": "tujuhsembilan"
+}
+
+
+2. read all
+url : localhost:7979/api/masterdata/MdAkuntbl/readAll?$top=3&$skip=0
+{
+  "totalItems": 18,
+
+  "items": [
+
+    {
+
+      "Model_ID": "$id0=null",
+
+      "idakun": "",
+
+      "kdakun": "120.18.00.00.5.1.1.01.01",
+
+      "kdtrans": 101,
+
+      "nmakun": "Gaji Pokok"
+
+    },
+
+    {
+      "Model_ID": "$id0=null",
+
+      "idakun": "",
+
+      "kdakun": "120.18.00.00.5.1.1.01.02",
+
+      "kdtrans": 102,
+
+      "nmakun": "Tunjangan Keluarga"
+
+    },
+
+    {
+
+      "Model_ID": "$id0=null",
+
+      "idakun": "",
+
+      "kdakun": "120.18.00.00.5.1.1.01.03",
+
+      "kdtrans": 103,
+
+      "nmakun": "Tunjangan Struktural"
+
+    }
+
+  ]
+}
+
+3. create
+url : localhost:7979/api/masterdata/MdAkuntbl/create
+{
+	"KDTRANS" : 210 ,
+	"KDAKUN" : "120.18.00.00.5.1.1.01.XX" ,
+	"NMAKUN" : "Tunjangan Baday" ,
+	"idakun" : ""
+}
+Hasil : 
+{
+  "Model_ID": "$id0=-1",
+  "id": -1,
+  "idakun": "",
+  "kdakun": "120.18.00.00.5.1.1.01.XX",
+  "kdtrans": 210,
+  "nmakun": "Tunjangan Baday"
+}
+
+4. update
+url : localhost:7979/api/masterdata/MdAkuntbl/update?id=209
+{
+	"NMAKUN" : "Tunjangan Kece Baday"
+}
+
+Hasil :
+{
+  "Model_ID": "$id0=null",
+  "idakun": "",
+  "kdakun": "120.18.00.00.5.1.1.01.XX",
+  "kdtrans": 209,
+  "nmakun": "Tunjangan Kece Baday"
+}
+
+5. delete
+url : localhost:7979/api/masterdata/MdAkuntbl/delete?id=209
+Hasil :
+{
+  "nmakun": "Tunjangan Kece Baday",
+  "kdakun": "120.18.00.00.5.1.1.01.XX",
+  "kdtrans": 209,
+  "idakun": ""
+}
+
+
+
+
