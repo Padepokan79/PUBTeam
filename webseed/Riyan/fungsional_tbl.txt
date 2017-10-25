@@ -14,8 +14,13 @@ localhost:7979/auth/token
 }
 
 ===================================================
+2. ReadAll data di table fungsional_tbl
 
-2. Create table fungsional_tbl
+localhost:7979/api/masterdata/MdFungsionaltbl/readAll
+
+
+===================================================
+3. Create table fungsional_tbl
 
 localhost:7979/api/masterdata/MdFungsionaltbl/create
 
@@ -33,7 +38,7 @@ localhost:7979/api/masterdata/MdFungsionaltbl/create
 
 
 ===================================================
-3. Update table fungsional_tbl
+4. Update table fungsional_tbl
 
 localhost:7979/api/masterdata/MdFungsionaltbl/update?kdfungsi=A999
 
@@ -46,7 +51,7 @@ Param : key : KDFUNGSI = "A999"
 }
 
 ===================================================
-4. Delete table fungsional_tbl
+5. Delete table fungsional_tbl
 
 localhost:7979/api/masterdata/MdFungsionaltbl/delete?kdfungsi=A999
 
