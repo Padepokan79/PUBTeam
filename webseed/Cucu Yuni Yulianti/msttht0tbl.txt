@@ -1,0 +1,36 @@
+ 1. Insert mst_tht0_tbl
+{
+            "Model_ID": "$id0=null",
+            "gapok": 100000,
+            "inputer": "ABCD",
+            "kdjiwa": "A1",
+            "kdpangkat": "6D",
+            "kdsatker": "A00123",
+            "kdskpd": "a01",
+            "kdstapeg": 1,
+            "kdstatus": 1,
+            "masker": 1,
+            "nip": "12345",
+            "tgl_update": "2017-10-25 23:23:23",
+            "tmtgapok": "2017-01-01",
+            "tmtpeserta": "2017-10-24",
+            "tmtstapeg": "2017-10-15"
+        
+
+localhost:7979/api/masterdata/MdMstTht0Tbl/create
+
+2. read mst_tht0_tbl 
+localhost:7979/api/masterdata/MdMstTht0Tbl/readAll
+
+
+3. update 
+{
+	
+"gapok" : 50000
+
+}
+
+localhost:7979/api/masterdata/MdMstTht0Tbl/update?NIP=0204151002
+
+4. delete 
+localhost:7979/api/masterdata/MdMstTht0Tbl/delete?id=0204151002

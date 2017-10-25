@@ -1,0 +1,225 @@
+1. auth token
+
+localhost:7979/auth/token
+
+output :
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTYxMjUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAyNTI1fQ.GrZ5T4pjmAYp5UQJq40HJFzBdxoTSamYXE1GDeClVy4",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+
+
+2. read
+
+localhost:7979/api/masterdata/MdHistorisFungsional/readAll?$top=3&$skip=0
+
+
+{
+   
+ "totalItems": 68327,
+   
+ "items": [
+        
+{
+            
+"Model_ID": "$id0=null",
+            
+"jnsguru": 1,
+            
+"kdfungsi": "00000",
+            
+"keterangan": "DATA AWAL",
+            
+"nip": "450006657         ",
+            
+"nomorskep": " ",
+            
+"penerbitskep": " ",
+            
+"tglupdate": 1375166128000,
+            
+"tjfungsi": 0,
+            
+"tmtgaji": "2004-04-01"
+        },
+       
+ {
+            
+"Model_ID": "$id0=null",
+            
+"jnsguru": 1,
+           
+ "kdfungsi": "08602",
+            
+"keterangan": "DATA AWAL",
+           
+ "nip": "195212221984101001",
+            
+"nomorskep": " ",
+            
+"penerbitskep": " ",
+           
+ "tglupdate": 1367393893000,
+            
+"tjfungsi": 660000,
+           
+ "tmtgaji": "2008-04-01"
+        
+},
+        
+{
+           
+ "Model_ID": "$id0=null",
+           
+ "jnsguru": 1,
+            
+"kdfungsi": "00804",
+            
+"keterangan": "DATA AWAL",
+            
+"nip": "196112221987021001",
+            
+"nomorskep": " ",
+            
+"penerbitskep": " ",
+           
+ "tglupdate": 1367393893000,
+           
+ "tjfungsi": 300000,
+            
+"tmtgaji": "2010-05-01"
+        
+}
+  
+  ]
+}
+
+
+3. create
+localhost:7979/api/masterdata/MdHistorisFungsional/create
+
+coding :
+
+ {
+          
+"Model_ID": "$id0=null",
+            
+"jnsguru": 1,
+           
+ "kdfungsi": "00980",
+            
+"keterangan": "DATA AWAL",
+            
+"nip": "1",
+            
+"nomorskep": "8A",
+            
+"penerbitskep": "Mohammed Hamzah",
+            
+"TGLSKEP" : "2002-09-09",
+            
+"tjfungsi": 0,
+            
+"tmtgaji": "2004-04-01"
+       
+ }
+
+output :
+
+ {
+          
+"Model_ID": "$id0=null",
+            
+"jnsguru": 1,
+           
+ "kdfungsi": "00980",
+            
+"keterangan": "DATA AWAL",
+            
+"nip": "1",
+            
+"nomorskep": "8A",
+            
+"penerbitskep": "Mohammed Hamzah",
+            
+"TGLSKEP" : "2002-09-09",
+            
+"tjfungsi": 0,
+            
+"tmtgaji": "2004-04-01"
+       
+ }
+
+4. update 
+
+localhost:7979/api/masterdata/MdHistorisFungsional/update?id0=2004-04-01&id1=1
+
+coding : 
+{
+	 
+"penerbitskep": "Update Mohammed Hamzah"
+
+}
+
+output :
+{
+    
+"Model_ID": "$id0=null&$id1=null",
+    
+"jnsguru": 1,
+    
+"kdfungsi": "00980",
+    
+"keterangan": "DATA AWAL",
+    
+"nip": "1",
+    
+"nomorskep": "8A",
+    
+"penerbitskep": "Update Mohammed Hamzah",
+    
+"tglskep": "2002-09-09",
+   
+ "tglupdate": 1508903784000,
+    
+"tjfungsi": 0,
+    
+"tmtgaji": "2004-04-01"
+
+}
+
+5. delete 
+
+localhost:7979/api/masterdata/MdHistorisFungsional/delete?id0=2004-04-01&id1=1
+
+output :
+{
+    
+"penerbitskep": "Update Mohammed Hamzah",
+    
+"tglupdate": 1508903944000,
+    
+"tjfungsi": 0,
+    
+"nomorskep": "8A",
+    
+"keterangan": "DATA AWAL",
+    
+"jnsguru": 1,
+    
+"nip": "1",
+    
+"tglskep": "2002-09-09",
+    
+"kdfungsi": "00980",
+    
+"tmtgaji": "2004-04-01"
+
+}
