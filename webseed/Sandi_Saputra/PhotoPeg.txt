@@ -1,0 +1,27 @@
+Sandi Saputra
+1. Mengambil token
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdFotoPegawai/create
+-> {
+	"nip" : "Data001",
+	"gambar" : 0
+}
+
+3. Menampilkan data
+-> localhost:7979/api/masterdata/MdFotoPegawai/readAll
+
+4. Mengubah data
+-> localhost:7979/api/masterdata/MdFotoPegawai/update?Nip=Data001
+-> {
+	"gambar" : 1
+}
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdFotoPegawai/delete?Nip=Data001 
+

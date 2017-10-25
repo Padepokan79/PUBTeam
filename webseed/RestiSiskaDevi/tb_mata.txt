@@ -1,0 +1,102 @@
+// TB_MATA
+
+1. token
+
+url : localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read All
+
+url : localhost:7979/api/masterdata/MdTbMata/readAll
+
+3. create
+
+url : localhost:7979/api/masterdata/MdTbMata/create
+
+{
+
+            "ma_askes": "29.06.1996",
+
+            "ma_beras": "29.06.1996",
+
+            "ma_bulat": "29.06.1996",
+
+            "ma_didik": "1",
+
+            "ma_fungsi": "29.06.1996",
+
+            "ma_gapok": "29.06.1996",
+
+            "ma_induk": "1",
+
+            "ma_iwp": "29.06.1996",
+
+            "ma_jabat": "29.06.1996",
+
+            "ma_klg": "29.06.1996",
+
+            "ma_lain": "29.06.1996",
+
+            "ma_pajak": "29.06.1996",
+
+            "ma_paskes": "29.06.1996",
+
+            "ma_pph": "29.06.1996",
+
+            "ma_satker": "1",
+
+            "ma_tkd": "1",
+
+            "ma_tpm": "29.06.1996",
+
+            "ma_umum": "29.06.1996"
+        
+}
+
+4. update
+
+url : localhost:7979/api/masterdata/MdTbMata/update?id0=1&id1=1&id2=29.06.1996
+
+ {
+            "ma_askes": "29.06.1996",
+
+            "ma_beras": "29.06.1996",
+
+            "ma_bulat": "29.06.1996",
+
+            "ma_didik": "10",
+
+            "ma_fungsi": "29.06.1996",
+
+            "ma_iwp": "29.06.1996",
+
+            "ma_jabat": "29.06.1996",
+
+            "ma_klg": "29.06.1996",
+
+            "ma_lain": "29.06.1996",
+
+            "ma_pajak": "29.06.1996",
+
+            "ma_paskes": "29.06.1996",
+
+            "ma_pph": "29.06.1996",
+
+            "ma_tkd": "1",
+
+            "ma_tpm": "29.06.1996",
+
+            "ma_umum": "29.06.1996"
+        
+}
+
+5. delete
+
+url : localhost:7979/api/masterdata/MdTbMata/delete?id0=1&id1=1&id2=29.06.1996
