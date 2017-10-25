@@ -1,0 +1,35 @@
+Sandi Saputra
+
+1. Mengambil token 
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdWafat/create
+-> {
+	"nip" : "DATA001",
+	"kdhubkel" : "1",
+	"tglwafat" : "2017-10-10",
+	"nosurat" : "teuing",
+	"tglsurat" : "2017-10-10",
+	"penerbit" : "cabrul",
+	"jmlterusan" : 1,
+	"tglstop" : "2017-10-10",
+	"kdhubkelpenerima" : "1"
+	
+}
+
+3. Menampilkan data
+-> localhost:7979/api/masterdata/MdWafat/readAll?$Top=2&$Skip=0
+
+4. Mengubah data
+-> localhost:7979/api/masterdata/MdWafat/update?id0=DATA001&id1=1
+-> {
+	"penerbit" : "sandi"
+}
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdWafat/delete?id0=DATA001&id1=1

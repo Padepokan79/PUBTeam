@@ -1,0 +1,40 @@
+/*
+Author : Tegar Budi Septian
+File Name : hist_tunj_dprd.txt
+Date Created : Tuesday, 24th October, 2017
+*/
+
+/*Getting token*/
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTU0NjUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAxODY1fQ.oPBiQAVoJlH_f5dTbviGf8-Hk4709mWQejSEmnjsKPQ
+
+
+/*Adding a data to hist_tunj_dprd.*/
+request url : localhost:7979/api/masterdata/MdHistTunjDprd/create
+{
+	"Nip" : "0204151036",
+	"Tmt_Berlaku" : "2200-10-24",
+	"Sts_Banmus" : 0,
+	"Sts_Komisi" : 0,
+	"Sts_Banggar" : 0,
+	"Sts_Bk" : 8,
+	"Sts_Bpperda" : 0
+}
+
+
+/*Updating a data based on nip to hist_tunj_dprd.*/
+request url : localhost:7979/api/masterdata/MdHistTunjDprd/update?id0=0204151036&id1=2100-10-24
+{
+    "sts_banmus": 9,
+    "sts_komisi": 9,
+    "sts_banggar": 9,
+    "sts_bk": 19,
+    "sts_bpperda": 9
+}
+
+
+/*Deleting a data based on nip to hist_tunj_dprd.*/
+request url : localhost:7979/api/masterdata/MdHistTunjDprd/delete?id0=0204151036&id1=2100-10-24

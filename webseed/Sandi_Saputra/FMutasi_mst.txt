@@ -100,4 +100,4 @@ Sandi Saputra
 -> localhost:7979/api/masterdata/MdFMutasiMst/readAll
 
 5. Menghapus data
--> localhost:7979/api/masterdata/MdDprdPst/delete?Nip=DATA001
+-> localhost:7979/api/masterdata/MdFMutasiMst/delete?Nip=DATA001

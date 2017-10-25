@@ -1,0 +1,43 @@
+//  ZAKAT_TDK
+
+1. Token
+
+url : localhost:7979/auth/token
+
+{
+
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+2. read all
+
+url : localhost:7979/api/masterdata/MdZakatTdk/readAll
+
+3. create
+
+url : localhost:7979/api/masterdata/MdZakatTdk/create
+
+{
+
+	"nip" : "195",
+
+	"mulai" : "2017-10-30"
+
+}
+
+4. update
+
+url :localhost:7979/api/masterdata/MdZakatTdk/update?id=195
+
+{
+
+	"mulai" : "2005-10-30"
+
+}
+
+5. delete
+
+url : localhost:7979/api/masterdata/MdZakatTdk/delete?id=195
