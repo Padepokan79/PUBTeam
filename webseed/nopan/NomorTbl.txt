@@ -1,4 +1,5 @@
 //login
+url : localhost:7979/auth/token
 {
 
 	"nama_login" : "hendra",
@@ -7,6 +8,7 @@
 
 }
 //create NomorTbl
+url : localhost:7979/api/masterdata/MdNomorTbl/create
 {
 
 	"tglgaji" : "2017-10-25",
@@ -22,9 +24,14 @@
 	"updstamp" : "2017-03-03 11:10:09"
 
 }
+//read
+url : localhost:7979/api/masterdata/MdNomorTbl/readAll
 //update
+url : localhost:7979/api/masterdata/MdNomorTbl/update?$id0=2017-10-25&$id1=2&$id2=abc&$id3=5
 {
 
 	"nomor" : 222
 
 }
+//delete
+url : localhost:7979/api/masterdata/MdNomorTbl/delete?$id0=2017-10-25&$id1=2&$id2=abc&$id3=5
