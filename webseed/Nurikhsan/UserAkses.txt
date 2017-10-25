@@ -1,0 +1,23 @@
+1. read all
+url : localhost:7979/api/masterdata/MdUserAkses/readAll
+
+2. create
+url : localhost:7979/api/masterdata/MdUserAkses/create
+body :
+{
+            "kdskpd": "101",
+            "pemakai": "Hi"
+        }
+
+3. create
+body
+{
+    "Model_ID": "$id0=102&$id1=Hi Ikhsan",
+    "kdskpd": "102",
+    "pemakai": "Hi Ikhsan"
+}
+
+4. update
+gaada yang bisa di update, semuanya key
+5. delete
+url : localhost:7979/api/masterdata/MdUserAkses/delete?id0=101&id1=Hi

@@ -4,8 +4,8 @@ import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.IdName;
 import org.javalite.activejdbc.annotations.Table;
 
-@Table("fungsi")
-@IdName("kdjabatan")
-public class MdFungsi extends Model {
+@Table("hak_akses_admin")
+@IdName("KODEAKSES")
+public class MdHakAksesAdmin extends Model{
 
 }

@@ -1,0 +1,38 @@
+1. read all
+url: localhost:7979/api/masterdata/MdGajiTht0Tbl/readAll
+2. create 1
+url : localhost:7979/api/masterdata/MdGajiTht0Tbl/create 
+{
+            "gapok": 9200028,
+            "inputer": "",
+            "iuran": 100023,
+            "kdjiwa": "",
+            "kdjnstrans": 1,
+            "kdsatker": "",
+            "kdskpd": "",
+            "nip": "195002201972091209",
+            "tgl_update": "2012-01-01",
+            "tglgaji": "2012-01-01",
+            "tglsetor": "2012-01-01"
+        }
+3. create 2
+{"gapok": 9200029,
+            "inputer": "",
+            "iuran": 100029,
+            "kdjiwa": "",
+            "kdjnstrans": 1,
+            "kdsatker": "",
+            "kdskpd": "",
+            "nip": "195002201972091229",
+            "tgl_update": "2012-01-01",
+            "tglgaji": "2012-01-01",
+            "tglsetor": "2012-01-01"  }
+
+4. update
+url : localhost:7979/api/masterdata/MdGajiTht0Tbl/update?id0=195002201972091001 & id1=2012-01-01 & id2=1
+body : {
+	"gapok": 5000000
+}
+
+5. delete
+url : localhost:7979/api/masterdata/MdGajiTht0Tbl/update?id0=195002201972091001 & id1=2012-01-01 & id2=1

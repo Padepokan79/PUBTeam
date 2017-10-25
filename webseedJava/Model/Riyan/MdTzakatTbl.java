@@ -4,8 +4,9 @@ import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.CompositePK;
 import org.javalite.activejdbc.annotations.Table;
 
-@Table("edisi")
-@CompositePK({"TGLDB","TGLEDISI"})
-public class MdEdisi extends Model {
+
+@Table("tzakat_tbl")
+@CompositePK({"nip","blthgaji","kdjnstrans"})
+public class MdTzakatTbl extends Model {
 
 }

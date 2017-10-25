@@ -1,7 +1,8 @@
 DJPK Tabel
-
-Create
-1.
+1. read all
+url: localhost:7979/api/masterdata/MdDjpkTbl/readAll
+2. create
+localhost:7979/api/masterdata/MdDjpkTbl/create
 {
 	"prov": "01",
 	"Kab": 98,
@@ -15,7 +16,17 @@ Create
 	"nm_pemda": "Hikari No Yosa",
 	"kd_satker" : 963327
 }
-3.
+3. update
+localhost:7979/api/masterdata/MdDjpkTbl/update?id0=01&id1=00
+{
+    "Model_ID": "$id0=01&$id1=null",
+    "kab": "00",
+    "kd_satker": "990015",
+    "nm_pemda": "Provinsi Aceh",
+    "prov": "01"
+}
+
+4. localhost:7979/api/masterdata/MdDjpkTbl/delete?id0=01&id1=00
 
 
 getToken
