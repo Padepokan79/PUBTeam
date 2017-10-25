@@ -1,0 +1,39 @@
+/*
+Author : Tegar Budi Septian
+File Name : setnomor.txt
+Date Created : Wednesday, 25th October, 2017
+*/
+
+/*Getting token*/
+request url : localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : 
+
+
+/*Reading data from setnomor table.*/
+request url : localhost:7979/api/masterdata/MdSetNomor/readAll?$top=2&$skip=0
+
+
+/*Adding a data in setnomor table.*/
+request url : localhost:7979/api/masterdata/MdSetNomor/create
+{
+	"tahun" : 2017,
+	"kode" : "KINGSALARY",
+	"no_awal" : "000002",
+	"no_akhir" : "20000",
+	"no_aktif" : "000002"
+}
+
+
+/*Updating a data of setnomor.*/
+request url : localhost:7979/api/masterdata/MdSetNomor/update?id0=2017&id1=KINGSALARY
+{
+	"no_akhir" : "222222"
+}
+
+
+/*Deleting a data of setnomor.*/
+request url : localhost:7979/api/masterdata/MdSetNomor/delete?id0=2017&id1=KINGSALARY

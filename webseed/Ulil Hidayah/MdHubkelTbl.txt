@@ -1,3 +1,5 @@
+Tabel : hubkel_tbl
+
 auth token
 localhost:7979/auth/token
 {
@@ -19,7 +21,8 @@ localhost:7979/api/masterdata/MdHubkelTbl/readAll
 update
 localhost:7979/api/masterdata/MdHubkelTbl/update?id=8A
 {
-    "nmhubkel": "ONLY DIRI SENDIRI"
+    "Model_ID": "$id0=00",
+    "kdhubkel": "8A",	"nmhubkel": "ONLY DIRI SENDIRI"
 } => update
 
 

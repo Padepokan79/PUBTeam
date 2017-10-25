@@ -1,4 +1,5 @@
-/////////////MdBupIndTbl
+Tabel : bupindtbl
+
 auth token
 localhost:7979/auth/token
 {
@@ -6,20 +7,22 @@ localhost:7979/auth/token
 	"password" : "a"
 } => untuk mendapatkan access token
 
-read
-localhost:7979/api/masterdata/MdHubkelTbl/readAll
+read => localhost:7979/api/masterdata/MdHubkelTbl/readAll
 
-create
-localhost:7979/api/masterdata/MdBupIndTbl/create
+create => localhost:7979/api/masterdata/MdBupIndTbl/create
 {
-	"Nip" : "195707151981021002",
+	"Nip" : "195707",
 	"bup" : 56,
 	"tgl_srt" : "2014-05-01",
 	"no_srt" : "1"
-} =>untuk 
+}
+
+update => localhost:7979/api/masterdata/MdBupIndTbl/update?id=195707
 {
 	
 	"bup": 57,
     "no_srt": "1",
-    "tgl_srt": "2014-05-01"
-} 
+    "tgl_srt": "2017-05-01"
+}
+
+delete => localhost:7979/api/masterdata/MdBupIndTbl/delete?id=195707
