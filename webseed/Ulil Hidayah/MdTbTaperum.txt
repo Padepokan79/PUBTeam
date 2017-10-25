@@ -1,0 +1,13 @@
+Tabel : tb_taperum
+
+auth token => localhost:7979/auth/token
+
+readAll => localhost:7979/api/masterdata/MdTbTaperum/readAll
+
+create => localhost:7979/api/masterdata/MdTbTaperum/create
+{
+            "tpr1": 1000,
+            "tpr2": 2000,
+            "tpr3": 3000,
+            "tpr4": 40000
+        }

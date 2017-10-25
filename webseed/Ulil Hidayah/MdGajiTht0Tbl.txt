@@ -1,8 +1,41 @@
+Tabel : gaji_tht0_tbl
+
 auth token
 localhost:7979/auth/token
 
 read
 localhost:7979/api/masterdata/MdGajiTht0Tbl/readAll
 
-create
-localhost:7979/api/masterdata/MdGajiTht0Tbl/create
+create => localhost:7979/api/masterdata/MdGajiTht0Tbl/create
+{
+          
+            "gapok": 5000000,
+            "inputer": "",
+            "iuran": 100000,
+            "kdjiwa": "",
+            "kdjnstrans": 1,
+            "kdsatker": "",
+            "kdskpd": "",
+            "nip": "19500",
+            "tgl_update": "2012-01-01 00:00:00",
+            "tglgaji": "2012-01-01",
+            "tglsetor": "2012-01-01"
+    }
+
+update => localhost:7979/api/masterdata/MdGajiTht0Tbl/update?id0=19500&id1=2012-01-01&id2=1
+{
+          
+            "gapok": 2000000,
+            "inputer": "",
+            "iuran": 100000,
+            "kdjiwa": "",
+            "kdjnstrans": 1,
+            "kdsatker": "",
+            "kdskpd": "",
+            "nip": "19500",
+            "tgl_update": "2012-01-01 00:00:00",
+            "tglgaji": "2012-01-01",
+            "tglsetor": "2012-01-01"
+    }
+
+delete => localhost:7979/api/masterdata/MdGajiTht0Tbl/delete?id0=19500&id1=2012-01-01&id2=1
