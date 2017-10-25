@@ -1,0 +1,29 @@
+Sandi Saputra
+
+1. Mengambil token 
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdHitung/create
+-> {
+	"kdhitung" :1,
+	"kd_hit" : "99",
+	"nmhitung" : "Jualan",
+	"nm_hit" : "joss"
+}
+
+3. Menampilkan data
+-> localhost:7979/api/masterdata/MdHitung/readAll?$Top=2&$Skip=0
+
+4. Mengubah data
+-> localhost:7979/api/masterdata/MdHitung/update?kd_hit=99
+-> {
+	"nm_hit" : "jess"
+}
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdHitung/delete?kd_hit=99
