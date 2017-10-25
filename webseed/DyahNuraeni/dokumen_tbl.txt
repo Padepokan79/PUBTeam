@@ -273,6 +273,8 @@ READ
     "items": []
 }
 
+
+
 CREATE
 {
     "Model_ID": "$id0=-1",
@@ -311,8 +313,124 @@ CREATE
     "tpph": 44444,
     "trepre": 3
 }
+{
+    "Model_ID": "$id0=-1",
+    "bersih": 4389200,
+    "id": -1,
+    "janak": 2,
+    "jistri": 1,
+    "kdjenkel": 1,
+    "kdjnstrans": 1,
+    "kdpangkat": "4A",
+    "kdstapeg": 4,
+    "kdstawin": 2,
+    "ketjab": "sdasfdfsd",
+    "kotor": 4892240,
+    "nama": "KHAIRUL ARZAN, S.PD",
+    "nip": "1",
+    "norek": "34324234234",
+    "npwp": "23232334324231",
+    "paskes": 0,
+    "potongan": 503040,
+    "pplain": 0,
+    "ppph": 444444,
+    "pswrmh": 0,
+    "tanak": 140744,
+    "taskes": 4444,
+    "tbanggar": 4444,
+    "tbanmus": 4545454,
+    "tberas": 279040,
+    "tbk": 44444,
+    "tbpperda": 44444,
+    "tbulat": 76,
+    "tglgaji": "2014-01-01",
+    "tgllahir": "1966-12-02",
+    "tistri": 351860,
+    "tkomisi": 454444,
+    "tpph": 44444,
+    "trepre": 3
+}
 
 
+UPDATE 
+URL		: localhost:7979/api/masterdata/MdGajidprd/update?id0=1&id1=2014-01-01&id2=1
+
+
+
+{
+    "Model_ID": "$id0=1&$id1=2014-01-01&$id2=1",
+    "bersih": 4389200,
+    "janak": 2,
+    "jistri": 1,
+    "kdjenkel": 1,
+    "kdjnstrans": 1,
+    "kdpangkat": "4A",
+    "kdstapeg": 4,
+    "kdstawin": 2,
+    "ketjab": "sdasfdfsd",
+    "kotor": 4892240,
+    "nama": "KHAIRUL S.PD",
+    "nip": "1",
+    "norek": "34324234234",
+    "npwp": "23232334324231",
+    "paskes": 0,
+    "potongan": 503040,
+    "pplain": 0,
+    "ppph": 444444,
+    "pswrmh": 0,
+    "tanak": 140744,
+    "taskes": 4444,
+    "tbanggar": 4444,
+    "tbanmus": 4545454,
+    "tberas": 279040,
+    "tbk": 44444,
+    "tbpperda": 44444,
+    "tbulat": 76,
+    "tglgaji": "2014-01-01",
+    "tgllahir": "1966-12-02",
+    "tistri": 351860,
+    "tkomisi": 454444,
+    "tpph": 44444,
+    "trepre": 3
+}
+
+DELETE	
+URL		: localhost:7979/api/masterdata/MdGajidprd/delete?id0=1&id1=2014-01-01&id2=1
+{
+    "tpph": 44444,
+    "norek": "34324234234",
+    "tbulat": 76,
+    "taskes": 4444,
+    "tglgaji": "2014-01-01",
+    "kdjnstrans": 1,
+    "bersih": 4389200,
+    "kdstawin": 2,
+    "nama": "KHAIRUL S.PD",
+    "tbpperda": 44444,
+    "kotor": 4892240,
+    "tbk": 44444,
+    "tberas": 279040,
+    "janak": 2,
+    "tbanmus": 4545454,
+    "tanak": 140744,
+    "kdjenkel": 1,
+    "tgllahir": "1966-12-02",
+    "ppph": 444444,
+    "tbanggar": 4444,
+    "nip": "1",
+    "potongan": 503040,
+    "ketjab": "sdasfdfsd",
+    "trepre": 3,
+    "paskes": 0,
+    "kdpangkat": "4A",
+    "tkomisi": 454444,
+    "npwp": "23232334324231",
+    "kdstapeg": 4,
+    "pplain": 0,
+    "jistri": 1,
+    "pswrmh": 0,
+    "tistri": 351860
+}
 SESI 3
 
 Tabel 		: HISTORIS_JIWA
