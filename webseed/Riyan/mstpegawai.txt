@@ -11,9 +11,15 @@ localhost:7979/auth/token
 	"password" : "a"
 }
 
+
+======================================================
+2. readAll data di table mstpegawai
+
+localhost:7979/api/masterdata/MdMstPegawai/readAll?$top=3&$skip=0
+
 ======================================================
 
-2. Menambah data di table mstpegawai (CREATE)
+3. Menambah data di table mstpegawai (CREATE)
 
 localhost:7979/api/masterdata/MdMstPegawai/create
 
@@ -179,7 +185,7 @@ localhost:7979/api/masterdata/MdMstPegawai/create
 
 
 =====================================================
-3. Update di table mstpegawai
+4. Update di table mstpegawai
 
 localhost:7979/api/masterdata/MdMstPegawai/update?nip=0204151028
 
@@ -194,7 +200,7 @@ Param : key(NIP), value(0204151028)
 
 ======================================================
 
-4. Delete di table mstpegawai (DELETE)
+5. Delete di table mstpegawai (DELETE)
 
 localhost:7979/api/masterdata/MdMstPegawai/delete?nip=010122831
 
