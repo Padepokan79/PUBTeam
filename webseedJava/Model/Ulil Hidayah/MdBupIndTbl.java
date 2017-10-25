@@ -4,8 +4,9 @@ import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.IdName;
 import org.javalite.activejdbc.annotations.Table;
 
-@Table("automut")
-@IdName("nip")
-public class MdAutomut extends Model {
+
+@Table("bup_ind_tbl")
+@IdName("NIP")
+public class MdBupIndTbl extends Model{
 
 }

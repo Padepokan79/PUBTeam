@@ -26,20 +26,15 @@ request url : localhost:7979/api/masterdata/MdHistTunjDprd/create
 
 
 /*Updating a data based on nip to hist_tunj_dprd.*/
+request url : localhost:7979/api/masterdata/MdHistTunjDprd/update?id0=0204151036&id1=2100-10-24
 {
-    "sts_banmus": 3,
-    "sts_komisi": 2,
-    "sts_banggar": 1,
-    "sts_bk": 1,
-    "sts_bpperda": 1
+    "sts_banmus": 9,
+    "sts_komisi": 9,
+    "sts_banggar": 9,
+    "sts_bk": 19,
+    "sts_bpperda": 9
 }
 
 
-/*Deleting a data based on nip to hist_tunj_dprd.*/ /*it worked! I tried to delete data which has nip : 0204151036. so the data in the table got empty.
-request url : localhost:7979/api/masterdata/MdHistTunjDprd/delete?id=0204151036
-
-{
-    "message": null,
-    "status": 400,
-    "error": "Delete"
-}
+/*Deleting a data based on nip to hist_tunj_dprd.*/
+request url : localhost:7979/api/masterdata/MdHistTunjDprd/delete?id0=0204151036&id1=2100-10-24

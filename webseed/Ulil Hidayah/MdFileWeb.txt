@@ -1,4 +1,5 @@
-///////MdFileWeb
+Tabel : fileweb
+
 auth token
 localhost:7979/auth/token
 {
@@ -9,10 +10,9 @@ localhost:7979/auth/token
 read
 localhost:7979/api/masterdata/MdFileWeb/readAll
 
-create
-localhost:7979/api/masterdata/MdFileWeb/create
+create => localhost:7979/api/masterdata/MdFileWeb/create
 {
 	"namafile" : "D:\\Pelatihan\\Training\\PANDUAN IMPLEMENTASI BE MENGGUNAKAN METODE CRUD.doc"
 }
-untuk create
+
 
