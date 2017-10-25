@@ -1,0 +1,11 @@
+1. Create 1
+{
+            "kodeakses": "12345",
+            "pemakai": "Hikari"
+        }
+
+2. Create 2
+{
+            "kodeakses": "12345",
+            "pemakai": "Nurikhsan"
+        }

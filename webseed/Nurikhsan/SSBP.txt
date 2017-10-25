@@ -1,0 +1,76 @@
+1. Read All
+URL : localhost:7979/api/masterdata/MdSSBP/readAll
+2. Create
+Url: localhost:7979/api/masterdata/MdSSBP/create
+Body :
+ {
+            "alamatwp": "Jalan Bangunan bli jelas                       ",
+            "jmlsetor": 2024503899,
+            "kdgiat": "00010029",
+            "kdjnstrans": 1,
+            "kdkppn": "016",
+            "kdlembaga": "069",
+            "kdlokasi": "0151",
+            "kdprogram": "01010009",
+            "kdsatker": "440780",
+            "kdtrans": 1,
+            "map": "811112",
+            "namawp": "Kepala Biro Pengelolaan Keuangan (Bendaharawan Gaji Setda Prov. Bengku",
+            "nmgiat": "Lain-Lain                                         ",
+            "nmkppn": "KPPN Bengkulu                 ",
+            "nmlembaga": "Belanja lain-lain                                 ",
+            "nmlokasi": "Jakarta Pusat                                     ",
+            "nmmap": "Penerimaan Setoran/Potongan PFK10%                ",
+            "nmorg": "Ditjen. Perbendaharaan                            ",
+            "nmprogram": "lain-lain                                         ",
+            "nmsatker": "Pengembalian Penerimaan PFK                       ",
+            "nospn": " ",
+            "npwp": "003098332311000",
+            "tglgaji": "2012-05-01",
+            "unitorg": "008",
+            "updstamp": "2012-05-01",
+            "uraian": "Penerimaan Mbulah     "
+        }
+
+3. Create
+Body :
+ {
+            "alamatwp": "Jalan Bangunan bli weru                       ",
+            "jmlsetor": 2024503899,
+            "kdgiat": "00010209",
+            "kdjnstrans": 1,
+            "kdkppn": "016",
+            "kdlembaga": "069",
+            "kdlokasi": "0151",
+            "kdprogram": "01010009",
+            "kdsatker": "440780",
+            "kdtrans": 1,
+            "map": "811112",
+            "namawp": "Kepala Keras",
+            "nmgiat": "Lain-Lain                                         ",
+            "nmkppn": "KPPN Bengkulu                 ",
+            "nmlembaga": "Belanja lain-lain                                 ",
+            "nmlokasi": "Jakarta Pusat                                     ",
+            "nmmap": "Penerimaan Setoran/Potongan PFK10%                ",
+            "nmorg": "Ditjen. Perbendaharaan                            ",
+            "nmprogram": "lain-lain                                         ",
+            "nmsatker": "Pengembalian Penerimaan PFK                       ",
+            "nospn": " ",
+            "npwp": "003098332311000",
+            "tglgaji": "2012-05-01",
+            "unitorg": "008",
+            "updstamp": "2012-05-01",
+            "uraian": "Penerimaan Mbulah     "
+        }
+
+4. Update 
+Url: localhost:7979/api/masterdata/MdSSBP/update?id=2012-05-01
+Body :
+ {
+            "alamatwp": "Jalan Bangunan bli Bli Ngerti                       ",
+            "nmsatker": "Pengembalian Penerimaan PFK                       ",
+            "unitorg": "008",
+            "uraian": "Penerimaan Mbulah  bli jelas   "
+ }
+5. Delete
+localhost:7979/api/masterdata/MdSSBP/delete?id=2012-05-01
