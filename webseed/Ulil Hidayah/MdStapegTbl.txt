@@ -1,0 +1,22 @@
+Tabel : stapeg_tbl
+
+auth token => localhost:7979/auth/token
+
+readAll => localhost:7979/api/masterdata/MdStapegTbl/readAll
+
+create => localhost:7979/api/masterdata/MdStapegTbl/create
+{
+            
+            "kd_jns_peg": 1,
+            "kdstapeg": 31,
+            "nmstapeg": "PEJABAT"
+        }
+
+update => localhost:7979/api/masterdata/MdStapegTbl/update?id=31
+{
+            
+            "kd_jns_peg": 1,
+            "nmstapeg": "PEJABAT TINGGI NEGARA"
+        }
+
+delete => localhost:7979/api/masterdata/MdStapegTbl/delete?id=31

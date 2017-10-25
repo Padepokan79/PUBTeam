@@ -41,4 +41,4 @@ request url : localhost:7979/api/masterdata/MdNomorsp2d/update?id0=2017-10-24&id
 
 
 /*Deleting a data of nomorsp2d.*/
-request url : 
+request url : localhost:7979/api/masterdata/MdNomorsp2d/delete?id0=2017-10-24&id1=1&id2=009

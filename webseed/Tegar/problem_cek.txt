@@ -1,0 +1,37 @@
+/*
+Author : Tegar Budi Septian
+File Name : problem_cek.txt
+Date Created : Wednesday, 25th October, 2017
+*/
+
+/*Getting token*/
+request url : localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTYzODcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgyNzg3fQ.oiZ1faQrMJxTmZpMrad0H37xuWUdb3SWjOH7lnNvNOk
+
+
+/*Reading data from problem_cek table.*/
+request url : localhost:7979/api/masterdata/MdProblemCek/readAll?$top=2&$skip=0
+
+
+/*Adding a data in problem_cek table.*/
+request url : localhost:7979/api/masterdata/MdProblemCek/create
+{
+	"nip" : "0204151036",
+	"blthgaji" : "2017-10-25",
+	"catatan" : "Cek tmt TIDAK berlaku"
+}
+
+
+/*Updating a data of problem_cek.*/
+request url : localhost:7979/api/masterdata/MdProblemCek/update?id0=0204151036&id1=2017-10-25
+{
+	"catatan" : "Cek tmt kaluwarsa"
+}
+
+
+/*Deleting a data of problem_cek.*/
+request url : localhost:7979/api/masterdata/MdProblemCek/delete?id0=0204151036&id1=2017-10-25
