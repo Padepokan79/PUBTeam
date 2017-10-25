@@ -1,0 +1,37 @@
+/*
+Author : Tegar Budi Septian
+File Name : skkp_pjb.txt
+Date Created : Wednesday, 25th October, 2017
+*/
+
+/*Getting token*/
+request url : localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTgwMjQsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg0NDI0fQ.MUDbo8fEhpclyHGjBGQfGxCU3USTqhaZWAr1GsdgOSs
+
+
+/*Reading data from skkp_pjb table.*/
+request url : localhost:7979/api/masterdata/MdSkkpPjb/readAll?$top=2&$skip=0
+
+
+/*Adding a data in skkp_pjb table.*/
+request url : localhost:7979/api/masterdata/MdSkkpPjb/create
+{
+	"kddati1" : "01",
+	"kddati2" : "01",
+	"ket_jab" : "Presiden"
+}
+
+
+/*Updating a data of skkp_pjb.*/
+request url : localhost:7979/api/masterdata/MdSkkpPjb/update?id0=01&id1=01
+{
+	"ket_jab" : "King"
+}
+
+
+/*Deleting a data of skkp_pjb.*/
+request url : localhost:7979/api/masterdata/MdSkkpPjb/delete?id0=01&id1=01

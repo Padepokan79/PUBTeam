@@ -1,0 +1,40 @@
+/*
+Author : Tegar Budi Septian
+File Name : trzakat_tbl.txt
+Date Created : Wednesday, 25th October, 2017
+*/
+
+/*Getting token*/
+request url : localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDI1NzgsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg4OTc4fQ.5w-JuPt9jyNnPOdfeNitE_GhSBmoWo9Vp7b4NCaUWXA
+
+
+/*Reading data from trzakat_tbl table.*/
+request url : localhost:7979/api/masterdata/MdTrZakatTbl/readAll?$top=2&$skip=0
+
+
+/*Adding a data in trzakat_tbl table.*/
+request url : localhost:7979/api/masterdata/MdTrZakatTbl/create
+{
+	"kd_zakat" : 10,
+	"kdpangkat" : "9A",
+	"kdeselon" : "E5",
+	"nilai" : 100,
+	"tmt_berlaku" : "2017-10-25",
+	"arti" : "Unknown"
+}
+
+
+/*Updating a data of trzakat_tbl.*/
+request url : localhost:7979/api/masterdata/MdTrZakatTbl/update?id0=10&id1=9A&id2=2017-10-25
+{
+	"arti" : "Empty"
+}
+
+
+/*Deleting a data of trzakat_tbl.*/
+request url : localhost:7979/api/masterdata/MdTrZakatTbl/delete?id0=10&id1=9A&id2=2017-10-25
