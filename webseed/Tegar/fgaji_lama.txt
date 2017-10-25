@@ -1,0 +1,111 @@
+/*
+Author : Tegar Budi Septian
+File Name : fgaji_lama.txt
+Date Created : Tuesday, 24th October, 2017
+*/
+
+/*Getting token*/
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MDkyNTgsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk1NjU4fQ.YHqsHVR5m7xXIxIe0ZfOt0Tind_NCarsY5u7euJXI-8
+
+/*Reading data from fgaji_lama table.*/
+request url : localhost:7979//api/masterdata/MdFgajiLama/readAll?$top=5&$skip=0
+
+/*Adding Data "TEGAR BUDI SEPTIAN" to fgaji_lama table.*/
+request url : localhost:7979/api/masterdata/MdFgajiLama/create
+{
+    "TGLGAJI" : "2017-10-17",
+    "KDJNSTRANS" : 1,
+    "NIP" : "0204151036",
+    "NAMA" : "TEGAR BUDI SEPTIAN",
+    "GLRDEPAN" : "",
+    "GLRBELAKANG" : "",
+    "KDJENKEL" : 1,
+    "TGLLHR" : "1996-09-09",
+    "KDSTAWIN" : 1,
+    "JISTRI" : 0,
+    "JANAK" : 0,
+    "KDSTAPEG" : 4,
+    "TMTSTOP" : null,
+    "KDPANGKAT" : "4D",
+    "MASKER" : 30,
+    "PRSNGAPOK" : 100.00,
+    "TMTTABEL" : "2011-01-01",
+    "KDESELON" : "00",
+    "KDFUNGSI" : "09223",
+    "KDGURU" : "000",
+    "KDSTRUK" : 0,
+    "KDBERAS" : 2,
+    "KDLANGKA" : 0,
+    "KDTERPENCIL" : "000",
+    "KDTKD" : 0,
+    "KDTJKHUSUS" : "00000",
+    "KDKORPRI" : 0,
+    "KDKOPERASI" : 0,
+    "KDIRDHATA" : 0,
+    "GAPOK" : 5000000,
+    "TJISTRI" : 0,
+    "TJANAK" : 0,
+    "TJTPP" : 0,
+    "TJESELON" : 0,
+    "TJFUNGSI" : 1600000,
+    "TJSTRUK" : 0,
+    "TJGURU" : 0,
+    "TJLANGKA" : 0,
+    "TJTKD" : 0,
+    "TJTERPENCIL" : 0,
+    "TJKHUSUS" : 0,
+    "TJBERAS" : 270000,
+    "TJPAJAK" : 92000,
+    "TJASKES" : 0,
+    "TJUMUM" : 0,
+    "TJKK" : 0,
+    "TJKM" : 0,
+    "TBULAT" : 60,
+    "KOTOR" : 3000000,
+    "PIWP" : 400000,
+    "PIWP8" : null,
+    "PIWP2" : null,
+    "PASKES" : 0,
+    "PPAJAK" : 87000,
+    "PBULOG" : 0,
+    "PTAPERUM" : 7000,
+    "PSEWA" : 0,
+    "PHUTANG" : 0,
+    "PKORPRI" : 0,
+    "PIRDHATA" : 0,
+    "PKOPERASI" : 0,
+    "PJKK" : 0,
+    "PJKM" : 0,
+    "POTONGAN" : 500000,
+    "BERSIH" : 4103000,
+    "NODOSIR" : "400004",
+    "KDSSBP" : "001",
+    "KDSKPD" : "019",
+    "KDSATKER" : "D10200101900002",
+    "NPWP" : "00.000.00.0-000.000",
+    "NIPLAMA" : "140028390", 
+    "KDHITUNG" : 1, 
+    "KODEBYR" : "000",
+    "NOREK" : "",
+    "CATATAN" : "PINDAHAN",
+    "TGLBAYAR" : "2017-10-24",
+    "KDPOSTING" : 0,
+    "norut" : 1,
+    "jeniskekurangan" : 0
+}
+
+
+/*Updating a data of fgaji_lama.*/
+request url : localhost:7979/api/masterdata/MdFgajiLama/update?id0=2017-10-17&id1=1&id2=0204151036&id3=2017-10-24&id4=1
+
+{
+	"gapok" : 8000000
+}
+
+
+/*Deleting a data of fgaji_lama.*/
+request url : localhost:7979/api/masterdata/MdFgajiLama/delete?id0=2017-10-17&id1=1&id2=0204151036&id3=2017-10-24&id4=1
