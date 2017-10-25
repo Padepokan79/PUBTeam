@@ -1,0 +1,55 @@
+// T_KONV_SKPD
+
+1. token
+
+url : localhost:7979/auth/token
+
+{
+
+	"nama_login" :"tujuhsembilan",
+
+	"password" :"a"
+
+}
+
+2. read All
+
+url : localhost:7979/api/masterdata/MdTKonvSkpd/readAll
+
+3. create
+
+url : localhost:7979/api/masterdata/MdTKonvSkpd/create
+
+{
+
+	"kdskpd" : "R01",
+
+	"kd_urusan" : 2,
+
+	"kd_bidang" : 2,
+
+	"kd_unit" : 2,
+
+	"kd_sub" : 2,
+
+	"desc1" : "",
+
+	"desc2" : ""
+
+}
+
+4. update
+
+url : localhost:7979/api/masterdata/MdTKonvSkpd/update?kdskpd=R01
+
+ {
+
+	"desc1" : "Resti Siska Devi",
+
+	"desc2" : "Data Awal"
+
+ }
+
+5. delete
+
+url : localhost:7979/api/masterdata/MdTKonvSkpd/delete?kdskpd=R01
