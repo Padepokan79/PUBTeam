@@ -1,12 +1,15 @@
 Cucu Yuni Yulianti
 table : fgaji_02
 
+1.
 {
 	"nama_login" : "tujuhsembilan",
 	"password" : "a"
-} auth token
+} 
+auth token
 
-insert table fgaji_02
+
+2. insert table fgaji_02
 
 
 {
@@ -83,3 +86,24 @@ insert table fgaji_02
 	
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+3. Update fgaji_02
+
+{
+	
+"nama" : "Nama update"
+
+}
+
+localhost:7979/api/masterdata/MdFGaji02/update?id0=2017-10-25&id1=9&id2=12345
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+4. Delete fgaji_02
+localhost:7979/api/masterdata/MdFGaji02/delete?id0=2017-10-25&id1=9&id2=12345
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+5. Read fgaji_02
+localhost:7979/api/masterdata/MdFGaji02/readAll

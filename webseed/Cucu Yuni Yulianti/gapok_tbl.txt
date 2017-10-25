@@ -1,3 +1,4 @@
+
 gapok_tbl
 
 1. auth token
@@ -27,5 +28,28 @@ gapok_tbl
   "tmt_gapok": "1997-01-01"
       
   }
+ {
+            "Model_ID": "$id0=-1",
+            "kdkelompok": 9,
+            "kdpangkat": "9F",
+            "masker": 9,
+            "nilai_atas": 10000,
+            "nilai_bawah": 0,
+            "tmt_gapok": "2017-10-25"
+        }
 
-localhost:7979/api/masterdata/MdGapokTbl/create
+3. Update gapok_tbl
+
+{
+	
+"nilai_atas" : "50000"
+
+}
+localhost:7979/api/masterdata/MdGapokTbl/update?id0=9&id1=2017-10-25&id2=9F&id3=9&id4=0
+
+
+4. delete
+localhost:7979/api/masterdata/MdGapokTbl/delete?id0=9&id1=2017-10-25&id2=9F&id3=9&id4=0
+
+5. read gapok_tbl
+localhost:7979/api/masterdata/MdGapokTbl/readAll

@@ -1,0 +1,42 @@
+sertifikasi_tbl
+
+
+1. mengambil token 
+{
+"nama_login" : "tujuhsembilan",
+"password" : "a"
+}
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTk2NzIsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg2MDcyfQ.-6K__-cZTA3RC4HGuiivKCWbvopJFCtguLoE3gNEIUc
+
+2. read sertifikasi_tbl
+localhost:7979/api/masterdata/MdSertifikasiTbl/readAll
+
+3. insert sertifikasi_tbl
+{
+	"NIP" : "0102151002",
+	"No_srt_kep" : "17006",
+	"tmt_berlaku" : "2017-01-01",
+	"tat_berlaku" : "2017-12-01",
+	"Prosen_gaji" : 1,
+	"tgl_update" : "2017-10-25",
+	"tglBayar" : "2017-10-10",
+	"no_peserta" : "A001",
+	"NUPTK" : "C001",
+	"No_sk_Dirjen" : "D01",
+	"NOREKENING" : "ab01",
+	"jns_tunj" : 1,
+	"gapok" : 10000
+}
+
+localhost:7979/api/masterdata/MdSertifikasiTbl/create
+
+4. update sertifikasi_tbl
+localhost:7979/api/masterdata/MdSertifikasiTbl/update?id=0102151002
+
+{
+  "gapok" : 100000
+}
+
+
+5. delete sertifikasi_tbl
+localhost:7979/api/masterdata/MdSertifikasiTbl/delete?id=0102151002
