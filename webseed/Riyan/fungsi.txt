@@ -13,10 +13,18 @@ localhost:7979/auth/token
 
 }
 
+
 ====================================================
-2. Menambah data di table fungsi (CREATE)
+2. readAll data di table fungsi
+
+localhost:7979/api/masterdata/MdFungsi/readAll
 
 
+
+====================================================
+3. Menambah data di table fungsi (CREATE)
+
+localhost:7979/api/masterdata/MdFungsi/create
 
 
 {
@@ -45,7 +53,17 @@ localhost:7979/auth/token
 
 
 ====================================================
-3 Update SKIP, Tidak ada Primary key
+4 Update data di table fungsi
+
+localhost:7979/api/masterdata/MdFungsi/update?kdjabatan=05151
+
+{
+	
+	"namafungsi" : "Dokter Kecantikan"
+
+}
  
 ====================================================
-4 Delete SKIP, Tidak ada Primary key
+5 Delete data di table fungsi
+
+localhost:7979/api/masterdata/MdFungsi/delete?kdjabatan=05151
