@@ -1,27 +1,31 @@
 Nama	: Riyan
-table	: mstpegawai
+table	: mstpegawai_03
 
 
-1. aut token
+1. aut Token MdMstPegawai03
 
 localhost:7979/auth/token
 
 {
 	"nama_login" : "tujuhsembilan",
+
 	"password" : "a"
+
 }
 
+============================================================================
+2. ReadAll MdMstPegawai03
 
-======================================================
-2. readAll data di table mstpegawai
+localhost:7979/api/masterdata/MdMstPegawai03/readAll?$top=5&$skip=0
 
-localhost:7979/api/masterdata/MdMstPegawai/readAll?$top=3&$skip=0
+jumlah data : 4213
 
-======================================================
 
-3. Menambah data di table mstpegawai (CREATE)
+============================================================================
+3. Create table di MdMstPegawai03
 
-localhost:7979/api/masterdata/MdMstPegawai/create
+
+localhost:7979/api/masterdata/MdMstPegawai03/create
 
 
 {
@@ -41,8 +45,6 @@ localhost:7979/api/masterdata/MdMstPegawai/create
 
 	"AGAMA" : 1,
 
-	"zakat_dg" : 0,
-
 	"PENDIDIKAN" : "SARJANA",
 
 	"TMTCAPEG" : "2016-10-10",
@@ -50,7 +52,6 @@ localhost:7979/api/masterdata/MdMstPegawai/create
 	"TMTSKTM" : "",
 
 	"KDSTAWIN" : 1,
-
 	"JISTRI" : 1,
 
 	"JANAK" : 10,
@@ -151,11 +152,7 @@ localhost:7979/api/masterdata/MdMstPegawai/create
 
 	"NOTELP" : "",
 
-	"NOKTP" : "",
-
 	"NPWP" : "",
-
-	"NPWPZ" : "",
 
 	"NIPLAMA" : "",
 
@@ -175,34 +172,32 @@ localhost:7979/api/masterdata/MdMstPegawai/create
 
 	"INPUTER" : "TASPEN",
 
-	"kd_infaq" : 0,
+	"NIP_LAMA" : "",
 
-	"NOKARPEG" : "",
-
-	"jnsguru" : 1
+	"NOKARPEG" : ""
 
 }
 
 
-=====================================================
-4. Update di table mstpegawai
-
-localhost:7979/api/masterdata/MdMstPegawai/update?nip=0204151028
+============================================================================
+4. Update table di MdMstPegawai03 (PUT)
 
 
-Param : key(NIP), value(0204151028)
+localhost:7979/api/masterdata/MdMstPegawai03/update?NIP=0204151028
+
+Param: key(NIP), value(0204151028)
 
 {
+	"NAMA" : "Choirul Huda",
 
-	"NAMA" : "RIYAN"
+	"GAPOK" : 4000000
 
 }
 
-======================================================
 
-5. Delete di table mstpegawai (DELETE)
+============================================================================
+5. Delete table di MdMstPegawai03
 
-localhost:7979/api/masterdata/MdMstPegawai/delete?nip=010122831
+localhost:7979/api/masterdata/MdMstPegawai03/delete?NIP=0204151028
 
-
-Param : Key(NIP), value(010122831)
+Param : key(NIP), value(0204151028)

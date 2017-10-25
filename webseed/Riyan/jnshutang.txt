@@ -13,9 +13,15 @@ localhost:7979/auth/token
 
 
 }
-\
+
 ========================================================
-2. Create di table jnshutang
+2. ReadAll data di table jnshutang
+
+localhost:7979/api/masterdata/MdJnsHutang/readAll
+
+
+========================================================
+3. Create di table jnshutang
 
 localhost:7979/api/masterdata/MdJnsHutang/create
 
@@ -49,7 +55,7 @@ localhost:7979/api/masterdata/MdJnsHutang/create
 }
 
 ========================================================
-3. update di table jnshutang
+4. update di table jnshutang
 
 localhost:7979/api/masterdata/MdJnsHutang/update?no=2
 
@@ -63,7 +69,7 @@ Param : Key(No), value(2)
 }
 
 ========================================================
-4. delete di table jnshutang
+5. delete di table jnshutang
 
 localhost:7979/api/masterdata/MdJnsHutang/delete?no=1
 
