@@ -1,0 +1,345 @@
+1.auth token
+localhost:7979/auth/token
+
+output :
+{
+    
+"password": "0cc175b9c0f1b6a831c399e269772661",
+    
+"token_type": "Bearer",
+    
+"scope": null,
+    "expires_in": 86400000,
+    
+"status": "success",
+    
+"access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4Mjg2NzAsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTE1MDcwfQ.Pv896WiW9J6Uhcn9dXcnKaOnEeiC5WjvYLEWkYljEtE",
+    
+"id": 79,
+   
+ "nama_login": "tujuhsembilan"
+
+}
+
+2.readAll
+
+localhost:7979/api/masterdata/MdMstTp/readAll
+
+output : 
+{
+    
+"totalItems": 0,
+    
+"items": []
+
+}
+
+3. create
+
+localhost:7979/api/masterdata/MdFgajiCopy/create
+
+coding:
+
+{
+	
+
+
+"nip" :"0987654189899988",
+
+
+"nama" : "create nama satu",
+
+
+"glrdepan" : "create glrdpn satu",
+
+
+"glrbelakang" : "create glrdpn satu",
+
+
+"kdpangkat": "2A",
+
+
+"kdjab" : "3A",
+
+
+"kdskpd": "aa",
+
+
+"kdsatker" : "aaa",
+
+
+"pr_tp1":"00000.10",
+
+
+"pr_tp2":"00000.20",
+
+
+"pr_tp3":"00000.30",
+
+
+"pr_tp4":"00000.40",
+
+
+"pr_tp5":"00000.50",
+
+
+"pr_tp6":"00000.60",
+
+
+"pr_tp7":"00000.70",
+
+
+"tmt_berlaku" : "2017-03-03",
+
+
+"flag" :2
+
+
+
+}
+
+output :
+ 
+{
+    
+"Model_ID": "$id0=null",
+    
+"flag": 2,
+    
+"glrbelakang": "create glrdpn satu",
+    
+"glrdepan": "create glrdpn satu",
+    
+"kdjab": "3A",
+    
+"kdpangkat": "2A",
+    
+"kdsatker": "aaa",
+    
+"kdskpd": "aa",
+    
+"nama": "create nama satu",
+   
+ "nip": "0987654189899988",
+    
+"pr_tp1": "00000.10",
+    
+"pr_tp2": "00000.20",
+    
+"pr_tp3": "00000.30",
+    
+"pr_tp4": "00000.40",
+    
+"pr_tp5": "00000.50",
+    
+"pr_tp6": "00000.60",
+    
+"pr_tp7": "00000.70",
+    
+"tmt_berlaku": "2017-03-03"
+
+}
+
+
+create 2
+
+coding :
+{
+
+
+"nip" :"11",
+
+
+"nama" : "create nama tiga",
+
+
+
+"glrdepan" : "create glrdpn tiga",
+
+
+"glrbelakang" : "create glrdpn tiga",
+
+
+"kdpangkat": "2B",
+
+
+"kdjab" : "3B",
+
+
+"kdskpd": "bb",
+
+
+"kdsatker" : "bbb",
+
+
+"pr_tp1":"00000.20",
+
+
+"pr_tp2":"00000.30",
+
+
+"pr_tp3":"00000.40",
+
+
+"pr_tp4":"00000.50",
+
+
+"pr_tp5":"00000.60",
+
+
+"pr_tp6":"00000.70",
+
+
+"pr_tp7":"00000.80",
+
+
+"tmt_berlaku" : "2017-06-06",
+
+
+"flag" :3
+
+
+
+}
+
+output: 
+{
+    
+"Model_ID": "$id0=null",
+    
+"flag": 3,
+    
+"glrbelakang": "create glrdpn tiga",
+    
+"glrdepan": "create glrdpn tiga",
+    
+"kdjab": "3B",
+    
+"kdpangkat": "2B",
+    
+"kdsatker": "bbb",
+    
+"kdskpd": "bb",
+    
+"nama": "create nama tiga",
+    
+"nip": "11",
+    
+"pr_tp1": "00000.20",
+    
+"pr_tp2": "00000.30",
+    
+"pr_tp3": "00000.40",
+    
+"pr_tp4": "00000.50",
+    
+"pr_tp5": "00000.60",
+   
+ "pr_tp6": "00000.70",
+    
+"pr_tp7": "00000.80",
+    
+"tmt_berlaku": "2017-06-06"
+
+}
+
+4. update 
+localhost:7979/api/masterdata/MdMstTp/update?id=11
+
+coding :
+{
+       
+ "nama" : "update  nama tiga",
+
+
+"glrdepan" : "update glrdpn tiga",
+
+
+"glrbelakang" : "update glrdpn tiga"
+          
+        
+}
+
+output : 
+{
+    
+"Model_ID": "$id0=null",
+    
+"flag": 3,
+    
+"glrbelakang": "update glrdpn tiga",
+    
+"glrdepan": "update glrdpn tiga",
+    
+"kdjab": "3B",
+   
+ "kdpangkat": "2B",
+    
+"kdsatker": "bbb",
+    
+"kdskpd": "bb",
+    
+"nama": "update  nama tiga",
+    
+"nip": "11",
+    
+"pr_tp1": 0.2,
+    
+"pr_tp2": 0.3,
+    
+"pr_tp3": 0.4,
+    
+"pr_tp4": 0.5,
+   
+ "pr_tp5": 0.6,
+    
+"pr_tp6": 0.7,
+    
+"pr_tp7": 0.8,
+    
+"tmt_berlaku": "2017-06-06"
+
+}
+
+5. delete 
+
+localhost:7979/api/masterdata/MdMstTp/delete?id=11
+
+output :
+{
+   
+ "pr_tp4": 0.5,
+   
+ "glrdepan": "update glrdpn tiga",
+    
+"glrbelakang": "update glrdpn tiga",
+    
+"pr_tp7": 0.8,
+    
+"pr_tp6": 0.7,
+    
+"kdsatker": "bbb",
+    
+"nip": "11",
+    
+"pr_tp5": 0.6,
+    
+"kdpangkat": "2B",
+   
+ "tmt_berlaku": "2017-06-06",
+    
+"kdjab": "3B",
+    
+"flag": 3,
+    
+"kdskpd": "bb",
+   
+ "pr_tp3": 0.4,
+    
+"pr_tp1": 0.2,
+    
+"nama": "update  nama tiga",
+    
+"pr_tp2": 0.3
+
+}
