@@ -1,0 +1,61 @@
+1.-----------------------------------------------------------------------------
+auth-token
+localhost:7979/auth/token
+
+{
+	
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+===============================================================================
+
+2.-----------------------------------------------------------------------------
+read All
+
+localhost:7979/api/masterdata/MdSkpdImport/readAll
+
+===============================================================================
+
+3.-----------------------------------------------------------------------------
+Insert data ke-1 pada tabel MdSkpdImport
+
+localhost:7979/api/masterdata/MdSkpdImport/create
+
+{
+            "kdskpd": "099",
+            "kdssbp": "099",
+            "kota": "TASIKMALAYA",
+            "nipbendahara": "999990",
+            "nipkepala": "999999",
+            "nippembuatdaftar": "197412312006041055",
+            "nmbendahara": "RIYAN TURMUDZI",
+            "nmkepala": "IPIN SOPIAN",
+            "nmpembuatdaftar": "SANDI SAPUTRA",
+            "nmskpd": "DINAS PEKERJAAN UMUM",
+            "norek": " ",
+            "npwp": " "
+}
+
+
+================================================================================
+
+4. -----------------------------------------------------------------------------
+update
+
+localhost:7979/api/masterdata/MdSkpdImport/update?id0=099&id1=099
+
+{
+            "kota": "KOTA TASIKMALAYA",
+            "nmbendahara": "RIYAN TURMUDZI",
+            "nmkepala": "RIDHO MUSLIM"
+}
+
+================================================================================
+
+5. -----------------------------------------------------------------------------
+delete
+
+localhost:7979/api/masterdata/MdSkpdImport/delete?id0=099&id1=099
