@@ -1,0 +1,127 @@
+POSTMAN 
+25/10/2017
+TABEL : seluma02
+=======================================================
+TOKEN:
+localhost:7979/auth/token
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTU0MDIsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgxODAyfQ.o77V1ugOpBxnSSaFeBBPd4IRah_8cmAn6lX9nStkqeg",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+=======================================================
+READ :
+localhost:7979/api/masterdata/MdSeluma02/readAll
+
+OUTPUT :
+{
+    "totalItems": 4223,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "alamat": "",
+            "fd_kdbag": "000",
+            "fd_kdbras": 2,
+            "fd_kdgiat": "13",
+            "fd_satker1": "990739",
+            "fd_satker2": "7001",
+            "gapok": 2831300,
+            "janak": 2,
+            "jistri": 1,
+            "kdguru": 2,
+            "kdpangkat": "32",
+            "kdsatker": "",
+            "kdstapeg": 1,
+            "nama": "HASIKIN.SH",
+            "nip": "197310151993031002",
+            "nip_old": "19731015",
+            "nip_pemda": "197310151993031002",
+            "nodosir": "300009",
+            "plag": "S",
+            "satkerpemd": "990739700113",
+            "tempatlhr": "",
+            "tgllhr": "1973-10-15",
+            "tjeselon": 0,
+            "tjfungsi": 0,
+            "tmtcapeg": "1993-03-01"
+        }
+    ]
+}
+
+==============================================================
+CRETE :
+localhost:7979/api/masterdata/MdSeluma02/create
+
+INPUT :
+{
+"fd_satker1":"1111",
+"fd_satker2":"7001",
+"fd_kdgiat":"33",
+"saktkerpemd":"4444444",
+"fd_kdbag":"555",
+"nip_pemda":"60000006",
+"nip_old":"70007",
+"nama":"SRI SUGIARTINI",
+"tempatlhr":"ciamis",
+"tgllhr":"1999-09-09",
+"jistri":0,
+"janak":0,
+"kdstapeg":1,
+"alamat":"ciamis",
+"kdpangkat":"3a",
+"gapok":3000000,
+"kdugru":2,
+"tjselon":100000,
+"tjfungsi":0,
+"nodosir":"2000",
+"fd_kdbras":2,
+"tmtcapeg":"2000-10-10",
+"nip":"60000006",
+"plag":"s",
+"kdsatker":"90"
+}
+
+===================================================================
+UBAH:
+localhost:7979/api/masterdata/MdSeluma02/update?id0=60000006&id1=70007
+
+{
+	"NAMA":"SUGIARTINI F"
+}
+
+HASIL:
+{
+    "Model_ID": "$id0=null&$id1=null",
+    "alamat": "ciamis",
+    "fd_kdbag": "555",
+    "fd_kdbras": 2,
+    "fd_kdgiat": "33",
+    "fd_satker1": "1111",
+    "fd_satker2": "7001",
+    "gapok": 3000000,
+    "janak": 0,
+    "jistri": 0,
+    "kdpangkat": "3a",
+    "kdsatker": "90",
+    "kdstapeg": 1,
+    "nama": "SUGIARTINI F",
+    "nip": "60000006",
+    "nip_old": "70007",
+    "nip_pemda": "60000006",
+    "nodosir": "2000",
+    "plag": "s",
+    "tempatlhr": "ciamis",
+    "tgllhr": "1999-09-09",
+    "tjfungsi": 0,
+    "tmtcapeg": "2000-10-10"
+}
+
+==============================================================
+HAPUS :
+localhost:7979/api/masterdata/MdSeluma02/delete?id0=60000006&id1=70007

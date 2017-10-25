@@ -1,0 +1,67 @@
+Tabel : Pemda
+
+auth token
+localhost:7979/auth/token
+
+create => localhost:7979/api/masterdata/MdPemda/create
+{
+            "Model_ID": "$id0=null&$id1=07&$id2=00",
+            "akronim": "PEMPROV BENGKULU                                  ",
+            "aktif": 1,
+            "alamat": "Jln. PEMBANGUNAN                                                                                    ",
+            "jab_bendahara": "BENDAHARA PENGELUARAN SEKRETARIAT DAERAH          ",
+            "jab_pembuatdaftar": "BENDAHARA GAJI                                    ",
+            "jabatan": "PLT. SEKRETARIS DAERAH PROVINSI BENGKULU          ",
+            "kdcabang": "703",
+            "kddati1": "1",
+            "kddati2": "2",
+            "kdlevel": "2",
+            "kode_pemda": "PEMERINTAH PROVINSI BENGKULU                      ",
+            "kota": "BENGKULU                                          ",
+            "logo": "c:\\dbgaji\\images\\pemprov_bengkulu.jpg             ",
+            "nip": "196205021989031016",
+            "nip_pembuatdaftar": "198211132003122004                                ",
+            "nipbendum": "197502101998031005",
+            "nm_pembuatdaftar": "Hj. MUSDALIFAH, SE, MM                            ",
+            "nmbank": "BANK  BENGKULU                                    ",
+            "nmbendum": "JAMIL AZHARI,A.Md                                 ",
+            "nmkepala_dpkd": "H. GOTRI SUYANTO, SE,M.Soc,Sc                     ",
+            "norek_dau": "                                                  ",
+            "norek_pemda": "                                                  ",
+            "npwp": "00.626.372.7.311.000     ",
+            "pemdakey": "12345",
+            "propinsi": "BENGKULU                                          ",
+            "tglbatas": 20
+        }
+
+update =>
+{
+            
+            "akronim": "PEMPROV BENGKULU                                  ",
+            "aktif": 1,
+            "alamat": "Jln. PEMBANGUNAN                                                                                    ",
+            "jab_bendahara": "BENDAHARA PENGELUARAN SEKRETARIAT DAERAH          ",
+            "jab_pembuatdaftar": "BENDAHARA GAJI                                    ",
+            "jabatan": "PLT. SEKRETARIS DAERAH PROVINSI BENGKULU          ",
+            "kdcabang": "703",
+            
+            "kdlevel": "2",
+            "kode_pemda": "PEMERINTAH PROVINSI BENGKULU                      ",
+            "kota": "BENGKULU                                          ",
+            "logo": "c:\\dbgaji\\images\\pemprov_bengkulu.jpg             ",
+            "nip": "196205021989031016",
+            "nip_pembuatdaftar": "198211132003122004                                ",
+            "nipbendum": "197502101998031005",
+            "nm_pembuatdaftar": "Hj. MUSDALIFAH, SE, MM                            ",
+            "nmbank": "BANK  BENGKULU                                    ",
+            "nmbendum": "JAMIL AZHARI,A.Md                                 ",
+            "nmkepala_dpkd": "H. GOTRI SUYANTO, SE,M.Soc,Sc                     ",
+            "norek_dau": "                                                  ",
+            "norek_pemda": "                                                  ",
+            "npwp": "00.626.372.7.311.000     ",
+            
+            "propinsi": "Bandung                                          ",
+            "tglbatas": 20
+        }
+
+delete => localhost:7979/api/masterdata/MdPemda/delete?id0=12345&id1=1&id2=2
