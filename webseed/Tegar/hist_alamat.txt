@@ -1,0 +1,48 @@
+/*
+Author : Tegar Budi Septian
+File Name : hist_alamat.txt
+Date Created : Tuesday, 24th October, 2017
+Note : there is 3 primary keys.
+*/
+
+/*Getting token*/
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTM1MzgsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk5OTM4fQ.PI9cKAflGIQluVtDTPd-8WKf45mu58nMi6i4LRUVxRs
+
+/*Reading data from historis_fungsikhusus table.*/
+request url : localhost:7979/api/masterdata/MdHistAlamat/readAll
+
+/*Adding a data to hist_alamat.*/
+request url : localhost:7979/api/masterdata/MdHistAlamat/create
+{
+	"tmt_alm" : "2017-10-24",
+	"kdhubkel" : "01",
+	"Nip" : "0204151036",
+	"alm_peserta" : "",
+	"kota" : "Banjarnegara",
+	"kodepos" : "53418",
+	"telepon" : "0895376551289",
+	"kddati1" : "",
+	"kddati2" : "",
+	"kddati3" : "",
+	"kddati4" : "",
+	"NPWP" : "123456789101112",
+	"UPDSTAMP" : "2017-10-25 08:00:00",
+	"inputer" : "Tegar"
+}
+
+
+/*Updating a data of hist_alamat.*/
+request url : localhost:7979/api/masterdata/MdHistAlamat/update?id0=2017-10-24&id1=01&id2=0204151036
+{
+	"kota" : "Bandung"
+}
+
+/*Deleting a data of hist_alamat.*/
+request url : localhost:7979/api/masterdata/MdHistAlamat/delete?id0=2017-10-24&id1=01&id2=0204151036
+
+
+

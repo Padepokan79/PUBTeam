@@ -1,0 +1,42 @@
+/*
+Author : Tegar Budi Septian
+File Name : historis_fungsikhusus.txt
+Date Created : Tuesday, 24th October, 2017
+*/
+
+/*Getting token*/
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTE4MjcsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4ODk4MjI3fQ.91BeZN-_bXgRJGPH2iNbEcMXSsK4RKk2ADZtq4Zffy4
+
+/*Reading data from historis_fungsikhusus table.*/
+request url : localhost:7979//api/masterdata/MdHistorisFungsiKhusus/readAll?$top=5&$skip=0
+
+/*Adding data NIP : 0204151036 to historis_fungsikhusus table.*/
+request url : localhost:7979/api/masterdata/MdHistorisFungsiKhusus/create
+{
+	"TMTGAJI" : "2004-04-01",
+	"NIP" : "0204151036",
+	"KDTJKHUSUS" : "00000",
+	"TJKHUSUS" : 0,
+	"TGLSKEP" : null,
+	"NOMORSKEP" : "",
+	"PENERBITSKEP" : "",
+	"KETERANGAN" : "DATA AWAL",
+	"TGLUPDATE" : "2017-10-17 09:18:36"
+}
+
+
+/*Updating a data of historis_fungsikhusus table.*/
+request url : localhost:7979/api/masterdata/MdHistorisFungsiKhusus/update?id0=0204151036
+{
+	"keterangan" : "DATA PERTENGAHAN"
+}
+
+
+/*Deleting a data of historis_fungsikhusus table.*/
+localhost:7979/api/masterdata/MdHistorisFungsiKhusus/delete?id=0204151036
+
+
