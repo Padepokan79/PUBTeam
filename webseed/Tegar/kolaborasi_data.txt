@@ -47,3 +47,14 @@ request url : localhost:7979/api/masterdata/MdKolaborasiData/create
 	"pejabat_penetap" : "shfddshf",
 	"nama_jabatan" : "Presiden"
 }
+
+
+/*Updating a data of kolaborasi_data.*/
+request url : localhost:7979/api/masterdata/MdKolaborasiData/update?id0=1&id1=0204151040
+{
+	"status_pegawai_nama" : "KING"
+}
+
+
+/*Deleting a data of kolaborasi_data.*/
+request url : localhost:7979/api/masterdata/MdKolaborasiData/delete?id0=1&id1=0204151040
