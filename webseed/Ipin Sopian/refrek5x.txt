@@ -1,0 +1,22 @@
+Tabel ref_rek_5_x
+
+
+localhost:7979/api/masterdata/MdRefRek5X/create
+1.insert
+{
+	"Kd_Rek_1":1,
+	"Kd_Rek_2":2,
+	"Kd_Rek_3":3,
+	"Kd_Rek_4":4,
+	"Kd_Rek_5":6,
+	"Nm_Rek_5":12102324325311111
+}
+
+localhost:7979/api/masterdata/MdRefRek5X/update?id0=1&id1=2&id2=3&id3=4&id4=6
+2.update 
+{
+	"Nm_Rek_5":12102324325311111
+}
+
+localhost:7979/api/masterdata/MdRefRek5X/delete?id0=1&id1=2&id2=3&id3=4&id4=6
+3.delete

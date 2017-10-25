@@ -1,0 +1,31 @@
+tabel t_tunjangan
+
+localhost:7979/api/masterdata/MdTTunjangan/readAll?$top=3&$skip=0
+1.read 
+
+localhost:7979/api/masterdata/MdTTunjangan/create
+2. insert 
+{
+
+    "Model_ID": "$id0=null&$id1=null",
+
+    "jml": 6000000,
+
+    "kdjab": "01",
+
+    "kdkel": "098",
+
+    "nmjabatan": "Pranata",
+
+    "pensiun": 50
+
+}
+
+localhost:7979/api/masterdata/MdTTunjangan/update?id0=098&id1=01
+3.update
+{
+	 "nmjabatan": "Pranata Muda"
+}
+
+localhost:7979/api/masterdata/MdTTunjangan/delete?id0=098&id1=01
+4.delete 
