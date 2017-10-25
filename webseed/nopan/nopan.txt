@@ -1,4 +1,5 @@
 //login
+url : localhost:7979/auth/token
 {
 	
 	"nama_login" : "hendra",
@@ -7,6 +8,7 @@
 
 }
 //menambah kan data pada AkunKonvTbl
+url : localhost:7979/api/masterdata/MdAkunKonvTbl/create
 {
 	
 	"nmakun" : "nopan",
@@ -46,6 +48,9 @@
 
 }
 //update
+url : localhost:7979/api/masterdata/MdAkunKonvTbl/update?$id0=111
 {
 	"nmakun" : "padepokan"
 }
+//read all akunkonvtbl
+url : localhost:7979/api/masterdata/MdAkunKonvTbl/readAll
