@@ -1,0 +1,162 @@
+// ----> Tabel 5 (otostruk) <----
+// ----------------------------------
+-------> Data Kosong <------------
+1. auto token
+{
+  "password": "0cc175b9c0f1b6a831c399e269772661",
+  "token_type": "Bearer",
+  "scope": null,
+  "expires_in": 86400000,
+  "status": "success",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MzEwOTEsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTE3NDkxfQ.ALPGzsBAGbbxQGAVjNzVvxLVboXM-RUiCLOAdFz7aGE",
+  "id": 79,
+  "nama_login": "tujuhsembilan"
+}
+
+2. create
+{
+  "Model_ID": "$id0=null&$id1=null&$id2=null",
+  "blbayar": 10,
+  "identitas": "x",
+  "jabkp4": "x",
+  "judul1": "x",
+  "judul2": "x",
+  "kdberas": 0,
+  "kdjnstrans": "2016-08-07 15:06:19",
+  "kdjudul": 0,
+  "kdsatker": "003",
+  "kdskpd": "002",
+  "kdssbp": "001",
+  "kdtdt": 0,
+  "nipatas": "x",
+  "nipbend": "x",
+  "nipbuat": "x",
+  "nipkk": "x",
+  "nipkp4": "x",
+  "niptrek": "x",
+  "nmatas": "x",
+  "nmbend": "x",
+  "nmbuat": "x",
+  "nmkk": "x",
+  "nmkp4": "x",
+  "nmtrek": "x",
+  "norek": "x",
+  "npwp": "x",
+  "tgbuat": "2016-09-07",
+  "thbayar": 10,
+  "tpbayar": "x",
+  "tpbuat": "x",
+  "urutcet": 0
+}
+
+3. update (masih data not found)
+{
+	"KDSSBP" : "001" ,
+	"KDSKPD" : "002" ,
+	"KDSATKER" : "003" ,
+	"KDJNSTRANS" : "2016-08-07 15:06:19" ,
+	"BLBAYAR" : 10 ,
+	"THBAYAR" : 10 ,
+	"TPBUAT" : "x" ,
+	"TGBUAT" : "2016-09-07" ,
+	"TPBAYAR" : "x" ,
+	"NOREK" : "x" ,
+	"NPWP" : "x" ,
+	"NIPBUAT" : "x" ,
+	"NIPKK" : "x" ,
+	"NMKK" : "x" ,
+	"NMBUAT" : "x" ,
+	"NIPBEND" : "x" ,
+	"NMBEND" : "x" ,
+	"NIPATAS" : "x" ,
+	"NMATAS" : "x" ,
+	"NIPTREK" : "x" ,
+	"NMTREK" : "x" ,
+	"KDBERAS" : 0 ,
+	"KDJUDUL" : 0 ,
+	"URUTCET" : 0 ,
+	"KDTDT" : 0 ,
+	"IDENTITAS" : "x" ,
+	"JUDUL1" : "Dasiah Kece Baday" ,
+	"JUDUL2" : "x" ,
+	"NIPKP4" : "x" ,
+	"NMKP4" : "x" ,
+	"JABKP4" : "x"
+}
+
+4. update
+url : localhost:7979/api/masterdata/MdOtoStruk/update?id0=1&id1=2&id2=3
+{
+	"JUDUL1" : "Cece Loveco Baday"
+}
+Hasil : 
+{
+  "Model_ID": "$id0=null&$id1=null&$id2=null",
+  "blbayar": 10,
+  "identitas": "x",
+  "jabkp4": "x",
+  "judul1": "Cece Loveco Baday",
+  "judul2": "x",
+  "kdberas": 0,
+  "kdjnstrans": 1470557179000,
+  "kdjudul": 0,
+  "kdsatker": "003",
+  "kdskpd": "002",
+  "kdssbp": "001",
+  "kdtdt": 0,
+  "nipatas": "x",
+  "nipbend": "x",
+  "nipbuat": "x",
+  "nipkk": "x",
+  "nipkp4": "x",
+  "niptrek": "x",
+  "nmatas": "x",
+  "nmbend": "x",
+  "nmbuat": "x",
+  "nmkk": "x",
+  "nmkp4": "x",
+  "nmtrek": "x",
+  "norek": "x",
+  "npwp": "x",
+  "tgbuat": "2016-09-07",
+  "thbayar": 10,
+  "tpbayar": "x",
+  "tpbuat": "x",
+  "urutcet": 0
+}
+5. delete
+url : localhost:7979/api/masterdata/MdOtoStruk/delete?id0=1&id1=2&id2=3
+Hasil :
+{
+  "blbayar": 10,
+  "norek": "x",
+  "nmbend": "x",
+  "nmkp4": "x",
+  "nipkk": "x",
+  "kdtdt": 0,
+  "nmtrek": "x",
+  "tpbuat": "x",
+  "kdsatker": "3",
+  "judul1": "x",
+  "nmatas": "x",
+  "judul2": "x",
+  "kdjnstrans": 1470557179000,
+  "kdjudul": 0,
+  "npwp": "x",
+  "kdssbp": "1",
+  "nipbuat": "x",
+  "kdberas": 0,
+  "nipatas": "x",
+  "kdskpd": "2",
+  "nmkk": "x",
+  "niptrek": "x",
+  "nipkp4": "x",
+  "thbayar": 10,
+  "identitas": "Cece Loveco",
+  "tpbayar": "x",
+  "urutcet": 0,
+  "nmbuat": "x",
+  "nipbend": "x",
+  "tgbuat": "2016-09-07",
+  "jabkp4": "x"
+}
