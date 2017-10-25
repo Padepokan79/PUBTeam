@@ -22,6 +22,7 @@ localhost:7979/api/masterdata/MdHistJiwa/readAll
 3.-----------------------------------------------------------------------------
 Insert data ke-1 pada tabel MdHistJiwa
 
+localhost:7979/api/masterdata/MdHistJiwa/create
 {
     "Model_ID": "$id0=-1",
     "id": -1,

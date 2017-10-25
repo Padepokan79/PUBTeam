@@ -19,6 +19,8 @@ localhost:7979/api/masterdata/MdFgaji01/readAll?$top=1&$skip=0
 3.-----------------------------------------------------------------------------
 Insert data ke-1 pada tabel fgaji_01
 
+localhost:7979/api/masterdata/MdFgaji01/create
+
 {
  	"tglgaji": "2017-10-23",
     "kdjnstrans": 1,
@@ -172,12 +174,13 @@ Insert data ke-2 pada tabel fgaji_01
 4.-----------------------------------------------------------------------------
 update
 
-localhost:7979/api/masterdata/MdFgaji01/update?id0=2017-10-10&id1=1&id2=195811101984111002
+localhost:7979/api/masterdata/MdFgaji01/update?id0=2017-12-31&id1=1&id2=9999999999
 
 {
-	"gapok":100000
+	"jistri":12,
+	"janak":12
 }
 
 4.-----------------------------------------------------------------------------
 delete
-localhost:7979/api/masterdata/MdFgaji01/delete?id0=2017-10-10&id1=1&id2=195811101984111002
+localhost:7979/api/masterdata/MdFgaji01/delete?id0=2017-12-31&id1=1&id2=9999999999

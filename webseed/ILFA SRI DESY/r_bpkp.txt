@@ -1,0 +1,66 @@
+[auth token]
+localhost:7979/auth/token
+//dibody
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTYxOTEsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgyNTkxfQ.u5JH4LxZugAHpSpcFbsl-6WQA7WelTPTM4MHYqJRR38
+
+==============================================================================================================
+[readAll]
+localhost:7979/api/masterdata/MdRBpkp/readAll
+//output
+{
+    "totalItems": 0,
+    "items": []
+}
+
+=============================================================================
+[create]
+localhost:7979/api/masterdata/MdRBpkp/create
+//dibody
+{
+	"bulan" : "1",
+	"kdskpd" : "i",
+	"nmskpd" : "ilfa",
+	"kotor" : 10000000,
+	"potongan" : 10000,
+	"bersih" : 9000000,
+	"kd_sumber" : 1
+}
+//output
+{
+    "Model_ID": "$id0=null&$id1=i&$id2=1",
+    "bersih": 9000000,
+    "bulan": "1",
+    "kd_sumber": 1,
+    "kdskpd": "i",
+    "kotor": 10000000,
+    "nmskpd": "ilfa",
+    "potongan": 10000
+}
+==============================================================================
+[update]
+localhost:7979/api/masterdata/MdRBpkp/update?id0=1&id1=i&id2=1
+//dibody
+{
+	"bersih" : 70000000
+}
+
+//output
+{
+    "Model_ID": "$id0=null&$id1=i&$id2=1",
+    "bersih": 70000000,
+    "bulan": "1",
+    "kd_sumber": 1,
+    "kdskpd": "i",
+    "kotor": 10000000,
+    "nmskpd": "ilfa",
+    "potongan": 10000
+}
+
+=================================================================
+[delete]
+localhost:7979/api/masterdata/MdRBpkp/delete?id0=1&id1=i&id2=1
