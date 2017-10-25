@@ -1,0 +1,69 @@
+Tabel ssbp
+
+localhost:7979/api/masterdata/MdSSBP/readAll
+1.read 
+
+localhost:7979/api/masterdata/MdSSBP/create
+2. insert
+{
+
+            "alamatwp": "Jalan Pembangunan No. 1 Padang Harapan Bengkulu                       ",
+
+            "jmlsetor": 2020927951,
+
+            "kdgiat": "00010001",
+
+            "kdjnstrans": 1,
+
+            "kdkppn": "016",
+            "kdlembaga": "069",
+
+            "kdlokasi": "0151",
+
+            "kdprogram": "01010009",
+
+            "kdsatker": "440780",
+
+            "kdtrans": 1,
+
+            "map": "811112",
+            "namawp": "Kepala Biro Pengelolaan Keuangan ",
+
+            "nmgiat": "lain-lain                                         ",
+
+            "nmkppn": "KPPN Lain                 ",
+
+            "nmlembaga": "BELANJA LAIN                                ",
+
+            "nmlokasi": "Jakarta                                     ",
+
+            "nmmap": "Penerimaan                                ",
+
+            "nmorg": "DIRPERBENDAHARAAN                            ",
+
+            "nmprogram": "lain-lain                                         ",
+
+            "nmsatker": "PENGEMBALIAN  PFK                       ",
+
+            "nospn": " ",
+
+            "npwp": "1",
+
+            "tglgaji": "2017-11-11",
+            "unitorg": "008",
+
+            "updstamp":"2017-11-11 09:59:59",
+
+            "uraian": "Penerimaan Setoran                         "
+	
+
+}
+
+localhost:7979/api/masterdata/MdSSBP/update?id0=2017-11-11&id1=1
+3update
+{
+	 "jmlsetor": 2000000
+}
+
+localhost:7979/api/masterdata/MdSSBP/delete?id0=2017-11-11&id1=1
+4.delete

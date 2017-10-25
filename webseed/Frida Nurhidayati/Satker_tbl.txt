@@ -1,0 +1,148 @@
+//geting token
+localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+output:
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+
+    "token_type": "Bearer",
+
+    "scope": null,
+
+    "expires_in": 86400000,
+
+    "status": "success",
+
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTU2MzksInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgyMDM5fQ.AHM8pin27IjLrD42P_DudrJYi8AuzUH1Is6HG3YeTIU",
+    "id": 79,
+
+    "nama_login": "tujuhsembilan"
+
+}
+
+//ReadAll
+localhost:7979/api/masterdata/MdSatkerTbl/readAll?$top=2&$skip=0
+$top=2
+$skip=0
+
+//Create
+localhost:7979/api/masterdata/MdSatkerTbl/create
+
+{
+            "alamat": "                                                  ",
+
+             "jab_bendahara": "BENDAHARA PEMASUKAN                                      ",
+
+             "jab_kepala": "Plt. SEKRETARIS DAERAH                                      ",
+
+             "jab_pembuatdaftar": "PEMBUAT DAFTAR GAJI MASUK                                         ",
+
+             "kddati1": "00",
+
+            "kddati2": "00",
+
+            "kddati3": "00",
+
+            "kddati4": "000",
+
+            "kdsatker": "D10200100100113     ",
+
+            "kdskpd": "001",
+
+            "kdssbp": "001",
+
+            "kota": "BENGKULU                      ",
+
+            "nipbendahara": "197502101998031005",
+
+            "nipkepala": "196205021989031016",
+
+            "nippembuatdaftar": "198211132003122004",
+
+            "nmbendahara": "JAMIL AZHARI,A.Md                                 ",
+
+            "nmkepala": "H. GOTRI SUYANTO, SE,M.Soc,Sc                     ",
+
+           "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM                            ",
+
+            "nmsatker": "SEKRETARIAT DAERAH PROVINSI BENGKULU                                       ",
+
+            "norek": "                              ",
+
+            "notelp": "                    ",
+
+            "npwp": "                              "
+        
+}
+
+//update
+localhost:7979/api/masterdata/MdSatkerTbl/update?id0=D10200100100113&id1=001&id2=001
+upate nama satker
+{
+	"nmsatker": "SEKRETARIAT DAERAH PROV BENGKULU"
+}
+
+output:
+{
+    "Model_ID": "$id0=D10200100100113     &$id1=001&$id2=001",
+
+    "alamat": "                                                  ",
+
+    "jab_bendahara": "BENDAHARA PEMASUKAN                                      ",
+
+    "jab_kepala": "Plt. SEKRETARIS DAERAH                                      ",
+
+    "jab_pembuatdaftar": "PEMBUAT DAFTAR GAJI MASUK                                   ",
+
+    "kddati1": "00",
+
+    "kddati2": "00",
+
+    "kddati3": "00",
+
+    "kddati4": "000",
+
+    "kdsatker": "D10200100100113     ",
+
+    "kdskpd": "001",
+
+    "kdssbp": "001",
+
+    "kota": "BENGKULU                      ",
+
+    "nipbendahara": "197502101998031005",
+
+    "nipkepala": "196205021989031016",
+ 
+   "nippembuatdaftar": "198211132003122004",
+
+    "nmbendahara": "JAMIL AZHARI,A.Md                                 ",
+
+    "nmkepala": "H. GOTRI SUYANTO, SE,M.Soc,Sc                     ",
+
+    "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM                            ",
+
+    "nmsatker": "SEKRETARIAT DAERAH PROV BENGKULU",
+
+    "norek": "                              ",
+
+    "notelp": "                    ",
+
+    "npwp": "                              "
+
+}
+
+//delete
+localhost:7979/api/masterdata/MdSatkerTbl/delete?id0=D10200100100113&id1=001&id2=001
+
+{
+    "message": "No Data Found"
+}
+
+                                

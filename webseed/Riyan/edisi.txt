@@ -4,6 +4,8 @@ Table	: Edisi
 
 1. auth token
 
+localhost:7979/auth/token
+
 {
 	"nama_login" : "tujuhsembilan",
 
@@ -11,8 +13,16 @@ Table	: Edisi
 
 }
 
+=========================================================
+2. ReadAll data di table Edisi
 
-2. Menambah data di table Edisi
+localhost:7979/api/masterdata/MdEdisi/readAll
+
+
+=========================================================
+3. Menambah data di table Edisi
+
+localhost:7979/api/masterdata/MdEdisi/create
 
 /// ke-1
 {
@@ -36,8 +46,19 @@ Table	: Edisi
 
 }
 
+=========================================================
+4. Update data di table edisi
 
-3. Update SKIP
+localhost:7979/api/masterdata/MdEdisi/update?Id0=2017-10-25&Id1=2016-10-25
 
-4. Delete SKIP
+{
+	
+	"KETERANGAN" : "Update KE 1"
 
+}
+
+=========================================================
+5. Delete data di table edisi
+
+
+localhost:7979/api/masterdata/MdEdisi/delete?Id0=2017-10-25&Id1=2016-10-25
