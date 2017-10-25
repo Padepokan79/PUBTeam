@@ -1,0 +1,91 @@
+token :
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDQ3NDQsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTkxMTQ0fQ.WJNqkpTpQchvtGJm5ZEf5xBWDLp1U1PWWLo5hnXsPN0",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+
+READ ALL
+URL		:localhost:7979/api/masterdata/MdUnitKerja/readAll
+
+{
+    "totalItems": 690,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "desc": "BADAN KOORDINASI KELUARGA BERENCANA NASIONAL",
+            "jab_atasa2": "",
+            "jab_atasan": "KEPALA BKKBN KOTA MAKASSAR",
+            "jab_bend": "",
+            "jab_operat": "",
+            "kota": "Makassar,",
+            "nama_atasa": "Drs. H.M. SABIT AT. MM",
+            "nama_bend": "",
+            "nama_opera": "",
+            "nip_atasan": "380003607",
+            "nip_bend": "",
+            "nip_operat": "",
+            "satkerja": "997",
+            "unit": "1"
+        },	
+
+CREATE
+URL	: localhost:7979/api/masterdata/MdUnitKerja/create
+ {
+            "jab_atasa2": "",
+            "jab_atasan": "KEPALA BKKBN KOTA MAKASSAR",
+            "jab_bend": "",
+            "jab_operat": "",
+            "kota": "Makassar,",
+            "nama_atasa": "Drs. H.M. SABIT AT. MM",
+            "nama_bend": "",
+            "nama_opera": "",
+            "nip_atasan": "3",
+            "nip_bend": "",
+            "nip_operat": "",
+            "satkerja": "9",
+            "unit": "1"
+        }
+
+UPDATE
+URL		: localhost:7979/api/masterdata/MdUnitKerja/update?id0=9&id1=3
+{
+    "Model_ID": "$id0=9&$id1=3",
+    "jab_atasa2": "",
+    "jab_atasan": "KEPALA BKKBN KOTA MAKASSAR",
+    "jab_bend": "",
+    "jab_operat": "",
+    "kota": "Makassar,",
+    "nama_atasa": "Drs. H.M. SABIT",
+    "nama_bend": "",
+    "nama_opera": "",
+    "nip_atasan": "3",
+    "nip_bend": "",
+    "nip_operat": "",
+    "satkerja": "9",
+    "unit": "1"
+}
+
+DELETE
+URL		: localhost:7979/api/masterdata/MdUnitKerja/delete?id0=9&id1=3
+{
+    "jab_atasan": "KEPALA BKKBN KOTA MAKASSAR",
+    "jab_operat": "",
+    "unit": "1",
+    "nama_opera": "",
+    "jab_atasa2": "",
+    "nama_atasa": "Drs. H.M. SABIT",
+    "kota": "Makassar,",
+    "jab_bend": "",
+    "nip_bend": "",
+    "nip_operat": "",
+    "satkerja": "9",
+    "nip_atasan": "3",
+    "nama_bend": ""
+}
