@@ -1,0 +1,50 @@
+/*
+Author : Tegar Budi Septian
+File Name : kedudukan_tbl.txt
+Date Created : Tuesday, 24th October, 2017
+Note :there is one primary key.
+*/
+
+/*Getting token*/
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+access_token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTk1MTAsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA1OTEwfQ.me8fBitlTOfedrTkw6DCISAjjMQlQs1pmnIcPmLczpE
+
+
+/*Adding a data to kedudukan_tbl.*/
+request url : localhost:7979/api/masterdata/MdKedudukanTbl/create
+{
+	"KDDUDUKAN" : 666,
+	"NMDUDUKAN" : "Presiden",
+	"BUP_MAX" : 80,
+	"BUP_MIN" : 50,
+	"LEGAL" : "ashduih",
+	"TMT_LEGAL" : "2017-10-24",
+	"PENGALI_TE" : 5.0,
+	"UPDSTAMP" : null
+}
+
+/*Updating a data of kedudukan_tbl.*/
+request url : localhost:7979/api/masterdata/MdKedudukanTbl/update?id=666
+{
+	"nmdudukan" : "Hakim"
+}
+
+
+/*Deleting a data of kedudukan_tbl.*/
+request url : localhost:7979/api/masterdata/MdKedudukanTbl/delete?id=666
+result:
+{
+    "bup_min": 50,
+    "pengali_te": 5,
+    "bup_max": 80,
+    "kddudukan": 666,
+    "tmt_legal": "2017-10-24",
+    "nmdudukan": "Hakim",
+    "legal": "ashduih",
+    "updstamp": 1508820150000
+}
+
+
