@@ -1,0 +1,29 @@
+Sandi Saputra
+
+1. Mengambil token 
+-> localhost:7979/auth/token
+-> {
+	"nama_login" : "hendra",
+	"password" : "11"
+}
+
+2. Menambah data
+-> localhost:7979/api/masterdata/MdTpTbl/create
+-> {
+	"kode_tp" : "123",
+	"ket" : "can mayar",
+	"rp_1" : 10000,
+	"rp_2" : 10000
+}
+
+3. Menampilkan data
+-> localhost:7979/api/masterdata/MdTpTbl/readAll?$Top=2&$Skip=0
+
+4. Mengubah data
+-> localhost:7979/api/masterdata/MdTpTbl/update?kode_tp=123
+-> {
+	"ket" : "ges mayar"
+}
+
+5. Menghapus data
+-> localhost:7979/api/masterdata/MdTpTbl/delete?kode_tp=123
