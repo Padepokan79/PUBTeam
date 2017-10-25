@@ -1,0 +1,57 @@
+[auth token]
+localhost:7979/auth/token
+//dibody
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDIyOTUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg4Njk1fQ.xDjj3tvBAgG7n_ERDIwi4SVeukLOWgpQ-mUnmN3PV3g
+===============================================================================
+[readAll]
+localhost:7979/api/masterdata/MdTbStawin/readAll
+//output
+{
+    "totalItems": 4,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "kd_stawin": "0",
+            "nm_stawin": "SENDIRI"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "kd_stawin": "1",
+            "nm_stawin": "NIKAH"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "kd_stawin": "2",
+            "nm_stawin": "JANDA"
+        },
+        {
+            "Model_ID": "$id0=null",
+            "kd_stawin": "3",
+            "nm_stawin": "DUDA"
+        }
+    ]
+}
+
+=============================================================================
+[create]
+localhost:7979/api/masterdata/MdTbStawin/create
+//dibody
+{
+	"kd_stawin" : "5",
+	"nm_stawin" : "berdua"
+}
+================================================================================
+[update]
+localhost:7979/api/masterdata/MdTbStawin/update?id=5
+//di body
+{
+	"nm_stawin" : "bertiga"
+}
+===============================================================================
+[delete]
+localhost:7979/api/masterdata/MdTbStawin/delete?id=5
