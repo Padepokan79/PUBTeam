@@ -1,0 +1,63 @@
+Nama	: Riyan
+table 	: tzakat_tbl
+
+
+1. auth token
+
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+==============================================
+2. ReadAll data di table tzakat_tbl
+
+
+localhost:7979/api/masterdata/MdTzakatTbl/readAll
+
+
+
+==============================================
+3. Create data di table tzakat_tbl
+
+localhost:7979/api/masterdata/MdTzakatTbl/create
+
+{
+	"nip" : "0204151028",
+
+	"blthgaji" : "2017-10-25",
+
+	"kdjnstrans" : 1,
+
+	"kode" : 0,
+
+	"nilai" : 0,
+
+	"rpinfaq" : 0
+
+}
+
+
+
+==============================================
+4. Update data di table tzakat_tbl
+
+localhost:7979/api/masterdata/MdTzakatTbl/update?Id0=0204151028&Id1=2017-10-25&Id2=1
+
+{
+	"nilai" : 9,
+
+	"rpinfaq" : 5000000
+
+}
+
+
+
+==============================================
+5. Delete data di table tzakat_tbl
+
+localhost:7979/api/masterdata/MdTzakatTbl/delete?Id0=0204151028&Id1=2017-10-25&Id2=1

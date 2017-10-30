@@ -15,7 +15,13 @@ localhost:7979/auth/token
 }
 
 ==================================================
-2. Create di table jab_akd_dprd
+2. ReadAll data di table jab_akd_dprd
+
+localhost:7979/api/masterdata/MdJabAkdDprd/readAll
+
+
+==================================================
+3. Create di table jab_akd_dprd
 
 localhost:7979/api/masterdata/MdJabAkdDprd/create
 
@@ -30,7 +36,7 @@ localhost:7979/api/masterdata/MdJabAkdDprd/create
 }
 
 ==================================================
-3. Update di table jab_akd_dprd (PUT)
+4. Update di table jab_akd_dprd (PUT)
 
 localhost:7979/api/masterdata/MdJabAkdDprd/update?kd_jab=6
 
@@ -44,7 +50,7 @@ Param : key (kd_jab), value(6)
 }
 
 ==================================================
-4. Delete di table jab_akd_dprd (DELETE)
+5. Delete di table jab_akd_dprd (DELETE)
 
 localhost:7979/api/masterdata/MdJabAkdDprd/delete?kd_jab=6
 
