@@ -1,0 +1,401 @@
+@Table skpp_pegawai
+
+>>CREATE<<
+localhost:7979/api/masterdata/MdSkkpPegawai/create
+
+ {
+            
+"tglgaji": "2017-03-01",
+            
+"kdjnstrans": 1,
+            
+"nip": "195603101978081997",
+            
+"nama": "H. RAIN.B",
+           
+"glrdepan": "",
+            
+"glrbelakang": "",
+            
+"kdjenkel": 2,
+            
+"tgllhr": "1956-03-10",
+            
+"kdstawin": 1,
+            
+"jistri": 0,
+            
+"janak": 0,
+            
+"kdstapeg": 23,
+            
+"tmtstop": "2017-04-01",
+            
+"kdpangkat": "3C",
+            
+"masker": 28,
+            
+"prsngapok": 100,
+            
+"tmttabel": "2017-01-01",
+            
+"kdeselon": "00",
+            
+"kdfungsi": "00000",
+            
+"kdguru": "000",
+            
+"kdstruk": 0,
+            
+"kdberas": 2,
+            
+"kdlangka": 0,
+            
+"kdterpencil": "000",
+            
+"kdtkd": 0,
+            
+"kdtjkhusus": "00000",
+            
+"kdkorpri": "0",
+            
+"kdkoperasi": "0",
+            
+"kdirdhata": "0",
+            
+"gapok" : 3385300,
+            
+"tjistri": 0,
+            
+"tjanak": 0,
+            
+"tjtpp": 0,
+            
+"tjeselon": 0,
+            
+"tjfungsi": 0,
+            
+"tjstruk": 0,
+            
+"tjguru": 0,
+            
+"tjlangka": 0,
+            
+"tjtkd": 0,
+            
+"tjterpencil": 0,
+            
+"tjkhusus": 0,
+            
+"tjberas": 58050,
+            
+"tjpajak": 98304,
+            
+"tjaskes": 0,
+            
+"tjumum": 185000,
+            
+"tjkk": 0,
+            
+"tjkm": 0,
+            
+"tbulat": 80,
+            
+"kotor": 3726734,
+            
+"piwp": 338530,
+            
+"piwp2": 338530,
+            
+"piwp8": 338530,
+            
+"paskes": 0,
+            
+"ppajak": 98304,
+            
+"pbulog": 0,
+            
+"ptaperum": 7000,
+            
+"psewa": 0,
+            
+"phutang": 0,
+            
+"pkorpri": 0,
+            
+"pirdhata": 0,
+            
+"pkoperasi": 0,
+            
+"pjkk": 0,
+            
+"pjkm": 0,
+            
+"potongan": 443834,
+            
+"bersih": 3282900,
+            
+"nodosir": "0000",
+            
+"kdssbp": "001",
+            
+"kdskpd": "009",
+            
+"kdsatker": "D10200100900001",
+            
+"npwp": "00.000.00.0-000.000",
+            
+"niplama" : " ",
+            
+"kdhitung": 1,
+            
+"kodebyr" : " ",
+            
+"norek" : "02356",
+            
+"catatan": " ",
+            
+"jenisskpp": 1,
+            
+"nomorskpp": "SKPP0074/032012",
+            
+"tglskpp": "2012-03-08",
+            
+"jabkepala": "Plh. KEPALA BIRO PENGELOLAAN KEUANGAN",
+            
+"nipkepala": "197007271993032006",
+            
+"nmkepala": "Hj. YULISWANI, SE, MM",
+            
+"penerbitskep": "BKN",
+            
+"nomorskep": "00163/KEP/HIV/21700/11",
+            
+"tglskep": "2011-11-15",
+            
+"penpok": 2272800,
+            
+"tmtpensiun" : "2011-11-15",
+            
+"pindahke": "",
+            
+"tmtpindah": "2012-04-01",
+            
+"tglwafat": "2011-11-15",
+            
+"hutang": 0,
+            
+"kethutang": "",
+            
+"kethutang1": "",
+            
+"kethutang2": "",
+            
+"kethutang3": "",
+            
+"tglcetak" : "2011-11-15",
+            
+"nmkel1": "H.M. NUSYIRWAN",
+            
+"nmkel2": "",
+            
+"nmkel3": "",
+            
+"nmkel4": "",
+            
+"nmkel5": "",
+            
+"nmkel6": "",
+            
+"nmkel7": "",
+            
+"tgllhr1": "1952-10-17",
+            
+"tgllhr2": "1952-10-17",
+            
+"tgllhr3": "1952-10-17",
+            
+"tgllhr4": "1952-10-17",
+            
+"tgllhr5": "1952-10-17",
+            
+"tgllhr6": "1952-10-17",
+            
+"tgllhr7": "1952-10-17",
+            
+"ket1" : "",
+            
+"ket2": "",
+            
+"ket3": "",
+            
+"ket4": "",
+            
+"ket5": "",
+            
+"ket6": "",
+            
+"ket7": "",
+            
+"tem1": "Asli untuk ybs guna dilampirkan pada Pensiun Pertama",
+            
+"tem2": "Kepala Kantor Regional VII BKN Palembang",
+            
+"tem3": "Kepala PT Taspen (Persero) Cabang Bengkulu di Bengkulu",
+            
+"tem4": "Bendahara Gaji Dinas pendapatan Daerah Provinsi Bengkulu",
+            
+"tem5": "Pertinggal",
+            "tem6": "",
+            "tem7": "",
+            
+"tem8": "Bendahara Gaji Dinas pendapatan Daerah Provinsi Bengkulu",
+            
+"tem9": "Pertinggal",
+            "tem10": "",
+            "tem11": "",
+            
+"jnsskpp": 1,
+            "nomanual" : 0
+        
+}
+
+>>READ ALL<<
+localhost:7979/api/masterdata/MdSkkpPegawai/readAll
+
+>>UPDATE<<
+localhost:7979/api/masterdata/MdSkkpPegawai/update?id0=195603101978081997
+
+ {
+            "tglgaji": "2017-03-01",
+            "kdjnstrans": 1,
+            "nama": "H. RAIN.B",
+            "glrdepan": "",
+            "glrbelakang": "WASYUKRULILLAH",
+            "kdjenkel": 2,
+            "tgllhr": "1956-03-10",
+            "kdstawin": 1,
+            "jistri": 0,
+            "janak": 0,
+            "kdstapeg": 23,
+            "tmtstop": "2017-04-01",
+            "kdpangkat": "3C",
+            "masker": 28,
+            "prsngapok": 100,
+            "tmttabel": "2017-01-01",
+            "kdeselon": "00",
+            "kdfungsi": "00000",
+            "kdguru": "000",
+            "kdstruk": 0,
+            "kdberas": 2,
+            "kdlangka": 0,
+            "kdterpencil": "000",
+            "kdtkd": 0,
+            "kdtjkhusus": "00000",
+            "kdkorpri": "0",
+            "kdkoperasi": "0",
+            "kdirdhata": "0",
+            "gapok" : 3385300,
+            "tjistri": 0,
+            "tjanak": 0,
+            "tjtpp": 0,
+            "tjeselon": 0,
+            "tjfungsi": 0,
+            "tjstruk": 0,
+            "tjguru": 0,
+            "tjlangka": 0,
+            "tjtkd": 0,
+            "tjterpencil": 0,
+            "tjkhusus": 0,
+            "tjberas": 58050,
+            "tjpajak": 98304,
+            "tjaskes": 0,
+            "tjumum": 185000,
+            "tjkk": 0,
+            "tjkm": 0,
+            "tbulat": 80,
+            "kotor": 3726734,
+            "piwp": 338530,
+            "piwp2": 338530,
+            "piwp8": 338530,
+            "paskes": 0,
+            "ppajak": 98304,
+            "pbulog": 0,
+            "ptaperum": 7000,
+            "psewa": 0,
+            "phutang": 0,
+            "pkorpri": 0,
+            "pirdhata": 0,
+            "pkoperasi": 0,
+            "pjkk": 0,
+            "pjkm": 0,
+            "potongan": 443834,
+            "bersih": 3282900,
+            "nodosir": "0000",
+            "kdssbp": "001",
+            "kdskpd": "009",
+            "kdsatker": "D10200100900001",
+            "npwp": "00.000.00.0-000.000",
+            "niplama" : " ",
+            "kdhitung": 1,
+            "kodebyr" : " ",
+            "norek" : "02356",
+            "catatan": "puas bgt dapet 129 field",
+            "jenisskpp": 1,
+            "nomorskpp": "SKPP0074/032012",
+            "tglskpp": "2012-03-08",
+            "jabkepala": "Plh. KEPALA BIRO PENGELOLAAN KEUANGAN",
+            "nipkepala": "197007271993032006",
+            "nmkepala": "Hj. YULISWANI, SE, MM",
+            "penerbitskep": "BKN",
+            "nomorskep": "00163/KEP/HIV/21700/11",
+            "tglskep": "2011-11-15",
+            "penpok": 2272800,
+            "tmtpensiun" : "2011-11-15",
+            "pindahke": "",
+            "tmtpindah": "2012-04-01",
+            "tglwafat": "2011-11-15",
+            "hutang": 0,
+            "kethutang": "",
+            "kethutang1": "",
+            "kethutang2": "",
+            "kethutang3": "",
+            "tglcetak" : "2011-11-15",
+            "nmkel1": "H.M. NUSYIRWAN",
+            "nmkel2": "",
+            "nmkel3": "",
+            "nmkel4": "",
+            "nmkel5": "",
+            "nmkel6": "",
+            "nmkel7": "",
+            "tgllhr1": "1952-10-17",
+            "tgllhr2": "1952-10-17",
+            "tgllhr3": "1952-10-17",
+            "tgllhr4": "1952-10-17",
+            "tgllhr5": "1952-10-17",
+            "tgllhr6": "1952-10-17",
+            "tgllhr7": "1952-10-17",
+            "ket1" : "",
+            "ket2": "",
+            "ket3": "",
+            "ket4": "",
+            "ket5": "",
+            "ket6": "",
+            "ket7": "",
+            "tem1": "Asli untuk ybs guna dilampirkan pada Pensiun Pertama",
+            "tem2": "Kepala Kantor Regional VII BKN Palembang",
+            "tem3": "Kepala PT Taspen (Persero) Cabang Bengkulu di Bengkulu",
+            "tem4": "Bendahara Gaji Dinas pendapatan Daerah Provinsi Bengkulu",
+            "tem5": "Pertinggal",
+            "tem6": "",
+            "tem7": "",
+            "tem8": "Bendahara Gaji Dinas pendapatan Daerah Provinsi Bengkulu",
+            "tem9": "Pertinggal",
+            "tem10": "",
+            "tem11": "",
+            "jnsskpp": 1,
+            "nomanual" : 0
+        }
+
+>>DELETE<<
+localhost:7979/api/masterdata/MdSkkpPegawai/delete?id0=1233456778
