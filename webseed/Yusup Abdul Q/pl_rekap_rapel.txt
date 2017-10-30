@@ -1,0 +1,51 @@
+bY YUSUP ABDUL Q
+>>>>>>>>DAPAT TOKEN<<<<<<<<<<
+mencari token
+wEB-URL :localhost:7979/auth/token
+
+BODY : 
+{
+	
+	"nama_login"  : "tujuhsembilan",
+
+	"password" : "a"
+
+} 
+
+>>>>>>>>PADA TABEL PL_REKAP_RAPEL<<<<<<<<<<
+
+menampilkan semua data pada tabel pl_rekap_rapel
+
+WE-URL :localhost:7979/api/masterdata/MdPlrekapRapel/readAll
+
+menambah data pada tabel pl_rekap_rapel 
+
+WEB-URL :localhost:7979/api/masterdata/MdPlrekapRapel/create
+
+BODY :
+{
+	
+	"nip" : "196308031986092010",
+	
+	"nama" : "Yusup Abdul Qohar"
+
+}
+
+mengubah data pada tabel pl_rekap_rapel
+
+WEB-URL:localhost:7979/api/masterdata/MdPlrekapRapel/update?nip=02034
+
+BODY :
+{
+	
+	"nama" : "Yusup A"
+
+}
+
+menghapus pada tabel pl_rekap_rapel
+
+WEB-URL :localhost:7979/api/masterdata/MdPlrekapRapel/delete?nip=02034
+
+
+
+
