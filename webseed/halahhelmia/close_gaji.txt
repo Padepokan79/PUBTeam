@@ -9,6 +9,9 @@
 
 }
 
+>>readAll
+
+
 >>create
 {
 	
@@ -43,3 +46,11 @@ localhost:7979/api/masterdata/MdCloseGaji/update?id0=2017-10-25&id1=1
 }
 
 >>delete
+localhost:7979/api/masterdata/MdCloseGaji/delete?id0=2017-10-25&id1=1
+//output
+{
+    "tglgaji": "2017-10-25",
+    "kdjnstrans": 1,
+    "status": 5,
+    "updstamp": 1509004633000
+}
