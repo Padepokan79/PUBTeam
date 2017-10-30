@@ -1,0 +1,30 @@
+bY YUSUP ABDUL Q
+>>>>>>>>DAPAT TOKEN<<<<<<<<<<
+mencari token
+wEB-URL :localhost:7979/auth/token
+
+BODY : 
+{
+	
+	"nama_login"  : "tujuhsembilan",
+
+	"password" : "a"
+
+} 
+
+>>>>>>>>PADA TABEL Tuser_tbl<<<<<<<<<<
+
+menampilkan semua data pada tabel Tuser_tbl
+
+WE-URL :localhost:7979/api/masterdata/MdTusertbl/readAll?$top=1&$skip=0
+
+menambah data pada tabel Tuser_tbl 
+
+
+mengubah data pada tabel Tuser_tbl
+
+
+
+menghapus pada tabel Tuser_tbll
+
+

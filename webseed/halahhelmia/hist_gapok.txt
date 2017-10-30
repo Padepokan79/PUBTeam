@@ -1,0 +1,36 @@
+@Table hist_gapok
+
+>>READ ALL<<
+localhost:7979/api/masterdata/MdHistGaji/readAll
+
+>>CREATE<<
+localhost:7979/api/masterdata/MdHistGaji/create
+
+{
+	"NIP" : "195907171983021017",
+	
+	"TMTBERLAKU" : "2017-01-01",
+	
+	"KDPANGKAT" : "3D",
+	
+	"GAPOK" : 1978700,
+	
+	"MASKER" : 17,
+	
+	"NOSKEP" : "822.4/8510/BKD",
+	
+	"TGLSKEP" : "2017-01-01",
+	
+	"PENERBITSKEP" : "Presiden",
+	
+	"TGLUPDATE" : "2017-06-16"
+}
+
+>>UPDATE<<
+localhost:7979/api/masterdata/MdHistGaji/update?id0=54321&id1=2017-10-01
+{
+	"GAPOK" : 2000000
+}
+
+>>DELETE<<
+localhost:7979/api/masterdata/MdHistGaji/delete?id0=54321&id1=2017-10-01

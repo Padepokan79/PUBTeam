@@ -1,0 +1,147 @@
+////Token
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+{
+    	"password": "0cc175b9c0f1b6a831c399e269772661",
+    
+	"token_type": "Bearer",
+    
+	"scope": null,
+    
+	"expires_in": 86400000,
+    
+	"status": "success",
+    
+	"access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTU5NDYsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAyMzQ2fQ.L-qkGRxuQYcU9keJZDZ2UQYqcbaQmxVgqrQ_qple2i8",
+    
+	"id": 79,
+    
+	"nama_login": "tujuhsembilan"
+
+}
+
+//Read All
+localhost:7979/api/masterdata/MdIndAsJiwa/readAll
+
+{
+    	"totalItems": 0,
+    
+	"items": []
+
+}
+
+//Create
+localhost:7979/api/masterdata/MdIndAsJiwa/create
+
+{
+	"nip" : "010122831         ",
+	
+	"nama" : "MARSIMAN, S.Sos                                   ",
+	
+	"kdstapeg" :1,
+	"tmtpeserta" : "2016-12-12",
+	
+	"kdpangkat" : "4A",
+	
+	"gapok": 4000000,
+	
+	"kdjiwa":"1",
+	
+	"tarif":2,
+	
+	"iuran":2000,
+	
+	"nmskpd" :"SETDA PROVINSI BENGKULU                                               ",
+	
+	"kdskpd" :"07",
+	
+	"norek" :"12345",
+	
+	"tglgaji": "2007-09-09"
+	
+
+}
+
+{
+	"nip" : "080037047",
+	
+	"nama" : "IR. YUSFIQ RIZAL",
+	
+	"kdstapeg" :1,
+	
+	"tmtpeserta" : "2016-12-12",
+	
+	"kdpangkat" : "4A",
+	
+	"gapok": 4000000,
+	
+	"kdjiwa":"1",
+	
+	"tarif":2,
+	
+	"iuran":2000,
+	
+	"nmskpd" :"SETDA PROVINSI BENGKULU                                               ",
+	
+	"kdskpd" :"07",
+	
+	"norek" :"12345",
+	
+	"tglgaji": "2007-09-09"
+	
+
+}
+
+////Read All
+
+localhost:7979/api/masterdata/MdIndAsJiwa/readAll
+
+//// Update
+
+localhost:7979/api/masterdata/MdIndAsJiwa/update?id=12345
+
+{
+	"nama" : "Yunita"
+ }
+
+{
+    "Model_ID": "$id0=null",
+    
+	"gapok": 4000000,
+    
+	"iuran": 2000,
+    
+	"kdjiwa": "1",
+    
+	"kdpangkat": "4A",
+    
+	"kdskpd": "07",
+    
+	"kdstapeg": 1,
+    
+	"nama": "Yunita",
+    
+	"nip": "12345",
+    
+	"nmskpd": "SETDA PROVINSI BENGKULU                                               ",
+    
+	"norek": "12345",
+    
+	"tarif": 2,
+    
+	"tglgaji": "2007-09-09",
+    
+	"tmtpeserta": "2016-12-12"
+
+}
+
+////Delete
+
+localhost:7979/api/masterdata/MdIndAsJiwa/delete?id=12345

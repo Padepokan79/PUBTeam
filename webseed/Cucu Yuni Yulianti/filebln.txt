@@ -2,12 +2,39 @@ Nama : Cucu Yuni Yulianti
 
 Tabel : filebln
 
-
+1. mengambil token 
 {
 	"nama_login" : "tujuhsembilan",
 
 	"password" : "a"
 
 } 
-auth token
+auth token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTY0NzIsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgyODcyfQ.4X7gYTekGk6r6ABtpsQgDZB3aKOsvUB_os6u2xr7jpE
 
+
+2. read table filebln
+localhost:7979/api/masterdata/MdFileBln/readAll
+
+3. Insert table filebln
+ {
+            "Model_ID": "$id0-1",
+            "curr_dd": 32,
+            "curr_mm": 0,
+            "name_mm": "New Moon",
+            "prev_dd": 32,
+            "prev_mm": 0
+        }
+
+localhost:7979/api/masterdata/MdFileBln/create
+
+
+4. update table filebln
+
+{
+	"NAME_MM" : "Update"
+}
+
+localhost:7979/api/masterdata/MdFileBln/update?id0=0
+
+5. delete di table filebln
+localhost:7979/api/masterdata/MdFileBln/delete?id0=0

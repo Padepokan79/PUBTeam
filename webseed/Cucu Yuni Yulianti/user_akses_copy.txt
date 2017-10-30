@@ -1,0 +1,25 @@
+user_akses_copy
+
+1. auth token
+{
+"nama_login" : "tujuhsembilan"
+}
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDM0NzUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg5ODc1fQ.90lV1xGHFCj6Mrf4J5TSKkxiEAWFeh-iOJiPmxdt9vE
+
+2. read user_akses_copy
+localhost:7979/api/masterdata/MdUserAksesCopy/readAll
+
+3. insert user_akses_copy
+{
+    "Model_ID": "$id0=cucuyuni&$id1=a1",
+    "kdskpd": "a1",
+    "pemakai": "cucuyuni"
+}
+
+localhost:7979/api/masterdata/MdUserAksesCopy/create
+
+4. update
+note : table user_akses_copy hanya terdiri dr 2 field dan 22nya merupakan primary key, jd datanya tdk bisa di update
+
+5. delete user_akses_copy
+localhost:7979/api/masterdata/MdUserAksesCopy/delete?id0=cucuyuni&id1=0

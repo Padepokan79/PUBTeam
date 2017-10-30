@@ -1,0 +1,246 @@
+token:
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+  
+  "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    
+"access_token": 
+"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDA1MzUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg2OTM1fQ.4DHWeAuhBgMSwm3FBC5I9Blurx3IpMA5_papsbcMkyo",
+  
+  "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+READ ALL
+URL 		:
+
+{
+    "totalItems": 52,
+    "items":
+	 [
+        {
+            "Model_ID": "$id0=null",
+		
+            "alamat": " ",
+		
+            "jab_bendahara": "BENDAHARA PENGELUARAN",
+		
+            "jab_kepala": "Plt. Sekretaris Daerah Provinsi Bengkulu                    ",
+ 
+		           "jab_pembuatdaftar": "PEMBUAT DAFTAR GAJI",
+		
+            "kddati1": "07",
+		
+            "kddati2": "00",
+ 
+		           "kdskpd": "",
+
+		            "kdssbp": "001",
+ 
+		           "kota": "",
+		
+            "nipbendahara": "197901261998031004",
+		
+            "nipkepala": "195904231981021002",
+		
+            "nippembuatdaftar": "198211132003122004",
+		
+            "nmbendahara": "MUHAMMAD ERWIN, AMD",
+		
+            "nmkepala": "Drs. H. SUMARDI, MM",
+		
+            "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM",
+		
+            "nmskpd": "SETDA PROVINSI BENGKULU                                               ",
+ 
+		           "norek": "",
+		
+            "notelp": "",
+		
+            "npwp": ""
+        },
+		
+        {
+            "Model_ID": "$id0=null",
+
+		            "alamat": " ",
+		
+            "bank_prsp": "                                                                                                    ",
+ 
+		           "jab_bendahara": "Bendahara Pengeluaran                                       ",
+		
+            "jab_kepala": "Plt. SEKRETARIS DAERAH PROVINSI BENGKULU                    ",
+		
+            "jab_pembuatdaftar": "Pembuat Daftar Gaji                                         ",
+		
+            "kddati1": "07",
+  
+		          "kddati2": "00",
+		
+            "kdskpd": "001",
+		
+            "kdssbp": "001",
+ 
+		           "kota": "BENGKULU                      ",
+
+		            "nipbendahara": "197502101998031005",
+ 
+		           "nipkepala": "196205021989031016",
+		
+            "nippembuatdaftar": "198211132003122004",
+		
+            "nmbendahara": "JAMIL AZHARI,A.Md",
+ 
+		           "nmkepala": "H. GOTRI SUYANTO, SE,M.Soc,Sc",
+
+		            "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM",
+		
+            "nmskpd": "SEKRETARIAT DAERAH BENGKULU",
+		
+            "norek": "                    ",
+		            "notelp": "                              ",
+ 
+		           "npwp": "                         "
+        }
+	]
+}
+
+CREATE 	
+URL 				: localhost:7979/api/masterdata/MdSkpdtbl/create
+{
+    "Model_ID": "$id0=-1",
+ 
+	   "alamat": "kemantren",
+
+	    "id": -1,
+    "jab_bendahara": "BENDAHARA",
+	
+    "jab_kepala": "Plt. Sekretaris ",
+	
+    "jab_pembuatdaftar": "PEMBUAT DAFTAR GAJI",
+	
+    "kddati1": "1",
+	
+    "kddati2": "1",
+
+	    "kdskpd": "1",
+	
+    "kdssbp": "1",
+
+	    "kota": "",
+
+	    "nipbendahara": "197901261998031004",
+	
+    "nipkepala": "195904231981021002",
+	
+    "nippembuatdaftar": "198211132003122004",
+	
+    "nmbendahara": "MUHAMMAD ERWIN, AMD",
+	
+    "nmkepala": "Drs. H. MN",
+
+	    "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM",
+
+	    "nmskpd": "SETDA PROVINSI cirebon                                               ",
+
+	    "norek": "",
+    "notelp": "",
+    "npwp": ""
+}
+	  {
+    "norek": "",
+    "kddati1": "2",
+    "jab_kepala": "Plt. Sekretaris ",
+    "kddati2": "2",
+    "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM",
+    "nmkepala": "Drs. H. MN",
+    "jab_bendahara": "BENDAHARA",
+    "kota": "",
+    "nmskpd": "SETDA PROVINSI cirebon                                               ",
+    "nippembuatdaftar": "198211132003122004",
+    "notelp": "",
+    "npwp": "",
+    "kdssbp": "1",
+    "jab_pembuatdaftar": "PEMBUAT DAFTAR GAJI",
+    "nipkepala": "195904231981021002",
+    "kdskpd": "1",
+    "nipbendahara": "197901261998031004",
+    "alamat": "sumber",
+    "nmbendahara": "MUHAMMAD ERWIN, AMD"
+}
+
+	{
+	        "alamat": "kemantren",
+            "jab_bendahara": "BENDAHARA",
+            "jab_kepala": "Plt. Sekretaris ",
+            "jab_pembuatdaftar": "PEMBUAT DAFTAR GAJI",
+            "kddati1": "2",
+            "kddati2": "2",
+            "kdskpd": "1",
+            "kdssbp": "1",
+            "kota": "",
+            "nipbendahara": "197901261998031004",
+            "nipkepala": "195904231981021002",
+            "nippembuatdaftar": "198211132003122004",
+            "nmbendahara": "MUHAMMAD ERWIN, AMD",
+            "nmkepala": "Drs. H. MN",
+            "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM",
+            "nmskpd": "SETDA PROVINSI cirebon                                               ",
+            "norek": "",
+            "notelp": "",
+            "npwp": ""
+}
+
+UPDATE 		: localhost:7979/api/masterdata/MdSkpdtbl/update?id0=2&id1=2&id2=1&id3=1
+
+
+{
+    "Model_ID": "$id0=2&$id1=2&$id2=1&$id3=1",
+    "alamat": "sumber",
+    "jab_bendahara": "BENDAHARA",
+    "jab_kepala": "Plt. Sekretaris ",
+    "jab_pembuatdaftar": "PEMBUAT DAFTAR GAJI",
+    "kddati1": "2",
+    "kddati2": "2",
+    "kdskpd": "1",
+    "kdssbp": "1",
+    "kota": "",
+    "nipbendahara": "197901261998031004",
+    "nipkepala": "195904231981021002",
+    "nippembuatdaftar": "198211132003122004",
+    "nmbendahara": "MUHAMMAD ERWIN, AMD",
+    "nmkepala": "Drs. H. MN",
+    "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM",
+    "nmskpd": "SETDA PROVINSI cirebon                                               ",
+    "norek": "",
+    "notelp": "",
+    "npwp": ""
+}
+
+DELETE 	
+URL	:  localhost:7979/api/masterdata/MdSkpdtbl/delete?id0=2&id1=2&id2=1&id3=1
+
+{
+    "norek": "",
+    "kddati1": "2",
+    "jab_kepala": "Plt. Sekretaris ",
+    "kddati2": "2",
+    "nmpembuatdaftar": "Hj. MUSDALIFAH, SE, MM",
+    "nmkepala": "Drs. H. MN",
+    "jab_bendahara": "BENDAHARA",
+    "kota": "",
+    "nmskpd": "SETDA PROVINSI cirebon                                               ",
+    "nippembuatdaftar": "198211132003122004",
+    "notelp": "",
+    "npwp": "",
+    "kdssbp": "1",
+    "jab_pembuatdaftar": "PEMBUAT DAFTAR GAJI",
+    "nipkepala": "195904231981021002",
+    "kdskpd": "1",
+    "nipbendahara": "197901261998031004",
+    "alamat": "sumber",
+    "nmbendahara": "MUHAMMAD ERWIN, AMD"
+}
