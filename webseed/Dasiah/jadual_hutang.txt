@@ -1,0 +1,76 @@
+// ----> Tabel 3 (jadual_hutang) <----
+// ----------------------------------
+1. auto token 
+url : localhost:7979/auth/token
+Hasilnya : 
+{
+  "password": "0cc175b9c0f1b6a831c399e269772661",
+  "token_type": "Bearer",
+  "scope": null,
+  "expires_in": 86400000,
+  "status": "success",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTU0NTYsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTAxODU2fQ.EcDAR8Jc_mwRNSooHbk14m1GWnK-UpjDQaZmOSVq2aU",
+  "id": 79,
+  "nama_login": "tujuhsembilan"
+}
+
+2. read all
+url : localhost:7979/api/masterdata/MdJadualHutang/readAll?$top=1&$skip=0
+{
+  "totalItems": 0,
+  "items": []
+}
+
+3. create
+url : localhost:7979/api/masterdata/MdJadualHutang/create
+{
+	"nip" : 1 ,
+	"urut" : 2 ,
+	"tgl_potong" : "2016-08-07" ,
+	"kode_lbg" : "001" ,
+	"jumlah" : 100 ,
+	"kd_lunas" : 10 ,
+	"tgl_lunas" : "2017-08-07"
+}
+Hasilnya :
+{
+  "Model_ID": "$id0=1&$id1=2&$id2=2016-08-07",
+  "jumlah": 100,
+  "kd_lunas": 10,
+  "kode_lbg": "001",
+  "nip": 1,
+  "tgl_lunas": "2017-08-07",
+  "tgl_potong": "2016-08-07",
+  "urut": 2
+}
+4. update
+url : localhost:7979/api/masterdata/MdJadualHutang/update?id0=1&id1=2&id2=2016-08-07
+{
+
+	"jumlah" : 5
+
+}
+Hasilnya : 
+{
+  "Model_ID": "$id0=1&$id1=2&$id2=2016-08-07",
+  "jumlah": 5,
+  "kd_lunas": 10,
+  "kode_lbg": "001",
+  "nip": "1",
+  "tgl_lunas": "2017-08-07",
+  "tgl_potong": "2016-08-07",
+  "urut": 2
+}
+
+5. delete
+url : localhost:7979/api/masterdata/MdJadualHutang/delete?id0=1&id1=2&id2=2016-08-07
+Hasilnya :
+{
+  "urut": 2,
+  "kd_lunas": 10,
+  "tgl_potong": "2016-08-07",
+  "jumlah": 5,
+  "tgl_lunas": "2017-08-07",
+  "nip": "1",
+  "kode_lbg": "001"
+}

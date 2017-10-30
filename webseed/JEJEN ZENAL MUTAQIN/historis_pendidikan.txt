@@ -22,6 +22,8 @@ localhost:7979/api/masterdata/MdHistorisPendidikan/readAll
 3.-----------------------------------------------------------------------------
 Insert data ke-1 pada tabel historis_pendidikan
 
+localhost:7979/api/masterdata/MdHistorisPendidikan/create
+
  {
 
 	"nip": "195811101984111002",
@@ -72,3 +74,23 @@ Insert data ke-1 pada tabel historis_pendidikan
 
 }
 
+================================================================================
+
+
+4.------------------------------------------------------------------------------
+ update data
+
+localhost:7979/api/masterdata/MdHistorisPendidikan/update?id0=195811101984111002&id1=2017-10-24&id2=2017-12-31
+
+{
+	"penerbit": "PUB UNAS PASIM"
+}
+================================================================================
+
+
+4.------------------------------------------------------------------------------
+delete data
+
+localhost:7979/api/masterdata/MdHistorisPendidikan/delete?id0=195811101984111002&id1=2017-10-24&id2=2017-12-31
+
+=================================================================================

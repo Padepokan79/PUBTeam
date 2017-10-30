@@ -1,0 +1,203 @@
+Nama	: Riyan
+table	: mstpegawai_03
+
+
+1. aut Token MdMstPegawai03
+
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+============================================================================
+2. ReadAll MdMstPegawai03
+
+localhost:7979/api/masterdata/MdMstPegawai03/readAll?$top=5&$skip=0
+
+jumlah data : 4213
+
+
+============================================================================
+3. Create table di MdMstPegawai03
+
+
+localhost:7979/api/masterdata/MdMstPegawai03/create
+
+
+{
+	"NIP" : "0204151028",
+
+	"NAMA" : "RIYAN TURMUDI",
+
+	"GLRDEPAN" : "",
+
+	"GLRBELAKANG" : "",
+
+	"KDJENKEL" : 1,
+
+	"TEMPATLHR" : "TASIKMALAYA",
+
+	"TGLLHR" : "1997-03-26",
+
+	"AGAMA" : 1,
+
+	"PENDIDIKAN" : "SARJANA",
+
+	"TMTCAPEG" : "2016-10-10",
+
+	"TMTSKTM" : "",
+
+	"KDSTAWIN" : 1,
+	"JISTRI" : 1,
+
+	"JANAK" : 10,
+
+	"KDSTAPEG" : 4,
+
+	"TMTSTOP" : "2017-10-10",
+
+	"KDPANGKAT" : "4A",
+
+	"MKGOLT" : 0,
+
+	"BLGOLT" : 0,
+
+	"GAPOK" : 4000000,
+
+	"MASKER" : 22,
+
+	"PRSNGAPOK" : 100,
+
+	"TMTTABEL" : "2017-10-10",
+
+	"TMTKGB" : "2017-10-10",
+
+	"TMTKGBYAD" : "2017-10-10",
+
+	"KDESELON" : "00",
+
+	"TJESELON" : 0,
+
+	"KDFUNGSI" : "01501",
+
+	"TJFUNGSI" : 1000000,
+
+	"BUP" : 58,
+
+	"KDSTRUK" : 0,
+
+	"TJSTRUK" : 0,
+
+	"KDGURU" : "001",
+
+	"TJGURU" : 0,
+
+	"KDBERAS" : 2,
+
+	"KDLANGKA" : 0,
+
+	"TJLANGKA" : 0,
+
+	"KDTKD" : 0,
+
+	"TJTKD" : 0,
+
+	"KDTERPENCIL" : "000",
+
+	"TJTERPENCIL" : 0,
+
+	"KDTJKHUSUS" : "00000",
+
+	"TJKHUSUS" : 0,
+
+	"KDKORPRI" : "0",
+
+	"PKORPRI" : 0,
+
+	"KDKOPERASI" : "0",
+
+	"PKOPERASI" : 0,
+
+	"KDIRDHATA" : "0",
+
+	"PIRDHATA" : 0,
+
+	"TAPERUM" : 10000,
+
+	"PSEWA" : 0,
+
+	"NODOSIR" : "0000",
+
+	"KDCABTASPEN" : "",
+
+	"KDSSBP" : "001",
+
+	"KDSKPD" : "014",
+
+	"KDSATKER" : "D10200101400013",
+
+	"ALAMAT" : "",
+
+	"KDDATI4" : "000",
+
+	"KDDATI3" : "00",
+
+	"KDDATI2" : "00",
+
+	"KDDATI1" : "07",
+
+	"NOTELP" : "",
+
+	"NPWP" : "",
+
+	"NIPLAMA" : "",
+
+	"KDHITUNG" : 1,
+
+	"KODEBYR" : "0000",
+
+	"NOREK" : "",
+
+	"TMTBERLAKU" : "2017-10-10",
+
+	"CATATAN" : "",
+
+	"KDJNSTRANS" : 1,
+
+	"UPDSTAMP" : "2017-10-10 14:14:14",
+
+	"INPUTER" : "TASPEN",
+
+	"NIP_LAMA" : "",
+
+	"NOKARPEG" : ""
+
+}
+
+
+============================================================================
+4. Update table di MdMstPegawai03 (PUT)
+
+
+localhost:7979/api/masterdata/MdMstPegawai03/update?NIP=0204151028
+
+Param: key(NIP), value(0204151028)
+
+{
+	"NAMA" : "Choirul Huda",
+
+	"GAPOK" : 4000000
+
+}
+
+
+============================================================================
+5. Delete table di MdMstPegawai03
+
+localhost:7979/api/masterdata/MdMstPegawai03/delete?NIP=0204151028
+
+Param : key(NIP), value(0204151028)

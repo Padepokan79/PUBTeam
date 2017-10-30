@@ -1,0 +1,34 @@
+[auth token]
+localhost:7979/auth/token
+//dibody
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+//token
+eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MTM0NDEsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTk5ODQxfQ.pJkycNP7ETyVx3NixYTuLmbkw73nY-Ali4RNZkh1R4s
+
+=====================================================================================
+[readAll]
+localhost:7979/api/masterdata/MdTkdTbl/readAll
+=======================================================================================
+[create]
+localhost:7979/api/masterdata/MdTkdTbl/create
+//dibody
+{
+	"kdtkd": 1,
+    "nmtkd": "ILFA SRI DESY",
+    "tkd": 0,
+    "tmt": "2017-10-25"
+}
+==================================================================================================
+[update]
+localhost:7979/api/masterdata/MdTkdTbl/update?id0=2017-10-25&id1=1
+//di body
+{
+	"nmtkd" : "ILFA CANTIK"
+}
+
+==========================================================
+[delete]
+localhost:7979/api/masterdata/MdTkdTbl/delete?id0=2017-10-26&id1=2

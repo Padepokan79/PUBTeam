@@ -22,6 +22,9 @@ localhost:7979/api/masterdata/MdJenisPeg/readAll
 3.-----------------------------------------------------------------------------
 Insert data ke-1 pada tabel MdJenisPeg
 
+
+localhost:7979/api/masterdata/MdJenisPeg/create
+
 {
             "kd_jns": 5,
             "nm_jns": "Pegawai Harian"

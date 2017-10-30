@@ -22,6 +22,9 @@ localhost:7979/api/masterdata/MdFgaji_baru_1/readAll
 3.-----------------------------------------------------------------------------
 Insert data ke-1 pada tabel fgaji_baru_1
 
+
+localhost:7979/api/masterdata/MdFgaji_baru_1/create
+
 {
 	
     "tglgaji": "2017-10-24",

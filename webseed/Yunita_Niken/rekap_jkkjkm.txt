@@ -1,0 +1,213 @@
+1. auth token 
+
+localhost:7979/auth/token
+
+coding :
+
+{
+	
+"nama_login" : "tujuhsembilan",
+	
+"password" : "a"
+
+}
+
+output : 
+{
+   
+ "password": "0cc175b9c0f1b6a831c399e269772661",
+    
+"token_type": "Bearer",
+    
+"scope": null,
+    
+"expires_in": 86400000,
+   
+ "status": "success",
+   
+ "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTUzOTgsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgxNzk4fQ.EWhwA571DokQzHJxvWmaJSBk1h3kNStnWzbbdGKydH0",
+    
+"id": 79,
+    
+"nama_login": "tujuhsembilan"
+
+}
+
+
+2. readAll
+
+localhost:7979/api/masterdata/MdRekapJkkjkm/readAll
+
+output : 
+{
+    
+"totalItems": 0,
+   
+ "items": []
+
+}
+
+3. create :
+
+localhost:7979/api/masterdata/MdRekapJkkjkm/create
+
+coding : 
+
+{
+	
+"tglgaji" : "2011-01-01",
+
+"KdJnsTrans" : 13,
+
+"kdskpd" : "kd1",
+
+"kdsatker" : "create satu",
+
+"gapok" : 2000000,
+
+"iuran_jkk" : 100000,
+
+"iuran_jkm" : 50000,
+
+"updstamp" : "2011-02-02 04:05:08"
+
+}
+
+{
+	
+"tglgaji" : "2011-01-01",
+
+"KdJnsTrans" : 13,
+
+"kdskpd" : "kd1",
+
+"kdsatker" : "create dua",
+
+"gapok" : 2000000,
+
+"iuran_jkk" : 100000,
+
+"iuran_jkm" : 50000,
+"updstamp": "2011-02-02 08:08:08"
+
+}
+
+
+output : 
+{
+    
+"Model_ID": "$id0=2011-01-01&$id1=null",
+    
+"gapok": 2000000,
+    
+"iuran_jkk": 100000,
+    
+"iuran_jkm": 50000,
+    
+"kdjnstrans": 13,
+    
+"kdsatker": "create dua",
+    
+"kdskpd": "kd1",
+    
+"tglgaji": "2011-01-01",
+    
+"updstamp": "2011-02-02 04:05:08"
+
+}
+
+{
+    
+"Model_ID": "$id0=2011-01-01&$id1=null",
+    
+"gapok": 2000000,
+    
+"iuran_jkk": 100000,
+    
+"iuran_jkm": 50000,
+    
+"kdjnstrans": 13,
+    
+"kdsatker": "create dua",
+    
+"kdskpd": "kd1",
+    
+"tglgaji": "2011-01-01",
+"updstamp": "2011-02-02 08:08:08"}
+
+
+4. update :
+
+localhost:7979/api/masterdata/MdRekapJkkjkm/update?id0=2011-02-03&id1=11
+
+coding :
+
+{
+	
+
+
+
+"kdsatker" : "update satu",
+
+
+"gapok" : 2500000,
+
+
+"iuran_jkk" : 150000,
+
+
+"iuran_jkm" : 55000
+
+
+
+}
+
+
+output : 
+{
+    
+"Model_ID": "$id0=2011-02-03&$id1=null",
+    
+"gapok": 2500000,
+    
+"iuran_jkk": 150000,
+    
+"iuran_jkm": 55000,
+    
+"kdjnstrans": 11,
+    
+"kdsatker": "update satu",
+    
+"kdskpd": "kd1",
+    
+"tglgaji": "2011-02-03",
+    
+"updstamp": 1296608888000
+
+}
+
+5. delete ;
+
+localhost:7979/api/masterdata/MdRekapJkkjkm/delete?id0=2011-02-03&id1=11
+
+output : 
+
+{
+    
+"tglgaji": "2011-02-03",
+    
+"kdjnstrans": 11,
+    
+"kdsatker": "update satu",
+    
+"iuran_jkm": 55000,
+    
+"gapok": 2500000,
+    
+"iuran_jkk": 150000,
+    
+"kdskpd": "kd1",
+    
+"updstamp": 1296608888000
+
+}
