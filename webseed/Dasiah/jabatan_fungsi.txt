@@ -1,0 +1,68 @@
+// ----> Tabel 4 (jabatan_fungsi) <----
+// ----------------------------------
+1. auto token 
+url : localhost:7979/auth/token
+Hasilnya :
+{
+  "password": "0cc175b9c0f1b6a831c399e269772661",
+  "token_type": "Bearer",
+  "scope": null,
+  "expires_in": 86400000,
+  "status": "success",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4MTgyMzYsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTA0NjM2fQ.hbJVX1JE1lBO_h1_0m2zYnF1fj7Iim1qAa-uvsZcr9M",
+  "id": 79,
+  "nama_login": "tujuhsembilan"
+}
+
+2. read All
+url : localhost:7979/api/masterdata/MdJabatanFungsi/readAll?$top=3&$skip=0
+Hasilnya :
+{
+  "totalItems": 39,
+  "items": [
+    {
+      "Model_ID": "$id0=null",
+      "kdfungsi": 0,
+      "nmfungsi": "NON JABATAN"
+    },
+    {
+      "Model_ID": "$id0=null",
+      "kdfungsi": 1,
+      "nmfungsi": "FUNGSIONAL HUB.MASYARAKAT"
+    },
+    {
+      "Model_ID": "$id0=null",
+      "kdfungsi": 2,
+      "nmfungsi": "FUNGSIONAL PENELITI"
+    }
+  ]
+}
+
+3. create
+url : localhost:7979/api/masterdata/MdJabatanFungsi/create
+Hasilnya :
+{
+  "Model_ID": "$id0=-1",
+  "id": -1,
+  "kdfungsi": 39,
+  "nmfungsi": "PENGAWASAN BADAY"
+}
+
+4. update
+url : localhost:7979/api/masterdata/MdJabatanFungsi/update?id=39
+Hasilnya :
+{
+  "Model_ID": "$id0=null",
+  "kdfungsi": 39,
+  "nmfungsi": "PENGAWASAN KECE BADAY"
+}
+5. delete
+url : localhost:7979/api/masterdata/MdJabatanFungsi/delete?id=39
+Hasilnya :
+{
+
+  "nmfungsi": "PENGAWASAN KECE BADAY",
+
+  "kdfungsi": 39
+
+}

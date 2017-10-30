@@ -1,0 +1,53 @@
+// ----> Tabel 2 (f_spt) <----
+// ----------------------------------
+1. auto token
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+
+2. readAll
+{
+  "totalItems": 13008,
+  "items": [
+    {
+      "Model_ID": "$id0=null",
+      "kdsatker": "                    ",
+      "kdskpd": "   ",
+      "nama": "HERAWATI S.PD                                     ",
+      "nip": "197906252007012003",
+      "nourt": 1,
+      "th_pajak": 2016
+    },
+    {
+      "Model_ID": "$id0=null",
+      "kdsatker": "                    ",
+      "kdskpd": "   ",
+      "nama": "VIVIEN OKTAVIANTI                                 ",
+      "nip": "198110212005022002",
+      "nourt": 2,
+      "th_pajak": 2016
+    },
+    {
+      "Model_ID": "$id0=null",
+      "kdsatker": "                    ",
+      "kdskpd": "   ",
+      "nama": "ITA DESTI                                         ",
+      "nip": "198411262014022001",
+      "nourt": 3,
+      "th_pajak": 2016
+    }
+  ]
+}
+
+3. create
+{
+  "Model_ID": "$id0=-1",
+  "id": -1,
+  "kdsatker": "",
+  "kdskpd": "",
+  "nama": "Dasiah S.Kom",
+  "nip": "197906252007012027",
+  "nourt": 1,
+  "th_pajak": 2.16
+}
