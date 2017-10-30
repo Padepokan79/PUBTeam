@@ -1,0 +1,70 @@
+Nama	: Riyan
+table	: tblokasi
+
+
+1. auth token
+
+localhost:7979/auth/token
+
+{
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+====================================================
+2.ReadAll data di table tblokasi 
+
+localhost:7979/api/masterdata/MdTbLokasi/readAll?$top=5&$skip=0
+
+jumlah data : 104043
+
+====================================================
+3.Create data di table tblokasi 
+
+localhost:7979/api/masterdata/MdTbLokasi/create
+
+{
+	"KDDATI1" : "99",
+
+	"NMDATI1" : "Ciawi",
+
+	"KTDATI1" : "Tasikmalaya",
+
+	"KDDATI2" : "99",
+
+	"NMDATI2" : "Priangan Timur",
+
+	"KTDATI2" : "Priangan Timur",
+
+	"KDDATI3" : "99",
+
+	"NMDATI3" : "KLUET UTARA",
+
+	"KDDATI4" : "99",
+
+	"NMDATI4" : "Jawa Barat",
+
+	"_NullFlags" : ""
+
+}
+
+====================================================
+4.Update data di table tblokasi 
+
+
+localhost:7979/api/masterdata/MdTbLokasi/update?Id0=99&Id1=99&Id2=99&Id3=99
+
+{
+	"NMDATI1" : "Tarikolot, Ciawi",
+
+	"NMDATI3" : "Tasik UTARA"
+
+}
+
+
+====================================================
+5.Delete data di table tblokasi 
+
+localhost:7979/api/masterdata/MdTbLokasi/delete?Id0=99&Id1=99&Id2=99&Id3=99

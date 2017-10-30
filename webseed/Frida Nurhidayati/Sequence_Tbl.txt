@@ -1,0 +1,153 @@
+//Geting token
+localhost:7979/auth/token
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+
+    "token_type": "Bearer",
+
+    "scope": null,
+ 
+   "expires_in": 86400000,
+
+    "status": "success",
+
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTc4NTksInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg0MjU5fQ.5SQy0vWaBnV31FMUeSQ7M_X6JYqiD_2vxtAKWNQoIp8",
+
+    "id": 79,
+
+    "nama_login": "tujuhsembilan"
+
+}
+
+//ReadAll
+localhost:7979/api/masterdata/MdSequenceTbl/readAll
+{
+    "totalItems": 1,
+
+    "items": [
+        
+	{
+            
+		"Model_ID": "$id0=1",
+	
+        "bulan": 10,
+ 
+	        "cseqnum": "00064",
+
+            	"idnum": 1,
+
+                "ket": "/SKPP/PMD.3/",
+
+                "seqnum": 64,
+
+                "tahun": 2011
+        
+	}
+
+]
+}
+
+//Create
+localhost:7979/api/masterdata/MdSequenceTbl/create
+
+create ke 1
+{
+            "bulan": 11,
+
+            "cseqnum": "00065",
+
+            "idnum": 2,
+
+            "ket": "/SKPP/PMD.34",
+
+            "seqnum": 65,
+
+            "tahun": 2017
+        
+}
+output:
+{
+    "Model_ID": "$id0=2",
+
+    "bulan": 11,
+
+    "cseqnum": "00065",
+
+    "idnum": 2,
+
+    "ket": "/SKPP/PMD.34",
+
+    "seqnum": 65,
+
+    "tahun": 2017
+
+}
+
+create ke 2
+ {
+            "bulan": 12,
+
+            "cseqnum": "00066",
+
+            "idnum": 3,
+
+            "ket": "/SKPP/PMD.35",
+
+            "seqnum": 66,
+
+            "tahun": 2017
+
+ }
+output:
+{
+    "Model_ID": "$id0=3",
+
+     "bulan": 12,
+
+    "cseqnum": "00066",
+
+    "idnum": 3,
+
+    "ket": "/SKPP/PMD.35",
+
+    "seqnum": 66,
+
+    "tahun": 2017
+
+}
+
+//update
+localhost:7979/api/masterdata/MdSequenceTbl/update?id=3
+update ket yang asalnya ket:"/SKPP/PMD.35" jadi "ket": "/SKPP/PDD.37"
+{
+	"ket": "/SKPP/PDD.37"
+}
+
+output:
+{
+    "Model_ID": "$id0=3",
+
+    "bulan": 12,
+
+    "cseqnum": "00066",
+
+    "idnum": 3,
+
+    "ket": "/SKPP/PDD.37",
+
+    "seqnum": 66,
+
+    "tahun": 2017
+
+}
+
+//delete
+localhost:7979/api/masterdata/MdSequenceTbl/delete?id=3
+{
+    "message": "No Data Found"
+}
+
+
+{
+	"ket": "/SKPP/PDD.37"
+}
