@@ -1,0 +1,78 @@
+///Token
+
+{
+	"nama_login" :"tujuhsembilan",
+	
+	"password" :"a"
+
+}
+
+{
+    	"password": "0cc175b9c0f1b6a831c399e269772661",
+    
+	"token_type": "Bearer",
+    
+	"scope": null,
+    
+	"expires_in": 86400000,
+    
+	"status": "success",
+    
+	"access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MTM3NDUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA5MDAwMTQ1fQ.1Z-ChGR0-CrD99_4gvR6rJ-RBZ3yNen9KCNtyY2PhSY",
+    
+	"id": 79,
+    
+	"nama_login": "tujuhsembilan"
+
+}
+
+
+///Read All
+
+localhost:7979/api/masterdata/MdZakatTbl/readAll?$top=2&$skip=0
+
+
+///Create
+
+localhost:7979/api/masterdata/MdZakatTbl/create
+
+{
+ 	"blthgaji": "2017-04-01",
+            
+	"kdjnstrans": 1,
+            
+	"kode": 0,
+            
+	"nilai": 0,
+            
+	"nip": "12345"
+        
+}
+
+localhost:7979/api/masterdata/MdZakatTbl/create
+
+{
+      	"blthgaji": "2017-04-01",
+            
+	"kdjnstrans": 1,
+            
+	"kode": 0,
+            
+	"nilai": 0,
+            
+	"nip": "54321"
+        
+}
+
+///Update
+
+localhost:7979/api/masterdata/MdZakatTbl/update?id0=12345&id1=2017-04-01&id2=1
+
+{
+	"nilai": 1
+}
+
+
+///Delete
+
+localhost:7979/api/masterdata/MdZakatTbl/delete?id0=54321&id1=2017-04-01&id2=1

@@ -8,6 +8,7 @@ jabatan_tbl
 
 }
 
+token : eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTQ5MzMsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTgxMzMzfQ.TS-9kI4y7H-G3qq0iZ4NjOycQWWF_xjz0tAsfhCYEGs
 
 2. Insert ke table  jabatan_tbl
 {
@@ -30,3 +31,17 @@ jabatan_tbl
 }
 
 localhost:7979/api/masterdata/MdJabatanTbl/create
+
+3. update table jabatan_tbl
+{
+   
+    "nmjabatan": "Update Nama FUNGSIONAL"
+ 
+}
+
+localhost:7979/api/masterdata/MdJabatanTbl/update?id0=2017-01-01&id1=10101
+
+4. delete table jabatan_tbl
+localhost:7979/api/masterdata/MdJabatanTbl/delete?id0=2017-01-01&id1=10101
+
+5. localhost:7979/api/masterdata/MdJabatanTbl/readAll
