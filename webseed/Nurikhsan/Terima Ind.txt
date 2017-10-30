@@ -1,0 +1,32 @@
+1. Read All
+Url : localhost:7979/api/masterdata/MdTerimaInd/readAll
+2. Create
+Url : localhost:7979/api/masterdata/MdTerimaInd/create
+body
+{
+            "kddati1": "04",
+            "kddati2": "29",
+            "kdsatker": "D10200901000029",
+            "kdskpd": "010",
+            "nip": "010122831",
+            "sukses": 1,
+            "timestamp": "2019-12-12"
+        }
+3. Create
+body
+{
+    "Model_ID": "$id0=null&$id1=12&$id2=null",
+    "kddati1": "12",
+    "kddati2": "91",
+    "kdsatker": "D10200901000209",
+    "kdskpd": "010",
+    "nip": "010122831",
+    "sukses": 1,
+    "timestamp": "2019-12-12"
+}
+4. Update
+Url : localhost:7979/api/masterdata/MdTerimaInd/update?id0=010122831&id1=00&id2=00
+Body
+{"kdsatker": "D10200901000333"}
+5.Delete
+localhost:7979/api/masterdata/MdTerimaInd/delete?id0=010122831&id1=00&id2=00

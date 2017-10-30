@@ -1,0 +1,140 @@
+// ----> Tabel 2 (skpp_ttd) <----
+// ----------------------------------
+1. auth token 
+{
+	"nama_login" : "tujuhsembilan",
+	"password" : "a"
+}
+Hasil :
+{
+  "password": "0cc175b9c0f1b6a831c399e269772661",
+  "token_type": "Bearer",
+  "scope": null,
+  "expires_in": 86400000,
+  "status": "success",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg4OTgyMzUsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg0NjM1fQ.A-7-YNVktEHCtcP0zmHwkSuT_spwgFLNVS19EpW9AS8",
+  "id": 79,
+  "nama_login": "tujuhsembilan"
+}
+2. read All
+url : localhost:7979/api/masterdata/MdSkppTtd/readAll?$top=3&$skip=0
+Hasil :
+{
+  "totalItems": 143,
+  "items": [
+    {
+      "Model_ID": "$id0=null",
+      "jnsskpp": 1,
+      "nip": "195204151972121001",
+      "ttd_jab1_kanan": "Plt. KEPALA BADAN PENGELOLAAN KEUANGAN DAERAH",
+      "ttd_jab2_kanan": "",
+      "ttd_jab3_kanan": "",
+      "ttd_jab4_kanan": "",
+      "ttd_nip_kanan": "197004031991031001",
+      "ttd_nm_kanan": "H. HERU SUSANTO, SE, MM"
+    },
+    {
+      "Model_ID": "$id0=null",
+      "jnsskpp": 1,
+      "nip": "195609241982021001",
+      "ttd_jab1_kanan": "Plt. KEPALA BADAN PENGELOLAAN KEUANGAN DAERAH",
+      "ttd_jab2_kanan": "",
+      "ttd_jab3_kanan": "",
+      "ttd_jab4_kanan": "",
+      "ttd_nip_kanan": "197004031991031001",
+      "ttd_nm_kanan": "H. HERU SUSANTO, SE, MM"
+    },
+    {
+      "Model_ID": "$id0=null",
+      "jnsskpp": 0,
+      "nip": "195611041984031011",
+      "ttd_jab1_kanan": "Plt. KEPALA BIRO PENGELOLAAN KEUANGAN,",
+      "ttd_jab2_kanan": "",
+      "ttd_jab3_kanan": "",
+      "ttd_jab4_kanan": "",
+      "ttd_nip_kanan": "197010062002121002",
+      "ttd_nm_kanan": "TAUPIQ ADUN, SE, M.Si"
+    }
+  ]
+}
+3. create
+url : localhost:7979/api/masterdata/MdSkppTtd/create
+{
+	"nip" : "195204151972121027",
+	"jnsskpp" : 5 ,
+	"ttd_jab1_kiri" : "" ,
+	"ttd_jab2_kiri" : "" ,
+	"ttd_jab3_kiri" : "" ,
+	"ttd_jab4_kiri" : "" ,
+	"ttd_nm_kiri" : "" ,
+	"ttd_nip_kiri" : "" ,
+	"ttd_jab1_kanan" : "Plt. KECE BADAY" ,
+	"ttd_jab2_kanan" : "" ,
+	"ttd_jab3_kanan" : "" ,
+	"ttd_jab4_kanan" : "" ,
+	"ttd_nm_kanan" : "Hj. DASIAH, S.Kom" ,
+	"ttd_nip_kanan" : "197004031991031027"
+}
+Hasil :
+{
+  "Model_ID": "$id0=-1",
+  "id": -1,
+  "jnsskpp": 5,
+  "nip": "195204151972121027",
+  "ttd_jab1_kanan": "Plt. KECE BADAY",
+  "ttd_jab1_kiri": "",
+  "ttd_jab2_kanan": "",
+  "ttd_jab2_kiri": "",
+  "ttd_jab3_kanan": "",
+  "ttd_jab3_kiri": "",
+  "ttd_jab4_kanan": "",
+  "ttd_jab4_kiri": "",
+  "ttd_nip_kanan": "197004031991031027",
+  "ttd_nip_kiri": "",
+  "ttd_nm_kanan": "Hj. DASIAH, S.Kom",
+  "ttd_nm_kiri": ""
+}
+
+4. update
+url : localhost:7979/api/masterdata/MdSkppTtd/update?id0=1&id1=5
+
+{
+	"ttd_nm_kanan" : "Hj. CECE LOVECO, S.Kom"
+}
+Hasil :
+{
+  "Model_ID": "$id0=1&$id1=5",
+  "jnsskpp": 5,
+  "nip": "1",
+  "ttd_jab1_kanan": "Plt. KECE BADAY",
+  "ttd_jab1_kiri": "",
+  "ttd_jab2_kanan": "",
+  "ttd_jab2_kiri": "",
+  "ttd_jab3_kanan": "",
+  "ttd_jab3_kiri": "",
+  "ttd_jab4_kanan": "",
+  "ttd_jab4_kiri": "",
+  "ttd_nip_kanan": "197004031991031027",
+  "ttd_nip_kiri": "",
+  "ttd_nm_kanan": "Hj. CECE LOVECO, S.Kom",
+  "ttd_nm_kiri": ""
+}
+5. delete
+url : localhost:7979/api/masterdata/MdSkppTtd/delete?id0=1&id1=5
+Hasil :
+{
+  "ttd_nm_kiri": "",
+  "jnsskpp": 5,
+  "ttd_jab4_kiri": "",
+  "ttd_jab2_kiri": "",
+  "ttd_jab1_kiri": "",
+  "ttd_nm_kanan": "Hj. CECE LOVECO, S.Kom",
+  "ttd_jab3_kanan": "",
+  "ttd_jab2_kanan": "",
+  "ttd_nip_kiri": "",
+  "ttd_jab4_kanan": "",
+  "ttd_jab1_kanan": "Plt. KECE BADAY",
+  "ttd_jab3_kiri": "",
+  "nip": "1",
+  "ttd_nip_kanan": "197004031991031027"
+}

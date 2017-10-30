@@ -1,0 +1,146 @@
+token
+{
+    "password": "0cc175b9c0f1b6a831c399e269772661",
+    "token_type": "Bearer",
+    "scope": null,
+    "expires_in": 86400000,
+    "status": "success",
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDg5MDMwMTAsInN1YiI6IlRVSlVIU0VNQklMQU4iLCJpc3MiOiJ3YWthIiwiZXhwIjoxNTA4OTg5NDEwfQ.ilpsfreI7fhrzUzCrurLFKuysUGMIeVavIN8BQqym6Y",
+    "id": 79,
+    "nama_login": "tujuhsembilan"
+}
+
+read all
+URL		:localhost:7979/api/masterdata/MdTbLain/readAll
+
+{
+    "totalItems": 1,
+    "items": [
+        {
+            "Model_ID": "$id0=null",
+            "anak": 0.02,
+            "askes": 0,
+            "beras": 49500,
+            "biaya": 0.05,
+            "byjabatan": 500000,
+            "bypensiun": 0.0475,
+            "istri": 0.1,
+            "iwp": 0.1,
+            "lain": 0,
+            "php1": 0.05,
+            "php2": 0.15,
+            "php3": 0.2,
+            "php4": 0.3,
+            "php5": 0.3,
+            "pkp1": 50000000,
+            "pkp2": 250000000,
+            "pkp3": 500000000,
+            "pkp4": 500000000,
+            "pkp5": 500000000,
+            "tpp": 0
+        }
+    ]
+}
+
+CREATE
+URL		:localhost:7979/api/masterdata/MdTbLain/create
+
+{
+    "Model_ID": "$id0=-1",
+    "anak": 0.01,
+    "askes": 0,
+    "beras": 49500,
+    "biaya": 0.05,
+    "byjabatan": 500000,
+    "bypensiun": 0.0475,
+    "id": -1,
+    "istri": 0.1,
+    "iwp": 0.1,
+    "lain": 0,
+    "php1": 0.05,
+    "php2": 0.15,
+    "php3": 0.2,
+    "php4": 0.3,
+    "php5": 0.3,
+    "pkp1": 90000000,
+    "pkp2": 90000000,
+    "pkp3": 900000000,
+    "pkp4": 900000000,
+    "pkp5": 900000000,
+    "tpp": 0
+}
+{
+    "Model_ID": "$id0=-1",
+    "anak": 0.01,
+    "askes": 96,
+    "beras": 49500,
+    "biaya": 96,
+    "byjabatan": 500000,
+    "bypensiun": 0.0475,
+    "id": -1,
+    "istri": 0.1,
+    "iwp": 0.1,
+    "lain": 0,
+    "php1": 0.05,
+    "php2": 0.15,
+    "php3": 0.2,
+    "php4": 0.3,
+    "php5": 0.3,
+    "pkp1": 90000000,
+    "pkp2": 90000000,
+    "pkp3": 900000000,
+    "pkp4": 900000000,
+    "pkp5": 900000000,
+    "tpp": 0
+}
+
+UPDATE 
+URL		: localhost:7979/api/masterdata/MdTbLain/update?id0=96&id1=96
+{
+    "Model_ID": "$id0=96.0&$id1=96.0",
+    "anak": 0.2,
+    "askes": 96,
+    "beras": 49500,
+    "biaya": 96,
+    "byjabatan": 500000,
+    "bypensiun": 0.0475,
+    "istri": 0.1,
+    "iwp": 0.1,
+    "lain": 0,
+    "php1": 0.05,
+    "php2": 0.15,
+    "php3": 0.2,
+    "php4": 0.3,
+    "php5": 0.3,
+    "pkp1": 90000000,
+    "pkp2": 90000000,
+    "pkp3": 900000000,
+    "pkp4": 900000000,
+    "pkp5": 900000000,
+    "tpp": 0
+}
+
+DELETE
+URL		: localhost:7979/api/masterdata/MdTbLain/delete?id0=96&id1=96
+{
+    "anak": 0.2,
+    "pkp4": 900000000,
+    "php3": 0.2,
+    "byjabatan": 500000,
+    "lain": 0,
+    "bypensiun": 0.0475,
+    "php4": 0.3,
+    "php1": 0.05,
+    "pkp2": 90000000,
+    "pkp1": 90000000,
+    "askes": 96,
+    "tpp": 0,
+    "beras": 49500,
+    "iwp": 0.1,
+    "istri": 0.1,
+    "biaya": 96,
+    "pkp3": 900000000,
+    "php5": 0.3,
+    "php2": 0.15,
+    "pkp5": 900000000
+}

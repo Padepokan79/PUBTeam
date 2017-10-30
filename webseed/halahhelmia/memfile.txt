@@ -1,0 +1,32 @@
+@Table memfile
+
+>>READ ALL<<
+localhost:7979/api/masterdata/MdMemfile/readAll
+
+>>CREATE<<
+localhost:7979/api/masterdata/MdMemfile/create
+
+{
+	"TAHUN" : 2017,
+	
+	"KODE" : "SPM",
+	
+	"TEKSAWAL" : "SPM",
+	
+	"NOMOR" : 1,
+	
+	"TEKS" : "/",
+	
+	"NMONTH" : 1,
+	
+	"NYEAR" : 1
+}
+
+>>UPDATE<<
+localhost:7979/api/masterdata/MdMemfile/update?id0=2017&id1=SPMm
+{
+	"TEKSAWAL" : "SPMm"
+}
+
+>>DELETE<<
+localhost:7979/api/masterdata/MdMemfile/delete?id0=2017&id1=SPMm

@@ -1,0 +1,27 @@
+1. Read All
+Url : localhost:7979/api/masterdata/MdSatkerPindahan/readAll
+2. Create
+Url : localhost:7979/api/masterdata/MdSatkerPindahan/create
+Body:
+{
+            "kddati1": "00",
+            "kddati2": "00",
+            "kdsatker_l": "D10200202300229     ",
+            "kdskpd": "023",
+            "kdssbp": "002",
+            "nmsatker_l": "PNS BLI JELAS                                                       "
+        }
+3. Create 2
+{
+            "kddati1": "00",
+            "kddati2": "00",
+            "kdsatker_l": "D10200202300209     ",
+            "kdskpd": "023",
+            "kdssbp": "002",
+            "nmsatker_l": "PNS BLI JELAS                                                       "
+        }
+4. Update
+Url : localhost:7979/api/masterdata/MdSatkerPindahan/update?id=D10200202300229     
+Body : {"nmsatker_l": "PNS Bli Jelas Pisan "}  
+5. Delete 
+Url : localhost:7979/api/masterdata/MdSatkerPindahan/delete?id=D10200202300209   

@@ -1,0 +1,27 @@
+1. read all
+url: localhost:7979/api/masterdata/MdFspt/readAll?$top=10&$skip=0
+
+2. Create 1
+url : localhost:7979/api/masterdata/MdFspt/create
+{
+            "kdsatker": "                    ",
+            "kdskpd": "   ",
+            "nama": "Terserah                                     ",
+            "nip": "237906252007012003",
+            "nourt": 1,
+            "th_pajak": 2016
+        }
+
+3. Create 2
+{
+            "kdsatker": "                    ",
+            "kdskpd": "   ",
+            "nama": "Terserah bae lah                                     ",
+            "nip": "297906252007012003",
+            "nourt": 1,
+            "th_pajak": 2016
+        }
+
+4.  Update 
+url : localhost:7979/api/masterdata/MdFspt/update?id=196403201985032003
+5. Delete 
