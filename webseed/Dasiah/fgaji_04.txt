@@ -1,0 +1,249 @@
+				// ----> Selasa, 24 Oktober 2017 <----
+
+// ----> Tabel 1 (fgaji_04) <----
+// ----------------------------------
+
+1. auto token
+{
+
+	"nama_login" : "tujuhsembilan",
+
+	"password" : "a"
+
+}
+
+2. readAll
+url : localhost:7979/api/masterdata/MdFgaji04/readAll?$top=1&$skip=0
+{
+
+  "totalItems": 16869,
+
+  "items":
+ [
+
+    {
+
+      "Model_ID": "$id0=null",
+
+      "bersih": 2354800,
+
+      "catatan": "DATA MIGRASI AWAL                                 ",
+
+      "gapok": 1852500,
+      "glrbelakang": "                              ",
+
+      "glrdepan": "                              ",
+
+      "hal": 1,
+
+      "janak": 2,
+
+      "jistri": 1,
+
+      "kdberas": 2,
+
+      "kdeselon": "00",
+
+      "kdfungsi": "00000",
+
+      "kdguru": "006",
+
+      "kdhitung": 1,
+
+      "kdirdhata": "  ",
+
+      "kdjenkel": 1,
+
+      "kdjnstrans": 1,
+
+      "kdkoperasi": "  ",
+
+      "kdkorpri": "  ",
+
+      "kdlangka": 0,
+
+      "kdpangkat": "2A",
+
+      "kdsatker": "D10200612200001     ",
+
+      "kdskpd": "122",
+
+      "kdssbp": "006",
+
+      "kdstapeg": 4,
+
+      "kdstawin": 2,
+
+      "kdstruk": 0,
+
+      "kdterpencil": "000",
+
+      "kdtjkhusus": "00000",
+
+      "kdtkd": 0,
+
+      "kodebyr": "000       ",
+
+      "kotor": 2570985,
+
+      "masker": 5,
+
+      "nama": "SUANDI",
+
+      "nip": "196811052007011019",
+
+      "niplama": "450019147",
+
+      "nodosir": "0         ",
+
+      "norek": "                                        ",
+
+      "npwp": "                    ",
+
+      "nu": 1,
+      "paskes": 0,
+
+      "pbulog": 0,
+
+      "phutang": 0,
+
+      "pirdhata": 0,
+
+      "piwp": 211185,
+
+      "pkoperasi": 0,
+
+      "pkorpri": 0,
+
+      "potongan": 216185,
+
+      "ppajak": 0,
+
+      "prsngapok": 100,
+
+      "psewa": 0,
+
+      "ptaperum": 5000,
+
+      "tbulat": 95,
+
+      "tglgaji": "2014-04-01",
+
+      "tgllhr": "1968-11-05",
+
+      "tjanak": 74100,
+
+      "tjaskes": 0,
+
+      "tjberas": 279040,
+
+      "tjeselon": 0,
+
+      "tjfungsi": 0,
+
+      "tjguru": 0,
+
+      "tjistri": 185250,
+
+      "tjkhusus": 0,
+
+      "tjlangka": 0,
+
+      "tjpajak": 0,
+
+      "tjstruk": 0,
+
+      "tjterpencil": 0,
+
+      "tjtkd": 0,
+
+      "tjtpp": 0,
+
+      "tjumum": 180000,
+
+      "tmttabel": "2013-01-01"
+
+    }
+
+  ]
+
+}
+
+3. create
+url : localhost:7979/api/masterdata/MdFgaji04/create
+{
+	"TGLGAJI" : "2014-04-01" ,
+	"KDJNSTRANS" : 1 ,
+	"NIP" : "196811052007011027" ,
+	"NAMA" : "Dasiah" ,
+	"GLRDEPAN" : "Drs, " ,
+	"GLRBELAKANG" : "S.Kom" ,
+	"KDJENKEL" : 1 ,
+	"TGLLHR" : "1997-08-07" ,
+	"KDSTAWIN" : 1 ,
+	"JISTRI" : 0 ,
+	"JANAK" : 0 ,
+	"KDSTAPEG" : 4 ,
+	"TMTSTOP" : "0000-00-00" ,
+	"KDPANGKAT" : "2A" ,
+	"MASKER" : 3 ,
+	"PRSNGAPOK" : 100.00 ,
+	"TMTTABEL" : "2013-01-01" ,
+	"KDESELON" : "00" ,
+	"KDFUNGSI" : "00000" ,
+	"KDGURU" : "006" ,
+	"KDSTRUK" : 0 ,
+	"KDBERAS" : 0 ,
+	"KDLANGKA" : 0 ,
+	"KDTERPENCIL" : "000" ,
+	"KDTKD" : 0 ,
+	"KDTJKHUSUS" : "00000" ,
+	"KDKORPRI" : "" ,
+	"KDKOPERASI" : "" ,
+	"KDIRDHATA" : "" ,
+	"GAPOK" : 3000000 ,
+	"TJISTRI" : 0 ,
+	"TJANAK" : 0 ,
+	"TJTPP" : 0 ,
+	"TJESELON" : 0 ,
+	"TJFUNGSI" : 0 ,
+	"TJSTRUK" : 0 ,
+	"TJGURU" : 0 ,
+	"TJLANGKA" : 0 ,
+	"TJTKD" : 0 ,
+	"TJTERPENCIL" : 0 ,
+	"TJKHUSUS" : 0 ,
+	"TJBERAS" : 0 ,
+	"TJPAJAK" : 100000 ,
+	"TJASKES" : 0 ,
+	"TJUMUM" : 0 ,
+	"TBULAT" : 7 ,
+	"KOTOR" : 4000000 ,
+	"PIWP" : 100000 ,
+	"PASKES" : 0 ,
+	"PPAJAK" : 0 ,
+	"PBULOG" : 0 ,
+	"PTAPERUM" : 5000 ,
+	"PSEWA" : 0 ,
+	"PHUTANG" : 0 ,
+	"PKORPRI" : 0 ,
+	"PIRDHATA" : 0 ,
+	"PKOPERASI" : 0 ,
+	"POTONGAN" : 100000 ,
+	"BERSIH" : 3500000 ,
+	"NODOSIR" : "0" ,
+	"KDSSBP" : "006" ,
+	"KDSKPD" : 122 ,
+	"KDSATKER" : "D10200612200001" ,
+	"NPWP" : "" ,
+	"NIPLAMA" : "450019147" ,
+	"KDHITUNG" : 1 ,
+	"KODEBYR" : "000" ,
+	"NOREK" : "" ,
+	"CATATAN" : "DATA MIGRASI AWAL" ,
+	"NU" : 1 ,
+	"HAL" : 1 
+}
+4. update (Masih not found)
+url : localhost:7979/api/masterdata/MdFgaji04/update?id0=2014-04-01&id1=1&id2="1"
+

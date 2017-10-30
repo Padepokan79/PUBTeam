@@ -1,0 +1,24 @@
+
+@Table hak_akses
+
+>>READ ALL<<
+localhost:7979/api/masterdata/MdHakAkses/readAll
+
+>>CREATE<<
+localhost:7979/api/masterdata/MdHakAkses/create
+
+{
+	"PEMAKAI" : "Male",
+	
+	"KODEAKSES" : "12345"
+}
+
+>>UPDATE<<
+localhost:7979/api/masterdata/MdHakAkses/update?id0=123abc
+
+{
+	"pemakai" : "hahaha"
+}
+
+>>DELETE<<
+localhost:7979/api/masterdata/MdHakAkses/delete?id0=123abc

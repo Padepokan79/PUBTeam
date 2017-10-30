@@ -22,6 +22,8 @@ localhost:7979/api/masterdata/Mdgagal1721a2/readAll
 3.-----------------------------------------------------------------------------
 Insert data ke-1 pada tabel Mdgagal_1721_a2
 
+localhost:7979/api/masterdata/Mdgagal1721a2/create
+
 {
 
 

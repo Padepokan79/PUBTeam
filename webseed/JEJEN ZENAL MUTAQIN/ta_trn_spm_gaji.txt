@@ -1,0 +1,66 @@
+1.-----------------------------------------------------------------------------
+auth-token
+localhost:7979/auth/token
+
+{
+	
+	"nama_login" : "tujuhsembilan",
+	
+	"password" : "a"
+
+}
+
+===============================================================================
+
+2.-----------------------------------------------------------------------------
+read All
+
+localhost:7979/api/masterdata/MdTaTrnSpmGaji/readAll
+
+===============================================================================
+
+3.-----------------------------------------------------------------------------
+Insert data ke-1 pada tabel MdTaTrnSpmGaji
+
+localhost:7979/api/masterdata/MdTaTrnSpmGaji/create
+
+{
+	"V_Bulan_Th":"Januari",
+	"C_Tipe_Data":"aa",
+	"C_Urusan_Keu":1,
+	"C_Bidang_Keu":1,
+	"C_Unit_Keu":1,
+	"C_Sub_Keu":1,
+	"Kd_Rek_1_Keu":1,
+	"Kd_Rek_2_Keu":1,
+	"Kd_Rek_3_Keu":1,
+	"Kd_Rek_4_Keu":1,
+	"Kd_Rek_5_Keu":1,
+	"Nilai":90,
+	"Acc":"a",
+	"KdSkpd": "3A"
+}
+
+
+================================================================================
+
+4. -----------------------------------------------------------------------------
+update
+
+localhost:7979/api/masterdata/MdTaTrnSpmGaji/update?id0=Januari&id1=aa&id2=1&id3=1&id4=1&id5=1
+
+{
+	"Kd_Rek_1_Keu":2,
+	"Kd_Rek_2_Keu":3,
+	"Kd_Rek_3_Keu":4,
+	"Kd_Rek_4_Keu":5,
+	"Kd_Rek_5_Keu":6,
+	"KdSkpd": "3B"
+}
+
+================================================================================
+
+5. -----------------------------------------------------------------------------
+delete
+
+localhost:7979/api/masterdata/MdTaTrnSpmGaji/delete?id0=Januari&id1=aa&id2=1&id3=1&id4=1&id5=1

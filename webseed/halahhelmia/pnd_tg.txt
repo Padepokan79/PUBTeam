@@ -1,0 +1,43 @@
+@Table pnd_tg
+
+>>TOKEN<<
+
+localhost:7979/auth/token
+{
+	"nama_login" : "tujuhsembilan",
+	"password"	 : "a"
+}
+
+>>CREATE<<
+localhost:7979/api/masterdata/MdPndTg/create
+
+ {
+      "nip": "196008131985030317",
+            
+	"nama": "Dra. Hj. Saiyah.M.Pd",
+            
+	"jab": "Plt. SEKRETARIS DAERAH PROVINSI BOGOR",
+            
+	"npwp": "",
+            
+	"kota": "BOGOR",
+            
+	"nmskpd": "SEKRETARIAT DAERAH"
+            
+ }
+
+>>READ ALL<<
+localhost:7979/api/masterdata/MdPndTg/readAll
+
+>>UPDATE<<
+localhost:7979/api/masterdata/MdPndTg/update?id0=0204151023
+
+ {
+            "npwp": "y"
+            
+ }
+
+>>DELETE<<
+localhost:7979/api/masterdata/MdPndTg/delete?id0=0204151023
+
+
