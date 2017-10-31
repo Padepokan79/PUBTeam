@@ -10,18 +10,18 @@ HAVING MAX(hg.GAPOK));
 
 //2. menampilkan nama pegawai yang gapok tertinggi dan terendah 
 
-select NAMA, "tertinggi" as gapok from mstpegawai where m.nip=
+(select NAMA, "tertinggi" as gapok from mstpegawai where nip=
 (select hg.nip from historis_gapok hg
 INNER JOIN pangkat_tbl p
 INNER JOIN gapok_tbl g 
 ON hg.KDPANGKAT=p.KDPANGKAT AND hg.TMTGAJI= g.TMT_GAPOK 
-HAVING MAX(hg.GAPOK));
-UNION
-select NAMA, "terendah" from mstpegawai where m.nip=
+HAVING MAX(hg.GAPOK)))
+UNION ALL
+(select NAMA, "terendah" from mstpegawai where nip=
 (select hg.nip from historis_gapok hg
 INNER JOIN pangkat_tbl p
 INNER JOIN gapok_tbl g 
 ON hg.KDPANGKAT=p.KDPANGKAT AND hg.TMTGAJI= g.TMT_GAPOK 
-HAVING MIN(hg.GAPOK));
+HAVING MIN(hg.GAPOK)));
 
 //3.
