@@ -1,5 +1,5 @@
 package com.padepokan79.model;
-
+//by ILFA SRI DESY
 public interface MdPhoto {
 	public final String queryInsertPhoto = 
 			"insert into photo (nip, gambar) values (?, ?);";

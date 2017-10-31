@@ -1,5 +1,5 @@
 package com.padepokan79.model;
-
+//by ILFA SRI DESY
 public interface MdTkdTbl {
 	public final String queryInsertTkdTbl =
 			"insert into tkd_tbl (TMT, KDTKD, NMTKD, TKD) values (?, ?, ?, ?);";

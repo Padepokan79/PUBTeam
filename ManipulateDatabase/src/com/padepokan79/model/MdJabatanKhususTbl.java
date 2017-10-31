@@ -1,5 +1,5 @@
 package com.padepokan79.model;
-
+//by ILFA SRI DESY
 public interface MdJabatanKhususTbl {
 	public final String queryInsertJabatanKhususTbl = 
 			"insert into jabatankhusus_tbl (TMTJABATAN, KDJABATAN, NMJABATAN, JML, PENSIUN) values (?, ?, ?, ?, ?);";

@@ -1,5 +1,5 @@
 package com.padepokan79.model;
-
+//by ILFA SRI DESY
 public interface MdStawinTbl {
 	public final String queryInsertStawinTbl = 
 			"insert into stawin_tbl (kdstawin, nmstawin) values (?, ?);";

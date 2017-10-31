@@ -1,5 +1,5 @@
 package com.padepokan79.model;
-
+//by ILFA SRI DESY
 public interface MdJenisKekuranganGaji {
 	public final String queryInsertJenisKekuranganGaji =
 			"insert into jenis_kekurangan_gaji values (?, ?);";
