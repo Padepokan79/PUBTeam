@@ -9,7 +9,7 @@ import com.mysql.jdbc.ResultSet;
 import com.padepokan79.model.Convertor;
 import com.padepokan79.model.MdStawinTbl;
 import com.padepokan79.util.DatabaseConnection;
-
+//by ILFA SRI DESY
 public class MdStawinTblController extends DatabaseConnection implements MdStawinTbl{
 	public MdStawinTblController() {
 		
