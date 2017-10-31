@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 import com.padepokan79.controller.MdStawinTblController;
 import com.padepokan79.controller.MdTkdTblController;
-
+//by ILFA SRI DESY
 public class MainTkdTbl {
 	BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
 	

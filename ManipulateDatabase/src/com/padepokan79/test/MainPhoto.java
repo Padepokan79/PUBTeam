@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 import com.padepokan79.controller.MdPhotoController;
 import com.padepokan79.controller.MdStawinTblController;
-
+//by ILFA SRI DESY
 public class MainPhoto {
 	BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
 	

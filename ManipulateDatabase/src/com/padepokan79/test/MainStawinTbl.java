@@ -8,7 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.padepokan79.controller.MdStawinTblController;
-
+//by ILFA SRI DESY
 public class MainStawinTbl {
 	BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
 	
