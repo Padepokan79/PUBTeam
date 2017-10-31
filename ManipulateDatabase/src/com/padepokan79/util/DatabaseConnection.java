@@ -6,7 +6,7 @@ import com.mysql.jdbc.Connection;
 
 public class DatabaseConnection {
 	String myDriver = "org.gjt.mm.mysql.Driver";
-	String myUrl = "jdbc:mysql://192.168.2.192:3000/dbgajido";
+	String myUrl = "jdbc:mysql://192.168.20.191:3000/dbgajido";
 	public static Connection conn = null;
 	public DatabaseConnection(){
 		try
