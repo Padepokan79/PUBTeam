@@ -8,5 +8,7 @@
 	<classpathentry kind="lib" path="E:/My/Mimpi Ketiga/Padepokan 79/mysql-connector-java-5.0.8.jar"/>
 	<classpathentry kind="lib" path="D:/MASTER/mysql-connector-java-5.0.8.jar"/>
 	<classpathentry kind="lib" path="F:/BOOTCAMP/aplikasi/mysql-connector-java-5.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/acer/Documents/AutoSave/mysql-connector-java-5.0.8.jar"/>
+	<classpathentry kind="lib" path="D:/Master/mysql-connector-java-5.0.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
