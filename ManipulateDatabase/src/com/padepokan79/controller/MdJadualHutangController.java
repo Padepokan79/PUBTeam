@@ -7,10 +7,10 @@ import org.json.JSONArray;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.ResultSet;
 import com.padepokan79.model.Convertor;
-import com.padepokan79.model.MdFSpt;
+import com.padepokan79.model.MdJadualHutang;
 import com.padepokan79.util.DatabaseConnection;
 
-public class MdFSptController extends DatabaseConnection implements MdFSpt {
+public class MdJadualHutangController extends DatabaseConnection implements MdJadualHutang {
 	public JSONArray simpleQuery(String query){
 		try
 		{
@@ -26,7 +26,7 @@ public class MdFSptController extends DatabaseConnection implements MdFSpt {
 		}
 		return null;
 	}
-	public JSONArray queryMenampilkanTabelFSpt(String query) throws SQLException{
+	public JSONArray queryMenampilkanTabelJadualHutang(String query) throws SQLException{
 		PreparedStatement st = null;
 		try
 		{
@@ -43,51 +43,53 @@ public class MdFSptController extends DatabaseConnection implements MdFSpt {
 		}
 		return null;
 	}
-	public JSONArray queryMenambahkanTabelFSpt(String query,String nip,String nama, String kdskpd, String KdSatker, int nourt, double th_pajak){
+	public JSONArray queryMenambahkanTabelJadualHutang(String query,String nip, int urut, String tgl_potong,String kode_lbg, int jumlah, int kd_lunas, String tgl_lunas){
 		try
 		{
 			PreparedStatement st = (PreparedStatement) conn.prepareStatement(query);
 			st.setString(1, nip);	
-			st.setString(2, nama);
-			st.setString(3, kdskpd);
-			st.setString(4, KdSatker);
-			st.setInt(5, nourt);
-			st.setDouble(6, th_pajak);
+			st.setInt(2, urut);
+			st.setString(3, tgl_potong);
+			st.setString(4, kode_lbg);	
+			st.setInt(5, jumlah);
+			st.setInt(6, kd_lunas);
+			st.setString(7, tgl_lunas);
 			st.executeUpdate();
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
-	public JSONArray queryMenghapusTabelFSpt(String query, String nip){
+	public JSONArray queryMenghapusTabelJadualHutang(String query, int urut){
 		try
 		{
 			PreparedStatement st = (PreparedStatement) conn.prepareStatement(query);
-				st.setString(1, nip);
+				st.setInt(1, urut);
 			st.executeUpdate();
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
-	public JSONArray queryMerubahTabelFSpt(String query,int nourt, String nip){
+	public JSONArray queryMerubahTabelJadualHutang(String query,int jumlah, int urut){
 		try
 		{
 
 			PreparedStatement st = (PreparedStatement) conn.prepareStatement(query);
-			st.setInt(1,nourt);
-			st.setString(2,nip);
+			st.setInt(1, jumlah);	
+			st.setInt(2, urut);
 			st.executeUpdate();
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
-	public JSONArray queryMencariKodeTransTabelFSpt(String query, String nip){
+	public JSONArray queryMencariKodeTransTabelJadualHutang(String query, int urut){
 		try
 		{
 			PreparedStatement st = (PreparedStatement) conn.prepareStatement(query);
-			st.setString(1,nip);			
+			st.setInt(1, urut);
+			
 			ResultSet rs = (ResultSet) st.executeQuery();
 			return Convertor.convertToJSON(rs);
 
@@ -98,51 +100,51 @@ public class MdFSptController extends DatabaseConnection implements MdFSpt {
 	}
 //-----------------------------------------------------------------------------------------------------------------	
 	
-	public JSONArray getMenampilkanTabelFSpt(){
+	public JSONArray getMenampilkanTabelJadualHutang(){
 		try
 		{
 			String query = querySelectData;
-			return queryMenampilkanTabelFSpt(query);
+			return queryMenampilkanTabelJadualHutang(query);
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
-	public JSONArray getMenambahkanTabelFSpt(String nip,String nama, String kdskpd, String KdSatker, int nourt, double th_pajak){
+	public JSONArray getMenambahkanTabelJadualHutang(String nip, int urut, String tgl_potong,String kode_lbg, int jumlah, int kd_lunas, String tgl_lunas){
 		try
 		{
 			String query = queryInsertData;
-			return queryMenambahkanTabelFSpt(query, nip, nama, kdskpd, KdSatker, nourt, th_pajak);
+			return queryMenambahkanTabelJadualHutang(query, nip, urut, tgl_potong, kode_lbg, jumlah, kd_lunas, tgl_lunas);
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
-	public JSONArray getMenghapusTabelFSpt(String nip){
+	public JSONArray getMenghapusTabelJadualHutang(int urut){
 		try
 		{
-			String query = queryDeleteDataBerdasarkanNip;
-			return queryMenghapusTabelFSpt(query, nip);
+			String query = queryDeleteDataBerdasarkanUrut;
+			return queryMenghapusTabelJadualHutang(query, urut);
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
-	public JSONArray getMerubahTabelFSpt(int nourt, String nip){
+	public JSONArray getMerubahTabelJadualHutang(int jumlah, int urut){
 		try
 		{
-			String query = queryUpdateBerdasarkanNip;
-			return queryMerubahTabelFSpt(query, nourt, nip);
+			String query = queryUpdateJumlahBerdasarkanNoUrut;
+			return queryMerubahTabelJadualHutang(query, jumlah, urut);
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
-	public JSONArray getMencariTabelFSpt(String nip){
+	public JSONArray getMencariTabelJadualHutang(int urut){
 		try
 		{
-			String query = querySearchBerdasarkanNip;
-			return queryMencariKodeTransTabelFSpt(query, nip);
+			String query = querySearchberdasarkanNoUrut;
+			return queryMencariKodeTransTabelJadualHutang(query, urut);
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
