@@ -10,5 +10,5 @@ public interface MdZakatTdk {
 	public final String mengubahMulaiZakat =
 			"UPDATE zakat_tdk SET mulai=? WHERE nip=?;";
 	public final String menghapusDataZakat =
-			"DELETE FROM zakat_tdk WHERE nip=?;";
+			"DELETE FROM zakat_tdk  WHERE nip=?;";
 }
