@@ -137,7 +137,7 @@ public class MainMdAgama{
 			JSONObject obj =  arrayData.getJSONObject(i);	
 
 			tamp=(int) obj.get(kdagama);
-			System.out.print("| "+tamp);
+			System.out.print("|  "+tamp);
 
 			space=(String) obj.get(nmagama);
 			System.out.print("              | "+ space);
